@@ -1,6 +1,6 @@
 import type { ButtonProps } from 'naive-ui'
 
-interface Button extends ButtonProps {
+interface Button extends /* @vue-ignore */ ButtonProps {
 	readonly name: string
 	readonly href: string
 	readonly icon: () => VNode
