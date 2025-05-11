@@ -49,9 +49,9 @@ const passed_dans = computed(() => {
 				</n-radio-group>
 			</n-flex>
 
-			<n-flex justify="center" size="small" wrap>
+			<n-flex :vertical="isMobile" justify="center" size="small">
 				<template v-for="passed_dan in passed_dans">
-					<n-card :title="passed_dan.name" class="w-fit" size="small">
+					<n-card :title="passed_dan.name" class="md:w-fit" size="small">
 						<iframe :src="(`https://player.bilibili.com/player.html?bvid=${passed_dan.bilibili_video_id}&autoplay=0`)" class="border-none aspect-ratio-video w-full md:h-60"/>
 
 						<template #action>
@@ -65,7 +65,7 @@ const passed_dans = computed(() => {
 		</n-flex>
 
 		<template #action>
-			<n-flex justify="center" size="small" wrap>
+			<n-flex :vertical="isMobile" justify="center" size="small">
 				<template v-for="button in malody.buttons">
 					<custom-button v-bind="button"/>
 				</template>

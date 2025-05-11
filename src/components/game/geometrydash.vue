@@ -11,7 +11,7 @@ import { isMobile } from '~/shared/responsive'
 		</n-flex>
 
 		<template #action>
-			<n-flex justify="center">
+			<n-flex :vertical="isMobile" justify="center" size="small">
 				<template v-for="button in geometrydash.buttons">
 					<custom-button v-bind="button"/>
 				</template>

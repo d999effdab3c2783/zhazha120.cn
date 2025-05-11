@@ -40,7 +40,7 @@ import { isDesktop, isMobile } from '~/shared/responsive'
 		</n-flex>
 
 		<template #action>
-			<n-flex justify="center" size="small" wrap>
+			<n-flex :vertical="isMobile" justify="center" size="small">
 				<template v-for="button in osumania.buttons">
 					<custom-button v-bind="button"/>
 				</template>

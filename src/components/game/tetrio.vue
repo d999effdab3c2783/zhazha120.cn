@@ -17,7 +17,7 @@ const overlay = computed(() => {
 		'display-standingsets-sprint': true,
 		'display-standingsets-blitz': true,
 		alignment: 'top',
-		layout: isMobile ? 'vertical' : 'horizontal',
+		layout: isMobile.value ? 'vertical' : 'horizontal',
 		league: ['apm', 'pps', 'vs', 'x_winrate', 'percentile'].join('+'),
 		sprint: ['pieces', 'pps', 'ff', 'kpp', 'kps', 'quads'].join('+'),
 		blitz: ['pps', 'ff', 'spp', 'pieces', 'pieces', 'quads', 'tspins', 'allclears'].join('+')
@@ -118,7 +118,7 @@ const overlay = computed(() => {
 		</n-flex>
 
 		<template #action>
-			<n-flex justify="center" size="small" wrap>
+			<n-flex :vertical="isMobile" justify="center" size="small">
 				<template v-for="button in tetrio.buttons">
 					<custom-button v-bind="button"/>
 				</template>
