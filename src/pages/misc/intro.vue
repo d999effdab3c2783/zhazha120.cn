@@ -11,7 +11,7 @@ definePageMeta({
 
 <template>
 	<custom-sub-page>
-		<n-card size="small">
+		<n-card class="lt-md:text-center" size="small">
 			<n-flex size="small" vertical>
 				<div class="lt-md:text-center">
 					<n-flex :justify="isMobile ? 'center' : undefined" align="center" size="small">
@@ -28,10 +28,10 @@ definePageMeta({
 
 				<n-alert :show-icon="false" type="warning">
 					<div class="text-2xl fw-bold lt-md:text-center">
-						<n-flex :justify="isDesktop ? 'space-between' : undefined" :vertical="isMobile" :wrap="false">
+						<n-flex :justify="isMobile ? 'space-between' : undefined" :vertical="isDesktop" :wrap="false">
 							<n-text type="warning">!!!!!!</n-text>
 
-							<n-flex align="center" justify="center" size="small">
+							<n-flex :justify="isMobile ? 'center' : undefined" align="center" size="small">
 								<n-tag type="error">不涩涩</n-tag>
 								<n-tag type="error">不约</n-tag>
 								<n-tag type="error">不是同</n-tag>
@@ -111,7 +111,7 @@ definePageMeta({
 				<n-flex :size="0" vertical>
 					<n-text type="success">全栈开发 是只福瑞</n-text>
 
-					<n-flex :size="0">
+					<n-flex :justify="isMobile ? 'center' : undefined" :size="0">
 						<n-text type="error">学习很差</n-text>
 						<span class="mx-1">目前在</span>
 						<n-text type="info">目前在江西应用工程职业学院 (下埠校区)</n-text>
@@ -126,7 +126,7 @@ definePageMeta({
 					<n-text type="success">喜欢开源 有良好的 git 提交消息规范</n-text>
 				</n-flex>
 
-				<n-flex :size="0" align="center">
+				<n-flex :justify="isMobile ? 'center' : undefined" :size="0" align="center">
 					<span>也可以在</span>
 
 					<div class="mx-1">
@@ -138,7 +138,7 @@ definePageMeta({
 					<span>中了解到我的其它信息 包括</span>
 
 					<div class="ml-1">
-						<n-flex align="center" size="small">
+						<n-flex :justify="isMobile ? 'center' : undefined" align="center" size="small">
 							<n-tag type="info">社交账号</n-tag>
 
 							<n-tag type="info">
@@ -176,13 +176,15 @@ definePageMeta({
 				<div class="leading-tight">
 					<n-text type="error">在现实中大多数场景下不合群</n-text>
 					<br>
-					<n-text type="info">被动型发言 没有雷点 想和所有人交朋友 不怕烦 !</n-text>
+					<n-text type="info">被动型发言 没有雷点</n-text>
+					<br>
+					<n-text type="success">想和所有人交朋友 不怕烦 !</n-text>
 					<br>
 					<n-text type="warning">内耗型 如非必要不会麻烦别人</n-text>
 					<br>
 					<n-text type="success">欢迎找我聊天 !</n-text>
 					<br><br>
-					<n-text type="error">只有一点 如非必要请麻烦尽量文字交流 或者你说话我打字 不是很敢在网络上对陌生人说话 QAQ</n-text>
+					<n-text type="error">只有一点 如非必要请麻烦尽量文字交流 或者你说话我打字 不是很敢在网络上和陌生人语音通话 QAQ</n-text>
 				</div>
 			</n-flex>
 		</n-card>
