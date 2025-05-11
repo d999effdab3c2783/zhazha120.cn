@@ -74,7 +74,7 @@ const download = async () => {
 <template>
 	<template v-if="toolsImageWatermarkStore.image !== null">
 		<n-card size="small">
-			<div class="size-full overflow-auto">
+			<n-scrollbar x-scrollable>
 				<n-flex justify="center">
 					<div ref="container" :style="toolsImageWatermarkStore.sizeStyles" class="pointer-events-none relative [&>*]:(absolute top-0 left-0)">
 						<n-watermark
@@ -111,7 +111,7 @@ const download = async () => {
 						<n-image :img-props="{ style: toolsImageWatermarkStore.sizeStyles }" :src="toolsImageWatermarkStore.image.src" :style="toolsImageWatermarkStore.sizeStyles" preview-disabled/>
 					</div>
 				</n-flex>
-			</div>
+			</n-scrollbar>
 
 			<template #action>
 				<n-flex justify="center" size="small">

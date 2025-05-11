@@ -27,7 +27,7 @@ const handleClick = () => {
 		</template>
 
 		<slot name="content">
-			<n-ellipsis>{{ props.name }}</n-ellipsis>
+			<n-scrollbar x-scrollable>{{ props.name }}</n-scrollbar>
 		</slot>
 	</n-button>
 </template>

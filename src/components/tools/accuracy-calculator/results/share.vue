@@ -61,28 +61,32 @@ const copy = async (text: string) => {
 		<n-flex size="small" vertical>
 			<template v-for="format in formats">
 				<n-card size="small">
-					<div class="whitespace-pre overflow-auto">{{ format }}</div>
+					<n-scrollbar x-scrollable>
+						<div class="whitespace-pre">{{ format }}</div>
+					</n-scrollbar>
 
 					<template #action>
-						<n-flex size="small">
-							<n-button @click="copy(format)">
-								<template #icon>
-									<n-icon :component="CopyOutlined"/>
-								</template>
-
-								复制
-							</n-button>
-
-							<template v-if="format.split('\n').length === 2">
-								<n-button @click="copy(format.split('\n')[1])">
+						<n-scrollbar x-scrollable>
+							<n-flex :wrap="false" size="small">
+								<n-button @click="copy(format)">
 									<template #icon>
 										<n-icon :component="CopyOutlined"/>
 									</template>
 
-									复制 (无标题)
+									复制
 								</n-button>
-							</template>
-						</n-flex>
+
+								<template v-if="format.split('\n').length === 2">
+									<n-button @click="copy(format.split('\n')[1])">
+										<template #icon>
+											<n-icon :component="CopyOutlined"/>
+										</template>
+
+										复制 (无标题)
+									</n-button>
+								</template>
+							</n-flex>
+						</n-scrollbar>
 					</template>
 				</n-card>
 			</template>

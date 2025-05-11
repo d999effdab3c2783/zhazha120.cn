@@ -1,7 +1,9 @@
 <template>
 	<n-divider class="!my-0">建议</n-divider>
 
-	<div class="overflow-auto text-center">
-		<tools-image-watermark-suggests-font-theme-color/>
-	</div>
+	<n-scrollbar x-scrollable>
+		<n-flex align="center" size="small" vertical>
+			<tools-image-watermark-suggests-font-theme-color/>
+		</n-flex>
+	</n-scrollbar>
 </template>
