@@ -16,6 +16,7 @@ export default defineNuxtConfig({
 		'nuxtjs-naive-ui'
 	],
 	app: {
+		cdnURL: 'https://cdn.zhazha120.cn/static/website/',
 		pageTransition: {
 			name: 'page',
 			mode: 'out-in',
