@@ -15,6 +15,7 @@ export default defineContentConfig({
 					z.object({
 						title: z.string(),
 						notes: z.number()
+							.int()
 					})
 				),
 				require_accuracy: z.number()
@@ -32,6 +33,17 @@ export default defineContentConfig({
 				description: z.string(),
 				image_hash: z.string(),
 				animal: z.string()
+			})
+		}),
+		birthday: defineCollection({
+			type: 'page',
+			source: {
+				cwd: 'src/contents/birthday',
+				include: '*.md'
+			},
+			schema: z.object({
+				age: z.number()
+					.int()
 			})
 		})
 	}

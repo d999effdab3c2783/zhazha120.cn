@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 import { CalendarOutlined } from '@vicons/antd'
 import { Bone, CurrentLocation, Man, Puzzle, Ruler, ZodiacTaurus } from '@vicons/tabler'
 import { isDesktop, isMobile } from '~/shared/responsive'

@@ -15,7 +15,9 @@ defineProps<{
 
 	<template v-if="(value.status.value === 'pending')">
 		<slot name="pending">
-			<n-spin/>
+			<n-flex justify="center">
+				<n-spin/>
+			</n-flex>
 		</slot>
 	</template>
 
@@ -25,7 +27,7 @@ defineProps<{
 
 	<template v-if="(value.status.value === 'error')">
 		<slot :error="value.error.value" name="error">
-			<n-result :description="String(value.error.value)" size="small" status="500" title="出错了"/>
+			<n-result :description="String(value.error.value)" size="small" status="error" title="出错了"/>
 		</slot>
 	</template>
 </template>

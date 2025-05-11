@@ -1,16 +1,12 @@
 import { CalculatorOutlined, FileImageOutlined, GithubOutlined, HeartOutlined, MailOutlined, QqOutlined, UsergroupAddOutlined } from '@vicons/antd'
+import { BirthdayCake } from '@vicons/fa'
 import { BrandSteam, DeviceGamepad, Paw } from '@vicons/tabler'
-import type { TagProps } from 'naive-ui'
+import { getDate, getMonth } from 'date-fns'
 import { NIcon } from 'naive-ui'
 import avatar from '~/assets/avatar_216d1f4160660919189af01a92dff5f6396a643d.webp?url'
 import type Button from '~/types/button'
 
 // @unocss-include
-
-interface Tag {
-	readonly type: TagProps['type']
-	readonly content: string
-}
 
 interface Record {
 	readonly province_abbr: string
@@ -27,7 +23,8 @@ interface Information {
 	readonly avatar: string
 	readonly description: string
 
-	readonly tags: Tag[]
+	readonly birthday: Date
+
 	readonly contacts: ContactButton[]
 	readonly explores: Button[]
 	readonly tools: Button[]
@@ -37,28 +34,13 @@ interface Information {
 	readonly record: Record | null
 }
 
+const birthday = new Date(2006, 5 - 1, 7)
+
 export default {
 	name: '渣渣120',
 	avatar: avatar,
 	description: ['也许是一名不合格的全栈开发者', '喜欢自动化和新技术'].join('\n'),
-	tags: [
-		{
-			type: 'success',
-			content: '前端'
-		},
-		{
-			type: 'success',
-			content: '后端'
-		},
-		{
-			type: 'success',
-			content: '运维'
-		},
-		{
-			type: 'error',
-			content: '福瑞'
-		}
-	],
+	birthday,
 	contacts: [
 		{
 			name: 'QQ',
@@ -145,6 +127,20 @@ export default {
 			href: '/furry',
 			icon: () => h(NIcon, {
 				component: Paw
+			}),
+			is_external: false
+		},
+		{
+			name: '生日',
+			href: '/birthday',
+			type: (() => {
+				let _today = new Date()
+				let _birthday = birthday
+
+				return getMonth(_today) === getMonth(_birthday) && getDate(_today) === getDate(_birthday) ? 'success' : undefined
+			})(),
+			icon: () => h(NIcon, {
+				component: BirthdayCake
 			}),
 			is_external: false
 		}
