@@ -16,12 +16,10 @@ import { isDesktop, isMobile } from '~/shared/responsive'
 				<span class="text-3xl fw-bold">感谢所有人的祝贺ww~</span>
 			</n-divider>
 
-			<n-scrollbar x-scrollable>
-				<n-flex :justify="isDesktop ? 'space-evenly' : undefined" :vertical="isMobile" :wrap="false" align="center" size="small">
-					<n-image :img-props="{ class: 'w-full' }" :src="birthday_d5cad4b281664d782379976a9df6c0f99464fffe" class="flex-1"/>
-					<n-image :img-props="{ class: 'w-full' }" :src="birthday_38114ea66a533205da322baee2629428c2bcfd1f" class="flex-1"/>
-				</n-flex>
-			</n-scrollbar>
+			<n-flex :justify="isDesktop ? 'space-evenly' : undefined" :vertical="isMobile" :wrap="false" align="center" size="small">
+				<n-image :img-props="{ class: 'w-full' }" :src="birthday_d5cad4b281664d782379976a9df6c0f99464fffe" class="flex-1"/>
+				<n-image :img-props="{ class: 'w-full' }" :src="birthday_38114ea66a533205da322baee2629428c2bcfd1f" class="flex-1"/>
+			</n-flex>
 
 			<n-divider>
 				<span class="text-3xl fw-bold">未完善的设定</span>
