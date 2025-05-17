@@ -1,6 +1,6 @@
-import { CalculatorOutlined, FileImageOutlined, GithubOutlined, HeartOutlined, MailOutlined, QqOutlined, UsergroupAddOutlined } from '@vicons/antd'
-import { BirthdayCake } from '@vicons/fa'
-import { BrandSteam, DeviceGamepad, Paw } from '@vicons/tabler'
+import { CalculatorOutlined, CalendarOutlined, FileImageOutlined, GithubOutlined, HeartOutlined, MailOutlined, QqOutlined, UsergroupAddOutlined } from '@vicons/antd'
+import { BirthdayCake, Lightbulb, School } from '@vicons/fa'
+import { Bone, BrandSteam, CurrentLocation, DeviceGamepad, Man, Paw, Puzzle, Ruler, ZodiacTaurus } from '@vicons/tabler'
 import { getDate, getMonth } from 'date-fns'
 import { NIcon } from 'naive-ui'
 import avatar from '~/assets/avatar_216d1f4160660919189af01a92dff5f6396a643d.webp?url'
@@ -14,16 +14,32 @@ interface Record {
 	readonly safety_code: number | null
 }
 
+interface Tag {
+	readonly type: 'info' | 'success' | 'error' | 'warning'
+	readonly value: string
+}
+
+interface Attribute {
+	readonly icon: () => VNode
+	readonly name: string
+	readonly value: string
+}
+
 interface ContactButton extends Button {
 	readonly hide: boolean
 }
 
 interface Information {
 	readonly name: string
+	readonly short_name: string
 	readonly avatar: string
 	readonly description: string
 
 	readonly birthday: Date
+
+	readonly tags: Tag[]
+	readonly sensitive_tags: Tag[]
+	readonly attributes: Attribute[]
 
 	readonly contacts: ContactButton[]
 	readonly explores: Button[]
@@ -34,13 +50,133 @@ interface Information {
 	readonly record: Record | null
 }
 
+const name = '渣渣120'
+
 const birthday = new Date(2006, 5 - 1, 7)
 
 export default {
-	name: '渣渣120',
+	name,
+	short_name: name.substring(0, 2),
 	avatar: avatar,
 	description: ['也许是一名不合格的全栈开发者', '喜欢自动化和新技术'].join('\n'),
 	birthday,
+	tags: [
+		{
+			type: 'info',
+			value: '前端'
+		},
+		{
+			type: 'info',
+			value: '后端'
+		},
+		{
+			type: 'info',
+			value: '运维'
+		},
+		{
+			type: 'success',
+			value: '全栈'
+		},
+		{
+			type: 'warning',
+			value: '福瑞'
+		}
+	],
+	sensitive_tags: [
+		{
+			type: 'error',
+			value: '不涩涩'
+		},
+		{
+			type: 'error',
+			value: '不约'
+		},
+		{
+			type: 'error',
+			value: '不是同'
+		},
+		{
+			type: 'error',
+			value: '不想谈恋爱'
+		},
+		{
+			type: 'error',
+			value: '不找对象'
+		},
+		{
+			type: 'error',
+			value: '不当对象'
+		},
+		{
+			type: 'success',
+			value: '只想做自己 👊'
+		}
+	],
+	attributes: [
+		{
+			icon: () => h(NIcon, {
+				component: CurrentLocation
+			}),
+			name: '当前位置',
+			value: ['江西省', '赣州市', '章贡区'].join(' ')
+		},
+		{
+			icon: () => h(NIcon, {
+				component: Man
+			}),
+			name: '性别',
+			value: '男'
+		},
+		{
+			icon: () => h(NIcon, {
+				component: CalendarOutlined
+			}),
+			name: '生日',
+			value: birthday.toLocaleDateString()
+		},
+		{
+			icon: () => h(NIcon, {
+				component: Bone
+			}),
+			name: '生肖',
+			value: '狗'
+		},
+		{
+			icon: () => h(NIcon, {
+				component: ZodiacTaurus
+			}),
+			name: '星座',
+			value: '金牛座'
+		},
+		{
+			icon: () => h(NIcon, {
+				component: Ruler
+			}),
+			name: '身高体重',
+			value: '176cm 94kg'
+		},
+		{
+			icon: () => h(NIcon, {
+				component: School
+			}),
+			name: '学校',
+			value: '江西应用工程职业学院 (下埠校区)'
+		},
+		{
+			icon: () => h(NIcon, {
+				component: Lightbulb
+			}),
+			name: '专业',
+			value: '计算机应用技术'
+		},
+		{
+			icon: () => h(NIcon, {
+				component: Puzzle
+			}),
+			name: 'MBTI',
+			value: 'INTJ-A-H'
+		}
+	],
 	contacts: [
 		{
 			name: 'QQ',
