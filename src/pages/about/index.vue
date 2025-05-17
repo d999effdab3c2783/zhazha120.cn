@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { EyeOutlined } from '@vicons/antd'
+import { EyeOutlined, HomeOutlined } from '@vicons/antd'
 import information from '~/data/information'
 import { isMobile } from '~/shared/responsive'
 
@@ -8,6 +8,14 @@ definePageMeta({
 })
 
 const show_real = ref(false)
+
+const router = useRouter()
+
+const goHome = () => {
+	router.push({
+		name: '首页'
+	})
+}
 </script>
 
 <template>
@@ -75,10 +83,24 @@ const show_real = ref(false)
 			</n-card>
 
 			<n-card header-class="text-center" size="small" title="探索我">
-				<n-flex :vertical="isMobile" align="center" justify="center" size="small">
-					<template v-for="button in information.explores">
-						<custom-button :block="isMobile" v-bind="button"/>
-					</template>
+				<n-flex size="small" vertical>
+					<n-flex :vertical="isMobile" align="center" justify="center" size="small">
+						<template v-for="button in information.explores">
+							<custom-button :block="isMobile" v-bind="button"/>
+						</template>
+					</n-flex>
+
+					<n-divider class="!my-0">以及</n-divider>
+
+					<n-flex :vertical="isMobile" justify="center">
+						<n-button :block="isMobile" @click="goHome">
+							<template #icon>
+								<n-icon :component="HomeOutlined"/>
+							</template>
+
+							在 首页 了解更多
+						</n-button>
+					</n-flex>
 				</n-flex>
 			</n-card>
 
