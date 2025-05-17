@@ -14,19 +14,24 @@ const birthday = useAsyncData(async () => {
 	return await queryCollection('birthday').where('age', '=', route.params.age).first()
 })
 
-
-const ago = computed(() => {
-	const _data = birthday.data.value
-
-	if (_data === null) {
+const date = computed(() => {
+	if (birthday.data.value === null) {
 		return
 	}
 
-	const _date = information.birthday
+	const newDate = new Date(information.birthday)
 
-	_date.setFullYear(_date.getFullYear() + _data.age)
+	newDate.setFullYear(newDate.getFullYear() + birthday.data.value.age)
 
-	return formatDistance(new Date(), _date, {
+	return newDate
+})
+
+const ago = computed(() => {
+	if (date.value === undefined) {
+		return
+	}
+
+	return formatDistance(new Date(), date.value, {
 		locale: zhCN
 	})
 })
@@ -40,7 +45,11 @@ const ago = computed(() => {
 					<template v-if="data !== null">
 						<n-flex align="center" vertical>
 							<span class="text-6xl fw-extrabold">{{ data.age }}</span>
-							<n-text v-if="ago" :depth="3">({{ ago }}前)</n-text>
+
+							<n-flex align="center" size="small">
+								<n-text v-if="date !== undefined" :depth="3">{{ date.toLocaleDateString() }}</n-text>
+								<n-text v-if="ago !== undefined" :depth="3" class="text-sm">({{ ago }}前)</n-text>
+							</n-flex>
 						</n-flex>
 					</template>
 
