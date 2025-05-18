@@ -14,7 +14,8 @@ const handleClick = () => {
 		return
 	}
 
-	showRedirectExternalWebsiteWarningModal(props.href)
+	console.log(props)
+	showRedirectExternalWebsiteWarningModal(props.href, props.external_modal_slots)
 }
 </script>
 

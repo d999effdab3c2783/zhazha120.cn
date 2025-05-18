@@ -3,7 +3,11 @@ import '~/styles/shared.scss'
 
 // @unocss-include
 
-export default (link: string) => {
+interface Slots {
+	readonly extra: () => VNode
+}
+
+export default (link: string, slots: Partial<Slots> = {}) => {
 	const nuxt = useNuxtApp()
 
 	const modal = nuxt.$modal as ReturnType<typeof useModal>
@@ -24,8 +28,9 @@ export default (link: string) => {
 					open(link)
 				}
 			}, () => link),
+			slots.extra ? slots.extra() : null,
 			h('span', null, {
-				default: () => '↑ 戳这里继续跳转 ↑'
+				default: () => '↑ 戳绿色连接继续跳转 ↑'
 			})
 		])
 	})

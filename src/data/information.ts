@@ -2,7 +2,7 @@ import { CalculatorOutlined, CalendarOutlined, FileImageOutlined, GithubOutlined
 import { BirthdayCake, Lightbulb, School } from '@vicons/fa'
 import { Bone, BrandSteam, CurrentLocation, DeviceGamepad, Man, Paw, Puzzle, Ruler, ZodiacTaurus } from '@vicons/tabler'
 import { getDate, getMonth } from 'date-fns'
-import { NIcon } from 'naive-ui'
+import { NIcon, NText } from 'naive-ui'
 import avatar from '~/assets/avatar_216d1f4160660919189af01a92dff5f6396a643d.webp?url'
 import type Button from '~/types/button'
 
@@ -212,7 +212,14 @@ export default {
 				component: BrandSteam
 			}),
 			is_external: true,
-			hide: true
+			hide: true,
+			external_modal_slots: {
+				extra: () => h(NText, {
+					type: 'info'
+				}, {
+					default: () => '或使用好友代码: 485570157'
+				})
+			}
 		},
 		{
 			name: '哔哩哔哩',
