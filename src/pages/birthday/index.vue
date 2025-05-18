@@ -33,14 +33,14 @@ const handleClick = (age: number) => {
 <template>
 	<custom-sub-page>
 		<n-card size="small">
-			<n-scrollbar x-scrollable>
-				<div class="lt-md:w-max">
-					<n-flex align="center" size="small" vertical>
+			<n-flex align="center" size="small" vertical>
+				<n-scrollbar x-scrollable>
+					<div class="lt-md:w-max">
 						<div class="text-4xl fw-bold">
 							<n-flex :wrap="false" justify="center" size="small">
 								<span>{{ information.short_name }} 现在</span>
 
-								<div class="w-95">
+								<div class="w-100">
 									<n-flex :size="0" :wrap="false" align="center">
 										<n-text type="success">{{ age.split('.')[0] }}</n-text>
 										<n-text :depth="3">.</n-text>
@@ -51,11 +51,11 @@ const handleClick = (age: number) => {
 								<span>岁了</span>
 							</n-flex>
 						</div>
+					</div>
+				</n-scrollbar>
 
-						<n-text :depth="3" class="text-sm">({{ information.birthday.toLocaleDateString() }})</n-text>
-					</n-flex>
-				</div>
-			</n-scrollbar>
+				<n-text :depth="3" class="text-sm">({{ information.birthday.toLocaleDateString() }})</n-text>
+			</n-flex>
 		</n-card>
 
 		<n-card size="small">

@@ -46,7 +46,7 @@ const ago = computed(() => {
 						<n-flex align="center" vertical>
 							<span class="text-6xl fw-extrabold">{{ data.age }}</span>
 
-							<n-flex align="center" size="small">
+							<n-flex :size="0" align="center" vertical>
 								<n-text v-if="date !== undefined" :depth="3">{{ date.toLocaleDateString() }}</n-text>
 								<n-text v-if="ago !== undefined" :depth="3" class="text-sm">({{ ago }}前)</n-text>
 							</n-flex>

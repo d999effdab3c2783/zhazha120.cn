@@ -21,4 +21,16 @@ window.addEventListener('resize', () => {
 	check()
 })
 
+window.addEventListener('DOMContentLoaded', () => {
+	check()
+}, {
+	once: true
+})
+
+window.addEventListener('load', () => {
+	check()
+}, {
+	once: true
+})
+
 check()
