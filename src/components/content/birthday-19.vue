@@ -4,6 +4,7 @@ import birthday_38114ea66a533205da322baee2629428c2bcfd1f from '~/assets/birthday
 import birthday_d5cad4b281664d782379976a9df6c0f99464fffe from '~/assets/birthday_d5cad4b281664d782379976a9df6c0f99464fffe.webp'
 import birthday_d6d9967d10d056dc84bf3be1a2bb753d04742ef6 from '~/assets/birthday_d6d9967d10d056dc84bf3be1a2bb753d04742ef6.webp'
 import birthday_f76f3f31b8f93153e09419e2c8fd5d73fe79b5d7 from '~/assets/birthday_f76f3f31b8f93153e09419e2c8fd5d73fe79b5d7.webp'
+import birthday_b8f0da64aa005de239fa675aaa8c067a16d1809a from '~/assets/birthday_b8f0da64aa005de239fa675aaa8c067a16d1809a.webp'
 import { isDesktop, isMobile } from '~/shared/responsive'
 </script>
 
@@ -20,6 +21,12 @@ import { isDesktop, isMobile } from '~/shared/responsive'
 				<n-image :img-props="{ class: 'w-full' }" :src="birthday_d5cad4b281664d782379976a9df6c0f99464fffe" class="flex-1"/>
 				<n-image :img-props="{ class: 'w-full' }" :src="birthday_38114ea66a533205da322baee2629428c2bcfd1f" class="flex-1"/>
 			</n-flex>
+
+			<n-divider>
+				<span class="text-3xl fw-bold">一份礼物</span>
+			</n-divider>
+
+			<n-image :img-props="{ class: 'w-full' }" :src="birthday_b8f0da64aa005de239fa675aaa8c067a16d1809a"/>
 
 			<n-divider>
 				<span class="text-3xl fw-bold">未完善的设定</span>
@@ -42,6 +49,8 @@ import { isDesktop, isMobile } from '~/shared/responsive'
 					<span>右: 临灰</span>
 				</n-flex>
 			</n-scrollbar>
+
+			<n-text :depth="3" class="text-xl fw-bold">还做成动态壁纸了 awa</n-text>
 
 			<div class="h-10"/>
 
