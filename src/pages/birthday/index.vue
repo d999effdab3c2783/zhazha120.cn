@@ -15,7 +15,7 @@ const birthdays = useAsyncData(async () => {
 const now = useNow()
 
 const age = computed(() => {
-	return (differenceInMilliseconds(now.value, information.birthday) / 1000 / 60 / 60 / 24 / 365).toFixed(15)
+	return String(differenceInMilliseconds(now.value, information.birthday) / 1000 / 60 / 60 / 24 / 365)
 })
 
 const router = useRouter()
@@ -40,11 +40,13 @@ const handleClick = (age: number) => {
 							<n-flex :wrap="false" justify="center" size="small">
 								<span>{{ information.short_name }} 现在</span>
 
-								<n-flex :size="0" :wrap="false" align="center">
-									<n-text type="success">{{ age.split('.')[0] }}</n-text>
-									<n-text :depth="3">.</n-text>
-									<n-text type="info">{{ age.split('.')[1] }}</n-text>
-								</n-flex>
+								<div class="w-95">
+									<n-flex :size="0" :wrap="false" align="center">
+										<n-text type="success">{{ age.split('.')[0] }}</n-text>
+										<n-text :depth="3">.</n-text>
+										<n-text type="info">{{ age.split('.')[1] }}</n-text>
+									</n-flex>
+								</div>
 
 								<span>岁了</span>
 							</n-flex>
