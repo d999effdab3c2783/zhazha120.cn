@@ -57,19 +57,19 @@ const goHome = () => {
 			<n-card header-class="text-center" size="small" title="属性">
 				<n-flex :vertical="isMobile" justify="center" size="small" wrap>
 					<template v-for="attribute in information.attributes">
-						<n-tag class="cursor-pointer md:w-fit">
-							<n-popover>
-								<template #trigger>
+						<n-popover :placement="isMobile ? 'top-start' : undefined">
+							<template #trigger>
+								<n-tag class="cursor-pointer md:w-fit">
 									<n-flex :size="0" align="center">
 										<Component :is="attribute.icon()"/>
 
 										<span class="ml-2">{{ attribute.value }}</span>
 									</n-flex>
-								</template>
+								</n-tag>
+							</template>
 
-								{{ attribute.name }}
-							</n-popover>
-						</n-tag>
+							{{ attribute.name }}
+						</n-popover>
 					</template>
 				</n-flex>
 			</n-card>
