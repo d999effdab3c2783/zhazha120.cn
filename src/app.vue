@@ -1,16 +1,10 @@
 <script lang="ts" setup>
 import highlight from 'highlight.js'
-import { darkTheme, dateZhCN, type GlobalThemeOverrides, zhCN } from 'naive-ui'
-
-const customize: GlobalThemeOverrides = {
-	Card: {
-		paddingSmall: '1rem'
-	}
-}
+import { darkTheme, dateZhCN, zhCN } from 'naive-ui'
 </script>
 
 <template>
-	<n-config-provider :date-locale="dateZhCN" :hljs="highlight" :locale="zhCN" :theme="darkTheme" :theme-overrides="customize">
+	<n-config-provider :date-locale="dateZhCN" :hljs="highlight" :locale="zhCN" :theme="darkTheme">
 		<n-dialog-provider>
 			<n-loading-bar-provider>
 				<n-message-provider>
@@ -32,4 +26,8 @@ const customize: GlobalThemeOverrides = {
 
 <style lang="scss">
 @use '~/styles/transitions/page';
+
+:root, body {
+	@apply \!font-sans;
+}
 </style>

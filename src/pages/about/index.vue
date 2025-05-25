@@ -53,7 +53,7 @@ const goHome = () => {
 			</n-alert>
 
 			<n-alert :show-icon="false" class="text-center" title="危险" type="error">
-				<n-text :depth="3">furry: 边缘 不咋混圈 福瑞当然很可爱 但我只想摸毛</n-text>
+				<n-text :depth="3" class="fw-bold">furry: 边缘 不咋混圈 福瑞当然很可爱 但我只想摸毛</n-text>
 				<br>
 				<n-text class="fw-extrabold">你可以偷偷查 但不要直接跑来问我和本体有关的任何问题 不会理你也不会回答</n-text>
 			</n-alert>
