@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-import { EyeOutlined, HomeOutlined } from '@vicons/antd'
+import { HomeOutlined } from '@vicons/antd'
 import information from '~/data/information'
 import { isMobile } from '~/shared/responsive'
 
 definePageMeta({
 	name: '关于我'
 })
-
-const show_real = ref(false)
 
 const router = useRouter()
 
@@ -54,25 +52,11 @@ const goHome = () => {
 				</n-flex>
 			</n-alert>
 
-			<n-card header-class="text-center" size="small" title="属性">
-				<n-flex :vertical="isMobile" justify="center" size="small" wrap>
-					<template v-for="attribute in information.attributes">
-						<n-popover :placement="isMobile ? 'top-start' : undefined">
-							<template #trigger>
-								<n-tag class="cursor-pointer md:w-fit">
-									<n-flex :size="0" align="center">
-										<Component :is="attribute.icon()"/>
-
-										<span class="ml-2">{{ attribute.value }}</span>
-									</n-flex>
-								</n-tag>
-							</template>
-
-							{{ attribute.name }}
-						</n-popover>
-					</template>
-				</n-flex>
-			</n-card>
+			<n-alert :show-icon="false" class="text-center" title="危险" type="error">
+				<n-text :depth="3">furry: 边缘 不咋混圈 福瑞当然很可爱 但我只想摸毛</n-text>
+				<br>
+				<n-text class="fw-extrabold">你可以偷偷查 但不要直接跑来问我和本体有关的任何问题 不会理你也不会回答</n-text>
+			</n-alert>
 
 			<n-card header-class="text-center" size="small" title="找到我">
 				<n-flex :vertical="isMobile" align="center" justify="center" size="small">
@@ -124,42 +108,6 @@ const goHome = () => {
 					<br>
 					<n-text type="success">喜欢开源 有良好的 git 提交消息规范</n-text>
 				</div>
-			</n-card>
-
-			<n-card header-class="text-center" size="small" title="现实方面">
-				<template v-if="!show_real">
-					<n-flex align="center" size="small" vertical>
-						<n-text type="error">感觉有点负面 默认隐藏了</n-text>
-
-						<n-popconfirm @positive-click="show_real = true">
-							<template #trigger>
-								<n-button size="small" type="error">
-									<template #icon>
-										<n-icon :component="EyeOutlined"/>
-									</template>
-
-									看看
-								</n-button>
-							</template>
-
-							真的要看吗 QAQ
-						</n-popconfirm>
-					</n-flex>
-				</template>
-
-				<n-collapse-transition :show="show_real">
-					<div class="text-center leading-tight">
-						<n-text type="error">学习很差 很孤独 在现实中大多数场景下不合群</n-text>
-						<br>
-						<n-text type="error">跟不上网络热梗 不起哄 不跟风 不咋说话 流行游戏大多数也是只听过没玩过</n-text>
-						<br>
-						<n-text type="error">没怎么追过番剧 也没看过什么动画 也没看过多少电影</n-text>
-						<br>
-						<n-text type="error">因为没有共同话题 身边没有什么朋友 很无聊</n-text>
-						<br>
-						<n-text type="error">没有自信 有点自卑 喜欢一个人躲在角落默默干着自己的事情</n-text>
-					</div>
-				</n-collapse-transition>
 			</n-card>
 
 			<n-card header-class="text-center" size="small" title="扩列方面">

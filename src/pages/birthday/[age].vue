@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-import { formatDistance } from 'date-fns'
-import { zhCN } from 'date-fns/locale'
 import { NCard } from 'naive-ui'
-import information from '~/data/information'
 
 definePageMeta({
 	name: '生日详情'
@@ -13,28 +10,6 @@ const route = useRoute()
 const birthday = useAsyncData(async () => {
 	return await queryCollection('birthday').where('age', '=', route.params.age).first()
 })
-
-const date = computed(() => {
-	if (birthday.data.value === null) {
-		return
-	}
-
-	const newDate = new Date(information.birthday)
-
-	newDate.setFullYear(newDate.getFullYear() + birthday.data.value.age)
-
-	return newDate
-})
-
-const ago = computed(() => {
-	if (date.value === undefined) {
-		return
-	}
-
-	return formatDistance(new Date(), date.value, {
-		locale: zhCN
-	})
-})
 </script>
 
 <template>
@@ -43,14 +18,9 @@ const ago = computed(() => {
 			<template #success="{ data }">
 				<n-card size="small">
 					<template v-if="data !== null">
-						<n-flex align="center" vertical>
+						<div class="text-center">
 							<span class="text-6xl fw-extrabold">{{ data.age }}</span>
-
-							<n-flex :size="0" align="center" vertical>
-								<n-text v-if="date !== undefined" :depth="3">{{ date.toLocaleDateString() }}</n-text>
-								<n-text v-if="ago !== undefined" :depth="3" class="text-sm">({{ ago }}前)</n-text>
-							</n-flex>
-						</n-flex>
+						</div>
 					</template>
 
 					<template v-else>

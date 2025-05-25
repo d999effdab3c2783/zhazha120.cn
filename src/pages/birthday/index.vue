@@ -15,7 +15,7 @@ const birthdays = useAsyncData(async () => {
 const now = useNow()
 
 const age = computed(() => {
-	return String(differenceInMilliseconds(now.value, information.birthday) / 1000 / 60 / 60 / 24 / 365)
+	return (differenceInMilliseconds(now.value, information.birthday) / 1000 / 60 / 60 / 24 / 365).toFixed(12)
 })
 
 const router = useRouter()
@@ -33,29 +33,25 @@ const handleClick = (age: number) => {
 <template>
 	<custom-sub-page>
 		<n-card size="small">
-			<n-flex align="center" size="small" vertical>
+			<div class="text-center">
 				<n-scrollbar x-scrollable>
 					<div class="lt-md:w-max">
 						<div class="text-4xl fw-bold">
 							<n-flex :wrap="false" justify="center" size="small">
 								<span>{{ information.short_name }} 现在</span>
 
-								<div class="w-100">
-									<n-flex :size="0" :wrap="false" align="center">
-										<n-text type="success">{{ age.split('.')[0] }}</n-text>
-										<n-text :depth="3">.</n-text>
-										<n-text type="info">{{ age.split('.')[1] }}</n-text>
-									</n-flex>
-								</div>
+								<n-flex :size="0" :wrap="false" align="center">
+									<n-text type="success">{{ age.split('.')[0] }}</n-text>
+									<n-text :depth="3">.</n-text>
+									<n-text type="info">{{ age.split('.')[1] }}</n-text>
+								</n-flex>
 
 								<span>岁了</span>
 							</n-flex>
 						</div>
 					</div>
 				</n-scrollbar>
-
-				<n-text :depth="3" class="text-sm">({{ information.birthday.toLocaleDateString() }})</n-text>
-			</n-flex>
+			</div>
 		</n-card>
 
 		<n-card size="small">

@@ -1,6 +1,6 @@
-import { CalculatorOutlined, CalendarOutlined, FileImageOutlined, GithubOutlined, HeartOutlined, MailOutlined, QqOutlined, UsergroupAddOutlined } from '@vicons/antd'
-import { BirthdayCake, Lightbulb, School } from '@vicons/fa'
-import { Bone, BrandSteam, CurrentLocation, DeviceGamepad, Man, Paw, Puzzle, Ruler, ZodiacTaurus } from '@vicons/tabler'
+import { CalculatorOutlined, FileImageOutlined, GithubOutlined, HeartOutlined, MailOutlined, QqOutlined, UsergroupAddOutlined } from '@vicons/antd'
+import { BirthdayCake } from '@vicons/fa'
+import { BrandSteam, DeviceGamepad, Paw } from '@vicons/tabler'
 import { getDate, getMonth } from 'date-fns'
 import { NIcon, NText } from 'naive-ui'
 import avatar from '~/assets/avatar_216d1f4160660919189af01a92dff5f6396a643d.webp?url'
@@ -19,12 +19,6 @@ interface Tag {
 	readonly value: string
 }
 
-interface Attribute {
-	readonly icon: () => VNode
-	readonly name: string
-	readonly value: string
-}
-
 interface ContactButton extends Button {
 	readonly hide: boolean
 }
@@ -39,7 +33,6 @@ interface Information {
 
 	readonly tags: Tag[]
 	readonly sensitive_tags: Tag[]
-	readonly attributes: Attribute[]
 
 	readonly contacts: ContactButton[]
 	readonly explores: Button[]
@@ -110,71 +103,6 @@ export default {
 		{
 			type: 'success',
 			value: '只想做自己 👊'
-		}
-	],
-	attributes: [
-		{
-			icon: () => h(NIcon, {
-				component: CurrentLocation
-			}),
-			name: '当前位置',
-			value: ['江西省', '赣州市', '章贡区'].join(' ')
-		},
-		{
-			icon: () => h(NIcon, {
-				component: Man
-			}),
-			name: '性别',
-			value: '男'
-		},
-		{
-			icon: () => h(NIcon, {
-				component: CalendarOutlined
-			}),
-			name: '生日',
-			value: birthday.toLocaleDateString()
-		},
-		{
-			icon: () => h(NIcon, {
-				component: Bone
-			}),
-			name: '生肖',
-			value: '狗'
-		},
-		{
-			icon: () => h(NIcon, {
-				component: ZodiacTaurus
-			}),
-			name: '星座',
-			value: '金牛座'
-		},
-		{
-			icon: () => h(NIcon, {
-				component: Ruler
-			}),
-			name: '身高体重',
-			value: '176cm 94kg'
-		},
-		{
-			icon: () => h(NIcon, {
-				component: School
-			}),
-			name: '学校',
-			value: '江西应用工程职业学院 (下埠校区)'
-		},
-		{
-			icon: () => h(NIcon, {
-				component: Lightbulb
-			}),
-			name: '专业',
-			value: '计算机应用技术'
-		},
-		{
-			icon: () => h(NIcon, {
-				component: Puzzle
-			}),
-			name: 'MBTI',
-			value: 'INTJ-A-H'
 		}
 	],
 	contacts: [
