@@ -10,7 +10,7 @@ const route = useRoute()
 
 const furry = useAsyncData(async () => {
 	return await queryCollection('furry').where('code', '=', route.params.code).first()
-})
+}, {})
 </script>
 
 <template>
@@ -29,7 +29,7 @@ const furry = useAsyncData(async () => {
 					</template>
 
 					<template v-else>
-						<n-result :description="(`或许是代号名为 ${route.params.code} 的兽兽不存在`)" size="small" status="404" title="找不到欸 xwx"/>
+						<n-result :description="(`或许是代号为 ${route.params.code} 的兽设并不存在`)" size="small" status="404" title="找不到欸 xwx"/>
 					</template>
 				</n-card>
 
