@@ -50,7 +50,7 @@ import { isDesktop, isMobile } from '~/shared/responsive'
 				</n-flex>
 			</n-scrollbar>
 
-			<n-text :depth="3" class="text-xl fw-bold">还做成动态壁纸了 awa</n-text>
+			<n-text :depth="3" class="fw-bold">还做成动态壁纸了 awa</n-text>
 
 			<div class="h-10"/>
 

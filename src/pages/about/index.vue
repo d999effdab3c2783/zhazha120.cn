@@ -53,9 +53,12 @@ const goHome = () => {
 			</n-alert>
 
 			<n-alert :show-icon="false" class="text-center" title="危险" type="error">
-				<n-text :depth="3" class="fw-bold">furry: 边缘 不咋混圈 福瑞当然很可爱 但我只想摸毛</n-text>
+				<n-flex :size="0" vertical>
+					<n-text :depth="3" class="fw-bold">furry: 边缘 只喜欢其中可爱和毛绒的事物</n-text>
+					<n-text :depth="3" class="text-sm opacity-50">(尤其是特别反感上来关心涩涩和我是不是同的 能不能滚)</n-text>
+				</n-flex>
 				<br>
-				<n-text class="fw-extrabold">你可以偷偷查 但不要直接跑来问我和本体有关的任何问题 不会理你也不会回答</n-text>
+				<n-text class="fw-extrabold">本体默认隐藏 你可以偷偷查 但不要直接跑来问我和本体有关的任何问题 不会理你也不会回答</n-text>
 			</n-alert>
 
 			<n-card header-class="text-center" size="small" title="找到我">
@@ -102,7 +105,7 @@ const goHome = () => {
 
 			<n-card header-class="text-center" size="small" title="开发方面">
 				<div class="text-center leading-tight">
-					<n-text type="info">从初中开始从零自学开发</n-text>
+					<n-text type="info">自 2018 起开始从零自学开发</n-text>
 					<br>
 					<n-text type="info">到现在或许啥技术都会点 喜欢探索尝试新东西</n-text>
 					<br>
