@@ -4,7 +4,7 @@ import { isDesktop, isMobile } from '~/shared/responsive'
 </script>
 
 <template>
-	<n-layout position="absolute">
+	<n-layout position="absolute" :native-scrollbar="false">
 		<n-layout-content class="p-2">
 			<slot/>
 		</n-layout-content>
