@@ -8,6 +8,7 @@ import _aa5e2fa25f201ade08faf33bc9b80a715cd13080 from '~/assets/friend_link_aa5e
 import _d83379b0778a782cb0eb539c0e097447497d64c8 from '~/assets/friend_link_d83379b0778a782cb0eb539c0e097447497d64c8.webp?url'
 import _dc8a952c8cbb9fb4c42586c8413ce98018642566 from '~/assets/friend_link_dc8a952c8cbb9fb4c42586c8413ce98018642566.webp?url'
 import _f4bc6b30df6dc2ddaa10b2bdf550cf08d3e1caeb from '~/assets/friend_link_f4bc6b30df6dc2ddaa10b2bdf550cf08d3e1caeb.webp?url'
+import _c09f4e82985b473acb81e193b2da1b09d1c9c760 from '~/assets/friend_link_c09f4e82985b473acb81e193b2da1b09d1c9c760.webp?url'
 
 interface FriendsLink {
 	readonly name: string
@@ -76,5 +77,11 @@ export default [
 		description: '愿飞龙常入你梦乡',
 		icon: _4f161e1ead85000c161c21ba2829407842b6609b,
 		href: 'https://dracowyn.com'
+	},
+	{
+		name: '洺渊的小窝',
+		description: '过去已成过去，将来还是将来，而我们能改变的只有现在。',
+		icon: _c09f4e82985b473acb81e193b2da1b09d1c9c760,
+		href: 'https://blog.fmyron.com'
 	}
 ] satisfies FriendsLink[]
