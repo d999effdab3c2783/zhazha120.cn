@@ -13,7 +13,7 @@
 		"@iconify-json/logos": "^1.2.4",
 		"@iconify-json/simple-icons": "^1.2.42",
 		"@iconify-json/tabler": "^1.2.19",
-		"@nuxt/content": "^3.6.3",
+		"@nuxt/content": "^3.5.0 <3.6.0",
 		"@nuxt/scripts": "0.11.9",
 		"@pinia/nuxt": "0.11.1",
 		"@teages/nuxt-legacy": "^0.0.8",
