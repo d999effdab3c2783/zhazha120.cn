@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { HomeOutlined } from '@vicons/antd'
+import about_86cef3a460ffd43f41d5c0c498879062b1a87928 from '~/assets/about_86cef3a460ffd43f41d5c0c498879062b1a87928.webp?url'
 import information from '~/data/information'
 import { isMobile } from '~/shared/responsive'
 
@@ -55,11 +56,26 @@ const goHome = () => {
 			<n-alert :show-icon="false" class="text-center" title="危险" type="error">
 				<n-flex :size="0" vertical>
 					<n-text :depth="3" class="fw-bold">furry: 边缘 只喜欢其中可爱和毛绒的事物</n-text>
-					<n-text :depth="3" class="text-sm opacity-50">(尤其是特别反感上来关心涩涩和我是不是同的 能不能滚)</n-text>
 				</n-flex>
 				<br>
 				<n-text class="fw-extrabold">本体默认隐藏 你可以偷偷查 但不要直接跑来问我和本体有关的任何问题 不会理你也不会回答</n-text>
 			</n-alert>
+
+			<n-card header-class="text-center" size="small" title="扩列">
+				<div class="text-center leading-tight">
+					<n-text type="success">
+						很欢迎 可以在下方
+						<n-text code>找到我</n-text>
+						卡片中看到我的社交账号
+					</n-text>
+					<br><br>
+					<n-text type="info">不太会主动发起话题 纯被动型发言 没有雷点</n-text>
+					<br>
+					<n-text type="warning">内耗型 如非必要不会麻烦别人</n-text>
+					<br>
+					<n-text type="success">想和所有人交朋友 不怕烦 !</n-text>
+				</div>
+			</n-card>
 
 			<n-card header-class="text-center" size="small" title="找到我">
 				<n-flex :vertical="isMobile" align="center" justify="center" size="small">
@@ -113,20 +129,8 @@ const goHome = () => {
 				</div>
 			</n-card>
 
-			<n-card header-class="text-center" size="small" title="扩列方面">
-				<div class="text-center leading-tight">
-					<n-text type="success">
-						很欢迎 可以在上面
-						<n-text code>找到我</n-text>
-						卡片中看到我的社交账号
-					</n-text>
-					<br><br>
-					<n-text type="info">不太会主动发起话题 纯被动型发言 没有雷点</n-text>
-					<br>
-					<n-text type="warning">内耗型 如非必要不会麻烦别人</n-text>
-					<br>
-					<n-text type="success">想和所有人交朋友 不怕烦 !</n-text>
-				</div>
+			<n-card header-class="text-center" size="small" title="第十六届蓝桥杯软件赛国赛 Web 应用开发职业院校组 一等奖">
+				<n-image :img-props="{ class: 'w-full' }" :src="about_86cef3a460ffd43f41d5c0c498879062b1a87928"/>
 			</n-card>
 		</n-flex>
 	</custom-sub-page>
