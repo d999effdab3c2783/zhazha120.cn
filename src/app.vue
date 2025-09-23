@@ -27,6 +27,11 @@ import { darkTheme, dateZhCN, zhCN } from 'naive-ui'
 <style lang="scss">
 @use '~/styles/transitions/page';
 
+@font-face {
+	font-family: '_';
+	src: url('~/assets/font_40aa625cea51a985319bb35a9307d247a09f709a.ttf');
+}
+
 :root, body {
 	@apply \!font-sans;
 }

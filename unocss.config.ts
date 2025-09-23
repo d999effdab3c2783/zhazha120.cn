@@ -7,7 +7,7 @@ export default defineConfig({
 		presetWebFonts({
 			provider: 'none',
 			fonts: {
-				sans: ['HarmonyOS Sans SC', 'HarmonyOS Sans']
+				sans: ['_', 'HarmonyOS Sans SC', 'HarmonyOS Sans']
 			}
 		})
 	],
