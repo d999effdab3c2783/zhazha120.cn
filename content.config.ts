@@ -30,6 +30,8 @@ export default defineContentConfig({
 			schema: z.object({
 				code: z.string(),
 				name: z.string(),
+				designer: z.string()
+					.optional(),
 				description: z.string(),
 				image_hash: z.string(),
 				animal: z.string()

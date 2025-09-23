@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { isNonNullish } from 'remeda'
 import { isMobile } from '~/shared/responsive'
 import type { FurryCollectionItem } from '~/types/furry'
 
@@ -16,6 +17,12 @@ defineProps<{
 				<n-divider vertical/>
 
 				<n-text type="info">物种: {{ value.animal }}</n-text>
+
+				<template v-if="isNonNullish(value.designer)">
+					<n-divider vertical/>
+
+					<n-text type="warning">设计者: {{ value.designer }}</n-text>
+				</template>
 			</n-flex>
 		</div>
 
