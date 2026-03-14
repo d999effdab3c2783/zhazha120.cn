@@ -43,7 +43,9 @@ const mappedItems = computed(() => {
 						<n-card size="small">
 							<custom-naive-auto-stack align="center">
 								<template v-if="isNonNullish(item.real_logo)">
-									<n-image :src="item.real_logo" class="h-12 rounded-full"/>
+									<n-element class="w-fit">
+										<n-image :src="item.real_logo" class="h-12 rounded-full"/>
+									</n-element>
 								</template>
 
 								<custom-naive-vertical-stack :size="0">
