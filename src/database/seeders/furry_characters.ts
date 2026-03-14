@@ -1,5 +1,5 @@
 import config from '@/config/database'
-import { convertFile, downloadBlob } from '@/utils/blob'
+import { downloadBlob } from '@/utils/blob'
 import type { Dexie } from 'dexie'
 
 export default async (database: Dexie) => {
@@ -13,9 +13,9 @@ export default async (database: Dexie) => {
 				content: (
 					await import('@/assets/contents/furry_unnamed_1.md?raw')
 				).default,
-				_illustration: convertFile(await downloadBlob((
+				_illustration: await downloadBlob((
 					await import('@/assets/images/furry/characters/1/illustration.webp?url')
-				).default), 'illustration')
+				).default)
 			},
 			{
 				illustration: `${config.reference_prefix}_illustration`,
@@ -26,9 +26,9 @@ export default async (database: Dexie) => {
 				content: (
 					await import('@/assets/contents/furry_z.md?raw')
 				).default,
-				_illustration: convertFile(await downloadBlob((
+				_illustration: await downloadBlob((
 					await import('@/assets/images/furry/characters/Z/illustration.webp?url')
-				).default), 'illustration')
+				).default)
 			}
 		])
 }

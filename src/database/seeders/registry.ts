@@ -1,6 +1,6 @@
 import config from '@/config/database'
 import { alova } from '@/shared/alova'
-import { convertFile, downloadBlob } from '@/utils/blob'
+import { downloadBlob } from '@/utils/blob'
 import { createDate } from '@/utils/date'
 import type { Dexie } from 'dexie'
 
@@ -59,11 +59,11 @@ export default async (database: Dexie) => {
 				name: 'intro.avatar',
 				value: `${config.reference_prefix}_file`,
 
-				_file: convertFile(await (
+				_file: await (
 					await alova.Get<Response>((
 						await import('@/assets/images/Z.svg?url')
 					).default).send()
-				).blob(), 'Z')
+				).blob()
 			},
 			{
 				name: 'intro.name',
@@ -97,30 +97,30 @@ export default async (database: Dexie) => {
 			{
 				name: 'support.qq.qrcode',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/support/qq/qrcode.webp?url')
-				).default), 'qr')
+				).default)
 			},
 			{
 				name: 'support.wechat.qrcode',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/support/wechat/qrcode.webp?url')
-				).default), 'qr')
+				).default)
 			},
 			{
 				name: 'support.alipay.red_packet',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/support/alipay/red_packet.webp?url')
-				).default), 'qr')
+				).default)
 			},
 			{
 				name: 'support.alipay.qrcode',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/support/alipay/qrcode.webp?url')
-				).default), 'qr')
+				).default)
 			},
 			{
 				name: 'game.records.maimai.diving-fish.username',
@@ -165,9 +165,9 @@ export default async (database: Dexie) => {
 			{
 				name: 'game.records.minecraft.skinview3d.panorama',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/minecraft/panorama.webp?url')
-				).default), 'panorama')
+				).default)
 			},
 			{
 				name: 'game.records.minecraft.skinview3d.name_tag',
@@ -220,65 +220,65 @@ export default async (database: Dexie) => {
 			{
 				name: 'game.records.geometry_dash.ball',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/ball.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.cube',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/cube.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.jetpack',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/jetpack.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.robot',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/robot.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.ship',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/ship.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.spider',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/spider.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.swing',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/swing.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.ufo',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/ufo.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.wave',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/geometry_dash/wave.webp?url')
-				).default), 'cube')
+				).default)
 			},
 			{
 				name: 'game.records.geometry_dash.username',
@@ -295,9 +295,9 @@ export default async (database: Dexie) => {
 			{
 				name: 'game.records.tetrio.game_background.overlay',
 				value: `${config.reference_prefix}_file`,
-				_file: convertFile(await downloadBlob((
+				_file: await downloadBlob((
 					await import('@/assets/images/game/tetrio/game_background_overlay.webp?url')
-				).default), 'background_overlay')
+				).default)
 			},
 			{
 				name: 'dev.description',

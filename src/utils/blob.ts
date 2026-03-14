@@ -1,3 +1,5 @@
+import { isNullish } from 'remeda'
+
 export const convertFile = (input: Blob, name: string) => {
 	return new File([
 		input
@@ -6,7 +8,11 @@ export const convertFile = (input: Blob, name: string) => {
 	})
 }
 
-export const compressBlob = async (input: Blob, format: CompressionFormat) => {
+export const compressBlob = async (input: Blob, format: CompressionFormat | null) => {
+	if ( isNullish(format) ) {
+		return input
+	}
+
 	return await new Response(
 		input.stream()
 			.pipeThrough(
@@ -15,7 +21,11 @@ export const compressBlob = async (input: Blob, format: CompressionFormat) => {
 	).blob()
 }
 
-export const decompressBlob = async (input: Blob, format: CompressionFormat) => {
+export const decompressBlob = async (input: Blob, format: CompressionFormat | null) => {
+	if ( isNullish(format) ) {
+		return input
+	}
+
 	return await new Response(
 		input.stream()
 			.pipeThrough(

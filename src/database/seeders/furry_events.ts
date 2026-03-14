@@ -1,5 +1,5 @@
 import config from '@/config/database'
-import { convertFile, downloadBlob } from '@/utils/blob'
+import { downloadBlob } from '@/utils/blob'
 import { createDate } from '@/utils/date'
 import type { Dexie } from 'dexie'
 import { isNullish } from 'remeda'
@@ -42,7 +42,7 @@ export default async (database: Dexie) => {
 				furry_character_ids: [
 					await useFurryCharacter('Z', true)
 				],
-				_cover: convertFile(await downloadBlob('https://static.furward.cn/resources/ouestsOfMaouisSpirits/banner.webp'), 'cover')
+				_cover: await downloadBlob('https://static.furward.cn/resources/ouestsOfMaouisSpirits/banner.webp')
 			}
 		])
 }
