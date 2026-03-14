@@ -67,6 +67,6 @@
 			<n-text depth="3">[ @ 沙盒子 ]</n-text>
 		</custom-naive-vertical-stack>
 	</n-card>
-	</n-flex>
+</custom-naive-vertical-stack>
 
 ```
