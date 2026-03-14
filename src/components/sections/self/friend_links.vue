@@ -5,7 +5,7 @@ import CustomRedirect from '@/components/custom/redirect.vue'
 import { useDatabase, useDatabaseFile, useDatabaseValue } from '@/composables/database'
 import type FriendLink from '@/database/tables/friend_link'
 import { isMobile } from '@/shared/responsive'
-import { NCard, NDivider, NImage, NText } from 'naive-ui'
+import { NCard, NDivider, NElement, NImage, NText } from 'naive-ui'
 import { isEmptyish, isNonNullish, isNullish, merge } from 'remeda'
 import { computed } from 'vue'
 
