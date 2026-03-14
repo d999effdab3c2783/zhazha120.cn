@@ -1,0 +1,11 @@
+.v-page {
+	&-enter-active,
+	&-leave-active {
+		@apply transition-(property-[opacity_blur] ease-in-out duration-500);
+	}
+
+	&-enter-from,
+	&-leave-to {
+		@apply opacity-0 blur;
+	}
+}

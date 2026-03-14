@@ -1,0 +1,9 @@
+.zhazha120 {
+	&__modal {
+		@apply m-2 md:(w-1/2 mx-auto);
+	}
+
+	&__page {
+		@apply p-2 container mx-auto;
+	}
+}
