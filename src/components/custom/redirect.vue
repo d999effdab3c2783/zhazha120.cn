@@ -2,7 +2,8 @@
 import CustomNaiveModalWrapper from '@/components/custom/naive/modal-wrapper.vue'
 import CustomNaiveVerticalStack from '@/components/custom/naive/vertical-stack.vue'
 import { NA, NText } from 'naive-ui'
-import { isNonNullish } from 'remeda'
+import { isNonNullish, isNullish } from 'remeda'
+import { useTemplateRef } from 'vue'
 import { useRouter } from 'vue-router'
 
 defineOptions({
@@ -14,6 +15,7 @@ const props = defineProps<{
 }>()
 
 const router = useRouter()
+const triggerLinkRef = useTemplateRef('triggerLinkRef')
 
 const handleClick = async (event: MouseEvent, toggleExternalLinkWarningModal: () => void) => {
 	if (
@@ -21,11 +23,20 @@ const handleClick = async (event: MouseEvent, toggleExternalLinkWarningModal: ()
 		event.target instanceof Element &&
 
 		[
-			'.n-image'
+			'.n-image',
+			'.n-a'
 		].some(selector => {
-			return isNonNullish(
-				(event.target as Element).closest(selector)
-			)
+			const target = (event.target as Element).closest(selector)
+
+			if ( isNullish(target) || isNullish(triggerLinkRef.value) ) {
+				return false
+			}
+
+			if ( target === triggerLinkRef.value.$el ) {
+				return false
+			}
+
+			return true
 		})
 	) {
 		event.preventDefault()
@@ -53,7 +64,7 @@ const handleClick = async (event: MouseEvent, toggleExternalLinkWarningModal: ()
 <template>
 	<custom-naive-modal-wrapper preset="card" size="small">
 		<template #trigger="{ toggle }">
-			<n-a :href="href" class="contents" @click="handleClick($event, toggle)">
+			<n-a ref="triggerLinkRef" :href="href" class="contents" @click="handleClick($event, toggle)">
 				<slot/>
 			</n-a>
 		</template>
