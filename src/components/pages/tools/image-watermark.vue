@@ -28,7 +28,7 @@ const toolsImageWatermarkStore = useToolsImageWatermarkStore()
 				</template>
 
 				<template v-else>
-					<custom-naive-uploader v-model:value="file" accept="image/*"/>
+					<custom-naive-uploader v-model:file="file" accept="image/*"/>
 					<sections-tools-image-watermark-clipboard-importer v-model:file="file"/>
 				</template>
 			</custom-naive-vertical-stack>
