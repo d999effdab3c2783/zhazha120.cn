@@ -22,7 +22,7 @@ const options = {
 
 <template>
 	<n-config-provider :date-locale="dateZhCN" :hljs="hljs" :locale="zhCN" :theme="themeStore.preset" :theme-overrides="themeStore.overrides" abstract inline-theme-disabled preflight-style-disabled>
-		<pro-n-config-provider :locale="proZhCN">
+		<pro-n-config-provider :date-locale="dateZhCN" :hljs="hljs" :locale="proZhCN" :theme="themeStore.preset" :theme-overrides="themeStore.overrides" abstract inline-theme-disabled preflight-style-disabled>
 			<n-dialog-provider :to="container">
 				<n-loading-bar-provider :to="container">
 					<n-message-provider :to="container">
