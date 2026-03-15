@@ -4,7 +4,7 @@ import CustomNaiveModalWrapper from '@/components/custom/naive/modal-wrapper.vue
 import CustomNaivePosition from '@/components/custom/naive/position.vue'
 import CustomNaiveVerticalStack from '@/components/custom/naive/vertical-stack.vue'
 import CustomTransitionsFade from '@/components/custom/transitions/fade.vue'
-import { useDatabaseUpdater } from '@/composables/database.ts'
+import { useDatabaseUpdater } from '@/composables/database'
 import databaseConfig from '@/config/database'
 import Database from '@/database'
 import { until } from '@vueuse/core'
