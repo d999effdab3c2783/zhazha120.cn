@@ -27,7 +27,10 @@ export default defineConfig({
 			}
 		}),
 		presetWebFonts({
-			provider: 'none'
+			provider: 'none',
+			fonts: {
+				sans: ['zhazha120']
+			}
 		})
 	],
 	transformers: [
