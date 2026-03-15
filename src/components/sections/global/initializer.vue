@@ -89,7 +89,9 @@ onBeforeMount(async () => {
 			</template>
 
 			<template v-else>
-				<n-result status="error" title="初始化异常 请联系渣渣"/>
+				<custom-naive-position class="h-screen" placement="center">
+					<n-result status="error" title="初始化异常 请联系渣渣"/>
+				</custom-naive-position>
 			</template>
 		</template>
 	</custom-transitions-fade>
