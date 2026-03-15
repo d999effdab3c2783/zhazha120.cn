@@ -80,7 +80,7 @@ const currentYear = now.getFullYear()
 					<custom-naive-position :size="0" class="h-full" placement="center">
 						<n-icon class="size-6 i-stash:version"/>
 
-						<custom-redirect :href="(`${commit_repository}/commits/${sha}`)">
+						<custom-redirect :href="(`${commit_repository}/commit/${sha}`)">
 							<n-text type="primary">{{ sha.substring(0, 7) }}</n-text>
 						</custom-redirect>
 					</custom-naive-position>
