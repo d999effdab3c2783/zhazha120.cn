@@ -2,14 +2,8 @@
 @use '@unocss/reset/sanitize/assets.css';
 
 @font-face {
-	font-family: zhazha120;
-	src: local('YoZai'),
-	local('DingTalk-JinBuTi'),
-	local('DingTalk Sans'),
-	local('HarmonyOS Sans SC'),
-	url('@/assets/fonts/Yozai-Regular.woff2') format('woff2'),
-	url('@/assets/fonts/Yozai-Regular.woff') format('woff'),
-	url('@/assets/fonts/Yozai-Regular.ttf') format('truetype');
+	font-family: 'Yozai';
+	src: url('@/assets/fonts/Yozai-Regular.ttf');
 	font-display: swap;
 }
 
