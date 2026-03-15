@@ -32,6 +32,7 @@ onBeforeMount(async () => {
 		if ( databaseUpdater.canSilentUpdate.value ) {
 			loading.value = false
 			success.value = true
+			Database.instance.ready.value = true
 		}
 
 		if ( await databaseUpdater.check() ) {
