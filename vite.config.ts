@@ -32,7 +32,6 @@ export default defineConfig({
 		}
 	},
 	plugins: [
-		// Legacy(),
 		Info(),
 		UnoCSS(),
 		Vue()
