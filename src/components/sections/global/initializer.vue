@@ -1,78 +1,67 @@
 <script lang="ts" setup>
 import 'dexie-export-import'
+import CustomNaiveModalWrapper from '@/components/custom/naive/modal-wrapper.vue'
 import CustomNaivePosition from '@/components/custom/naive/position.vue'
 import CustomNaiveVerticalStack from '@/components/custom/naive/vertical-stack.vue'
 import CustomTransitionsFade from '@/components/custom/transitions/fade.vue'
-import config from '@/config/database'
-import database from '@/database'
-import { alova } from '@/shared/alova'
-import { initialized } from '@/shared/global.ts'
-import { decompressBlob } from '@/utils/blob'
-import { useStorage } from '@vueuse/core'
+import { useDatabaseUpdater } from '@/composables/database.ts'
+import databaseConfig from '@/config/database'
+import Database from '@/database'
+import { until } from '@vueuse/core'
 import { NResult, NSpin, NText } from 'naive-ui'
-import { onBeforeMount, ref } from 'vue'
+import { isNonNullish } from 'remeda'
+import { onBeforeMount, ref, useTemplateRef } from 'vue'
 
-const database_url = '/v4.zhazha120-db'
-
-const cache_database_etag = useStorage<string>('database.etag', null)
-const cache_database_last_modified = useStorage<string>('database.last_modified', null)
-const cache_content_length = useStorage<string>('database.content_length', null)
+const updateModalRef = useTemplateRef('updateModalRef')
+const databaseUpdater = useDatabaseUpdater()
 
 const loading = ref(true)
 const success = ref(false)
 
 onBeforeMount(async () => {
-	if ( import.meta.env.DEV ) {
+	if ( !import.meta.env.DEV ) {
 		loading.value = false
 		success.value = true
-		initialized.value = true
 		return
 	}
 
+	await until(databaseUpdater.canSilentUpdate).toMatch(isNonNullish)
+
 	try {
-		const database_information = await alova.Head<Response>(database_url).send()
+		if ( databaseUpdater.canSilentUpdate.value ) {
+			loading.value = false
+			success.value = true
+		}
 
-		const last_modified = database_information.headers.get('Last-Modified')
-		const etag = database_information.headers.get('ETag')
-		const content_length = database_information.headers.get('Content-Length')
+		if ( await databaseUpdater.check() ) {
+			if ( databaseUpdater.canSilentUpdate.value ) {
+				if ( !databaseUpdater.canSkip.value ) {
+					await databaseUpdater.forceUpdate()
+					return
+				}
 
-		if (
-			last_modified !== cache_database_last_modified.value ||
-			etag !== cache_database_etag.value ||
-			content_length !== cache_content_length.value
-		) {
-			cache_database_last_modified.value = last_modified
-			cache_database_etag.value = etag
-			cache_content_length.value = content_length
-
-			await database.instance.delete()
-			await database.instance.open()
-
-			const database_data = await alova.Get<Response>(database_url).send()
-
-			if ( database_data.ok ) {
-				const blob = await database_data.blob()
-				const processed = await decompressBlob(blob, config.compression_format)
-
-				await database.instance.import(processed)
-
-				success.value = true
+				if ( isNonNullish(updateModalRef.value) ) {
+					updateModalRef.value.show()
+				}
 
 				return
 			}
 
-			return
+			await databaseUpdater.update()
 		}
-
-		success.value = true
 	} finally {
 		loading.value = false
-		initialized.value = true
+		success.value = true
+		Database.instance.ready.value = true
 	}
 })
 </script>
 
 <template>
+	<custom-naive-modal-wrapper ref="updateModalRef" :negative-text="(databaseUpdater.canSkip ? '跳过' : undefined)" positive-text="现在更新" preset="dialog" title="检测到更新" @positive-click="databaseUpdater.forceUpdate()" @negative-click="databaseUpdater.skip()">
+		<n-text>剩余 {{ databaseConfig.max_updater_skip_count - databaseUpdater.skipUpdaterCounter.value }} 次跳过更新</n-text>
+	</custom-naive-modal-wrapper>
+
 	<custom-transitions-fade appear mode="out-in">
 		<template v-if="loading">
 			<custom-naive-position class="h-screen" placement="center">

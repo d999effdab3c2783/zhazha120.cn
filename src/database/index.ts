@@ -26,8 +26,11 @@ import ToolsKeyAccuracyCalculatorMap from '@/database/tables/tools_key_accuracy_
 import ToolsKeyAccuracyCalculatorPreset from '@/database/tables/tools_key_accuracy_calculator_preset'
 import { Dexie, type EntityTable } from 'dexie'
 import { isNullish } from 'remeda'
+import { ref } from 'vue'
 
 export default class Database extends Dexie {
+	readonly ready = ref(false)
+
 	registry!: EntityTable<Registry, 'id'>
 	friend_links!: EntityTable<FriendLink, 'id'>
 	self_contacts!: EntityTable<SelfContact, 'id'>
