@@ -1,3 +1,4 @@
+import Legacy from '@vitejs/plugin-legacy'
 import Vue from '@vitejs/plugin-vue'
 import { resolve } from 'node:path'
 import UnoCSS from 'unocss/vite'
@@ -32,6 +33,7 @@ export default defineConfig({
 		}
 	},
 	plugins: [
+		Legacy(),
 		Info(),
 		UnoCSS(),
 		Vue()
