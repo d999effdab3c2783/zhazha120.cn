@@ -29,7 +29,7 @@ export default defineConfig({
 		presetWebFonts({
 			provider: 'none',
 			fonts: {
-				sans: ['DingTalk Sans', 'HarmonyOS Sans SC', 'Yozai']
+				sans: ['Yozai', 'DingTalk Sans', 'HarmonyOS Sans SC']
 			}
 		})
 	],
