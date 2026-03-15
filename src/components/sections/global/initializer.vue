@@ -19,9 +19,10 @@ const loading = ref(true)
 const success = ref(false)
 
 onBeforeMount(async () => {
-	if ( !import.meta.env.DEV ) {
+	if ( import.meta.env.DEV ) {
 		loading.value = false
 		success.value = true
+		Database.instance.ready.value = true
 		return
 	}
 
