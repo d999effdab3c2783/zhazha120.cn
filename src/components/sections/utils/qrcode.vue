@@ -2,6 +2,7 @@
 import CustomNaiveAutoStack from '@/components/custom/naive/auto-stack.vue'
 import CustomNaiveButton from '@/components/custom/naive/button.vue'
 import CustomModalWrapper from '@/components/custom/naive/modal-wrapper.vue'
+import CustomNaivePosition from '@/components/custom/naive/position.vue'
 import CustomNaiveVerticalStack from '@/components/custom/naive/vertical-stack.vue'
 import { useZodRegistry } from '@/composables/database'
 import { useSync } from '@/composables/ref'
@@ -62,9 +63,9 @@ useSync([
 
 			<n-divider/>
 
-			<n-element class="mx-auto">
+			<custom-naive-position placement="center">
 				<n-qr-code class="box-content" v-bind="config"/>
-			</n-element>
+			</custom-naive-position>
 
 			<n-divider/>
 
