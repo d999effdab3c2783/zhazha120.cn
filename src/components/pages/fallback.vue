@@ -6,11 +6,12 @@ import CustomNaiveVerticalStack from '@/components/custom/naive/vertical-stack.v
 import CustomVueBitsFuzzyText from '@/components/custom/vue-bits/fuzzy-text.vue'
 import { useRouterNavigation } from '@/composables/router'
 import { isMobile } from '@/shared/responsive'
-import { NText } from 'naive-ui'
+import { NText, useThemeVars } from 'naive-ui'
 import { isNonNullish } from 'remeda'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
+const themeVars = useThemeVars()
 const routerNavigation = useRouterNavigation()
 const firstPath = route.fullPath.split('/')[1]
 </script>
@@ -18,7 +19,9 @@ const firstPath = route.fullPath.split('/')[1]
 <template>
 	<custom-naive-position class="h-screen" placement="center">
 		<custom-naive-vertical-stack :size="30" align="center">
-			<custom-vue-bits-fuzzy-text :font-size="isMobile ? 60 : 120">无内容</custom-vue-bits-fuzzy-text>
+			<n-text :depth="3">{{ $route.fullPath }}</n-text>
+
+			<custom-vue-bits-fuzzy-text :color="themeVars.textColorBase" :font-size="isMobile ? 60 : 120">无内容</custom-vue-bits-fuzzy-text>
 
 			<template v-if="isNonNullish(firstPath) && isNonNullish($router.resolve({ path: `/${firstPath}` }).name)">
 				<custom-naive-vertical-stack align="center">

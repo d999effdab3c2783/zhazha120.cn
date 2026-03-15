@@ -1,4 +1,3 @@
-import { isEmptyish } from 'remeda'
 import { useRouter } from 'vue-router'
 
 export const useRouterNavigation = () => {
@@ -6,9 +5,9 @@ export const useRouterNavigation = () => {
 
 	return {
 		async back() {
-			if ( isEmptyish(history) ) {
+			if ( history.length <= 1 ) {
 				await router.push({
-					name: '首页'
+					path: '/'
 				})
 
 				return
