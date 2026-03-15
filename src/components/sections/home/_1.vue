@@ -18,7 +18,7 @@ const emits = defineEmits<{
 const containerRef = useTemplateRef<ComponentPublicInstance>('containerRef')
 const containerVisibility = useElementVisibility(containerRef)
 
-const show_intro = useHasRegistry('intro.*')
+const showIntro = useHasRegistry('intro.*')
 
 const handleDown = async () => {
 	emits('down')
@@ -31,7 +31,7 @@ const handleDown = async () => {
 			<sections-home-background/>
 		</template>
 
-		<template v-if="show_intro">
+		<template v-if="showIntro">
 			<n-element class="size-full relative z-120">
 				<sections-home-intro/>
 			</n-element>

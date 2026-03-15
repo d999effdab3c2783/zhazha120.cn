@@ -31,13 +31,13 @@ const component = computed(() => {
 			CustomNaiveButton
 		},
 		setup() {
-			const public_assets = usePublicAssets()
+			const publicAssets = usePublicAssets()
 
 			return {
 				isMobile,
 				isDesktop,
 
-				public_assets
+				publicAssets
 			}
 		},
 		render: compile(props.token.text.trim(), {

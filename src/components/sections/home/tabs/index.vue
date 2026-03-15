@@ -29,28 +29,28 @@ const motions = {
 	} satisfies MotionVariants<string>
 } as const
 
-const show_self = useHasRegistry('self.*')
-const show_dev = useHasRegistry('dev.*')
-const show_furry = useHasRegistry('furry.*')
+const showSelf = useHasRegistry('self.*')
+const showDev = useHasRegistry('dev.*')
+const showFurry = useHasRegistry('furry.*')
 </script>
 
 <template>
-	<template v-if="show_self || show_dev || show_furry">
+	<template v-if="showSelf || showDev || showFurry">
 		<n-element v-motion="motions.container">
 			<n-tabs v-model:value="tab" animated tab-class="cursor-target" type="segment">
-				<template v-if="show_self">
+				<template v-if="showSelf">
 					<n-tab-pane name="self" tab="本体">
 						<sections-home-tabs-self/>
 					</n-tab-pane>
 				</template>
 
-				<template v-if="show_dev">
+				<template v-if="showDev">
 					<n-tab-pane name="dev" tab="开发">
 						<sections-home-tabs-dev/>
 					</n-tab-pane>
 				</template>
 
-				<template v-if="show_furry">
+				<template v-if="showFurry">
 					<n-tab-pane name="furry" tab="福瑞">
 						<sections-home-tabs-furry/>
 					</n-tab-pane>

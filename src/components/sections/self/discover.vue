@@ -17,12 +17,12 @@ const items = useDatabase<SelfExternalLink[]>(async database => {
 	return database.self_external_links.toArray()
 })
 
-const show_self = useHasRegistry('self.*')
-const show_dev = useHasRegistry('dev.*')
-const show_support = useHasRegistry('support.*')
-const show_game = useHasRegistry('game.*')
-const show_birthday = useHasRegistry('birthday.*')
-const show_furry = useHasRegistry('furry.*')
+const showSelf = useHasRegistry('self.*')
+const showDev = useHasRegistry('dev.*')
+const showSupport = useHasRegistry('support.*')
+const showGame = useHasRegistry('game.*')
+const showBirthday = useHasRegistry('birthday.*')
+const showFurry = useHasRegistry('furry.*')
 </script>
 
 <template>
@@ -40,27 +40,27 @@ const show_furry = useHasRegistry('furry.*')
 
 			<custom-naive-route-button :to="{ path: '/tools' }" icon="i-ant-design:tool-outlined" type="primary"/>
 
-			<template v-if="show_self">
+			<template v-if="showSelf">
 				<custom-naive-route-button :to="{ path: '/self' }" icon="i-ant-design:user-outlined" type="primary"/>
 			</template>
 
-			<template v-if="show_dev">
+			<template v-if="showDev">
 				<custom-naive-route-button :to="{ path: '/dev' }" icon="i-ant-design:code-outlined" type="primary"/>
 			</template>
 
-			<template v-if="show_support">
+			<template v-if="showSupport">
 				<custom-naive-route-button :to="{ path: '/support' }" icon="i-ant-design:heart-outlined" type="primary"/>
 			</template>
 
-			<template v-if="show_game">
+			<template v-if="showGame">
 				<custom-naive-route-button :to="{ path: '/game' }" icon="i-tabler:device-gamepad" type="primary"/>
 			</template>
 
-			<template v-if="show_birthday">
+			<template v-if="showBirthday">
 				<custom-naive-route-button :to="{ path: '/birthday' }" icon="i-mingcute:birthday-2-line" type="primary"/>
 			</template>
 
-			<template v-if="show_furry">
+			<template v-if="showFurry">
 				<custom-naive-route-button :to="{ path: '/furry' }" icon="i-tabler:paw" type="primary"/>
 			</template>
 		</custom-naive-auto-stack>

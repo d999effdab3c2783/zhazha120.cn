@@ -22,7 +22,7 @@ const item = useDatabase<FurryEvent>(async database => {
 	return database.furry_events.get(id.value)
 })
 
-const furry_characters = useDatabase<FurryCharacter[]>(async database => {
+const furryCharacters = useDatabase<FurryCharacter[]>(async database => {
 	if ( isNullish(item.value) || !isArray(item.value.furry_character_ids) || isEmptyish(item.value.furry_character_ids) ) {
 		return
 	}
@@ -38,10 +38,10 @@ const furry_characters = useDatabase<FurryCharacter[]>(async database => {
 		<template v-if="isNonNullish(item)">
 			<sections-furry-event :item="item"/>
 
-			<template v-if="isArray(item.furry_character_ids) && !isEmptyish(item.furry_character_ids) && !isEmptyish(furry_characters)">
+			<template v-if="isArray(item.furry_character_ids) && !isEmptyish(item.furry_character_ids) && !isEmptyish(furryCharacters)">
 				<n-divider :title-placement="(isMobile ? 'center' : 'left')">出的设定</n-divider>
 
-				<template v-for="item in furry_characters">
+				<template v-for="item in furryCharacters">
 					<sections-furry-character :item="item"/>
 				</template>
 			</template>

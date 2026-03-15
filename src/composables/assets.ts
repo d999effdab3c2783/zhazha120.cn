@@ -2,7 +2,7 @@ import { isNonNullish } from 'remeda'
 import { type Ref, ref } from 'vue'
 
 export const usePublicAssets = () => {
-	const public_assets = import.meta.glob<{
+	const modules = import.meta.glob<{
 		readonly default: string
 	}>(`@/assets/public/**/*.*`, {
 		query: 'url'
@@ -20,14 +20,14 @@ export const usePublicAssets = () => {
 			const url = ref<string>()
 
 			const prefix = '@/assets/public/'
-			const matched = Object.keys(public_assets)
+			const matched = Object.keys(modules)
 				.find(path => {
-					const asset_path = prop.split(prefix, 2)[1]
-					return path.endsWith(asset_path)
+					const assetPath = prop.split(prefix, 2)[1]
+					return path.endsWith(assetPath)
 				})
 
 			if ( isNonNullish(matched) ) {
-				public_assets[matched]()
+				modules[matched]()
 					.then(module => {
 						url.value = module.default
 					})

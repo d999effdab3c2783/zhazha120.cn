@@ -7,9 +7,9 @@ defineProps<{
 	readonly token: Tokens.Generic | Tokens.Image
 }>()
 
-const public_assets = usePublicAssets()
+const publicAssets = usePublicAssets()
 </script>
 
 <template>
-	<n-image :alt="token.text" :src="public_assets[token.href].value ?? token.href"/>
+	<n-image :alt="token.text" :src="publicAssets[token.href].value ?? token.href"/>
 </template>

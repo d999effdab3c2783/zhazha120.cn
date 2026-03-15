@@ -9,21 +9,21 @@ import { z } from 'zod'
 
 // @unocss-include
 
+const themes: Theme[] = [
+	{
+		icon: 'i-tabler:sun',
+		name: '浅色',
+		value: 'light'
+	},
+	{
+		icon: 'i-tabler:moon',
+		name: '深色',
+		value: 'dark'
+	}
+]
+
 export const useThemeStore = defineStore('theme', () => {
 	const osTheme = ref(useOsTheme().value)
-
-	const themes: Theme[] = [
-		{
-			icon: 'i-tabler:sun',
-			name: '浅色',
-			value: 'light'
-		},
-		{
-			icon: 'i-tabler:moon',
-			name: '深色',
-			value: 'dark'
-		}
-	]
 
 	const nextTheme = computed(() => {
 		const currentIndex = themes.findIndex(theme => {
@@ -135,44 +135,44 @@ export const useThemeStore = defineStore('theme', () => {
 	})
 
 	const themeOverrides = computed<GlobalThemeOverrides>(() => {
-		const _primaryColors = isNonNullish(primaryColors.value) ? primaryColors.value : []
-		const _surfaceColors = isNonNullish(surfaceColors.value) ? surfaceColors.value : []
+		const realPrimaryColors = isNonNullish(primaryColors.value) ? primaryColors.value : []
+		const realSurfaceColors = isNonNullish(surfaceColors.value) ? surfaceColors.value : []
 
 		return {
 			common: {
-				primaryColor: _primaryColors[5],
-				primaryColorHover: _primaryColors[4],
-				primaryColorSuppl: _primaryColors[4],
-				primaryColorPressed: _primaryColors[6]
+				primaryColor: realPrimaryColors[5],
+				primaryColorHover: realPrimaryColors[4],
+				primaryColorSuppl: realPrimaryColors[4],
+				primaryColorPressed: realPrimaryColors[6]
 			},
 			Layout: {
-				color: _surfaceColors[0],
-				siderColor: _surfaceColors[1],
-				footerColor: _surfaceColors[2]
+				color: realSurfaceColors[0],
+				siderColor: realSurfaceColors[2],
+				footerColor: realSurfaceColors[1]
 			},
 			Card: {
-				color: _surfaceColors[1],
-				colorModal: _surfaceColors[2],
-				colorEmbedded: _surfaceColors[2],
-				colorEmbeddedModal: _surfaceColors[3],
-				actionColor: _surfaceColors[3]
+				color: realSurfaceColors[1],
+				colorModal: realSurfaceColors[1],
+				colorEmbedded: realSurfaceColors[2],
+				colorEmbeddedModal: realSurfaceColors[2],
+				actionColor: realSurfaceColors[3]
 			},
 			Table: {
-				borderColor: _surfaceColors[2],
-				thColor: _surfaceColors[4],
-				tdColor: _surfaceColors[3]
+				borderColor: realSurfaceColors[2],
+				thColor: realSurfaceColors[4],
+				tdColor: realSurfaceColors[3]
 			},
 			DataTable: {
-				borderColor: _surfaceColors[2],
-				thColor: _surfaceColors[4],
-				tdColor: _surfaceColors[5],
-				tdColorHover: _surfaceColors[3]
+				borderColor: realSurfaceColors[2],
+				thColor: realSurfaceColors[4],
+				tdColor: realSurfaceColors[3],
+				tdColorHover: realSurfaceColors[4]
 			},
 			Popover: {
-				color: _surfaceColors[5]
+				color: realSurfaceColors[3]
 			},
 			Tabs: {
-				tabColorSegment: _primaryColors[5]
+				tabColorSegment: realPrimaryColors[5]
 			}
 		}
 	})

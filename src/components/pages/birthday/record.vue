@@ -39,7 +39,7 @@ const item = useDatabase<BirthdayRecord>(async database => {
 		.first()
 })
 
-const is_min_age = computed(() => {
+const isMinAge = computed(() => {
 	if ( isNullish(age.value) || isNullish(min_age.value) ) {
 		return
 	}
@@ -47,7 +47,7 @@ const is_min_age = computed(() => {
 	return age.value < min_age.value
 })
 
-const real_min_age_message = computed(() => {
+const realMinAgeMessage = computed(() => {
 	if ( isNullish(age) || isNullish(min_age_message.value) ) {
 		return
 	}
@@ -58,7 +58,7 @@ const real_min_age_message = computed(() => {
 	)
 })
 
-const is_max_age = computed(() => {
+const isMaxAge = computed(() => {
 	if ( isNullish(age.value) || isNullish(max_age.value) ) {
 		return
 	}
@@ -66,7 +66,7 @@ const is_max_age = computed(() => {
 	return age.value > max_age.value
 })
 
-const real_max_age_message = computed(() => {
+const realMaxAgeMessage = computed(() => {
 	if ( isNullish(age.value) || isNullish(max_age_message.value) ) {
 		return
 	}
@@ -92,13 +92,13 @@ const real_max_age_message = computed(() => {
 
 		<template v-else>
 			<n-card size="small">
-				<template v-if="is_min_age || is_max_age">
-					<template v-if="is_min_age">
-						<n-result :description="real_min_age_message" status="error" title="无结果"/>
+				<template v-if="isMinAge || isMaxAge">
+					<template v-if="isMinAge">
+						<n-result :description="realMinAgeMessage" status="error" title="无结果"/>
 					</template>
 
-					<template v-if="is_max_age">
-						<n-result :description="real_max_age_message" status="error" title="无结果"/>
+					<template v-if="isMaxAge">
+						<n-result :description="realMaxAgeMessage" status="error" title="无结果"/>
 					</template>
 				</template>
 

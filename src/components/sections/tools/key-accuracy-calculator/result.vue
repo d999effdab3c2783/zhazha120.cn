@@ -34,7 +34,7 @@ const passed = computed(() => {
 	return filled.value && keyAccuracyCalculatorStore.inputs.at(-1)! >= keyAccuracyCalculatorStore.editPreset.require_accuracy
 })
 
-const share_lines = computed(() => {
+const shareLines = computed(() => {
 	if ( isNullish(keyAccuracyCalculatorStore.result) ) {
 		return
 	}
@@ -100,14 +100,14 @@ const share_lines = computed(() => {
 								<n-text :depth="3">好可惜 就差 {{ (keyAccuracyCalculatorStore.editPreset.require_accuracy - keyAccuracyCalculatorStore.inputs.at(-1)!).toFixed(2) }}</n-text>
 							</template>
 
-							<template v-if="filled && isNonNullish(share_lines)">
+							<template v-if="filled && isNonNullish(shareLines)">
 								<custom-naive-modal-wrapper preset="card" size="small" title="分享">
 									<template #trigger="{ toggle }">
 										<custom-naive-button class="mt-4" icon="i-tabler:share" @click="toggle">告诉别人</custom-naive-button>
 									</template>
 
 									<custom-naive-vertical-stack>
-										<template v-for="item in share_lines">
+										<template v-for="item in shareLines">
 											<n-card embedded size="small">
 												<n-text class="whitespace-pre-line">{{ item }}</n-text>
 
