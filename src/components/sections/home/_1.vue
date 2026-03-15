@@ -32,7 +32,9 @@ const handleDown = async () => {
 		</template>
 
 		<template v-if="show_intro">
-			<sections-home-intro/>
+			<n-element class="size-full relative z-120">
+				<sections-home-intro/>
+			</n-element>
 		</template>
 
 		<sections-home-down-indicator @down="handleDown"/>
