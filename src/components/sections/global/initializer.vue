@@ -7,10 +7,11 @@ import CustomTransitionsFade from '@/components/custom/transitions/fade.vue'
 import { useDatabaseUpdater } from '@/composables/database'
 import databaseConfig from '@/config/database'
 import Database from '@/database'
+import { isMobile } from '@/shared/responsive'
 import { until } from '@vueuse/core'
 import { NResult, NSpin, NText } from 'naive-ui'
 import { isNonNullish } from 'remeda'
-import { onBeforeMount, ref, useTemplateRef } from 'vue'
+import { onMounted, ref, useTemplateRef } from 'vue'
 
 const updateModalRef = useTemplateRef('updateModalRef')
 const databaseUpdater = useDatabaseUpdater()
@@ -18,7 +19,7 @@ const databaseUpdater = useDatabaseUpdater()
 const loading = ref(true)
 const success = ref(false)
 
-onBeforeMount(async () => {
+onMounted(async () => {
 	if ( import.meta.env.DEV ) {
 		loading.value = false
 		success.value = true
@@ -60,7 +61,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-	<custom-naive-modal-wrapper ref="updateModalRef" :negative-text="(databaseUpdater.canSkip ? '跳过' : undefined)" positive-text="现在更新" preset="dialog" title="检测到更新" @positive-click="databaseUpdater.forceUpdate()" @negative-click="databaseUpdater.skip()">
+	<custom-naive-modal-wrapper ref="updateModalRef" :class="{ '!w-full !max-w-full': isMobile }" :negative-text="(databaseUpdater.canSkip ? '跳过' : undefined)" positive-text="现在更新" preset="dialog" title="检测到更新" @positive-click="databaseUpdater.forceUpdate()" @negative-click="databaseUpdater.skip()">
 		<n-text>剩余 {{ databaseConfig.max_updater_skip_count - databaseUpdater.skipUpdaterCounter.value }} 次跳过更新</n-text>
 	</custom-naive-modal-wrapper>
 
