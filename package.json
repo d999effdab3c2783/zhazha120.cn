@@ -52,7 +52,7 @@
     "unplugin-info": "^1.2.4",
     "vite": "^8.0.1",
     "vue": "^3.5.30",
-    "vue-router": "^5.0.3",
+    "vue-router": "^5.0.4",
     "vue-tsc": "^3.2.6",
     "zod": "^4.3.6"
   }
