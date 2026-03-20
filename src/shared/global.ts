@@ -1,18 +1,18 @@
-import App from '@/components/app.vue'
-import routes from '@/config/routes'
-import { createPinia } from 'pinia'
-import { createApp, h } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import App from "@/components/app.vue";
+import routes from "@/config/routes";
+import { createPinia } from "pinia";
+import { createApp, h } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
 
-export const container = document.createElement('div')
+export const container = document.createElement("div");
 
 export const app = createApp({
-	render: () => h(App)
-})
+    render: () => h(App),
+});
 
-export const pinia = createPinia()
+export const pinia = createPinia();
 
 export const router = createRouter({
-	history: createWebHistory(),
-	routes
-})
+    history: createWebHistory(),
+    routes,
+});

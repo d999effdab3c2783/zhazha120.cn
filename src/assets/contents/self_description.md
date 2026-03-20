@@ -1,5 +1,4 @@
 ```vue template
-
 <custom-naive-vertical-stack>
 	<n-text :depth="3">不太活泼 有点无聊 对大多数事情没有太多反应 不太会说话 不太会聊天 不太会表达自己</n-text>
 
@@ -23,5 +22,4 @@
 	<n-text depth="3">很多时候是敷衍回答</n-text>
 	<n-text depth="3">可以加 可以躺列 可以提问 但不保证一定有解决方案</n-text>
 </custom-naive-vertical-stack>
-
 ```

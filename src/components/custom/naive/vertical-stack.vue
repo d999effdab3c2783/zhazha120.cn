@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { NFlex } from 'naive-ui'
+    import { NFlex } from "naive-ui";
 
-defineOptions({
-	name: 'CustomNaiveVerticalStack'
-})
+    defineOptions({
+        name: "CustomNaiveVerticalStack",
+    });
 </script>
 
 <template>
-	<n-flex size="small" v-bind="$attrs" vertical>
-		<slot/>
-	</n-flex>
+    <n-flex size="small" v-bind="$attrs" vertical>
+        <slot />
+    </n-flex>
 </template>

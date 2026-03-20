@@ -1,18 +1,19 @@
-@use '@unocss/reset/sanitize/sanitize.css';
-@use '@unocss/reset/sanitize/assets.css';
+@use "@unocss/reset/sanitize/sanitize.css";
+@use "@unocss/reset/sanitize/assets.css";
 
 @font-face {
-	font-family: zhazha120;
-	src: local('Yozai'),
-	local('DingTalk-JinBuTi'),
-	local('DingTalk Sans'),
-	local('HarmonyOS Sans SC'),
-	url('@/assets/fonts/Yozai-Regular.woff2') format('woff2'),
-	url('@/assets/fonts/Yozai-Regular.woff') format('woff'),
-	url('@/assets/fonts/Yozai-Regular.ttf') format('truetype');
-	font-display: swap;
+    font-family: zhazha120;
+    src:
+        local("Yozai"),
+        local("DingTalk-JinBuTi"),
+        local("DingTalk Sans"),
+        local("HarmonyOS Sans SC"),
+        url("@/assets/fonts/Yozai-Regular.woff2") format("woff2"),
+        url("@/assets/fonts/Yozai-Regular.woff") format("woff"),
+        url("@/assets/fonts/Yozai-Regular.ttf") format("truetype");
+    font-display: swap;
 }
 
 :root {
-	@apply font-sans;
+    @apply font-sans;
 }

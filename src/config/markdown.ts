@@ -1,3 +1,3 @@
 export default {
-	key: 120
-} as const
+    key: 120,
+} as const;

@@ -1,4 +1,4 @@
-declare module 'vue-bundler' {
-	import { compile } from 'vue'
-	export { compile }
+declare module "vue-bundler" {
+    import { compile } from "vue";
+    export { compile };
 }

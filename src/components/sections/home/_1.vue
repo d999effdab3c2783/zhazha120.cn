@@ -1,42 +1,42 @@
 <script lang="ts" setup>
-import SectionsHomeBackground from '@/components/sections/home/background.vue'
-import SectionsHomeDownIndicator from '@/components/sections/home/down-indicator.vue'
-import SectionsHomeIntro from '@/components/sections/home/intro.vue'
-import { useHasRegistry } from '@/composables/database'
-import { useElementVisibility } from '@vueuse/core'
-import { NElement } from 'naive-ui'
-import { type ComponentPublicInstance, useTemplateRef } from 'vue'
+    import SectionsHomeBackground from "@/components/sections/home/background.vue";
+    import SectionsHomeDownIndicator from "@/components/sections/home/down-indicator.vue";
+    import SectionsHomeIntro from "@/components/sections/home/intro.vue";
+    import { useHasRegistry } from "@/composables/database";
+    import { useElementVisibility } from "@vueuse/core";
+    import { NElement } from "naive-ui";
+    import { type ComponentPublicInstance, useTemplateRef } from "vue";
 
-defineOptions({
-	name: 'SectionsHome1'
-})
+    defineOptions({
+        name: "SectionsHome1",
+    });
 
-const emits = defineEmits<{
-	(event: 'down'): void
-}>()
+    const emits = defineEmits<{
+        (event: "down"): void;
+    }>();
 
-const containerRef = useTemplateRef<ComponentPublicInstance>('containerRef')
-const containerVisibility = useElementVisibility(containerRef)
+    const containerRef = useTemplateRef<ComponentPublicInstance>("containerRef");
+    const containerVisibility = useElementVisibility(containerRef);
 
-const showIntro = useHasRegistry('intro.*')
+    const showIntro = useHasRegistry("intro.*");
 
-const handleDown = async () => {
-	emits('down')
-}
+    const handleDown = async () => {
+        emits("down");
+    };
 </script>
 
 <template>
-	<n-element ref="containerRef" class="relative h-screen">
-		<template v-if="containerVisibility">
-			<sections-home-background/>
-		</template>
+    <n-element ref="containerRef" class="relative h-screen">
+        <template v-if="containerVisibility">
+            <sections-home-background />
+        </template>
 
-		<template v-if="showIntro">
-			<n-element class="size-full relative z-120">
-				<sections-home-intro/>
-			</n-element>
-		</template>
+        <template v-if="showIntro">
+            <n-element class="size-full relative z-120">
+                <sections-home-intro />
+            </n-element>
+        </template>
 
-		<sections-home-down-indicator @down="handleDown"/>
-	</n-element>
+        <sections-home-down-indicator @down="handleDown" />
+    </n-element>
 </template>

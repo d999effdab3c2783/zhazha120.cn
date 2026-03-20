@@ -1,24 +1,24 @@
 <script lang="ts" setup>
-import { NButton, NIcon } from 'naive-ui'
-import { isNonNullish } from 'remeda'
+    import { NButton, NIcon } from "naive-ui";
+    import { isNonNullish } from "remeda";
 
-defineOptions({
-	name: 'CustomNaiveButton'
-})
+    defineOptions({
+        name: "CustomNaiveButton",
+    });
 
-defineProps<{
-	readonly icon?: string
-}>()
+    defineProps<{
+        readonly icon?: string;
+    }>();
 </script>
 
 <template>
-	<n-button v-bind="$attrs">
-		<template v-if="isNonNullish($slots.icon) || isNonNullish(icon)" #icon>
-			<slot name="icon">
-				<n-icon :class="icon"/>
-			</slot>
-		</template>
+    <n-button v-bind="$attrs">
+        <template v-if="isNonNullish($slots.icon) || isNonNullish(icon)" #icon>
+            <slot name="icon">
+                <n-icon :class="icon" />
+            </slot>
+        </template>
 
-		<slot/>
-	</n-button>
+        <slot />
+    </n-button>
 </template>

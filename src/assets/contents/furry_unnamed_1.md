@@ -1,5 +1,4 @@
 ```vue template
-
 <n-flex size="small" vertical>
 	<n-card size="small" title="资料">
 		<custom-naive-vertical-stack :align="(isMobile ? 'center' : 'start')">
@@ -47,5 +46,4 @@
 		</custom-naive-vertical-stack>
 	</n-card>
 </n-flex>
-
 ```

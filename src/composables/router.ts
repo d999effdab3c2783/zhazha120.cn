@@ -1,19 +1,19 @@
-import { useRouter } from 'vue-router'
+import { useRouter } from "vue-router";
 
 export const useRouterNavigation = () => {
-	const router = useRouter()
+    const router = useRouter();
 
-	return {
-		async back() {
-			if ( history.length <= 1 ) {
-				await router.push({
-					path: '/'
-				})
+    return {
+        async back() {
+            if (history.length <= 1) {
+                await router.push({
+                    path: "/",
+                });
 
-				return
-			}
+                return;
+            }
 
-			router.back()
-		}
-	} as const
-}
+            router.back();
+        },
+    } as const;
+};

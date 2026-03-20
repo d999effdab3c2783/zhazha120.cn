@@ -1,29 +1,28 @@
-import type { Dexie } from 'dexie'
+import type { Dexie } from "dexie";
 
 // @unocss-include
 
 export default async (database: Dexie) => {
-	database.table('self_external_links')
-		.bulkAdd([
-			{
-				icon: 'i-tdesign:usergroup-add',
-				name: '个人群',
-				href: 'https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3'
-			},
-			{
-				icon: 'i-mingcute:live-line',
-				name: '直播间',
-				href: 'http://live.zhazha120.cn'
-			},
-			{
-				icon: 'i-ant-design:cloud-download-outlined',
-				name: '云盘',
-				href: 'https://pan.zhazha120.cn'
-			},
-			{
-				icon: 'i-ant-design:mail-outlined',
-				name: '邮箱',
-				href: 'http://mail.zhazha120.cn'
-			}
-		])
-}
+    database.table("self_external_links").bulkAdd([
+        {
+            icon: "i-tdesign:usergroup-add",
+            name: "个人群",
+            href: "https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3",
+        },
+        {
+            icon: "i-mingcute:live-line",
+            name: "直播间",
+            href: "http://live.zhazha120.cn",
+        },
+        {
+            icon: "i-ant-design:cloud-download-outlined",
+            name: "云盘",
+            href: "https://pan.zhazha120.cn",
+        },
+        {
+            icon: "i-ant-design:mail-outlined",
+            name: "邮箱",
+            href: "http://mail.zhazha120.cn",
+        },
+    ]);
+};

@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import { NInputNumber } from 'naive-ui'
+    import { NInputNumber } from "naive-ui";
 
-defineProps<{
-	readonly value: number
-}>()
+    defineProps<{
+        readonly value: number;
+    }>();
 
-const emits = defineEmits<{
-	(event: 'update:value', value: number | null): void
-}>()
+    const emits = defineEmits<{
+        (event: "update:value", value: number | null): void;
+    }>();
 
-const handleUpdateValue = async (newValue: number | null) => {
-	emits('update:value', newValue)
-}
+    const handleUpdateValue = async (newValue: number | null) => {
+        emits("update:value", newValue);
+    };
 </script>
 
 <template>
-	<n-input-number :value="value" @update:value="handleUpdateValue"/>
+    <n-input-number :value="value" @update:value="handleUpdateValue" />
 </template>

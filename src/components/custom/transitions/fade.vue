@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-defineOptions({
-	name: 'CustomTransitionsFade'
-})
+    defineOptions({
+        name: "CustomTransitionsFade",
+    });
 </script>
 
 <template>
-	<transition name="v-fade">
-		<slot/>
-	</transition>
+    <transition name="v-fade">
+        <slot />
+    </transition>
 </template>
 
 <style lang="scss">
-@use '@/styles/transitions/fade';
+    @use "@/styles/transitions/fade";
 </style>

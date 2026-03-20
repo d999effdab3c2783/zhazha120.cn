@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import type { Tokens } from 'marked'
-import { NHr } from 'naive-ui'
+    import type { Tokens } from "marked";
+    import { NHr } from "naive-ui";
 
-defineProps<{
-	readonly token: Tokens.Generic | Tokens.Hr
-}>()
+    defineProps<{
+        readonly token: Tokens.Generic | Tokens.Hr;
+    }>();
 </script>
 
 <template>
-	<n-hr/>
+    <n-hr />
 </template>
