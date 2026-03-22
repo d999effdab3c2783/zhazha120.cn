@@ -3,13 +3,15 @@
     import type { Tokens } from "marked";
     import { NImage } from "naive-ui";
 
-    defineProps<{
+    const props = defineProps<{
         readonly token: Tokens.Generic | Tokens.Image;
     }>();
 
     const publicAssets = usePublicAssets();
+
+    const src = publicAssets.find(props.token.href, props.token.href);
 </script>
 
 <template>
-    <n-image :alt="token.text" :src="publicAssets[token.href].value ?? token.href" />
+    <n-image :alt="token.text" :src="src" />
 </template>

@@ -1,36 +1,34 @@
 import { isNonNullish } from "remeda";
-import { type Ref, ref } from "vue";
+import { readonly, shallowRef } from "vue";
 
 export const usePublicAssets = () => {
-    const modules = import.meta.glob<{
+    const prefix = `@/assets/public/`;
+    const imports = import.meta.glob<{
         readonly default: string;
-    }>(`@/assets/public/**/*.*`, {
+    }>(`${prefix}**/*.*`, {
         query: "url",
     });
 
-    return new Proxy({} as Record<string, Ref<string | undefined>>, {
-        get(target, prop: string) {
-            if (prop in target) {
-                return target[prop];
-            }
+    const find = (path: string, defaultPath = "#") => {
+        const result = shallowRef(defaultPath);
 
-            const url = ref<string>();
+        const findImportPath = Object.keys(imports).find((importPath) => {
+            const assetPath = path.split(prefix, 2)[1];
 
-            const prefix = "@/assets/public/";
-            const matched = Object.keys(modules).find((path) => {
-                const assetPath = prop.split(prefix, 2)[1];
-                return path.endsWith(assetPath);
+            return importPath.endsWith(assetPath);
+        });
+
+        if (isNonNullish(findImportPath)) {
+            // oxlint-disable-next-line promise/prefer-await-to-then
+            imports[findImportPath]().then((module) => {
+                result.value = module.default;
             });
+        }
 
-            if (isNonNullish(matched)) {
-                modules[matched]().then((module) => {
-                    url.value = module.default;
-                });
-            }
+        return readonly(result);
+    };
 
-            target[prop] = url;
-
-            return url;
-        },
-    });
+    return {
+        find,
+    };
 };
