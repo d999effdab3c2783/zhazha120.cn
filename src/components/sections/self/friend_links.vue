@@ -28,6 +28,8 @@
             });
         });
     });
+
+    const currentDomain = location.host;
 </script>
 
 <template>
@@ -37,7 +39,7 @@
 
             <custom-naive-vertical-stack :class="{ 'text-center': isMobile }">
                 <template v-for="item in mappedItems">
-                    <custom-redirect :href="item.href">
+                    <custom-redirect :href="item.href.replaceAll('{domain}', currentDomain)">
                         <n-card size="small">
                             <custom-naive-auto-stack align="center">
                                 <template v-if="isNonNullish(item.real_logo)">

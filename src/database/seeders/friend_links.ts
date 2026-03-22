@@ -26,7 +26,7 @@ export default async (database: Dexie) => {
             name: "应龙笔记",
             description: "应龙笔记是一个专注于知识分享的网站",
             logo: `${config.reference_prefix}_logo`,
-            href: "https://www.silverdragon.cn?link=" + location.host,
+            href: `https://www.silverdragon.cn?link={domain}`,
             _logo: await downloadBlob(
                 (await import("@/assets/images/friend_links/silverdragon.webp?url")).default,
             ),
