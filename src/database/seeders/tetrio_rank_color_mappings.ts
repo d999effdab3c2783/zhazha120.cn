@@ -1,7 +1,7 @@
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("tetrio_rank_color_mappings").bulkAdd([
+    await database.table("tetrio_rank_color_mappings").bulkAdd([
         {
             name: "a",
             value: "#46ad51",

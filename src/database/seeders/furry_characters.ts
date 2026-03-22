@@ -3,7 +3,7 @@ import { downloadBlob } from "@/utils/blob";
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("furry_characters").bulkAdd([
+    await database.table("furry_characters").bulkAdd([
         {
             illustration: `${config.reference_prefix}_illustration`,
             name: "(暂无名称)",

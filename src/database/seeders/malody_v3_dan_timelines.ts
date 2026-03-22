@@ -2,7 +2,7 @@ import { createDate } from "@/utils/date";
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("malody_v3_dan_timelines").bulkAdd([
+    await database.table("malody_v3_dan_timelines").bulkAdd([
         {
             name: "Regular 0",
             completed_at: createDate(2023, 11, 24).toISOString(),

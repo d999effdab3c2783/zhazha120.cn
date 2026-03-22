@@ -5,7 +5,7 @@ import { createDate } from "@/utils/date";
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("registry").bulkAdd([
+    await database.table("registry").bulkAdd([
         {
             name: "theme.primary_color",
             value: "#f79a00",

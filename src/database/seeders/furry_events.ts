@@ -7,6 +7,7 @@ import { isNullish } from "remeda";
 export default async (database: Dexie) => {
     const useFurryCharacter = async (name: string, wait = false) => {
         while (true) {
+            // oxlint-disable-next-line no-await-in-loop
             const item = await database
                 .table("furry_characters")
                 .where("name")
@@ -31,7 +32,7 @@ export default async (database: Dexie) => {
         }
     };
 
-    database.table("furry_events").bulkAdd([
+    await database.table("furry_events").bulkAdd([
         {
             cover: `${config.reference_prefix}_cover`,
             name: "兽行迹·沙地生灵诗篇",

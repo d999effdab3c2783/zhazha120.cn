@@ -1,7 +1,7 @@
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("dev_projects").bulkAdd([
+    await database.table("dev_projects").bulkAdd([
         {
             name: "zhazha120.cn",
             href: "https://github.com/d999effdab3c2783/zhazha120.cn",

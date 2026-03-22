@@ -3,7 +3,7 @@ import type { Dexie } from "dexie";
 // @unocss-include
 
 export default async (database: Dexie) => {
-    database.table("dev_stacks").bulkAdd([
+    await database.table("dev_stacks").bulkAdd([
         {
             type: "开发工具",
             name: "IntelliJ IDEA",

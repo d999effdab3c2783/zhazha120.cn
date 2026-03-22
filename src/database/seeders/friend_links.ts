@@ -3,7 +3,7 @@ import { downloadBlob } from "@/utils/blob";
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("friend_links").bulkAdd([
+    await database.table("friend_links").bulkAdd([
         {
             name: "Abnormal Cat",
             description: null,

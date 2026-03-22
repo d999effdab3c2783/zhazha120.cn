@@ -1,7 +1,7 @@
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("dev_awards").bulkAdd([
+    await database.table("dev_awards").bulkAdd([
         {
             name: ["蓝桥杯 第十六届", "软件赛 职业院校组 省赛", "Web 应用开发 一等奖"].join("\n"),
         },

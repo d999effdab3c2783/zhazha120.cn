@@ -3,7 +3,7 @@ import type { Dexie } from "dexie";
 // @unocss-include
 
 export default async (database: Dexie) => {
-    database.table("malody_contacts").bulkAdd([
+    await database.table("malody_contacts").bulkAdd([
         {
             icon: "i-ant-design:profile-outlined",
             name: "看我资料",

@@ -3,7 +3,7 @@ import type { Dexie } from "dexie";
 // @unocss-include
 
 export default async (database: Dexie) => {
-    database.table("self_external_links").bulkAdd([
+    await database.table("self_external_links").bulkAdd([
         {
             icon: "i-tdesign:usergroup-add",
             name: "个人群",

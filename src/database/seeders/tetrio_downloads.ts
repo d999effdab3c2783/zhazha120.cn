@@ -1,7 +1,7 @@
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("tetrio_downloads").bulkAdd([
+    await database.table("tetrio_downloads").bulkAdd([
         {
             name: "下载我当前使用的皮肤",
             href: "https://cdn.zhazha120.cn/download/tetrio_skin.tpse",

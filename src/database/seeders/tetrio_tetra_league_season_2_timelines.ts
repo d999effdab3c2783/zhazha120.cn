@@ -2,7 +2,7 @@ import { createDate } from "@/utils/date";
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
-    database.table("tetrio_tetra_league_season_2_timelines").bulkAdd([
+    await database.table("tetrio_tetra_league_season_2_timelines").bulkAdd([
         {
             rank: "a+",
             archived_at: createDate(2024, 8, 17).toISOString(),
