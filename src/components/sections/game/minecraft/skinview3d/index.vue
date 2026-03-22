@@ -4,7 +4,6 @@
     import CustomNaiveVerticalStack from "@/components/custom/naive/vertical-stack.vue";
     import SectionsGameMinecraftSkinview3dVisibleSwitch from "@/components/sections/game/minecraft/skinview3d/visible-switch.vue";
     import { useZodRegistry } from "@/composables/database";
-    import { useSync } from "@/composables/ref";
     import { XNSelect, XNSelectOption } from "@skit/x.naive-ui";
     import { useElementSize } from "@vueuse/core";
     import {
@@ -29,7 +28,7 @@
         WalkingAnimation,
         WaveAnimation,
     } from "skinview3d";
-    import { onMounted, ref, shallowRef, toRef, useTemplateRef, watch } from "vue";
+    import { onMounted, ref, shallowRef, useTemplateRef, watch } from "vue";
     import { z } from "zod";
 
     defineOptions({
@@ -233,58 +232,83 @@
         },
     );
 
-    useSync([
-        {
-            source: fov,
-            target: toRef(config.value, "fov"),
-        },
-        {
-            source: zoom,
-            target: toRef(config.value, "zoom"),
-        },
-        {
-            source: global_lighting,
-            target: toRef(config.value, "global_lighting"),
-        },
-        {
-            source: camera_lighting,
-            target: toRef(config.value, "camera_lighting"),
-        },
-        {
-            source: auto_rotate,
-            target: toRef(config.value, "auto_rotate"),
-        },
-        {
-            source: auto_rotate_speed,
-            target: toRef(config.value, "auto_rotate_speed"),
-        },
-        {
-            source: animation_type,
-            target: toRef(config.value, "animation_type"),
-        },
-        {
-            source: animation_speed,
-            target: toRef(config.value, "animation_speed"),
-        },
-        {
-            source: skin,
-            target: toRef(config.value, "skin_url"),
-            afterSync: async () => {
+    watch(
+        [
+            fov,
+            zoom,
+            global_lighting,
+            camera_lighting,
+            auto_rotate,
+            auto_rotate_speed,
+            animation_type,
+            animation_speed,
+            skin,
+            panorama,
+            name_tag,
+        ],
+        ([
+            newFov,
+            newZoom,
+            newGlobalLighting,
+            newCameraLighting,
+            newAutoRotate,
+            newAutoRotateSpeed,
+            newAnimationType,
+            newAnimationSpeed,
+            newSkin,
+            newPanorama,
+            newNameTag,
+        ]) => {
+            if (isNonNullish(newFov)) {
+                config.value.fov = newFov;
+            }
+
+            if (isNonNullish(newZoom)) {
+                config.value.zoom = newZoom;
+            }
+
+            if (isNonNullish(newGlobalLighting)) {
+                config.value.global_lighting = newGlobalLighting;
+            }
+
+            if (isNonNullish(newCameraLighting)) {
+                config.value.camera_lighting = newCameraLighting;
+            }
+
+            if (isNonNullish(newAutoRotate)) {
+                config.value.auto_rotate = newAutoRotate;
+            }
+
+            if (isNonNullish(newAutoRotateSpeed)) {
+                config.value.auto_rotate_speed = newAutoRotateSpeed;
+            }
+
+            if (isNonNullish(newAnimationType)) {
+                config.value.animation_type = newAnimationType;
+            }
+
+            if (isNonNullish(newAnimationSpeed)) {
+                config.value.animation_speed = newAnimationSpeed;
+            }
+
+            if (isNonNullish(newSkin)) {
                 config.value.skin_model = "auto-detect";
-            },
-        },
-        {
-            source: panorama,
-            target: toRef(config.value, "background"),
-            afterSync: async () => {
+                config.value.skin_url = newSkin;
+            }
+
+            if (isNonNullish(newPanorama)) {
                 config.value.background_type = "panorama";
-            },
+                config.value.background = newPanorama;
+            }
+
+            if (isNonNullish(newNameTag)) {
+                config.value.name_tag = newNameTag;
+            }
         },
         {
-            source: name_tag,
-            target: toRef(config.value, "name_tag"),
+            immediate: true,
         },
-    ]);
+    );
 
     onMounted(async () => {
         if (isNullish(canvasRef.value)) {

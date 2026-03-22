@@ -7,7 +7,7 @@
     import { useFavicon, useTitle } from "@vueuse/core";
     import { useDialog, useLoadingBar, useMessage, useModal, useNotification } from "naive-ui";
     import { isEmptyish, isNullish, isString } from "remeda";
-    import { computed, onBeforeMount, onMounted } from "vue";
+    import { computed, onBeforeMount, onMounted, watch } from "vue";
     import { useRoute, useRouter } from "vue-router";
     import { z } from "zod";
 
@@ -25,12 +25,27 @@
     const loadingBar = useLoadingBar();
 
     const globalApiStore = useGlobalApiStore();
+    const hasOverlay = useHasOverlay();
 
     const { 0: avatar, 1: name } = useZodRegistry(
         z.object({
             "intro.avatar:0": z.string().describe("file"),
             "intro.name:1": z.string(),
         }),
+    );
+
+    watch(
+        hasOverlay,
+        (newHasOverlay) => {
+            container.removeAttribute("data-lenis-prevent");
+
+            if (newHasOverlay) {
+                container.setAttribute("data-lenis-prevent", "true");
+            }
+        },
+        {
+            immediate: true,
+        },
     );
 
     onMounted(async () => {
@@ -79,16 +94,6 @@
         globalApiStore.modal = modal;
         globalApiStore.notification = notification;
         globalApiStore.loadingBar = loadingBar;
-    });
-
-    onMounted(async () => {
-        useHasOverlay((state) => {
-            container.removeAttribute("data-lenis-prevent");
-
-            if (state) {
-                container.setAttribute("data-lenis-prevent", "true");
-            }
-        });
     });
 
     if (import.meta.env.PROD) {

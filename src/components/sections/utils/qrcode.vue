@@ -5,7 +5,6 @@
     import CustomNaivePosition from "@/components/custom/naive/position.vue";
     import CustomNaiveVerticalStack from "@/components/custom/naive/vertical-stack.vue";
     import { useZodRegistry } from "@/composables/database";
-    import { useSync } from "@/composables/ref";
     import { useThemeStore } from "@/stores/theme";
     import { XNSelect, XNSelectOption } from "@skit/x.naive-ui";
     import {
@@ -18,7 +17,7 @@
         type QrCodeProps,
     } from "naive-ui";
     import { isNonNullish } from "remeda";
-    import { ref, toRef } from "vue";
+    import { ref, watch } from "vue";
     import { z } from "zod";
 
     defineOptions({
@@ -47,12 +46,17 @@
         }),
     );
 
-    useSync([
-        {
-            source: avatar,
-            target: toRef(config.value, "iconSrc"),
+    watch(
+        avatar,
+        (newAvatar) => {
+            if (isNonNullish(newAvatar)) {
+                config.value.iconSrc = newAvatar;
+            }
         },
-    ]);
+        {
+            immediate: true,
+        },
+    );
 </script>
 
 <template>

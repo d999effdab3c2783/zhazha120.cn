@@ -1,19 +1,21 @@
 import { container } from "@/shared/website";
-import type { MaybePromise } from "@/types/utils";
 import { useMutationObserver } from "@vueuse/core";
 import { isNonNullish } from "remeda";
+import { readonly, ref } from "vue";
 
-export const useHasOverlay = (callback: (state: boolean) => MaybePromise<void>) => {
+export const useHasOverlay = () => {
+    const state = ref(false);
+
     useMutationObserver(
         container,
-        async () => {
-            const checks = [document.querySelector(".zhazha120__modal")];
-
-            await callback(checks.some(isNonNullish));
+        () => {
+            state.value = [document.querySelector(".zhazha120__modal")].some(isNonNullish);
         },
         {
             childList: true,
             subtree: true,
         },
     );
+
+    return readonly(state);
 };
