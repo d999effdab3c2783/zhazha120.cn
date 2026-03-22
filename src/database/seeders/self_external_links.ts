@@ -8,6 +8,7 @@ export default async (database: Dexie) => {
             icon: "i-tdesign:usergroup-add",
             name: "个人群",
             href: "https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3",
+            tip: (await import("@/assets/contents/personal_qq_group_tip.md?raw")).default,
         },
         {
             icon: "i-mingcute:live-line",

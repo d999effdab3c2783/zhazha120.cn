@@ -68,7 +68,7 @@ export default class Database extends Dexie {
             friend_links: "++id, logo, name, description, href",
 
             self_contacts: "++id, icon, name, href, tip",
-            self_external_links: "++id, icon, name, href",
+            self_external_links: "++id, icon, name, href, tip",
 
             birthday_records: "++id, age, content",
 

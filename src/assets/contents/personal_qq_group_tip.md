@@ -1,0 +1,43 @@
+你可能会在群里看见这些:
+
+```vue template
+<custom-naive-horizontal-stack>
+  <n-tag>揪耳朵</n-tag>
+  <n-tag>tetr.io</n-tag>
+  <n-tag>爪子</n-tag>
+  <n-tag>摸</n-tag>
+  <n-tag>古茗</n-tag>
+  <n-tag>奶茶</n-tag>
+  <n-tag>猪</n-tag>
+  <n-tag>小狗</n-tag>
+  <n-tag>代码</n-tag>
+  <n-tag>一直呜呜</n-tag>
+  <n-tag>毛</n-tag>
+  <n-tag>我上早八</n-tag>
+  <n-tag>猪鼻</n-tag>
+  <n-tag>戳哭了</n-tag>
+  <n-tag>咬死</n-tag>
+  <n-tag>贴贴</n-tag>
+  <n-tag>晒稿</n-tag>
+  <n-tag>吐槽</n-tag>
+  <n-tag>哭</n-tag>
+  <n-tag>笨狗</n-tag>
+  <n-tag>好喝的</n-tag>
+  <n-tag>狗咬人</n-tag>
+  <n-tag>🐽</n-tag>
+  <n-tag>舞萌</n-tag>
+  <n-tag>抱抱</n-tag>
+  <n-tag>MC</n-tag>
+  <n-tag>BOT</n-tag>
+  <n-tag>xql</n-tag>
+  <n-tag>肉垫</n-tag>
+  <n-tag>戳狗</n-tag>
+  <n-tag>好吃的</n-tag>
+  <n-tag>抽象</n-tag>
+  <n-tag>osu!</n-tag>
+  <n-tag>好饿</n-tag>
+  <n-tag>聚聚</n-tag>
+  <n-tag>摸头</n-tag>
+  <n-tag>mania</n-tag>
+</custom-naive-horizontal-stack>
+```

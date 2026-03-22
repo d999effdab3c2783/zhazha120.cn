@@ -6,4 +6,5 @@ export default class SelfExternalLink extends Entity<Database> {
     icon!: string;
     name!: string;
     href!: string;
+    tip!: string;
 }

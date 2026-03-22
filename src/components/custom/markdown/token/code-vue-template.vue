@@ -7,7 +7,7 @@
     import { usePublicAssets } from "@/composables/assets";
     import { isDesktop, isMobile } from "@/shared/responsive";
     import type { Tokens } from "marked";
-    import { NAlert, NCard, NDivider, NFlex, NImage, NText } from "naive-ui";
+    import { NAlert, NCard, NDivider, NFlex, NImage, NTag, NText } from "naive-ui";
     import { computed, defineComponent } from "vue";
     import { compile } from "vue-bundler";
 
@@ -24,6 +24,7 @@
                 NAlert,
                 NDivider,
                 NImage,
+                NTag,
                 CustomNaiveHorizontalStack,
                 CustomNaiveVerticalStack,
                 CustomNaiveAutoStack,

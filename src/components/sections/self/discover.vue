@@ -6,8 +6,10 @@
     import { useDatabase, useHasRegistry } from "@/composables/database";
     import type SelfExternalLink from "@/database/tables/self_external_link";
     import { isDesktop } from "@/shared/responsive";
-    import { NCard, NDivider } from "naive-ui";
-    import { isEmptyish } from "remeda";
+    import { NButtonGroup, NCard, NDivider } from "naive-ui";
+    import { isEmptyish, isNonNullish } from "remeda";
+    import CustomMarkdown from "@/components/custom/markdown/index.vue";
+    import CustomNaiveModalWrapper from "@/components/custom/naive/modal-wrapper.vue";
 
     defineOptions({
         name: "SectionsSelfDiscover",
@@ -30,9 +32,29 @@
         <custom-naive-auto-stack>
             <template v-if="!isEmptyish(items)">
                 <template v-for="item in items">
-                    <custom-redirect :href="item.href">
-                        <custom-naive-button :icon="item.icon">{{ item.name }}</custom-naive-button>
-                    </custom-redirect>
+                    <n-button-group>
+                        <custom-redirect :href="item.href">
+                            <custom-naive-button :icon="item.icon">{{
+                                item.name
+                            }}</custom-naive-button>
+                        </custom-redirect>
+
+                        <template v-if="isNonNullish(item.tip)">
+                            <custom-naive-modal-wrapper preset="card" title="提示" size="small">
+                                <template #trigger="{ toggle }">
+                                    <custom-naive-button
+                                        @click="toggle"
+                                        class="px-2"
+                                        icon="i-ant-design:question-circle-outlined"
+                                    />
+                                </template>
+
+                                <n-element>
+                                    <custom-markdown :raw="item.tip" />
+                                </n-element>
+                            </custom-naive-modal-wrapper>
+                        </template>
+                    </n-button-group>
                 </template>
 
                 <n-divider :vertical="isDesktop" />
