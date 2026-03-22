@@ -1,5 +1,5 @@
 import config from "@/config/database";
-import { alova } from "@/shared/alova";
+import alova from "@/shared/alova";
 import { downloadBlob } from "@/utils/blob";
 import { createDate } from "@/utils/date";
 import type { Dexie } from "dexie";

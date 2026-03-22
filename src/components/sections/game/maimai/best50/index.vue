@@ -5,7 +5,7 @@
     import CustomRedirect from "@/components/custom/redirect.vue";
     import SectionsGameMaimaiBest50Item from "@/components/sections/game/maimai/best50/item.vue";
     import { useZodRegistry } from "@/composables/database";
-    import { alova } from "@/shared/alova";
+    import alova from "@/shared/alova";
     import { isMobile } from "@/shared/responsive";
     import type { Data } from "@/types/components/game/maimai/diving-fish-best50";
     import { useAsyncState } from "@vueuse/core";

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import SharedUploadDraggerContent from "@/components/shared/upload-dragger-content.vue";
-    import { convertFile, generateBlobURL } from "@/utils/blob";
+    import { convertBlobToFile, generateBlobURL } from "@/utils/blob";
     import { NUpload, NUploadDragger, type UploadFileInfo } from "naive-ui";
     import { isNullish } from "remeda";
     import { computed } from "vue";
@@ -37,7 +37,7 @@
                 status: "finished",
                 type: props.value.type,
                 name: "blob",
-                file: convertFile(props.value, "-"),
+                file: convertBlobToFile(props.value, "-"),
                 url: generateBlobURL(props.value),
             },
         ];

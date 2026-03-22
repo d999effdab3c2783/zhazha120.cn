@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-    import { useContainer } from "@/composables/container";
     import { NModal } from "naive-ui";
     import { ref } from "vue";
+    import { container } from "@/shared/website";
 
     defineOptions({
         name: "CustomNaiveModalWrapper",
     });
-
-    const container = useContainer();
 
     const show = ref(false);
 

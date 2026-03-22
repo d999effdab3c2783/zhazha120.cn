@@ -1,6 +1,6 @@
 import { isNullish } from "remeda";
 
-export const convertWebp = async (url: string, quality = 1) => {
+export const convertRemoteImageToWebp = async (url: string, quality = 1) => {
     return await new Promise<Blob>((resolve) => {
         const image = new Image();
 

@@ -3,7 +3,7 @@
     import Initializer from "@/components/sections/global/initializer.vue";
     import SectionsLayoutFooter from "@/components/sections/layout/footer.vue";
     import SharedPageView from "@/components/shared/page-view.vue";
-    import { container } from "@/shared/global";
+    import { container } from "@/shared/website";
     import { useThemeStore } from "@/stores/theme";
     import hljs from "highlight.js";
     import type { LenisOptions } from "lenis";

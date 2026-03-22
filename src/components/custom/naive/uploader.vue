@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import CustomNaiveVerticalStack from "@/components/custom/naive/vertical-stack.vue";
-    import { convertFile, generateBlobURL } from "@/utils/blob";
+    import { convertBlobToFile, generateBlobURL } from "@/utils/blob";
     import { NIcon, NText, NUpload, NUploadDragger, type UploadFileInfo } from "naive-ui";
     import { isNullish } from "remeda";
     import { computed } from "vue";
@@ -36,7 +36,7 @@
                 status: "finished",
                 type: file.value.type,
                 name: "blob",
-                file: convertFile(file.value, "-"),
+                file: convertBlobToFile(file.value, "-"),
                 url: generateBlobURL(file.value),
             },
         ];

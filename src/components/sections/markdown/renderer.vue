@@ -2,7 +2,7 @@
     import CustomMarkdown from "@/components/custom/markdown/index.vue";
     import CustomNaivePosition from "@/components/custom/naive/position.vue";
     import { useZodRegistry } from "@/composables/database";
-    import { alova } from "@/shared/alova";
+    import alova from "@/shared/alova";
     import { computedAsync } from "@vueuse/core";
     import { NElement, NResult, NSpin } from "naive-ui";
     import { isNonNullish, isNullish } from "remeda";

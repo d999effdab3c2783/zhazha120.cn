@@ -1,6 +1,6 @@
 import config from "@/config/database";
 import Database from "@/database";
-import { alova } from "@/shared/alova";
+import alova from "@/shared/alova";
 import type { RecordObject } from "@/types/shared";
 import { decompressBlob, generateBlobURL } from "@/utils/blob";
 import { refDefault, until, useStorage } from "@vueuse/core";

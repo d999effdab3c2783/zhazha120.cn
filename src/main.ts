@@ -1,6 +1,6 @@
 import "virtual:uno.css";
 import "@/styles/global.scss";
-import { app, container, pinia, router } from "@/shared/global";
+import { app, container, pinia, router } from "@/shared/website";
 import { MotionPlugin } from "@vueuse/motion";
 import Lenis from "lenis/vue";
 import PiniaPluginPersistedState from "pinia-plugin-persistedstate";

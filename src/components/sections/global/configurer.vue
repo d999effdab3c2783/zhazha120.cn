@@ -1,7 +1,7 @@
 <script lang="ts" setup>
     import { useHasOverlay } from "@/composables/container";
     import { useZodRegistry } from "@/composables/database";
-    import { container } from "@/shared/global";
+    import { container } from "@/shared/website";
     import { useGlobalApiStore } from "@/stores/global_api";
     import Clarity from "@microsoft/clarity";
     import { useFavicon, useTitle } from "@vueuse/core";

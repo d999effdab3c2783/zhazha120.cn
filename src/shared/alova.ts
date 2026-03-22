@@ -2,7 +2,7 @@ import { createAlova } from "alova";
 import adapterFetch from "alova/fetch";
 import vueHook from "alova/vue";
 
-export const alova = createAlova({
+export default createAlova({
     statesHook: vueHook,
     requestAdapter: adapterFetch(),
 });

@@ -1,5 +1,5 @@
 import config from "@/config/database";
-import { convertWebp } from "@/utils/image";
+import { convertRemoteImageToWebp } from "@/utils/image";
 import type { Dexie } from "dexie";
 
 export default async (database: Dexie) => {
@@ -9,7 +9,7 @@ export default async (database: Dexie) => {
             name: "26F Studio",
             href: "https://github.com/26F-Studio",
 
-            _avatar: await convertWebp(
+            _avatar: await convertRemoteImageToWebp(
                 "https://avatars.githubusercontent.com/u/72001477",
                 config.image_quality,
             ),
@@ -19,7 +19,7 @@ export default async (database: Dexie) => {
             name: "A Minos",
             href: "https://github.com/A-Minos",
 
-            _avatar: await convertWebp(
+            _avatar: await convertRemoteImageToWebp(
                 "https://avatars.githubusercontent.com/u/168070538",
                 config.image_quality,
             ),
@@ -29,7 +29,7 @@ export default async (database: Dexie) => {
             name: "Z Team",
             href: "https://github.com/c794b7b0331e4cf3",
 
-            _avatar: await convertWebp(
+            _avatar: await convertRemoteImageToWebp(
                 "https://avatars.githubusercontent.com/u/108103310",
                 config.image_quality,
             ),
@@ -39,7 +39,7 @@ export default async (database: Dexie) => {
             name: "Endless Spike Studio",
             href: "https://github.com/Endless-Spike-Studio",
 
-            _avatar: await convertWebp(
+            _avatar: await convertRemoteImageToWebp(
                 "https://avatars.githubusercontent.com/u/102524977",
                 config.image_quality,
             ),
@@ -49,7 +49,7 @@ export default async (database: Dexie) => {
             name: "FurDevsCN",
             href: "https://github.com/FurDevsCN",
 
-            _avatar: await convertWebp(
+            _avatar: await convertRemoteImageToWebp(
                 "https://avatars.githubusercontent.com/u/103052241",
                 config.image_quality,
             ),
@@ -59,7 +59,7 @@ export default async (database: Dexie) => {
             name: "Furry Chat World",
             href: "https://github.com/FurryChatWorld",
 
-            _avatar: await convertWebp(
+            _avatar: await convertRemoteImageToWebp(
                 "https://avatars.githubusercontent.com/u/180642546",
                 config.image_quality,
             ),
@@ -69,7 +69,7 @@ export default async (database: Dexie) => {
             name: "Paw Team Club",
             href: "https://github.com/PawTeamClub",
 
-            _avatar: await convertWebp(
+            _avatar: await convertRemoteImageToWebp(
                 "https://avatars.githubusercontent.com/u/156998119",
                 config.image_quality,
             ),

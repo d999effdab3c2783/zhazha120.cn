@@ -1,6 +1,6 @@
 import { isNullish } from "remeda";
 
-export const convertFile = (input: Blob, name: string) => {
+export const convertBlobToFile = (input: Blob, name: string = "-") => {
     return new File([input], name, {
         type: input.type,
     });
