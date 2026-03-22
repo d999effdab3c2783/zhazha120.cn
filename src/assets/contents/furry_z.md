@@ -11,8 +11,8 @@
 			<custom-naive-horizontal-stack>
 				<n-text>立绘画师:</n-text>
 
-				<custom-redirect href="https://www.mihuashi.com/profiles/1806467">
-					<n-text type="info">米画师 @ 小累RAIN</n-text>
+				<custom-redirect href="https://www.mihuashi.com/profiles/663529">
+					<n-text type="info">米画师 @ 柒嘢</n-text>
 				</custom-redirect>
 			</custom-naive-horizontal-stack>
 
