@@ -73,11 +73,9 @@
     >
         <n-text
             >剩余
-            {{
-                databaseConfig.max_updater_skip_count - databaseUpdater.skipUpdaterCounter.value
-            }}
-            次跳过更新</n-text
-        >
+            {{ databaseConfig.max_updater_skip_count - databaseUpdater.skipUpdaterCounter.value }}
+            次跳过更新
+        </n-text>
     </custom-naive-modal-wrapper>
 
     <custom-transitions-fade appear mode="out-in">
