@@ -176,15 +176,23 @@ export const useDatabaseUpdater = () => {
             return false;
         }
 
-        const lastModified = response.headers.get("Last-Modified");
         const etag = response.headers.get("ETag");
+
+        if (isNonNullish(etag)) {
+            return cachedDatabaseETag.value !== etag;
+        }
+
+        const lastModified = response.headers.get("Last-Modified");
+
+        if (isNonNullish(lastModified)) {
+            return cachedDatabaseLastModified.value !== lastModified;
+        }
+
         const contentLength = response.headers.get("Content-Length");
 
-        return (
-            lastModified !== cachedDatabaseLastModified.value ||
-            etag !== cachedDatabaseETag.value ||
-            contentLength !== cachedDatabaesContentLength.value
-        );
+        if (isNonNullish(contentLength)) {
+            return cachedDatabaesContentLength.value !== contentLength;
+        }
     };
 
     const skip = async () => {
@@ -207,13 +215,23 @@ export const useDatabaseUpdater = () => {
 
         await reset();
 
-        const lastModified = response.headers.get("Last-Modified");
         const etag = response.headers.get("ETag");
+
+        if (isNonNullish(etag)) {
+            cachedDatabaseETag.value = etag;
+        }
+
+        const lastModified = response.headers.get("Last-Modified");
+
+        if (isNonNullish(lastModified)) {
+            cachedDatabaseLastModified.value = lastModified;
+        }
+
         const contentLength = response.headers.get("Content-Length");
 
-        cachedDatabaseLastModified.value = lastModified;
-        cachedDatabaseETag.value = etag;
-        cachedDatabaesContentLength.value = contentLength;
+        if (isNonNullish(contentLength)) {
+            cachedDatabaesContentLength.value = contentLength;
+        }
 
         await resetDatabase();
 
