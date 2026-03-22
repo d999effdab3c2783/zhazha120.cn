@@ -2,10 +2,11 @@ import { isNonNullish } from "remeda";
 import { readonly, shallowRef } from "vue";
 
 export const usePublicAssets = () => {
-    const prefix = `@/assets/public/`;
+    const prefix = "@/assets/public/";
+
     const imports = import.meta.glob<{
         readonly default: string;
-    }>(`${prefix}**/*.*`, {
+    }>("@/assets/public/**/*.*", {
         query: "url",
     });
 
