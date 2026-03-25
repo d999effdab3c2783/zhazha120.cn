@@ -103,5 +103,14 @@ export default async (database: Dexie) => {
                 (await import("@/assets/images/friend_links/fmyron.webp?url")).default,
             ),
         },
+        {
+            name: "GuaiZai's blog",
+            description: "Tech inspires~!",
+            logo: `${config.reference_prefix}_logo`,
+            href: "https://blog.guaizai.top",
+            _logo: await downloadBlob(
+                (await import("@/assets/images/friend_links/guaizai.webp?url")).default,
+            ),
+        },
     ]);
 };
