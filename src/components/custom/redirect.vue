@@ -1,7 +1,7 @@
 <script lang="ts" setup>
     import CustomNaiveModalWrapper from "@/components/custom/naive/modal-wrapper.vue";
     import CustomNaiveVerticalStack from "@/components/custom/naive/vertical-stack.vue";
-    import { NA, NText } from "naive-ui";
+    import { NA, NDivider, NText } from "naive-ui";
     import { isNonNullish, isNullish } from "remeda";
     import { useTemplateRef } from "vue";
     import { useRouter } from "vue-router";
@@ -74,6 +74,12 @@
             <n-text class="text-6 fw-bold" type="warning">外部内容警告</n-text>
             <n-a :href="href" target="_blank">{{ href }}</n-a>
             <n-text>↑ 自行判断 如需继续请戳上面的连接 ↑</n-text>
+
+            <template v-if="isNonNullish($slots.extra)">
+                <n-divider />
+            </template>
+
+            <slot name="extra" />
         </custom-naive-vertical-stack>
     </custom-naive-modal-wrapper>
 </template>

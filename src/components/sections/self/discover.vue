@@ -6,10 +6,9 @@
     import { useDatabase, useHasRegistry } from "@/composables/database";
     import type SelfExternalLink from "@/database/tables/self_external_link";
     import { isDesktop } from "@/shared/responsive";
-    import { NButtonGroup, NCard, NDivider } from "naive-ui";
-    import { isEmptyish, isNonNullish } from "remeda";
+    import { NCard, NDivider } from "naive-ui";
+    import { isEmptyish } from "remeda";
     import CustomMarkdown from "@/components/custom/markdown/index.vue";
-    import CustomNaiveModalWrapper from "@/components/custom/naive/modal-wrapper.vue";
 
     defineOptions({
         name: "SectionsSelfDiscover",
@@ -32,35 +31,25 @@
         <custom-naive-auto-stack>
             <template v-if="!isEmptyish(items)">
                 <template v-for="item in items">
-                    <n-button-group>
-                        <custom-redirect :href="item.href">
-                            <custom-naive-button :icon="item.icon">{{
-                                item.name
-                            }}</custom-naive-button>
-                        </custom-redirect>
+                    <custom-redirect :href="item.href">
+                        <custom-naive-button
+                            :type="item.name === '个人群' ? 'info' : undefined"
+                            :icon="item.icon"
+                        >
+                            {{ item.name }}
+                        </custom-naive-button>
 
-                        <template v-if="isNonNullish(item.tip)">
-                            <custom-naive-modal-wrapper preset="card" title="提示" size="small">
-                                <template #trigger="{ toggle }">
-                                    <custom-naive-button
-                                        @click="toggle"
-                                        class="px-2"
-                                        icon="i-ant-design:question-circle-outlined"
-                                    />
-                                </template>
-
-                                <n-element>
-                                    <custom-markdown :raw="item.tip" />
-                                </n-element>
-                            </custom-naive-modal-wrapper>
+                        <template #extra>
+                            <custom-markdown :raw="item.tip" />
                         </template>
-                    </n-button-group>
+                    </custom-redirect>
                 </template>
 
                 <n-divider :vertical="isDesktop" />
             </template>
 
             <custom-naive-route-button
+                secondary
                 :to="{ path: '/tools' }"
                 icon="i-ant-design:tool-outlined"
                 type="primary"
@@ -68,6 +57,7 @@
 
             <template v-if="showSelf">
                 <custom-naive-route-button
+                    secondary
                     :to="{ path: '/self' }"
                     icon="i-ant-design:user-outlined"
                     type="primary"
@@ -76,6 +66,7 @@
 
             <template v-if="showDev">
                 <custom-naive-route-button
+                    secondary
                     :to="{ path: '/dev' }"
                     icon="i-ant-design:code-outlined"
                     type="primary"
@@ -84,6 +75,7 @@
 
             <template v-if="showSupport">
                 <custom-naive-route-button
+                    secondary
                     :to="{ path: '/support' }"
                     icon="i-ant-design:heart-outlined"
                     type="primary"
@@ -92,6 +84,7 @@
 
             <template v-if="showGame">
                 <custom-naive-route-button
+                    secondary
                     :to="{ path: '/game' }"
                     icon="i-tabler:device-gamepad"
                     type="primary"
@@ -100,6 +93,7 @@
 
             <template v-if="showBirthday">
                 <custom-naive-route-button
+                    secondary
                     :to="{ path: '/birthday' }"
                     icon="i-mingcute:birthday-2-line"
                     type="primary"
@@ -108,6 +102,7 @@
 
             <template v-if="showFurry">
                 <custom-naive-route-button
+                    secondary
                     :to="{ path: '/furry' }"
                     icon="i-tabler:paw"
                     type="primary"
