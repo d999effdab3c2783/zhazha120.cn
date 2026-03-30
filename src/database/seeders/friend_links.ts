@@ -112,5 +112,14 @@ export default async (database: Dexie) => {
                 (await import("@/assets/images/friend_links/guaizai.webp?url")).default,
             ),
         },
+        {
+            name: "夏枫的猫窝w",
+            description: "一只会敲代码的笨笨猫咪xmx",
+            logo: `${config.reference_prefix}_logo`,
+            href: "https://blog.mcxiafeng.top",
+            _logo: await downloadBlob(
+                (await import("@/assets/images/friend_links/mcxiafeng.webp?url")).default,
+            ),
+        },
     ]);
 };
