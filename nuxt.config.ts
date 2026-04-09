@@ -1,4 +1,4 @@
 export default defineNuxtConfig({
-    compatibilityDate: 'latest',
-    ssr: false
-})
+    compatibilityDate: "latest",
+    ssr: false,
+});
