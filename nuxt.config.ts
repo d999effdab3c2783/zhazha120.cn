@@ -1,6 +1,8 @@
 import AutoImport from "unplugin-auto-import/vite";
 import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
+import { resolve } from "node:path";
+import Info from "unplugin-info/vite";
 
 export default defineNuxtConfig({
     compatibilityDate: "latest",
@@ -8,7 +10,9 @@ export default defineNuxtConfig({
     modules: ["@pinia/nuxt", "@vueuse/nuxt", "@unocss/nuxt"],
     vite: {
         plugins: [
+            Info(),
             AutoImport({
+                dts: resolve(__dirname, "app/types/auto-imports.d.ts"),
                 imports: [
                     {
                         "naive-ui": [
@@ -22,6 +26,7 @@ export default defineNuxtConfig({
                 ],
             }),
             Components({
+                dts: resolve(__dirname, `app/types/components.d.ts`),
                 resolvers: [NaiveUiResolver()],
             }),
         ],
