@@ -5,7 +5,7 @@ import Components from "unplugin-vue-components/vite";
 export default defineNuxtConfig({
     compatibilityDate: "latest",
     ssr: false,
-    modules: ["@unocss/nuxt"],
+    modules: ["@vueuse/nuxt", "@unocss/nuxt"],
     vite: {
         plugins: [
             AutoImport({
