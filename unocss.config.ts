@@ -14,6 +14,9 @@ export default defineConfig({
         presetIcons(),
         presetWebFonts({
             provider: "none",
+            fonts: {
+                sans: ["DingTalk JinBuTi", "HarmonyOS Sans SC"],
+            },
         }),
     ],
     transformers: [transformerCompileClass(), transformerDirectives(), transformerVariantGroup()],
