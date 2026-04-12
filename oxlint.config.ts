@@ -11,5 +11,6 @@ export default defineConfig({
         "promise/prefer-await-to-then": "warn",
         "require-await": "warn",
         "typescript/consistent-type-imports": "warn",
+        "arrow-body-style": ["warn", "as-needed"],
     },
 });
