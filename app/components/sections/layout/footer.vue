@@ -5,18 +5,23 @@
     const { isMobile } = useResponsive();
     const appConfig = useAppConfig();
     const utilities = useTemplateRef("utilities");
-    const magicKeys = useMagicKeys();
+
+    const magicKeys = useMagicKeys({
+        reactive: true,
+    });
+
     const now = useNow();
 
-    watch(magicKeys.F8, (newState) => {
-        if (newState && isNonNullish(utilities.value) && isNonNullish(utilities.value.modal)) {
-            utilities.value.modal.toggle();
-        }
-    });
+    watch(
+        () => magicKeys.F8,
+        (newState) => {
+            if (newState && isNonNullish(utilities.value) && isNonNullish(utilities.value.modal)) {
+                utilities.value.modal.toggle();
+            }
+        },
+    );
 
-    const currentYear = computed(() => {
-        return now.value.getFullYear();
-    });
+    const currentYear = computed(() => now.value.getFullYear());
 </script>
 
 <template>
