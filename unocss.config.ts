@@ -15,7 +15,7 @@ export default defineConfig({
         presetWebFonts({
             provider: "none",
             fonts: {
-                sans: ["DingTalk JinBuTi", "HarmonyOS Sans SC"],
+                sans: ["v-zhazha120-sans"],
             },
         }),
     ],
