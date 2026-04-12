@@ -45,7 +45,14 @@
         <n-flex align="center" size="small" vertical>
             <n-text class="text-6 fw-bold" type="warning">外部内容警告</n-text>
 
-            <n-button :href="href" type="primary" class="py-2" tag="a" target="_blank" text>
+            <n-button
+                :href="href"
+                type="primary"
+                class="py-2 w-full text-wrap"
+                tag="a"
+                target="_blank"
+                text
+            >
                 {{ href }}
             </n-button>
 
