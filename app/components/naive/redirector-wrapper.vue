@@ -44,14 +44,12 @@
 
         <n-flex align="center" size="small" vertical>
             <n-text class="text-6 fw-bold" type="warning">外部内容警告</n-text>
-            <n-button :href="href" class="py-2" tag="a" target="_blank" text>{{ href }}</n-button>
+
+            <n-button :href="href" type="primary" class="py-2" tag="a" target="_blank" text>
+                {{ href }}
+            </n-button>
+
             <n-text>↑ 自行判断 如需继续请戳上面的连接 ↑</n-text>
-
-            <template v-if="isNonNullish($slots.extra)">
-                <n-divider />
-            </template>
-
-            <slot name="extra" />
         </n-flex>
     </NaiveModalWrapper>
 </template>
