@@ -10,6 +10,7 @@
         :locale="zhCN"
         :theme="themeStore.preset"
         abstract
+        :theme-overrides="themeStore.overrides"
         inline-theme-disabled
         preflight-style-disabled
     >

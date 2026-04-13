@@ -1,13 +1,15 @@
-import { darkTheme, lightTheme, useOsTheme } from "naive-ui";
+import { darkTheme, type GlobalThemeOverrides, lightTheme, useOsTheme } from "naive-ui";
 
 export const useThemeStore = defineStore("theme", () => {
+    const appConfig = useAppConfig();
+
     const mode = shallowRef<"system" | "light" | "dark">("system");
     const osTheme = useOsTheme();
 
-    const preset = computed(() => {
-        const actualMode = mode.value === "system" ? osTheme.value : mode.value;
+    const actualMode = computed(() => (mode.value === "system" ? osTheme.value : mode.value));
 
-        switch (actualMode) {
+    const preset = computed(() => {
+        switch (actualMode.value) {
             case "light":
                 return lightTheme;
             case "dark":
@@ -17,8 +19,20 @@ export const useThemeStore = defineStore("theme", () => {
         return null;
     });
 
+    const overrides = computed<GlobalThemeOverrides>(() => {
+        switch (actualMode.value) {
+            case "light":
+                return appConfig.theme.light.overrides;
+            case "dark":
+                return appConfig.theme.dark.overrides;
+        }
+
+        return {};
+    });
+
     return {
         mode,
         preset,
+        overrides,
     };
 });
