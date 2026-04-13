@@ -1,32 +1,52 @@
 <script lang="ts" setup>
-    import type { QrCodeProps } from "naive-ui";
+    import { type QrCodeProps, useThemeVars } from "naive-ui";
 
+    const appConfig = useAppConfig();
     const location = useBrowserLocation();
+    const themeVars = useThemeVars();
 
     const config = shallowReactive<Partial<QrCodeProps>>({
+        color: themeVars.value.primaryColor,
         errorCorrectionLevel: "H",
+        iconBackgroundColor: "transparent",
+        iconSize: 60,
+        iconSrc: appConfig.global.avatar,
         value: location.value.href,
         size: 240,
+        type: "svg",
     });
+
+    const applyPreset = (name: string) => {
+        switch (name) {
+            case "default":
+                delete config.color;
+                delete config.iconBackgroundColor;
+                delete config.iconSize;
+                delete config.iconSrc;
+                break;
+        }
+    };
 </script>
 
 <template>
     <n-flex size="large" vertical>
         <n-input v-model:value="config.value" />
 
-        <template v-if="config.value !== location.href">
-            <n-flex class="text-sm" size="small">
-                <n-text :depth="3">使用当前 URL:</n-text>
+        <TransitionsFade appear mode="out-in">
+            <template v-if="config.value !== location.href">
+                <n-flex class="text-sm" size="small">
+                    <n-text :depth="3">使用当前 URL:</n-text>
 
-                <n-text
-                    class="hover:cursor-pointer"
-                    type="info"
-                    @click="config.value = location.href"
-                >
-                    {{ location.href }}
-                </n-text>
-            </n-flex>
-        </template>
+                    <n-text
+                        class="hover:cursor-pointer"
+                        type="info"
+                        @click="config.value = location.href"
+                    >
+                        {{ location.href }}
+                    </n-text>
+                </n-flex>
+            </template>
+        </TransitionsFade>
 
         <NaivePosition placement="center">
             <n-qr-code class="box-content" v-bind="config" />
@@ -82,6 +102,12 @@
                     <n-radio-button value="svg">SVG</n-radio-button>
                 </n-radio-group>
             </n-form-item>
+        </n-flex>
+
+        <n-divider class="!my-0" />
+
+        <n-flex justify="space-evenly" size="small">
+            <n-button @click="applyPreset('default')">默认样式</n-button>
         </n-flex>
     </n-flex>
 </template>
