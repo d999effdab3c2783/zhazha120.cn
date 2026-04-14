@@ -1,6 +1,6 @@
 <template>
     <n-element class="h-screen">
-        <NaivePosition placement="center" class="size-full">
+        <NaivePosition class="size-full" placement="center">
             <SectionsHome1Intro />
         </NaivePosition>
     </n-element>

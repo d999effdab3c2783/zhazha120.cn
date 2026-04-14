@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { isNonNullish, isNullish } from "remeda";
+    import { isNullish } from "remeda";
 
     defineOptions({
         inheritAttrs: false,
@@ -47,11 +47,11 @@
 
             <n-button
                 :href="href"
-                type="primary"
                 class="py-2 w-full text-wrap"
                 tag="a"
                 target="_blank"
                 text
+                type="primary"
             >
                 {{ href }}
             </n-button>

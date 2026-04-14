@@ -1,5 +1,5 @@
 <template>
-    <n-flex vertical :size="0">
+    <n-flex :size="0" vertical>
         <SectionsHome1 />
     </n-flex>
 </template>

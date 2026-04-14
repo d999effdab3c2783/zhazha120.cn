@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <n-flex align="center" size="small" justify="center">
+    <n-flex align="center" justify="center" size="small">
         <n-avatar
             :src="appConfig.information.avatar.src"
             circle

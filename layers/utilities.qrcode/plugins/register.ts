@@ -1,4 +1,4 @@
-import { useRegistryStore } from "~~/layers/providers.registry/stores/registry";
+import { useRegistryStore } from "#layers/providers.registry/stores/registry";
 import QrCode from "#layers/utilities.qrcode/components/utilities/qr-code.vue";
 
 // @unocss-include

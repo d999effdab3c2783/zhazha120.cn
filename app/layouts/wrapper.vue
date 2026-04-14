@@ -9,8 +9,8 @@
         :date-locale="dateZhCN"
         :locale="zhCN"
         :theme="themeStore.preset"
-        abstract
         :theme-overrides="themeStore.overrides"
+        abstract
         inline-theme-disabled
         preflight-style-disabled
     >
