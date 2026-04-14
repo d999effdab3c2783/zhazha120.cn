@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { useRegistryStore } from "#layers/registry/stores/registry";
+    import { useRegistryStore } from "~~/layers/providers.registry/stores/registry";
 
     const registryStore = useRegistryStore();
     const modal = useTemplateRef("modal");

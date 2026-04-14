@@ -1,5 +1,5 @@
 export default defineAppConfig({
-    global: {
+    information: {
         avatar: {
             src: "/z.svg",
             poke: "戳哭了 哄不好了",
