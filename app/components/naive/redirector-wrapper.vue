@@ -9,7 +9,6 @@
         readonly href: string;
     }>();
 
-    const { isMobile } = useResponsive();
     const modal = useTemplateRef("modal");
 
     const handle = async () => {
