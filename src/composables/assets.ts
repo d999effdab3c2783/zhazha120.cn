@@ -1,5 +1,5 @@
 import { isNonNullish } from "remeda";
-import { readonly, shallowRef } from "vue";
+import { readonly, type ShallowRef, shallowRef } from "vue";
 
 export const usePublicAssets = () => {
     const prefix = "@/assets/public/";
@@ -10,7 +10,13 @@ export const usePublicAssets = () => {
         query: "url",
     });
 
+    const cache = new Map<string, ShallowRef<string>>();
+
     const find = (path: string, defaultPath = "#") => {
+        if (cache.has(path)) {
+            return cache.get(path);
+        }
+
         const result = shallowRef(defaultPath);
 
         const findImportPath = Object.keys(imports).find((importPath) => {
@@ -26,7 +32,11 @@ export const usePublicAssets = () => {
             });
         }
 
-        return readonly(result);
+        const realResult = readonly(result);
+
+        cache.set(path, realResult);
+
+        return realResult;
     };
 
     return {
