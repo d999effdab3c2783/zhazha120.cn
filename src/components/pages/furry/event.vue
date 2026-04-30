@@ -9,6 +9,7 @@
     import { useRouteParams } from "@vueuse/router";
     import { NCard, NDivider, NResult } from "naive-ui";
     import { isArray, isEmptyish, isNonNullish, isNullish } from "remeda";
+    import CustomRedirect from "@/components/custom/redirect.vue";
 
     const id = useRouteParams("id", undefined, {
         transform: Number,
@@ -41,7 +42,7 @@
 <template>
     <layouts-sub-page>
         <template v-if="isNonNullish(item)">
-            <sections-furry-event :item="item" />
+            <sections-furry-event :show-detail-button="false" :item="item" />
 
             <template
                 v-if="
@@ -53,7 +54,9 @@
                 <n-divider :title-placement="isMobile ? 'center' : 'left'">出的设定</n-divider>
 
                 <template v-for="item in furryCharacters">
-                    <sections-furry-character :item="item" />
+                    <custom-redirect :href="`/furry/characters/${item.id}`">
+                        <sections-furry-character :item="item" />
+                    </custom-redirect>
                 </template>
             </template>
         </template>

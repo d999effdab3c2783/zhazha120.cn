@@ -15,9 +15,15 @@
         name: "SectionsFurryEvent",
     });
 
-    const props = defineProps<{
-        readonly item: FurryEvent;
-    }>();
+    const props = withDefaults(
+        defineProps<{
+            readonly item: FurryEvent;
+            readonly showDetailButton?: boolean;
+        }>(),
+        {
+            showDetailButton: true,
+        },
+    );
 
     const cover = computed(() => {
         return useDatabaseFile(useDatabaseValue(props.item, "cover"));
@@ -53,10 +59,18 @@
 
         <template v-if="!isEmptyish(item.href)" #action>
             <custom-naive-auto-stack>
+                <template v-if="showDetailButton">
+                    <custom-redirect :href="`/furry/events/${item.id}`">
+                        <custom-naive-button icon="i-ant-design:profile-outlined">
+                            详情
+                        </custom-naive-button>
+                    </custom-redirect>
+                </template>
+
                 <custom-redirect :href="item.href">
-                    <custom-naive-button icon="i-ant-design:link-outlined"
-                        >详情</custom-naive-button
-                    >
+                    <custom-naive-button icon="i-ant-design:link-outlined">
+                        官方网站
+                    </custom-naive-button>
                 </custom-redirect>
             </custom-naive-auto-stack>
         </template>
