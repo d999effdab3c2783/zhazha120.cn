@@ -6,5 +6,9 @@ export default async (database: Dexie) => {
             age: 19,
             content: (await import("@/assets/contents/birthday_19.md?raw")).default,
         },
+        {
+            age: 20,
+            content: (await import("@/assets/contents/birthday_20.md?raw")).default,
+        },
     ]);
 };
