@@ -7,6 +7,10 @@
     <custom-naive-vertical-stack align="center">
       <n-image :src="publicAssets.find('@/assets/public/images/birthday/records/20/manuscript_1.webp').value"/>
 
+    <n-divider>绘画过程</n-divider>
+
+      <iframe class="w-full aspect-video border-none" src="https://player.bilibili.com/player.html?aid=116528619984999&autoplay=0"/>
+
       <n-text type="primary">好萌 超级喜欢</n-text>
       <n-text depth="3">[ @ wonold ]</n-text>
     </custom-naive-vertical-stack>
