@@ -1,4 +1,4 @@
-import type { Utility } from "#layers/providers.registry/types/registry";
+import type { Utility } from "~/types/registry";
 
 export const useRegistryStore = defineStore("registry", () => {
     const utilities = shallowReactive<Utility[]>([]);
