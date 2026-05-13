@@ -45,7 +45,3 @@
         name="trigger"
     />
 </template>
-
-<style lang="scss">
-    @use "@/styles/zhazha120";
-</style>

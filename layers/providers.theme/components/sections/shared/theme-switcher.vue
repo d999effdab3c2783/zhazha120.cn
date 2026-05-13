@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+    import { useThemeStore } from "#layers/providers.theme/stores/theme";
+
     const themeStore = useThemeStore();
 
     const { define: ThemeSwitcherButtonDefine, reuse: ThemeSwitcherButton } =

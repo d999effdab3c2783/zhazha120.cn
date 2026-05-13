@@ -109,7 +109,7 @@
 
         <n-grid-item>
             <NaivePosition class="size-full" placement="center">
-                <SectionsSharedUtilities ref="utilities" />
+                <SectionsLayoutFooterUtilities ref="utilities" />
             </NaivePosition>
         </n-grid-item>
     </n-grid>
