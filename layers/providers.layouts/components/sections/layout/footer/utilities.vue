@@ -1,11 +1,28 @@
 <script lang="ts" setup>
-    import { useRegistryStore } from "#layers/providers.registry/stores/registry";
+    import { isNonNullish, isNullish } from "remeda";
 
-    const registryStore = useRegistryStore();
     const modal = useTemplateRef("modal");
+    const appConfig = useAppConfig();
+    const magicKeys = useMagicKeys();
 
-    defineExpose({
-        modal,
+    onMounted(() => {
+        if (!isNonNullish(appConfig.layout.footer.utilities.hotkey)) {
+            return;
+        }
+
+        const magicKey = magicKeys[appConfig.layout.footer.utilities.hotkey];
+
+        if (isNullish(magicKey)) {
+            return;
+        }
+
+        watch(magicKey, () => {
+            if (isNullish(modal.value)) {
+                return;
+            }
+
+            modal.value.show();
+        });
     });
 </script>
 
@@ -21,22 +38,6 @@
             </n-button>
         </template>
 
-        <n-flex size="small">
-            <template v-for="utility in registryStore.utilities">
-                <NaiveModalWrapper :title="utility.name" preset="card" size="small">
-                    <template #trigger="{ toggle }">
-                        <n-button secondary size="small" @click="toggle">
-                            <template #icon>
-                                <n-icon :class="utility.icon" />
-                            </template>
-
-                            {{ utility.name }}
-                        </n-button>
-                    </template>
-
-                    <Component :is="utility.render" />
-                </NaiveModalWrapper>
-            </template>
-        </n-flex>
+        <SectionsSharedUtilities />
     </NaiveModalWrapper>
 </template>

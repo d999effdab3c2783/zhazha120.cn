@@ -16,6 +16,9 @@ export default defineAppConfig({
             version: {
                 link: "https://github.com/d999effdab3c2783/zhazha120.cn/commit/{sha}",
             },
+            utilities: {
+                hotkey: "F8",
+            },
         },
     },
 });
