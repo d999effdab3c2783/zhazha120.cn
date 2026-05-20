@@ -15,5 +15,11 @@ export default async (database: Dexie) => {
             ),
             href: "https://zs.jxeduyun.com/certifiDetail?certificatesid=26010815212809383571",
         },
+        {
+            name: ["蓝桥杯 第十七届", "软件赛 职业院校组 省赛", "Web 应用开发 一等奖"].join("\n"),
+        },
+        {
+            name: ["江西应用工程职业学院 2026 职业教育活动周", "校内赛", "Web 一等奖"].join("\n"),
+        },
     ]);
 };

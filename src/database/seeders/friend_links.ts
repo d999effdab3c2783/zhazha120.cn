@@ -44,7 +44,7 @@ export default async (database: Dexie) => {
             name: "LangYa466",
             description: null,
             logo: `${config.reference_prefix}_logo`,
-            href: "https://furry.luxe",
+            href: "https://langya.io?redirect={domain}",
             _logo: await downloadBlob(
                 (await import("@/assets/images/friend_links/langya.webp?url")).default,
             ),
