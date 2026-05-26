@@ -10,7 +10,7 @@
         errorCorrectionLevel: "H",
         iconBackgroundColor: "transparent",
         iconSize: 60,
-        iconSrc: appConfig.information.avatar.src,
+        iconSrc: appConfig.self.avatar.src,
         value: location.value.href,
         size: 240,
         type: "svg",

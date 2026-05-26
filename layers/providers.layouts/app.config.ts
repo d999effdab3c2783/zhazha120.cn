@@ -1,7 +1,6 @@
 export default defineAppConfig({
     layout: {
         footer: {
-            copyright_start_year: 2022,
             filing: {
                 province_abbr: "赣",
                 icp: {

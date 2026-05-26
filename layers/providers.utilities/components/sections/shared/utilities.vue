@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <n-flex size="small">
+    <n-flex size="small" align="center">
         <template v-for="utility in utilitiesStore.registry">
             <NaiveModalWrapper :title="utility.name" preset="card" size="small">
                 <template #trigger="{ toggle }">

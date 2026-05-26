@@ -4,23 +4,8 @@
 
     const { isMobile } = useResponsive();
     const appConfig = useAppConfig();
-    const utilities = useTemplateRef("utilities");
-
-    const magicKeys = useMagicKeys({
-        reactive: true,
-    });
 
     const now = useNow();
-
-    watch(
-        () => magicKeys.F8,
-        (newState) => {
-            if (newState && isNonNullish(utilities.value) && isNonNullish(utilities.value.modal)) {
-                utilities.value.modal.toggle();
-            }
-        },
-    );
-
     const currentYear = computed(() => now.value.getFullYear());
 </script>
 
@@ -109,7 +94,7 @@
 
         <n-grid-item>
             <NaivePosition class="size-full" placement="center">
-                <SectionsLayoutFooterUtilities ref="utilities" />
+                <SectionsLayoutFooterUtilities />
             </NaivePosition>
         </n-grid-item>
     </n-grid>
