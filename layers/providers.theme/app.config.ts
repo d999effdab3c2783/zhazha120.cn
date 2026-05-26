@@ -11,17 +11,22 @@ const colors = generate(primaryColor, {
 
 export default defineAppConfig({
     theme: {
-        light: {
-            overrides: {} satisfies GlobalThemeOverrides,
-        },
-        dark: {
+        global: {
             overrides: {
                 common: {
                     primaryColor: colors[5],
                     primaryColorHover: colors[4],
                     primaryColorSuppl: colors[4],
                     primaryColorPressed: colors[6],
-
+                },
+            } satisfies GlobalThemeOverrides,
+        },
+        light: {
+            overrides: {} satisfies GlobalThemeOverrides,
+        },
+        dark: {
+            overrides: {
+                common: {
                     modalColor: surfaceColors[4],
                 },
                 Layout: {
