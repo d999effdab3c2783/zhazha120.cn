@@ -5,12 +5,10 @@
 </script>
 
 <template>
-    <n-element class="absolute top-0 left-0 size-full">
-        <VueBitsDotGrid
-            :active-color="themeVars.primaryColor"
-            :base-color="themeVars.hoverColor"
-            :dot-size="6"
-            :gap="18"
-        />
-    </n-element>
+    <VueBitsDotGrid
+        :active-color="themeVars.primaryColor"
+        :base-color="themeVars.hoverColor"
+        :dot-size="6"
+        :gap="18"
+    />
 </template>
