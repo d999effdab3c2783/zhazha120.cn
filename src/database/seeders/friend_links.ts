@@ -121,5 +121,14 @@ export default async (database: Dexie) => {
                 (await import("@/assets/images/friend_links/mcxiafeng.webp?url")).default,
             ),
         },
+        {
+            name: "a small online lab",
+            description: "致敬想象与创造力！",
+            logo: `${config.reference_prefix}_logo`,
+            href: "https://invert-viewer.179.life",
+            _logo: await downloadBlob(
+                (await import("@/assets/images/friend_links/invert-viewer.webp?url")).default,
+            ),
+        },
     ]);
 };
