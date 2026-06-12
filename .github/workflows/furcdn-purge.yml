@@ -14,4 +14,4 @@ jobs:
               with:
                   action: purge
                   api-key: ${{ secrets.FURCDN_API_KEY }}
-                  domain-id: ${{ env.FURCDN_DOMAIN_ID }}
+                  domain-id: ${{ vars.FURCDN_DOMAIN_ID }}
