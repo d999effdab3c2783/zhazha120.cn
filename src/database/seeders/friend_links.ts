@@ -130,5 +130,14 @@ export default async (database: Dexie) => {
                 (await import("@/assets/images/friend_links/invert-viewer.webp?url")).default,
             ),
         },
+        {
+            name: "maobing's sanctuary",
+            description: "我是小🐱",
+            logo: `${config.reference_prefix}_logo`,
+            href: "https://maobing-web-new.netlify.app",
+            _logo: await downloadBlob(
+                (await import("@/assets/images/friend_links/maobing.webp?url")).default,
+            ),
+        },
     ]);
 };
