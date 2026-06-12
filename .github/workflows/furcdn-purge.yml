@@ -1,0 +1,17 @@
+name: FurCDN Purge
+
+on:
+    deployment_status:
+
+jobs:
+    purge:
+        if: >-
+            github.event.deployment_status.state == 'success' &&
+            github.event.deployment_status.environment == 'Production'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: FurCDN/github-action@v1
+              with:
+                  action: purge
+                  api-key: ${{ secrets.FURCDN_API_KEY }}
+                  domain-id: ${{ variables.FURCDN_DOMAIN_ID }}
