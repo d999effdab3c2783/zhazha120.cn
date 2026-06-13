@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 
 export interface Utility {
-    readonly icon: string | null;
-    readonly name: string;
-    readonly render: () => VNode;
+	readonly icon: string | null;
+	readonly name: string;
+	readonly render: () => VNode;
 }

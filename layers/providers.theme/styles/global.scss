@@ -1,15 +1,15 @@
 @font-face {
-    font-family: "v-zhazha120-script";
-    src: local("YoZai");
-    font-display: swap;
+	font-family: "v-zhazha120-script";
+	src: local("YoZai");
+	font-display: swap;
 }
 
 @font-face {
-    font-family: "v-zhazha120-sans";
-    src: local("DingTalk JinBuTi"), local("HarmonyOS Sans SC");
-    font-display: swap;
+	font-family: "v-zhazha120-sans";
+	src: local("DingTalk JinBuTi"), local("HarmonyOS Sans SC");
+	font-display: swap;
 }
 
 :root {
-    @apply font-[v-zhazha120-sans];
+	@apply font-[v-zhazha120-sans];
 }
