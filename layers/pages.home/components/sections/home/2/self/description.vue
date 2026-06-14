@@ -1,18 +1,21 @@
 <script lang="ts" setup>
 	const show = ref(false);
 
-	const handleCardClick = () => {
+	const handleClick = () => {
 		show.value = true;
+	};
+
+	const handlePointerLeave = () => {
+		show.value = false;
 	};
 </script>
 
 <template>
-	<n-card
-		:class="{ 'blur-6 hover:cursor-pointer': !show }"
-		class="transition-(property-filter duration-500 ease-in-out)"
-		size="small"
-		@click="handleCardClick"
+	<n-element
+		:class="['transition-(property-filter duration-500 ease-in-out)', { 'blur-6 hover:cursor-pointer': !show }]"
+		@click="handleClick"
+		@pointerleave="handlePointerLeave"
 	>
 		<SectionsSelfDescription />
-	</n-card>
+	</n-element>
 </template>
