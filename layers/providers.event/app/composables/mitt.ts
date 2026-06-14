@@ -1,4 +1,4 @@
-import mitt from "#layers/providers.event/shared/mitt";
+import mitt from "#layers/providers.event/app/shared/mitt";
 
 export const useMitt = () => {
 	const listen = (type: string, handler: (...args: unknown[]) => void) => {
