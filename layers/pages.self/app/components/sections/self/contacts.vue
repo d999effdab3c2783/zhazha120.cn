@@ -2,6 +2,7 @@
 	import { isNonNullish } from "remeda";
 
 	const appConfig = useAppConfig();
+	const { isMobile } = useResponsive();
 </script>
 
 <template>
@@ -9,7 +10,7 @@
 		<template v-for="{ icon, name, href, extra } in appConfig.self.contacts">
 			<NaiveRedirectorWrapper :href="href">
 				<template #default="{ href, redirect }">
-					<n-button tag="a" :href="href" @click.prevent="redirect">
+					<n-button tag="a" :href="href" @click.prevent="redirect" :block="isMobile">
 						<template #icon>
 							<n-icon :class="icon" />
 						</template>

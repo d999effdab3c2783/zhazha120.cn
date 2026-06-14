@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	const { isMobile } = useResponsive();
+</script>
+
 <template>
 	<n-flex vertical size="small">
 		<n-card size="small">
@@ -24,7 +27,7 @@
 			</n-alert>
 		</n-element>
 
-		<n-flex inline size="small">
+		<n-flex inline size="small" :vertical="isMobile">
 			<n-element class="flex-1 opacity-50">
 				<n-alert type="error" :bordered="false">
 					<n-flex vertical :size="0">
