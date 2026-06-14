@@ -34,13 +34,15 @@
 
 		<TransitionsFade appear mode="out-in">
 			<template v-if="config.value !== location.href">
-				<n-flex class="text-sm" size="small">
-					<n-text :depth="3">使用当前 URL:</n-text>
+				<n-element class="text-sm">
+					<n-flex size="small">
+						<n-text :depth="3">使用当前 URL:</n-text>
 
-					<n-text class="hover:cursor-pointer" type="info" @click="config.value = location.href">
-						{{ location.href }}
-					</n-text>
-				</n-flex>
+						<n-text class="hover:cursor-pointer" type="info" @click="config.value = location.href">
+							{{ location.href }}
+						</n-text>
+					</n-flex>
+				</n-element>
 			</template>
 		</TransitionsFade>
 
