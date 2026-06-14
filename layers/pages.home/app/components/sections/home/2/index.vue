@@ -9,6 +9,7 @@
 
 			<n-flex vertical size="small" inline class="w-full">
 				<SectionsHome2SelfDescription />
+				<SectionsHome2SelfContacts />
 			</n-flex>
 
 			<n-divider>开发</n-divider>

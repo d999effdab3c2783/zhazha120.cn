@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import { isNullish } from "remeda";
+	import { isNonNullish, isNullish } from "remeda";
 
 	defineOptions({
 		inheritAttrs: false,
@@ -50,5 +50,11 @@
 
 			<n-text>↑ 自行判断 如需继续请戳上面的连接 ↑</n-text>
 		</n-flex>
+
+		<template v-if="isNonNullish($slots.extra)">
+			<n-divider />
+
+			<slot name="extra" />
+		</template>
 	</NaiveModalWrapper>
 </template>
