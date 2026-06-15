@@ -28,7 +28,7 @@
 </script>
 
 <template>
-	<n-modal v-model:show="show" :class="['m-2', { 'w-1/2 mx-auto': !isMobile }]" v-bind="$attrs">
+	<n-modal v-model:show="show" :class="[{ 'w-1/2 mx-auto': !isMobile, 'm-2': isMobile }]" v-bind="$attrs">
 		<slot />
 	</n-modal>
 
