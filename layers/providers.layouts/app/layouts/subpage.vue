@@ -14,13 +14,15 @@
 </script>
 
 <template>
-	<NuxtLayout name="container">
-		<n-flex vertical size="small">
-			<n-page-header :title="String($route.name ?? $route.fullPath)" @back="handleBack" />
+	<NuxtLayout name="default">
+		<NuxtLayout name="container">
+			<n-flex vertical size="small">
+				<n-page-header :title="String($route.name ?? $route.fullPath)" @back="handleBack" />
 
-			<n-element>
-				<slot />
-			</n-element>
-		</n-flex>
+				<n-element>
+					<slot />
+				</n-element>
+			</n-flex>
+		</NuxtLayout>
 	</NuxtLayout>
 </template>
