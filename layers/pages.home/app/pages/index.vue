@@ -2,6 +2,10 @@
 	import { isNullish } from "remeda";
 	import type { ComponentPublicInstance } from "vue";
 
+	definePageMeta({
+		name: "首页",
+	});
+
 	const lenis = useLenis();
 	const mitt = useMitt();
 

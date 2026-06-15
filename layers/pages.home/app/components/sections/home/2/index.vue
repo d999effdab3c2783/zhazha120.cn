@@ -1,9 +1,5 @@
-<script lang="ts" setup>
-	const { isMobile } = useResponsive();
-</script>
-
 <template>
-	<n-element :class="['container mx-auto min-h-screen', { 'p-2': isMobile, 'py-10': !isMobile }]">
+	<NuxtLayout name="container">
 		<n-flex :size="0" align="center" vertical>
 			<n-divider>本体</n-divider>
 
@@ -18,5 +14,5 @@
 
 			<n-divider>杂项</n-divider>
 		</n-flex>
-	</n-element>
+	</NuxtLayout>
 </template>
