@@ -1,10 +1,15 @@
 import type { GlobalThemeOverrides } from "naive-ui";
 import { generate } from "@ant-design/colors";
 
-const backgroundColor = "#0c0c0c";
+const backgroundColor = "#3c3c3c";
 const primaryColor = "#f79a00";
 
-const surfaceColors = generate(backgroundColor);
+const surfaceColors = generate(backgroundColor, {
+	theme: "dark",
+});
+
+console.log(surfaceColors);
+
 const colors = generate(primaryColor, {
 	backgroundColor,
 });
@@ -16,7 +21,7 @@ export default defineAppConfig({
 				common: {
 					primaryColor: colors[5],
 					primaryColorHover: colors[4],
-					primaryColorSuppl: colors[4],
+					primaryColorSuppl: colors[7],
 					primaryColorPressed: colors[6],
 				},
 			} satisfies GlobalThemeOverrides,
@@ -27,11 +32,11 @@ export default defineAppConfig({
 		dark: {
 			overrides: {
 				common: {
-					modalColor: surfaceColors[4],
+					modalColor: surfaceColors[1],
 				},
 				Layout: {
-					color: surfaceColors[5],
-					footerColor: surfaceColors[4],
+					color: surfaceColors[0],
+					footerColor: surfaceColors[1],
 				},
 			} satisfies GlobalThemeOverrides,
 		},
