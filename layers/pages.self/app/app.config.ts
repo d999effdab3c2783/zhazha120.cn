@@ -42,5 +42,29 @@ export default defineAppConfig({
 				href: "https://github.com/WOSHIZHAZHA120",
 			},
 		],
+		external_links: [
+			{
+				icon: "i-tdesign:usergroup-add",
+				name: "个人群",
+				href: "https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3",
+				primary: true,
+				extra: "自助入群, 但话题很杂 也许什么都聊（",
+			},
+			{
+				icon: "i-mingcute:live-line",
+				name: "直播间",
+				href: "http://live.zhazha120.cn",
+			},
+			{
+				icon: "i-ant-design:cloud-download-outlined",
+				name: "云盘",
+				href: "https://pan.zhazha120.cn",
+			},
+			{
+				icon: "i-tabler:mail-cog",
+				name: "邮局",
+				href: "http://mail.zhazha120.cn",
+			},
+		],
 	},
 });

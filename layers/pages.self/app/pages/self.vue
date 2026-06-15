@@ -12,5 +12,9 @@
 		<n-card title="找到我" size="small">
 			<SectionsSelfContacts />
 		</n-card>
+
+		<n-card title="探索我" size="small">
+			<SectionsSelfDiscover />
+		</n-card>
 	</n-flex>
 </template>
