@@ -9,15 +9,15 @@
 	const lenis = useLenis();
 	const mitt = useMitt();
 
-	const _1 = useTemplateRef<ComponentPublicInstance>("_1");
-	const _2 = useTemplateRef<ComponentPublicInstance>("_2");
+	const _1 = useTemplateRef("_1");
+	const _2 = useTemplateRef("_2");
 
 	mitt.listen("pages.home.1.down-indicator.clicked", () => {
-		if (isNullish(lenis.value) || isNullish(_2.value)) {
+		if (isNullish(lenis.value) || isNullish(_2.value) || isNullish(_2.value.container)) {
 			return;
 		}
 
-		lenis.value.scrollTo(_2.value.$el);
+		lenis.value.scrollTo(_2.value.container.$el);
 	});
 </script>
 

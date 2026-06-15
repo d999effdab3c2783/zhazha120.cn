@@ -4,7 +4,7 @@
 
 <template>
 	<NuxtLayout name="default">
-		<n-element :class="['container mx-auto min-h-screen', { 'p-2': isMobile, 'py-10': !isMobile }]">
+		<n-element :class="['container mx-auto', { 'p-2': isMobile, 'py-10': !isMobile }]">
 			<slot />
 		</n-element>
 	</NuxtLayout>

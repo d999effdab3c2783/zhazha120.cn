@@ -2,8 +2,6 @@
 	const mitt = useMitt();
 	const windowScroll = useWindowScroll();
 
-	console.log(windowScroll);
-
 	const handleDown = () => {
 		mitt.instance.emit("pages.home.1.down-indicator.clicked");
 	};
