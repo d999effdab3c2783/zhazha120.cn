@@ -45,5 +45,17 @@ export default async (database: Dexie) => {
                 "https://static.furward.cn/resources/ouestsOfMaouisSpirits/banner.webp",
             ),
         },
+        {
+            cover: `${config.reference_prefix}_cover`,
+            name: "那个兽聚·继承者们",
+            short_name: "那个兽聚",
+            start_date: createDate(2026, 7, 10).toISOString(),
+            end_date: createDate(2026, 7, 12).toISOString(),
+            href: "https://www.thatfurcon.com",
+            furry_character_ids: [await useFurryCharacter("Z", true)],
+            _cover: await downloadBlob(
+                "https://www.thatfurcon.com/exhibition/assets/background-Dud7z5m9.jpg",
+            ),
+        },
     ]);
 };
