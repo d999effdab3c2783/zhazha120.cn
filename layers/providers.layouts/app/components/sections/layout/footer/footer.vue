@@ -33,6 +33,7 @@
                     >
                         <n-button
                             :href="href"
+                            class="fw-extrabold"
                             tag="a"
                             text
                             type="warning"
@@ -54,6 +55,7 @@
                     >
                         <n-button
                             :href="href"
+                            class="fw-extrabold"
                             tag="a"
                             text
                             type="warning"
