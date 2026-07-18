@@ -1,7 +1,7 @@
 import type { LenisOptions } from "lenis";
 
 export default defineAppConfig({
-	lenis: {
-		autoRaf: true,
-	} satisfies LenisOptions,
+    lenis: {
+        autoRaf: true,
+    } satisfies LenisOptions,
 });

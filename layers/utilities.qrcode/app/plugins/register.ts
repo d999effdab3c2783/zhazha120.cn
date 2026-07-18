@@ -3,14 +3,14 @@ import QrCode from "#layers/utilities.qrcode/app/components/utilities/qr-code.vu
 // @unocss-include
 
 export default defineNuxtPlugin(() => {
-	const utilitiesStore = useUtilitiesStore();
+    const utilitiesStore = useUtilitiesStore();
 
-	utilitiesStore.registry.push({
-		icon: "i-tabler:qrcode",
-		name: "二维码",
+    utilitiesStore.registry.push({
+        icon: "i-tabler:qrcode",
+        name: "二维码",
 
-		render() {
-			return h(QrCode);
-		},
-	});
+        render() {
+            return h(QrCode);
+        },
+    });
 });

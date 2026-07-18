@@ -1,9 +1,14 @@
 <script lang="ts" setup>
-	import { useThemeVars } from "naive-ui";
+    import { useThemeVars } from "naive-ui";
 
-	const themeVars = useThemeVars();
+    const themeVars = useThemeVars();
 </script>
 
 <template>
-	<VueBitsDotGrid :active-color="themeVars.primaryColor" :base-color="themeVars.hoverColor" :dot-size="6" :gap="18" />
+    <VueBitsDotGrid
+        :active-color="themeVars.primaryColor"
+        :base-color="themeVars.hoverColor"
+        :dot-size="6"
+        :gap="18"
+    />
 </template>

@@ -1,5 +1,5 @@
 <template>
-	<n-card title="探索我" size="small">
-		<SectionsSelfDiscover />
-	</n-card>
+    <n-card size="small" title="探索我">
+        <SectionsSelfDiscover />
+    </n-card>
 </template>

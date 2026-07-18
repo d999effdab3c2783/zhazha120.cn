@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-	import type { TransitionProps } from "vue";
+    import type { TransitionProps } from "vue";
 
-	defineProps<TransitionProps>();
+    defineProps<TransitionProps>();
 </script>
 
 <template>
-	<Transition name="v-fade" v-bind="$attrs">
-		<slot />
-	</Transition>
+    <Transition name="v-fade" v-bind="$attrs">
+        <slot />
+    </Transition>
 </template>
 
 <style lang="scss">
-	.v-fade {
-		&-enter-active,
-		&-leave-active {
-			@apply transition-(property-[opacity] ease-in-out duration-500);
-		}
+    .v-fade {
+        &-enter-active,
+        &-leave-active {
+            @apply transition-(property-[opacity] ease-in-out duration-500);
+        }
 
-		&-enter-from,
-		&-leave-to {
-			@apply opacity-0;
-		}
-	}
+        &-enter-from,
+        &-leave-to {
+            @apply opacity-0;
+        }
+    }
 </style>
