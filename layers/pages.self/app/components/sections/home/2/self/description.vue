@@ -13,7 +13,7 @@
 <template>
     <n-element
         :class="[
-            'transition-(property-filter duration-500 ease-in-out)',
+            'mb-4 transition-(property-filter duration-500 ease-in-out)',
             { 'blur-6 hover:cursor-pointer': !show },
         ]"
         @click="handleClick"
