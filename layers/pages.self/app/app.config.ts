@@ -29,7 +29,8 @@ export default defineAppConfig({
                 icon: "i-simple-icons:steam",
                 name: "Steam",
                 href: "https://steamcommunity.com/id/WOSHIZHAZHA120",
-                extra: "好友代码: 485570157",
+
+                comment: "好友代码: 485570157",
             },
             {
                 icon: "i-simple-icons:bilibili",
@@ -44,11 +45,17 @@ export default defineAppConfig({
         ],
         external_links: [
             {
+                primary: true,
+
                 icon: "i-tdesign:usergroup-add",
                 name: "个人群",
                 href: "https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3",
-                primary: true,
-                extra: "自助入群, 但话题很杂 也许什么都聊（",
+
+                comment: [
+                    "自助入群 无打扰",
+                    "话题很杂 也许什么都聊",
+                    "人多不一定热闹 看不懂也没关系",
+                ].join("\n"),
             },
             {
                 icon: "i-mingcute:live-line",
