@@ -3,7 +3,21 @@ import { generate } from "@ant-design/colors";
 
 const colors = generate("#f79a00");
 
-export default defineAppConfig({
+export default defineAppConfig<{
+    readonly theme: {
+        readonly global: {
+            readonly overrides: GlobalThemeOverrides;
+        };
+
+        readonly light: {
+            readonly overrides: GlobalThemeOverrides;
+        };
+
+        readonly dark: {
+            readonly overrides: GlobalThemeOverrides;
+        };
+    };
+}>({
     theme: {
         global: {
             overrides: {
@@ -13,13 +27,13 @@ export default defineAppConfig({
                     primaryColorSuppl: colors[7],
                     primaryColorPressed: colors[6],
                 },
-            } satisfies GlobalThemeOverrides,
+            },
         },
         light: {
-            overrides: {} satisfies GlobalThemeOverrides,
+            overrides: {},
         },
         dark: {
-            overrides: {} satisfies GlobalThemeOverrides,
+            overrides: {},
         },
     },
 });

@@ -1,6 +1,36 @@
 // @unocss-include
 
-export default defineAppConfig({
+import type { ButtonType } from "naive-ui";
+
+export default defineAppConfig<{
+    readonly self: {
+        readonly avatar: {
+            readonly src: string;
+            readonly poke: string;
+        };
+
+        readonly name: string;
+        readonly birthday: Date;
+
+        readonly contacts: {
+            readonly icon: string;
+            readonly name: string;
+            readonly href: string;
+
+            readonly comment?: string;
+        }[];
+
+        readonly external_links: {
+            readonly type?: ButtonType;
+
+            readonly icon: string;
+            readonly name: string;
+            readonly href: string;
+
+            readonly comment?: string;
+        }[];
+    };
+}>({
     self: {
         avatar: {
             src: "/z.svg",
@@ -45,7 +75,7 @@ export default defineAppConfig({
         ],
         external_links: [
             {
-                primary: true,
+                type: "primary",
 
                 icon: "i-tdesign:usergroup-add",
                 name: "个人群",

@@ -1,4 +1,32 @@
-export default defineAppConfig({
+export default defineAppConfig<{
+    readonly layout: {
+        readonly footer: {
+            readonly copyright_start_year: number;
+
+            readonly filing: {
+                readonly province_abbr: string;
+
+                readonly icp: {
+                    readonly code: number;
+                    readonly link: string;
+                };
+
+                readonly safety: {
+                    readonly code: number;
+                    readonly link: string;
+                };
+            };
+
+            readonly version: {
+                readonly link: string;
+            };
+
+            readonly utilities: {
+                readonly hotkey: string;
+            };
+        };
+    };
+}>({
     layout: {
         footer: {
             copyright_start_year: 2022,

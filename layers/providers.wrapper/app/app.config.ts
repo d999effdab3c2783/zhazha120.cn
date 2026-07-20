@@ -1,7 +1,9 @@
 import type { LenisOptions } from "lenis";
 
-export default defineAppConfig({
+export default defineAppConfig<{
+    readonly lenis: LenisOptions;
+}>({
     lenis: {
         autoRaf: true,
-    } satisfies LenisOptions,
+    },
 });

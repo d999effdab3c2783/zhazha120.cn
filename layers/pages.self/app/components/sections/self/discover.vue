@@ -7,13 +7,13 @@
 
 <template>
     <n-flex align="center" size="small">
-        <template v-for="{ icon, name, href, primary, comment } in appConfig.self.external_links">
+        <template v-for="{ type, icon, name, href, comment } in appConfig.self.external_links">
             <NaiveRedirectorWrapper :href="href">
                 <template #default="{ href, redirect }">
                     <n-button
                         :block="isMobile"
                         :href="href"
-                        :type="primary ? 'primary' : undefined"
+                        :type="type"
                         tag="a"
                         @click.prevent="redirect"
                     >
