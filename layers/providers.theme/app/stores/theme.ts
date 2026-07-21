@@ -33,6 +33,7 @@ export const useThemeStore = defineStore("theme", () => {
 
     return {
         mode,
+        actualMode,
         preset,
         overrides,
     };

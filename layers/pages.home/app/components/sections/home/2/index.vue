@@ -11,8 +11,7 @@
         <n-element ref="container">
             <n-flex :size="0" align="center" vertical>
                 <SectionsHome2Self />
-
-                <n-divider>开发</n-divider>
+                <SectionsHome2Dev />
 
                 <n-divider>福瑞</n-divider>
 
