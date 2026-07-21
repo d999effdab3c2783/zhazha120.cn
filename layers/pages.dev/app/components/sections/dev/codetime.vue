@@ -14,7 +14,7 @@
             <n-image :src="processWidget(appConfig.dev.codetime.widgets.trend)" />
 
             <n-element class="flex-1">
-                <n-tabs>
+                <n-tabs animated>
                     <n-tab-pane name="按语言">
                         <n-image
                             :src="processWidget(appConfig.dev.codetime.widgets.top.languages)"
@@ -41,11 +41,15 @@
         </n-flex>
 
         <n-element class="mt-4">
-            <naive-redirector-wrapper #="{ href, redirect }" href="https://codetime.dev">
-                <n-button :href="href" tag="a" text @click.prevent="redirect">
-                    codetime.dev
-                </n-button>
-            </naive-redirector-wrapper>
+            <n-flex vertical align="center" :size="0">
+                <n-text :depth="3">仅供参考</n-text>
+
+                <naive-redirector-wrapper #="{ href, redirect }" href="https://codetime.dev">
+                    <n-button :href="href" tag="a" text @click.prevent="redirect">
+                        codetime.dev
+                    </n-button>
+                </naive-redirector-wrapper>
+            </n-flex>
         </n-element>
     </n-flex>
 </template>
