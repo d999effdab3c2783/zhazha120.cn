@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { sha } from "~build/git";
+    import { abbreviatedSha, branch, sha } from "~build/git";
 
     const { isMobile } = useResponsive();
     const appConfig = useAppConfig();
