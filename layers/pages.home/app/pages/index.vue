@@ -1,8 +1,8 @@
 <script lang="ts" setup>
     import { isNullish } from "remeda";
 
-    definePageMeta({
-        name: "首页",
+    useSeoMeta({
+        title: "首页",
     });
 
     const lenis = useLenis();

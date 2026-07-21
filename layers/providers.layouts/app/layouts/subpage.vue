@@ -1,6 +1,10 @@
 <script lang="ts" setup>
     const router = useRouter();
 
+    const title = useTitle(null, {
+        observe: true,
+    });
+
     const handleBack = () => {
         if (history.length > 1) {
             router.back();
@@ -8,7 +12,7 @@
         }
 
         navigateTo({
-            name: "首页",
+            path: "/",
         });
     };
 </script>
@@ -17,7 +21,10 @@
     <NuxtLayout name="default">
         <NuxtLayout name="container">
             <n-flex size="small" vertical>
-                <n-page-header :title="String($route.name ?? $route.fullPath)" @back="handleBack" />
+                <n-page-header
+                    :title="String(title ?? $route.name ?? $route.fullPath)"
+                    @back="handleBack"
+                />
 
                 <n-element>
                     <slot />
