@@ -1,9 +1,17 @@
 <script lang="ts" setup>
+    import { isNonNullish } from "remeda";
+
     const themeStore = useThemeStore();
     const appConfig = useAppConfig();
     const { isMobile } = useResponsive();
 
-    const processWidget = (url: string) => url.replaceAll("{theme}", themeStore.actualMode);
+    const processWidget = (url: string) => {
+        if (isNonNullish(themeStore.actualMode)) {
+            return url.replaceAll("{theme}", themeStore.actualMode);
+        }
+
+        return url;
+    };
 </script>
 
 <template>
