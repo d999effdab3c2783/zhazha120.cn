@@ -82,25 +82,17 @@ export default defineAppConfig<{
                 href: "https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3",
 
                 comment: [
-                    "自助入群 无打扰",
+                    "一些群 个人相关",
+                    "答对问题自助入群 答案自己回去上滑看看这个网站介绍的是谁",
+                    "无打扰 (没有莫名其妙的 @全体成员, 也不会发布群待办)",
                     "话题很杂 也许什么都聊",
                     "人多不一定热闹 看不懂也没关系",
                 ].join("\n"),
             },
             {
-                icon: "i-mingcute:live-line",
-                name: "直播间",
-                href: "http://live.zhazha120.cn",
-            },
-            {
                 icon: "i-ant-design:cloud-download-outlined",
                 name: "云盘",
                 href: "https://pan.zhazha120.cn",
-            },
-            {
-                icon: "i-tabler:mail-cog",
-                name: "邮局",
-                href: "http://mail.zhazha120.cn",
             },
         ],
     },
