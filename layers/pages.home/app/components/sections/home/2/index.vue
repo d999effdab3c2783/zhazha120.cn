@@ -9,7 +9,7 @@
 <template>
     <NuxtLayout name="container">
         <n-element ref="container">
-            <n-flex :size="0" align="center" vertical>
+            <n-flex :size="120" align="center" vertical>
                 <SectionsHome2Self />
                 <SectionsHome2Dev />
 
