@@ -1,5 +1,5 @@
 <template>
-    <n-flex vertical :size="0">
+    <n-flex :size="0" vertical>
         <n-divider>技术栈</n-divider>
 
         <SectionsDevStacks />
