@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import {
     defineConfig,
     presetIcons,
@@ -11,7 +13,18 @@ import {
 export default defineConfig({
     presets: [
         presetWind4(),
-        presetIcons(),
+        presetIcons({
+            collections: {
+                custom: {
+                    openlist: readFileSync(
+                        resolve(__dirname, "layers/pages.dev/app/assets/icons/openlist.svg"),
+                        {
+                            encoding: "utf-8",
+                        },
+                    ).toString(),
+                },
+            },
+        }),
         presetWebFonts({
             provider: "none",
             fonts: {
