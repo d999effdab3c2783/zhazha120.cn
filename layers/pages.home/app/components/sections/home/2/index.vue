@@ -13,9 +13,18 @@
                 <SectionsHome2Self />
                 <SectionsHome2Dev />
 
-                <n-divider>福瑞</n-divider>
+                <n-divider dashed>
+                    <n-element class="leading-tight">
+                        <n-flex :size="0" align="center" vertical>
+                            <n-h2 class="fw-extrabold !mb-0">福瑞</n-h2>
+                            <n-text :depth="3">Furry</n-text>
+                        </n-flex>
+                    </n-element>
+                </n-divider>
 
-                <n-divider>杂项</n-divider>
+                <n-divider dashed>
+                    <n-h2 class="fw-extrabold !mb-0">杂项</n-h2>
+                </n-divider>
             </n-flex>
         </n-element>
     </NuxtLayout>

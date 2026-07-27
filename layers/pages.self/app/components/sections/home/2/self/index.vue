@@ -1,8 +1,10 @@
 <template>
     <n-flex :size="0" class="w-full" vertical>
-        <n-divider>本体</n-divider>
+        <n-divider dashed>
+            <n-h2 class="fw-extrabold !mb-0">本体</n-h2>
+        </n-divider>
 
-        <n-flex size="small" vertical>
+        <n-flex class="w-full" size="small" vertical>
             <SectionsHome2SelfDescription />
             <SectionsHome2SelfContacts />
             <SectionsHome2SelfDiscover />
