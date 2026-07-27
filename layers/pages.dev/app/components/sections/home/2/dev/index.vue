@@ -7,6 +7,7 @@
         <n-flex class="w-full" size="small" vertical>
             <SectionsHome2DevDescription />
             <SectionsHome2DevCodetime />
+            <SectionsHome2DevStacks />
         </n-flex>
     </n-flex>
 </template>
