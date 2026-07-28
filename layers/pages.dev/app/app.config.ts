@@ -378,6 +378,18 @@ export default defineAppConfig<{
                 name: "Paw Team Club",
                 href: "https://github.com/PawTeamClub",
             },
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/298097181",
+                    href: new URL(
+                        "../app/assets/organizations/298097181.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "GDTools",
+                href: "https://github.com/GMDtools",
+            },
         ],
     },
 });
