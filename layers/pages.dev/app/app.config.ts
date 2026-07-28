@@ -363,7 +363,7 @@ export default defineAppConfig<{
                     ).toString(),
                 },
 
-                name: "Furry Chat World",
+                name: "FurryChatWorld",
                 href: "https://github.com/FurryChatWorld",
             },
             {
@@ -375,7 +375,7 @@ export default defineAppConfig<{
                     ).toString(),
                 },
 
-                name: "Paw Team Club",
+                name: "PawTeamClub",
                 href: "https://github.com/PawTeamClub",
             },
             {
