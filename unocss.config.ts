@@ -17,7 +17,15 @@ export default defineConfig({
             collections: {
                 custom: {
                     openlist: readFileSync(
-                        resolve(__dirname, "layers/pages.dev/app/assets/icons/openlist.svg"),
+                        resolve(
+                            __dirname,
+                            "layers",
+                            "pages.dev",
+                            "app",
+                            "assets",
+                            "icons",
+                            "openlist.svg",
+                        ),
                         {
                             encoding: "utf-8",
                         },

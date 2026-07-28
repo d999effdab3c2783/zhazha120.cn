@@ -13,7 +13,7 @@ export default defineNuxtConfig({
         plugins: [
             Info(),
             AutoImport({
-                dts: resolve(__dirname, "app/types/auto-imports.d.ts"),
+                dts: resolve(__dirname, "app", "types", "auto-imports.d.ts"),
                 imports: [
                     {
                         "naive-ui": [
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
                 ],
             }),
             Components({
-                dts: resolve(__dirname, `app/types/components.d.ts`),
+                dts: resolve(__dirname, "app", "types", "components.d.ts"),
                 resolvers: [NaiveUiResolver()],
             }),
         ],

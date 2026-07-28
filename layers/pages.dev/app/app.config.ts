@@ -39,7 +39,7 @@ export default defineAppConfig<{
             const user_id = 2270;
 
             return {
-                domain: `codetime.dev`,
+                domain: "codetime.dev",
                 user_id,
 
                 widgets: {
