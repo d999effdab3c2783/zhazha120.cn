@@ -32,6 +32,16 @@ export default defineAppConfig<{
                 readonly href: string;
             }[];
         }[];
+
+        readonly organizations: {
+            readonly avatar: {
+                readonly src: string;
+                readonly href: string;
+            };
+
+            readonly name: string;
+            readonly href: string;
+        }[];
     };
 }>({
     dev: {
@@ -281,6 +291,92 @@ export default defineAppConfig<{
                         href: "https://podman.io",
                     },
                 ],
+            },
+        ],
+        organizations: [
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/72001477",
+                    href: new URL(
+                        "../app/assets/organizations/72001477.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "26F Studio",
+                href: "https://github.com/26F-Studio",
+            },
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/168070538",
+                    href: new URL(
+                        "../app/assets/organizations/168070538.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "A Minos",
+                href: "https://github.com/A-Minos",
+            },
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/108103310",
+                    href: new URL(
+                        "../app/assets/organizations/108103310.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "Z Team",
+                href: "https://github.com/c794b7b0331e4cf3",
+            },
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/102524977",
+                    href: new URL(
+                        "../app/assets/organizations/102524977.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "Endless Spike Studio",
+                href: "https://github.com/Endless-Spike-Studio",
+            },
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/103052241",
+                    href: new URL(
+                        "../app/assets/organizations/103052241.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "FurDevsCN",
+                href: "https://github.com/FurDevsCN",
+            },
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/180642546",
+                    href: new URL(
+                        "../app/assets/organizations/180642546.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "Furry Chat World",
+                href: "https://github.com/FurryChatWorld",
+            },
+            {
+                avatar: {
+                    src: "https://avatars.githubusercontent.com/u/156998119",
+                    href: new URL(
+                        "../app/assets/organizations/156998119.bin",
+                        import.meta.url,
+                    ).toString(),
+                },
+
+                name: "Paw Team Club",
+                href: "https://github.com/PawTeamClub",
             },
         ],
     },

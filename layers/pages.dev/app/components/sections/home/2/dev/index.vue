@@ -8,6 +8,10 @@
             <SectionsHome2DevDescription />
             <SectionsHome2DevCodetime />
             <SectionsHome2DevStacks />
+
+            <n-divider>工作经历</n-divider>
+
+            <SectionsHome2DevOrganizations />
         </n-flex>
     </n-flex>
 </template>
