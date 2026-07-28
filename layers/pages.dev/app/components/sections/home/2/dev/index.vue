@@ -12,6 +12,7 @@
             <n-divider>技术履历</n-divider>
 
             <SectionsHome2DevOrganizations />
+            <SectionsHome2DevProjects />
         </n-flex>
     </n-flex>
 </template>
