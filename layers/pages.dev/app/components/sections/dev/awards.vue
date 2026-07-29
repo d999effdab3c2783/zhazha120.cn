@@ -1,0 +1,48 @@
+<script lang="ts" setup>
+    import { isNonNullish } from "remeda";
+
+    const appConfig = useAppConfig();
+    const { isMobile } = useResponsive();
+    const message = useMessage();
+
+    const handleEmptyClick = () => {
+        message.info("无可用溯源链接");
+    };
+</script>
+
+<template>
+    <n-flex :vertical="isMobile" size="small">
+        <template v-for="award in appConfig.dev.awards">
+            <template v-if="isNonNullish(award.href)">
+                <naive-redirector-wrapper #="{ href, redirect }" :href="award.href">
+                    <n-button
+                        :block="isMobile"
+                        :href="href"
+                        class="h-full p-2"
+                        size="small"
+                        tag="a"
+                        @click.prevent="redirect"
+                    >
+                        <n-element class="text-wrap whitespace-pre leading-tight">
+                            {{ award.name }}
+                        </n-element>
+                    </n-button>
+                </naive-redirector-wrapper>
+            </template>
+
+            <template v-else>
+                <n-button
+                    :block="isMobile"
+                    class="h-full p-2"
+                    secondary
+                    size="small"
+                    @click="handleEmptyClick"
+                >
+                    <n-element class="text-wrap whitespace-pre leading-tight">
+                        {{ award.name }}
+                    </n-element>
+                </n-button>
+            </template>
+        </template>
+    </n-flex>
+</template>

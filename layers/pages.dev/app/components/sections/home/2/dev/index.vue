@@ -13,6 +13,8 @@
 
             <SectionsHome2DevOrganizations />
             <SectionsHome2DevProjects />
+
+            <SectionsHome2DevAwards />
         </n-flex>
     </n-flex>
 </template>
