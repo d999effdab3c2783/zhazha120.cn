@@ -20,7 +20,7 @@
 <template>
     <NuxtLayout name="default">
         <NuxtLayout name="container">
-            <n-flex size="small" vertical>
+            <n-flex size="large" vertical>
                 <n-page-header
                     :title="String(title ?? $route.name ?? $route.fullPath)"
                     @back="handleBack"
