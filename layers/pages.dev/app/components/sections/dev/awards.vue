@@ -18,7 +18,7 @@
                     <n-button
                         :block="isMobile"
                         :href="href"
-                        class="h-full p-2"
+                        class="h-full p-4"
                         size="small"
                         tag="a"
                         @click.prevent="redirect"
@@ -33,7 +33,7 @@
             <template v-else>
                 <n-button
                     :block="isMobile"
-                    class="h-full p-2"
+                    class="h-full p-4"
                     secondary
                     size="small"
                     @click="handleEmptyClick"
