@@ -22,9 +22,7 @@
                     </n-element>
                 </n-divider>
 
-                <n-divider dashed>
-                    <n-h2 class="fw-extrabold !mb-0">杂项</n-h2>
-                </n-divider>
+                <SectionsHome2Misc />
             </n-flex>
         </n-element>
     </NuxtLayout>
