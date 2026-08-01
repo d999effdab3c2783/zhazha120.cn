@@ -466,6 +466,10 @@ export default defineAppConfig<{
                 name: "tetr.io 汉化",
                 href: "https://github.com/A-Minos/tetrio-chinese",
             },
+            {
+                name: "GDTools 服务",
+                href: "https://github.com/GMDtools/Services",
+            },
         ],
         awards: [
             {
