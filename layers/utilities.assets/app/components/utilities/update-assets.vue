@@ -48,24 +48,26 @@
 
 <template>
     <n-flex size="small" vertical>
-        <n-list bordered clickable hoverable>
-            <template v-for="item in assetsStore.registry">
-                <n-list-item>
-                    <n-flex align="center" size="small">
-                        <n-checkbox
-                            @update:checked="(checked) => handleUpdateChecked(checked, item)"
-                        />
+        <n-scrollbar class="max-h-120">
+            <n-list bordered clickable hoverable>
+                <template v-for="item in assetsStore.registry">
+                    <n-list-item>
+                        <n-flex align="center" size="small">
+                            <n-checkbox
+                                @update:checked="(checked) => handleUpdateChecked(checked, item)"
+                            />
 
-                        <n-image :key="key" :src="item.href" class="size-10" />
+                            <n-image :key="key" :src="item.href" class="size-10" />
 
-                        <n-flex :size="0" vertical>
-                            <n-text>{{ item.src }}</n-text>
-                            <n-text :depth="3">{{ assetsStore.convertPath(item.href) }}</n-text>
+                            <n-flex :size="0" vertical>
+                                <n-text>{{ item.src }}</n-text>
+                                <n-text :depth="3">{{ assetsStore.convertPath(item.href) }}</n-text>
+                            </n-flex>
                         </n-flex>
-                    </n-flex>
-                </n-list-item>
-            </template>
-        </n-list>
+                    </n-list-item>
+                </template>
+            </n-list>
+        </n-scrollbar>
 
         <n-button
             :disabled="updater.pending.value"
