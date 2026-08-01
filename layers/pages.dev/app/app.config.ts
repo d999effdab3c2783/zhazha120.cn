@@ -35,7 +35,7 @@ export default defineAppConfig<{
 
         readonly organizations: {
             readonly avatar: {
-                readonly src: string;
+                readonly src: string | null;
                 readonly href: string;
             };
 
