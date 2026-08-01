@@ -5,5 +5,6 @@ export default defineAppConfig<{
 }>({
     lenis: {
         autoRaf: true,
+        allowNestedScroll: true,
     },
 });
