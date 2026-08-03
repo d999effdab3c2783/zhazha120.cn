@@ -44,6 +44,8 @@ export default defineAppConfig<{
                 icon: "i-ant-design:qq-outlined",
                 name: "QQ",
                 href: "https://qm.qq.com/q/GkUxK7PmmW",
+
+                comment: "QQ 号: 2331281251",
             },
             {
                 icon: "i-ant-design:mail-outlined",
