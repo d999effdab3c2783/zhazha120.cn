@@ -31,7 +31,7 @@ export const useBreadcrumb = () => {
                 }
 
                 return {
-                    name: route.meta.title ?? path.slice(1),
+                    name: route.meta.title ?? path.split("/").at(-1),
                     path,
                 };
             })
