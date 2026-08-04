@@ -1,9 +1,6 @@
 <script lang="ts" setup>
     definePageMeta({
         layout: "subpage",
-    });
-
-    useSeoMeta({
         title: "本体",
     });
 </script>

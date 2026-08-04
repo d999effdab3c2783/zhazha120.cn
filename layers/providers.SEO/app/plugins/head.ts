@@ -2,19 +2,24 @@ import { isEmptyish } from "remeda";
 
 export default defineNuxtPlugin(() => {
     const appConfig = useAppConfig();
+    const breadcrumb = useBreadcrumb();
 
     useFavicon(appConfig.self.avatar.src);
 
     useHead({
         htmlAttrs: {
-            lang: "zh",
+            lang: "zh-CN",
         },
-        titleTemplate: (name?: string) => {
-            if (isEmptyish(name)) {
-                return appConfig.self.name;
-            }
-
-            return `${appConfig.self.name} | ${name}`;
-        },
+        titleTemplate: (title?: string) =>
+            [
+                appConfig.self.name,
+                breadcrumb.items.value
+                    .slice(1)
+                    .map((item) => item.name)
+                    .join(" / "),
+                title,
+            ]
+                .filter((part) => !isEmptyish(part))
+                .join(" | "),
     });
 });

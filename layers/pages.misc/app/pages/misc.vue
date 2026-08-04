@@ -1,9 +1,6 @@
 <script lang="ts" setup>
     definePageMeta({
         layout: "subpage",
-    });
-
-    useSeoMeta({
         title: "杂项",
     });
 </script>

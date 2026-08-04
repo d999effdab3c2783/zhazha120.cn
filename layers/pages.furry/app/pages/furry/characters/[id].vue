@@ -4,6 +4,7 @@
     definePageMeta({
         layout: "subpage",
         validate: (route) => isString(route.params.id) && /^\d+$/.test(route.params.id),
+        title: "档案",
     });
 
     const furryStore = useFurryStore();
@@ -14,9 +15,16 @@
         (character) => String(character.id) === route.params.id,
     );
 
-    useSeoMeta({
-        title: "福瑞 (Furry) | 设定" + (isNonNullish(character) ? ` | ${character.name}` : ""),
-    });
+    if (isNonNullish(character)) {
+        useSeoMeta({
+            title: character.name,
+            description: character.description,
+
+            ogTitle: character.name,
+            ogDescription: character.description,
+            ogImage: character.illustration.src,
+        });
+    }
 </script>
 
 <template>

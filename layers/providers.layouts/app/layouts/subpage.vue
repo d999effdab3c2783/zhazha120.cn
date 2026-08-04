@@ -1,9 +1,7 @@
 <script lang="ts" setup>
+    const appConfig = useAppConfig();
     const router = useRouter();
-
-    const title = useTitle(null, {
-        observe: true,
-    });
+    const breadcrumb = useBreadcrumb();
 
     const handleBack = () => {
         if (history.length > 1) {
@@ -24,12 +22,12 @@
                 <n-page-header @back="handleBack">
                     <template #title>
                         <n-breadcrumb>
-                            <template
-                                v-for="part in String(
-                                    title ?? $route.name ?? $route.fullPath,
-                                ).split('|')"
-                            >
-                                <n-breadcrumb-item>{{ part.trim() }}</n-breadcrumb-item>
+                            <template v-for="{ name, path } in breadcrumb.items.value">
+                                <naive-redirector-wrapper #="{ href, redirect }" :href="path">
+                                    <n-breadcrumb-item :href="href" @click.prevent="redirect">
+                                        {{ name }}
+                                    </n-breadcrumb-item>
+                                </naive-redirector-wrapper>
                             </template>
                         </n-breadcrumb>
                     </template>
