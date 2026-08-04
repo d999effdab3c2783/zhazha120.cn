@@ -1,32 +1,96 @@
 <script lang="ts" setup>
+    import { isNonNullish } from "remeda";
+
     definePageMeta({
         layout: "subpage",
         title: "支持 & 赞助",
     });
 
     const appConfig = useAppConfig();
-
-    const assets = [
-        new URL("../assets/wechat.bin", import.meta.url).toString(),
-        new URL("../assets/alipay/red_packet.bin", import.meta.url).toString(),
-        new URL("../assets/alipay/pay.bin", import.meta.url).toString(),
-    ];
 </script>
 
 <template>
     <n-tabs animated type="segment">
-        <n-tab-pane name="爱发电"></n-tab-pane>
+        <template v-for="channel in appConfig.support.channels">
+            <n-tab-pane :name="channel.name">
+                <n-flex size="small" vertical>
+                    <template v-for="method in channel.methods">
+                        <template v-if="method.type === 'external'">
+                            <n-card :title="method.name ?? undefined" size="small">
+                                <n-flex size="small" vertical>
+                                    <template v-if="isNonNullish(method.comment)">
+                                        <n-alert type="info">
+                                            {{ method.comment }}
+                                        </n-alert>
+                                    </template>
 
-        <n-tab-pane name="QQ 支付">
-            <SectionsSupportQq />
-        </n-tab-pane>
+                                    <n-element class="h-full relative">
+                                        <n-element
+                                            class="size-full absolute top-0 left-0 transition-([opacity_background] duration-500 ease-in-out) opacity-0 hover:(bg-([#000000] opacity-50) opacity-100)"
+                                        >
+                                            <naive-position class="h-full" placement="center">
+                                                <naive-redirector-wrapper
+                                                    #="{ href, redirect }"
+                                                    :href="method.href"
+                                                >
+                                                    <n-button
+                                                        :href="href"
+                                                        size="small"
+                                                        tag="a"
+                                                        type="primary"
+                                                        @click.prevent="redirect"
+                                                    >
+                                                        <template #icon>
+                                                            <n-icon
+                                                                class="i-ant-design:link-outlined"
+                                                            />
+                                                        </template>
 
-        <n-tab-pane name="微信支付">
-            <SectionsSupportWechat />
-        </n-tab-pane>
+                                                        访问
+                                                    </n-button>
+                                                </naive-redirector-wrapper>
+                                            </naive-position>
+                                        </n-element>
 
-        <n-tab-pane name="支付宝">
-            <SectionsSupportAlipay />
-        </n-tab-pane>
+                                        <iframe
+                                            :src="method.href"
+                                            class="w-full h-240 border-none"
+                                        />
+                                    </n-element>
+                                </n-flex>
+                            </n-card>
+                        </template>
+
+                        <template v-if="method.type === 'qrcode'">
+                            <template
+                                v-if="isNonNullish(method.image) || isNonNullish(method.content)"
+                            >
+                                <n-card :title="method.name ?? undefined" size="small">
+                                    <template v-if="isNonNullish(method.image)">
+                                        <n-flex justify="center">
+                                            <n-image :src="method.image" />
+                                        </n-flex>
+                                    </template>
+
+                                    <template v-if="isNonNullish(method.content)" #action>
+                                        <n-flex align="center" size="small" vertical>
+                                            <n-qr-code
+                                                :icon-src="appConfig.self.avatar.src"
+                                                :size="appConfig.support.fallback_qrcode_size"
+                                                :value="method.content"
+                                                class="box-content"
+                                                icon-background-color="transparent"
+                                            />
+
+                                            <n-text>回退</n-text>
+                                        </n-flex>
+                                    </template>
+                                </n-card>
+                            </template>
+                        </template>
+                    </template>
+                </n-flex>
+            </n-tab-pane>
+        </template>
     </n-tabs>
 </template>
