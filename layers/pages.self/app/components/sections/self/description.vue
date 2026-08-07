@@ -53,15 +53,15 @@
             </n-alert>
         </n-flex>
 
-        <n-alert :show-icon="false" class="bg-purple-900/50">
-            <n-flex align="center" size="small">
-                <n-icon class="text-(8 purple-200) i-ant-design:question-circle-filled" />
+        <n-alert class="bg-purple-900/50">
+            <template #icon>
+                <n-icon class="text-purple-200 i-ant-design:question-circle-filled" />
+            </template>
 
-                <n-flex :size="0" vertical>
-                    <n-text :depth="3" class="text-sm">
-                        有例外 包括但不限于熟人等 但无法预测 偶尔不想理人时以上内容依旧适用
-                    </n-text>
-                </n-flex>
+            <n-flex :size="0" vertical>
+                <n-text :depth="3">
+                    有例外 包括但不限于熟人等 但无法预测 偶尔不想理人时以上内容依旧适用
+                </n-text>
             </n-flex>
         </n-alert>
 
