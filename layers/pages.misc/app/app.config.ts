@@ -120,7 +120,7 @@ export default defineAppConfig<{
             },
             {
                 logo: {
-                    src: null,
+                    src: "https://img.linfun.top/imgapp/xxxxxxx.png", // TODO: 借林风的
                     href: new URL(
                         "../app/assets/friend_links/xxandcc.bin",
                         import.meta.url,
