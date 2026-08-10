@@ -16,6 +16,7 @@
     "devDependencies": {
         "@ant-design/colors": "^8.0.1",
         "@iconify/json": "^2.2.512",
+        "@nuxtjs/i18n": "^10.6.0",
         "@pinia/nuxt": "^1.0.1",
         "@types/node": "^26.2.0",
         "@unocss/nuxt": "^66.7.5",
