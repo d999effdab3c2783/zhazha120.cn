@@ -19,12 +19,18 @@
                     <n-button
                         :block="isMobile"
                         :href="href"
-                        class="h-full p-4"
+                        class="flex-1 h-full p-4"
                         size="small"
                         tag="a"
                         @click.prevent="redirect"
                     >
-                        <n-element class="text-wrap whitespace-pre leading-tight">
+                        <n-element
+                            :class="[
+                                'whitespace-pre leading-tight',
+                                { 'text-wrap': isMobile },
+                                { 'text-nowrap': !isMobile },
+                            ]"
+                        >
                             {{ guessLocale(award.name) }}
                         </n-element>
                     </n-button>
@@ -34,12 +40,18 @@
             <template v-else>
                 <n-button
                     :block="isMobile"
-                    class="h-full p-4"
+                    class="flex-1 h-full p-4"
                     secondary
                     size="small"
                     @click="handleEmptyClick"
                 >
-                    <n-element class="text-wrap whitespace-pre leading-tight">
+                    <n-element
+                        :class="[
+                            'whitespace-pre leading-tight',
+                            { 'text-wrap': isMobile },
+                            { 'text-nowrap': !isMobile },
+                        ]"
+                    >
                         {{ guessLocale(award.name) }}
                     </n-element>
                 </n-button>
