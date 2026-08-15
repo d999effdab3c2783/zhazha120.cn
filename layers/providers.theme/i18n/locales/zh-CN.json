@@ -1,5 +1,5 @@
 {
-    "providers.theme:switcher.light": "浅色",
-    "providers.theme:switcher.system": "跟随系统",
-    "providers.theme:switcher.dark": "暗色"
+    "providers.theme:switcher:light": "浅色",
+    "providers.theme:switcher:system": "跟随系统",
+    "providers.theme:switcher:dark": "暗色"
 }
