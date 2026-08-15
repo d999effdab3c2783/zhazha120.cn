@@ -17,6 +17,15 @@ export const useBreadcrumb = () => {
                     .join("/");
 
                 if ([0, 1].includes(index) || isEmptyish(path)) {
+                    if (index === 0) {
+                        return {
+                            name: isObjectType(appConfig.self.name)
+                                ? nuxtApp.$i18n.t(appConfig.self.name.localeKey)
+                                : appConfig.self.name,
+                            path: "/",
+                        };
+                    }
+
                     if (index === 1) {
                         const locale = nuxtApp.$i18n.locales.value.find(
                             (locale) => path.substring(1) === locale.code,
@@ -29,13 +38,6 @@ export const useBreadcrumb = () => {
                             };
                         }
                     }
-
-                    return {
-                        name: isObjectType(appConfig.self.name)
-                            ? nuxtApp.$i18n.t(appConfig.self.name.localeKey)
-                            : appConfig.self.name,
-                        path: "/",
-                    };
                 }
 
                 const route = router.resolve({
