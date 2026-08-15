@@ -1,5 +1,5 @@
 <template>
-    <n-card size="small" title="探索我">
+    <n-card :title="$t('pages.self:discover_me')" size="small">
         <SectionsSelfDiscover />
     </n-card>
 </template>

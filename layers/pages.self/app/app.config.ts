@@ -1,42 +1,47 @@
 // @unocss-include
 
 import type { ButtonType } from "naive-ui";
+import type { MaybeLocaleKey } from "#layers/providers.i18n/app/types/i18n";
 
 export default defineAppConfig<{
     readonly self: {
         readonly avatar: {
             readonly src: string;
-            readonly poke: string;
+            readonly poke: MaybeLocaleKey;
         };
 
-        readonly name: string;
+        readonly name: MaybeLocaleKey;
         readonly birthday: Date;
 
         readonly contacts: {
             readonly icon: string;
-            readonly name: string;
+            readonly name: MaybeLocaleKey;
             readonly href: string;
 
-            readonly comment?: string;
+            readonly comment?: MaybeLocaleKey;
         }[];
 
         readonly external_links: {
             readonly type?: ButtonType;
 
             readonly icon: string;
-            readonly name: string;
+            readonly name: MaybeLocaleKey;
             readonly href: string;
 
-            readonly comment?: string;
+            readonly comment?: MaybeLocaleKey;
         }[];
     };
 }>({
     self: {
         avatar: {
             src: "/z.svg",
-            poke: "戳哭了 哄不好了",
+            poke: {
+                localeKey: "pages.self:poke",
+            },
         },
-        name: "渣渣120",
+        name: {
+            localeKey: "pages.self:nickname",
+        },
         birthday: new Date("2006/5/7"),
 
         contacts: [
@@ -45,16 +50,25 @@ export default defineAppConfig<{
                 name: "QQ",
                 href: "https://qm.qq.com/q/GkUxK7PmmW",
 
-                comment: "QQ 号: 2331281251",
+                comment: {
+                    localeKey: "pages.self:qq.comment",
+                    params: {
+                        qq: 2331281251,
+                    },
+                },
             },
             {
                 icon: "i-ant-design:mail-outlined",
-                name: "邮箱",
+                name: {
+                    localeKey: "pages.self:email",
+                },
                 href: "contact@zhazha120.cn",
             },
             {
                 icon: "i-tabler:brand-netease-music",
-                name: "网易云音乐",
+                name: {
+                    localeKey: "pages.self:netease_music",
+                },
                 href: "https://music.163.com/#/user/home?id=634000521",
             },
             {
@@ -62,11 +76,18 @@ export default defineAppConfig<{
                 name: "Steam",
                 href: "https://steamcommunity.com/id/WOSHIZHAZHA120",
 
-                comment: "好友代码: 485570157",
+                comment: {
+                    localeKey: "pages.self:steam.comment",
+                    params: {
+                        code: 485570157,
+                    },
+                },
             },
             {
                 icon: "i-simple-icons:bilibili",
-                name: "哔哩哔哩",
+                name: {
+                    localeKey: "pages.self:bilibili",
+                },
                 href: "https://space.bilibili.com/24267334",
             },
             {
@@ -80,20 +101,20 @@ export default defineAppConfig<{
                 type: "primary",
 
                 icon: "i-tdesign:usergroup-add",
-                name: "个人群",
+                name: {
+                    localeKey: "pages.self:personal_group",
+                },
                 href: "https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3",
 
-                comment: [
-                    "一些群 个人相关",
-                    "答对问题自助入群 答案自己回去上滑看看这个网站介绍的是谁",
-                    "无打扰 (没有莫名其妙的 @全体成员, 也不会发布群待办)",
-                    "话题很杂 也许什么都聊",
-                    "人多不一定热闹 看不懂也没关系",
-                ].join("\n"),
+                comment: {
+                    localeKey: "pages.self:personal_group.comment",
+                },
             },
             {
                 icon: "i-ant-design:cloud-download-outlined",
-                name: "云盘",
+                name: {
+                    localeKey: "pages.self:cloud_storage",
+                },
                 href: "https://pan.zhazha120.cn",
             },
         ],

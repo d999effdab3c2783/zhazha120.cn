@@ -34,7 +34,7 @@
                 <n-icon class="i-tabler:sun" />
             </template>
 
-            浅色
+            {{ $t("providers.theme:switcher:light") }}
         </ThemeSwitcherButton>
 
         <ThemeSwitcherButton value="system">
@@ -42,7 +42,7 @@
                 <n-icon class="i-tabler:sun-moon" />
             </template>
 
-            跟随系统
+            {{ $t("providers.theme:switcher:system") }}
         </ThemeSwitcherButton>
 
         <ThemeSwitcherButton value="dark">
@@ -50,7 +50,7 @@
                 <n-icon class="i-tabler:moon" />
             </template>
 
-            深色
+            {{ $t("providers.theme:switcher:dark") }}
         </ThemeSwitcherButton>
     </n-button-group>
 </template>

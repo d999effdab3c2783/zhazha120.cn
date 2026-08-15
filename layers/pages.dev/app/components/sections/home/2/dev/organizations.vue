@@ -1,5 +1,5 @@
 <template>
-    <n-card size="small" title="加入的组织">
+    <n-card :title="$t('pages.dev:organizations')" size="small">
         <SectionsDevOrganizations />
     </n-card>
 </template>

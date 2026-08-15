@@ -8,22 +8,32 @@ export default defineNuxtPlugin(() => {
             src: new URL("../assets/illustration.bin", import.meta.url).toString(),
         },
 
-        name: "豌冰",
+        name: {
+            localeKey: "furry.characters.4:name",
+        },
         species: [
             {
-                name: "猫",
+                name: {
+                    localeKey: "furry.characters.4:species.0.name",
+                },
                 percent: 50,
             },
             {
-                name: "狗",
+                name: {
+                    localeKey: "furry.characters.4:species.1.name",
+                },
                 percent: 50,
             },
         ],
         species_alias: null,
-        description: "神秘的舞萌痴与 4k 痴, 食品科学锐意在读中",
+        description: {
+            localeKey: "furry.characters.4:description",
+        },
 
         owner: {
-            name: "豌冰",
+            name: {
+                localeKey: "furry.characters.4:owner",
+            },
             href: "https://space.bilibili.com/519541121",
         },
 

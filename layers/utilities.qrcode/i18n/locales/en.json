@@ -1,0 +1,15 @@
+{
+    "utilities.qrcode:name": "QR code generator",
+    "utilities.qrcode:apply_current_url": "Apply Current URL: {url}",
+    "utilities.qrcode:config.color": "Color",
+    "utilities.qrcode:config.backgroundColor": "Background Color",
+    "utilities.qrcode:config.iconSrc": "Icon Image URL",
+    "utilities.qrcode:config.iconSize": "Icon Size",
+    "utilities.qrcode:config.iconBackgroundColor": "Icon Background Color",
+    "utilities.qrcode:config.iconBorderRadius": "Icon Border Radius",
+    "utilities.qrcode:config.size": "Size",
+    "utilities.qrcode:config.padding": "Padding",
+    "utilities.qrcode:config.errorCorrectionLevel": "Error Correction Level",
+    "utilities.qrcode:config.type": "Type",
+    "utilities.qrcode:presets.default": "Default Style"
+}

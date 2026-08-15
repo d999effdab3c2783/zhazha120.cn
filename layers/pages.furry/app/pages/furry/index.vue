@@ -1,7 +1,9 @@
 <script lang="ts" setup>
     definePageMeta({
         layout: "subpage",
-        title: "福瑞 (Furry)",
+        title: {
+            localeKey: "pages.furry:name",
+        },
     });
 </script>
 

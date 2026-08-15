@@ -8,18 +8,26 @@ export default defineNuxtPlugin(() => {
             src: new URL("../assets/illustration.bin", import.meta.url).toString(),
         },
 
-        name: "暂无名称",
+        name: {
+            localeKey: "furry.characters.1:name",
+        },
         species: [
             {
-                name: "狗",
+                name: {
+                    localeKey: "furry.characters.1:species.0.name",
+                },
                 percent: 100,
             },
         ],
         species_alias: null,
-        description: "其特点是腿部的闪电, 有蓝黄色的大以巴",
+        description: {
+            localeKey: "furry.characters.1:description",
+        },
 
         owner: {
-            name: "渣渣120",
+            name: {
+                localeKey: "furry.characters.1:owner",
+            },
             href: "/",
         },
 

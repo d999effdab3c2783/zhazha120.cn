@@ -3,6 +3,7 @@
 
     const assetsStore = useAssetsStore();
     const message = useMessage();
+    const i18n = useI18n();
 
     const key = shallowRef(0);
 
@@ -29,12 +30,16 @@
             });
 
             if (response === 1) {
-                message.success("更新成功");
+                message.success(i18n.t("utilities.assets:success"));
                 key.value++;
                 return;
             }
 
-            message.error(`更新失败: ${response}`);
+            message.error(
+                i18n.t("utilities.assets:failed", {
+                    response,
+                }),
+            );
         },
         {
             immediate: false,
@@ -76,7 +81,7 @@
             type="primary"
             @click="handleUpdate"
         >
-            更新
+            {{ $t("utilities.assets:submit") }}
         </n-button>
     </n-flex>
 </template>

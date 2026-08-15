@@ -1,0 +1,5 @@
+{
+    "providers.components.naive-ui:redirector-wrapper:modal.title": "You Are About to Leave This Website",
+    "providers.components.naive-ui:redirector-wrapper:warning": "External Content Warning",
+    "providers.components.naive-ui:redirector-wrapper:hint": "↑ Please proceed at your own risk. Click the link above to continue ↑"
+}

@@ -12,16 +12,7 @@
             <n-flex :size="120" align="center" vertical>
                 <SectionsHome2Self />
                 <SectionsHome2Dev />
-
-                <n-divider dashed>
-                    <n-element class="leading-tight">
-                        <n-flex :size="0" align="center" vertical>
-                            <n-h2 class="fw-extrabold !mb-0">福瑞</n-h2>
-                            <n-text :depth="3">Furry</n-text>
-                        </n-flex>
-                    </n-element>
-                </n-divider>
-
+                <SectionsHome2Furry />
                 <SectionsHome2Misc />
             </n-flex>
         </n-element>

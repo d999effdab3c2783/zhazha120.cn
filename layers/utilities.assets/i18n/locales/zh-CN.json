@@ -1,0 +1,6 @@
+{
+    "utilities.assets:name": "更新资源",
+    "utilities.assets:success": "更新成功",
+    "utilities.assets:failed": "更新失败: {response}",
+    "utilities.assets:submit": "提交"
+}

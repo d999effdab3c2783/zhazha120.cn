@@ -1,13 +1,15 @@
 <script lang="ts" setup>
     definePageMeta({
         layout: "subpage",
-        title: "杂项",
+        title: {
+            localeKey: "pages.misc:name",
+        },
     });
 </script>
 
 <template>
     <n-flex class="w-full" size="small" vertical>
-        <n-card size="small" title="友情链接">
+        <n-card :title="$t('pages.misc:friend_links')" size="small">
             <SectionsMiscFriendLinks />
         </n-card>
     </n-flex>

@@ -1,0 +1,14 @@
+{
+    "pages.support:name": "Support",
+    "pages.support:visit": "Visit",
+    "pages.support:fallback": "Fallback",
+    "pages.support:afdian:name": "Afdian",
+    "pages.support:afdian:comment": "For non-sponsorship purposes (e.g., prize payouts), please use WeChat Pay or Alipay instead of Afdian.",
+    "pages.support:qq_pay:name": "QQ Pay",
+    "pages.support:qq_pay:transfer": "Transfer",
+    "pages.support:wechat_pay:name": "Wechat Pay",
+    "pages.support:wechat_pay:transfer": "Transfer",
+    "pages.support:alipay:name": "Alipay",
+    "pages.support:alipay:red_packet": "Red Packet",
+    "pages.support:alipay:transfer": "Transfer"
+}

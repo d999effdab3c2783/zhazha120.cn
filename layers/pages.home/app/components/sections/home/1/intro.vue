@@ -1,9 +1,15 @@
 <script lang="ts" setup>
+    import { isNonNullish } from "remeda";
+
     const appConfig = useAppConfig();
     const message = useMessage();
 
+    const poke = guessLocale(appConfig.self.avatar.poke);
+
     const handlePoke = () => {
-        message.create(appConfig.self.avatar.poke);
+        if (isNonNullish(poke)) {
+            message.create(poke);
+        }
     };
 </script>
 
@@ -19,7 +25,7 @@
         <n-text
             class="font-[v-zhazha120-script] fw-extrabold text-15 transition-(text-shadow ease-in-out duration-500) text-shadow-[0_0_0] hover:text-shadow-[0_0_.2em]"
         >
-            {{ appConfig.self.name }}
+            {{ guessLocale(appConfig.self.name) }}
         </n-text>
     </n-flex>
 </template>

@@ -27,14 +27,19 @@
 </script>
 
 <template>
-    <NaiveModalWrapper ref="modal" preset="card" size="small" title="功能">
+    <NaiveModalWrapper
+        ref="modal"
+        :title="$t('providers.layouts:utilities:modal.title')"
+        preset="card"
+        size="small"
+    >
         <template #trigger="{ toggle }">
             <n-button secondary size="small" @click="toggle">
                 <template #icon>
                     <n-icon class="i-ant-design:appstore-outlined" />
                 </template>
 
-                小工具
+                {{ $t("providers.layouts:utilities:name") }}
             </n-button>
         </template>
 

@@ -1,4 +1,18 @@
+import { Locales } from "../providers.i18n/app/enums/i18n.ts";
+
 export default defineNuxtConfig({
+    i18n: {
+        locales: [
+            {
+                code: Locales.English,
+                file: "en.json",
+            },
+            {
+                code: Locales.ChineseSimplified,
+                file: "zh-CN.json",
+            },
+        ],
+    },
     imports: {
         dirs: ["#layers/pages.furry/app/stores/**"],
     },

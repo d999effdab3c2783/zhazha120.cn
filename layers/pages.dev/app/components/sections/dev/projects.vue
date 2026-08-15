@@ -14,7 +14,7 @@
                     tag="a"
                     @click.prevent="redirect"
                 >
-                    {{ project.name }}
+                    {{ guessLocale(project.name) }}
                 </n-button>
             </naive-redirector-wrapper>
         </template>

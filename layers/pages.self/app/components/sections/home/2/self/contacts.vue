@@ -1,5 +1,5 @@
 <template>
-    <n-card size="small" title="找到我">
+    <n-card :title="$t('pages.self:find_me')" size="small">
         <SectionsSelfContacts />
     </n-card>
 </template>

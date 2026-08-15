@@ -1,0 +1,9 @@
+{
+    "pages.furry:name": "Furry",
+    "pages.furry:divider:name": "Furry",
+    "pages.furry:characters:name": "Characters",
+    "pages.furry:characters:profile.owner": "Owner: {owner}",
+    "pages.furry:characters:profile.name": "Profile",
+    "pages:furry:characters:profile.no_result.title": "No Result",
+    "pages:furry:characters:profile.no_result.description": "(ID: {id}) does not exist"
+}

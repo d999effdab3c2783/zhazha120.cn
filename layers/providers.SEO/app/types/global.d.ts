@@ -1,6 +1,8 @@
+import type { MaybeLocaleKey } from "#layers/providers.i18n/app/types/i18n";
+
 declare module "#app" {
     interface PageMeta {
-        readonly title: string;
+        readonly title: MaybeLocaleKey;
     }
 }
 

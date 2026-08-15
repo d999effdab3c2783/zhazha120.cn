@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+    import { isNonNullish } from "remeda";
+
     const appConfig = useAppConfig();
     const router = useRouter();
     const breadcrumb = useBreadcrumb();
@@ -22,12 +24,25 @@
                 <n-page-header @back="handleBack">
                     <template #title>
                         <n-breadcrumb>
-                            <template v-for="{ name, path } in breadcrumb.items.value">
-                                <naive-redirector-wrapper #="{ href, redirect }" :href="path">
-                                    <n-breadcrumb-item :href="href" @click.prevent="redirect">
+                            <template v-for="({ name, path }, index) in breadcrumb.items.value">
+                                <template
+                                    v-if="
+                                        isNonNullish(path) &&
+                                        index !== breadcrumb.items.value.length - 1
+                                    "
+                                >
+                                    <naive-redirector-wrapper #="{ href, redirect }" :href="path">
+                                        <n-breadcrumb-item :href="href" @click.prevent="redirect">
+                                            {{ name }}
+                                        </n-breadcrumb-item>
+                                    </naive-redirector-wrapper>
+                                </template>
+
+                                <template v-else>
+                                    <n-breadcrumb-item :clickable="false">
                                         {{ name }}
                                     </n-breadcrumb-item>
-                                </naive-redirector-wrapper>
+                                </template>
                             </template>
                         </n-breadcrumb>
                     </template>

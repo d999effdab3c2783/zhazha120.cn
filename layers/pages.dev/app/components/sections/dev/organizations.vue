@@ -19,14 +19,14 @@
                             <n-image :src="organization.avatar.href" preview-disabled />
                         </template>
 
-                        {{ organization.name }}
+                        {{ guessLocale(organization.name) }}
                     </n-button>
                 </template>
 
                 <template #extra>
                     <n-flex align="center" justify="center" size="small">
                         <n-image :src="organization.avatar.href" class="size-10" />
-                        <n-text>{{ organization.name }}</n-text>
+                        <n-text>{{ guessLocale(organization.name) }}</n-text>
                     </n-flex>
                 </template>
             </naive-redirector-wrapper>

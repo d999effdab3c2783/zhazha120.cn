@@ -8,19 +8,26 @@ export default defineNuxtPlugin(() => {
             src: new URL("../assets/illustration.bin", import.meta.url).toString(),
         },
 
-        name: "伊诔/Eulogy",
+        name: {
+            localeKey: "furry.characters.5:name",
+        },
         species: [
             {
-                name: "兔",
+                name: {
+                    localeKey: "furry.characters.5:species.0.name",
+                },
                 percent: 100,
             },
         ],
         species_alias: null,
-        description:
-            "是一位栖居于混沌异空间中的守护神，拥有异瞳与银色卷发，沉默而脆弱，却始终守护着这片不稳定世界。",
+        description: {
+            localeKey: "furry.characters.5:description",
+        },
 
         owner: {
-            name: "ThirteenRoil",
+            name: {
+                localeKey: "furry.characters.5:owner",
+            },
             href: "https://osu.ppy.sh/users/6528747",
         },
 

@@ -4,11 +4,14 @@
     definePageMeta({
         layout: "subpage",
         validate: (route) => isString(route.params.id) && /^\d+$/.test(route.params.id),
-        title: "档案",
+        title: {
+            localeKey: "pages.furry:characters:profile.name",
+        },
     });
 
     const furryStore = useFurryStore();
     const route = useRoute();
+    const i18n = useI18n();
     const { isMobile } = useResponsive();
 
     const character = furryStore.characters.find(
@@ -17,11 +20,11 @@
 
     if (isNonNullish(character)) {
         useSeoMeta({
-            title: character.name,
-            description: character.description,
+            title: guessLocale(character.name),
+            description: guessLocale(character.description),
 
-            ogTitle: character.name,
-            ogDescription: character.description,
+            ogTitle: guessLocale(character.name),
+            ogDescription: guessLocale(character.description),
             ogImage: character.illustration.src,
         });
     }
@@ -36,11 +39,15 @@
 
                     <n-flex :align="isMobile ? 'center' : undefined" size="small" vertical>
                         <n-flex :size="0" align="center">
-                            <n-h2 class="fw-extrabold !my-0">{{ character.name }}</n-h2>
+                            <n-h2 class="fw-extrabold !my-0">
+                                {{ guessLocale(character.name) }}
+                            </n-h2>
 
                             <template v-if="isNonNullish(character.species_alias)">
                                 <n-divider vertical />
-                                <n-text type="info">{{ character.species_alias }}</n-text>
+                                <n-text type="info">
+                                    {{ guessLocale(character.species_alias) }}
+                                </n-text>
                             </template>
                         </n-flex>
 
@@ -48,40 +55,46 @@
                             <template v-for="species in character.species">
                                 <n-tag size="small">
                                     {{ species.percent.toFixed(2) }}%
-                                    {{ species.name }}
+                                    {{ guessLocale(species.name) }}
                                 </n-tag>
                             </template>
                         </n-flex>
 
-                        <n-h4 class="!mb-0" prefix="bar">{{ character.description }}</n-h4>
+                        <n-h4 class="!mb-0" prefix="bar">
+                            {{ guessLocale(character.description) }}
+                        </n-h4>
                     </n-flex>
                 </n-flex>
 
                 <template #action>
                     <n-flex :justify="isMobile ? 'center' : 'end'" size="small">
-                        <n-text>所有者: </n-text>
+                        <i18n-t keypath="pages.furry:characters:profile.owner">
+                            <template #owner>
+                                <template v-if="isNonNullish(character.owner.href)">
+                                    <naive-redirector-wrapper
+                                        #="{ href, redirect }"
+                                        :href="character.owner.href"
+                                    >
+                                        <n-button
+                                            :href="href"
+                                            size="small"
+                                            tag="a"
+                                            text
+                                            type="primary"
+                                            @click.prevent="redirect"
+                                        >
+                                            {{ guessLocale(character.owner.name) }}
+                                        </n-button>
+                                    </naive-redirector-wrapper>
+                                </template>
 
-                        <template v-if="isNonNullish(character.owner.href)">
-                            <naive-redirector-wrapper
-                                #="{ href, redirect }"
-                                :href="character.owner.href"
-                            >
-                                <n-button
-                                    :href="href"
-                                    size="small"
-                                    tag="a"
-                                    text
-                                    type="primary"
-                                    @click.prevent="redirect"
-                                >
-                                    {{ character.owner.name }}
-                                </n-button>
-                            </naive-redirector-wrapper>
-                        </template>
-
-                        <template v-else>
-                            <n-text type="info">{{ character.owner.name }}</n-text>
-                        </template>
+                                <template v-else>
+                                    <n-text type="info">
+                                        {{ guessLocale(character.owner.name) }}
+                                    </n-text>
+                                </template>
+                            </template>
+                        </i18n-t>
                     </n-flex>
                 </template>
             </n-card>
@@ -92,9 +105,13 @@
         <template v-else>
             <n-card size="small">
                 <n-result
-                    :description="`也许是 ID 为 ${route.params.id} 的设定其实并不存在`"
+                    :description="
+                        $t('pages:furry:characters:profile.no_result.description', {
+                            id: route.params.id,
+                        })
+                    "
+                    :title="$t('pages:furry:characters:profile.no_result.title')"
                     status="error"
-                    title="空结果"
                 />
             </n-card>
         </template>

@@ -1,8 +1,8 @@
 <template>
     <n-flex :size="0" vertical>
-        <n-divider>技术挑战</n-divider>
+        <n-divider>{{ $t("pages.dev:challenges") }}</n-divider>
 
-        <n-card size="small" title="打过的比赛">
+        <n-card :title="$t('pages.dev:competition_history')" size="small">
             <SectionsDevAwards />
         </n-card>
     </n-flex>

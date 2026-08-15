@@ -1,0 +1,10 @@
+{
+    "pages.furry:name": "福瑞 (Furry)",
+    "pages.furry:divider:name": "福瑞",
+    "pages.furry:divider:description": "Furry",
+    "pages.furry:characters:name": "设定",
+    "pages.furry:characters:profile.owner": "所有者: {owner}",
+    "pages.furry:characters:profile.name": "档案",
+    "pages:furry:characters:profile.no_result.title": "空结果",
+    "pages:furry:characters:profile.no_result.description": "(ID: {id}) 不存在"
+}

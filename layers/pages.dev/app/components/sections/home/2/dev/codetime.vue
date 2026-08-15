@@ -1,5 +1,5 @@
 <template>
-    <n-card size="small" title="态势">
+    <n-card :title="$t('pages.dev:metrics')" size="small">
         <SectionsDevCodetime />
     </n-card>
 </template>

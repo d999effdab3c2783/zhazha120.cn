@@ -8,18 +8,26 @@ export default defineNuxtPlugin(() => {
             src: new URL("../assets/illustration.bin", import.meta.url).toString(),
         },
 
-        name: "Untitled_unrevised",
+        name: {
+            localeKey: "furry.characters.3:name",
+        },
         species: [
             {
-                name: "狗",
+                name: {
+                    localeKey: "furry.characters.3:species.0.name",
+                },
                 percent: 100,
             },
         ],
         species_alias: null,
-        description: "数学魔法爱好者",
+        description: {
+            localeKey: "furry.characters.3:description",
+        },
 
         owner: {
-            name: "Untitled_unrevised",
+            name: {
+                localeKey: "furry.characters.3:owner",
+            },
             href: "https://space.bilibili.com/323748622",
         },
 

@@ -7,7 +7,7 @@ import Info from "unplugin-info/vite";
 export default defineNuxtConfig({
     compatibilityDate: "latest",
     css: ["lenis/dist/lenis.css"],
-    modules: ["@pinia/nuxt", "@vueuse/nuxt", "lenis/nuxt", "@unocss/nuxt"],
+    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "@vueuse/nuxt", "lenis/nuxt", "@unocss/nuxt"],
     ssr: false,
     vite: {
         plugins: [

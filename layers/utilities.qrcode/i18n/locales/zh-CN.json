@@ -1,0 +1,15 @@
+{
+    "utilities.qrcode:name": "二维码",
+    "utilities.qrcode:apply_current_url": "使用当前 URL: {url}",
+    "utilities.qrcode:config.color": "颜色",
+    "utilities.qrcode:config.backgroundColor": "背景颜色",
+    "utilities.qrcode:config.iconSrc": "图标图片 URL",
+    "utilities.qrcode:config.iconSize": "图标大小",
+    "utilities.qrcode:config.iconBackgroundColor": "图标背景颜色",
+    "utilities.qrcode:config.iconBorderRadius": "图标圆角",
+    "utilities.qrcode:config.size": "大小",
+    "utilities.qrcode:config.padding": "内边距",
+    "utilities.qrcode:config.errorCorrectionLevel": "错误纠正等级",
+    "utilities.qrcode:config.type": "类型",
+    "utilities.qrcode:presets.default": "默认样式"
+}

@@ -4,9 +4,10 @@
     const appConfig = useAppConfig();
     const { isMobile } = useResponsive();
     const message = useMessage();
+    const i18n = useI18n();
 
     const handleEmptyClick = () => {
-        message.info("无可用溯源链接");
+        message.info(i18n.t("pages.dev:awards:no_trace_link"));
     };
 </script>
 
@@ -24,7 +25,7 @@
                         @click.prevent="redirect"
                     >
                         <n-element class="text-wrap whitespace-pre leading-tight">
-                            {{ award.name }}
+                            {{ guessLocale(award.name) }}
                         </n-element>
                     </n-button>
                 </naive-redirector-wrapper>
@@ -39,7 +40,7 @@
                     @click="handleEmptyClick"
                 >
                     <n-element class="text-wrap whitespace-pre leading-tight">
-                        {{ award.name }}
+                        {{ guessLocale(award.name) }}
                     </n-element>
                 </n-button>
             </template>

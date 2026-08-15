@@ -23,7 +23,7 @@
 
             <n-element class="flex-1">
                 <n-tabs :justify-content="isMobile ? 'center' : undefined" animated>
-                    <n-tab-pane name="按语言">
+                    <n-tab-pane :name="$t('pages.dev:codetime:by_language')">
                         <n-flex :justify="isMobile ? 'center' : undefined">
                             <n-image
                                 :src="processWidget(appConfig.dev.codetime.widgets.top.languages)"
@@ -31,7 +31,7 @@
                         </n-flex>
                     </n-tab-pane>
 
-                    <n-tab-pane name="按项目">
+                    <n-tab-pane :name="$t('pages.dev:codetime:by_project')">
                         <n-flex :justify="isMobile ? 'center' : undefined">
                             <n-image
                                 :src="processWidget(appConfig.dev.codetime.widgets.top.projects)"
@@ -54,11 +54,14 @@
 
         <n-element class="mt-4">
             <n-flex :size="0" align="center" vertical>
-                <n-text :depth="3">仅供参考</n-text>
+                <n-text :depth="3">{{ $t("pages.dev:codetime:for_reference_only") }}</n-text>
 
-                <naive-redirector-wrapper #="{ href, redirect }" href="https://codetime.dev">
+                <naive-redirector-wrapper
+                    #="{ href, redirect }"
+                    :href="`https://${appConfig.dev.codetime.domain}`"
+                >
                     <n-button :href="href" tag="a" text @click.prevent="redirect">
-                        codetime.dev
+                        {{ appConfig.dev.codetime.domain }}
                     </n-button>
                 </naive-redirector-wrapper>
             </n-flex>

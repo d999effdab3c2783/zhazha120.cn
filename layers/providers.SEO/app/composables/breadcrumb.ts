@@ -1,8 +1,9 @@
-import { isEmptyish, isNonNullish, isNullish } from "remeda";
+import { isEmptyish, isNonNullish, isNullish, isObjectType } from "remeda";
 
 export const useBreadcrumb = () => {
     const appConfig = useAppConfig();
     const router = useRouter();
+    const nuxtApp = useNuxtApp();
 
     const items = computed(() => {
         const fullPath = router.currentRoute.value.fullPath;
@@ -15,9 +16,24 @@ export const useBreadcrumb = () => {
                     .slice(0, index + 1)
                     .join("/");
 
-                if (index === 0 && isEmptyish(path)) {
+                if ([0, 1].includes(index) || isEmptyish(path)) {
+                    if (index === 1) {
+                        const locale = nuxtApp.$i18n.locales.value.find(
+                            (locale) => path.substring(1) === locale.code,
+                        );
+
+                        if (isNonNullish(locale)) {
+                            return {
+                                name: `[${locale.name}]`,
+                                path: undefined,
+                            };
+                        }
+                    }
+
                     return {
-                        name: appConfig.self.name,
+                        name: isObjectType(appConfig.self.name)
+                            ? nuxtApp.$i18n.t(appConfig.self.name.localeKey)
+                            : appConfig.self.name,
                         path: "/",
                     };
                 }
@@ -31,7 +47,17 @@ export const useBreadcrumb = () => {
                 }
 
                 return {
-                    name: route.meta.title ?? path.split("/").at(-1),
+                    name: (() => {
+                        const title = isObjectType(route.meta.title)
+                            ? nuxtApp.$i18n.t(route.meta.title.localeKey)
+                            : route.meta.title;
+
+                        if (!isEmptyish(title)) {
+                            return title;
+                        }
+
+                        return path.split("/").at(-1);
+                    })(),
                     path,
                 };
             })

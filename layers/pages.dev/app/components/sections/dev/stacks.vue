@@ -6,7 +6,7 @@
 <template>
     <n-flex :vertical="isMobile" size="small">
         <template v-for="group in appConfig.dev.stacks">
-            <n-card :title="group.name" size="small">
+            <n-card :title="guessLocale(group.name)" size="small">
                 <n-flex :vertical="isMobile" size="small">
                     <template v-for="stack in group.items">
                         <naive-redirector-wrapper #="{ href, redirect }" :href="stack.href">
@@ -21,7 +21,7 @@
                                     <n-icon :class="stack.icon" />
                                 </template>
 
-                                {{ stack.name }}
+                                {{ guessLocale(stack.name) }}
                             </n-button>
                         </naive-redirector-wrapper>
                     </template>

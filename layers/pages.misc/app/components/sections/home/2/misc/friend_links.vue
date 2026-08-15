@@ -1,5 +1,5 @@
 <template>
-    <n-card size="small" title="友情链接">
+    <n-card :title="$t('pages.misc:friend_links')" size="small">
         <SectionsMiscFriendLinks />
     </n-card>
 </template>

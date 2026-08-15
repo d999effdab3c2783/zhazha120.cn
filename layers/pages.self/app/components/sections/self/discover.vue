@@ -21,13 +21,13 @@
                             <n-icon :class="icon" />
                         </template>
 
-                        {{ name }}
+                        {{ guessLocale(name) }}
                     </n-button>
                 </template>
 
                 <template v-if="isNonNullish(comment)" #extra>
                     <n-element class="text-center whitespace-pre">
-                        <n-text type="info">{{ comment }}</n-text>
+                        <n-text type="info">{{ guessLocale(comment) }}</n-text>
                     </n-element>
                 </template>
             </NaiveRedirectorWrapper>

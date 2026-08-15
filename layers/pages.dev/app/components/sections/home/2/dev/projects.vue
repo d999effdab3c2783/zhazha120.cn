@@ -1,5 +1,5 @@
 <template>
-    <n-card size="small" title="做过的项目">
+    <n-card :title="$t('pages.dev:projects:name')" size="small">
         <SectionsDevProjects />
     </n-card>
 </template>

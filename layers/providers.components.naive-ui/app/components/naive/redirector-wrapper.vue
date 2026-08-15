@@ -36,13 +36,20 @@
 </script>
 
 <template>
-    <NaiveModalWrapper ref="modal" preset="card" size="small" title="即将离开当前网站">
+    <NaiveModalWrapper
+        ref="modal"
+        :title="$t('providers.components.naive-ui:redirector-wrapper:modal.title')"
+        preset="card"
+        size="small"
+    >
         <template #trigger>
             <slot :href="href" :redirect="handle" />
         </template>
 
         <n-flex align="center" size="small" vertical>
-            <n-text class="text-6 fw-bold" type="warning">外部内容警告</n-text>
+            <n-text class="text-6 fw-bold" type="warning">
+                {{ $t("providers.components.naive-ui:redirector-wrapper:warning") }}
+            </n-text>
 
             <n-button
                 :href="href"
@@ -55,7 +62,7 @@
                 {{ href }}
             </n-button>
 
-            <n-text>↑ 自行判断 如需继续请戳上面的连接 ↑</n-text>
+            <n-text>{{ $t("providers.components.naive-ui:redirector-wrapper:hint") }}</n-text>
         </n-flex>
 
         <template v-if="isNonNullish($slots.extra)">

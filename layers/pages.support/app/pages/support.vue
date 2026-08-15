@@ -3,7 +3,9 @@
 
     definePageMeta({
         layout: "subpage",
-        title: "支持 & 赞助",
+        title: {
+            localeKey: "pages.support:name",
+        },
     });
 
     const appConfig = useAppConfig();
@@ -12,15 +14,15 @@
 <template>
     <n-tabs animated type="segment">
         <template v-for="channel in appConfig.support.channels">
-            <n-tab-pane :name="channel.name">
+            <n-tab-pane :name="guessLocale(channel.name)">
                 <n-flex size="small" vertical>
                     <template v-for="method in channel.methods">
                         <template v-if="method.type === 'external'">
-                            <n-card :title="method.name ?? undefined" size="small">
+                            <n-card :title="guessLocale(method.name) ?? undefined" size="small">
                                 <n-flex size="small" vertical>
                                     <template v-if="isNonNullish(method.comment)">
                                         <n-alert type="info">
-                                            {{ method.comment }}
+                                            {{ guessLocale(method.comment) }}
                                         </n-alert>
                                     </template>
 
@@ -46,7 +48,7 @@
                                                             />
                                                         </template>
 
-                                                        访问
+                                                        {{ $t("pages.support:visit") }}
                                                     </n-button>
                                                 </naive-redirector-wrapper>
                                             </naive-position>
@@ -65,7 +67,7 @@
                             <template
                                 v-if="isNonNullish(method.image) || isNonNullish(method.content)"
                             >
-                                <n-card :title="method.name ?? undefined" size="small">
+                                <n-card :title="guessLocale(method.name) ?? undefined" size="small">
                                     <template v-if="isNonNullish(method.image)">
                                         <n-flex justify="center">
                                             <n-image :src="method.image" />
@@ -82,7 +84,7 @@
                                                 icon-background-color="transparent"
                                             />
 
-                                            <n-text>回退</n-text>
+                                            <n-text>{{ $t("pages.support:fallback") }}</n-text>
                                         </n-flex>
                                     </template>
                                 </n-card>

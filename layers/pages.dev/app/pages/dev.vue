@@ -1,7 +1,9 @@
 <script lang="ts" setup>
     definePageMeta({
         layout: "subpage",
-        title: "开发",
+        title: {
+            localeKey: "pages.dev:name",
+        },
     });
 </script>
 
@@ -11,27 +13,27 @@
             <SectionsDevDescription />
         </n-card>
 
-        <n-card size="small" title="态势">
+        <n-card :title="$t('pages.dev:metrics')" size="small">
             <SectionsDevCodetime />
         </n-card>
 
-        <n-divider>技术栈</n-divider>
+        <n-divider>{{ $t("pages.dev:stacks:name") }}</n-divider>
 
         <SectionsDevStacks />
 
-        <n-divider>技术履历</n-divider>
+        <n-divider>{{ $t("pages.dev:experience") }}</n-divider>
 
-        <n-card size="small" title="加入的组织">
+        <n-card :title="$t('pages.dev:organizations')" size="small">
             <SectionsDevOrganizations />
         </n-card>
 
-        <n-card size="small" title="做过的项目">
+        <n-card :title="$t('pages.dev:projects:name')" size="small">
             <SectionsDevProjects />
         </n-card>
 
-        <n-divider>技术挑战</n-divider>
+        <n-divider>{{ $t("pages.dev:challenges") }}</n-divider>
 
-        <n-card size="small" title="打过的比赛">
+        <n-card :title="$t('pages.dev:competition_history')" size="small">
             <SectionsDevAwards />
         </n-card>
     </n-flex>

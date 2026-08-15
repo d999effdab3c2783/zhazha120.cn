@@ -1,0 +1,5 @@
+{
+    "providers.theme:switcher:light": "Light",
+    "providers.theme:switcher:system": "System",
+    "providers.theme:switcher:dark": "Dark"
+}

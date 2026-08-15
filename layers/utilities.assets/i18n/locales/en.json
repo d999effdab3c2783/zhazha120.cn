@@ -1,0 +1,6 @@
+{
+    "utilities.assets:name": "Update assets",
+    "utilities.assets:success": "Update successful",
+    "utilities.assets:failed": "Update failed: {response}",
+    "utilities.assets:submit": "Submit"
+}

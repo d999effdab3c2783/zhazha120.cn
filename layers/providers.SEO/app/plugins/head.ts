@@ -1,6 +1,6 @@
-import { isEmptyish } from "remeda";
+import { isEmptyish, isObjectType } from "remeda";
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxt) => {
     const appConfig = useAppConfig();
     const breadcrumb = useBreadcrumb();
 
@@ -12,7 +12,9 @@ export default defineNuxtPlugin(() => {
         },
         titleTemplate: (title?: string) =>
             [
-                appConfig.self.name,
+                isObjectType(appConfig.self.name)
+                    ? nuxt.$i18n.t(appConfig.self.name.localeKey)
+                    : appConfig.self.name,
                 breadcrumb.items.value
                     .slice(1)
                     .map((item) => item.name)

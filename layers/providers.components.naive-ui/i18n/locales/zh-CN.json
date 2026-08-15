@@ -1,0 +1,5 @@
+{
+    "providers.components.naive-ui:redirector-wrapper:modal.title": "即将离开当前网站",
+    "providers.components.naive-ui:redirector-wrapper:warning": "外部内容警告",
+    "providers.components.naive-ui:redirector-wrapper:hint": "↑ 自行判断 如需继续请戳上面的连接 ↑"
+}

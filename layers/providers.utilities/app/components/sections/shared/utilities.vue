@@ -12,7 +12,7 @@
                             <n-icon :class="icon" />
                         </template>
 
-                        {{ name }}
+                        {{ toValue(name) }}
                     </n-button>
                 </template>
 

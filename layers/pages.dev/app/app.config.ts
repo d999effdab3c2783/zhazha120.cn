@@ -1,8 +1,11 @@
 // @unocss-include
 
+import type { MaybeLocaleKey } from "#layers/providers.i18n/app/types/i18n";
+
 export default defineAppConfig<{
     readonly dev: {
         readonly codetime: {
+            readonly domain: string;
             readonly user_id: number;
 
             readonly widgets: {
@@ -24,10 +27,10 @@ export default defineAppConfig<{
         };
 
         readonly stacks: {
-            readonly name: string;
+            readonly name: MaybeLocaleKey;
 
             readonly items: {
-                readonly name: string;
+                readonly name: MaybeLocaleKey;
                 readonly icon: string;
                 readonly href: string;
             }[];
@@ -39,17 +42,17 @@ export default defineAppConfig<{
                 readonly href: string;
             };
 
-            readonly name: string;
+            readonly name: MaybeLocaleKey;
             readonly href: string;
         }[];
 
         readonly projects: {
-            readonly name: string;
+            readonly name: MaybeLocaleKey;
             readonly href: string;
         }[];
 
         readonly awards: {
-            readonly name: string;
+            readonly name: MaybeLocaleKey;
             readonly href: string | null;
         }[];
     };
@@ -87,7 +90,9 @@ export default defineAppConfig<{
         })(),
         stacks: [
             {
-                name: "开发工具",
+                name: {
+                    localeKey: "pages.dev:stacks:editors",
+                },
 
                 items: [
                     {
@@ -138,7 +143,9 @@ export default defineAppConfig<{
                 ],
             },
             {
-                name: "前端",
+                name: {
+                    localeKey: "pages.dev:stacks:frontend",
+                },
 
                 items: [
                     {
@@ -199,7 +206,9 @@ export default defineAppConfig<{
                 ],
             },
             {
-                name: "后端",
+                name: {
+                    localeKey: "pages.dev:stacks:backend",
+                },
 
                 items: [
                     {
@@ -245,7 +254,9 @@ export default defineAppConfig<{
                 ],
             },
             {
-                name: "基础设施",
+                name: {
+                    localeKey: "pages.dev:stacks:infrastructure",
+                },
 
                 items: [
                     {
@@ -286,7 +297,9 @@ export default defineAppConfig<{
                 ],
             },
             {
-                name: "运维",
+                name: {
+                    localeKey: "pages.dev:stacks:operations",
+                },
 
                 items: [
                     {
@@ -410,63 +423,93 @@ export default defineAppConfig<{
                 href: "https://github.com/c794b7b0331e4cf3/BitterSweetNext",
             },
             {
-                name: "Abnormal Cat 的个人网站",
+                name: {
+                    localeKey: "pages.dev:projects:github.779598566.name",
+                },
                 href: "https://github.com/Abnormal-Cat/abnormalcat.cn",
             },
             {
-                name: "Paw Team 官网",
+                name: {
+                    localeKey: "pages.dev:projects:github.878443044.name",
+                },
                 href: "https://github.com/PawTeamClub/website",
             },
             {
-                name: "与互的个人网站",
+                name: {
+                    localeKey: "pages.dev:projects:unknown.1.name",
+                },
                 href: "https://github.com/WOSHIZHAZHA120/pages.yuhu",
             },
             {
-                name: "Techmino 在线词典",
+                name: {
+                    localeKey: "pages.dev:projects:github.515593979.name",
+                },
                 href: "https://github.com/26F-Studio/techmino-online-dict",
             },
             {
-                name: "俄罗斯方块查询 Bot 模板 老",
+                name: {
+                    localeKey: "pages.dev:projects:github.795885114.name",
+                },
                 href: "https://github.com/A-Minos/tetris-stats-templates",
             },
             {
-                name: "俄罗斯方块查询 Bot 模板 新",
+                name: {
+                    localeKey: "pages.dev:projects:github.841543947.name",
+                },
                 href: "https://github.com/A-Minos/tetris-stats-templates-new",
             },
             {
-                name: "Endless Services 前端",
+                name: {
+                    localeKey: "pages.dev:projects:github.864056419.name",
+                },
                 href: "https://github.com/Endless-Spike-Studio/Endless-Services-Frontend",
             },
             {
-                name: "Endless Services 运行时",
+                name: {
+                    localeKey: "pages.dev:projects:github.864387815.name",
+                },
                 href: "https://github.com/Endless-Spike-Studio/Endless-Services-Runtime",
             },
             {
-                name: "Endless Services 后端",
+                name: {
+                    localeKey: "pages.dev:projects:github.497849256.name",
+                },
                 href: "https://github.com/Endless-Spike-Studio/Endless-Services-Backend",
             },
             {
-                name: "Endless Services 连接器",
+                name: {
+                    localeKey: "pages.dev:projects:github.967204269.name",
+                },
                 href: "https://github.com/Endless-Spike-Studio/Endless-Services-Connector",
             },
             {
-                name: "tetr.io plus (定制魔改)",
+                name: {
+                    localeKey: "pages.dev:projects:github.1182454162.name",
+                },
                 href: "https://github.com/d999effdab3c2783/tetrio-plus",
             },
             {
-                name: "OpenList 前端 (定制魔改)",
+                name: {
+                    localeKey: "pages.dev:projects:unknown.2.name",
+                },
                 href: "https://github.com/d999effdab3c2783/OpenList-Frontend",
             },
             {
-                name: "墨趣诗坊",
+                name: {
+                    localeKey: "pages.dev:projects:github.1217222916.name",
+                },
                 href: "https://github.com/c794b7b0331e4cf3/InkFunPoetryStudio",
             },
             {
-                name: "tetr.io 汉化",
+                name: {
+                    localeKey: "pages.dev:projects:github.1191545593.name",
+                },
                 href: "https://github.com/A-Minos/tetrio-chinese",
             },
             {
-                name: "GDTools 服务",
+                name: {
+                    localeKey: "pages.dev:projects:github.1284581081.name",
+                },
                 href: "https://github.com/GMDtools/Services",
             },
         ],
