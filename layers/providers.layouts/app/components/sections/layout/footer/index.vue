@@ -12,7 +12,10 @@
     <n-grid :cols="isMobile ? 1 : 5" :y-gap="10">
         <n-grid-item>
             <NaivePosition class="size-full" placement="center">
-                <SectionsSharedThemeSwitcher />
+                <n-flex align="center" vertical>
+                    <SectionsSharedLocaleSwitcher />
+                    <SectionsSharedThemeSwitcher />
+                </n-flex>
             </NaivePosition>
         </n-grid-item>
 

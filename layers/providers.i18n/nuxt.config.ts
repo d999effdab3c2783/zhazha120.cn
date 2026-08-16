@@ -14,8 +14,10 @@ export default defineNuxtConfig({
             },
         ],
         detectBrowserLanguage: {
-            useCookie: true,
+            alwaysRedirect: true,
             cookieCrossOrigin: true,
+            cookieSecure: true,
+            fallbackLocale: Locales.ChineseSimplified,
         },
     },
 });
