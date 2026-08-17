@@ -3,6 +3,8 @@
 
     const { isMobile } = useResponsive();
     const friendLinks = useFriendLinks();
+
+    const handleLink = (href: string) => href.replaceAll("{domain}", location.host);
 </script>
 
 <template>
@@ -12,7 +14,7 @@
                 <template #default="{ href, redirect }">
                     <n-button
                         :block="isMobile"
-                        :href="href"
+                        :href="handleLink(href)"
                         :secondary="disabled"
                         class="h-full py-2"
                         size="small"
