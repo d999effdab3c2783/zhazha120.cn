@@ -52,10 +52,10 @@
                         </n-flex>
 
                         <n-flex align="center" size="small">
-                            <template v-for="species in character.species">
+                            <template v-for="{ name, percent } in character.species">
                                 <n-tag size="small">
-                                    {{ species.percent.toFixed(2) }}%
-                                    {{ guessLocale(species.name) }}
+                                    {{ percent.toFixed(2) }}%
+                                    {{ guessLocale(name) }}
                                 </n-tag>
                             </template>
                         </n-flex>

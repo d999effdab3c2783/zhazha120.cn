@@ -55,18 +55,21 @@
     <n-flex size="small" vertical>
         <n-scrollbar class="max-h-120">
             <n-list bordered clickable hoverable>
-                <template v-for="item in assetsStore.registry">
+                <template v-for="asset in assetsStore.registry">
                     <n-list-item>
                         <n-flex align="center" size="small">
                             <n-checkbox
-                                @update:checked="(checked) => handleUpdateChecked(checked, item)"
+                                @update:checked="(checked) => handleUpdateChecked(checked, asset)"
                             />
 
-                            <n-image :key="key" :src="item.href" class="h-10" />
+                            <n-image :key="key" :src="asset.href" class="h-10" />
 
                             <n-flex :size="0" vertical>
-                                <n-text>{{ item.src }}</n-text>
-                                <n-text :depth="3">{{ assetsStore.convertPath(item.href) }}</n-text>
+                                <n-text>{{ asset.src }}</n-text>
+
+                                <n-text :depth="3">
+                                    {{ assetsStore.convertPath(asset.href) }}
+                                </n-text>
                             </n-flex>
                         </n-flex>
                     </n-list-item>
