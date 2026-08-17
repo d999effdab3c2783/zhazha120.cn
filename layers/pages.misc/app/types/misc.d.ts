@@ -3,4 +3,6 @@ export interface FriendLink {
     readonly name: string;
     readonly description: string | null;
     readonly href: string;
+
+    readonly disabled?: true;
 }

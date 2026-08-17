@@ -7,12 +7,13 @@
 
 <template>
     <n-flex :vertical="isMobile" align="center" size="small">
-        <template v-for="{ logo, name, description, href } in friendLinks">
+        <template v-for="{ logo, name, description, href, disabled } in friendLinks">
             <naive-redirector-wrapper :href="href">
                 <template #default="{ href, redirect }">
                     <n-button
                         :block="isMobile"
                         :href="href"
+                        :secondary="disabled"
                         class="h-full py-2"
                         size="small"
                         tag="a"
@@ -47,6 +48,10 @@
                             <n-element class="text-wrap">
                                 <n-text :depth="3">{{ description }}</n-text>
                             </n-element>
+                        </template>
+
+                        <template v-if="disabled">
+                            <n-text type="error">可能已经无法访问</n-text>
                         </template>
                     </n-flex>
                 </template>
