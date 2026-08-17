@@ -62,7 +62,7 @@
                                 @update:checked="(checked) => handleUpdateChecked(checked, item)"
                             />
 
-                            <n-image :key="key" :src="item.href" class="size-10" />
+                            <n-image :key="key" :src="item.href" class="h-10" />
 
                             <n-flex :size="0" vertical>
                                 <n-text>{{ item.src }}</n-text>
