@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import competitionsConfig from "../../../../config/competitions.ts" with { type: "macro" };
+    import competitionsConfig from "#layers/pages.dev/config/competitions";
     import { isNonNullish } from "remeda";
 
     const { isMobile } = useResponsive();

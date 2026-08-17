@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import selfInformationConfig from "../../../../../../pages.self/config/information.ts" with { type: "macro" };
+    import selfInformationConfig from "#layers/pages.self/config/information";
     import { isNonNullish } from "remeda";
 
     const message = useMessage();

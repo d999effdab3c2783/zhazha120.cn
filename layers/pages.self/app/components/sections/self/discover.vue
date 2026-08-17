@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import externalLinksConfig from "../../../../config/external_links.ts" with { type: "macro" };
+    import externalLinksConfig from "#layers/pages.self/config/external_links";
     import { isNonNullish } from "remeda";
 
     const { isMobile } = useResponsive();

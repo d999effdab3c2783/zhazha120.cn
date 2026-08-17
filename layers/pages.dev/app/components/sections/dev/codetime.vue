@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { isNonNullish } from "remeda";
-    import codetimeConfig from "../../../../config/codetime.ts" with { type: "macro" };
+    import codetimeConfig from "#layers/pages.dev/config/codetime";
 
     const themeStore = useThemeStore();
     const { isMobile } = useResponsive();

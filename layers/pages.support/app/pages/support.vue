@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import supportConfig from "../../config/support.ts" with { type: "macro" };
+    import supportConfig from "#layers/pages.support/config/support";
 
     definePageMeta({
         layout: "subpage",

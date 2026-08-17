@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import projectsConfig from "../../../../config/projects.ts" with { type: "macro" };
+    import projectsConfig from "#layers/pages.dev/config/projects";
 
     const { isMobile } = useResponsive();
 </script>

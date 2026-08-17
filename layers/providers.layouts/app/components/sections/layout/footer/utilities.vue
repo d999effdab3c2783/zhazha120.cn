@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { isNonNullish, isNullish } from "remeda";
-    import footerConfig from "../../../../../config/footer.ts" with { type: "macro" };
+    import footerConfig from "#layers/providers.layouts/config/footer";
 
     const modal = useTemplateRef("modal");
     const magicKeys = useMagicKeys();

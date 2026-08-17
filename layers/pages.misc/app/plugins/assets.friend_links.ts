@@ -1,6 +1,5 @@
 import { isNullish } from "remeda";
 import type { Asset } from "#layers/providers.assets/app/types/assets";
-import { useFullFriendLinks } from "#layers/pages.misc/app/composables/friend_links.ts";
 
 export default defineNuxtPlugin(() => {
     if (import.meta.env.DEV && typeof useAssetsStore === "function") {

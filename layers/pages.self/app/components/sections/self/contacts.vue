@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import contactsConfig from "../../../../config/contacts.ts" with { type: "macro" };
+    import contactsConfig from "#layers/pages.self/config/contacts";
     import { isNonNullish } from "remeda";
 
     const { isMobile } = useResponsive();

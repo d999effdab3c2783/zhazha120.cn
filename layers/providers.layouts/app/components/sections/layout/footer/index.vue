@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { abbreviatedSha, branch, sha } from "~build/git";
-    import footerConfig from "../../../../../config/footer.ts" with { type: "macro" };
+    import footerConfig from "#layers/providers.layouts/config/footer";
 
     const { isMobile } = useResponsive();
 

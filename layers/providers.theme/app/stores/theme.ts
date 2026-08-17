@@ -1,5 +1,5 @@
 import { darkTheme, type GlobalThemeOverrides, lightTheme, useOsTheme } from "naive-ui";
-import naiveUIConfig from "../../config/naive-ui.ts" with { type: "macro" };
+import naiveUIConfig from "#layers/providers.theme/config/naive-ui";
 import { mergeDeep } from "remeda";
 
 export const useThemeStore = defineStore("theme", () => {

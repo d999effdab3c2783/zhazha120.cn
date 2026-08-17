@@ -1,5 +1,5 @@
 import { isEmptyish, isNonNullish, isNullish, isObjectType } from "remeda";
-import selfInformationConfig from "../../../pages.self/config/information.ts" with { type: "macro" };
+import selfInformationConfig from "#layers/pages.self/config/information";
 
 export const useBreadcrumb = () => {
     const router = useRouter();

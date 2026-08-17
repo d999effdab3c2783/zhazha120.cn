@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { dateZhCN, zhCN } from "naive-ui";
-    import lenisConfig from "../../config/lenis.ts" with { type: "macro" };
+    import lenisConfig from "#layers/providers.wrapper/config/lenis";
 
     const themeStore = useThemeStore();
 </script>

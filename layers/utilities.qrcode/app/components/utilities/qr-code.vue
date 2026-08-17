@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { type QrCodeProps, useThemeVars } from "naive-ui";
-    import selfInformationConfig from "../../../../pages.self/config/information.ts" with { type: "macro" };
+    import selfInformationConfig from "#layers/pages.self/config/information";
 
     const location = useBrowserLocation();
     const themeVars = useThemeVars();

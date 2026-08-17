@@ -1,7 +1,7 @@
 <script lang="ts" setup>
     import type { QrCodeMethod } from "#layers/pages.support/app/types/support";
-    import selfInformationConfig from "../../../../../../pages.self/config/information.ts" with { type: "macro" };
-    import supportConfig from "../../../../../config/support.ts" with { type: "macro" };
+    import selfInformationConfig from "#layers/pages.self/config/information";
+    import supportConfig from "#layers/pages.support/config/support";
     import { isNonNullish } from "remeda";
 
     defineProps<{

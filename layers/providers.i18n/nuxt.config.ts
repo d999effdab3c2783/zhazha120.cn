@@ -1,4 +1,4 @@
-import { Locales } from "./app/enums/i18n.ts";
+import { Locales } from "./app/enums/i18n";
 
 export default defineNuxtConfig({
     i18n: {

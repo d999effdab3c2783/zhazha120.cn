@@ -1,4 +1,4 @@
-import selfInformationConfig from "../../../pages.self/config/information.ts" with { type: "macro" };
+import selfInformationConfig from "#layers/pages.self/config/information";
 import { isEmptyish, isObjectType } from "remeda";
 
 export default defineNuxtPlugin((nuxt) => {
