@@ -1,4 +1,5 @@
 import AutoImport from "unplugin-auto-import/vite";
+import Customize from "./plugins/vite/customize";
 import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
 import Macros from "unplugin-macros/vite";
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
     ssr: false,
     vite: {
         plugins: [
+            Customize(),
             Macros({
                 virtualModules: true,
             }),
