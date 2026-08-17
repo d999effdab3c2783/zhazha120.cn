@@ -13,6 +13,10 @@ export default {
     },
     version: {
         link: "https://github.com/d999effdab3c2783/zhazha120.cn/commit/{sha}",
+        overrides: {
+            branch: import.meta.env.VITE_CUSTOM_FOOTER_VERION_BRANCH,
+            sha: import.meta.env.VITE_CUSTOM_FOOTER_VERION_SHA,
+        },
     },
     utilities: {
         hotkey: "F8",

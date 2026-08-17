@@ -90,7 +90,9 @@
                             <n-icon class="-mr-4 i-stash:version" />
                         </template>
 
-                        {{ abbreviatedSha }} @ {{ branch }}
+                        {{ footerConfig.version.overrides.sha ?? abbreviatedSha }}
+                        @
+                        {{ footerConfig.version.overrides.branch ?? branch }}
                     </n-button>
                 </NaiveRedirectorWrapper>
             </NaivePosition>
