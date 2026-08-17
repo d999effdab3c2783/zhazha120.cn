@@ -1,13 +1,13 @@
 <script lang="ts" setup>
+    import externalLinksConfig from "../../../../config/external_links.ts" with { type: "macro" };
     import { isNonNullish } from "remeda";
 
-    const appConfig = useAppConfig();
     const { isMobile } = useResponsive();
 </script>
 
 <template>
     <n-flex align="center" size="small">
-        <template v-for="{ type, icon, name, href, comment } in appConfig.self.external_links">
+        <template v-for="{ type, icon, name, href, comment } in externalLinksConfig">
             <NaiveRedirectorWrapper :href="href">
                 <template #default="{ href, redirect }">
                     <n-button

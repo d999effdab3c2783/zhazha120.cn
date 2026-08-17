@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-    const appConfig = useAppConfig();
+    import projectsConfig from "../../../../config/projects.ts" with { type: "macro" };
+
     const { isMobile } = useResponsive();
 </script>
 
 <template>
     <n-flex :vertical="isMobile" size="small">
-        <template v-for="project in appConfig.dev.projects">
-            <naive-redirector-wrapper #="{ href, redirect }" :href="project.href">
+        <template v-for="{ name, href } in projectsConfig">
+            <naive-redirector-wrapper #="{ href, redirect }" :href="href">
                 <n-button
                     :block="isMobile"
                     :href="href"
@@ -14,7 +15,7 @@
                     tag="a"
                     @click.prevent="redirect"
                 >
-                    {{ guessLocale(project.name) }}
+                    {{ guessLocale(name) }}
                 </n-button>
             </naive-redirector-wrapper>
         </template>

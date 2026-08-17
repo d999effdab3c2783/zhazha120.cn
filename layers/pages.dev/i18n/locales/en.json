@@ -1,6 +1,6 @@
 {
     "pages.dev:name": "Dev",
-    "pages.dev:awards:no_trace_link": "No traceable link available",
+    "pages.dev:competitions:no_trace_link": "No traceable link available",
     "pages.dev:codetime:by_project": "By Project",
     "pages.dev:codetime:by_language": "By Language",
     "pages.dev:codetime:for_reference_only": "For reference only",

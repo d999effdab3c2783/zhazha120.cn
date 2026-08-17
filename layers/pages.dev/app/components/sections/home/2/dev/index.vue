@@ -1,3 +1,4 @@
+<script lang="ts" setup></script>
 <template>
     <n-flex :size="0" class="w-full" vertical>
         <n-divider dashed>
@@ -14,7 +15,7 @@
             <SectionsHome2DevOrganizations />
             <SectionsHome2DevProjects />
 
-            <SectionsHome2DevAwards />
+            <SectionsHome2DevCompetitions />
         </n-flex>
     </n-flex>
 </template>

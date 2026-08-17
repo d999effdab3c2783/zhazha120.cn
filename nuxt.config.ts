@@ -1,6 +1,7 @@
 import AutoImport from "unplugin-auto-import/vite";
 import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
+import Macros from "unplugin-macros/vite";
 import { resolve } from "node:path";
 import Info from "unplugin-info/vite";
 
@@ -11,6 +12,9 @@ export default defineNuxtConfig({
     ssr: false,
     vite: {
         plugins: [
+            Macros({
+                virtualModules: true,
+            }),
             Info(),
             AutoImport({
                 dts: resolve(__dirname, "app", "types", "auto-imports.d.ts"),

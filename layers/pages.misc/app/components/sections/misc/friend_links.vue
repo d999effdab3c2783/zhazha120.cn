@@ -1,14 +1,14 @@
 <script lang="ts" setup>
     import { isNonNullish } from "remeda";
 
-    const appConfig = useAppConfig();
     const { isMobile } = useResponsive();
+    const friendLinks = useFriendLinks();
 </script>
 
 <template>
     <n-flex :vertical="isMobile" align="center" size="small">
-        <template v-for="friendLink in appConfig.misc.friend_links">
-            <naive-redirector-wrapper :href="friendLink.href">
+        <template v-for="{ logo, name, description, href } in friendLinks">
+            <naive-redirector-wrapper :href="href">
                 <template #default="{ href, redirect }">
                     <n-button
                         :block="isMobile"
@@ -19,16 +19,16 @@
                         @click.prevent="redirect"
                     >
                         <template #icon>
-                            <n-image :src="friendLink.logo.href" preview-disabled />
+                            <n-image :src="logo" preview-disabled />
                         </template>
 
                         <n-flex :size="0" align="start" class="w-full" vertical>
-                            <n-text class="text-current">{{ friendLink.name }}</n-text>
+                            <n-text class="text-current">{{ name }}</n-text>
 
-                            <template v-if="isNonNullish(friendLink.description)">
+                            <template v-if="isNonNullish(description)">
                                 <n-ellipsis>
                                     <n-text :depth="3" class="text-[.8em]">
-                                        {{ friendLink.description }}
+                                        {{ description }}
                                     </n-text>
                                 </n-ellipsis>
                             </template>
@@ -39,13 +39,13 @@
                 <template #extra>
                     <n-flex align="center" size="small" vertical>
                         <n-flex align="center" justify="center" size="small">
-                            <n-image :src="friendLink.logo.href" class="h-10" />
-                            <n-text>{{ friendLink.name }}</n-text>
+                            <n-image :src="logo" class="h-10" />
+                            <n-text>{{ name }}</n-text>
                         </n-flex>
 
-                        <template v-if="isNonNullish(friendLink.description)">
+                        <template v-if="isNonNullish(description)">
                             <n-element class="text-wrap">
-                                <n-text :depth="3">{{ friendLink.description }}</n-text>
+                                <n-text :depth="3">{{ description }}</n-text>
                             </n-element>
                         </template>
                     </n-flex>

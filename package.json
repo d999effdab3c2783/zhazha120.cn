@@ -11,6 +11,7 @@
         "lint:fix": "oxlint --fix",
         "preview": "nuxt preview",
         "postinstall": "nuxt prepare",
+        "clean": "rimraf .nuxt .output dist",
         "prepare": "husky"
     },
     "devDependencies": {
@@ -23,8 +24,11 @@
         "@unocss/reset": "^66.7.5",
         "@vueuse/core": "^14.4.0",
         "@vueuse/nuxt": "^14.4.0",
+        "@zxing/browser": "^0.2.1",
         "gsap": "^3.15.0",
         "husky": "^9.1.7",
+        "jimp": "^1.6.1",
+        "jsqr": "^1.4.0",
         "lenis": "^1.3.26",
         "mitt": "^3.0.1",
         "naive-ui": "^2.44.1",
@@ -35,10 +39,12 @@
         "oxlint-tsgolint": "^7.0.2001",
         "pinia": "^4.0.2",
         "remeda": "^2.39.0",
+        "rimraf": "^6.1.3",
         "sass-embedded": "^1.100.0",
         "unocss": "^66.7.5",
         "unplugin-auto-import": "^21.1.0",
         "unplugin-info": "^1.3.2",
+        "unplugin-macros": "^0.23.2",
         "unplugin-vue-components": "^32.1.0",
         "vue": "^3.5.41",
         "vue-router": "^5.2.0"

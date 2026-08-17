@@ -1,7 +1,7 @@
 <script lang="ts" setup>
     import { type QrCodeProps, useThemeVars } from "naive-ui";
+    import selfInformationConfig from "../../../../pages.self/config/information.ts" with { type: "macro" };
 
-    const appConfig = useAppConfig();
     const location = useBrowserLocation();
     const themeVars = useThemeVars();
 
@@ -10,7 +10,7 @@
         errorCorrectionLevel: "H",
         iconBackgroundColor: "transparent",
         iconSize: 60,
-        iconSrc: appConfig.self.avatar.src,
+        iconSrc: selfInformationConfig.avatar.src,
         value: location.value.href,
         size: 240,
         type: "svg",

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-    const appConfig = useAppConfig();
+    const organizations = useOrganizations();
     const { isMobile } = useResponsive();
 </script>
 
 <template>
     <n-flex :vertical="isMobile" size="small">
-        <template v-for="organization in appConfig.dev.organizations">
-            <naive-redirector-wrapper :href="organization.href">
+        <template v-for="{ avatar, name, href } in organizations">
+            <naive-redirector-wrapper :href="href">
                 <template #default="{ href, redirect }">
                     <n-button
                         :block="isMobile"
@@ -16,17 +16,17 @@
                         @click.prevent="redirect"
                     >
                         <template #icon>
-                            <n-image :src="organization.avatar.href" preview-disabled />
+                            <n-image :src="avatar" preview-disabled />
                         </template>
 
-                        {{ guessLocale(organization.name) }}
+                        {{ guessLocale(name) }}
                     </n-button>
                 </template>
 
                 <template #extra>
                     <n-flex align="center" justify="center" size="small">
-                        <n-image :src="organization.avatar.href" class="size-10" />
-                        <n-text>{{ guessLocale(organization.name) }}</n-text>
+                        <n-image :src="avatar" class="size-10" />
+                        <n-text>{{ guessLocale(name) }}</n-text>
                     </n-flex>
                 </template>
             </naive-redirector-wrapper>

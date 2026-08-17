@@ -1,13 +1,13 @@
 <script lang="ts" setup>
+    import contactsConfig from "../../../../config/contacts.ts" with { type: "macro" };
     import { isNonNullish } from "remeda";
 
-    const appConfig = useAppConfig();
     const { isMobile } = useResponsive();
 </script>
 
 <template>
     <n-flex align="center" size="small">
-        <template v-for="{ icon, name, href, comment } in appConfig.self.contacts">
+        <template v-for="{ icon, name, href, comment } in contactsConfig">
             <NaiveRedirectorWrapper :href="href">
                 <template #default="{ href, redirect }">
                     <n-button :block="isMobile" :href="href" tag="a" @click.prevent="redirect">

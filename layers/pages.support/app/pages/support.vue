@@ -1,5 +1,7 @@
 <script lang="ts" setup>
     import { isNonNullish } from "remeda";
+    import selfInformationConfig from "../../../pages.self/config/information.ts" with { type: "macro" };
+    import supportConfig from "#layers/pages.support/config/support";
 
     definePageMeta({
         layout: "subpage",
@@ -7,18 +9,21 @@
             localeKey: "pages.support:name",
         },
     });
-
-    const appConfig = useAppConfig();
 </script>
 
 <template>
     <n-tabs animated type="segment">
-        <template v-for="channel in appConfig.support.channels">
+        <template v-for="channel in supportConfig.channels">
             <n-tab-pane :name="guessLocale(channel.name)">
                 <n-flex size="small" vertical>
                     <template v-for="method in channel.methods">
                         <template v-if="method.type === 'external'">
-                            <n-card :title="guessLocale(method.name) ?? undefined" size="small">
+                            <n-card
+                                :title="
+                                    isNonNullish(method.name) ? guessLocale(method.name) : undefined
+                                "
+                                size="small"
+                            >
                                 <n-flex size="small" vertical>
                                     <template v-if="isNonNullish(method.comment)">
                                         <n-alert type="info">
@@ -67,7 +72,14 @@
                             <template
                                 v-if="isNonNullish(method.image) || isNonNullish(method.content)"
                             >
-                                <n-card :title="guessLocale(method.name) ?? undefined" size="small">
+                                <n-card
+                                    :title="
+                                        isNonNullish(method.name)
+                                            ? guessLocale(method.name)
+                                            : undefined
+                                    "
+                                    size="small"
+                                >
                                     <template v-if="isNonNullish(method.image)">
                                         <n-flex justify="center">
                                             <n-image :src="method.image" />
@@ -77,8 +89,8 @@
                                     <template v-if="isNonNullish(method.content)" #action>
                                         <n-flex align="center" size="small" vertical>
                                             <n-qr-code
-                                                :icon-src="appConfig.self.avatar.src"
-                                                :size="appConfig.support.fallback_qrcode_size"
+                                                :icon-src="selfInformationConfig.avatar.src"
+                                                :size="supportConfig.fallback_qrcode_size"
                                                 :value="method.content"
                                                 class="box-content"
                                                 icon-background-color="transparent"

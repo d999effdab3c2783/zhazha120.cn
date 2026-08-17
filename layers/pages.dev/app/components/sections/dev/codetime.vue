@@ -1,8 +1,8 @@
 <script lang="ts" setup>
     import { isNonNullish } from "remeda";
+    import codetimeConfig from "../../../../config/codetime.ts" with { type: "macro" };
 
     const themeStore = useThemeStore();
-    const appConfig = useAppConfig();
     const { isMobile } = useResponsive();
 
     const processWidget = (url: string) => {
@@ -16,26 +16,22 @@
 
 <template>
     <n-flex align="center" size="small" vertical>
-        <n-image :src="processWidget(appConfig.dev.codetime.widgets.calendar)" />
+        <n-image :src="processWidget(codetimeConfig.widgets.calendar)" />
 
         <n-flex :vertical="isMobile" size="small">
-            <n-image :src="processWidget(appConfig.dev.codetime.widgets.trend)" />
+            <n-image :src="processWidget(codetimeConfig.widgets.trend)" />
 
             <n-element class="flex-1">
                 <n-tabs :justify-content="isMobile ? 'center' : undefined" animated>
                     <n-tab-pane :name="$t('pages.dev:codetime:by_language')">
                         <n-flex :justify="isMobile ? 'center' : undefined">
-                            <n-image
-                                :src="processWidget(appConfig.dev.codetime.widgets.top.languages)"
-                            />
+                            <n-image :src="processWidget(codetimeConfig.widgets.top.languages)" />
                         </n-flex>
                     </n-tab-pane>
 
                     <n-tab-pane :name="$t('pages.dev:codetime:by_project')">
                         <n-flex :justify="isMobile ? 'center' : undefined">
-                            <n-image
-                                :src="processWidget(appConfig.dev.codetime.widgets.top.projects)"
-                            />
+                            <n-image :src="processWidget(codetimeConfig.widgets.top.projects)" />
                         </n-flex>
                     </n-tab-pane>
                 </n-tabs>
@@ -43,13 +39,13 @@
         </n-flex>
 
         <n-flex :vertical="isMobile" align="center" justify="space-evenly" size="small">
-            <n-image :src="processWidget(appConfig.dev.codetime.widgets.status)" />
-            <n-image :src="processWidget(appConfig.dev.codetime.widgets.usage)" />
+            <n-image :src="processWidget(codetimeConfig.widgets.status)" />
+            <n-image :src="processWidget(codetimeConfig.widgets.usage)" />
         </n-flex>
 
         <n-flex :vertical="isMobile" align="center" justify="space-evenly" size="small">
-            <n-image :src="processWidget(appConfig.dev.codetime.widgets.badge.coding_time)" />
-            <n-image :src="processWidget(appConfig.dev.codetime.widgets.badge.tokens)" />
+            <n-image :src="processWidget(codetimeConfig.widgets.badge.coding_time)" />
+            <n-image :src="processWidget(codetimeConfig.widgets.badge.tokens)" />
         </n-flex>
 
         <n-element class="mt-4">
@@ -58,10 +54,10 @@
 
                 <naive-redirector-wrapper
                     #="{ href, redirect }"
-                    :href="`https://${appConfig.dev.codetime.domain}`"
+                    :href="`https://${codetimeConfig.domain}`"
                 >
                     <n-button :href="href" tag="a" text @click.prevent="redirect">
-                        {{ appConfig.dev.codetime.domain }}
+                        {{ codetimeConfig.domain }}
                     </n-button>
                 </naive-redirector-wrapper>
             </n-flex>

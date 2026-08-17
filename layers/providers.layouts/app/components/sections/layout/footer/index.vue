@@ -1,8 +1,8 @@
 <script lang="ts" setup>
     import { abbreviatedSha, branch, sha } from "~build/git";
+    import footerConfig from "../../../../../config/footer.ts" with { type: "macro" };
 
     const { isMobile } = useResponsive();
-    const appConfig = useAppConfig();
 
     const now = useNow();
     const currentYear = computed(() => now.value.getFullYear());
@@ -22,7 +22,7 @@
         <n-grid-item>
             <NaivePosition class="size-full" placement="center">
                 <n-text :depth="3">
-                    &copy; {{ appConfig.layout.footer.copyright_start_year }} - {{ currentYear }}
+                    &copy; {{ footerConfig.copyright_start_year }} - {{ currentYear }}
                 </n-text>
             </NaivePosition>
         </n-grid-item>
@@ -32,7 +32,7 @@
                 <n-flex align="center" size="small" vertical>
                     <NaiveRedirectorWrapper
                         #="{ href, redirect }"
-                        :href="appConfig.layout.footer.filing.icp.link"
+                        :href="footerConfig.filing.icp.link"
                     >
                         <n-button
                             :href="href"
@@ -42,17 +42,17 @@
                             type="warning"
                             @click.prevent="redirect"
                         >
-                            {{ appConfig.layout.footer.filing.province_abbr }} ICP 备
-                            {{ appConfig.layout.footer.filing.icp.code }} 号
+                            {{ footerConfig.filing.province_abbr }} ICP 备
+                            {{ footerConfig.filing.icp.code }} 号
                         </n-button>
                     </NaiveRedirectorWrapper>
 
                     <NaiveRedirectorWrapper
                         #="{ href, redirect }"
                         :href="
-                            appConfig.layout.footer.filing.safety.link.replaceAll(
+                            footerConfig.filing.safety.link.replaceAll(
                                 '{code}',
-                                appConfig.layout.footer.filing.safety.code.toString(),
+                                footerConfig.filing.safety.code.toString(),
                             )
                         "
                     >
@@ -64,8 +64,8 @@
                             type="warning"
                             @click.prevent="redirect"
                         >
-                            {{ appConfig.layout.footer.filing.province_abbr }}公网安备
-                            {{ appConfig.layout.footer.filing.safety.code }} 号
+                            {{ footerConfig.filing.province_abbr }}公网安备
+                            {{ footerConfig.filing.safety.code }} 号
                         </n-button>
                     </NaiveRedirectorWrapper>
                 </n-flex>
@@ -76,7 +76,7 @@
             <NaivePosition class="size-full" placement="center">
                 <NaiveRedirectorWrapper
                     #="{ href, redirect }"
-                    :href="appConfig.layout.footer.version.link.replace('{sha}', sha)"
+                    :href="footerConfig.version.link.replace('{sha}', sha)"
                 >
                     <n-button
                         :href="href"

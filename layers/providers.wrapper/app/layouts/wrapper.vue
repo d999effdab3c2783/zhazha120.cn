@@ -1,8 +1,8 @@
 <script lang="ts" setup>
     import { dateZhCN, zhCN } from "naive-ui";
+    import lenisConfig from "../../config/lenis.ts" with { type: "macro" };
 
     const themeStore = useThemeStore();
-    const appConfig = useAppConfig();
 </script>
 
 <template>
@@ -17,7 +17,7 @@
     >
         <n-dialog-provider>
             <n-loading-bar-provider>
-                <VueLenis :options="appConfig.lenis" root />
+                <VueLenis :options="lenisConfig" root />
 
                 <n-message-provider>
                     <n-modal-provider>

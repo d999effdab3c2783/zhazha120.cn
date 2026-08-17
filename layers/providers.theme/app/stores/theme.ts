@@ -1,9 +1,8 @@
 import { darkTheme, type GlobalThemeOverrides, lightTheme, useOsTheme } from "naive-ui";
+import naiveUIConfig from "../../config/naive-ui.ts" with { type: "macro" };
 import { mergeDeep } from "remeda";
 
 export const useThemeStore = defineStore("theme", () => {
-    const appConfig = useAppConfig();
-
     const mode = shallowRef<"system" | "light" | "dark">("system");
     const osTheme = useOsTheme();
 
@@ -23,12 +22,12 @@ export const useThemeStore = defineStore("theme", () => {
     const overrides = computed<GlobalThemeOverrides>(() => {
         switch (actualMode.value) {
             case "light":
-                return mergeDeep(appConfig.theme.global.overrides, appConfig.theme.light.overrides);
+                return mergeDeep(naiveUIConfig.global.overrides, naiveUIConfig.light.overrides);
             case "dark":
-                return mergeDeep(appConfig.theme.global.overrides, appConfig.theme.dark.overrides);
+                return mergeDeep(naiveUIConfig.global.overrides, naiveUIConfig.dark.overrides);
         }
 
-        return appConfig.theme.global.overrides;
+        return naiveUIConfig.global.overrides;
     });
 
     return {

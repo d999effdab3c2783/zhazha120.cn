@@ -1,10 +1,10 @@
+import selfInformationConfig from "../../../pages.self/config/information.ts" with { type: "macro" };
 import { isEmptyish, isObjectType } from "remeda";
 
 export default defineNuxtPlugin((nuxt) => {
-    const appConfig = useAppConfig();
     const breadcrumb = useBreadcrumb();
 
-    useFavicon(appConfig.self.avatar.src);
+    useFavicon(selfInformationConfig.avatar.src);
 
     useHead({
         htmlAttrs: {
@@ -12,9 +12,9 @@ export default defineNuxtPlugin((nuxt) => {
         },
         titleTemplate: (title?: string) =>
             [
-                isObjectType(appConfig.self.name)
-                    ? nuxt.$i18n.t(appConfig.self.name.localeKey)
-                    : appConfig.self.name,
+                isObjectType(selfInformationConfig.name)
+                    ? nuxt.$i18n.t(selfInformationConfig.name.localeKey)
+                    : selfInformationConfig.name,
                 breadcrumb.items.value
                     .slice(1)
                     .map((item) => item.name)

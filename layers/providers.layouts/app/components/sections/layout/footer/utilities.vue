@@ -1,16 +1,16 @@
 <script lang="ts" setup>
     import { isNonNullish, isNullish } from "remeda";
+    import footerConfig from "../../../../../config/footer.ts" with { type: "macro" };
 
     const modal = useTemplateRef("modal");
-    const appConfig = useAppConfig();
     const magicKeys = useMagicKeys();
 
     onMounted(() => {
-        if (!isNonNullish(appConfig.layout.footer.utilities.hotkey)) {
+        if (!isNonNullish(footerConfig.utilities.hotkey)) {
             return;
         }
 
-        const magicKey = magicKeys[appConfig.layout.footer.utilities.hotkey];
+        const magicKey = magicKeys[footerConfig.utilities.hotkey];
 
         if (isNullish(magicKey)) {
             return;

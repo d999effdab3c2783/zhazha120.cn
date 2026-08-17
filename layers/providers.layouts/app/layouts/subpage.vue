@@ -1,7 +1,6 @@
 <script lang="ts" setup>
     import { isNonNullish } from "remeda";
 
-    const appConfig = useAppConfig();
     const router = useRouter();
     const breadcrumb = useBreadcrumb();
 

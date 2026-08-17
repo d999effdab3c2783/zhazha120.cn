@@ -1,10 +1,10 @@
 <script lang="ts" setup>
+    import selfInformationConfig from "../../../../../../pages.self/config/information.ts" with { type: "macro" };
     import { isNonNullish } from "remeda";
 
-    const appConfig = useAppConfig();
     const message = useMessage();
 
-    const poke = guessLocale(appConfig.self.avatar.poke);
+    const poke = guessLocale(selfInformationConfig.avatar.poke);
 
     const handlePoke = () => {
         if (isNonNullish(poke)) {
@@ -16,7 +16,7 @@
 <template>
     <n-flex align="center" justify="center" size="small">
         <n-avatar
-            :src="appConfig.self.avatar.src"
+            :src="selfInformationConfig.avatar.src"
             circle
             class="size-30 transition-(transform ease-in-out duration-500) hover:(cursor-pointer rotate-360)"
             @dblclick="handlePoke"
@@ -25,7 +25,7 @@
         <n-text
             class="font-[v-zhazha120-script] fw-extrabold text-15 transition-(text-shadow ease-in-out duration-500) text-shadow-[0_0_0] hover:text-shadow-[0_0_.2em]"
         >
-            {{ guessLocale(appConfig.self.name) }}
+            {{ guessLocale(selfInformationConfig.name) }}
         </n-text>
     </n-flex>
 </template>

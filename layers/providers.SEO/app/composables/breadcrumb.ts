@@ -1,7 +1,7 @@
 import { isEmptyish, isNonNullish, isNullish, isObjectType } from "remeda";
+import selfInformationConfig from "../../../pages.self/config/information.ts" with { type: "macro" };
 
 export const useBreadcrumb = () => {
-    const appConfig = useAppConfig();
     const router = useRouter();
     const nuxtApp = useNuxtApp();
 
@@ -19,9 +19,9 @@ export const useBreadcrumb = () => {
                 if ([0, 1].includes(index) || isEmptyish(path)) {
                     if (index === 0) {
                         return {
-                            name: isObjectType(appConfig.self.name)
-                                ? nuxtApp.$i18n.t(appConfig.self.name.localeKey)
-                                : appConfig.self.name,
+                            name: isObjectType(selfInformationConfig.name)
+                                ? nuxtApp.$i18n.t(selfInformationConfig.name.localeKey)
+                                : selfInformationConfig.name,
                             path: "/",
                         };
                     }

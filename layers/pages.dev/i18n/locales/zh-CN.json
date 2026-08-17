@@ -1,6 +1,6 @@
 {
     "pages.dev:name": "开发",
-    "pages.dev:awards:no_trace_link": "无可用溯源链接",
+    "pages.dev:competitions:no_trace_link": "无可用溯源链接",
     "pages.dev:codetime:by_project": "按项目",
     "pages.dev:codetime:by_language": "按语言",
     "pages.dev:codetime:for_reference_only": "仅供参考",

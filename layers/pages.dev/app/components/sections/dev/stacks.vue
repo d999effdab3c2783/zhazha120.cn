@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-    const appConfig = useAppConfig();
+    const stacks = useStacks();
     const { isMobile } = useResponsive();
 </script>
 
 <template>
     <n-flex :vertical="isMobile" size="small">
-        <template v-for="group in appConfig.dev.stacks">
-            <n-card :title="guessLocale(group.name)" size="small">
+        <template v-for="{ name, items } in stacks">
+            <n-card :title="guessLocale(name)" size="small">
                 <n-flex :vertical="isMobile" size="small">
-                    <template v-for="stack in group.items">
-                        <naive-redirector-wrapper #="{ href, redirect }" :href="stack.href">
+                    <template v-for="{ icon, name, href } in items">
+                        <naive-redirector-wrapper #="{ href, redirect }" :href="href">
                             <n-button
                                 :block="isMobile"
                                 :href="href"
@@ -18,10 +18,10 @@
                                 @click.prevent="redirect"
                             >
                                 <template #icon>
-                                    <n-icon :class="stack.icon" />
+                                    <n-icon :class="icon" />
                                 </template>
 
-                                {{ guessLocale(stack.name) }}
+                                {{ guessLocale(name) }}
                             </n-button>
                         </naive-redirector-wrapper>
                     </template>
