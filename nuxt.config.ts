@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     compatibilityDate: "latest",
     css: ["lenis/dist/lenis.css"],
     modules: ["@nuxtjs/i18n", "@pinia/nuxt", "@vueuse/nuxt", "lenis/nuxt", "@unocss/nuxt"],
+    nitro: {
+        preset: "static",
+    },
     ssr: false,
     vite: {
         plugins: [
