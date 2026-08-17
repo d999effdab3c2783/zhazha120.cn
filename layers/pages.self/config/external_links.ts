@@ -1,5 +1,7 @@
 import type { ExternalLink } from "../app/types/self";
 
+// @unocss-include
+
 export default [
     {
         type: "primary",
