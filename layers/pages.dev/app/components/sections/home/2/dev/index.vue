@@ -1,4 +1,3 @@
-<script lang="ts" setup></script>
 <template>
     <n-flex :size="0" class="w-full" vertical>
         <n-divider dashed>
