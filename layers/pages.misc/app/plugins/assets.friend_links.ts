@@ -14,7 +14,7 @@ export default defineNuxtPlugin(() => {
             assetsStore.registry.push({
                 src: friendLink.remoteLogo,
                 href: friendLink.default.logo,
-            } as Asset);
+            } satisfies Asset);
         }
     }
 });

@@ -14,7 +14,7 @@ export default defineNuxtPlugin(() => {
             assetsStore.registry.push({
                 src: organization.remoteAvatar,
                 href: organization.default.avatar,
-            } as Asset);
+            } satisfies Asset);
         }
     }
 });

@@ -1,5 +1,5 @@
 import selfInformationConfig from "#layers/pages.self/config/information";
-import { isEmptyish, isObjectType } from "remeda";
+import { isEmptyish, isObjectType, prop } from "remeda";
 
 export default defineNuxtPlugin((nuxt) => {
     const breadcrumb = useBreadcrumb();
@@ -15,10 +15,7 @@ export default defineNuxtPlugin((nuxt) => {
                 isObjectType(selfInformationConfig.name)
                     ? nuxt.$i18n.t(selfInformationConfig.name.localeKey)
                     : selfInformationConfig.name,
-                breadcrumb.items.value
-                    .slice(1)
-                    .map((item) => item.name)
-                    .join(" / "),
+                breadcrumb.items.value.slice(1).map(prop("name")).join(" / "),
                 title,
             ]
                 .filter((part) => !isEmptyish(part))

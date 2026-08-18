@@ -28,7 +28,7 @@ export const useBreadcrumb = () => {
 
                     if (index === 1) {
                         const locale = nuxtApp.$i18n.locales.value.find(
-                            (locale) => path.substring(1) === locale.code,
+                            ({ code }) => path.substring(1) === code,
                         );
 
                         if (isNonNullish(locale)) {

@@ -10,6 +10,8 @@
 </template>
 
 <script lang="ts" setup>
+    /* oxlint-disable */
+
     import { gsap } from "gsap";
     import { InertiaPlugin } from "gsap/InertiaPlugin";
 

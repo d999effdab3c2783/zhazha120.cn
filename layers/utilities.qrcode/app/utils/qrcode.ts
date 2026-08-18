@@ -13,7 +13,8 @@ export const readQRCodeNode = async (path: string) => {
     const image = await Jimp.read(path);
 
     const result = jsQR(
-        image.bitmap.data as unknown as Uint8ClampedArray,
+        // @ts-expect-error
+        image.bitmap.data,
         image.bitmap.width,
         image.bitmap.height,
     );

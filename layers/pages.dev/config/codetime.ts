@@ -7,12 +7,12 @@ export default {
 
     widgets: {
         badge: {
-            coding_time:
-                "https://shields.jannchie.com/endpoint?style=for-the-badge&url=" +
-                encodeURIComponent(`https://${base}/v3/users/shield?uid=${user_id}`),
-            tokens:
-                "https://shields.jannchie.com/endpoint?style=for-the-badge&url=" +
-                encodeURIComponent(`https://${base}/v3/users/shield?uid=${user_id}&metric=tokens`),
+            coding_time: `https://shields.jannchie.com/endpoint?style=for-the-badge&url=${encodeURIComponent(
+                `https://${base}/v3/users/shield?uid=${user_id}`,
+            )}`,
+            tokens: `https://shields.jannchie.com/endpoint?style=for-the-badge&url=${encodeURIComponent(
+                `https://${base}/v3/users/shield?uid=${user_id}&metric=tokens`,
+            )}`,
         },
         top: {
             languages: `https://${base}/api/widgets/donut.svg?uid=${user_id}&theme={theme}`,

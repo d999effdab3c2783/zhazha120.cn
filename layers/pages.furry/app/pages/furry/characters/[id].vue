@@ -14,9 +14,7 @@
     const i18n = useI18n();
     const { isMobile } = useResponsive();
 
-    const character = furryStore.characters.find(
-        (character) => String(character.id) === route.params.id,
-    );
+    const character = furryStore.characters.find(({ id }) => String(id) === route.params.id);
 
     if (isNonNullish(character)) {
         useSeoMeta({
