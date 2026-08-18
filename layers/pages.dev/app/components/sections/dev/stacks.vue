@@ -1,11 +1,15 @@
 <script lang="ts" setup>
+    import { prop, sortBy } from "remeda";
+
     const stacks = useStacks();
     const { isMobile } = useResponsive();
+
+    const sortedStacks = sortBy(stacks, (stack) => prop(stack, "sort") ?? Infinity);
 </script>
 
 <template>
     <n-flex :vertical="isMobile" size="small">
-        <template v-for="{ name, items } in stacks">
+        <template v-for="{ name, items } in sortedStacks">
             <n-card :title="guessLocale(name)" size="small">
                 <n-flex :vertical="isMobile" size="small">
                     <template v-for="{ icon, name, href } in items">

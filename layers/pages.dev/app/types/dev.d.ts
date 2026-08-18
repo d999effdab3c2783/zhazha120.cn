@@ -1,6 +1,7 @@
 import type { MaybeLocaleKey } from "#layers/providers.i18n/app/types/i18n";
 
 export interface Stack {
+    readonly sort?: number;
     readonly name: MaybeLocaleKey;
 
     readonly items: {

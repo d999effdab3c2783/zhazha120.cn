@@ -3,6 +3,8 @@ import type { Stack } from "../../app/types/dev";
 // @unocss-include
 
 export default {
+    sort: 4,
+
     name: {
         localeKey: "pages.dev:stacks:infrastructure",
     },
