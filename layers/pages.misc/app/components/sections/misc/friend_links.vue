@@ -53,7 +53,7 @@
                         </template>
 
                         <template v-if="disabled">
-                            <n-text type="error">可能已经无法访问</n-text>
+                            <n-alert class="w-full" type="error">可能已经无法访问</n-alert>
                         </template>
                     </n-flex>
                 </template>
