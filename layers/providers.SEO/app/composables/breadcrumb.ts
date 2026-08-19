@@ -1,33 +1,52 @@
-import { isEmptyish, isNonNullish, isNullish } from "remeda";
+import { isNonNullish, isNullish } from "remeda";
 
 export const useBreadcrumb = () => {
     const router = useRouter();
-
-    const paths = computed(() => router.currentRoute.value.fullPath.split("/").slice(1));
+    const nuxtApp = useNuxtApp();
 
     const items = computed(() =>
-        paths.value
-            .map((part, index) => {
-                if (isEmptyish(part)) {
-                    return null;
-                }
+        router.currentRoute.value.fullPath
+            .split("/")
+            .reduce(
+                (breadcrumbs, currentPath, index, paths) => {
+                    const buildPartialPath = (count: number) => paths.slice(0, count).join("/");
+                    const path = buildPartialPath(index + 1);
 
-                const path = paths.value.slice(0, index + 1).join("/");
-                const currentPath = path.split("/").at(-1);
+                    const add = (path: string) => {
+                        const route = router.resolve({
+                            path,
+                        });
 
-                const route = router.resolve({
-                    path: `/${path}`,
-                });
+                        breadcrumbs.push({
+                            name: guessLocaleNuxt(route.meta.title) ?? currentPath,
+                            path,
+                        });
+                    };
 
-                if (isNullish(route)) {
-                    return null;
-                }
+                    switch (index) {
+                        case 0:
+                            const possibleLocale = buildPartialPath(2).substring(1);
 
-                return {
-                    name: guessLocaleNuxt(route.meta.title) ?? currentPath,
-                    path,
-                };
-            })
+                            const locale = nuxtApp.$i18n.locales.value.find(
+                                ({ code }) => possibleLocale === code,
+                            );
+
+                            if (isNullish(locale)) {
+                                add("/");
+                            }
+                            break;
+                        default:
+                            add(path);
+                            break;
+                    }
+
+                    return breadcrumbs;
+                },
+                [] as {
+                    readonly name: string;
+                    readonly path: string;
+                }[],
+            )
             .filter(isNonNullish),
     );
 
