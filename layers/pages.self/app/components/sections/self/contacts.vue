@@ -9,8 +9,8 @@
     <n-flex align="center" size="small">
         <template v-for="{ icon, name, href, comment } in contactsConfig">
             <NaiveRedirectorWrapper :href="href">
-                <template #default="{ href, redirect }">
-                    <n-button :block="isMobile" :href="href" tag="a" @click.prevent="redirect">
+                <template #default="{ aProps, redirect }">
+                    <n-button :block="isMobile" tag="a" v-bind="aProps" @click.prevent="redirect">
                         <template #icon>
                             <n-icon :class="icon" />
                         </template>

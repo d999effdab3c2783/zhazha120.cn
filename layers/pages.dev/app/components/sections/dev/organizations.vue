@@ -7,12 +7,12 @@
     <n-flex :vertical="isMobile" size="small">
         <template v-for="{ avatar, name, href } in organizations">
             <naive-redirector-wrapper :href="href">
-                <template #default="{ href, redirect }">
+                <template #default="{ aProps, redirect }">
                     <n-button
                         :block="isMobile"
-                        :href="href"
                         size="small"
                         tag="a"
+                        v-bind="aProps"
                         @click.prevent="redirect"
                     >
                         <template #icon>

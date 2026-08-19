@@ -1,5 +1,6 @@
 <script lang="ts" setup>
     import { isNonNullish } from "remeda";
+    import { FriendLinkStatuses } from "#layers/pages.misc/app/enums/FriendLink";
 
     const { isMobile } = useResponsive();
     const friendLinks = useFriendLinks();
@@ -9,16 +10,19 @@
 
 <template>
     <n-flex :vertical="isMobile" align="center" size="small">
-        <template v-for="{ logo, name, description, href, disabled } in friendLinks">
-            <naive-redirector-wrapper :href="href">
-                <template #default="{ href, redirect }">
+        <template v-for="{ status, logo, name, description, href } in friendLinks">
+            <naive-redirector-wrapper
+                :href="handleLink(href)"
+                :rel="status === FriendLinkStatuses.DEAD ? ['nofollow'] : []"
+            >
+                <template #default="{ aProps, redirect }">
                     <n-button
                         :block="isMobile"
-                        :href="handleLink(href)"
-                        :secondary="disabled"
+                        :secondary="status === FriendLinkStatuses.DEAD"
                         class="h-full py-2"
                         size="small"
                         tag="a"
+                        v-bind="aProps"
                         @click.prevent="redirect"
                     >
                         <template #icon>
@@ -52,7 +56,7 @@
                             </n-element>
                         </template>
 
-                        <template v-if="disabled">
+                        <template v-if="status === FriendLinkStatuses.DEAD">
                             <n-alert class="w-full" type="error">可能已经无法访问</n-alert>
                         </template>
                     </n-flex>

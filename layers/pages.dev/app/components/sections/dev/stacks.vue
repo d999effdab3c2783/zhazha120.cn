@@ -13,12 +13,12 @@
             <n-card :title="guessLocale(name)" size="small">
                 <n-flex :vertical="isMobile" size="small">
                     <template v-for="{ icon, name, href } in items">
-                        <naive-redirector-wrapper #="{ href, redirect }" :href="href">
+                        <naive-redirector-wrapper #="{ aProps, redirect }" :href="href">
                             <n-button
                                 :block="isMobile"
-                                :href="href"
                                 size="small"
                                 tag="a"
+                                v-bind="aProps"
                                 @click.prevent="redirect"
                             >
                                 <template #icon>

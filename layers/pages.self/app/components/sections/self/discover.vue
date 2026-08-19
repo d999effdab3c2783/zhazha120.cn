@@ -9,12 +9,12 @@
     <n-flex align="center" size="small">
         <template v-for="{ type, icon, name, href, comment } in externalLinksConfig">
             <NaiveRedirectorWrapper :href="href">
-                <template #default="{ href, redirect }">
+                <template #default="{ aProps, redirect }">
                     <n-button
                         :block="isMobile"
-                        :href="href"
                         :type="type"
                         tag="a"
+                        v-bind="aProps"
                         @click.prevent="redirect"
                     >
                         <template #icon>

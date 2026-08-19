@@ -70,15 +70,15 @@
                             <template #owner>
                                 <template v-if="isNonNullish(character.owner.href)">
                                     <naive-redirector-wrapper
-                                        #="{ href, redirect }"
+                                        #="{ aProps, redirect }"
                                         :href="character.owner.href"
                                     >
                                         <n-button
-                                            :href="href"
                                             size="small"
                                             tag="a"
                                             text
                                             type="primary"
+                                            v-bind="aProps"
                                             @click.prevent="redirect"
                                         >
                                             {{ guessLocale(character.owner.name) }}

@@ -31,15 +31,15 @@
             <NaivePosition class="size-full" placement="center">
                 <n-flex align="center" size="small" vertical>
                     <NaiveRedirectorWrapper
-                        #="{ href, redirect }"
+                        #="{ aProps, redirect }"
                         :href="footerConfig.filing.icp.link"
                     >
                         <n-button
-                            :href="href"
                             class="fw-extrabold"
                             tag="a"
                             text
                             type="warning"
+                            v-bind="aProps"
                             @click.prevent="redirect"
                         >
                             {{ footerConfig.filing.province_abbr }} ICP 备
@@ -48,7 +48,7 @@
                     </NaiveRedirectorWrapper>
 
                     <NaiveRedirectorWrapper
-                        #="{ href, redirect }"
+                        #="{ aProps, redirect }"
                         :href="
                             footerConfig.filing.safety.link.replaceAll(
                                 '{code}',
@@ -57,11 +57,11 @@
                         "
                     >
                         <n-button
-                            :href="href"
                             class="fw-extrabold"
                             tag="a"
                             text
                             type="warning"
+                            v-bind="aProps"
                             @click.prevent="redirect"
                         >
                             {{ footerConfig.filing.province_abbr }}公网安备
@@ -75,15 +75,15 @@
         <n-grid-item>
             <NaivePosition class="size-full" placement="center">
                 <NaiveRedirectorWrapper
-                    #="{ href, redirect }"
+                    #="{ aProps, redirect }"
                     :href="footerConfig.version.link.replace('{sha}', sha)"
                 >
                     <n-button
-                        :href="href"
                         size="small"
                         tag="a"
                         text
                         type="info"
+                        v-bind="aProps"
                         @click.prevent="redirect"
                     >
                         <template #icon>

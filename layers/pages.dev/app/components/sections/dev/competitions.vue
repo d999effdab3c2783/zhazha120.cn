@@ -33,8 +33,13 @@
     <n-flex :vertical="isMobile" size="small">
         <template v-for="{ name, href } in competitionsConfig">
             <template v-if="isNonNullish(href)">
-                <naive-redirector-wrapper #="{ href, redirect }" :href="href">
-                    <CompetitionButton :href="href" :name="name" tag="a" @click.prevent="redirect">
+                <naive-redirector-wrapper #="{ aProps, redirect }" :href="href">
+                    <CompetitionButton
+                        :name="name"
+                        tag="a"
+                        v-bind="aProps"
+                        @click.prevent="redirect"
+                    >
                         <n-element
                             :class="[
                                 'whitespace-pre leading-tight',

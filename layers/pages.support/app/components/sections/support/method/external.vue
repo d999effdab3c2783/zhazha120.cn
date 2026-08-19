@@ -21,12 +21,12 @@
                     class="size-full absolute top-0 left-0 transition-([opacity_background] duration-500 ease-in-out) opacity-0 hover:(bg-([#000000] opacity-50) opacity-100)"
                 >
                     <naive-position class="h-full" placement="center">
-                        <naive-redirector-wrapper #="{ href, redirect }" :href="method.href">
+                        <naive-redirector-wrapper #="{ aProps, redirect }" :href="method.href">
                             <n-button
-                                :href="href"
                                 size="small"
                                 tag="a"
                                 type="primary"
+                                v-bind="aProps"
                                 @click.prevent="redirect"
                             >
                                 <template #icon>

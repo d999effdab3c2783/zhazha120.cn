@@ -7,12 +7,12 @@
 <template>
     <n-flex :vertical="isMobile" size="small">
         <template v-for="{ name, href } in projectsConfig">
-            <naive-redirector-wrapper #="{ href, redirect }" :href="href">
+            <naive-redirector-wrapper #="{ aProps, redirect }" :href="href">
                 <n-button
                     :block="isMobile"
-                    :href="href"
                     size="small"
                     tag="a"
+                    v-bind="aProps"
                     @click.prevent="redirect"
                 >
                     {{ guessLocale(name) }}

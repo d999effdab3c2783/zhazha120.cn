@@ -53,10 +53,10 @@
                 <n-text :depth="3">{{ $t("pages.dev:codetime:for_reference_only") }}</n-text>
 
                 <naive-redirector-wrapper
-                    #="{ href, redirect }"
+                    #="{ aProps, redirect }"
                     :href="`https://${codetimeConfig.domain}`"
                 >
-                    <n-button :href="href" tag="a" text @click.prevent="redirect">
+                    <n-button tag="a" text v-bind="aProps" @click.prevent="redirect">
                         {{ codetimeConfig.domain }}
                     </n-button>
                 </naive-redirector-wrapper>

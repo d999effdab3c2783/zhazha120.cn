@@ -5,11 +5,19 @@
         inheritAttrs: false,
     });
 
-    const props = defineProps<{
-        readonly href: string;
-    }>();
+    const props = withDefaults(
+        defineProps<{
+            readonly rel?: string[];
+            readonly href: string;
+        }>(),
+        {
+            rel: () => [],
+        },
+    );
 
     const modal = useTemplateRef("modal");
+
+    const processedRel = computed(() => ["noopener", ...props.rel].join(" "));
 
     const handle = async () => {
         if (isNullish(modal.value)) {
@@ -43,7 +51,7 @@
         size="small"
     >
         <template #trigger>
-            <slot :href="href" :redirect="handle" />
+            <slot :a-props="{ href, rel }" :href="href" :redirect="handle" :rel="processedRel" />
         </template>
 
         <n-flex align="center" size="small" vertical>
@@ -53,6 +61,7 @@
 
             <n-button
                 :href="href"
+                :rel="processedRel"
                 class="py-2 w-full text-wrap"
                 tag="a"
                 target="_blank"
