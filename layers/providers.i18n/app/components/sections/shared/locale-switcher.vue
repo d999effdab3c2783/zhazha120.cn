@@ -4,9 +4,9 @@
     const i18n = useI18n();
 
     const options = computed(() =>
-        i18n.locales.value.map((locale) => ({
-            label: locale.name,
-            value: locale.code,
+        i18n.locales.value.map(({ name, code }) => ({
+            label: name,
+            value: code,
         })),
     );
 

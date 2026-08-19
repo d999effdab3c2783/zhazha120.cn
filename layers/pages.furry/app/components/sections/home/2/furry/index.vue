@@ -12,6 +12,8 @@
             </n-element>
         </n-divider>
 
-        <n-flex class="w-full" size="small" vertical></n-flex>
+        <n-flex class="w-full" size="small" vertical>
+            <SectionsHome2FurryDescription />
+        </n-flex>
     </n-flex>
 </template>

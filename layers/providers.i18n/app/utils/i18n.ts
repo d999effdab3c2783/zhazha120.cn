@@ -14,3 +14,17 @@ export const guessLocale = (input: MaybeLocaleKey) => {
 
     return input;
 };
+
+export const guessLocaleNuxt = (input: MaybeLocaleKey) => {
+    const nuxtApp = useNuxtApp();
+
+    if (isObjectType(input)) {
+        if (isNonNullish(input.params)) {
+            return nuxtApp.$i18n.t(input.localeKey, input.params);
+        }
+
+        return nuxtApp.$i18n.t(input.localeKey);
+    }
+
+    return input;
+};

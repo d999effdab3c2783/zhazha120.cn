@@ -1,47 +1,22 @@
-import { isEmptyish, isNonNullish, isNullish, isObjectType } from "remeda";
-import selfInformationConfig from "#layers/pages.self/config/information";
+import { isEmptyish, isNonNullish, isNullish } from "remeda";
 
 export const useBreadcrumb = () => {
     const router = useRouter();
-    const nuxtApp = useNuxtApp();
 
-    const items = computed(() => {
-        const fullPath = router.currentRoute.value.fullPath;
+    const paths = computed(() => router.currentRoute.value.fullPath.split("/").slice(1));
 
-        return fullPath
-            .split("/")
-            .map((_path, index) => {
-                const path = fullPath
-                    .split("/")
-                    .slice(0, index + 1)
-                    .join("/");
-
-                if ([0, 1].includes(index) || isEmptyish(path)) {
-                    if (index === 0) {
-                        return {
-                            name: isObjectType(selfInformationConfig.name)
-                                ? nuxtApp.$i18n.t(selfInformationConfig.name.localeKey)
-                                : selfInformationConfig.name,
-                            path: "/",
-                        };
-                    }
-
-                    if (index === 1) {
-                        const locale = nuxtApp.$i18n.locales.value.find(
-                            ({ code }) => path.substring(1) === code,
-                        );
-
-                        if (isNonNullish(locale)) {
-                            return {
-                                name: `[${locale.name}]`,
-                                path: undefined,
-                            };
-                        }
-                    }
+    const items = computed(() =>
+        paths.value
+            .map((part, index) => {
+                if (isEmptyish(part)) {
+                    return null;
                 }
 
+                const path = paths.value.slice(0, index + 1).join("/");
+                const currentPath = path.split("/").at(-1);
+
                 const route = router.resolve({
-                    path,
+                    path: `/${path}`,
                 });
 
                 if (isNullish(route)) {
@@ -49,22 +24,12 @@ export const useBreadcrumb = () => {
                 }
 
                 return {
-                    name: (() => {
-                        const title = isObjectType(route.meta.title)
-                            ? nuxtApp.$i18n.t(route.meta.title.localeKey)
-                            : route.meta.title;
-
-                        if (!isEmptyish(title)) {
-                            return title;
-                        }
-
-                        return path.split("/").at(-1);
-                    })(),
+                    name: guessLocaleNuxt(route.meta.title) ?? currentPath,
                     path,
                 };
             })
-            .filter(isNonNullish);
-    });
+            .filter(isNonNullish),
+    );
 
     return {
         items,

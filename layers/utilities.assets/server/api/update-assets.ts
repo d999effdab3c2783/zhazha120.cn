@@ -16,8 +16,8 @@ export default defineEventHandler(async (event) => {
 
         if (isArray(data) && data.every(validate)) {
             await Promise.all(
-                data.map(async (asset) => {
-                    const response = await fetch(asset.src);
+                data.map(async ({ src, path }) => {
+                    const response = await fetch(src);
 
                     if (!response.ok) {
                         return;
@@ -26,11 +26,11 @@ export default defineEventHandler(async (event) => {
                     const arrayBuffer = await response.arrayBuffer();
                     const buffer = Buffer.from(arrayBuffer);
 
-                    await mkdir(dirname(asset.path), {
+                    await mkdir(dirname(path), {
                         recursive: true,
                     });
 
-                    await writeFile(asset.path, buffer);
+                    await writeFile(path, buffer);
                 }),
             );
 

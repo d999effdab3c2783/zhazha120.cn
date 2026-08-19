@@ -104,11 +104,11 @@
             <n-card size="small">
                 <n-result
                     :description="
-                        $t('pages:furry:characters:profile.no_result.description', {
+                        $t('pages.furry:characters:profile.no_result.description', {
                             id: route.params.id,
                         })
                     "
-                    :title="$t('pages:furry:characters:profile.no_result.title')"
+                    :title="$t('pages.furry:characters:profile.no_result.title')"
                     status="error"
                 />
             </n-card>

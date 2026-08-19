@@ -5,6 +5,7 @@
     "pages.furry:characters:name": "设定",
     "pages.furry:characters:profile.owner": "所有者: {owner}",
     "pages.furry:characters:profile.name": "档案",
-    "pages:furry:characters:profile.no_result.title": "空结果",
-    "pages:furry:characters:profile.no_result.description": "(ID: {id}) 不存在"
+    "pages.furry:characters:profile.no_result.title": "空结果",
+    "pages.furry:characters:profile.no_result.description": "(ID: {id}) 不存在",
+    "pages.furry:description:1": "边缘 不咋混圈 只喜欢其中可爱和毛绒的事物"
 }

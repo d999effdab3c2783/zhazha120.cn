@@ -7,4 +7,10 @@
     });
 </script>
 
-<template></template>
+<template>
+    <n-flex class="w-full" size="small" vertical>
+        <n-card size="small">
+            <SectionsFurryDescription />
+        </n-card>
+    </n-flex>
+</template>

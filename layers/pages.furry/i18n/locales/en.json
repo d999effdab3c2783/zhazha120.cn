@@ -4,6 +4,7 @@
     "pages.furry:characters:name": "Characters",
     "pages.furry:characters:profile.owner": "Owner: {owner}",
     "pages.furry:characters:profile.name": "Profile",
-    "pages:furry:characters:profile.no_result.title": "No Result",
-    "pages:furry:characters:profile.no_result.description": "(ID: {id}) does not exist"
+    "pages.furry:characters:profile.no_result.title": "No Result",
+    "pages.furry:characters:profile.no_result.description": "(ID: {id}) does not exist",
+    "pages.furry:description:1": "Not really in the scene, just vibing with the cute & fluffy stuff."
 }

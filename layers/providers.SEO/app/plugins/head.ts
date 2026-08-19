@@ -1,10 +1,10 @@
 import selfInformationConfig from "#layers/pages.self/config/information";
-import { isEmptyish, isObjectType, prop } from "remeda";
+import { isEmptyish, prop } from "remeda";
 
-export default defineNuxtPlugin((nuxt) => {
-    const breadcrumb = useBreadcrumb();
-
+export default defineNuxtPlugin(() => {
     useFavicon(selfInformationConfig.avatar.src);
+
+    const breadcrumb = useBreadcrumb();
 
     useHead({
         htmlAttrs: {
@@ -12,9 +12,7 @@ export default defineNuxtPlugin((nuxt) => {
         },
         titleTemplate: (title?: string) =>
             [
-                isObjectType(selfInformationConfig.name)
-                    ? nuxt.$i18n.t(selfInformationConfig.name.localeKey)
-                    : selfInformationConfig.name,
+                guessLocaleNuxt(selfInformationConfig.name),
                 breadcrumb.items.value.slice(1).map(prop("name")).join(" / "),
                 title,
             ]
