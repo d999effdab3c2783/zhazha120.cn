@@ -5,6 +5,8 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 import VueRouter from 'vue-router/vite';
 import { resolve } from 'node:path';
+import { VueRouterAutoImports } from 'vue-router/unplugin';
+import UnoCSS from 'unocss/vite';
 
 export default defineConfig({
 	resolve: {
@@ -13,6 +15,7 @@ export default defineConfig({
 		},
 	},
 	plugins: [
+		UnoCSS(),
 		VueRouter({
 			dts: resolve(import.meta.dirname, 'src', 'types', 'router.d.ts'),
 			routesFolder: [
@@ -28,6 +31,8 @@ export default defineConfig({
 				'vue',
 				'pinia',
 				'vue-router',
+				'@vueuse/core',
+				VueRouterAutoImports,
 				{
 					'naive-ui': ['useDialog', 'useModal', 'useMessage', 'useNotification', 'useLoadingBar'],
 				},
