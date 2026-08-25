@@ -20,6 +20,14 @@ export default defineConfig(() => {
 	return {
 		build: {
 			assetsInlineLimit: 0,
+			rolldownOptions: {
+				output: {
+					hashCharacters: 'base36' as const,
+					assetFileNames: 'assets/[hash:21][extname]',
+					entryFileNames: 'assets/[hash:21].js',
+					chunkFileNames: 'assets/[hash:21].js',
+				},
+			},
 		},
 		publicDir: resolve(import.meta.dirname, 'src', 'public'),
 		resolve: {
@@ -60,6 +68,7 @@ export default defineConfig(() => {
 						'naive-ui': ['useDialog', 'useModal', 'useMessage', 'useNotification', 'useLoadingBar'],
 					},
 				],
+				parser: 'oxc',
 			}),
 			Components({
 				dts: resolve(import.meta.dirname, 'src', 'types', 'components.d.ts'),
