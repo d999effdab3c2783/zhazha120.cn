@@ -3,26 +3,23 @@
 
 	const route = useRoute();
 
-	const availableLayoutMappings = Object.fromEntries(
+	const layouts = Object.fromEntries(
 		Object.entries(
 			import.meta.glob('@/components/layouts/*.vue', {
 				import: 'default',
 			}),
-		).map(([path, importer]) => {
-			return [(path.split('/').at(-1) ?? path).split('.')[0], importer];
+		).map(([path, loader]) => {
+			return [(path.split('/').at(-1) ?? path).split('.')[0], loader];
 		}),
 	);
 
-	const layout = computedAsync(async () => {
-		return await (
-			availableLayoutMappings[isNonNullish(route.meta.layout) ? route.meta.layout : 'default'] ??
-			availableLayoutMappings['default']
-		)();
+	const activeLayout = computedAsync(async () => {
+		return await (layouts[isNonNullish(route.meta.layout) ? route.meta.layout : 'default'] ?? layouts['default'])();
 	});
 </script>
 
 <template>
-	<Component :is="layout">
+	<Component :is="activeLayout">
 		<slot />
 	</Component>
 </template>
