@@ -3,7 +3,7 @@
 	import { useLenis } from 'lenis/vue';
 	import FadeTransition from '@/components/transitions/fade.vue';
 	import { useEventEmit } from 'mitt-vue';
-	import events from '@/data/events';
+	import events from '@/data/events' with { type: 'macro' };
 
 	const show = shallowRef(false);
 

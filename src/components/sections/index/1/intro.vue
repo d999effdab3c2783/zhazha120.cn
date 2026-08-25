@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import profileData from '@/data/profile';
+	import profileData from '@/data/profile' with { type: 'macro' };
 	import type { MotionVariants } from '@vueuse/motion';
 
 	const message = useMessage();

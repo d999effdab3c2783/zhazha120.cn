@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 	import WrapperLayout from '@/components/layouts/wrapper.vue';
-	import lenisData from '@/data/lenis';
+	import lenisData from '@/data/lenis' with { type: 'macro' };
 	import { VueLenis } from 'lenis/vue';
 	import { isNullish } from 'remeda';
 

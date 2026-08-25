@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import type { GlobalTheme, GlobalThemeOverrides } from 'naive-ui';
 	import { darkTheme, dateZhCN, lightTheme, useOsTheme, zhCN } from 'naive-ui';
-	import themeData from '@/data/theme';
+	import themeData from '@/data/theme' with { type: 'macro' };
 
 	const osTheme = useOsTheme();
 

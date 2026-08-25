@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import events from '@/data/events';
+	import events from '@/data/events' with { type: 'macro' };
 	import { isNonNullish, isNullish } from 'remeda';
 	import { useLenis } from 'lenis/vue';
 	import { useEventListener } from 'mitt-vue';
