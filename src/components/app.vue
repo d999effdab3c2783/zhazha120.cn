@@ -7,3 +7,7 @@
 		<router-view />
 	</Layout>
 </template>
+
+<style lang="scss">
+	@use '@/styles/global';
+</style>

@@ -21,9 +21,9 @@ export default defineConfig({
 	],
 	transformers: [
 		transformerCompileClass(),
-		transformerDirectives({
-			enforce: 'post',
+		transformerDirectives(),
+		transformerVariantGroup({
+			separators: ['-'],
 		}),
-		transformerVariantGroup(),
 	],
 });
