@@ -5,7 +5,7 @@
 
 	const layouts = Object.fromEntries(
 		Object.entries(
-			import.meta.glob('@/components/layouts/*.vue', {
+			import.meta.glob(['!@/components/layouts/index.vue', '@/components/layouts/*.vue'], {
 				import: 'default',
 			}),
 		).map(([path, loader]) => {
