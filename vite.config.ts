@@ -9,6 +9,9 @@ import { VueRouterAutoImports } from 'vue-router/unplugin';
 import UnoCSS from 'unocss/vite';
 
 export default defineConfig({
+	build: {
+		assetsInlineLimit: 0,
+	},
 	resolve: {
 		alias: {
 			'@': resolve(import.meta.dirname, 'src'),
