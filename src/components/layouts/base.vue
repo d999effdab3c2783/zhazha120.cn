@@ -1,13 +1,65 @@
 <script lang="ts" setup>
 	import WrapperLayout from '@/components/layouts/wrapper.vue';
+	import lenisData from '@/data/lenis';
+	import { VueLenis } from 'lenis/vue';
+	import { isNullish } from 'remeda';
+
+	const lenisRef = useTemplateRef('lenisRef');
+	const layoutRef = useTemplateRef<ComponentPublicInstance>('layoutRef');
+
+	watchOnce(lenisRef, () => {
+		if (isNullish(lenisRef.value)) {
+			return;
+		}
+
+		const { lenis } = lenisRef.value;
+
+		if (isNullish(lenis)) {
+			return;
+		}
+
+		if (lenisData.gsap) {
+			gsap.registerPlugin(ScrollTrigger);
+
+			lenis.on('scroll', ScrollTrigger.update);
+
+			gsap.ticker.add((time) => {
+				if (isNullish(lenis)) {
+					return;
+				}
+
+				lenis.raf(time * 1000);
+			});
+
+			gsap.ticker.lagSmoothing(0);
+		}
+	});
 </script>
 
 <template>
 	<WrapperLayout>
-		<n-layout position="absolute">
-			<n-layout-content position="absolute">
+		<template v-if="layoutRef">
+			<VueLenis
+				ref="lenisRef"
+				:auto-raf="lenisData.options.autoRaf ?? false"
+				:options="{
+					wrapper: layoutRef.$el.querySelector('.n-scrollbar-container'),
+					content: layoutRef.$el.querySelector('.n-scrollbar-content'),
+
+					...lenisData.options,
+				}"
+				root
+			/>
+		</template>
+
+		<n-layout ref="layoutRef" :native-scrollbar="false" position="absolute">
+			<n-layout-content>
 				<slot />
 			</n-layout-content>
 		</n-layout>
 	</WrapperLayout>
 </template>
+
+<style lang="scss">
+	@use 'lenis/dist/lenis';
+</style>

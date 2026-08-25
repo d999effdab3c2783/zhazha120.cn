@@ -4,6 +4,10 @@ import 'virtual:uno.css';
 import App from '@/components/app.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import { handleHotUpdate, routes } from 'vue-router/auto-routes';
+import LenisVue from 'lenis/vue';
+import { MotionPlugin } from '@vueuse/motion';
+
+// @unocss-include
 
 (() => {
 	const container = document.createElement('div');
@@ -24,6 +28,11 @@ import { handleHotUpdate, routes } from 'vue-router/auto-routes';
 
 	app.use(pinia);
 	app.use(router);
+	app.use(LenisVue);
+	app.use(MotionPlugin);
+
+	container.classList.add('contents');
+
 	app.mount(container);
 
 	document.body.append(container);
