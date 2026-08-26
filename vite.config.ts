@@ -58,6 +58,7 @@ export default defineConfig(() => {
 			Vue(),
 			AutoImport({
 				dts: resolve(import.meta.dirname, 'src', 'types', 'auto-imports.d.ts'),
+				dirs: [resolve(import.meta.dirname, 'src', 'composables')],
 				imports: [
 					'vue',
 					'pinia',
