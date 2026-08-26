@@ -17,6 +17,8 @@
 				transition: {
 					type: 'spring',
 					duration: 500,
+
+					delay: 300,
 				},
 			},
 			hovered: {
@@ -39,7 +41,8 @@
 				transition: {
 					type: 'tween',
 					duration: 500,
-					delay: 250,
+
+					delay: 600,
 				},
 			},
 		} satisfies MotionVariants<string>,
