@@ -3,7 +3,7 @@
 	import { useLenis } from 'lenis/vue';
 	import FadeTransition from '@/components/transitions/fade.vue';
 	import { useEventEmit } from 'mitt-vue';
-	import events from '@/data/events' with { type: 'macro' };
+	import eventsEnumData from '@/data/enums/events' with { type: 'macro' };
 
 	const show = shallowRef(false);
 
@@ -12,7 +12,7 @@
 	});
 
 	const handleDown = () => {
-		useEventEmit(events.INDEX_SCROLL, 2);
+		useEventEmit(eventsEnumData.INDEX_SCROLL, 2);
 	};
 </script>
 
