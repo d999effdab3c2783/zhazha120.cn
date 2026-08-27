@@ -8,6 +8,10 @@
 	src: local('Xiaolai'), local('HarmonyOS Sans SC'), local('DingTalk JinBuTi');
 }
 
+html {
+	@apply text-[12px];
+}
+
 body {
 	@apply font-[v-zhazha120-sans];
 }
