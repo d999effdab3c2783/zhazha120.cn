@@ -1,7 +1,9 @@
+import type { ButtonProps } from 'naive-ui';
+
 // @unocss-include
 
 export type Portal = {
-	readonly type?: 'primary';
+	readonly type?: ButtonProps['type'];
 
 	readonly icon: string;
 	readonly name: string;
@@ -31,4 +33,4 @@ export default [
 		name: '云盘',
 		href: 'https://pan.zhazha120.cn',
 	},
-] satisfies Service[];
+] satisfies Portal[];
