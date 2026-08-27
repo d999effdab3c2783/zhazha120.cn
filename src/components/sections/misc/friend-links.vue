@@ -42,7 +42,7 @@
 
 				<template #extra>
 					<n-flex align="center" justify="center" size="small" wrap>
-						<n-image :class="[{ 'w-full': isMobile }, { 'h-20': !isMobile }]" :src="logo" />
+						<n-image :class="[{ 'w-full': isMobile }, { 'h-12': !isMobile }]" :src="logo" />
 
 						<n-flex :align="isMobile ? 'center' : undefined" :size="0" vertical>
 							<n-text>{{ name }}</n-text>
