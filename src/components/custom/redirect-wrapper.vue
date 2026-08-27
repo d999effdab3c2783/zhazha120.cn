@@ -65,7 +65,7 @@
 		<template #default="{ error }">
 			<n-flex :size="0" vertical>
 				<n-text>URL 解析异常</n-text>
-				<n-text :depth="3" type="error">{{ error }}</n-text>
+				<n-text :depth="3">{{ error }}</n-text>
 			</n-flex>
 		</template>
 	</ParseExceptionMessageContentDefine>

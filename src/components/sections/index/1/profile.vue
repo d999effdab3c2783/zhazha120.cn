@@ -2,6 +2,7 @@
 	import profileData from '@/data/profile' with { type: 'macro' };
 	import type { MotionVariants } from '@vueuse/motion';
 
+	const { isMobile } = useResponsive();
 	const message = useMessage();
 
 	const motions = {
@@ -55,7 +56,7 @@
 
 <template>
 	<n-element class="absolute top-1/2 left-1/2 -translate-1/2">
-		<n-flex align="center" justify="center" size="small">
+		<n-flex :vertical="isMobile" align="center" justify="center" size="small" wrap>
 			<n-avatar
 				v-motion="motions.avatar"
 				:src="profileData.avatar.src"
