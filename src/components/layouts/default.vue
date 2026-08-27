@@ -5,7 +5,7 @@
 
 <template>
 	<AppLayout>
-		<VueBitsClickSpark>
+		<VueBitsClickSpark class="[&>canvas]:z-120">
 			<slot />
 		</VueBitsClickSpark>
 	</AppLayout>
