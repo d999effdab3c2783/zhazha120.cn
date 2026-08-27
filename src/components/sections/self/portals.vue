@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import contactsData from '@/data/contacts' with { type: 'macro' };
+	import portalsData from '@/data/portals' with { type: 'macro' };
 	import CustomButton from '@/components/custom/naive-ui/button.vue';
 	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 	import { isNonNullish } from 'remeda';
@@ -9,12 +9,13 @@
 
 <template>
 	<n-flex size="small" wrap>
-		<template v-for="{ icon, name, href, comment } in contactsData">
+		<template v-for="{ type, icon, name, href, comment } in portalsData">
 			<custom-redirect-wrapper :href="href">
 				<template #default="{ redirect, aProps }">
 					<custom-button
 						:block="isMobile"
 						:icon-class="icon"
+						:type="type"
 						tag="a"
 						v-bind="aProps"
 						@click.prevent="redirect"
