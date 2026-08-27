@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-	import BaseLayout from '@/components/layouts/base.vue';
+	import AppLayout from '@/components/layouts/app.vue';
 	import VueBitsClickSpark from '@/components/vue-bits/click-spark.vue';
 </script>
 
 <template>
-	<BaseLayout>
+	<AppLayout>
 		<VueBitsClickSpark>
 			<slot />
 		</VueBitsClickSpark>
-	</BaseLayout>
+	</AppLayout>
 </template>
