@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-	import eventsEnumData from '@/data/enums/events' with { type: 'macro' };
 	import { isNonNullish, isNullish } from 'remeda';
 	import { useLenis } from 'lenis/vue';
 	import { useEventListener } from 'mitt-vue';
@@ -8,7 +7,7 @@
 	const section1Ref = useTemplateRef<ComponentPublicInstance>('section1Ref');
 	const section2Ref = useTemplateRef<ComponentPublicInstance>('section2Ref');
 
-	useEventListener(eventsEnumData.INDEX_SCROLL, (target: number) => {
+	useEventListener('index:scroll', (target: number) => {
 		if (isNullish(lenis.value)) {
 			return;
 		}
