@@ -20,10 +20,10 @@ export default defineConfig({
 		}),
 	],
 	transformers: [
-		transformerCompileClass(),
-		transformerDirectives(),
-		transformerVariantGroup({
-			separators: ['-'],
+		transformerCompileClass({
+			alwaysHash: true,
 		}),
+		transformerDirectives(),
+		transformerVariantGroup(),
 	],
 });

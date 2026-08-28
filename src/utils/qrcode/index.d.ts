@@ -1,0 +1,1 @@
+export type ReadResult = Promise<string | undefined>;

@@ -19,9 +19,9 @@
 		<n-element class="min-h-screen relative">
 			<n-element
 				:class="[
-					'container mx-auto',
+					'container mx-auto pb-2',
 					{
-						'p-2': isMobile,
+						'pt-5 px-2': isMobile,
 					},
 					{
 						'pt-10': !isMobile,
