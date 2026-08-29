@@ -2,7 +2,6 @@
 	import { prop, sortBy } from 'remeda';
 
 	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
-	import { useDevStacks } from '@/composables/dev.ts';
 
 	const { isMobile } = useResponsive();
 	const stacks = useDevStacks();
