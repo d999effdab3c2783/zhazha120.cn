@@ -18,7 +18,7 @@
 			<n-image :src="processWidget(codetimeData.widgets.trend)" />
 
 			<n-element class="flex-1">
-				<n-tabs :justify-content="isMobile ? 'center' : undefined" animated>
+				<n-tabs :justify-content="isMobile ? 'center' : undefined" animated type="line">
 					<n-tab-pane name="按语言">
 						<n-flex :justify="isMobile ? 'center' : undefined">
 							<n-image :src="processWidget(codetimeData.widgets.top.languages)" />
