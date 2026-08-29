@@ -28,7 +28,7 @@
 	<n-element
 		ref="container"
 		:class="[
-			'transition-(property-filter duration-500 ease-in-out)',
+			'transition-(property-[filter] duration-500 ease-in-out)',
 			{
 				'blur-6 hover:cursor-pointer': !show,
 			},

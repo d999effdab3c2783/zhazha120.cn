@@ -28,6 +28,8 @@
 </script>
 
 <template>
-	<sections-index-1 ref="section1Ref" />
-	<sections-index-2 ref="section2Ref" />
+	<n-flex :size="0" vertical>
+		<sections-index-1 ref="section1Ref" />
+		<sections-index-2 ref="section2Ref" />
+	</n-flex>
 </template>
