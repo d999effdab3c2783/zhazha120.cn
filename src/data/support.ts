@@ -55,7 +55,7 @@ export default {
 				{
 					type: 'image',
 					name: '收款',
-					src: new URL('@/assets/images/support/qq/transfer.bin', import.meta.url).href,
+					src: new URL('@/assets/images/support/qq/transfer.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',
@@ -74,7 +74,7 @@ export default {
 				{
 					type: 'image',
 					name: '收款',
-					src: new URL('@/assets/images/support/wechat/transfer.bin', import.meta.url).href,
+					src: new URL('@/assets/images/support/wechat/transfer.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',
@@ -93,7 +93,7 @@ export default {
 				{
 					type: 'image',
 					name: '收款',
-					src: new URL('@/assets/images/support/alipay/transfer.bin', import.meta.url).href,
+					src: new URL('@/assets/images/support/alipay/transfer.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',
@@ -107,7 +107,7 @@ export default {
 				{
 					type: 'image',
 					name: '红包',
-					src: new URL('@/assets/images/support/alipay/red_packet.bin', import.meta.url).href,
+					src: new URL('@/assets/images/support/alipay/red_packet.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',

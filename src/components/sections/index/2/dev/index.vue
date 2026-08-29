@@ -26,6 +26,7 @@
 
 				<n-divider>技术履历</n-divider>
 
+				<sections-index-2-dev-organizations />
 				<sections-index-2-dev-projects />
 
 				<n-divider>技术挑战</n-divider>
