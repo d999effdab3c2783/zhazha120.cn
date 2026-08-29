@@ -9,7 +9,7 @@
 			<template #default="{ Component: Page, route }">
 				<PageTransition appear mode="out-in">
 					<KeepAlive>
-						<Component :is="Page" :key="route.fullPath" />
+						<Component :is="Page" :key="route.path" />
 					</KeepAlive>
 				</PageTransition>
 			</template>

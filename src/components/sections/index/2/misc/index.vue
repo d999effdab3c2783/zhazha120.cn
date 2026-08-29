@@ -6,9 +6,9 @@
 	<n-element class="min-h-screen relative">
 		<n-element
 			:class="[
-				'pt-30 container mx-auto',
+				'pt-30 pb-2 container mx-auto',
 				{
-					'px-2 pb-2': isMobile,
+					'px-2': isMobile,
 				},
 			]"
 		>

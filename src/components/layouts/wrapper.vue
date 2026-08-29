@@ -46,7 +46,6 @@
 		:locale="zhCN"
 		:theme="theme.preset"
 		:theme-overrides="theme.overrides"
-		abstract
 		inline-theme-disabled
 	>
 		<n-dialog-provider>
