@@ -1,6 +1,8 @@
 <script lang="ts" setup>
-	import type { ExternalSupportMethod } from '@/data/support.ts';
 	import { isNonNullish } from 'remeda';
+
+	import type { ExternalSupportMethod } from '@/data/support.ts';
+
 	import CustomButton from '@/components/custom/naive-ui/button.vue';
 	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 

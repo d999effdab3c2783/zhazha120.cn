@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-	import portalsData from '@/data/portals' with { type: 'macro' };
+	import { isNonNullish } from 'remeda';
+
 	import CustomButton from '@/components/custom/naive-ui/button.vue';
 	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
-	import { isNonNullish } from 'remeda';
+	import portalsData from '@/data/portals' with { type: 'macro' };
 
 	const { isMobile } = useResponsive();
 </script>

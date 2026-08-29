@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 	import { useThemeVars } from 'naive-ui';
+
 	import VueBitsDotGrid from '@/components/vue-bits/dot-grid.vue';
 
 	const themeVars = useThemeVars();

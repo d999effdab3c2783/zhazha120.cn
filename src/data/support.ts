@@ -1,4 +1,5 @@
 import type { QrCodeProps } from 'naive-ui';
+
 import { read } from '@/macros/qrcode' with { type: 'macro' };
 
 export type ExternalSupportMethod = {

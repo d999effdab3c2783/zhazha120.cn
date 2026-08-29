@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-	import { NElement, NIcon } from 'naive-ui';
 	import { useLenis } from 'lenis/vue';
-	import FadeTransition from '@/components/transitions/fade.vue';
 	import { useEventEmit } from 'mitt-vue';
+	import { NElement, NIcon } from 'naive-ui';
+
+	import FadeTransition from '@/components/transitions/fade.vue';
 
 	const show = shallowRef(false);
 

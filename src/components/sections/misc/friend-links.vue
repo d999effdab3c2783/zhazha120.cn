@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 	import { isNonNullish } from 'remeda';
+
+	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 
 	const { isMobile } = useResponsive();
 	const friendLinks = useFriendLinks();

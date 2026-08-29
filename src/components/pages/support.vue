@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-	import supportData from '@/data/support';
 	import { useRouteQuery } from '@vueuse/router';
+
+	import supportData from '@/data/support';
 
 	const value = useRouteQuery('tab', '3', {
 		mode: 'replace',

@@ -1,7 +1,8 @@
+import { Jimp } from 'jimp';
 import jsQR from 'jsqr';
 import { isNonNullish } from 'remeda';
+
 import type { ReadResult } from '@/utils/qrcode';
-import { Jimp } from 'jimp';
 
 export const read = async (path: string): ReadResult => {
 	const image = await Jimp.read(path);

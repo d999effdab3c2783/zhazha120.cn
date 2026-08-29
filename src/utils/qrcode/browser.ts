@@ -1,4 +1,5 @@
 import { BrowserQRCodeReader } from '@zxing/browser';
+
 import type { ReadResult } from '@/utils/qrcode';
 
 export const read = async (src: string): ReadResult => {

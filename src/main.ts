@@ -1,11 +1,11 @@
 // oxlint-disable-next-line import/no-unassigned-import
 import 'virtual:uno.css';
-
-import App from '@/components/app.vue';
+import { MotionPlugin } from '@vueuse/motion';
+import LenisVue from 'lenis/vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import { handleHotUpdate, routes } from 'vue-router/auto-routes';
-import LenisVue from 'lenis/vue';
-import { MotionPlugin } from '@vueuse/motion';
+
+import App from '@/components/app.vue';
 
 // @unocss-include
 

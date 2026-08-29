@@ -1,4 +1,5 @@
 import type { GlobalThemeOverrides } from 'naive-ui';
+
 import { generate } from '@ant-design/colors';
 
 const primaryColor = '#f79a00';

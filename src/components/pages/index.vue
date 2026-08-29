@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-	import { isNonNullish, isNullish } from 'remeda';
 	import { useLenis } from 'lenis/vue';
 	import { useEventListener } from 'mitt-vue';
+	import { isNonNullish, isNullish } from 'remeda';
 
 	const lenis = useLenis();
 	const section1Ref = useTemplateRef<ComponentPublicInstance>('section1Ref');

@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-	import { isNonNullish, isNullish } from 'remeda';
-	import CustomModal from '@/components/custom/naive-ui/modal.vue';
 	import { NFlex, NText } from 'naive-ui';
+	import { isNonNullish, isNullish } from 'remeda';
+
+	import CustomModal from '@/components/custom/naive-ui/modal.vue';
 
 	defineOptions({
 		inheritAttrs: false,

@@ -1,14 +1,14 @@
-import { defineConfig } from 'vite';
 import Vue from '@vitejs/plugin-vue';
+import { createJiti } from 'jiti';
+import path, { resolve } from 'node:path';
+import UnoCSS from 'unocss/vite';
 import AutoImport from 'unplugin-auto-import/vite';
+import Macros from 'unplugin-macros/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
-import VueRouter from 'vue-router/vite';
-import path, { resolve } from 'node:path';
-import { createJiti } from 'jiti';
+import { defineConfig } from 'vite';
 import { VueRouterAutoImports } from 'vue-router/unplugin';
-import UnoCSS from 'unocss/vite';
-import Macros from 'unplugin-macros/vite';
+import VueRouter from 'vue-router/vite';
 
 export default defineConfig(() => {
 	const jiti = createJiti(import.meta.url, {
