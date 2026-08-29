@@ -3,7 +3,7 @@
 
 	import CustomButton from '@/components/custom/naive-ui/button.vue';
 	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
-	import contactsData from '@/data/contacts' with { type: 'macro' };
+	import contactsData from '@/data/self/contacts' with { type: 'macro' };
 
 	const { isMobile } = useResponsive();
 </script>

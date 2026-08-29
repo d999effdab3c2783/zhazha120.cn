@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import type { ImageSupportMethod } from '@/data/support.ts';
+	import type { ImageSupportMethod } from '@/data/support';
 
 	defineProps<ImageSupportMethod>();
 </script>

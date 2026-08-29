@@ -3,7 +3,7 @@
 
 	import CustomButton from '@/components/custom/naive-ui/button.vue';
 	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
-	import portalsData from '@/data/portals' with { type: 'macro' };
+	import portalsData from '@/data/self/portals' with { type: 'macro' };
 
 	const { isMobile } = useResponsive();
 </script>

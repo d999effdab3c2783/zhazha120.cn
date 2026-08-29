@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import type { SupportChannel } from '@/data/support.ts';
+	import type { SupportChannel } from '@/data/support';
 
 	defineProps<SupportChannel>();
 </script>

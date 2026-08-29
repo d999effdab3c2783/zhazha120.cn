@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import type { MotionVariants } from '@vueuse/motion';
 
-	import profileData from '@/data/profile' with { type: 'macro' };
+	import profileData from '@/data/self/profile' with { type: 'macro' };
 
 	const { isMobile } = useResponsive();
 	const message = useMessage();
