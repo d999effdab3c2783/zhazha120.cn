@@ -47,7 +47,7 @@
 									v-bind="aProps"
 									@click.prevent="redirect"
 								>
-									<n-text class="text-(current start wrap) fw-bold">
+									<n-text class="text-(current start wrap) leading-tight fw-bold">
 										{{ project.name }}
 									</n-text>
 								</n-button>
