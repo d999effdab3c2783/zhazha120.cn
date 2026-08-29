@@ -1,3 +1,4 @@
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders';
 import {
 	defineConfig,
 	presetIcons,
@@ -11,7 +12,11 @@ import {
 export default defineConfig({
 	presets: [
 		presetWind4(),
-		presetIcons(),
+		presetIcons({
+			collections: {
+				custom: FileSystemIconLoader('src/assets/icons/custom'),
+			},
+		}),
 		presetWebFonts({
 			provider: 'none',
 			fonts: {
