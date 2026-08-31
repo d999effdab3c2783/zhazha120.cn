@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-	import DefaultLayout from '@/components/layouts/default.vue';
-
 	const { isMobile } = useResponsive();
 	const router = useRouter();
 
@@ -15,27 +13,27 @@
 </script>
 
 <template>
-	<DefaultLayout>
+	<layouts-default>
 		<n-element class="min-h-screen relative">
 			<n-element
 				:class="[
-					'container mx-auto pb-2',
+					'container mx-auto px-2 pb-2',
 					{
-						'pt-5 px-2': isMobile,
+						'pt-5': isMobile,
 					},
 					{
 						'pt-10': !isMobile,
 					},
 				]"
 			>
-				<n-flex size="large" vertical>
+				<custom-naive-ui-vertical-stack size="large">
 					<n-page-header :title="String($route.meta.title ?? $route.fullPath)" @back="handleBack" />
 
 					<n-element>
 						<slot />
 					</n-element>
-				</n-flex>
+				</custom-naive-ui-vertical-stack>
 			</n-element>
 		</n-element>
-	</DefaultLayout>
+	</layouts-default>
 </template>

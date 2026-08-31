@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda';
 
-	import Loading from '@/components/spinkit/cube-rotate-scale.vue';
-	import FadeTransition from '@/components/transitions/fade.vue';
-
 	const route = useRoute();
 
 	const layouts = Object.fromEntries(
@@ -22,7 +19,7 @@
 </script>
 
 <template>
-	<FadeTransition appear>
+	<transitions-fade appear>
 		<template v-if="isNonNullish(activeLayout)">
 			<Component :is="activeLayout">
 				<slot />
@@ -30,7 +27,7 @@
 		</template>
 
 		<template v-else>
-			<Loading />
+			<spinkit-cube-rotate-scale />
 		</template>
-	</FadeTransition>
+	</transitions-fade>
 </template>

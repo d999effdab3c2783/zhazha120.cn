@@ -1,27 +1,21 @@
-<script lang="ts" setup>
-	import Layout from '@/components/layouts/index.vue';
-	import Loading from '@/components/spinkit/cube-rotate-scale.vue';
-	import PageTransition from '@/components/transitions/page.vue';
-</script>
-
 <template>
-	<Layout>
+	<layouts>
 		<Suspense>
 			<router-view>
 				<template #default="{ Component: Page, route }">
-					<PageTransition appear mode="out-in">
+					<transitions-page appear mode="out-in">
 						<KeepAlive>
 							<Component :is="Page" :key="route.path" />
 						</KeepAlive>
-					</PageTransition>
+					</transitions-page>
 				</template>
 			</router-view>
 
 			<template #fallback>
-				<Loading />
+				<spinkit-cube-rotate-scale />
 			</template>
 		</Suspense>
-	</Layout>
+	</layouts>
 </template>
 
 <style lang="scss">

@@ -1,61 +1,56 @@
 <script lang="ts" setup>
 	import { useOsTheme } from 'naive-ui';
 
-	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 	import codetimeData from '@/data/dev/codetime' with { type: 'macro' };
 
 	const osTheme = useOsTheme();
-	const { isMobile } = useResponsive();
 
 	const processWidget = (url: string) => url.replaceAll('{theme}', osTheme.value ?? 'light');
+	const providerWebsite = `https://${codetimeData.domain}`;
 </script>
 
 <template>
-	<n-flex align="center" size="small" vertical>
+	<custom-naive-ui-vertical-stack align="center">
 		<n-image :src="processWidget(codetimeData.widgets.calendar)" />
 
-		<n-flex :vertical="isMobile" size="small">
+		<custom-naive-ui-horizontal-stack>
 			<n-image :src="processWidget(codetimeData.widgets.trend)" />
 
 			<n-element class="flex-1">
-				<n-tabs :justify-content="isMobile ? 'center' : undefined" animated type="line">
+				<n-tabs animated justify-content="center" type="line">
 					<n-tab-pane name="按语言">
-						<n-flex :justify="isMobile ? 'center' : undefined">
+						<custom-naive-ui-position placement="center">
 							<n-image :src="processWidget(codetimeData.widgets.top.languages)" />
-						</n-flex>
+						</custom-naive-ui-position>
 					</n-tab-pane>
 
 					<n-tab-pane name="按项目">
-						<n-flex :justify="isMobile ? 'center' : undefined">
+						<custom-naive-ui-position placement="center">
 							<n-image :src="processWidget(codetimeData.widgets.top.projects)" />
-						</n-flex>
+						</custom-naive-ui-position>
 					</n-tab-pane>
 				</n-tabs>
 			</n-element>
-		</n-flex>
+		</custom-naive-ui-horizontal-stack>
 
-		<n-flex :vertical="isMobile" align="center" justify="space-evenly" size="small">
+		<custom-naive-ui-horizontal-stack align="center" justify="center">
 			<n-image :src="processWidget(codetimeData.widgets.status)" />
 			<n-image :src="processWidget(codetimeData.widgets.usage)" />
-		</n-flex>
+		</custom-naive-ui-horizontal-stack>
 
-		<n-flex :vertical="isMobile" align="center" justify="space-evenly" size="small">
+		<custom-naive-ui-horizontal-stack align="center" justify="center">
 			<n-image :src="processWidget(codetimeData.widgets.badge.coding_time)" />
 			<n-image :src="processWidget(codetimeData.widgets.badge.tokens)" />
-		</n-flex>
+		</custom-naive-ui-horizontal-stack>
 
 		<n-element class="mt-4">
-			<n-flex :size="0" align="center" vertical>
+			<custom-naive-ui-vertical-stack align="center">
 				<n-text :depth="3">仅供参考</n-text>
 
-				<custom-redirect-wrapper :href="`https://${codetimeData.domain}`">
-					<template #default="{ redirect, aProps }">
-						<n-button tag="a" text v-bind="aProps" @click.prevent="redirect">
-							{{ codetimeData.domain }}
-						</n-button>
-					</template>
-				</custom-redirect-wrapper>
-			</n-flex>
+				<custom-naive-ui-redirect-button :href="providerWebsite" class="size-fit" tag="a" text type="primary">
+					<n-text class="text-current fw-bold">{{ codetimeData.domain }}</n-text>
+				</custom-naive-ui-redirect-button>
+			</custom-naive-ui-vertical-stack>
 		</n-element>
-	</n-flex>
+	</custom-naive-ui-vertical-stack>
 </template>

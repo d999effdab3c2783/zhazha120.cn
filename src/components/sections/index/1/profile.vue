@@ -3,7 +3,6 @@
 
 	import profileData from '@/data/self/profile' with { type: 'macro' };
 
-	const { isMobile } = useResponsive();
 	const message = useMessage();
 
 	const motions = {
@@ -57,7 +56,7 @@
 
 <template>
 	<n-element class="absolute top-1/2 left-1/2 -translate-1/2">
-		<n-flex :vertical="isMobile" align="center" justify="center" size="small" wrap>
+		<custom-naive-ui-auto-stack align="center" justify="center">
 			<n-avatar
 				v-motion="motions.avatar"
 				:src="profileData.avatar.src"
@@ -72,6 +71,6 @@
 			>
 				{{ profileData.name }}
 			</n-text>
-		</n-flex>
+		</custom-naive-ui-auto-stack>
 	</n-element>
 </template>

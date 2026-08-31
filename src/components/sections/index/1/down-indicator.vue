@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 	import { useLenis } from 'lenis/vue';
 	import { useEventEmit } from 'mitt-vue';
-	import { NElement, NIcon } from 'naive-ui';
-
-	import FadeTransition from '@/components/transitions/fade.vue';
 
 	const show = shallowRef(false);
 
@@ -18,12 +15,12 @@
 
 <template>
 	<n-element class="absolute bottom-10 left-1/2 -translate-x-1/2">
-		<FadeTransition appear mode="out-in">
+		<transitions-fade appear mode="out-in">
 			<template v-if="show">
 				<n-element class="animate-bounce hover:cursor-pointer">
 					<n-icon class="size-12 i-tabler:chevron-down" @click="handleDown" />
 				</n-element>
 			</template>
-		</FadeTransition>
+		</transitions-fade>
 	</n-element>
 </template>

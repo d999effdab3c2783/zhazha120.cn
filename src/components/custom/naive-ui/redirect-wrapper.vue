@@ -1,22 +1,20 @@
-<script lang="ts" setup>
-	import { NFlex, NText } from 'naive-ui';
-	import { isNonNullish, isNullish } from 'remeda';
+<script lang="ts">
+	export type Props = {
+		readonly rel?: string[];
+		readonly href: string;
+	};
+</script>
 
-	import CustomModal from '@/components/custom/naive-ui/modal.vue';
+<script lang="ts" setup>
+	import { isNullish } from 'remeda';
 
 	defineOptions({
 		inheritAttrs: false,
 	});
 
-	const props = withDefaults(
-		defineProps<{
-			readonly rel?: string[];
-			readonly href: string;
-		}>(),
-		{
-			rel: () => [],
-		},
-	);
+	const props = withDefaults(defineProps<Props>(), {
+		rel: () => [],
+	});
 
 	const modalRef = useTemplateRef('modalRef');
 
@@ -64,19 +62,19 @@
 <template>
 	<ParseExceptionMessageContentDefine>
 		<template #default="{ error }">
-			<n-flex :size="0" vertical>
+			<custom-naive-ui-text-stack>
 				<n-text>URL 解析异常</n-text>
 				<n-text :depth="3">{{ error }}</n-text>
-			</n-flex>
+			</custom-naive-ui-text-stack>
 		</template>
 	</ParseExceptionMessageContentDefine>
 
-	<CustomModal ref="modalRef" preset="card" size="small" title="即将离开当前网站">
+	<custom-naive-ui-modal ref="modalRef" preset="card" size="small" title="即将离开当前网站">
 		<template #trigger>
-			<slot :a-props="{ href, rel }" :href="href" :redirect="handle" :rel="processedRel" />
+			<slot :a-props="{ href, rel: processedRel }" :href="href" :redirect="handle" :rel="processedRel" />
 		</template>
 
-		<n-flex align="center" size="small" vertical>
+		<custom-naive-ui-vertical-stack align="center">
 			<n-text class="text-6 fw-bold" type="warning">外部内容警告</n-text>
 
 			<n-button
@@ -92,12 +90,10 @@
 			</n-button>
 
 			<n-text>↑ 自行判断 如需继续请戳上面的连接 ↑</n-text>
-		</n-flex>
+		</custom-naive-ui-vertical-stack>
 
-		<template v-if="isNonNullish($slots.extra)">
-			<n-divider />
-
+		<template #action>
 			<slot name="extra" />
 		</template>
-	</CustomModal>
+	</custom-naive-ui-modal>
 </template>

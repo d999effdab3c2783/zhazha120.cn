@@ -1,5 +1,5 @@
 <template>
-	<n-flex size="small" vertical>
+	<custom-naive-ui-vertical-stack>
 		<sections-self-description />
 
 		<n-divider />
@@ -11,7 +11,7 @@
 		<n-card size="small" title="探索我">
 			<sections-self-portals />
 		</n-card>
-	</n-flex>
+	</custom-naive-ui-vertical-stack>
 </template>
 
 <route lang="json5">

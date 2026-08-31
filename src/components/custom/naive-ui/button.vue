@@ -1,3 +1,9 @@
+<script lang="ts">
+	export type Props = {
+		readonly iconClass?: string;
+	};
+</script>
+
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda';
 
@@ -5,9 +11,7 @@
 		inheritAttrs: false,
 	});
 
-	defineProps<{
-		readonly iconClass?: string;
-	}>();
+	defineProps<Props>();
 </script>
 
 <template>
@@ -18,7 +22,7 @@
 			</template>
 
 			<template v-else>
-				<Component :is="$slots.icon" />
+				<slot name="icon" />
 			</template>
 		</template>
 

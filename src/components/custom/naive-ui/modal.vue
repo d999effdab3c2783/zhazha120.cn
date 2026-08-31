@@ -38,7 +38,9 @@
 		]"
 		v-bind="$attrs"
 	>
-		<slot />
+		<template v-for="(_, name) in $slots" :key="name" #[name]="data">
+			<slot :name="name" v-bind="data ?? {}" />
+		</template>
 	</n-modal>
 
 	<slot :hide="handleHide" :show="handleShow" :state="show" :toggle="handleToggle" name="trigger" />

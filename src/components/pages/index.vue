@@ -30,8 +30,8 @@
 </script>
 
 <template>
-	<n-flex :size="0" vertical>
+	<custom-naive-ui-vertical-stack :size="0">
 		<sections-index-1 ref="section1Ref" />
 		<async-sections-index-2 ref="section2Ref" />
-	</n-flex>
+	</custom-naive-ui-vertical-stack>
 </template>

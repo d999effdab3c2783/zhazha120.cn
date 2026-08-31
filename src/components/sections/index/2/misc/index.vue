@@ -1,24 +1,13 @@
-<script lang="ts" setup>
-	const { isMobile } = useResponsive();
-</script>
-
 <template>
 	<n-element class="min-h-screen relative">
-		<n-element
-			:class="[
-				'pt-30 pb-2 container mx-auto',
-				{
-					'px-2': isMobile,
-				},
-			]"
-		>
-			<n-flex size="small" vertical>
+		<n-element class="pt-30 px-2 pb-2 container mx-auto">
+			<custom-naive-ui-vertical-stack>
 				<n-divider dashed>
 					<n-text class="text-8 fw-bold">杂项</n-text>
 				</n-divider>
 
 				<sections-index-2-misc-friend-links />
-			</n-flex>
+			</custom-naive-ui-vertical-stack>
 		</n-element>
 	</n-element>
 </template>

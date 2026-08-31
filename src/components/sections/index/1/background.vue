@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 	import { useThemeVars } from 'naive-ui';
 
-	import VueBitsDotGrid from '@/components/vue-bits/dot-grid.vue';
-
 	const themeVars = useThemeVars();
 	const containerRef = useTemplateRef<ComponentPublicInstance>('containerRef');
 	const pageLeave = usePageLeave();
@@ -16,7 +14,7 @@
 <template>
 	<n-element ref="containerRef" class="size-full absolute inset-0">
 		<template v-if="show">
-			<VueBitsDotGrid
+			<vue-bits-dot-grid
 				:active-color="themeVars.primaryColor"
 				:base-color="themeVars.hoverColor"
 				:dot-size="6"

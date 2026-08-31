@@ -1,60 +1,47 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda';
 
-	import type { Competition } from '@/data/dev/competitions';
-
-	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 	import competitionsData from '@/data/dev/competitions' with { type: 'macro' };
 
 	const { isMobile } = useResponsive();
-	const { define: CompetitionDefine, reuse: Competition } = createReusableTemplate<Competition>();
 </script>
 
 <template>
-	<CompetitionDefine>
-		<template #default="{ name, group, award }">
-			<n-element class="leading-tight">
-				<n-flex :align="isMobile ? 'start' : 'center'" :vertical="isMobile" size="small">
-					<n-text class="text-current fw-bold">{{ name }}</n-text>
-					<n-text :depth="3" class="text-[.8em]">{{ group }}</n-text>
-					<n-text class="fw-bold">{{ award }}</n-text>
-				</n-flex>
-			</n-element>
-		</template>
-	</CompetitionDefine>
-
 	<n-list>
-		<template v-for="competition in competitionsData">
+		<template v-for="{ name, award, group, year, href } in competitionsData">
 			<n-list-item>
-				<n-flex :size="0" :vertical="isMobile" justify="space-between">
-					<template v-if="isNonNullish(competition.href)">
-						<custom-redirect-wrapper :href="competition.href">
-							<template #default="{ redirect, aProps }">
-								<n-button
-									class="w-fit"
-									size="small"
-									tag="a"
-									text
-									type="primary"
-									v-bind="aProps"
-									@click.prevent="redirect"
-								>
-									<Competition v-bind="competition" />
-								</n-button>
-							</template>
-						</custom-redirect-wrapper>
-					</template>
+				<custom-naive-ui-list-thing>
+					<custom-naive-ui-horizontal-stack align="center">
+						<custom-naive-ui-text-stack>
+							<n-text>{{ name }}</n-text>
+							<n-text :depth="3">{{ group }}</n-text>
+						</custom-naive-ui-text-stack>
 
-					<template v-else>
-						<Competition v-bind="competition" />
-					</template>
+						<template v-if="isNonNullish(href)">
+							<custom-naive-ui-redirect-button :href="href" tag="a" text type="primary">
+								<n-tag class="fw-bold" type="primary">{{ award }}</n-tag>
+							</custom-naive-ui-redirect-button>
+						</template>
 
-					<n-flex justify="end">
-						<n-text :depth="3" class="text-([.8em] nowrap)">
-							{{ competition.year }}
+						<template v-else>
+							<n-tag>{{ award }}</n-tag>
+						</template>
+					</custom-naive-ui-horizontal-stack>
+
+					<template #suffix>
+						<n-text
+							:class="[
+								'text-[.8em]',
+								{
+									'mt-2': isMobile,
+								},
+							]"
+							:depth="3"
+						>
+							{{ year }}
 						</n-text>
-					</n-flex>
-				</n-flex>
+					</template>
+				</custom-naive-ui-list-thing>
 			</n-list-item>
 		</template>
 	</n-list>

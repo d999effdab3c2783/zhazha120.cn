@@ -2,7 +2,6 @@
 	import { VueLenis } from 'lenis/vue';
 	import { isNullish } from 'remeda';
 
-	import WrapperLayout from '@/components/layouts/wrapper.vue';
 	import lenisData from '@/data/lenis' with { type: 'macro' };
 
 	const lenisRef = useTemplateRef('lenisRef');
@@ -38,7 +37,7 @@
 </script>
 
 <template>
-	<WrapperLayout>
+	<layouts-wrapper>
 		<template v-if="layoutRef">
 			<VueLenis
 				ref="lenisRef"
@@ -58,7 +57,7 @@
 				<slot />
 			</n-layout-content>
 		</n-layout>
-	</WrapperLayout>
+	</layouts-wrapper>
 </template>
 
 <style lang="scss">

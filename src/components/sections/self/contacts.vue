@@ -1,35 +1,23 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda';
 
-	import CustomButton from '@/components/custom/naive-ui/button.vue';
-	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 	import contactsData from '@/data/self/contacts' with { type: 'macro' };
 
 	const { isMobile } = useResponsive();
 </script>
 
 <template>
-	<n-flex size="small" wrap>
+	<custom-naive-ui-auto-stack>
 		<template v-for="{ icon, name, href, comment } in contactsData">
-			<custom-redirect-wrapper :href="href">
-				<template #default="{ redirect, aProps }">
-					<custom-button
-						:block="isMobile"
-						:icon-class="icon"
-						tag="a"
-						v-bind="aProps"
-						@click.prevent="redirect"
-					>
-						{{ name }}
-					</custom-button>
-				</template>
+			<custom-naive-ui-redirect-button :block="isMobile" :href="href" :icon-class="icon" tag="a">
+				{{ name }}
 
 				<template v-if="isNonNullish(comment)" #extra>
 					<n-element class="text-center whitespace-pre">
 						<n-text type="info">{{ comment }}</n-text>
 					</n-element>
 				</template>
-			</custom-redirect-wrapper>
+			</custom-naive-ui-redirect-button>
 		</template>
-	</n-flex>
+	</custom-naive-ui-auto-stack>
 </template>

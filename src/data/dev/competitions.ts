@@ -10,16 +10,16 @@ export type Competition = {
 export default [
 	{
 		name: '蓝桥杯 第十六届',
-		award: '一等奖',
+		award: '省赛 一等奖',
 
-		group: '软件赛 | Web 应用开发 | 职业院校组 | 省赛',
+		group: '软件赛 | Web 应用开发 | 职业院校组',
 		year: 2025,
 	},
 	{
 		name: '蓝桥杯 第十六届',
-		award: '一等奖',
+		award: '国赛 一等奖',
 
-		group: '软件赛 | Web 应用开发 | 职业院校组 | 国赛',
+		group: '软件赛 | Web 应用开发 | 职业院校组',
 		year: 2025,
 		href: 'https://lanqiao.cn/cup-sixteen',
 	},
@@ -33,9 +33,9 @@ export default [
 	},
 	{
 		name: '蓝桥杯 第十七届',
-		award: '一等奖',
+		award: '省赛 一等奖',
 
-		group: '软件赛 | Web 应用开发 | 职业院校组 | 省赛',
+		group: '软件赛 | Web 应用开发 | 职业院校组',
 		year: 2026,
 	},
 	{
@@ -47,23 +47,23 @@ export default [
 	},
 	{
 		name: '计算机设计大赛',
-		award: '二等奖',
+		award: '省赛 二等奖',
 
-		group: '软件应用与开发 | Web 应用与开发 | 省赛',
+		group: '软件应用与开发 | Web 应用与开发',
 		year: 2026,
 	},
 	{
 		name: '蓝桥杯 第十七届',
-		award: '一等奖 (第一名)',
+		award: '国赛 一等奖 (第一名)',
 
-		group: '软件赛 | Web 应用开发 | 职业院校组 | 国赛',
+		group: '软件赛 | Web 应用开发 | 职业院校组',
 		year: 2026,
 	},
 	{
 		name: '计算机设计大赛',
-		award: '二等奖',
+		award: '国赛 二等奖',
 
-		group: '软件应用与开发 | Web 应用与开发 | 国赛',
+		group: '软件应用与开发 | Web 应用与开发',
 		year: 2026,
 	},
 ] satisfies Competition[];

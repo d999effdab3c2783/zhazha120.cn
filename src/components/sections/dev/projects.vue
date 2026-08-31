@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 	import type { Project } from '@/data/dev/projects';
 
-	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
 	import projectsData from '@/data/dev/projects' with { type: 'macro' };
 
 	const generateIcon = (project: Project) => {
@@ -27,42 +26,38 @@
 	<n-list>
 		<template v-for="project in projectsData">
 			<n-list-item>
-				<n-flex :wrap="false" align="center" size="small">
-					<n-icon :class="generateIcon(project)" class="size-8" />
+				<custom-naive-ui-list-thing>
+					<template #prefix>
+						<n-icon :class="generateIcon(project)" class="size-8" />
+					</template>
 
-					<n-flex size="small" vertical>
-						<custom-redirect-wrapper :href="generateUrl(project)">
-							<template #default="{ redirect, aProps }">
-								<n-button
-									:class="[
-										'size-fit',
-										{
-											'opacity-50': project.status === 'dead',
-										},
-									]"
-									size="small"
-									tag="a"
-									text
-									type="primary"
-									v-bind="aProps"
-									@click.prevent="redirect"
-								>
-									<n-text class="text-(current start wrap) leading-tight fw-bold">
-										{{ project.name }}
-									</n-text>
-								</n-button>
-							</template>
+					<custom-naive-ui-redirect-button
+						:class="[
+							'size-fit',
+							{
+								'opacity-50': project.status === 'dead',
+							},
+						]"
+						:href="generateUrl(project)"
+						tag="a"
+						text
+						type="primary"
+					>
+						<custom-naive-ui-text-stack>
+							<n-text class="text-current fw-bold">{{ project.name }}</n-text>
+						</custom-naive-ui-text-stack>
 
-							<template v-if="project.status === 'dead'" #extra>
-								<n-alert class="w-full" type="error">可能已经 停止维护/被删除/转移</n-alert>
-							</template>
-						</custom-redirect-wrapper>
-
-						<template v-if="project.type === 'github'">
-							<n-text :depth="3" class="leading-tight">{{ project.owner }}/{{ project.repo }}</n-text>
+						<template v-if="project.status === 'dead'" #extra>
+							<n-alert class="w-full" type="error">可能已经 停止维护/被删除/转移</n-alert>
 						</template>
-					</n-flex>
-				</n-flex>
+					</custom-naive-ui-redirect-button>
+
+					<template #suffix>
+						<template v-if="project.type === 'github'">
+							<n-text :depth="3" class="text-[.8em]">{{ project.owner }}/{{ project.repo }}</n-text>
+						</template>
+					</template>
+				</custom-naive-ui-list-thing>
 			</n-list-item>
 		</template>
 	</n-list>

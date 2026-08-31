@@ -6,8 +6,8 @@
 
 <template>
 	<n-card :title="name" size="small">
-		<n-flex justify="center">
+		<custom-naive-ui-position cover placement="center">
 			<n-image :src="src" />
-		</n-flex>
+		</custom-naive-ui-position>
 	</n-card>
 </template>

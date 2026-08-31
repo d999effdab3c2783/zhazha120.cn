@@ -10,7 +10,7 @@
 <template>
 	<n-card :title="name" size="small">
 		<n-element ref="containerRef">
-			<n-flex justify="center">
+			<custom-naive-ui-position cover placement="center">
 				<n-qr-code
 					:size="containerBounding.width.value / 4"
 					:value="content"
@@ -18,7 +18,7 @@
 					type="svg"
 					v-bind="props"
 				/>
-			</n-flex>
+			</custom-naive-ui-position>
 		</n-element>
 	</n-card>
 </template>

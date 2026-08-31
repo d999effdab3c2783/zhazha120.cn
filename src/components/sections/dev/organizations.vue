@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 	import type { Organization } from '@/data/dev/organizations';
 
-	import CustomRedirectWrapper from '@/components/custom/redirect-wrapper.vue';
-
-	const { isMobile } = useResponsive();
 	const organizations = useDevOrganizations();
 
 	const generateUrl = (organization: Organization) => {
@@ -20,43 +17,39 @@
 	<n-list>
 		<template v-for="organization in organizations">
 			<n-list-item>
-				<n-flex :size="0" :vertical="isMobile" justify="space-between">
-					<n-flex :wrap="false" align="center" size="small">
+				<custom-naive-ui-list-thing>
+					<template #prefix>
 						<template v-if="organization.type === 'github'">
 							<n-image :src="organization.avatar" class="size-10 rounded" />
 						</template>
 
-						<template v-else>
+						<template v-if="organization.type === 'custom'">
 							<n-icon class="size-10 i-ant-design:link-outlined" />
 						</template>
+					</template>
 
-						<custom-redirect-wrapper :href="generateUrl(organization)">
-							<template #default="{ redirect, aProps }">
-								<n-button
-									class="w-fit"
-									size="small"
-									tag="a"
-									text
-									type="primary"
-									v-bind="aProps"
-									@click.prevent="redirect"
-								>
-									<n-text class="text-(current start wrap) leading-tight fw-bold">
-										{{ organization.name }}
-									</n-text>
-								</n-button>
-							</template>
-						</custom-redirect-wrapper>
-					</n-flex>
+					<custom-naive-ui-redirect-button
+						:href="generateUrl(organization)"
+						class="size-fit"
+						tag="a"
+						text
+						type="primary"
+					>
+						<custom-naive-ui-text-stack>
+							<n-text class="text-current fw-bold">
+								{{ organization.name }}
+							</n-text>
+						</custom-naive-ui-text-stack>
+					</custom-naive-ui-redirect-button>
 
-					<template v-if="organization.type === 'github'">
-						<n-flex justify="end">
-							<n-text :depth="3" class="text-([.8em] nowrap)">
+					<template #suffix>
+						<template v-if="organization.type === 'github'">
+							<n-text :depth="3" class="text-[.8em]">
 								{{ organization.owner }}
 							</n-text>
-						</n-flex>
+						</template>
 					</template>
-				</n-flex>
+				</custom-naive-ui-list-thing>
 			</n-list-item>
 		</template>
 	</n-list>
