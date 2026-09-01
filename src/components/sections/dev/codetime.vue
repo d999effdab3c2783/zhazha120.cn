@@ -3,6 +3,7 @@
 
 	import codetimeData from '@/data/dev/codetime' with { type: 'macro' };
 
+	const { isMobile } = useResponsive();
 	const osTheme = useOsTheme();
 
 	const processWidget = (url: string) => url.replaceAll('{theme}', osTheme.value ?? 'light');
@@ -17,7 +18,14 @@
 			<n-image :src="processWidget(codetimeData.widgets.trend)" />
 
 			<n-element class="flex-1">
-				<n-tabs animated class="min-w-120" justify-content="center" type="line">
+				<n-tabs
+					:class="{
+						'min-w-120': !isMobile,
+					}"
+					animated
+					justify-content="center"
+					type="line"
+				>
 					<n-tab-pane name="按语言">
 						<custom-naive-ui-position placement="center">
 							<n-image :src="processWidget(codetimeData.widgets.top.languages)" />
