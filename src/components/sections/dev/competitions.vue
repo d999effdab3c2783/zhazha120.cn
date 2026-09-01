@@ -19,7 +19,7 @@
 
 						<template v-if="isNonNullish(href)">
 							<custom-naive-ui-redirect-button :href="href" tag="a" text type="primary">
-								<n-tag class="fw-bold" type="primary">{{ award }}</n-tag>
+								<n-tag class="cursor-pointer fw-bold" type="primary">{{ award }}</n-tag>
 							</custom-naive-ui-redirect-button>
 						</template>
 
