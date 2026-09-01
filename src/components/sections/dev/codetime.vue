@@ -17,7 +17,7 @@
 			<n-image :src="processWidget(codetimeData.widgets.trend)" />
 
 			<n-element class="flex-1">
-				<n-tabs animated justify-content="center" type="line">
+				<n-tabs animated class="min-w-120" justify-content="center" type="line">
 					<n-tab-pane name="按语言">
 						<custom-naive-ui-position placement="center">
 							<n-image :src="processWidget(codetimeData.widgets.top.languages)" />
