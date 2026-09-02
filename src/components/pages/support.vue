@@ -3,6 +3,13 @@
 
 	import supportData from '@/data/support';
 
+	definePage({
+		meta: {
+			title: '赞助 & 支持',
+			layout: 'subpage',
+		},
+	});
+
 	const value = useRouteQuery('tab', '3', {
 		mode: 'replace',
 		transform: Number,
@@ -18,12 +25,3 @@
 		</template>
 	</n-tabs>
 </template>
-
-<route lang="json5">
-{
-	meta: {
-		title: '赞助 & 支持',
-		layout: 'subpage',
-	},
-}
-</route>

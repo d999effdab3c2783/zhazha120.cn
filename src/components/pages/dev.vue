@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+	definePage({
+		meta: {
+			title: '开发',
+			layout: 'subpage',
+		},
+	});
+</script>
+
 <template>
 	<custom-naive-ui-vertical-stack>
 		<sections-dev-description />
@@ -29,12 +38,3 @@
 		</n-card>
 	</custom-naive-ui-vertical-stack>
 </template>
-
-<route lang="json5">
-{
-	meta: {
-		title: '开发',
-		layout: 'subpage',
-	},
-}
-</route>

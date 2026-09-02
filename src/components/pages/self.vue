@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+	definePage({
+		meta: {
+			title: '本体',
+			layout: 'subpage',
+		},
+	});
+</script>
+
 <template>
 	<custom-naive-ui-vertical-stack>
 		<sections-self-description />
@@ -13,12 +22,3 @@
 		</n-card>
 	</custom-naive-ui-vertical-stack>
 </template>
-
-<route lang="json5">
-{
-	meta: {
-		title: '本体',
-		layout: 'subpage',
-	},
-}
-</route>

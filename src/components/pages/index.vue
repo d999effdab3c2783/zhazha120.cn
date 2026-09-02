@@ -3,6 +3,12 @@
 	import { useEventListener } from 'mitt-vue';
 	import { isNonNullish, isNullish } from 'remeda';
 
+	definePage({
+		meta: {
+			title: '首页',
+		},
+	});
+
 	const AsyncSectionsIndex2 = defineAsyncComponent(() => import('@/components/sections/index/2/index.vue'));
 
 	const lenis = useLenis();
@@ -35,11 +41,3 @@
 		<async-sections-index-2 ref="section2Ref" />
 	</custom-naive-ui-vertical-stack>
 </template>
-
-<route lang="json5">
-{
-	meta: {
-		title: '首页',
-	},
-}
-</route>
