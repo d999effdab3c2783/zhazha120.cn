@@ -67,7 +67,7 @@
 
 			<n-text
 				v-motion="motions.name"
-				class="font-[v-zhazha120-script] cursor-default text-(15 nowrap) transition-(text-shadow ease-in-out duration-500) fw-extrabold text-shadow-[0_0_0] hover:text-shadow-[0_0_.2em]"
+				class="font-[v-zhazha120-script] cursor-default text-(15 nowrap) transition-(text-shadow ease-in-out duration-500) fw-black text-shadow-[0_0_0] hover:text-shadow-[0_0_.2em]"
 			>
 				{{ profileData.name }}
 			</n-text>

@@ -75,7 +75,7 @@
 		</template>
 
 		<custom-naive-ui-vertical-stack align="center">
-			<n-text class="text-6 fw-bold" type="warning">外部内容警告</n-text>
+			<n-text class="text-[1.5em]">外部内容警告</n-text>
 
 			<n-button
 				:href="href"
@@ -89,7 +89,7 @@
 				{{ href }}
 			</n-button>
 
-			<n-text>↑ 自行判断 如需继续请戳上面的连接 ↑</n-text>
+			<n-text :depth="3">↑ 自行判断 如需继续请戳上面的连接 ↑</n-text>
 		</custom-naive-ui-vertical-stack>
 
 		<template #action>

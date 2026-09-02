@@ -23,17 +23,17 @@
 
 		<n-divider>技术履历</n-divider>
 
-		<n-card size="small" title="加入的组织">
+		<n-card content-class="!pb-0" size="small" title="加入的组织">
 			<sections-dev-organizations />
 		</n-card>
 
-		<n-card size="small" title="做过的项目">
+		<n-card content-class="!pb-0" size="small" title="做过的项目">
 			<sections-dev-projects />
 		</n-card>
 
 		<n-divider>技术挑战</n-divider>
 
-		<n-card size="small" title="打过的比赛">
+		<n-card content-class="!pb-0" size="small" title="打过的比赛">
 			<sections-dev-competitions />
 		</n-card>
 	</custom-naive-ui-vertical-stack>

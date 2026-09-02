@@ -3,7 +3,7 @@
 		<n-element class="pt-30 px-2 container mx-auto">
 			<custom-naive-ui-vertical-stack>
 				<n-divider dashed>
-					<n-text class="text-8 fw-bold">开发</n-text>
+					<n-text class="text-[1.8em] fw-extrabold">开发</n-text>
 				</n-divider>
 
 				<sections-index-2-dev-description />
