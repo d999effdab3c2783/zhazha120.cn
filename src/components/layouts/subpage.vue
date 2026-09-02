@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+	import { isNonNullish } from 'remeda';
+
+	import profileData from '@/data/self/profile' with { type: 'macro' };
+
 	const { isMobile } = useResponsive();
 	const router = useRouter();
 
@@ -10,6 +14,35 @@
 
 		router.back();
 	};
+
+	const breadcrumbs = computed(() => {
+		const parts = router.currentRoute.value.path.split('/');
+
+		return parts.map((part, index) => {
+			const currentPath = parts.slice(0, index + 1).join('/');
+
+			if (index === 0) {
+				return {
+					title: profileData.name,
+					path: '/',
+				};
+			}
+
+			const title = router.resolve(currentPath).meta.title ?? part;
+
+			if (index === parts.length - 1) {
+				return {
+					title,
+					path: undefined,
+				};
+			}
+
+			return {
+				title,
+				path: currentPath,
+			};
+		});
+	});
 </script>
 
 <template>
@@ -27,7 +60,17 @@
 				]"
 			>
 				<custom-naive-ui-vertical-stack size="large">
-					<n-page-header :title="String($route.meta.title ?? $route.fullPath)" @back="handleBack" />
+					<n-page-header @back="handleBack">
+						<template #title>
+							<n-breadcrumb>
+								<template v-for="{ title, path } in breadcrumbs">
+									<n-breadcrumb-item :clickable="isNonNullish(path)" :href="path">
+										{{ title }}
+									</n-breadcrumb-item>
+								</template>
+							</n-breadcrumb>
+						</template>
+					</n-page-header>
 
 					<n-element>
 						<slot />
