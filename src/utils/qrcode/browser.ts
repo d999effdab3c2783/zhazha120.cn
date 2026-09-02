@@ -1,12 +1,23 @@
-import { BrowserQRCodeReader } from '@zxing/browser';
+import { decodeQR } from 'qr/decode.js';
+import { isNullish } from 'remeda';
 
 import type { ReadResult } from '@/utils/qrcode';
 
 export const read = async (src: string): ReadResult => {
-	try {
-		const reader = new BrowserQRCodeReader();
-		const decoded = await reader.decodeFromImageUrl(src);
+	const response = await fetch(src);
+	const blob = await response.blob();
 
-		return decoded.getText();
-	} catch {}
+	const bitmap = await createImageBitmap(blob);
+	const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
+	const context = canvas.getContext('2d');
+
+	if (isNullish(context)) {
+		return;
+	}
+
+	context.drawImage(bitmap, 0, 0);
+
+	const imageData = context.getImageData(0, 0, bitmap.width, bitmap.height);
+
+	return decodeQR(imageData);
 };
