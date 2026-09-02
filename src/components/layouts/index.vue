@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda';
 
-	const route = useRoute();
+	const router = useRouter();
 
 	const layouts = Object.fromEntries(
 		Object.entries(
@@ -14,7 +14,11 @@
 	);
 
 	const activeLayout = computedAsync(async () => {
-		return await (layouts[isNonNullish(route.meta.layout) ? route.meta.layout : 'default'] ?? layouts['default'])();
+		return await (
+			layouts[
+				isNonNullish(router.currentRoute.value.meta.layout) ? router.currentRoute.value.meta.layout : 'default'
+			] ?? layouts['default']
+		)();
 	});
 </script>
 
