@@ -35,3 +35,11 @@
 		<async-sections-index-2 ref="section2Ref" />
 	</custom-naive-ui-vertical-stack>
 </template>
+
+<route lang="json5">
+{
+	meta: {
+		title: '首页',
+	},
+}
+</route>
