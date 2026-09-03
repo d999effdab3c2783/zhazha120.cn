@@ -33,12 +33,18 @@
 		<template v-if="isNonNullish(event)">
 			<sections-furry-event-card v-bind="event" />
 
-			<template v-if="isNonNullish(event) && isNonNullish(event.characters)">
+			<template v-if="isNonNullish(event.characters)">
 				<n-divider>出的设定</n-divider>
 
 				<template v-for="character in event.characters">
 					<sections-furry-character-card v-bind="character" />
 				</template>
+			</template>
+
+			<template v-if="isNonNullish(event.renderExtra)">
+				<n-divider />
+
+				<Component :is="event.renderExtra()" />
 			</template>
 		</template>
 

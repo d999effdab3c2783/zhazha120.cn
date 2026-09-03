@@ -2,6 +2,7 @@ import { filter, isNullish } from 'remeda';
 
 import type { Event } from '@/data/furry/events';
 
+import Extra from '@/data/furry/events/2026/thatfurcon/components/extra.vue';
 import { createDate } from '@/utils/date';
 
 export default {
@@ -21,4 +22,6 @@ export default {
 
 		return ['z'].includes(character.slug);
 	}),
+
+	renderExtra: () => h(Extra),
 } satisfies Event;

@@ -11,6 +11,8 @@ export type Event = {
 
 	readonly href?: string;
 	readonly characters?: Character[];
+
+	readonly renderExtra?: () => VNode;
 };
 
 export type EventEntry = Event & {
