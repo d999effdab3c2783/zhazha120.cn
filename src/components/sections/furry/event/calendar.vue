@@ -3,18 +3,22 @@
 
 	import type { EventEntry } from '@/data/furry/events';
 
-	export type Indexes = Record<number, Record<number, Record<number, EventEntry[]>>>;
+	export type IndexedEventEntry = EventEntry & {
+		readonly detailRoutePath?: string;
+	};
+
+	export type Indexes = Record<number, Record<number, Record<number, IndexedEventEntry[]>>>;
 </script>
 
 <script lang="ts" setup>
-	import { defaultTo, isNullish, prop } from 'remeda';
+	import { defaultTo, isNonNullish, isNullish, prop } from 'remeda';
 
-	const events = useFurryEvents();
+	const events = await useFurryEvents();
 
 	const indexes: Indexes = {};
 
 	onMounted(() => {
-		for (const [slug, event] of Object.entries(events)) {
+		for (const event of events) {
 			const days = eachDayOfInterval({
 				start: new Date(event.startDate),
 				end: new Date(event.endDate),
@@ -37,11 +41,11 @@
 					indexes[currentYear][currentMonth][currentDay] = [];
 				}
 
-				indexes[currentYear][currentMonth][currentDay].push({
-					slug,
-
-					...event,
+				Object.assign(event, {
+					detailRoutePath: `/furry/events/${event.slug}`,
 				});
+
+				indexes[currentYear][currentMonth][currentDay].push(event);
 			}
 		}
 	});
@@ -52,18 +56,28 @@
 		<template #default="{ year, month, date }">
 			<n-element class="mt-2">
 				<custom-naive-ui-vertical-stack>
-					<template v-for="{ slug, name } in defaultTo(prop(indexes, ...[year, month, date]), []) ?? []">
-						<custom-naive-ui-redirect-button
-							:href="`/furry/events/${slug}`"
-							class="size-fit"
-							tag="a"
-							text
-							type="primary"
-						>
+					<template
+						v-for="{ name, detailRoutePath } in defaultTo(prop(indexes, ...[year, month, date]), []) ?? []"
+					>
+						<template v-if="isNonNullish(detailRoutePath) && $route.path !== detailRoutePath">
+							<custom-naive-ui-redirect-button
+								:href="detailRoutePath"
+								class="size-fit"
+								tag="a"
+								text
+								type="primary"
+							>
+								<custom-naive-ui-text-stack>
+									<n-text class="text-(current [1.5em]) fw-bold">{{ name }}</n-text>
+								</custom-naive-ui-text-stack>
+							</custom-naive-ui-redirect-button>
+						</template>
+
+						<template v-else>
 							<custom-naive-ui-text-stack>
-								<n-text class="text-(current [1.5em]) fw-bold">{{ name }}</n-text>
+								<n-text class="text-[1.5em]">{{ name }}</n-text>
 							</custom-naive-ui-text-stack>
-						</custom-naive-ui-redirect-button>
+						</template>
 					</template>
 				</custom-naive-ui-vertical-stack>
 			</n-element>

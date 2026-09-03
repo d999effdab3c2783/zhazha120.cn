@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import type { Organization } from '@/data/dev/organizations';
 
-	const organizations = useDevOrganizations();
+	const organizations = await useDevOrganizations();
 
 	const generateUrl = (organization: Organization) => {
 		switch (organization.type) {

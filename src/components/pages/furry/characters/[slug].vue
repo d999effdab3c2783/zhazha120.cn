@@ -9,29 +9,27 @@
 		},
 	});
 
-	const characters = useFurryCharacters();
+	const characters = await useFurryCharacters();
 	const slug = useRouteParams('slug', undefined, {
 		mode: 'replace',
 		transform: String,
 	});
 
 	const character = computed(() => {
-		return characters[slug.value];
+		return characters.find((character) => {
+			return character.slug === slug.value;
+		});
 	});
 </script>
 
 <template>
-	<n-card size="small">
-		<template v-if="isNonNullish(character)">
-			<sections-furry-character-detail v-bind="character" />
-		</template>
+	<template v-if="isNonNullish(character)">
+		<sections-furry-character-card v-bind="character" />
+	</template>
 
-		<template v-else>
+	<template v-else>
+		<n-card size="small">
 			<n-empty />
-		</template>
-
-		<template v-if="isNonNullish(character.owner)" #action>
-			<sections-furry-character-owner v-bind="character" />
-		</template>
-	</n-card>
+		</n-card>
+	</template>
 </template>

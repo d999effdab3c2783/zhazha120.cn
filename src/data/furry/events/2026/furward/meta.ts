@@ -1,6 +1,7 @@
+import { filter, isNullish } from 'remeda';
+
 import type { Event } from '@/data/furry/events';
 
-import Z from '@/data/furry/characters/z/meta';
 import { createDate } from '@/utils/date';
 
 export default {
@@ -13,5 +14,11 @@ export default {
 	endDate: createDate(2026, 5, 4).toISOString(),
 
 	href: 'https://www.furward.cn/article/1',
-	characters: [Z],
+	characters: filter(await useFurryCharacters(), (character) => {
+		if (isNullish(character.slug)) {
+			return false;
+		}
+
+		return ['z'].includes(character.slug);
+	}),
 } satisfies Event;

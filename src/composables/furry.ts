@@ -1,33 +1,48 @@
-import type { Character } from '@/data/furry/characters';
-import type { Event } from '@/data/furry/events';
+import type { Character, CharacterEntry } from '@/data/furry/characters';
+import type { Event, EventEntry } from '@/data/furry/events';
 
-export type UseFurryCharactersReturn = Record<string, Character>;
+export type UseFurryCharactersReturn = Promise<CharacterEntry[]>;
 
-export type UseFurryEventsReturn = Record<string, Event>;
+export type UseFurryEventsReturn = Promise<EventEntry[]>;
 
-export const useFurryCharacters = (): UseFurryCharactersReturn => {
+export const useFurryCharacters = async (): UseFurryCharactersReturn => {
 	let unknownCounter = 0;
 
-	return Object.fromEntries(
+	return Promise.all(
 		Object.entries(
-			import.meta.glob<Character>('@/data/furry/characters/*/meta.*', {
-				eager: true,
+			import.meta.glob<Character>('@/data/furry/characters/**/meta.*', {
 				import: 'default',
 			}),
-		).map(([path, character]) => {
-			return [path.split('/').at(-2) ?? `unknown-${++unknownCounter}`, character];
+		).map(async ([path, loader]) => {
+			const character = await loader();
+
+			Object.assign(character, {
+				slug: path.split('/').at(-2) ?? `unknown-${++unknownCounter}`,
+			});
+
+			return character;
 		}),
 	);
 };
 
-export const useFurryEvents = (): UseFurryEventsReturn =>
-	Object.fromEntries(
+export const useFurryEvents = async (): UseFurryEventsReturn => {
+	let unknownCounter = 0;
+
+	return Promise.all(
 		Object.entries(
 			import.meta.glob<Event>('@/data/furry/events/*/*/meta.*', {
-				eager: true,
 				import: 'default',
 			}),
-		).map(([path, event]) => {
-			return [`${path.split('/').at(-2)}-${path.split('/').at(-3)}`, event];
+		).map(async ([path, loader]) => {
+			const parts = path.split('/');
+			const event = await loader();
+
+			Object.assign(event, {
+				year: Number(parts.at(-3) ?? Number.NaN),
+				slug: path.split('/').at(-2) ?? `unknown-${++unknownCounter}`,
+			});
+
+			return event;
 		}),
 	);
+};

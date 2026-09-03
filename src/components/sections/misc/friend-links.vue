@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda';
 
-	const friendLinks = useFriendLinks();
+	const friendLinks = await useFriendLinks();
 
 	const processUrl = (href: string) => href.replace('{domain}', location.host);
 

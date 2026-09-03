@@ -14,5 +14,6 @@ export type Event = {
 };
 
 export type EventEntry = Event & {
+	readonly year?: number;
 	readonly slug?: string;
 };

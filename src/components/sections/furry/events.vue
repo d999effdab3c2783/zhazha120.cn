@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-	const events = useFurryEvents();
+	const events = await useFurryEvents();
 </script>
 
 <template>
 	<custom-naive-ui-vertical-stack>
-		<template v-for="(character, slug) in events">
-			<sections-furry-event-card :slug="slug" v-bind="character" />
+		<template v-for="event in events">
+			<sections-furry-event-card v-bind="event" />
 		</template>
 	</custom-naive-ui-vertical-stack>
 </template>

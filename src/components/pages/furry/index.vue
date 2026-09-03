@@ -9,6 +9,8 @@
 
 <template>
 	<custom-naive-ui-vertical-stack>
+		<sections-furry-portals />
+
 		<sections-furry-description />
 
 		<n-divider>活动</n-divider>

@@ -3,9 +3,15 @@
 
 	import type { CharacterEntry } from '@/data/furry/characters';
 
-	defineProps<CharacterEntry>();
+	const props = defineProps<CharacterEntry>();
 
 	const { isMobile } = useResponsive();
+
+	const detailRoutePath = computed(() => {
+		if (isNonNullish(props.slug)) {
+			return `/furry/characters/${props.slug}`;
+		}
+	});
 </script>
 
 <template>
@@ -23,13 +29,10 @@
 		<custom-naive-ui-vertical-stack>
 			<custom-naive-ui-text-stack>
 				<custom-naive-ui-horizontal-stack :size="0" align="center">
-					<template v-if="isNonNullish(slug)">
-						<custom-naive-ui-redirect-button
-							:href="`/furry/characters/${slug}`"
-							tag="a"
-							text
-							type="primary"
-						>
+					<template
+						v-if="isNonNullish(slug) && isNonNullish(detailRoutePath) && $route.path !== detailRoutePath"
+					>
+						<custom-naive-ui-redirect-button :href="detailRoutePath" tag="a" text type="primary">
 							<custom-naive-ui-text-stack>
 								<n-text class="text-(current [1.2em]) fw-bold">{{ name }}</n-text>
 							</custom-naive-ui-text-stack>

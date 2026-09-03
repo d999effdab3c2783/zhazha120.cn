@@ -17,13 +17,11 @@
 <template>
 	<n-button v-bind="$attrs">
 		<template #icon>
-			<template v-if="isNonNullish(iconClass)">
-				<n-icon :class="iconClass" />
-			</template>
-
-			<template v-else>
-				<slot name="icon" />
-			</template>
+			<slot name="icon">
+				<template v-if="isNonNullish(iconClass)">
+					<n-icon :class="iconClass" />
+				</template>
+			</slot>
 		</template>
 
 		<slot />
