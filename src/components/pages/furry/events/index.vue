@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	definePage({
 		meta: {
-			title: '福瑞 (Furry)',
+			title: '活动',
 			layout: 'subpage',
 		},
 	});
@@ -9,18 +9,10 @@
 
 <template>
 	<custom-naive-ui-vertical-stack>
-		<sections-furry-description />
-
-		<n-divider>活动</n-divider>
-
 		<sections-furry-events />
 
 		<n-divider />
 
 		<sections-furry-event-calendar />
-
-		<n-divider>设定集</n-divider>
-
-		<sections-furry-characters />
 	</custom-naive-ui-vertical-stack>
 </template>

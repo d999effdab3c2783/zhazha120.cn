@@ -8,6 +8,10 @@
 
 				<sections-index-2-furry-description />
 
+				<n-divider>活动</n-divider>
+
+				<sections-index-2-furry-event />
+
 				<n-divider>设定集</n-divider>
 
 				<sections-index-2-furry-characters />
