@@ -39,6 +39,7 @@
 								},
 							]"
 							:href="processUrl(href)"
+							:rel="status === 'dead' ? ['nofollow'] : []"
 							tag="a"
 							text
 							type="primary"
