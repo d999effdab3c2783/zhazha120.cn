@@ -1,8 +1,5 @@
 export type Character = {
-	readonly illustration: {
-		readonly src: string;
-	};
-
+	readonly illustration: string;
 	readonly name: string;
 
 	readonly species: Array<{

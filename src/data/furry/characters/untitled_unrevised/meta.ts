@@ -1,9 +1,7 @@
 import type { Character } from '@/data/furry/characters';
 
 export default {
-	illustration: {
-		src: new URL('assets/illustration.bin', import.meta.url).toString(),
-	},
+	illustration: new URL('assets/illustration.bin', import.meta.url).toString(),
 
 	name: 'Untitled_unrevised',
 	species: [

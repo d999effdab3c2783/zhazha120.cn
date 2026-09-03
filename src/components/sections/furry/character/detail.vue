@@ -17,7 +17,7 @@
 			:img-props="{
 				class: 'size-full',
 			}"
-			:src="illustration.src"
+			:src="illustration"
 		/>
 
 		<custom-naive-ui-vertical-stack>
