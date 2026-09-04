@@ -48,7 +48,7 @@
 				}
 
 				Object.assign(event, {
-					detailRoutePath: `/furry/events/${event.slug}`
+					detailRoutePath: `/furry/events/${event.slug}/${event.year}`
 				})
 
 				indexes[currentYear][currentMonth][currentDay].push(event)

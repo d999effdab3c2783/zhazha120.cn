@@ -9,7 +9,7 @@
 
 	const detailRoutePath = computed(() => {
 		if (isNonNullish(props.slug) && isNonNullish(props.year)) {
-			return `/furry/events/${props.slug}-${props.year}`
+			return `/furry/events/${props.slug}/${props.year}`
 		}
 	})
 </script>
