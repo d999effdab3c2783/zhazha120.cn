@@ -60,27 +60,29 @@
 				]"
 			>
 				<custom-naive-ui-vertical-stack size="large">
-					<n-page-header @back="handleBack">
-						<template #title>
-							<n-breadcrumb>
-								<template v-for="{ title, path } in breadcrumbs">
-									<template v-if="isNonNullish(path)">
-										<custom-naive-ui-redirect-wrapper :href="path">
-											<template #default="{ href, redirect }">
-												<n-breadcrumb-item :href="href" @click.prevent="redirect">
-													{{ title }}
-												</n-breadcrumb-item>
-											</template>
-										</custom-naive-ui-redirect-wrapper>
-									</template>
+					<n-scrollbar data-lenis-prevent x-scrollable>
+						<n-page-header @back="handleBack">
+							<template #title>
+								<n-breadcrumb>
+									<template v-for="{ title, path } in breadcrumbs">
+										<template v-if="isNonNullish(path)">
+											<custom-naive-ui-redirect-wrapper :href="path">
+												<template #default="{ href, redirect }">
+													<n-breadcrumb-item :href="href" @click.prevent="redirect">
+														{{ title }}
+													</n-breadcrumb-item>
+												</template>
+											</custom-naive-ui-redirect-wrapper>
+										</template>
 
-									<template v-else>
-										<n-breadcrumb-item :clickable="false">{{ title }}</n-breadcrumb-item>
+										<template v-else>
+											<n-breadcrumb-item :clickable="false">{{ title }}</n-breadcrumb-item>
+										</template>
 									</template>
-								</template>
-							</n-breadcrumb>
-						</template>
-					</n-page-header>
+								</n-breadcrumb>
+							</template>
+						</n-page-header>
+					</n-scrollbar>
 
 					<n-element>
 						<slot />
