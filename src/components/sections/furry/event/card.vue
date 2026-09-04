@@ -37,7 +37,7 @@
 								</template>
 
 								<custom-naive-ui-text-stack class="leading-tight">
-									<n-text class="text-(current [1.2em]) fw-bold">{{ name }}</n-text>
+									<n-text class="text-(current [1.2em]) fw-bold">{{ fullName }}</n-text>
 
 									<template v-if="isNonNullish(slug)">
 										<n-text :depth="3">{{ slug }}</n-text>
@@ -57,7 +57,7 @@
 								</template>
 
 								<custom-naive-ui-text-stack class="leading-tight">
-									<n-text class="text-(current [1.2em]) fw-bold">{{ fullName ?? name }}</n-text>
+									<n-text class="text-(current [1.2em]) fw-bold">{{ fullName }}</n-text>
 
 									<template v-if="isNonNullish(slug)">
 										<n-text :depth="3">{{ slug }}</n-text>

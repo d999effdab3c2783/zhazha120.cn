@@ -23,7 +23,7 @@
 
 	const indexes: Indexes = {}
 
-	onMounted(() => {
+	nextTick(() => {
 		for (const event of events) {
 			const days = eachDayOfInterval({
 				start: new Date(event.startDate),
