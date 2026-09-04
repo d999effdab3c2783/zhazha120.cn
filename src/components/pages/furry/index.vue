@@ -21,7 +21,7 @@
 
 		<sections-furry-event-calendar />
 
-		<n-divider>设定集</n-divider>
+		<n-divider>设定</n-divider>
 
 		<sections-furry-characters />
 	</custom-naive-ui-vertical-stack>

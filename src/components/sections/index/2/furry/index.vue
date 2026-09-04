@@ -12,7 +12,7 @@
 
 				<sections-index-2-furry-event />
 
-				<n-divider>设定集</n-divider>
+				<n-divider>设定</n-divider>
 
 				<sections-index-2-furry-characters />
 			</custom-naive-ui-vertical-stack>
