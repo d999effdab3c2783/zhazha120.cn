@@ -55,12 +55,12 @@ export default {
 				{
 					type: 'image',
 					name: '收款',
-					src: new URL('@/assets/images/support/qq/transfer.webp', import.meta.url).toString(),
+					src: new URL('@/assets/images/support/qq/transfer.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',
 					name: '收款码',
-					content: await read('../assets/images/support/qq/transfer.webp'),
+					content: await read('../assets/images/support/qq/transfer.bin'),
 
 					props: {
 						iconSrc: 'https://q1.qlogo.cn/g?b=qq&nk=2331281251&s=640',
@@ -74,12 +74,12 @@ export default {
 				{
 					type: 'image',
 					name: '收款',
-					src: new URL('@/assets/images/support/wechat/transfer.webp', import.meta.url).toString(),
+					src: new URL('@/assets/images/support/wechat/transfer.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',
 					name: '收款码',
-					content: await read('../assets/images/support/wechat/transfer.webp'),
+					content: await read('../assets/images/support/wechat/transfer.bin'),
 
 					props: {
 						iconSrc: '/z.svg',
@@ -93,12 +93,12 @@ export default {
 				{
 					type: 'image',
 					name: '收款',
-					src: new URL('@/assets/images/support/alipay/transfer.webp', import.meta.url).toString(),
+					src: new URL('@/assets/images/support/alipay/transfer.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',
 					name: '收款码',
-					content: await read('../assets/images/support/alipay/transfer.webp'),
+					content: await read('../assets/images/support/alipay/transfer.bin'),
 
 					props: {
 						iconSrc: '/z.svg',
@@ -107,12 +107,12 @@ export default {
 				{
 					type: 'image',
 					name: '红包',
-					src: new URL('@/assets/images/support/alipay/red_packet.webp', import.meta.url).toString(),
+					src: new URL('@/assets/images/support/alipay/red_packet.bin', import.meta.url).toString(),
 				},
 				{
 					type: 'qrcode',
 					name: '红包码',
-					content: await read('../assets/images/support/alipay/red_packet.webp'),
+					content: await read('../assets/images/support/alipay/red_packet.bin'),
 				},
 			],
 		},

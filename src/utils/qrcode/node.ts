@@ -1,12 +1,18 @@
-import { readFile } from 'node:fs/promises';
 import { decodeQR } from 'qr/decode.js';
-import webp from 'webp-wasm';
+import sharp from 'sharp';
 
 import type { ReadResult } from '@/utils/qrcode';
 
 export const read = async (path: string): ReadResult => {
-	const raw = await readFile(path);
-	const image = await webp.decode(raw);
+	const image = sharp(path);
+	const raw = image.raw();
 
-	return decodeQR(image);
+	const { data, info } = await raw.toBuffer({ resolveWithObject: true });
+
+	return decodeQR({
+		width: info.width,
+		height: info.height,
+
+		data,
+	});
 };
