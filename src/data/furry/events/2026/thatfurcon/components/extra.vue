@@ -17,6 +17,7 @@
 			<custom-naive-ui-position cover placement="center">
 				<custom-naive-ui-vertical-stack align="center">
 					<n-qr-code
+						:size="120"
 						class="box-content"
 						value="https://h5.qzone.qq.com/ugc/share?res_uin=2331281251&appid=311&cellid=6387f48ad990546ad5aa0400"
 					/>
