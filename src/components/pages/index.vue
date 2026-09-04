@@ -1,38 +1,40 @@
 <script lang="ts" setup>
-	import { useLenis } from 'lenis/vue';
-	import { useEventListener } from 'mitt-vue';
-	import { isNonNullish, isNullish } from 'remeda';
+	import { useLenis } from 'lenis/vue'
+	import { useEventListener } from 'mitt-vue'
+	import { isNonNullish, isNullish } from 'remeda'
 
 	definePage({
 		meta: {
-			title: '首页',
-		},
-	});
+			title: '首页'
+		}
+	})
 
-	const AsyncSectionsIndex2 = defineAsyncComponent(() => import('@/components/sections/index/2/index.vue'));
+	const AsyncSectionsIndex2 = defineAsyncComponent(() => {
+		return import('@/components/sections/index/2/index.vue')
+	})
 
-	const lenis = useLenis();
-	const section1Ref = useTemplateRef<ComponentPublicInstance>('section1Ref');
-	const section2Ref = useTemplateRef<ComponentPublicInstance>('section2Ref');
+	const lenis = useLenis()
+	const section1Ref = useTemplateRef<ComponentPublicInstance>('section1Ref')
+	const section2Ref = useTemplateRef<ComponentPublicInstance>('section2Ref')
 
 	useEventListener('index:scroll', (target: number) => {
 		if (isNullish(lenis.value)) {
-			return;
+			return
 		}
 
 		switch (target) {
 			case 1:
 				if (isNonNullish(section1Ref.value)) {
-					lenis.value.scrollTo(section1Ref.value.$el);
+					lenis.value.scrollTo(section1Ref.value.$el)
 				}
-				break;
+				break
 			case 2:
 				if (isNonNullish(section2Ref.value)) {
-					lenis.value.scrollTo(section2Ref.value.$el);
+					lenis.value.scrollTo(section2Ref.value.$el)
 				}
-				break;
+				break
 		}
-	});
+	})
 </script>
 
 <template>

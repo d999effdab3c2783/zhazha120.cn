@@ -1,17 +1,17 @@
 <script lang="ts">
 	export type Props = {
-		readonly iconClass?: string;
-	};
+		readonly iconClass?: string
+	}
 </script>
 
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
 	defineOptions({
-		inheritAttrs: false,
-	});
+		inheritAttrs: false
+	})
 
-	defineProps<Props>();
+	defineProps<Props>()
 </script>
 
 <template>

@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-	import type { Project } from '@/data/dev/projects';
+	import type { Project } from '@/data/dev/projects'
 
-	import projectsData from '@/data/dev/projects' with { type: 'macro' };
+	import projectsData from '@/data/dev/projects' with { type: 'macro' }
 
 	const generateIcon = (project: Project) => {
 		switch (project.type) {
 			case 'github':
-				return 'i-ant-design:github-outlined';
+				return 'i-ant-design:github-outlined'
 			case 'custom':
-				return 'i-ant-design:link-outlined';
+				return 'i-ant-design:link-outlined'
 		}
-	};
+	}
 
 	const generateUrl = (project: Project) => {
 		switch (project.type) {
 			case 'github':
-				return `https://github.com/${project.owner}/${project.repo}`;
+				return `https://github.com/${project.owner}/${project.repo}`
 			case 'custom':
-				return project.href;
+				return project.href
 		}
-	};
+	}
 </script>
 
 <template>
@@ -35,8 +35,8 @@
 						:class="[
 							'size-fit',
 							{
-								'opacity-50': project.status === 'dead',
-							},
+								'opacity-50': project.status === 'dead'
+							}
 						]"
 						:href="generateUrl(project)"
 						tag="a"

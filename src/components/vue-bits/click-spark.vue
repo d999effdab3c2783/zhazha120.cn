@@ -7,23 +7,23 @@
 </template>
 
 <script lang="ts" setup>
-	import { computed, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue';
+	import { computed, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue'
 
 	interface Spark {
-		x: number;
-		y: number;
-		angle: number;
-		startTime: number;
+		x: number
+		y: number
+		angle: number
+		startTime: number
 	}
 
 	interface Props {
-		sparkColor?: string;
-		sparkSize?: number;
-		sparkRadius?: number;
-		sparkCount?: number;
-		duration?: number;
-		easing?: 'linear' | 'ease-in' | 'ease-out' | 'ease-in-out';
-		extraScale?: number;
+		sparkColor?: string
+		sparkSize?: number
+		sparkRadius?: number
+		sparkCount?: number
+		duration?: number
+		easing?: 'linear' | 'ease-in' | 'ease-out' | 'ease-in-out'
+		extraScale?: number
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
@@ -33,154 +33,197 @@
 		sparkCount: 8,
 		duration: 400,
 		easing: 'ease-out',
-		extraScale: 1.0,
-	});
+		extraScale: 1.0
+	})
 
 	// @ts-ignore
-	const containerRef = useTemplateRef<HTMLDivElement>('containerRef');
-	const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef');
-	const sparks = ref<Spark[]>([]);
-	const startTimeRef = ref<number | null>(null);
-	const animationId = ref<number | null>(null);
+	const containerRef = useTemplateRef<HTMLDivElement>('containerRef')
+	const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef')
+	const sparks = ref<Spark[]>([])
+	const startTimeRef = ref<number | null>(null)
+	const animationId = ref<number | null>(null)
 
 	const easeFunc = computed(() => {
 		return (t: number) => {
 			switch (props.easing) {
 				case 'linear':
-					return t;
+					return t
 				case 'ease-in':
-					return t * t;
+					return t * t
 				case 'ease-in-out':
-					return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+					return 0.5 > t ? 2 * t * t : -1 + (4 - 2 * t) * t
 				default:
-					return t * (2 - t);
+					return t * (2 - t)
 			}
-		};
-	});
+		}
+	})
 
 	const handleClick = (e: MouseEvent) => {
-		const canvas = canvasRef.value;
-		if (!canvas) return;
-		const rect = canvas.getBoundingClientRect();
-		const x = e.clientX - rect.left;
-		const y = e.clientY - rect.top;
+		const canvas = canvasRef.value
 
-		const now = performance.now();
-		const newSparks: Spark[] = Array.from({ length: props.sparkCount }, (_, i) => ({
-			x,
-			y,
-			angle: (2 * Math.PI * i) / props.sparkCount,
-			startTime: now,
-		}));
+		if (!canvas) {
+			return
+		}
 
-		sparks.value.push(...newSparks);
-	};
+		const rect = canvas.getBoundingClientRect()
+		const x = e.clientX - rect.left
+		const y = e.clientY - rect.top
+
+		const now = performance.now()
+
+		const newSparks: Spark[] = Array.from(
+			{
+				length: props.sparkCount
+			},
+			(_, i) => {
+				return {
+					x,
+					y,
+					angle: (2 * Math.PI * i) / props.sparkCount,
+					startTime: now
+				}
+			}
+		)
+
+		sparks.value.push(...newSparks)
+	}
 
 	const draw = (timestamp: number) => {
 		if (!startTimeRef.value) {
-			startTimeRef.value = timestamp;
+			startTimeRef.value = timestamp
 		}
 
-		const canvas = canvasRef.value;
-		const ctx = canvas?.getContext('2d');
-		if (!ctx || !canvas) return;
+		const canvas = canvasRef.value
 
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		const ctx = canvas?.getContext('2d')
+
+		if (!ctx || !canvas) {
+			return
+		}
+
+		ctx.clearRect(0, 0, canvas.width, canvas.height)
 
 		sparks.value = sparks.value.filter((spark: Spark) => {
-			const elapsed = timestamp - spark.startTime;
+			const elapsed = timestamp - spark.startTime
+
 			if (elapsed >= props.duration) {
-				return false;
+				return false
 			}
 
-			const progress = elapsed / props.duration;
-			const eased = easeFunc.value(progress);
+			const progress = elapsed / props.duration
+			const eased = easeFunc.value(progress)
 
-			const distance = eased * props.sparkRadius * props.extraScale;
-			const lineLength = props.sparkSize * (1 - eased);
+			const distance = eased * props.sparkRadius * props.extraScale
+			const lineLength = props.sparkSize * (1 - eased)
 
-			const x1 = spark.x + distance * Math.cos(spark.angle);
-			const y1 = spark.y + distance * Math.sin(spark.angle);
-			const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
-			const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
+			const x1 = spark.x + distance * Math.cos(spark.angle)
+			const y1 = spark.y + distance * Math.sin(spark.angle)
+			const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle)
+			const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle)
 
-			ctx.strokeStyle = props.sparkColor;
-			ctx.lineWidth = 2;
-			ctx.beginPath();
-			ctx.moveTo(x1, y1);
-			ctx.lineTo(x2, y2);
-			ctx.stroke();
+			ctx.strokeStyle = props.sparkColor
+			ctx.lineWidth = 2
+			ctx.beginPath()
+			ctx.moveTo(x1, y1)
+			ctx.lineTo(x2, y2)
+			ctx.stroke()
 
-			return true;
-		});
+			return true
+		})
 
-		animationId.value = requestAnimationFrame(draw);
-	};
+		animationId.value = requestAnimationFrame(draw)
+	}
 
 	const resizeCanvas = () => {
-		const canvas = canvasRef.value;
-		if (!canvas) return;
+		const canvas = canvasRef.value
 
-		const parent = canvas.parentElement;
-		if (!parent) return;
-
-		const { width, height } = parent.getBoundingClientRect();
-		if (canvas.width !== width || canvas.height !== height) {
-			canvas.width = width;
-			canvas.height = height;
+		if (!canvas) {
+			return
 		}
-	};
 
-	let resizeTimeout: ReturnType<typeof setTimeout>;
+		const parent = canvas.parentElement
+
+		if (!parent) {
+			return
+		}
+
+		const { width, height } = parent.getBoundingClientRect()
+
+		if (canvas.width !== width || canvas.height !== height) {
+			canvas.width = width
+			canvas.height = height
+		}
+	}
+
+	let resizeTimeout: ReturnType<typeof setTimeout>
 
 	const handleResize = () => {
-		clearTimeout(resizeTimeout);
-		resizeTimeout = setTimeout(resizeCanvas, 100);
-	};
+		clearTimeout(resizeTimeout)
+		resizeTimeout = setTimeout(resizeCanvas, 100)
+	}
 
-	let resizeObserver: ResizeObserver | null = null;
+	let resizeObserver: ResizeObserver | null = null
 
 	onMounted(() => {
-		const canvas = canvasRef.value;
-		if (!canvas) return;
+		const canvas = canvasRef.value
 
-		const parent = canvas.parentElement;
-		if (!parent) return;
+		if (!canvas) {
+			return
+		}
 
-		resizeObserver = new ResizeObserver(handleResize);
-		resizeObserver.observe(parent);
+		const parent = canvas.parentElement
 
-		resizeCanvas();
+		if (!parent) {
+			return
+		}
 
-		animationId.value = requestAnimationFrame(draw);
-	});
+		resizeObserver = new ResizeObserver(handleResize)
+		resizeObserver.observe(parent)
+
+		resizeCanvas()
+
+		animationId.value = requestAnimationFrame(draw)
+	})
 
 	onUnmounted(() => {
 		if (resizeObserver) {
-			resizeObserver.disconnect();
+			resizeObserver.disconnect()
 		}
-		clearTimeout(resizeTimeout);
+
+		clearTimeout(resizeTimeout)
 
 		if (animationId.value) {
-			cancelAnimationFrame(animationId.value);
+			cancelAnimationFrame(animationId.value)
 		}
-	});
+	})
 
 	watch(
 		[
-			() => props.sparkColor,
-			() => props.sparkSize,
-			() => props.sparkRadius,
-			() => props.sparkCount,
-			() => props.duration,
+			() => {
+				return props.sparkColor
+			},
+			() => {
+				return props.sparkSize
+			},
+			() => {
+				return props.sparkRadius
+			},
+			() => {
+				return props.sparkCount
+			},
+			() => {
+				return props.duration
+			},
 			easeFunc,
-			() => props.extraScale,
+			() => {
+				return props.extraScale
+			}
 		],
 		() => {
 			if (animationId.value) {
-				cancelAnimationFrame(animationId.value);
+				cancelAnimationFrame(animationId.value)
 			}
-			animationId.value = requestAnimationFrame(draw);
-		},
-	);
+			animationId.value = requestAnimationFrame(draw)
+		}
+	)
 </script>

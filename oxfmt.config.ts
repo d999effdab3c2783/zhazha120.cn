@@ -1,8 +1,9 @@
-import { defineConfig } from 'oxfmt';
+import { defineConfig } from 'oxfmt'
 
 export default defineConfig({
 	endOfLine: 'lf',
 	insertFinalNewline: false,
+	semi: false,
 	singleQuote: true,
 	sortImports: {
 		groups: [
@@ -12,10 +13,11 @@ export default defineConfig({
 			'value-internal',
 			['type-parent', 'type-sibling', 'type-index'],
 			['value-parent', 'value-sibling', 'value-index'],
-			'unknown',
-		],
+			'unknown'
+		]
 	},
 	tabWidth: 4,
 	useTabs: true,
 	vueIndentScriptAndStyle: true,
-});
+	trailingComma: 'none'
+})

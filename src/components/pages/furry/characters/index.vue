@@ -2,9 +2,9 @@
 	definePage({
 		meta: {
 			title: '设定',
-			layout: 'subpage',
-		},
-	});
+			layout: 'subpage'
+		}
+	})
 </script>
 
 <template>

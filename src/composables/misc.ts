@@ -1,30 +1,32 @@
-import type { FriendLink } from '@/data/friend_links';
+import type { FriendLink } from '@/data/friend_links'
 
-export type UseFriendLinksReturn = Promise<FriendLink[]>;
+export type UseFriendLinksReturn = Promise<FriendLink[]>
 
 export type UseFullFriendLinksReturn = Promise<
 	Array<{
-		readonly remoteLogo?: string;
-		readonly default: FriendLink;
+		readonly remoteLogo?: string
+		readonly default: FriendLink
 	}>
->;
+>
 
-export const useFriendLinks = async (): UseFriendLinksReturn =>
-	Promise.all(
+export const useFriendLinks = async (): UseFriendLinksReturn => {
+	return await Promise.all(
 		Object.values(
 			import.meta.glob<FriendLink>('@/data/friend_links/*/meta.*', {
-				import: 'default',
-			}),
+				import: 'default'
+			})
 		).map(async (loader) => {
-			return loader();
-		}),
-	);
+			return await loader()
+		})
+	)
+}
 
-export const useFullFriendLinks = async (): UseFullFriendLinksReturn =>
-	Promise.all(
+export const useFullFriendLinks = async (): UseFullFriendLinksReturn => {
+	return await Promise.all(
 		Object.values(import.meta.glob<Awaited<UseFullFriendLinksReturn>[number]>('@/data/friend_links/*/meta.*')).map(
 			async (loader) => {
-				return loader();
-			},
-		),
-	);
+				return await loader()
+			}
+		)
+	)
+}

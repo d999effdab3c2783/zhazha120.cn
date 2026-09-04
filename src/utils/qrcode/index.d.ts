@@ -1,1 +1,1 @@
-export type ReadResult = Promise<string | undefined>;
+export type ReadResult = Promise<string | undefined>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-	import type { ImageSupportMethod } from '@/data/support';
+	import type { ImageSupportMethod } from '@/data/support'
 
-	defineProps<ImageSupportMethod>();
+	defineProps<ImageSupportMethod>()
 </script>
 
 <template>

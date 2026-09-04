@@ -2,9 +2,9 @@
 	definePage({
 		meta: {
 			title: '福瑞 (Furry)',
-			layout: 'subpage',
-		},
-	});
+			layout: 'subpage'
+		}
+	})
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 	defineOptions({
-		inheritAttrs: false,
-	});
+		inheritAttrs: false
+	})
 
-	const { isMobile } = useResponsive();
+	const { isMobile } = useResponsive()
 </script>
 
 <template>

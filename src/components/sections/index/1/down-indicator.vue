@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-	import { useLenis } from 'lenis/vue';
-	import { useEventEmit } from 'mitt-vue';
+	import { useLenis } from 'lenis/vue'
+	import { useEventEmit } from 'mitt-vue'
 
-	const show = shallowRef(false);
+	const show = shallowRef(false)
 
 	useLenis((lenis) => {
-		show.value = lenis.actualScroll <= 0;
-	});
+		show.value = 0 >= lenis.actualScroll
+	})
 
 	const handleDown = () => {
-		useEventEmit('index:scroll', 2);
-	};
+		useEventEmit('index:scroll', 2)
+	}
 </script>
 
 <template>

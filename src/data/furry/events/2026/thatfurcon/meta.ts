@@ -1,9 +1,9 @@
-import { filter, isNullish } from 'remeda';
+import { filter, isNullish } from 'remeda'
 
-import type { Event } from '@/data/furry/events';
+import type { Event } from '@/data/furry/events'
 
-import Extra from '@/data/furry/events/2026/thatfurcon/components/extra.vue';
-import { createDate } from '@/utils/date';
+import Extra from '@/data/furry/events/2026/thatfurcon/components/extra.vue'
+import { createDate } from '@/utils/date'
 
 export default {
 	banner: new URL('assets/banner.bin', import.meta.url).toString(),
@@ -17,11 +17,13 @@ export default {
 	href: 'https://www.thatfurcon.com',
 	characters: filter(await useFurryCharacters(), (character) => {
 		if (isNullish(character.slug)) {
-			return false;
+			return false
 		}
 
-		return ['z'].includes(character.slug);
+		return ['z'].includes(character.slug)
 	}),
 
-	renderExtra: () => h(Extra),
-} satisfies Event;
+	renderExtra: () => {
+		return h(Extra)
+	}
+} satisfies Event

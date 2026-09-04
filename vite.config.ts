@@ -1,21 +1,21 @@
-import Vue from '@vitejs/plugin-vue';
-import { createJiti } from 'jiti';
-import path, { resolve } from 'node:path';
-import UnoCSS from 'unocss/vite';
-import AutoImport from 'unplugin-auto-import/vite';
-import Macros from 'unplugin-macros/vite';
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
-import Components from 'unplugin-vue-components/vite';
-import { defineConfig } from 'vite';
-import { VueRouterAutoImports } from 'vue-router/unplugin';
-import VueRouter from 'vue-router/vite';
+import Vue from '@vitejs/plugin-vue'
+import { createJiti } from 'jiti'
+import path, { resolve } from 'node:path'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Macros from 'unplugin-macros/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
+import { VueRouterAutoImports } from 'vue-router/unplugin'
+import VueRouter from 'vue-router/vite'
 
 export default defineConfig(() => {
 	const jiti = createJiti(import.meta.url, {
 		alias: {
-			'@': resolve(import.meta.dirname, 'src'),
-		},
-	});
+			'@': resolve(import.meta.dirname, 'src')
+		}
+	})
 
 	return {
 		build: {
@@ -25,35 +25,38 @@ export default defineConfig(() => {
 					hashCharacters: 'base36' as const,
 					assetFileNames: 'assets/[hash:21][extname]',
 					entryFileNames: 'assets/[hash:21].js',
-					chunkFileNames: 'assets/[hash:21].js',
-				},
-			},
+					chunkFileNames: 'assets/[hash:21].js'
+				}
+			}
 		},
 		publicDir: resolve(import.meta.dirname, 'src', 'public'),
 		resolve: {
 			alias: {
-				'@': resolve(import.meta.dirname, 'src'),
-			},
+				'@': resolve(import.meta.dirname, 'src')
+			}
 		},
 		plugins: [
 			Macros({
 				runner: {
-					resolve: (source, importer) =>
-						jiti.esmResolve(source, {
-							parentURL: path.dirname(importer),
-						}),
-					import: async (resolved) => jiti.import(resolved),
+					resolve: (source, importer) => {
+						return jiti.esmResolve(source, {
+							parentURL: path.dirname(importer)
+						})
+					},
+					import: async (resolved) => {
+						return await jiti.import(resolved)
+					}
 				},
-				virtualModules: true,
+				virtualModules: true
 			}),
 			UnoCSS(),
 			VueRouter({
 				dts: resolve(import.meta.dirname, 'src', 'types', 'router.d.ts'),
 				routesFolder: [
 					{
-						src: resolve(import.meta.dirname, 'src', 'components', 'pages'),
-					},
-				],
+						src: resolve(import.meta.dirname, 'src', 'components', 'pages')
+					}
+				]
 			}),
 			Vue(),
 			AutoImport({
@@ -62,23 +65,23 @@ export default defineConfig(() => {
 				dirs: [resolve(import.meta.dirname, 'src', 'composables')],
 				imports: [
 					{
-						'naive-ui': ['useDialog', 'useModal', 'useMessage', 'useNotification', 'useLoadingBar'],
+						'naive-ui': ['useDialog', 'useModal', 'useMessage', 'useNotification', 'useLoadingBar']
 					},
 					'vue',
 					'pinia',
 					'vue-router',
 					VueRouterAutoImports,
-					'@vueuse/core',
+					'@vueuse/core'
 				],
-				parser: 'oxc',
+				parser: 'oxc'
 			}),
 			Components({
 				dts: resolve(import.meta.dirname, 'src', 'types', 'components.d.ts'),
 				syncMode: 'overwrite',
 				directoryAsNamespace: true,
 				dirs: [resolve(import.meta.dirname, 'src', 'components')],
-				resolvers: [NaiveUiResolver()],
-			}),
-		],
-	};
-});
+				resolvers: [NaiveUiResolver()]
+			})
+		]
+	}
+})

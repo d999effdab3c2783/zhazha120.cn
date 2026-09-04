@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-	import type { QrCodeSupportMethod } from '@/data/support';
+	import type { QrCodeSupportMethod } from '@/data/support'
 
-	defineProps<QrCodeSupportMethod>();
+	defineProps<QrCodeSupportMethod>()
 
-	const containerRef = useTemplateRef('containerRef');
-	const containerBounding = useElementBounding(containerRef);
+	const containerRef = useTemplateRef('containerRef')
+	const containerBounding = useElementBounding(containerRef)
 </script>
 
 <template>

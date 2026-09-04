@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-	import { useRouteParams } from '@vueuse/router';
-	import { isNonNullish } from 'remeda';
+	import { useRouteParams } from '@vueuse/router'
+	import { isNonNullish } from 'remeda'
 
 	definePage({
 		meta: {
 			title: '档案',
-			layout: 'subpage',
-		},
-	});
+			layout: 'subpage'
+		}
+	})
 
-	const characters = await useFurryCharacters();
+	const characters = await useFurryCharacters()
 	const slug = useRouteParams('slug', undefined, {
 		mode: 'replace',
-		transform: String,
-	});
+		transform: String
+	})
 
 	const character = computed(() => {
-		return characters.find((character) => {
-			return character.slug === slug.value;
-		});
-	});
+		return characters.find((item) => {
+			return item.slug === slug.value
+		})
+	})
 </script>
 
 <template>

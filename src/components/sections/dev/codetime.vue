@@ -1,13 +1,15 @@
 <script lang="ts" setup>
-	import { useOsTheme } from 'naive-ui';
+	import { useOsTheme } from 'naive-ui'
 
-	import codetimeData from '@/data/dev/codetime' with { type: 'macro' };
+	import codetimeData from '@/data/dev/codetime' with { type: 'macro' }
 
-	const { isMobile } = useResponsive();
-	const osTheme = useOsTheme();
+	const { isMobile } = useResponsive()
+	const osTheme = useOsTheme()
 
-	const processWidget = (url: string) => url.replaceAll('{theme}', osTheme.value ?? 'light');
-	const providerWebsite = `https://${codetimeData.domain}`;
+	const processWidget = (url: string) => {
+		return url.replaceAll('{theme}', osTheme.value ?? 'light')
+	}
+	const providerWebsite = `https://${codetimeData.domain}`
 </script>
 
 <template>
@@ -20,7 +22,7 @@
 			<n-element class="flex-1">
 				<n-tabs
 					:class="{
-						'min-w-120': !isMobile,
+						'min-w-120': !isMobile
 					}"
 					animated
 					justify-content="center"

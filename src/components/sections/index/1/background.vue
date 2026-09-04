@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-	import { useThemeVars } from 'naive-ui';
+	import { useThemeVars } from 'naive-ui'
 
-	const themeVars = useThemeVars();
-	const containerRef = useTemplateRef<ComponentPublicInstance>('containerRef');
-	const pageLeave = usePageLeave();
-	const elementVisibility = useElementVisibility(containerRef);
+	const themeVars = useThemeVars()
+	const containerRef = useTemplateRef<ComponentPublicInstance>('containerRef')
+	const pageLeave = usePageLeave()
+	const elementVisibility = useElementVisibility(containerRef)
 
 	const show = computed(() => {
-		return !pageLeave.value && elementVisibility.value;
-	});
+		return !pageLeave.value && elementVisibility.value
+	})
 </script>
 
 <template>

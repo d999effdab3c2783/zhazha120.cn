@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-	import type { GlobalTheme, GlobalThemeOverrides } from 'naive-ui';
+	import type { GlobalTheme, GlobalThemeOverrides } from 'naive-ui'
 
-	import { darkTheme, dateZhCN, lightTheme, useOsTheme, zhCN } from 'naive-ui';
+	import { darkTheme, dateZhCN, lightTheme, useOsTheme, zhCN } from 'naive-ui'
 
-	import themeData from '@/data/theme' with { type: 'macro' };
+	import themeData from '@/data/theme' with { type: 'macro' }
 
-	const osTheme = useOsTheme();
+	const osTheme = useOsTheme()
 
 	const theme = computed<{
-		readonly preset?: GlobalTheme;
-		readonly overrides: GlobalThemeOverrides;
+		readonly preset?: GlobalTheme
+		readonly overrides: GlobalThemeOverrides
 	}>(() => {
 		switch (osTheme.value) {
 			case 'light':
@@ -18,26 +18,26 @@
 
 					overrides: {
 						...themeData['naive-ui'].global.overrides,
-						...themeData['naive-ui'].light.overrides,
-					} satisfies GlobalThemeOverrides,
-				};
+						...themeData['naive-ui'].light.overrides
+					} satisfies GlobalThemeOverrides
+				}
 			case 'dark':
 				return {
 					preset: darkTheme,
 
 					overrides: {
 						...themeData['naive-ui'].global.overrides,
-						...themeData['naive-ui'].dark.overrides,
-					} satisfies GlobalThemeOverrides,
-				};
+						...themeData['naive-ui'].dark.overrides
+					} satisfies GlobalThemeOverrides
+				}
 			default:
 				return {
 					overrides: {
-						...themeData['naive-ui'].global.overrides,
-					} satisfies GlobalThemeOverrides,
-				};
+						...themeData['naive-ui'].global.overrides
+					} satisfies GlobalThemeOverrides
+				}
 		}
-	});
+	})
 </script>
 
 <template>

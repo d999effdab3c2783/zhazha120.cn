@@ -1,4 +1,4 @@
-import type { Stack } from '@/data/dev/stacks';
+import type { Stack } from '@/data/dev/stacks'
 
 // @unocss-include
 
@@ -10,47 +10,47 @@ export default {
 		{
 			name: 'IntelliJ IDEA',
 			icon: 'i-logos:intellij-idea',
-			href: 'https://www.jetbrains.com/idea',
+			href: 'https://www.jetbrains.com/idea'
 		},
 		{
 			name: 'WebStorm',
 			icon: 'i-logos:webstorm',
-			href: 'https://www.jetbrains.com/webstorm',
+			href: 'https://www.jetbrains.com/webstorm'
 		},
 		{
 			name: 'PhpStorm',
 			icon: 'i-logos:phpstorm',
-			href: 'https://www.jetbrains.com/phpstorm',
+			href: 'https://www.jetbrains.com/phpstorm'
 		},
 		{
 			name: 'PyCharm',
 			icon: 'i-logos:pycharm',
-			href: 'https://www.jetbrains.com/pycharm',
+			href: 'https://www.jetbrains.com/pycharm'
 		},
 		{
 			name: 'GoLand',
 			icon: 'i-logos:goland',
-			href: 'https://www.jetbrains.com/goland',
+			href: 'https://www.jetbrains.com/goland'
 		},
 		{
 			name: 'Rider',
 			icon: 'i-logos:rider',
-			href: 'https://www.jetbrains.com/rider',
+			href: 'https://www.jetbrains.com/rider'
 		},
 		{
 			name: 'Visual Studio',
 			icon: 'i-logos:visual-studio',
-			href: 'https://visualstudio.com',
+			href: 'https://visualstudio.com'
 		},
 		{
 			name: 'Visual Studio Code',
 			icon: 'i-logos:visual-studio-code',
-			href: 'https://code.visualstudio.com',
+			href: 'https://code.visualstudio.com'
 		},
 		{
 			name: 'Git',
 			icon: 'i-devicon:git',
-			href: 'https://git-scm.com',
-		},
-	],
-} satisfies Stack;
+			href: 'https://git-scm.com'
+		}
+	] as const
+} satisfies Stack

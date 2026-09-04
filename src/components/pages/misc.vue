@@ -2,9 +2,9 @@
 	definePage({
 		meta: {
 			title: '杂项',
-			layout: 'subpage',
-		},
-	});
+			layout: 'subpage'
+		}
+	})
 </script>
 
 <template>

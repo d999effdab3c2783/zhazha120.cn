@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
-	import type { CharacterEntry } from '@/data/furry/characters';
+	import type { CharacterEntry } from '@/data/furry/characters'
 
-	defineProps<CharacterEntry>();
+	defineProps<CharacterEntry>()
 </script>
 
 <template>

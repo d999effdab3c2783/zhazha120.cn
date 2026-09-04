@@ -1,16 +1,16 @@
 <script lang="ts">
-	import type { Props as ButtonProps } from '@/components/custom/naive-ui/button.vue';
-	import type { Props as RedirectWrapperProps } from '@/components/custom/naive-ui/redirect-wrapper.vue';
+	import type { Props as ButtonProps } from '@/components/custom/naive-ui/button.vue'
+	import type { Props as RedirectWrapperProps } from '@/components/custom/naive-ui/redirect-wrapper.vue'
 
-	export type Props = ButtonProps & RedirectWrapperProps;
+	export type Props = ButtonProps & RedirectWrapperProps
 </script>
 
 <script lang="ts" setup>
 	defineOptions({
-		inheritAttrs: false,
-	});
+		inheritAttrs: false
+	})
 
-	defineProps<Props>();
+	defineProps<Props>()
 </script>
 
 <template>

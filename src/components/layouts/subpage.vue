@@ -1,48 +1,48 @@
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
-	import profileData from '@/data/self/profile' with { type: 'macro' };
+	import profileData from '@/data/self/profile' with { type: 'macro' }
 
-	const { isMobile } = useResponsive();
-	const router = useRouter();
+	const { isMobile } = useResponsive()
+	const router = useRouter()
 
 	const handleBack = () => {
-		if (history.length <= 1) {
-			router.push('/');
-			return;
+		if (1 >= history.length) {
+			router.push('/')
+			return
 		}
 
-		router.back();
-	};
+		router.back()
+	}
 
 	const breadcrumbs = computed(() => {
-		const parts = router.currentRoute.value.path.split('/');
+		const parts = router.currentRoute.value.path.split('/')
 
 		return parts.map((part, index) => {
-			const currentPath = parts.slice(0, index + 1).join('/');
+			const currentPath = parts.slice(0, index + 1).join('/')
 
-			if (index === 0) {
+			if (0 === index) {
 				return {
 					title: profileData.name,
-					path: '/',
-				};
+					path: '/'
+				}
 			}
 
-			const title = router.resolve(currentPath).meta.title ?? part;
+			const title = router.resolve(currentPath).meta.title ?? part
 
 			if (index === parts.length - 1) {
 				return {
 					title,
-					path: undefined,
-				};
+					path: undefined
+				}
 			}
 
 			return {
 				title,
-				path: currentPath,
-			};
-		});
-	});
+				path: currentPath
+			}
+		})
+	})
 </script>
 
 <template>
@@ -52,11 +52,11 @@
 				:class="[
 					'container mx-auto px-2 pb-2',
 					{
-						'pt-5': isMobile,
+						'pt-5': isMobile
 					},
 					{
-						'pt-10': !isMobile,
-					},
+						'pt-10': !isMobile
+					}
 				]"
 			>
 				<custom-naive-ui-vertical-stack size="large">

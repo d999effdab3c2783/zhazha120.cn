@@ -7,7 +7,6 @@
         "@ant-design/colors": "^8.0.1",
         "@iconify/json": "^2.2.521",
         "@iconify/utils": "^3.1.4",
-        "@standard-config/oxlint": "^2.8.0",
         "@types/node": "^26.4.0",
         "@vitejs/plugin-vue": "^6.0.8",
         "@vue/tsconfig": "^0.9.1",
@@ -337,8 +336,6 @@
     "@rolldown/binding-win32-x64-msvc": ["@rolldown/binding-win32-x64-msvc@1.2.5", "", { "os": "win32", "cpu": "x64" }, "sha512-e/SXpgISz+IoqVcSSI0rx/d/he8zqLex+/rCWpnHpmVfmPIUjag9H6P7zotf0gJHwPUhQxZ/mF8tr6acebT9yw=="],
 
     "@rolldown/pluginutils": ["@rolldown/pluginutils@1.0.1", "", {}, "sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw=="],
-
-    "@standard-config/oxlint": ["@standard-config/oxlint@2.8.0", "", { "peerDependencies": { "@standard-config/oxlint-react": "^2.0.1", "@standard-config/oxlint-stylistic": "^2.0.1", "oxlint": "^1.78.0" }, "optionalPeers": ["@standard-config/oxlint-react", "@standard-config/oxlint-stylistic"] }, "sha512-3JeG1AWD2SX8rk/HKTd2Pq4RLuJV2Asr6G5+5xO9rPUOVOS8933o941GKMlSqpWi/UuWoD/2j8F8E7VY496CBg=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.3", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg=="],
 

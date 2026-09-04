@@ -3,12 +3,12 @@
 		Object.values(
 			import.meta.glob<string>('../assets/photos/*.bin', {
 				query: '?url',
-				import: 'default',
-			}),
+				import: 'default'
+			})
 		).map(async (loader) => {
-			return loader();
-		}),
-	);
+			return await loader()
+		})
+	)
 </script>
 
 <template>

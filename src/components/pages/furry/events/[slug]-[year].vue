@@ -1,31 +1,31 @@
 <script lang="ts" setup>
-	import { useRouteParams } from '@vueuse/router';
-	import { isNonNullish } from 'remeda';
+	import { useRouteParams } from '@vueuse/router'
+	import { isNonNullish } from 'remeda'
 
 	definePage({
 		meta: {
 			title: '详情',
-			layout: 'subpage',
-		},
-	});
+			layout: 'subpage'
+		}
+	})
 
-	const events = await useFurryEvents();
+	const events = await useFurryEvents()
 
 	const slug = useRouteParams('slug', undefined, {
 		mode: 'replace',
-		transform: String,
-	});
+		transform: String
+	})
 
 	const year = useRouteParams('year', undefined, {
 		mode: 'replace',
-		transform: Number,
-	});
+		transform: Number
+	})
 
 	const event = computed(() => {
-		return events.find((event) => {
-			return event.slug === slug.value && event.year === year.value;
-		});
-	});
+		return events.find((item) => {
+			return item.slug === slug.value && item.year === year.value
+		})
+	})
 </script>
 
 <template>

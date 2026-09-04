@@ -1,62 +1,66 @@
 <script lang="ts">
 	export type Props = {
-		readonly rel?: string[];
-		readonly href: string;
-	};
+		readonly rel?: string[]
+		readonly href: string
+	}
 </script>
 
 <script lang="ts" setup>
-	import { isNullish } from 'remeda';
+	import { isNullish } from 'remeda'
 
 	defineOptions({
-		inheritAttrs: false,
-	});
+		inheritAttrs: false
+	})
 
 	const props = withDefaults(defineProps<Props>(), {
-		rel: () => [],
-	});
+		rel: () => {
+			return []
+		}
+	})
 
-	const modalRef = useTemplateRef('modalRef');
+	const modalRef = useTemplateRef('modalRef')
 
-	const message = useMessage();
-	const router = useRouter();
+	const message = useMessage()
+	const router = useRouter()
 
 	const { define: ParseExceptionMessageContentDefine, reuse: ParseExceptionMessageContent } = createReusableTemplate<{
-		readonly error: unknown;
-	}>();
+		readonly error: unknown
+	}>()
 
-	const processedRel = computed(() => ['noopener', ...props.rel].join(' '));
+	const processedRel = computed(() => {
+		return ['noopener', ...props.rel].join(' ')
+	})
 
 	const handle = async () => {
 		if (isNullish(modalRef.value)) {
-			return;
+			return
 		}
 
 		if (props.href.startsWith('/')) {
 			await router.push({
-				path: props.href,
-			});
+				path: props.href
+			})
 
-			return;
+			return
 		}
 
 		try {
-			const url = new URL(props.href);
+			const url = new URL(props.href)
 
 			if (['http:', 'https:'].includes(url.protocol) && url.host !== location.host) {
-				modalRef.value.show();
-				return;
+				modalRef.value.show()
+				return
 			}
 
-			open(props.href, '_blank', processedRel.value);
+			open(props.href, '_blank', processedRel.value)
 		} catch (error) {
-			message.error(() =>
-				h(ParseExceptionMessageContent, {
-					error,
-				}),
-			);
+			message.error(() => {
+				return h(ParseExceptionMessageContent, {
+					error
+				})
+			})
 		}
-	};
+	}
 </script>
 
 <template>

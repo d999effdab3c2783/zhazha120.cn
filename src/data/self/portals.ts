@@ -1,16 +1,16 @@
-import type { ButtonProps } from 'naive-ui';
+import type { ButtonProps } from 'naive-ui'
 
 // @unocss-include
 
 export type Portal = {
-	readonly type?: ButtonProps['type'];
+	readonly type?: ButtonProps['type']
 
-	readonly icon: string;
-	readonly name: string;
-	readonly href: string;
+	readonly icon: string
+	readonly name: string
+	readonly href: string
 
-	readonly comment?: string;
-};
+	readonly comment?: string
+}
 
 export default [
 	{
@@ -25,12 +25,12 @@ export default [
 			'答对问题自助入群 自由进出 没有黑名单',
 			'无打扰 (没有莫名其妙的 @全体成员, 也不会发布群待办)',
 			'话题很杂 也许什么都聊',
-			'人多不一定热闹 看不懂也没关系',
-		].join('\n'),
+			'人多不一定热闹 看不懂也没关系'
+		].join('\n')
 	},
 	{
 		icon: 'i-ant-design:cloud-download-outlined',
 		name: '云盘',
-		href: 'https://pan.zhazha120.cn',
-	},
-] satisfies Portal[];
+		href: 'https://pan.zhazha120.cn'
+	}
+] satisfies Portal[]

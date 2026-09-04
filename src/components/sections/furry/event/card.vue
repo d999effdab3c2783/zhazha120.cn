@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
-	import type { EventEntry } from '@/data/furry/events';
+	import type { EventEntry } from '@/data/furry/events'
 
-	const props = defineProps<EventEntry>();
+	const props = defineProps<EventEntry>()
 
-	const { isMobile } = useResponsive();
+	const { isMobile } = useResponsive()
 
 	const detailRoutePath = computed(() => {
 		if (isNonNullish(props.slug) && isNonNullish(props.year)) {
-			return `/furry/events/${props.slug}-${props.year}`;
+			return `/furry/events/${props.slug}-${props.year}`
 		}
-	});
+	})
 </script>
 
 <template>

@@ -1,18 +1,20 @@
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
-	const friendLinks = await useFriendLinks();
+	const friendLinks = await useFriendLinks()
 
-	const processUrl = (href: string) => href.replace('{domain}', location.host);
+	const processUrl = (href: string) => {
+		return href.replace('{domain}', location.host)
+	}
 
 	const extractHost = (href: string) => {
 		try {
-			const processedHref = processUrl(href);
-			const url = new URL(processedHref);
+			const processedHref = processUrl(href)
+			const url = new URL(processedHref)
 
-			return url.host;
+			return url.host
 		} catch {}
-	};
+	}
 </script>
 
 <template>
@@ -23,7 +25,7 @@
 					<template #prefix>
 						<n-image
 							:img-props="{
-								class: 'min-w-20 max-h-20',
+								class: 'min-w-20 max-h-20'
 							}"
 							:src="logo"
 							class="rounded"
@@ -35,8 +37,8 @@
 							:class="[
 								'size-fit',
 								{
-									'opacity-50': status === 'dead',
-								},
+									'opacity-50': status === 'dead'
+								}
 							]"
 							:href="processUrl(href)"
 							:rel="status === 'dead' ? ['nofollow'] : []"

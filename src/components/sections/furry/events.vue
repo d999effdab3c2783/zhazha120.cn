@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	const events = await useFurryEvents();
+	const events = await useFurryEvents()
 </script>
 
 <template>

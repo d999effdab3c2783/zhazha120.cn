@@ -1,21 +1,21 @@
-import type { Character } from '@/data/furry/characters';
+import type { Character } from '@/data/furry/characters'
 
 export type Event = {
-	readonly banner: string;
+	readonly banner: string
 
-	readonly name: string;
-	readonly fullName?: string;
+	readonly name: string
+	readonly fullName?: string
 
-	readonly startDate: string;
-	readonly endDate: string;
+	readonly startDate: string
+	readonly endDate: string
 
-	readonly href?: string;
-	readonly characters?: Character[];
+	readonly href?: string
+	readonly characters?: Character[]
 
-	readonly renderExtra?: () => VNode;
-};
+	readonly renderExtra?: () => VNode
+}
 
 export type EventEntry = Event & {
-	readonly year?: number;
-	readonly slug?: string;
-};
+	readonly year?: number
+	readonly slug?: string
+}

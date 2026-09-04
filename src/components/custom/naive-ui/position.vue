@@ -9,59 +9,59 @@
 			| 'center-right'
 			| 'bottom-left'
 			| 'bottom-center'
-			| 'bottom-right';
+			| 'bottom-right'
 
-		readonly cover?: true;
-	};
+		readonly cover?: true
+	}
 </script>
 
 <script lang="ts" setup>
 	defineOptions({
-		inheritAttrs: false,
-	});
+		inheritAttrs: false
+	})
 
-	const props = defineProps<Props>();
+	const props = defineProps<Props>()
 
 	const justify = computed(() => {
 		switch (props.placement) {
 			case 'top-left':
 			case 'center-left':
 			case 'bottom-left':
-				return 'start';
+				return 'start'
 			case 'top-center':
 			case 'center':
 			case 'bottom-center':
-				return 'center';
+				return 'center'
 			case 'top-right':
 			case 'center-right':
 			case 'bottom-right':
-				return 'end';
+				return 'end'
 		}
-	});
+	})
 
 	const align = computed(() => {
 		switch (props.placement) {
 			case 'top-left':
 			case 'top-center':
 			case 'top-right':
-				return 'start';
+				return 'start'
 			case 'center-left':
 			case 'center':
 			case 'center-right':
-				return 'center';
+				return 'center'
 			case 'bottom-left':
 			case 'bottom-center':
 			case 'bottom-right':
-				return 'end';
+				return 'end'
 		}
-	});
+	})
 </script>
 
 <template>
 	<n-flex
 		:align="align"
 		:class="{
-			'size-full': cover,
+			'size-full': cover
 		}"
 		:justify="justify"
 		size="small"

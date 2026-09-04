@@ -1,9 +1,9 @@
-import type { GlobalThemeOverrides } from 'naive-ui';
+import type { GlobalThemeOverrides } from 'naive-ui'
 
-import { generate } from '@ant-design/colors';
+import { generate } from '@ant-design/colors'
 
-const primaryColor = '#f79a00';
-const colors = generate(primaryColor);
+const primaryColor = '#f79a00'
+const colors = generate(primaryColor)
 
 export default {
 	primaryColor,
@@ -15,15 +15,15 @@ export default {
 					primaryColor: colors[5],
 					primaryColorHover: colors[4],
 					primaryColorSuppl: colors[7],
-					primaryColorPressed: colors[6],
-				},
-			} satisfies GlobalThemeOverrides,
+					primaryColorPressed: colors[6]
+				}
+			} satisfies GlobalThemeOverrides
 		},
 		light: {
-			overrides: {} satisfies GlobalThemeOverrides,
+			overrides: {} satisfies GlobalThemeOverrides
 		},
 		dark: {
-			overrides: {} satisfies GlobalThemeOverrides,
-		},
-	},
-} as const;
+			overrides: {} satisfies GlobalThemeOverrides
+		}
+	}
+} as const

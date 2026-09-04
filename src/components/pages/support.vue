@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-	import { useRouteQuery } from '@vueuse/router';
+	import { useRouteQuery } from '@vueuse/router'
 
-	import supportData from '@/data/support';
+	import supportData from '@/data/support'
 
 	definePage({
 		meta: {
 			title: '赞助 & 支持',
-			layout: 'subpage',
-		},
-	});
+			layout: 'subpage'
+		}
+	})
 
 	const value = useRouteQuery('tab', '3', {
 		mode: 'replace',
-		transform: Number,
-	});
+		transform: Number
+	})
 </script>
 
 <template>

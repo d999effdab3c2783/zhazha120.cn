@@ -1,4 +1,4 @@
-import type { Stack } from '@/data/dev/stacks';
+import type { Stack } from '@/data/dev/stacks'
 
 // @unocss-include
 
@@ -10,12 +10,12 @@ export default {
 		{
 			name: 'Docker',
 			icon: 'i-devicon:docker',
-			href: 'https://docker.com',
+			href: 'https://docker.com'
 		},
 		{
 			name: 'Podman',
 			icon: 'i-devicon:podman',
-			href: 'https://podman.io',
-		},
-	],
-} satisfies Stack;
+			href: 'https://podman.io'
+		}
+	] as const
+} satisfies Stack

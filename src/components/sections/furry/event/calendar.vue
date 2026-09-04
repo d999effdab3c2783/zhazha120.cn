@@ -1,54 +1,60 @@
 <script lang="ts">
-	import { eachDayOfInterval } from 'date-fns';
+	import { eachDayOfInterval } from 'date-fns'
 
-	import type { EventEntry } from '@/data/furry/events';
+	import type { EventEntry } from '@/data/furry/events'
 
 	export type IndexedEventEntry = EventEntry & {
-		readonly detailRoutePath?: string;
-	};
+		readonly detailRoutePath?: string
+	}
 
-	export type Indexes = Record<number, Record<number, Record<number, IndexedEventEntry[]>>>;
+	export type Indexes = {
+		[year: string]: {
+			[month: string]: {
+				[date: string]: IndexedEventEntry[]
+			}
+		}
+	}
 </script>
 
 <script lang="ts" setup>
-	import { defaultTo, isNonNullish, isNullish, prop } from 'remeda';
+	import { defaultTo, isNonNullish, isNullish, prop } from 'remeda'
 
-	const events = await useFurryEvents();
+	const events = await useFurryEvents()
 
-	const indexes: Indexes = {};
+	const indexes: Indexes = {}
 
 	onMounted(() => {
 		for (const event of events) {
 			const days = eachDayOfInterval({
 				start: new Date(event.startDate),
-				end: new Date(event.endDate),
-			});
+				end: new Date(event.endDate)
+			})
 
 			for (const day of days) {
-				const currentYear = day.getFullYear();
-				const currentMonth = day.getMonth() + 1;
-				const currentDay = day.getDate();
+				const currentYear = day.getFullYear()
+				const currentMonth = day.getMonth() + 1
+				const currentDay = day.getDate()
 
 				if (isNullish(indexes[currentYear])) {
-					indexes[currentYear] = {};
+					indexes[currentYear] = {}
 				}
 
 				if (isNullish(indexes[currentYear][currentMonth])) {
-					indexes[currentYear][currentMonth] = {};
+					indexes[currentYear][currentMonth] = {}
 				}
 
 				if (isNullish(indexes[currentYear][currentMonth][currentDay])) {
-					indexes[currentYear][currentMonth][currentDay] = [];
+					indexes[currentYear][currentMonth][currentDay] = []
 				}
 
 				Object.assign(event, {
-					detailRoutePath: `/furry/events/${event.slug}`,
-				});
+					detailRoutePath: `/furry/events/${event.slug}`
+				})
 
-				indexes[currentYear][currentMonth][currentDay].push(event);
+				indexes[currentYear][currentMonth][currentDay].push(event)
 			}
 		}
-	});
+	})
 </script>
 
 <template>

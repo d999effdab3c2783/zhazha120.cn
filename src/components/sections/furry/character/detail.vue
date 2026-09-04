@@ -1,27 +1,27 @@
 <script lang="ts" setup>
-	import { isNonNullish, isNullish } from 'remeda';
+	import { isNonNullish, isNullish } from 'remeda'
 
-	import type { CharacterEntry } from '@/data/furry/characters';
+	import type { CharacterEntry } from '@/data/furry/characters'
 
-	const props = defineProps<CharacterEntry>();
+	const props = defineProps<CharacterEntry>()
 
-	const { isMobile } = useResponsive();
+	const { isMobile } = useResponsive()
 
 	const detailRoutePath = computed(() => {
 		if (isNonNullish(props.slug)) {
-			return `/furry/characters/${props.slug}`;
+			return `/furry/characters/${props.slug}`
 		}
-	});
+	})
 </script>
 
 <template>
 	<custom-naive-ui-auto-stack>
 		<n-image
 			:class="{
-				'max-w-60': !isMobile,
+				'max-w-60': !isMobile
 			}"
 			:img-props="{
-				class: 'size-full',
+				class: 'size-full'
 			}"
 			:src="illustration"
 		/>
@@ -58,7 +58,7 @@
 
 			<n-element
 				:class="{
-					'mt-1': isNullish(species_alias),
+					'mt-1': isNullish(species_alias)
 				}"
 			>
 				<custom-naive-ui-horizontal-stack>

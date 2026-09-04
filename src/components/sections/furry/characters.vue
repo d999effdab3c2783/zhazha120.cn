@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	const characters = await useFurryCharacters();
+	const characters = await useFurryCharacters()
 </script>
 
 <template>

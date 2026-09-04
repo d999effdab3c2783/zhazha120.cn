@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-	import type { MotionVariants } from '@vueuse/motion';
+	import type { MotionVariants } from '@vueuse/motion'
 
-	import profileData from '@/data/self/profile' with { type: 'macro' };
+	import profileData from '@/data/self/profile' with { type: 'macro' }
 
-	const message = useMessage();
+	const message = useMessage()
 
 	const motions = {
 		avatar: {
 			initial: {
 				scale: 0,
-				rotate: 0,
+				rotate: 0
 			},
 			visible: {
 				scale: 1,
@@ -19,22 +19,22 @@
 					type: 'spring',
 					duration: 500,
 
-					delay: 300,
-				},
+					delay: 300
+				}
 			},
 			hovered: {
 				rotate: [0, 360],
 
 				transition: {
 					type: 'spring',
-					duration: 1000,
-				},
-			},
+					duration: 1000
+				}
+			}
 		} satisfies MotionVariants<string>,
 
 		name: {
 			initial: {
-				opacity: 0,
+				opacity: 0
 			},
 			visible: {
 				opacity: 1,
@@ -43,15 +43,15 @@
 					type: 'tween',
 					duration: 500,
 
-					delay: 600,
-				},
-			},
-		} satisfies MotionVariants<string>,
-	} as const;
+					delay: 600
+				}
+			}
+		} satisfies MotionVariants<string>
+	} as const
 
 	const handleAvatarDoubleClick = () => {
-		message.create(profileData.avatar.poke);
-	};
+		message.create(profileData.avatar.poke)
+	}
 </script>
 
 <template>

@@ -1,30 +1,30 @@
 <script lang="ts" setup>
 	defineOptions({
-		inheritAttrs: false,
-	});
+		inheritAttrs: false
+	})
 
-	const { isMobile } = useResponsive();
+	const { isMobile } = useResponsive()
 
-	const show = shallowRef(false);
+	const show = shallowRef(false)
 
 	const handleHide = () => {
-		show.value = false;
-	};
+		show.value = false
+	}
 
 	const handleShow = () => {
-		show.value = true;
-	};
+		show.value = true
+	}
 
 	const handleToggle = () => {
-		show.value = !show.value;
-	};
+		show.value = !show.value
+	}
 
 	defineExpose({
 		state: show,
 		hide: handleHide,
 		show: handleShow,
-		toggle: handleToggle,
-	});
+		toggle: handleToggle
+	})
 </script>
 
 <template>
@@ -33,8 +33,8 @@
 		:class="[
 			{
 				'w-1/2 mx-auto': !isMobile,
-				'mx-2': isMobile,
-			},
+				'mx-2': isMobile
+			}
 		]"
 		v-bind="$attrs"
 	>

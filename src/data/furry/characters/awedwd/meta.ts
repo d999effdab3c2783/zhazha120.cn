@@ -1,4 +1,4 @@
-import type { Character } from '@/data/furry/characters';
+import type { Character } from '@/data/furry/characters'
 
 export default {
 	illustration: new URL('assets/illustration.bin', import.meta.url).toString(),
@@ -7,20 +7,20 @@ export default {
 	species: [
 		{
 			name: '狗',
-			percent: 100,
+			percent: 100
 		},
 		{
 			name: '笨蛋',
-			percent: 120,
+			percent: 120
 		},
 		{
 			name: '紫薯',
-			percent: 50,
+			percent: 50
 		},
 		{
 			name: '芋头',
-			percent: 50,
-		},
+			percent: 50
+		}
 	],
 
 	species_alias: '狼犬',
@@ -28,6 +28,6 @@ export default {
 
 	owner: {
 		name: 'awedwd',
-		href: 'https://space.bilibili.com/432050496',
-	},
-} satisfies Character;
+		href: 'https://space.bilibili.com/432050496'
+	}
+} satisfies Character

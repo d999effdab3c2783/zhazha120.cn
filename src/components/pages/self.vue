@@ -2,9 +2,9 @@
 	definePage({
 		meta: {
 			title: '本体',
-			layout: 'subpage',
-		},
-	});
+			layout: 'subpage'
+		}
+	})
 </script>
 
 <template>

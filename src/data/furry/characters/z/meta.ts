@@ -1,4 +1,4 @@
-import type { Character } from '@/data/furry/characters';
+import type { Character } from '@/data/furry/characters'
 
 export default {
 	illustration: new URL('assets/illustration.bin', import.meta.url).toString(),
@@ -7,8 +7,8 @@ export default {
 	species: [
 		{
 			name: '狗',
-			percent: 100,
-		},
+			percent: 100
+		}
 	],
 
 	species_alias: '折耳狗',
@@ -16,6 +16,6 @@ export default {
 
 	owner: {
 		name: '渣渣120',
-		href: '/',
-	},
-} satisfies Character;
+		href: '/'
+	}
+} satisfies Character

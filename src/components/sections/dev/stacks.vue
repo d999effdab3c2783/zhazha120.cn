@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-	import { prop, sortBy } from 'remeda';
+	import { prop, sortBy } from 'remeda'
 
-	const stacks = await useDevStacks();
+	const stacks = await useDevStacks()
 
-	const sortedStacks = sortBy(stacks, (stack) => prop(stack, 'sort') ?? Number.POSITIVE_INFINITY);
+	const sortedStacks = sortBy(stacks, (stack) => {
+		return prop(stack, 'sort') ?? Number.POSITIVE_INFINITY
+	})
 </script>
 
 <template>

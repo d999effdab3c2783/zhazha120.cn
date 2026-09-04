@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
-	import competitionsData from '@/data/dev/competitions' with { type: 'macro' };
+	import competitionsData from '@/data/dev/competitions' with { type: 'macro' }
 
-	const { isMobile } = useResponsive();
+	const { isMobile } = useResponsive()
 </script>
 
 <template>
@@ -33,8 +33,8 @@
 							:class="[
 								'text-[.8em]',
 								{
-									'mt-2': isMobile,
-								},
+									'mt-2': isMobile
+								}
 							]"
 							:depth="3"
 						>

@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-	import type { Organization } from '@/data/dev/organizations';
+	import type { Organization } from '@/data/dev/organizations'
 
-	const organizations = await useDevOrganizations();
+	const organizations = await useDevOrganizations()
 
 	const generateUrl = (organization: Organization) => {
 		switch (organization.type) {
 			case 'github':
-				return `https://github.com/orgs/${organization.owner}`;
+				return `https://github.com/orgs/${organization.owner}`
 			case 'custom':
-				return organization.href;
+				return organization.href
 		}
-	};
+	}
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-	import type { SupportChannel } from '@/data/support';
+	import type { SupportChannel } from '@/data/support'
 
-	defineProps<SupportChannel>();
+	defineProps<SupportChannel>()
 </script>
 
 <template>

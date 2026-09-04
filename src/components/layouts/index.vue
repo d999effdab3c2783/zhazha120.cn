@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
-	const router = useRouter();
+	const router = useRouter()
 
 	const layouts = Object.fromEntries(
 		Object.entries(
 			import.meta.glob(['!@/components/layouts/index.vue', '@/components/layouts/*.vue'], {
-				import: 'default',
-			}),
+				import: 'default'
+			})
 		).map(([path, loader]) => {
-			return [(path.split('/').at(-1) ?? path).split('.')[0], loader];
-		}),
-	);
+			return [(path.split('/').at(-1) ?? path).split('.')[0], loader]
+		})
+	)
 
 	const activeLayout = computedAsync(async () => {
 		return await (
 			layouts[
 				isNonNullish(router.currentRoute.value.meta.layout) ? router.currentRoute.value.meta.layout : 'default'
 			] ?? layouts['default']
-		)();
-	});
+		)()
+	})
 </script>
 
 <template>

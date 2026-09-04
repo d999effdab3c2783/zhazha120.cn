@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	const { isMobile } = useResponsive();
+	const { isMobile } = useResponsive()
 </script>
 
 <template>

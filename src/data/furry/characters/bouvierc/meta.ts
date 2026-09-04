@@ -1,4 +1,4 @@
-import type { Character } from '@/data/furry/characters';
+import type { Character } from '@/data/furry/characters'
 
 export default {
 	illustration: new URL('assets/illustration.bin', import.meta.url).toString(),
@@ -7,12 +7,12 @@ export default {
 	species: [
 		{
 			name: '狼',
-			percent: -1,
+			percent: -1
 		},
 		{
 			name: '亚空间邪魔',
-			percent: Number.NaN,
-		},
+			percent: Number.NaN
+		}
 	],
 
 	species_alias: 'c酱 (?)',
@@ -20,6 +20,6 @@ export default {
 
 	owner: {
 		name: 'BouvierC',
-		href: 'https://space.bilibili.com/384557759',
-	},
-} satisfies Character;
+		href: 'https://space.bilibili.com/384557759'
+	}
+} satisfies Character

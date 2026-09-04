@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-	import { isNonNullish } from 'remeda';
+	import { isNonNullish } from 'remeda'
 
-	import type { ExternalSupportMethod } from '@/data/support';
+	import type { ExternalSupportMethod } from '@/data/support'
 
-	defineProps<ExternalSupportMethod>();
+	defineProps<ExternalSupportMethod>()
 </script>
 
 <template>
