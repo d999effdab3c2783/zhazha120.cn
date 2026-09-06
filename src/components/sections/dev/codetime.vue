@@ -58,7 +58,9 @@
 				<n-text :depth="3">仅供参考</n-text>
 
 				<custom-naive-ui-redirect-button :href="providerWebsite" class="size-fit" tag="a" text type="primary">
-					<n-text class="text-current fw-bold">{{ codetimeData.domain }}</n-text>
+					<custom-naive-ui-text-stack>
+						<n-text class="text-current fw-bold">{{ codetimeData.domain }}</n-text>
+					</custom-naive-ui-text-stack>
 				</custom-naive-ui-redirect-button>
 			</custom-naive-ui-vertical-stack>
 		</n-element>

@@ -27,7 +27,11 @@
 							tag="a"
 							type="primary"
 						>
-							{{ name }}
+							<custom-naive-ui-text-stack>
+								<n-text class="text-current fw-bold">
+									{{ name }}
+								</n-text>
+							</custom-naive-ui-text-stack>
 						</custom-naive-ui-redirect-button>
 					</n-element>
 				</n-element>
