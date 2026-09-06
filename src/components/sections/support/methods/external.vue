@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda'
 
-	import type { ExternalSupportMethod } from '@/data/support'
+	import type { ExternalSupportMethod } from '@/data/support/channels'
 
 	defineProps<ExternalSupportMethod>()
 </script>
@@ -17,7 +17,7 @@
 
 			<n-element class="h-full relative">
 				<n-element
-					class="size-full absolute inset-0 transition-([opacity_background] duration-500 ease-in-out) opacity-0 hover:(bg-([#000000] opacity-50) opacity-100)"
+					class="size-full absolute inset-0 transition-([opacity_background] duration-500 ease-in-out) opacity-0 hover:(bg-black/50 opacity-100)"
 				>
 					<n-element class="absolute inset-0 size-full">
 						<custom-naive-ui-position cover placement="center">

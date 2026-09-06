@@ -1,15 +1,21 @@
+<script lang="ts" setup>
+	import { useThemeVars } from 'naive-ui'
+
+	const themeVars = useThemeVars()
+</script>
+
 <template>
-	<div class="wrapper">
+	<div :style="{ backgroundColor: themeVars.primaryColor }" class="wrapper">
 		<div class="sk-cube-grid">
-			<div class="sk-cube sk-cube1" />
-			<div class="sk-cube sk-cube2" />
-			<div class="sk-cube sk-cube3" />
-			<div class="sk-cube sk-cube4" />
-			<div class="sk-cube sk-cube5" />
-			<div class="sk-cube sk-cube6" />
-			<div class="sk-cube sk-cube7" />
-			<div class="sk-cube sk-cube8" />
-			<div class="sk-cube sk-cube9" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube1" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube2" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube3" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube4" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube5" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube6" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube7" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube8" />
+			<div :style="{ backgroundColor: themeVars.baseColor }" class="sk-cube sk-cube9" />
 		</div>
 	</div>
 </template>
@@ -20,7 +26,6 @@
 		inset: 0;
 		width: 100vw;
 		height: 100vh;
-		background-color: #000;
 		z-index: 120;
 	}
 
@@ -37,7 +42,6 @@
 	.sk-cube-grid .sk-cube {
 		width: 33%;
 		height: 33%;
-		background-color: #fff;
 		float: left;
 		-webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
 		animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;

@@ -56,6 +56,10 @@
 			<n-layout-content>
 				<slot />
 			</n-layout-content>
+
+			<n-layout-footer class="py-2">
+				<sections-layout-footer />
+			</n-layout-footer>
 		</n-layout>
 	</layouts-wrapper>
 </template>

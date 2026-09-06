@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import type { QrCodeSupportMethod } from '@/data/support'
+	import type { QrCodeSupportMethod } from '@/data/support/channels'
 
 	defineProps<QrCodeSupportMethod>()
 

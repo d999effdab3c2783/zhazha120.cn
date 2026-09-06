@@ -33,7 +33,7 @@
 		:class="[
 			{
 				'w-1/2 mx-auto': !isMobile,
-				'mx-2': isMobile
+				'm-2': isMobile
 			}
 		]"
 		v-bind="$attrs"

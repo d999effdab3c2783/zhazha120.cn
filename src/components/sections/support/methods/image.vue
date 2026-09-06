@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import type { ImageSupportMethod } from '@/data/support'
+	import type { ImageSupportMethod } from '@/data/support/channels'
 
 	defineProps<ImageSupportMethod>()
 </script>

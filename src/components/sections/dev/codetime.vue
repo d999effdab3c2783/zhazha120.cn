@@ -1,14 +1,19 @@
 <script lang="ts" setup>
-	import { useOsTheme } from 'naive-ui'
+	import { isNonNullish } from 'remeda'
 
 	import codetimeData from '@/data/dev/codetime' with { type: 'macro' }
 
 	const { isMobile } = useResponsive()
-	const osTheme = useOsTheme()
+	const themeStore = useThemeStore()
 
 	const processWidget = (url: string) => {
-		return url.replaceAll('{theme}', osTheme.value ?? 'light')
+		if (isNonNullish(themeStore.actualMode)) {
+			return url.replaceAll('{theme}', themeStore.actualMode)
+		}
+
+		return url
 	}
+
 	const providerWebsite = `https://${codetimeData.domain}`
 </script>
 

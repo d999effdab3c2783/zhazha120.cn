@@ -3,6 +3,7 @@ import { createJiti } from 'jiti'
 import path, { resolve } from 'node:path'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Info from 'unplugin-info/vite'
 import Macros from 'unplugin-macros/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
@@ -36,6 +37,7 @@ export default defineConfig(() => {
 			}
 		},
 		plugins: [
+			Info(),
 			Macros({
 				runner: {
 					resolve: (source, importer) => {
@@ -62,7 +64,10 @@ export default defineConfig(() => {
 			AutoImport({
 				dts: resolve(import.meta.dirname, 'src', 'types', 'auto-imports.d.ts'),
 				dtsMode: 'overwrite',
-				dirs: [resolve(import.meta.dirname, 'src', 'composables')],
+				dirs: [
+					resolve(import.meta.dirname, 'src', 'stores'),
+					resolve(import.meta.dirname, 'src', 'composables')
+				],
 				imports: [
 					{
 						'naive-ui': ['useDialog', 'useModal', 'useMessage', 'useNotification', 'useLoadingBar']

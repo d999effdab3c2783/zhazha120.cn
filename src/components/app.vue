@@ -1,6 +1,6 @@
 <template>
-	<layouts>
-		<Suspense>
+	<sections-shared-suspense>
+		<layouts>
 			<router-view>
 				<template #default="{ Component: Page, route }">
 					<transitions-page appear mode="out-in">
@@ -10,12 +10,8 @@
 					</transitions-page>
 				</template>
 			</router-view>
-
-			<template #fallback>
-				<spinkit-cube-rotate-scale />
-			</template>
-		</Suspense>
-	</layouts>
+		</layouts>
+	</sections-shared-suspense>
 </template>
 
 <style lang="scss">

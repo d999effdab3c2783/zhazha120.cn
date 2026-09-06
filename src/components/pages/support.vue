@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { useRouteQuery } from '@vueuse/router'
 
-	import supportData from '@/data/support'
+	import supportChannelsData from '@/data/support/channels'
 
 	definePage({
 		meta: {
@@ -18,7 +18,7 @@
 
 <template>
 	<n-tabs v-model:value="value" animated type="segment">
-		<template v-for="(channel, index) in supportData.channels">
+		<template v-for="(channel, index) in supportChannelsData">
 			<n-tab-pane :name="index" :tab="channel.name">
 				<sections-support-channel v-bind="channel" />
 			</n-tab-pane>

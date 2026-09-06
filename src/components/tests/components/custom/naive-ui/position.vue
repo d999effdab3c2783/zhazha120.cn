@@ -1,5 +1,5 @@
 <template>
-	<n-element class="fixed inset-0 bg-black z-120">
+	<n-element class="fixed inset-0">
 		<n-grid :cols="3" class="size-full">
 			<n-grid-item class="p-2 size-full">
 				<custom-naive-ui-position cover placement="top-left">top-left</custom-naive-ui-position>
