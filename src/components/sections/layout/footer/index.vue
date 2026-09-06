@@ -64,7 +64,7 @@
 						type="primary"
 					>
 						<template #icon>
-							<n-image :src="footerData.filing.safety.icon" />
+							<n-image :src="footerData.filing.safety.icon" @click.prevent.stop />
 						</template>
 
 						<custom-naive-ui-text-stack>
