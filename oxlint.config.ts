@@ -1,3 +1,4 @@
+import { resolve } from 'node:path'
 import { defineConfig } from 'oxlint'
 
 export default defineConfig({
@@ -10,13 +11,8 @@ export default defineConfig({
 		style: 'allow',
 		suspicious: 'error'
 	},
-	ignorePatterns: [
-		'src/types/auto-imports.d.ts',
-		'src/types/components.d.ts',
-		'src/types/router.d.ts',
-
-		'src/components/vue-bits'
-	],
+	ignorePatterns: ['src/types/auto-imports.d.ts', 'src/types/components.d.ts', 'src/types/router.d.ts'],
+	jsPlugins: [resolve(import.meta.dirname, 'plugins', 'oxlint.ts')],
 	options: {
 		typeAware: true
 	},
@@ -24,6 +20,7 @@ export default defineConfig({
 	rules: {
 		'arrow-body-style': ['warn', 'always'],
 		curly: ['warn', 'all'],
+		'customize/no-unnecessary-template-literal': ['error'],
 		eqeqeq: ['error', 'always'],
 		'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
 		'no-array-constructor': ['warn'],
@@ -35,6 +32,8 @@ export default defineConfig({
 				allowSeparateTypeImports: true
 			}
 		],
+		'no-implicit-coercion': ['error'],
+		'no-negated-condition': ['warn'],
 		'no-unsafe-finally': ['error'],
 		'no-var': ['error'],
 		'object-shorthand': ['warn', 'always'],
@@ -55,10 +54,12 @@ export default defineConfig({
 		'typescript/no-array-delete': ['warn'],
 		'typescript/no-for-in-array': ['warn'],
 		'typescript/no-unnecessary-condition': ['error'],
+		'typescript/no-unnecessary-template-expression': ['error'],
 		'typescript/no-unsafe-return': ['warn'],
 		'typescript/no-unsafe-type-assertion': ['warn'],
 		'typescript/no-wrapper-object-types': ['warn'],
 		'typescript/return-await': ['error', 'always'],
+		'typescript/strict-boolean-expressions': ['warn'],
 		'unicorn/catch-error-name': ['warn'],
 		'unicorn/no-array-for-each': ['warn'],
 		'unicorn/no-array-reduce': ['warn'],

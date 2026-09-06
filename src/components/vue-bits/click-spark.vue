@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts" setup>
+	import { isNonNullish, isNullish } from 'remeda'
 	import { computed, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue'
 
 	interface Spark {
@@ -40,8 +41,8 @@
 	const containerRef = useTemplateRef<HTMLDivElement>('containerRef')
 	const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef')
 	const sparks = ref<Spark[]>([])
-	const startTimeRef = ref<number | null>(null)
-	const animationId = ref<number | null>(null)
+	const startTimeRef = ref<number>()
+	const animationId = ref<number>()
 
 	const easeFunc = computed(() => {
 		return (t: number) => {
@@ -61,7 +62,7 @@
 	const handleClick = (e: MouseEvent) => {
 		const canvas = canvasRef.value
 
-		if (!canvas) {
+		if (isNullish(canvas)) {
 			return
 		}
 
@@ -89,19 +90,19 @@
 	}
 
 	const draw = (timestamp: number) => {
-		if (!startTimeRef.value) {
+		if (isNullish(startTimeRef.value)) {
 			startTimeRef.value = timestamp
 		}
 
 		const canvas = canvasRef.value
 
-		const ctx = canvas?.getContext('2d')
+		const context = canvas?.getContext('2d')
 
-		if (!ctx || !canvas) {
+		if (isNullish(context) || isNullish(canvas)) {
 			return
 		}
 
-		ctx.clearRect(0, 0, canvas.width, canvas.height)
+		context.clearRect(0, 0, canvas.width, canvas.height)
 
 		sparks.value = sparks.value.filter((spark: Spark) => {
 			const elapsed = timestamp - spark.startTime
@@ -121,12 +122,12 @@
 			const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle)
 			const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle)
 
-			ctx.strokeStyle = props.sparkColor
-			ctx.lineWidth = 2
-			ctx.beginPath()
-			ctx.moveTo(x1, y1)
-			ctx.lineTo(x2, y2)
-			ctx.stroke()
+			context.strokeStyle = props.sparkColor
+			context.lineWidth = 2
+			context.beginPath()
+			context.moveTo(x1, y1)
+			context.lineTo(x2, y2)
+			context.stroke()
 
 			return true
 		})
@@ -137,13 +138,13 @@
 	const resizeCanvas = () => {
 		const canvas = canvasRef.value
 
-		if (!canvas) {
+		if (isNullish(canvas)) {
 			return
 		}
 
 		const parent = canvas.parentElement
 
-		if (!parent) {
+		if (isNullish(parent)) {
 			return
 		}
 
@@ -162,18 +163,18 @@
 		resizeTimeout = setTimeout(resizeCanvas, 100)
 	}
 
-	let resizeObserver: ResizeObserver | null = null
+	let resizeObserver: ResizeObserver
 
 	onMounted(() => {
 		const canvas = canvasRef.value
 
-		if (!canvas) {
+		if (isNullish(canvas)) {
 			return
 		}
 
 		const parent = canvas.parentElement
 
-		if (!parent) {
+		if (isNullish(parent)) {
 			return
 		}
 
@@ -186,13 +187,13 @@
 	})
 
 	onUnmounted(() => {
-		if (resizeObserver) {
+		if (isNonNullish(resizeObserver)) {
 			resizeObserver.disconnect()
 		}
 
 		clearTimeout(resizeTimeout)
 
-		if (animationId.value) {
+		if (isNonNullish(animationId.value)) {
 			cancelAnimationFrame(animationId.value)
 		}
 	})
@@ -220,9 +221,10 @@
 			}
 		],
 		() => {
-			if (animationId.value) {
+			if (isNonNullish(animationId.value)) {
 				cancelAnimationFrame(animationId.value)
 			}
+
 			animationId.value = requestAnimationFrame(draw)
 		}
 	)

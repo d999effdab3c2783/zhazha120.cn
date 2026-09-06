@@ -1,5 +1,5 @@
 <template>
-	<section :class="`flex items-center justify-center h-full w-full relative ${className}`" :style="style">
+	<section :class="['flex items-center justify-center h-full w-full relative', className]" :style="style">
 		<div ref="wrapperRef" class="relative w-full h-full">
 			<canvas ref="canvasRef" class="absolute inset-0 w-full h-full pointer-events-none" />
 		</div>
@@ -7,9 +7,12 @@
 </template>
 
 <script lang="ts" setup>
+	import type { CSSProperties } from 'vue'
+
 	import { gsap } from 'gsap'
 	import { InertiaPlugin } from 'gsap/InertiaPlugin'
-	import { computed, type CSSProperties, nextTick, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue'
+	import { isNonNullish, isNullish } from 'remeda'
+	import { computed, nextTick, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue'
 
 	gsap.registerPlugin(InertiaPlugin)
 
@@ -31,7 +34,8 @@
 		cy: number
 		xOffset: number
 		yOffset: number
-		_inertiaApplied: boolean
+
+		inertiaApplied: boolean
 	}
 
 	export interface DotGridProps {
@@ -86,7 +90,7 @@
 	function hexToRgb(hex: string) {
 		const m = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i)
 
-		if (!m) {
+		if (isNullish(m)) {
 			return {
 				r: 0,
 				g: 0,
@@ -110,8 +114,8 @@
 	})
 
 	const circlePath = computed(() => {
-		if ('undefined' === typeof window || !window.Path2D) {
-			return null
+		if (isNullish(window?.Path2D)) {
+			return undefined
 		}
 
 		const p = new Path2D()
@@ -125,7 +129,7 @@
 		const wrap = wrapperRef.value
 		const canvas = canvasRef.value
 
-		if (!wrap || !canvas) {
+		if (isNullish(wrap) || isNullish(canvas)) {
 			return
 		}
 
@@ -137,10 +141,10 @@
 		canvas.style.width = `${width}px`
 		canvas.style.height = `${height}px`
 
-		const ctx = canvas.getContext('2d')
+		const context = canvas.getContext('2d')
 
-		if (ctx) {
-			ctx.scale(dpr, dpr)
+		if (isNonNullish(context)) {
+			context.scale(dpr, dpr)
 		}
 
 		const cols = Math.floor((width + props.gap) / (props.dotSize + props.gap))
@@ -162,7 +166,7 @@
 			for (let x = 0; x < cols; x++) {
 				const cx = startX + x * cell
 				const cy = startY + y * cell
-				newDots.push({ cx, cy, xOffset: 0, yOffset: 0, _inertiaApplied: false })
+				newDots.push({ cx, cy, xOffset: 0, yOffset: 0, inertiaApplied: false })
 			}
 		}
 
@@ -170,22 +174,22 @@
 	}
 
 	let rafId: number
-	let resizeObserver: ResizeObserver | null = null
+	let resizeObserver: ResizeObserver
 
 	const draw = () => {
 		const canvas = canvasRef.value
 
-		if (!canvas) {
+		if (isNullish(canvas)) {
 			return
 		}
 
-		const ctx = canvas.getContext('2d')
+		const context = canvas.getContext('2d')
 
-		if (!ctx) {
+		if (isNullish(context)) {
 			return
 		}
 
-		ctx.clearRect(0, 0, canvas.width, canvas.height)
+		context.clearRect(0, 0, canvas.width, canvas.height)
 
 		const { x: px, y: py } = pointer.value
 		const proxSq = props.proximity * props.proximity
@@ -208,12 +212,12 @@
 				style = `rgb(${r},${g},${b})`
 			}
 
-			if (circlePath.value) {
-				ctx.save()
-				ctx.translate(ox, oy)
-				ctx.fillStyle = style
-				ctx.fill(circlePath.value)
-				ctx.restore()
+			if (isNonNullish(circlePath.value)) {
+				context.save()
+				context.translate(ox, oy)
+				context.fillStyle = style
+				context.fill(circlePath.value)
+				context.restore()
 			}
 		}
 
@@ -247,7 +251,7 @@
 
 		const canvas = canvasRef.value
 
-		if (!canvas) {
+		if (isNullish(canvas)) {
 			return
 		}
 
@@ -259,8 +263,8 @@
 		for (const dot of dots.value) {
 			const dist = Math.hypot(dot.cx - pr.x, dot.cy - pr.y)
 
-			if (speed > props.speedTrigger && dist < props.proximity && !dot._inertiaApplied) {
-				dot._inertiaApplied = true
+			if (speed > props.speedTrigger && dist < props.proximity && !dot.inertiaApplied) {
+				dot.inertiaApplied = true
 
 				gsap.killTweensOf(dot)
 
@@ -280,7 +284,7 @@
 							duration: props.returnDuration,
 							ease: 'elastic.out(1,0.75)'
 						})
-						dot._inertiaApplied = false
+						dot.inertiaApplied = false
 					}
 				})
 			}
@@ -290,7 +294,7 @@
 	const onClick = (e: MouseEvent) => {
 		const canvas = canvasRef.value
 
-		if (!canvas) {
+		if (isNullish(canvas)) {
 			return
 		}
 
@@ -301,8 +305,8 @@
 		for (const dot of dots.value) {
 			const dist = Math.hypot(dot.cx - cx, dot.cy - cy)
 
-			if (dist < props.shockRadius && !dot._inertiaApplied) {
-				dot._inertiaApplied = true
+			if (dist < props.shockRadius && !dot.inertiaApplied) {
+				dot.inertiaApplied = true
 
 				gsap.killTweensOf(dot)
 
@@ -323,7 +327,7 @@
 							duration: props.returnDuration,
 							ease: 'elastic.out(1,0.75)'
 						})
-						dot._inertiaApplied = false
+						dot.inertiaApplied = false
 					}
 				})
 			}
@@ -337,13 +341,14 @@
 
 		buildGrid()
 
-		if (circlePath.value) {
+		if (isNonNullish(circlePath.value)) {
 			draw()
 		}
 
-		if ('ResizeObserver' in window) {
+		if (isNonNullish(window?.ResizeObserver)) {
 			resizeObserver = new ResizeObserver(buildGrid)
-			if (wrapperRef.value) {
+
+			if (isNonNullish(wrapperRef.value)) {
 				resizeObserver.observe(wrapperRef.value)
 			}
 		} else {
@@ -355,11 +360,11 @@
 	})
 
 	onUnmounted(() => {
-		if (rafId) {
+		if (isNonNullish(rafId)) {
 			cancelAnimationFrame(rafId)
 		}
 
-		if (resizeObserver) {
+		if (isNonNullish(resizeObserver)) {
 			resizeObserver.disconnect()
 		} else {
 			window.removeEventListener('resize', buildGrid)
@@ -396,10 +401,11 @@
 			circlePath
 		],
 		() => {
-			if (rafId) {
+			if (isNonNullish(rafId)) {
 				cancelAnimationFrame(rafId)
 			}
-			if (circlePath.value) {
+
+			if (isNonNullish(circlePath.value)) {
 				draw()
 			}
 		}

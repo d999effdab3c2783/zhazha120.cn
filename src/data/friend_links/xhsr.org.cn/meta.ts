@@ -6,5 +6,5 @@ export default {
 	logo: new URL('assets/logo.bin', import.meta.url).toString(),
 	name: '星鸿的博客',
 	description: '享受获取新知带来的喜悦。',
-	href: `https://blog.xhsr.org.cn`
+	href: 'https://blog.xhsr.org.cn'
 } satisfies FriendLink

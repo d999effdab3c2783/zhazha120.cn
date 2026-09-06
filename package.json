@@ -16,6 +16,7 @@
 		"@ant-design/colors": "^8.0.1",
 		"@iconify/json": "^2.2.525",
 		"@iconify/utils": "^3.1.5",
+		"@oxlint/plugins": "^1.81.0",
 		"@types/node": "^26.4.1",
 		"@vitejs/plugin-vue": "^6.0.8",
 		"@vue/tsconfig": "^0.9.1",

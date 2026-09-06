@@ -6,5 +6,5 @@ export default {
 	logo: new URL('assets/logo.bin', import.meta.url).toString(),
 	name: '应龙笔记',
 	description: '应龙笔记是一个专注于知识分享的网站',
-	href: `https://www.silverdragon.cn?link={domain}`
+	href: 'https://www.silverdragon.cn?link={domain}'
 } satisfies FriendLink

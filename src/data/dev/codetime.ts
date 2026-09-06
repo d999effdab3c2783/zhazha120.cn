@@ -1,4 +1,4 @@
-const base = `codetime.dev`
+const base = 'codetime.dev'
 const user_id = 2270
 
 export default {
