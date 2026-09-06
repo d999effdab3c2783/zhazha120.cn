@@ -55,22 +55,24 @@
 </script>
 
 <template>
-	<n-element class="absolute top-1/2 left-1/2 -translate-1/2">
-		<custom-naive-ui-auto-stack align="center" justify="center">
-			<n-avatar
-				v-motion="motions.avatar"
-				:src="profileData.avatar.src"
-				circle
-				class="size-30"
-				@dblclick="handleAvatarDoubleClick"
-			/>
+	<n-element class="absolute inset-0 size-full">
+		<custom-naive-ui-position cover placement="center">
+			<custom-naive-ui-auto-stack align="center" justify="center">
+				<n-avatar
+					v-motion="motions.avatar"
+					:src="profileData.avatar.src"
+					circle
+					class="size-30"
+					@dblclick="handleAvatarDoubleClick"
+				/>
 
-			<n-text
-				v-motion="motions.name"
-				class="font-[v-zhazha120-script] cursor-default text-(15 nowrap) transition-(text-shadow ease-in-out duration-500) fw-black text-shadow-[0_0_0] hover:text-shadow-[0_0_.2em]"
-			>
-				{{ profileData.name }}
-			</n-text>
-		</custom-naive-ui-auto-stack>
+				<n-text
+					v-motion="motions.name"
+					class="font-[v-zhazha120-script] cursor-default text-(15 nowrap) transition-(text-shadow ease-in-out duration-500) fw-black text-shadow-[0_0_0] hover:text-shadow-[0_0_.2em]"
+				>
+					{{ profileData.name }}
+				</n-text>
+			</custom-naive-ui-auto-stack>
+		</custom-naive-ui-position>
 	</n-element>
 </template>

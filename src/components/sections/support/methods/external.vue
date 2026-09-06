@@ -19,20 +19,22 @@
 				<n-element
 					class="size-full absolute inset-0 transition-([opacity_background] duration-500 ease-in-out) opacity-0 hover:(bg-([#000000] opacity-50) opacity-100)"
 				>
-					<n-element class="absolute top-1/2 left-1/2 -translate-1/2">
-						<custom-naive-ui-redirect-button
-							:href="url"
-							icon-class="i-ant-design:link-outlined"
-							size="small"
-							tag="a"
-							type="primary"
-						>
-							<custom-naive-ui-text-stack>
-								<n-text class="text-current fw-bold">
-									{{ name }}
-								</n-text>
-							</custom-naive-ui-text-stack>
-						</custom-naive-ui-redirect-button>
+					<n-element class="absolute inset-0 size-full">
+						<custom-naive-ui-position cover placement="center">
+							<custom-naive-ui-redirect-button
+								:href="url"
+								icon-class="i-ant-design:link-outlined"
+								size="small"
+								tag="a"
+								type="primary"
+							>
+								<custom-naive-ui-text-stack>
+									<n-text class="text-current fw-bold">
+										{{ name }}
+									</n-text>
+								</custom-naive-ui-text-stack>
+							</custom-naive-ui-redirect-button>
+						</custom-naive-ui-position>
 					</n-element>
 				</n-element>
 
