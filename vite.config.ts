@@ -11,6 +11,8 @@ import { defineConfig } from 'vite'
 import { VueRouterAutoImports } from 'vue-router/unplugin'
 import VueRouter from 'vue-router/vite'
 
+import Customize from './plugins/vite.ts'
+
 export default defineConfig(() => {
 	const jiti = createJiti(import.meta.url, {
 		alias: {
@@ -37,6 +39,7 @@ export default defineConfig(() => {
 			}
 		},
 		plugins: [
+			Customize(),
 			Info(),
 			Macros({
 				runner: {
