@@ -34,33 +34,6 @@
 			gsap.ticker.lagSmoothing(0)
 		}
 	})
-
-	onMounted(() => {
-		const router = useRouter()
-		const loadingBar = useLoadingBar()
-		const loadingStore = useLoadingStore()
-
-		router.beforeEach(async () => {
-			await nextTick()
-
-			loadingBar.start()
-			loadingStore.show()
-		})
-
-		router.afterEach(async () => {
-			await nextTick()
-
-			loadingBar.finish()
-			loadingStore.hide()
-		})
-
-		router.onError(async () => {
-			await nextTick()
-
-			loadingBar.error()
-			loadingStore.hide()
-		})
-	})
 </script>
 
 <template>
