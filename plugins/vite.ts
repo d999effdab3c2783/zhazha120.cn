@@ -21,12 +21,6 @@ export default (): Plugin => {
 						const originalFileName = asset.originalFileNames.join('/')
 
 						try {
-							// oxlint-disable-next-line no-console
-							console.log(
-								`[${index}] ${originalFileName}`,
-								`(${++processedCounter}/${filteredBundles.length})`
-							)
-
 							const sourceBuffer = Buffer.isBuffer(asset.source)
 								? asset.source
 								: Buffer.from(asset.source)
@@ -44,6 +38,12 @@ export default (): Plugin => {
 									smartSubsample: true
 								})
 								.toBuffer()
+
+							// oxlint-disable-next-line no-console
+							console.log(
+								`[${index}] ${originalFileName}`,
+								`(${++processedCounter}/${filteredBundles.length})`
+							)
 						} catch (error) {
 							const message = String(error)
 

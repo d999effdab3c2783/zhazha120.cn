@@ -7,7 +7,7 @@ export default {
 			href: 'https://beian.miit.gov.cn'
 		},
 		safety: {
-			icon: new URL('@/assets/images/footer/beian.bin', import.meta.url).toString(),
+			icon: new URL('assets/beian.bin', import.meta.url).toString(),
 			code: 36070202001088,
 			href: 'https://beian.mps.gov.cn/#/query/webSearch?code={code}'
 		}
