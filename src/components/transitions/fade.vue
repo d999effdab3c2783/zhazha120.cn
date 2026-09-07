@@ -6,9 +6,17 @@
 
 <style lang="scss">
 	.v-fade {
+		&-enter-active {
+			@apply transition-(duration-300);
+		}
+
+		&-leave-active {
+			@apply transition-(duration-500);
+		}
+
 		&-enter-active,
 		&-leave-active {
-			@apply transition-(property-[opacity] ease-in-out duration-500);
+			@apply transition-(property-[opacity] ease-in-out);
 		}
 
 		&-enter-from,
