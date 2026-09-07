@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { useRouteQuery } from '@vueuse/router'
 
-	import supportChannelsData from '@/data/support/channels'
+	import supportChannelsData from '@/data/support/channels' // with { type: 'macro' }
 
 	definePage({
 		meta: {

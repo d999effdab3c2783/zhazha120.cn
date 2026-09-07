@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { abbreviatedSha, sha } from '~build/git'
 
-	import footerData from '@/data/website/footer' with { type: 'macro' }
+	import footerData from '@/data/website/footer' // with { type: 'macro' }
 
 	const { isMobile } = useResponsive()
 	const now = useNow()

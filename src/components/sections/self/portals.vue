@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda'
 
-	import portalsData from '@/data/self/portals' with { type: 'macro' }
+	import portalsData from '@/data/self/portals' // with { type: 'macro' }
 
 	const { isMobile } = useResponsive()
 </script>

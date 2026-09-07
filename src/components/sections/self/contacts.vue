@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import { isNonNullish } from 'remeda'
 
-	import contactsData from '@/data/self/contacts' with { type: 'macro' }
+	import contactsData from '@/data/self/contacts' // with { type: 'macro' }
 
 	const { isMobile } = useResponsive()
 </script>
