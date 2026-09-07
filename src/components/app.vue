@@ -1,17 +1,29 @@
+<script lang="ts" setup>
+	const loadingStore = useLoadingStore()
+</script>
+
 <template>
-	<sections-shared-suspense>
-		<layouts>
-			<router-view>
-				<template #default="{ Component: Page, route }">
-					<transitions-page appear mode="out-in">
-						<KeepAlive>
-							<Component :is="Page" :key="route.path" />
-						</KeepAlive>
-					</transitions-page>
+	<layouts-wrapper>
+		<n-element>
+			<transitions-fade appear mode="out-in">
+				<template v-if="loadingStore.status">
+					<spinkit-cube-rotate-scale />
 				</template>
-			</router-view>
-		</layouts>
-	</sections-shared-suspense>
+			</transitions-fade>
+
+			<sections-shared-suspense>
+				<router-view>
+					<template #default="{ Component: page }">
+						<layouts>
+							<transitions-page appear mode="out-in">
+								<Component :is="page" />
+							</transitions-page>
+						</layouts>
+					</template>
+				</router-view>
+			</sections-shared-suspense>
+		</n-element>
+	</layouts-wrapper>
 </template>
 
 <style lang="scss">

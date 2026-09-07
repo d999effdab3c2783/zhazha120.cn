@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 	import { VueLenis } from 'lenis/vue'
-	import { isNullish } from 'remeda'
+	import { isNonNullish, isNullish } from 'remeda'
 
 	import lenisData from '@/data/lenis' with { type: 'macro' }
 
@@ -34,11 +34,38 @@
 			gsap.ticker.lagSmoothing(0)
 		}
 	})
+
+	onMounted(() => {
+		const router = useRouter()
+		const loadingBar = useLoadingBar()
+		const loadingStore = useLoadingStore()
+
+		router.beforeEach(async () => {
+			await nextTick()
+
+			loadingBar.start()
+			loadingStore.show()
+		})
+
+		router.afterEach(async () => {
+			await nextTick()
+
+			loadingBar.finish()
+			loadingStore.hide()
+		})
+
+		router.onError(async () => {
+			await nextTick()
+
+			loadingBar.error()
+			loadingStore.hide()
+		})
+	})
 </script>
 
 <template>
-	<layouts-wrapper>
-		<template v-if="layoutRef">
+	<n-layout ref="layoutRef" :native-scrollbar="false" position="absolute">
+		<template v-if="isNonNullish(layoutRef)">
 			<VueLenis
 				ref="lenisRef"
 				:auto-raf="lenisData.options.autoRaf ?? false"
@@ -52,16 +79,14 @@
 			/>
 		</template>
 
-		<n-layout ref="layoutRef" :native-scrollbar="false" position="absolute">
-			<n-layout-content>
-				<slot />
-			</n-layout-content>
+		<n-layout-content>
+			<slot />
+		</n-layout-content>
 
-			<n-layout-footer class="py-2">
-				<sections-layout-footer />
-			</n-layout-footer>
-		</n-layout>
-	</layouts-wrapper>
+		<n-layout-footer class="py-2">
+			<sections-layout-footer />
+		</n-layout-footer>
+	</n-layout>
 </template>
 
 <style lang="scss">

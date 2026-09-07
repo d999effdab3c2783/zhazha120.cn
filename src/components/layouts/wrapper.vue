@@ -10,6 +10,7 @@
 		:locale="zhCN"
 		:theme="themeStore.preset"
 		:theme-overrides="themeStore.overrides"
+		abstract
 		inline-theme-disabled
 	>
 		<n-dialog-provider>

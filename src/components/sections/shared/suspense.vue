@@ -1,9 +1,19 @@
-<template>
-	<Suspense>
-		<slot />
+<script lang="ts" setup>
+	import { Suspense as VueSuspense } from 'vue'
 
-		<template #fallback>
-			<spinkit-cube-rotate-scale />
-		</template>
-	</Suspense>
+	const loadingStore = useLoadingStore()
+
+	const handlePending = () => {
+		loadingStore.show()
+	}
+
+	const handleResolve = () => {
+		loadingStore.hide()
+	}
+</script>
+
+<template>
+	<vue-suspense @pending="handlePending" @resolve="handleResolve">
+		<slot />
+	</vue-suspense>
 </template>

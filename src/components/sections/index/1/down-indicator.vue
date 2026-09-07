@@ -4,13 +4,15 @@
 
 	const show = shallowRef(false)
 
-	useLenis((lenis) => {
-		show.value = 0 >= lenis.actualScroll
-	})
-
 	const handleDown = () => {
 		useEventEmit('index:scroll', 2)
 	}
+
+	onMounted(() => {
+		useLenis((lenis) => {
+			show.value = 0 >= lenis.actualScroll
+		})
+	})
 </script>
 
 <template>
