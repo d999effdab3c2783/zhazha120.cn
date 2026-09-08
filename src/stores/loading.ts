@@ -6,6 +6,7 @@ export const useLoadingStore = defineStore('loading', () => {
 	const counter = shallowRef(0)
 	const status = shallowRef(false)
 
+	let first = true
 	let showTimeoutFn: UseTimeoutFnReturn<() => void> | undefined
 	let hideTimeoutFn: UseTimeoutFnReturn<() => void> | undefined
 
@@ -25,9 +26,12 @@ export const useLoadingStore = defineStore('loading', () => {
 		resetTimeout()
 
 		if (0 < counter.value && !status.value) {
-			showTimeoutFn = useTimeoutFn(() => {
-				status.value = true
-			}, 200)
+			showTimeoutFn = useTimeoutFn(
+				() => {
+					status.value = true
+				},
+				first ? 0 : 200
+			)
 		}
 	}
 
@@ -43,6 +47,10 @@ export const useLoadingStore = defineStore('loading', () => {
 
 			hideTimeoutFn = useTimeoutFn(() => {
 				status.value = false
+
+				if (first) {
+					first = false
+				}
 			}, 100)
 		}
 	}

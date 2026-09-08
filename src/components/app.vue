@@ -5,16 +5,20 @@
 <template>
 	<layouts-wrapper>
 		<n-element>
-			<sections-global-api-injector />
-			<sections-global-route-loading />
-
 			<transitions-fade appear mode="out-in">
 				<template v-if="loadingStore.status">
-					<spinkit-cube-rotate-scale />
+					<n-element class="fixed size-screen inset-0 z-120">
+						<custom-naive-ui-position cover placement="center">
+							<n-spin size="large" />
+						</custom-naive-ui-position>
+					</n-element>
 				</template>
 			</transitions-fade>
 
 			<sections-shared-suspense>
+				<sections-global-api-injector />
+				<sections-global-route-loading />
+
 				<layouts>
 					<router-view>
 						<template #default="{ Component: page }">

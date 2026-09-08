@@ -8,39 +8,37 @@ import { handleHotUpdate, routes } from 'vue-router/auto-routes'
 
 import App from '@/components/app.vue'
 
-;(() => {
-	// @unocss-include
+// @unocss-include
 
-	const container = document.createElement('div')
+const container = document.createElement('div')
 
-	const app = createApp({
-		render: () => {
-			return h(App)
-		}
-	})
-
-	const pinia = createPinia()
-	const persistedState = createPersistedState()
-
-	pinia.use(persistedState)
-
-	const router = createRouter({
-		history: createWebHistory(),
-		routes
-	})
-
-	if (import.meta.hot) {
-		handleHotUpdate(router)
+const app = createApp({
+	render: () => {
+		return h(App)
 	}
+})
 
-	app.use(pinia)
-	app.use(router)
-	app.use(LenisVue)
-	app.use(MotionPlugin)
+const pinia = createPinia()
+const persistedState = createPersistedState()
 
-	container.classList.add('contents')
+pinia.use(persistedState)
 
-	app.mount(container)
+const router = createRouter({
+	history: createWebHistory(),
+	routes
+})
 
-	document.body.append(container)
-})()
+if (import.meta.hot) {
+	handleHotUpdate(router)
+}
+
+app.use(pinia)
+app.use(router)
+app.use(LenisVue)
+app.use(MotionPlugin)
+
+container.classList.add('contents')
+
+app.mount(container)
+
+document.body.append(container)
