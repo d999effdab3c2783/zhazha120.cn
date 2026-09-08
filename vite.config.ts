@@ -1,3 +1,5 @@
+import type { Plugin } from 'vite'
+
 import Vue from '@vitejs/plugin-vue'
 import { createJiti } from 'jiti'
 import path, { resolve } from 'node:path'
@@ -11,9 +13,7 @@ import { defineConfig } from 'vite'
 import { VueRouterAutoImports } from 'vue-router/unplugin'
 import VueRouter from 'vue-router/vite'
 
-import Customize from './plugins/vite.ts'
-
-export default defineConfig(() => {
+export default defineConfig(async () => {
 	const jiti = createJiti(import.meta.url, {
 		alias: {
 			'@': resolve(import.meta.dirname, 'src')
@@ -39,7 +39,12 @@ export default defineConfig(() => {
 			}
 		},
 		plugins: [
-			Customize(),
+			(
+				await jiti.import<() => Plugin[]>(resolve(import.meta.dirname, 'src', 'plugins', 'vite.ts'), {
+					default: true
+				})
+			)(),
+
 			Info(),
 			Macros({
 				runner: {
