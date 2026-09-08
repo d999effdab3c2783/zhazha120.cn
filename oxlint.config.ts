@@ -11,8 +11,13 @@ export default defineConfig({
 		style: 'allow',
 		suspicious: 'error'
 	},
-	ignorePatterns: ['src/types/auto-imports.d.ts', 'src/types/components.d.ts', 'src/types/router.d.ts'],
-	jsPlugins: [resolve(import.meta.dirname, 'plugins', 'oxlint.ts')],
+	ignorePatterns: [
+		'src/plugins',
+		'src/types/auto-imports.d.ts',
+		'src/types/components.d.ts',
+		'src/types/router.d.ts'
+	],
+	jsPlugins: [resolve(import.meta.dirname, 'src', 'plugins', 'oxlint.ts')],
 	options: {
 		typeAware: true
 	},
@@ -20,6 +25,7 @@ export default defineConfig({
 	rules: {
 		'arrow-body-style': ['warn', 'always'],
 		curly: ['warn', 'all'],
+		'customize/no-method-shorthand': ['warn'],
 		'customize/no-unnecessary-template-literal': ['error'],
 		eqeqeq: ['error', 'always'],
 		'import/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
@@ -51,6 +57,7 @@ export default defineConfig({
 		'typescript/consistent-indexed-object-style': ['warn', 'index-signature'],
 		'typescript/consistent-type-imports': ['error'],
 		'typescript/explicit-module-boundary-types': ['warn'],
+		'typescript/method-signature-style': ['warn', 'property'],
 		'typescript/no-array-delete': ['warn'],
 		'typescript/no-for-in-array': ['warn'],
 		'typescript/no-unnecessary-condition': ['error'],

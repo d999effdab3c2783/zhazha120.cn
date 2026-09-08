@@ -18,6 +18,20 @@ export default eslintCompatPlugin({
 					}
 				}
 			}
+		},
+		'no-method-shorthand': {
+			createOnce(context) {
+				return {
+					Property(node) {
+						if (node.method) {
+							context.report({
+								node,
+								message: 'Method shorthand is not allowed.'
+							})
+						}
+					}
+				}
+			}
 		}
 	}
 })
