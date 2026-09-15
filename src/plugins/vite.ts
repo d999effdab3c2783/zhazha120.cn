@@ -1,6 +1,5 @@
 import type { Plugin } from 'vite'
 
-import minifyHtml from '@minify-html/node'
 import sharp from 'sharp'
 
 export default (): Plugin[] => {
@@ -60,20 +59,6 @@ export default (): Plugin[] => {
 						}
 					})
 				)
-			}
-		},
-		{
-			name: 'customize:minify-html',
-			enforce: 'post',
-			apply: 'build',
-
-			transformIndexHtml(html) {
-				return minifyHtml
-					.minify(Buffer.from(html), {
-						minify_css: true,
-						minify_js: true
-					})
-					.toString()
 			}
 		}
 	]
