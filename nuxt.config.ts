@@ -1,5 +1,16 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true }
+	compatibilityDate: 'latest',
+	css: ['lenis/dist/lenis.css'],
+	imports: {
+		autoImport: false
+	},
+	modules: [
+		'@bubblesortt/nuxt-es-toolkit',
+		'@pinia/nuxt',
+		'@unocss/nuxt',
+		'@vueuse/nuxt',
+		'lenis/nuxt',
+		'pinia-plugin-persistedstate/nuxt'
+	],
+	ssr: false
 })
