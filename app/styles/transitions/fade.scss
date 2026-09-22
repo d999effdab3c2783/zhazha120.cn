@@ -1,0 +1,25 @@
+:root {
+	--v-fade-duration: 500ms;
+	--v-fade-enter-duration: var(--v-fade-duration);
+	--v-fade-leave-duration: var(--v-fade-duration);
+}
+
+.v-fade {
+	&-enter-active {
+		@apply transition-(duration-[--v-fade-enter-duration]);
+	}
+
+	&-leave-active {
+		@apply transition-(duration-[--v-fade-leave-duration]);
+	}
+
+	&-enter-active,
+	&-leave-active {
+		@apply transition-(ease-in-out property-opacity);
+	}
+
+	&-enter-from,
+	&-leave-to {
+		@apply opacity-0;
+	}
+}

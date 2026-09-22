@@ -1,0 +1,15 @@
+.utils {
+	&__center {
+		&--flex {
+			@apply flex-(~ justify-center items-center);
+		}
+
+		&--grid {
+			@apply grid-(~ place-items-center);
+		}
+
+		&--position {
+			@apply position-(absolute top-1/2 left-1/2) translate-(-1/2);
+		}
+	}
+}

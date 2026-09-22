@@ -1,0 +1,25 @@
+:root {
+	--v-page-duration: 500ms;
+	--v-page-enter-duration: var(--v-page-duration);
+	--v-page-leave-duration: var(--v-page-duration);
+}
+
+.v-page {
+	&-enter-active {
+		@apply transition-(duration-[--v-page-enter-duration]);
+	}
+
+	&-leave-active {
+		@apply transition-(duration-[--v-page-leave-duration]);
+	}
+
+	&-enter-active,
+	&-leave-active {
+		@apply transition-(ease-in-out property-[opacity_filter]);
+	}
+
+	&-enter-from,
+	&-leave-to {
+		@apply opacity-0 blur;
+	}
+}

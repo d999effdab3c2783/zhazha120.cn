@@ -1,0 +1,43 @@
+diff --git a/es/_styles/common/dark.mjs b/es/_styles/common/dark.mjs
+--- a/es/_styles/common/dark.mjs
++++ b/es/_styles/common/dark.mjs
+@@ -5,10 +5,10 @@
+   neutralBase: "#000",
+   neutralInvertBase: "#fff",
+   neutralTextBase: "#fff",
+-  neutralPopover: "rgb(72, 72, 78)",
+-  neutralCard: "rgb(24, 24, 28)",
+-  neutralModal: "rgb(44, 44, 50)",
+-  neutralBody: "rgb(16, 16, 20)",
++  neutralPopover: `rgb(${72 - 10}, ${72 - 10}, ${78 - 14})`,
++  neutralCard: `rgb(${24 - 10}, ${24 - 10}, ${28 - 14})`,
++  neutralModal: `rgb(${44 - 10}, ${44 - 10}, ${50 - 14})`,
++  neutralBody: `rgb(${16 - 10}, ${16 - 10}, ${20 - 14})`,
+   alpha1: "0.9",
+   alpha2: "0.82",
+   alpha3: "0.52",
+@@ -153,4 +153,4 @@
+   boxShadow3: "0 6px 16px -9px rgba(0, 0, 0, .08), 0 9px 28px 0 rgba(0, 0, 0, .05), 0 12px 48px 16px rgba(0, 0, 0, .03)"
+ };
+ //#endregion
+-export { derived as default };
+\ No newline at end of file
++export { derived as default };
+diff --git a/lib/_styles/common/dark.js b/lib/_styles/common/dark.js
+--- a/lib/_styles/common/dark.js
++++ b/lib/_styles/common/dark.js
+@@ -5,10 +5,10 @@
+ 	neutralBase: "#000",
+ 	neutralInvertBase: "#fff",
+ 	neutralTextBase: "#fff",
+-	neutralPopover: "rgb(72, 72, 78)",
+-	neutralCard: "rgb(24, 24, 28)",
+-	neutralModal: "rgb(44, 44, 50)",
+-	neutralBody: "rgb(16, 16, 20)",
++	neutralPopover: `rgb(${72 - 10}, ${72 - 10}, ${78 - 14})`,
++	neutralCard: `rgb(${24 - 10}, ${24 - 10}, ${28 - 14})`,
++	neutralModal: `rgb(${44 - 10}, ${44 - 10}, ${50 - 14})`,
++	neutralBody: `rgb(${16 - 10}, ${16 - 10}, ${20 - 14})`,
+ 	alpha1: "0.9",
+ 	alpha2: "0.82",
+ 	alpha3: "0.52",
