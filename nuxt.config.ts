@@ -28,5 +28,10 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-	ssr: false
+	ssr: false,
+	vite: {
+		build: {
+			assetsInlineLimit: 0
+		}
+	}
 })
