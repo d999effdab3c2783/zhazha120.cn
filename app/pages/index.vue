@@ -4,13 +4,14 @@
 	import { onScopeDispose, useTemplateRef } from 'vue'
 
 	import event from '~/shared/event'
+	import type { Events } from '~/types/event'
 
 	const heroRef = useTemplateRef('heroRef')
 	const overviewRef = useTemplateRef('overviewRef')
 
 	const lenis = useLenis()
 
-	event.on('pages.home:scroll', target => {
+	const handleScroll = (target: Events['pages.home:scroll']) => {
 		if (isNil(lenis.value)) {
 			return
 		}
@@ -25,10 +26,12 @@
 		}
 
 		lenis.value.scrollTo(mappings[target].value.$el)
-	})
+	}
+
+	event.on('pages.home:scroll', handleScroll)
 
 	onScopeDispose(() => {
-		event.off('pages.home:scroll')
+		event.off('pages.home:scroll', handleScroll)
 	})
 </script>
 
