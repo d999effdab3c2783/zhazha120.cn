@@ -29,7 +29,7 @@
 				return
 			}
 
-			if (!newOptions.autoRaf) {
+			if (isNil(newOptions.autoRaf) || !newOptions.autoRaf) {
 				lenis.on('scroll', ScrollTrigger.update)
 
 				const handleTicker = (time: number) => {
