@@ -245,8 +245,8 @@
 
 	const handleMove = (event: MouseEvent) => {
 		if (mouseInCanvasElement.isOutside.value) {
-			pointer.x = 0
-			pointer.y = 0
+			pointer.x = -1
+			pointer.y = -1
 			return
 		}
 
