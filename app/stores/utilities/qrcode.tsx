@@ -7,4 +7,4 @@ export default {
 	name: '二维码',
 
 	render: () => <utilities-qrcode />
-} satisfies Utility
+} as const satisfies Utility

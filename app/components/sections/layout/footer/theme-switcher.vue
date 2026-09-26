@@ -29,7 +29,7 @@
 			name: '深色',
 			value: 'dark'
 		}
-	] satisfies ThemeOption[]
+	] as const satisfies ThemeOption[]
 
 	const handleThemeClick = (value: ThemeMode) => {
 		themeStore.$patch({
