@@ -3,7 +3,9 @@ import { defineStore } from 'pinia'
 
 import avatar from '~/assets/images/owner/avatar.svg?url'
 import { useApiStore } from '~/stores/api'
-import { name, poke } from '~/stores/owner/information'
+import contacts from '~/stores/owner/contacts'
+import { name, poke, bio } from '~/stores/owner/information'
+import portals from '~/stores/owner/portals'
 
 export const useOwnerStore = defineStore('owner', () => {
 	const apiStore = useApiStore()
@@ -17,6 +19,10 @@ export const useOwnerStore = defineStore('owner', () => {
 	return {
 		name,
 		avatar,
+		bio,
+
+		contacts,
+		portals,
 
 		handlePoke
 	}
