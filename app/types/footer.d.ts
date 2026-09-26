@@ -3,6 +3,7 @@ import type { MaybeRefOrGetter } from 'vue'
 export type FooterCopyright = {
 	readonly startYear: number
 	readonly endYear: MaybeRefOrGetter<number>
+	readonly comment: string
 }
 
 export type FooterFiling = {
