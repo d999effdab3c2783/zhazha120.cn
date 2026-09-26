@@ -33,7 +33,15 @@
 	import { clsx } from 'clsx'
 	import { isNil, isNotNil } from 'es-toolkit'
 	import { useLenis } from 'lenis/vue'
-	import { computed, nextTick, onWatcherCleanup, shallowReactive, useTemplateRef, watch } from 'vue'
+	import {
+		computed,
+		nextTick,
+		onWatcherCleanup,
+		shallowReactive,
+		useTemplateRef,
+		watch,
+		type ComponentPublicInstance
+	} from 'vue'
 
 	const props = withDefaults(
 		defineProps<
@@ -72,7 +80,7 @@
 		inheritAttrs: false
 	})
 
-	const containerRef = useTemplateRef('containerRef')
+	const containerRef = useTemplateRef<ComponentPublicInstance>('containerRef')
 	const canvasRef = useTemplateRef('canvasRef')
 
 	const { pixelRatio } = useDevicePixelRatio()
