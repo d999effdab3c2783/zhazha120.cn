@@ -9,36 +9,48 @@
 		:size="0"
 		vertical
 	>
-		<n-button
-			class="fw-bold"
+		<custom-redirect
+			#="{ aProps, redirect }"
 			:href="footerStore.filing.icp.href"
-			tag="a"
-			text
-			type="primary"
 		>
-			{{ footerStore.filing.icp.text }}
-		</n-button>
+			<n-button
+				v-bind="aProps"
+				class="fw-bold"
+				tag="a"
+				text
+				type="primary"
+				@click.prevent="redirect"
+			>
+				{{ footerStore.filing.icp.text }}
+			</n-button>
+		</custom-redirect>
 
-		<n-button
-			class="fw-bold"
+		<custom-redirect
+			#="{ aProps, redirect }"
 			:href="footerStore.filing.safety.href"
-			:style="{
-				'--n-icon-margin': '-.1em .1em 0 0'
-			}"
-			tag="a"
-			text
-			type="primary"
 		>
-			<template #icon>
-				<n-image
-					:img-props="{
-						class: 'h-full'
-					}"
-					:src="footerStore.filing.safety.icon"
-				/>
-			</template>
+			<n-button
+				class="fw-bold"
+				:style="{
+					'--n-icon-margin': '-.1em .1em 0 0'
+				}"
+				v-bind="aProps"
+				tag="a"
+				text
+				type="primary"
+				@click.prevent="redirect"
+			>
+				<template #icon>
+					<n-image
+						:img-props="{
+							class: 'h-full'
+						}"
+						:src="footerStore.filing.safety.icon"
+					/>
+				</template>
 
-			{{ footerStore.filing.safety.text }}
-		</n-button>
+				{{ footerStore.filing.safety.text }}
+			</n-button>
+		</custom-redirect>
 	</n-flex>
 </template>

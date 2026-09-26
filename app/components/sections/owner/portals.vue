@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { isNil } from 'es-toolkit'
+	import { isNotNil } from 'es-toolkit'
 
 	import { useOwnerStore } from '~/stores/owner'
 	import type { OwnerPortal } from '~/types/owner'
@@ -20,15 +20,13 @@
 				v-for="({ type, icon, name, href, comment }, index) in ownerStore.portals as OwnerPortal[]"
 				:key="index"
 			>
-				<n-popover
-					class="whitespace-pre-line"
-					:disabled="isNil(comment)"
-				>
-					<template #trigger>
+				<custom-redirect :href="href">
+					<template #default="{ aProps, redirect }">
 						<n-button
-							:href="href"
 							tag="a"
 							:type="type"
+							v-bind="aProps"
+							@click.prevent="redirect"
 						>
 							<template #icon>
 								<n-icon :class="icon" />
@@ -38,8 +36,15 @@
 						</n-button>
 					</template>
 
-					{{ comment }}
-				</n-popover>
+					<template
+						v-if="isNotNil(comment)"
+						#footer
+					>
+						<n-element class="text-center">
+							<n-text class="whitespace-pre-line">{{ comment }}</n-text>
+						</n-element>
+					</template>
+				</custom-redirect>
 			</template>
 		</n-flex>
 	</n-card>
