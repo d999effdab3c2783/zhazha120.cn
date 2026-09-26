@@ -6,6 +6,10 @@
 	defineProps<{
 		readonly items: RenderableText[]
 	}>()
+
+	defineOptions({
+		inheritAttrs: false
+	})
 </script>
 
 <template>
@@ -22,7 +26,12 @@
 			</template>
 
 			<template v-else>
-				<n-text v-bind="isPlainObject(item) ? pick(item, ['type', 'depth', 'class']) : {}">
+				<n-text
+					v-bind="{
+						...$attrs,
+						...(isPlainObject(item) ? pick(item, ['type', 'depth', 'class']) : {})
+					}"
+				>
 					{{ isPlainObject(item) ? item.text : item }}
 				</n-text>
 			</template>
