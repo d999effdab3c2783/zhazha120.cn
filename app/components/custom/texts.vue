@@ -18,7 +18,7 @@
 			:key="index"
 		>
 			<template v-if="isNil(item)">
-				<n-text>&nbsp;</n-text>
+				<n-text class="select-none">&nbsp;</n-text>
 			</template>
 
 			<template v-else>
