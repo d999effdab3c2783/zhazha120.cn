@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 	import { clsx } from 'clsx'
 	import type { ModalProps } from 'naive-ui'
 	import { computed, shallowRef } from 'vue'

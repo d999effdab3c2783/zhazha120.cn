@@ -8,7 +8,7 @@
 	}
 </script>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 	import { useThemeStore } from '~/stores/theme'
 
 	const themeStore = useThemeStore()

@@ -53,10 +53,7 @@
 
 <template>
 	<nuxt-layout name="app">
-		<custom-position
-			class="min-h-screen"
-			placement="center"
-		>
+		<n-element class="utils__center--grid min-h-screen">
 			<n-flex
 				align="center"
 				class="p-2 container"
@@ -83,6 +80,10 @@
 					我知道了
 				</n-button>
 			</n-flex>
-		</custom-position>
+		</n-element>
 	</nuxt-layout>
 </template>
+
+<style scoped lang="scss">
+	@use '~/styles/utils';
+</style>

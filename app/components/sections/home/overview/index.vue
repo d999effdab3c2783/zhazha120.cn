@@ -1,12 +1,9 @@
 <template>
-	<custom-position
-		class="min-h-screen"
-		placement="center"
-	>
+	<n-element class="utils__center--grid min-h-screen">
 		<n-empty />
-	</custom-position>
+	</n-element>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 	@use '~/styles/utils';
 </style>

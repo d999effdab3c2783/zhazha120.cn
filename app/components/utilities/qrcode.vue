@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 	import { useBrowserLocation } from '@vueuse/core'
 	import type { QrCodeProps } from 'naive-ui'
 	import { useThemeVars } from 'naive-ui'
@@ -70,15 +70,12 @@
 			</transition>
 		</n-flex>
 
-		<custom-position
-			cover
-			placement="center"
-		>
+		<n-element class="utils__center--grid size-full">
 			<n-qr-code
 				class="box-content"
 				v-bind="config"
 			/>
-		</custom-position>
+		</n-element>
 
 		<n-divider class="!my-0" />
 
@@ -217,3 +214,7 @@
 		</n-flex>
 	</n-flex>
 </template>
+
+<style scoped lang="scss">
+	@use '~/styles/utils';
+</style>

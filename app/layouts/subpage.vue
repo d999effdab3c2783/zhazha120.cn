@@ -34,10 +34,7 @@
 
 <template>
 	<nuxt-layout name="default">
-		<custom-position
-			cover
-			placement="center"
-		>
+		<n-element class="utils__center--grid size-full">
 			<n-flex
 				:class="containerClassNames"
 				size="large"
@@ -52,6 +49,10 @@
 					<slot />
 				</n-element>
 			</n-flex>
-		</custom-position>
+		</n-element>
 	</nuxt-layout>
 </template>
+
+<style scoped lang="scss">
+	@use '~/styles/utils';
+</style>
