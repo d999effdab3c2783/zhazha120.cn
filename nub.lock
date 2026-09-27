@@ -27,13 +27,13 @@ importers:
         version: 3.1.7
       '@nuxt/eslint-config':
         specifier: ^1.17.0
-        version: 1.17.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0)(typescript@6.0.3)
+        version: 1.17.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
       '@nuxt/kit':
         specifier: ^4.5.2
         version: 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       '@nuxt/scripts':
         specifier: ^1.3.9
-        version: 1.3.9(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@oxc-parser/binding-wasm32-wasi@0.140.0)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(db0@0.3.4)(error-stack-parser-es@2.0.1)(esbuild@0.28.2)(eslint@10.11.0)(hookable@6.1.2)(ioredis@5.11.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rolldown@1.2.9)(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))
+        version: 1.3.9(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@oxc-parser/binding-wasm32-wasi@0.140.0)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(db0@0.3.4)(error-stack-parser-es@2.0.1)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(hookable@6.1.2)(ioredis@5.11.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rolldown@1.2.9)(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))
       '@pinia/nuxt':
         specifier: ^1.0.2
         version: 1.0.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))
@@ -42,7 +42,7 @@ importers:
         version: 26.6.2
       '@unocss/eslint-config':
         specifier: ^66.10.5
-        version: 66.10.5(eslint@10.11.0)(typescript@6.0.3)
+        version: 66.10.5(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
       '@unocss/nuxt':
         specifier: ^66.10.5
         version: 66.10.5(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(esbuild@0.28.2)(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(webpack@5.111.1)
@@ -54,7 +54,7 @@ importers:
         version: 3.0.3(vue@3.5.43)
       '@vueuse/nuxt':
         specifier: ^15.0.0
-        version: 15.0.0(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(sass-embedded@1.104.1)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)
+        version: 15.0.0(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(sass-embedded@1.104.1)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -63,7 +63,7 @@ importers:
         version: 1.52.0
       eslint:
         specifier: ^10.11.0
-        version: 10.11.0
+        version: 10.11.0(jiti@2.7.0)
       eslint-plugin-oxlint:
         specifier: ^1.83.0
         version: 1.83.0(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))
@@ -73,6 +73,9 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      jiti:
+        specifier: ^2.7.0
+        version: 2.7.0
       lenis:
         specifier: ^1.3.26
         version: 1.3.26(@nuxt/kit@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(nitropack@2.13.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(magic-string@1.4.1)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vue@3.5.43)
@@ -84,10 +87,7 @@ importers:
         version: 2.45.3(patch_hash=e44d4bf474eeeb4bb64acc66b6051a1b186ed4dd5560bdd0b37586b0a9252c70)(vue@3.5.43)
       nuxt:
         specifier: ^4.5.2
-        version: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
-      nuxt-build-info:
-        specifier: ^1.1.0
-        version: 1.1.0
+        version: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       oxfmt:
         specifier: ^0.68.0
         version: 0.68.0
@@ -109,6 +109,12 @@ importers:
       unocss:
         specifier: ^66.10.5
         version: 66.10.5(@nuxt/kit@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(nitropack@2.13.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(@unocss/webpack@66.10.5(webpack@5.111.1))(esbuild@0.28.2)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(undici@8.10.2)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      unplugin-info:
+        specifier: ^1.3.2
+        version: 1.3.2(@nuxt/kit@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(nitropack@2.13.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(magic-string@1.4.1)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)
+      unplugin-macros:
+        specifier: ^0.23.2
+        version: 0.23.2(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       vue:
         specifier: ^3.5.43
         version: 3.5.43
@@ -2018,6 +2024,10 @@ packages:
   '@types/node@26.6.2':
     resolution: {integrity: sha512-X1P21scMv4zGKLYqjdGjaKa7COa0RKVYYZZN/NfvLQ1JegxFhdhpZG/Lyn8AXx6CDUavKAd11v6BvfpkDByK8g==}
 
+  '@types/parse-path@7.1.0':
+    resolution: {integrity: sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==}
+    deprecated: This is a stub types definition. parse-path provides its own type definitions, so you do not need this installed.
+
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
@@ -2726,6 +2736,141 @@ packages:
   '@xtuc/long@4.2.2':
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
 
+  '@yuku-analyzer/binding-android-arm64@0.8.7':
+    resolution: {integrity: sha512-pzJ++UMCZEV4s6SP3Ryvj+snWP8s7aTXFkSXRyeBF4RSALftPzfqYssHdGOmOH2QnRAtyOhhg64tdjeSGJvYRg==}
+    cpu: [arm64]
+    os: [android]
+
+  '@yuku-analyzer/binding-darwin-arm64@0.8.7':
+    resolution: {integrity: sha512-vymR7Us3i/HJvUxA1N5sKCrrn2mXw/Xvzbt66zlRyGPDmkUzFCrn34OqodR/zctmD1JhaFlv+Ur6xNNPRIid/w==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@yuku-analyzer/binding-darwin-x64@0.8.7':
+    resolution: {integrity: sha512-aX1xy6wJeI2QN/ipu9B6/dzz6RmHQ5+Ty6uyf9csqYZDnY4/U2GsDskYQIRysc2Cuh+GNnvuO5xCXxiqkmVEcw==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@yuku-analyzer/binding-freebsd-x64@0.8.7':
+    resolution: {integrity: sha512-5LT2KkjK0zBI2s3VoSyGPSs9Ey7rWPxWkCyFgZXoszQOkAk2z0biP+DLzb9zw6flmwwCCiyeZRqM65srfo8l1Q==}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@yuku-analyzer/binding-linux-arm-gnu@0.8.7':
+    resolution: {integrity: sha512-4haNlVk624QoNSKIneoH9JKu5SvfD+Hkxg490HUS5pfFuWwoXT3zOmAdfwPMsSH0bNIkFO7GqtwDZ9EVpyzepw==}
+    cpu: [arm]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-analyzer/binding-linux-arm-musl@0.8.7':
+    resolution: {integrity: sha512-7HwJHVFtrufB5qHHL1PSDPr/j6uoNLwbwxa04QzsbpcbbzfDUbT37loHPu5u0NuetRUlV+TqXDlX6OpXcM8hKQ==}
+    cpu: [arm]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-analyzer/binding-linux-arm64-gnu@0.8.7':
+    resolution: {integrity: sha512-yUEgxEPuDVBO+nkDw8qbssYA8oHu82Q0da+C7rGyVplmjlKa5DhBnMMagTEjFZx4jNDVWnGHJreUCSeGL0x/gQ==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-analyzer/binding-linux-arm64-musl@0.8.7':
+    resolution: {integrity: sha512-2X7EwxPbgdNRqgMwtxOnNOGEmdm1RS8PD2Q5cOxj8cEZD4fy7yHHeSDoEdBOyrJtHzbG6jQB6CeReO1okb/S7Q==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-analyzer/binding-linux-x64-gnu@0.8.7':
+    resolution: {integrity: sha512-k/iQFK1gAvaHLzXXZ3/+g48wT5YB6MfikPb+juGCd9HzyPMUSBCy44rz6nT+xoWnnxmBoeBUywA4CvWCWZFTtg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-analyzer/binding-linux-x64-musl@0.8.7':
+    resolution: {integrity: sha512-gTfYHx3cg8FERTYsg1dQrQFTutcWJ7wTp8YToyAJnZMbUCkcyuwUiWNYaEHyF0xIb+PsG7HfD+BLWhRRom5qKg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-analyzer/binding-win32-arm64@0.8.7':
+    resolution: {integrity: sha512-XDCWZZztOvdTtPNaU5EzrrV0dmMugdZ+Qdq5INeiGhGW5hD0TuCBIIXK7wTmRM6NcKarGlyBP5SYkiAuw6+slg==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@yuku-analyzer/binding-win32-x64@0.8.7':
+    resolution: {integrity: sha512-VtSH1pWuk3bo+BiUAtzYa4Ku1r/10CO14QvkGpRhDcFck8sIf7ox+wiucyKNKcf+srWCYxR1hO+wn5N3BdtFdw==}
+    cpu: [x64]
+    os: [win32]
+
+  '@yuku-parser/binding-android-arm64@0.8.7':
+    resolution: {integrity: sha512-eGKYiUDX7Y0V7tDTmg+JTVnXnjMqfXXsorZ+EDf5kxwchQ3Or1HS14MzI2fw+jFhHR85fCWt+mtX33Yao73hIQ==}
+    cpu: [arm64]
+    os: [android]
+
+  '@yuku-parser/binding-darwin-arm64@0.8.7':
+    resolution: {integrity: sha512-Re0RHelKLnjEURulY2/KxW+Ngb8zuNA4BRZuMwgGQNzVumT6u4U2N2hc01oeYVNVof0i7GrXE4UCNBgbpRRnjQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@yuku-parser/binding-darwin-x64@0.8.7':
+    resolution: {integrity: sha512-Hn8DROtQkjlA1ACbPgj4a7eP9IuVOI504oiTwpkWPbpaDWD9KdmnVYCqW+1LfenNK/g7O9NhWGpXEdaCNX7lIA==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@yuku-parser/binding-freebsd-x64@0.8.7':
+    resolution: {integrity: sha512-bAP2OV8wRuzplX/jYxv9+vvqQT8JxyNphI8fLfXGL054Xs+4/J5u33cIm3y4rxY8rdoLmmdiJs2Tq7r7lrDRfA==}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@yuku-parser/binding-linux-arm-gnu@0.8.7':
+    resolution: {integrity: sha512-kTYwJQQgmZeAWdDIWabiReIZMpmfLueIj1tCmjStUtFGhR1Z0qwxonKVfUC4N7h/VhGGzLZ//7O1kgt1QKqgCg==}
+    cpu: [arm]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-parser/binding-linux-arm-musl@0.8.7':
+    resolution: {integrity: sha512-uL4jE8HPT2BLlxAXyD10LqgPuXa9eDa0BKpCdSANmzIJghq/2eZo3/gQNtaxPZMupWoxjYzSad9IXrwu7aYPXQ==}
+    cpu: [arm]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-parser/binding-linux-arm64-gnu@0.8.7':
+    resolution: {integrity: sha512-3gVN4pWSKZmXiNX7cU164dR9MPvesCHnlH6nPfpK+yQsCuYphjKKplcb4SnZBrhiqmXbgb2HR0c2TS0IZUPhgA==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-parser/binding-linux-arm64-musl@0.8.7':
+    resolution: {integrity: sha512-S0mwfEjoLpxzXeZw802Wa4RaELsQiPtWqG6INcy8j4GtvNFtl4LCX3eGO1XLn9pyLAISLzTRyU3zUCBUPin8lg==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-parser/binding-linux-x64-gnu@0.8.7':
+    resolution: {integrity: sha512-lnbWdPmerE5D1uH1G4IEZKnPzCrWCStRGrtgpSIe1RibAo5bZIjDbbbPYXmMHCEh4F+x/JaJpElh26a3r+BPbg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-parser/binding-linux-x64-musl@0.8.7':
+    resolution: {integrity: sha512-769uwndMvMzUvATWbAcEvyLHKA+DzhHSCl/obBUrRdYfRo26yxui6S8y3z7uJ+Naup7UKrDxrpK7OnQkxkl9KQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-parser/binding-win32-arm64@0.8.7':
+    resolution: {integrity: sha512-mEB/9PlaAkisJ6KWGz0zvywXoU6+80dTlR2LwS7s/jcXXoU6fm2+sitBZXtqu3+Q4DcDgPxM45uWMCzPs0TSRw==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@yuku-parser/binding-win32-x64@0.8.7':
+    resolution: {integrity: sha512-8vNB2DP0ou61nGb8tc/qfi41gfyDXz1MHr2zqL3nR+cJ6CEbiuWV/l/a/vv151gCgiZLLAyGkQGENpozdg716w==}
+    cpu: [x64]
+    os: [win32]
+
+  '@yuku-toolchain/types@0.8.7':
+    resolution: {integrity: sha512-2Z53dNxAJL6UvFoIrDZvYf3zlO8s4VJK4O2hhaB4mXVwwpX/7ajtss3cmfqKvamlNLWyt9FSWs4eoYdlbxpnHA==}
+
   abbrev@3.0.1:
     resolution: {integrity: sha512-AO2ac6pjRB3SJmGJo+v5/aK6Omggp6fsLrs6wN9bd35ulu4cCwaAU9+7ZhXjeqHVkaHThLuzH0nZr0YpCDhygg==}
     engines: {node: ^18.17.0 || >=20.5.0}
@@ -2978,9 +3123,6 @@ packages:
   chrome-trace-event@1.0.4:
     resolution: {integrity: sha512-rNjApaLzuwaOTjCiT8lSDdGN1APCiqkChLMJxJPWLunPAt5fy8xgU9/jNOchV84wfIxrA0lRQB7oCT8jrn/wrQ==}
     engines: {node: '>=6.0'}
-
-  ci-info@1.6.0:
-    resolution: {integrity: sha512-vsGdkwSCDpWmP80ncATX7iea5DWQemg1UgCW5J8tqjU3lYw4FBYuj89J0CTVomA7BEfvSZd84GmHko+MxFQU2A==}
 
   ci-info@4.4.0:
     resolution: {integrity: sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg==}
@@ -3723,6 +3865,12 @@ packages:
     resolution: {integrity: sha512-r+mvuDjrjMpsdw46Kmeydb8bdHm7wOKw8wNBtTndkjbPjgAp5oUJUxRE76wZFknxIPokfWvep2qSXK37aXE6zg==}
     hasBin: true
 
+  git-up@8.1.1:
+    resolution: {integrity: sha512-FDenSF3fVqBYSaJoYy1KSc2wosx0gCvKP+c+PRBht7cAaiCeQlBtfBDX9vgnNOHmdePlSFITVcn4pFfcgNvx3g==}
+
+  git-url-parse@16.1.0:
+    resolution: {integrity: sha512-cPLz4HuK86wClEW7iDdeAKcCVlWXmrLpb2L+G9goW0Z1dtpNS6BXXSOckUTlJT/LDQViE1QZKstNORzHsLnobw==}
+
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -3860,6 +4008,10 @@ packages:
   import-meta-resolve@4.2.0:
     resolution: {integrity: sha512-Iqv2fzaTQN28s/FwZAoFq0ZSs/7hMAHJVX+w8PZl3cY19Pxk6jFFalxQoIfW2826i/fDLXv8IiEZRIT0lDuWcg==}
 
+  import-without-cache@0.4.1:
+    resolution: {integrity: sha512-vXoV9PjKHEednCUu01e98TkImxy67e3BJXbTIOmIq4Hyzw3IAwYRcuPkfeTzJzwyyts4kjuA73x+pWJLc4f86A==}
+    engines: {node: ^22.18.0 || >=24.0.0}
+
   impound@1.2.0:
     resolution: {integrity: sha512-hbFh2WURN+XQ364SbblzubhEEj/B3qZCe80l/EHXPWM6/kZP2mvOllxwRBBWNxe4gLbqXZL0fxOZwoDCSlJZQw==}
 
@@ -3888,10 +4040,6 @@ packages:
   is-builtin-module@5.0.0:
     resolution: {integrity: sha512-f4RqJKBUe5rQkJ2eJEJBXSticB3hGbN9j0yxxMQFqIW89Jp9WYFtzfTcRlstDKVUTRzSOTLKRfO9vIztenwtxA==}
     engines: {node: '>=18.20'}
-
-  is-ci@1.2.1:
-    resolution: {integrity: sha512-s6tfsaQaQi3JNciBH6shVqEDvhGut0SUXr31ag8Pd8BBbVVlcGfWhpPmEOoM6RJ5TFhbypvf5yyRw/VXW1IiWg==}
-    hasBin: true
 
   is-core-module@2.17.0:
     resolution: {integrity: sha512-J/vG0zBCbIKOQFfufSwyXdMrsohyJIUNkrnmo6WZGzoM7tr/lsbfW5b2BvisL6zsyMzK9UxV9L6c7AoFbyXHOA==}
@@ -3944,6 +4092,9 @@ packages:
 
   is-reference@1.2.1:
     resolution: {integrity: sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==}
+
+  is-ssh@1.4.1:
+    resolution: {integrity: sha512-JNeu1wQsHjyHgn9NcWTaXq6zWSR6hqE0++zhfZlkFBbScNkyvxCdeV8sRkSBaeLKxmbpR21brail63ACNxJ0Tg==}
 
   is-stream@2.0.1:
     resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
@@ -4179,6 +4330,10 @@ packages:
   magic-string-ast@1.0.3:
     resolution: {integrity: sha512-CvkkH1i81zl7mmb94DsRiFeG9V2fR2JeuK8yDgS8oiZSFa++wWLEgZ5ufEOyLHbvSbD1gTRKv9NdX69Rnvr9JA==}
     engines: {node: '>=20.19.0'}
+
+  magic-string-ast@2.1.1:
+    resolution: {integrity: sha512-pO1I6nw3/xeGpFhYikPhTzG9s2lw7oAbNElLJ9dhHfXa8r5K3PzrRdoshw4gdADagOjGKO40ae+ZnXNuqQEN4w==}
+    engines: {node: ^22.18.0 || >=24.0.0}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -4428,10 +4583,6 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  nuxt-build-info@1.1.0:
-    resolution: {integrity: sha512-Ji4/WL66XWlSFUxRcbEOysimW4O/kxeVsvCpFilxo6knknM+jTC8B1NLkJuUdxnbs+T/BSyum+DY7wv+tbDKTw==}
-    engines: {node: '>=20'}
-
   nuxt@4.5.2:
     resolution: {integrity: sha512-tR3fcqeHlHmmkLMpIg3V7Y+1ltr302lW8djMw/iy+myfo7QSSz+BVJDuQhg5j73b9oteSyBfOKTDYTgvMtj6TA==}
     engines: {node: ^22.19.0 || ^24.11.0 || >=26.0.0}
@@ -4584,8 +4735,15 @@ packages:
   parse-imports-exports@0.2.4:
     resolution: {integrity: sha512-4s6vd6dx1AotCx/RCI2m7t7GCh5bDRUtGNvRfHSP2wbBQdMi67pPe7mtzmgwcaQ8VKK/6IB7Glfyu3qdZJPybQ==}
 
+  parse-path@7.1.0:
+    resolution: {integrity: sha512-EuCycjZtfPcjWk7KTksnJ5xPMvWGA/6i4zrLYhRG0hGvC3GPU/jGUj3Cy+ZR0v30duV3e23R95T1lE2+lsndSw==}
+
   parse-statements@1.0.11:
     resolution: {integrity: sha512-HlsyYdMBnbPQ9Jr/VgJ1YF4scnldvJpJxCVx6KgqPL4dxppsWrJHCIIxQXMJrqGnsRkNPATbeMJ8Yxu7JMsYcA==}
+
+  parse-url@9.2.0:
+    resolution: {integrity: sha512-bCgsFI+GeGWPAvAiUv63ZorMeif3/U0zaXABGJbOWt5OH2KCaPHF6S+0ok4aqM9RuIPGyZdx9tR9l13PsW4AYQ==}
+    engines: {node: '>=14.13.0'}
 
   parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
@@ -4866,6 +5024,9 @@ packages:
 
   proper-lockfile@4.1.2:
     resolution: {integrity: sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==}
+
+  protocols@2.0.2:
+    resolution: {integrity: sha512-hHVTzba3wboROl0/aWRRG9dMytgH6ow//STBZh43l/wQgmMhYhOFi0EHWAPtoCz9IAUymsyP0TSBHkhgMEGNnQ==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -5280,9 +5441,6 @@ packages:
     resolution: {integrity: sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==}
     engines: {node: '>= 0.8'}
 
-  std-env@1.3.1:
-    resolution: {integrity: sha512-KI2F2pPJpd3lHjng+QLezu0eq+QDtXcv1um016mhOPAJFHKL+09ykK5PUBWta2pZDC8BVV0VPya08A15bUXSLQ==}
-
   std-env@4.2.0:
     resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
 
@@ -5574,6 +5732,41 @@ packages:
       '@unocss/postcss':
         optional: true
       '@unocss/webpack':
+        optional: true
+
+  unplugin-info@1.3.2:
+    resolution: {integrity: sha512-Jrn1GMtkckPSeYxS7Ks4LNNBRsTcR2+WAy4kurSrDK2r425dbjuJUDvTwniyqdhlHPakdE95zh130vcihlkZrg==}
+    peerDependencies:
+      '@nuxt/kit': '>=3'
+      '@nuxt/schema': '>=3'
+      '@rspack/core': '*'
+      esbuild: '*'
+      rollup: ^2 || ^3 || ^4
+      vite: '>=3.2.7'
+      webpack: ^4 || ^5
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
+      '@nuxt/schema':
+        optional: true
+      '@rspack/core':
+        optional: true
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+
+  unplugin-macros@0.23.2:
+    resolution: {integrity: sha512-cO02thsXqaHrxDkmc1SfNRrZ7jVNkgmrtEmlic0kHCFJFpjXsmzxNjfmH3F2Obs61OChmoEx0jcHjqwkmd/Rqw==}
+    engines: {node: ^22.18.0 || ^24.11.0 || >=26.0.0}
+    peerDependencies:
+      unrun: ^0.3.1
+    peerDependenciesMeta:
+      unrun:
         optional: true
 
   unplugin-utils@0.3.2:
@@ -6033,6 +6226,15 @@ packages:
   youch@4.1.1:
     resolution: {integrity: sha512-mxW3qiSnl+GRxXsaUMzv2Mbada1Y8CDltET9UxejDQe6DBYlSekghl5U5K0ReAikcHDi0G1vKZEmmo/NWAGKLA==}
 
+  yuku-analyzer@0.8.7:
+    resolution: {integrity: sha512-nyPXcwwRPEggJqxIP28GeLKPjk9oGUuBlS4I0KfFrezNe93Ie9WIlOYRI42bo+MmZoxH238XHoPy0IZdwZIBxA==}
+
+  yuku-ast@0.8.7:
+    resolution: {integrity: sha512-h6+4bDfyootiMB9vckk5uKo5r5j0GHrkr17FQTDNfEsFT3DWlN9uu1HJwQwc64pgmLCI945fWM3lbTIqxjT3GQ==}
+
+  yuku-parser@0.8.7:
+    resolution: {integrity: sha512-vRD9nwt4L3aYpxNqeSC4WqLv58xrXef0Ong1Mc45CTXTIpvLafx7JO05sczmQZwdLEZvywrLOGdNC5+Rp5N1BQ==}
+
   zip-stream@6.0.1:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
@@ -6322,12 +6524,12 @@ snapshots:
 
   '@emotion/hash@0.8.0': {}
 
-  '@es-joy/jsdoccomment@0.91.0(eslint@10.11.0)':
+  '@es-joy/jsdoccomment@0.91.0(eslint@10.11.0(jiti@2.7.0))':
     dependencies:
       '@types/estree': 1.0.9
       '@typescript-eslint/types': 8.70.0
       comment-parser: 1.4.7
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       esquery: 1.7.0
       jsdoc-type-pratt-parser: 8.0.0
     transitivePeerDependencies:
@@ -6413,17 +6615,17 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@eslint-community/eslint-utils@4.10.1(eslint@10.11.0)':
+  '@eslint-community/eslint-utils@4.10.1(eslint@10.11.0(jiti@2.7.0))':
     dependencies:
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/compat@2.1.1(eslint@10.11.0)':
+  '@eslint/compat@2.1.1(eslint@10.11.0(jiti@2.7.0))':
     dependencies:
       '@eslint/core': 1.2.1
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
 
   '@eslint/config-array@0.23.5':
     dependencies:
@@ -6450,9 +6652,9 @@ snapshots:
       mdn-data: 2.35.0
       source-map-js: 1.2.1
 
-  '@eslint/js@10.0.1(eslint@10.11.0)':
+  '@eslint/js@10.0.1(eslint@10.11.0(jiti@2.7.0))':
     dependencies:
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
 
   '@eslint/object-schema@3.0.5': {}
 
@@ -6632,7 +6834,7 @@ snapshots:
 
   '@nuxt/devalue@2.0.2': {}
 
-  '@nuxt/devtools-kit@3.4.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(error-stack-parser-es@2.0.1)(eslint@10.11.0)(hookable@6.1.2)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(ofetch@1.5.1(undici@6.28.1))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))':
+  '@nuxt/devtools-kit@3.4.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(error-stack-parser-es@2.0.1)(eslint@10.11.0(jiti@2.7.0))(hookable@6.1.2)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(ofetch@1.5.1(undici@6.28.1))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))':
     dependencies:
       '@nuxt/kit': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       '@nuxt/schema': 4.5.2(44dec5c001bfc0840696269df2845ad7)
@@ -6640,7 +6842,7 @@ snapshots:
       error-stack-parser-es: 2.0.1
       execa: 8.0.1
       hookable: 6.1.2
-      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       ofetch: 1.5.1(undici@6.28.1)
       unimport: 6.5.0(esbuild@0.28.2)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       unstorage: 1.17.5(db0@0.3.4)(ioredis@5.11.1)
@@ -6665,7 +6867,7 @@ snapshots:
 
   '@nuxt/devtools@3.4.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(db0@0.3.4)(ioredis@5.11.1)(magic-string@1.4.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))':
     dependencies:
-      '@nuxt/devtools-kit': 3.4.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(error-stack-parser-es@2.0.1)(eslint@10.11.0)(hookable@6.1.2)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(ofetch@1.5.1(undici@6.28.1))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))
+      '@nuxt/devtools-kit': 3.4.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(error-stack-parser-es@2.0.1)(eslint@10.11.0(jiti@2.7.0))(hookable@6.1.2)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(ofetch@1.5.1(undici@6.28.1))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))
       '@nuxt/devtools-wizard': 3.4.2
       '@nuxt/kit': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       '@nuxt/schema': 4.5.2(44dec5c001bfc0840696269df2845ad7)
@@ -6731,30 +6933,30 @@ snapshots:
       - utf-8-validate
       - webpack
 
-  '@nuxt/eslint-config@1.17.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0)(typescript@6.0.3)':
+  '@nuxt/eslint-config@1.17.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
       '@antfu/install-pkg': 2.1.0
       '@clack/prompts': 1.8.1
-      '@eslint/js': 10.0.1(eslint@10.11.0)
-      '@nuxt/eslint-plugin': 1.17.0(eslint@10.11.0)(typescript@6.0.3)
-      '@stylistic/eslint-plugin': 5.10.0(eslint@10.11.0)
-      '@typescript-eslint/eslint-plugin': 8.70.0(@typescript-eslint/parser@8.70.0(eslint@10.11.0)(typescript@6.0.3))(eslint@10.11.0)(typescript@6.0.3)
-      '@typescript-eslint/parser': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
-      eslint: 10.11.0
-      eslint-config-flat-gitignore: 2.4.0(eslint@10.11.0)
-      eslint-flat-config-utils: 3.2.0(eslint@10.11.0)
-      eslint-merge-processors: 2.0.0(eslint@10.11.0)
-      eslint-plugin-import-lite: 0.6.0(eslint@10.11.0)
-      eslint-plugin-import-x: 4.17.1(eslint@10.11.0)
-      eslint-plugin-jsdoc: 63.3.3(eslint@10.11.0)
-      eslint-plugin-regexp: 3.3.1(eslint@10.11.0)
-      eslint-plugin-unicorn: 73.0.0(eslint@10.11.0)
-      eslint-plugin-vue: 10.11.0(@stylistic/eslint-plugin@5.10.0(eslint@10.11.0))(@typescript-eslint/parser@8.70.0(eslint@10.11.0)(typescript@6.0.3))(eslint@10.11.0)(vue-eslint-parser@10.4.1(eslint@10.11.0))
-      eslint-processor-vue-blocks: 2.0.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0)
+      '@eslint/js': 10.0.1(eslint@10.11.0(jiti@2.7.0))
+      '@nuxt/eslint-plugin': 1.17.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
+      '@stylistic/eslint-plugin': 5.10.0(eslint@10.11.0(jiti@2.7.0))
+      '@typescript-eslint/eslint-plugin': 8.70.0(@typescript-eslint/parser@8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
+      '@typescript-eslint/parser': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
+      eslint: 10.11.0(jiti@2.7.0)
+      eslint-config-flat-gitignore: 2.4.0(eslint@10.11.0(jiti@2.7.0))
+      eslint-flat-config-utils: 3.2.0(eslint@10.11.0(jiti@2.7.0))
+      eslint-merge-processors: 2.0.0(eslint@10.11.0(jiti@2.7.0))
+      eslint-plugin-import-lite: 0.6.0(eslint@10.11.0(jiti@2.7.0))
+      eslint-plugin-import-x: 4.17.1(eslint@10.11.0(jiti@2.7.0))
+      eslint-plugin-jsdoc: 63.3.3(eslint@10.11.0(jiti@2.7.0))
+      eslint-plugin-regexp: 3.3.1(eslint@10.11.0(jiti@2.7.0))
+      eslint-plugin-unicorn: 73.0.0(eslint@10.11.0(jiti@2.7.0))
+      eslint-plugin-vue: 10.11.0(@stylistic/eslint-plugin@5.10.0(eslint@10.11.0(jiti@2.7.0)))(@typescript-eslint/parser@8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.11.0(jiti@2.7.0))(vue-eslint-parser@10.4.1(eslint@10.11.0(jiti@2.7.0)))
+      eslint-processor-vue-blocks: 2.0.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0(jiti@2.7.0))
       globals: 17.12.0
       local-pkg: 1.2.1
       pathe: 2.0.3
-      vue-eslint-parser: 10.4.1(eslint@10.11.0)
+      vue-eslint-parser: 10.4.1(eslint@10.11.0(jiti@2.7.0))
     transitivePeerDependencies:
       - '@eslint/core'
       - '@typescript-eslint/scope-manager'
@@ -6768,11 +6970,11 @@ snapshots:
       - type-fest
       - typescript
 
-  '@nuxt/eslint-plugin@1.17.0(eslint@10.11.0)(typescript@6.0.3)':
+  '@nuxt/eslint-plugin@1.17.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
       '@typescript-eslint/types': 8.70.0
-      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
-      eslint: 10.11.0
+      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
+      eslint: 10.11.0(jiti@2.7.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6806,6 +7008,7 @@ snapshots:
       - bun
       - magicast
       - webpack
+    optional: true
 
   '@nuxt/kit@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))':
     dependencies:
@@ -6858,7 +7061,7 @@ snapshots:
       mocked-exports: 0.1.1
       nitropack: 2.13.4(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       nostics: 1.2.0
-      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       nypm: 0.6.10
       ohash: 2.0.12
       pathe: 2.0.3
@@ -7012,9 +7215,9 @@ snapshots:
       vue-bundle-renderer: 2.4.0(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       vue-router: 5.3.1(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)
 
-  '@nuxt/scripts@1.3.9(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@oxc-parser/binding-wasm32-wasi@0.140.0)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(db0@0.3.4)(error-stack-parser-es@2.0.1)(esbuild@0.28.2)(eslint@10.11.0)(hookable@6.1.2)(ioredis@5.11.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rolldown@1.2.9)(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))':
+  '@nuxt/scripts@1.3.9(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@oxc-parser/binding-wasm32-wasi@0.140.0)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(db0@0.3.4)(error-stack-parser-es@2.0.1)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(hookable@6.1.2)(ioredis@5.11.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rolldown@1.2.9)(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))':
     dependencies:
-      '@nuxt/devtools-kit': 3.4.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(error-stack-parser-es@2.0.1)(eslint@10.11.0)(hookable@6.1.2)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(ofetch@1.5.1(undici@6.28.1))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))
+      '@nuxt/devtools-kit': 3.4.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(birpc@4.2.0)(error-stack-parser-es@2.0.1)(eslint@10.11.0(jiti@2.7.0))(hookable@6.1.2)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(ofetch@1.5.1(undici@6.28.1))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(rollup@4.63.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.1))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))
       '@vueuse/core': 14.4.0(vue@3.5.43)
       '@vueuse/shared': 14.4.0(vue@3.5.43)
       consola: 3.4.2
@@ -7078,7 +7281,7 @@ snapshots:
       rc9: 3.1.0
       std-env: 4.2.0
 
-  '@nuxt/vite-builder@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(eslint@10.11.0)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vue@3.5.43)':
+  '@nuxt/vite-builder@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(eslint@10.11.0(jiti@2.7.0))(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vue@3.5.43)':
     dependencies:
       '@nuxt/kit': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       '@nuxt/schema': 4.5.2(44dec5c001bfc0840696269df2845ad7)
@@ -7097,7 +7300,7 @@ snapshots:
       knitwork: 1.3.0
       mlly: 1.8.2
       mocked-exports: 0.1.1
-      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       nypm: 0.6.10
       pathe: 2.0.3
       pkg-types: 2.3.3
@@ -7111,7 +7314,7 @@ snapshots:
       unplugin: 3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       vite: 8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)
       vite-node: 6.0.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)
-      vite-plugin-checker: 0.14.5(eslint@10.11.0)(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      vite-plugin-checker: 0.14.5(eslint@10.11.0(jiti@2.7.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       vue: 3.5.43
       vue-bundle-renderer: 2.4.0(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
     transitivePeerDependencies:
@@ -7735,11 +7938,11 @@ snapshots:
 
   '@speed-highlight/core@1.2.24': {}
 
-  '@stylistic/eslint-plugin@5.10.0(eslint@10.11.0)':
+  '@stylistic/eslint-plugin@5.10.0(eslint@10.11.0(jiti@2.7.0))':
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0)
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0(jiti@2.7.0))
       '@typescript-eslint/types': 8.70.0
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
       estraverse: 5.3.0
@@ -7768,19 +7971,23 @@ snapshots:
     dependencies:
       undici-types: 8.9.0
 
+  '@types/parse-path@7.1.0':
+    dependencies:
+      parse-path: 7.1.0
+
   '@types/resolve@1.20.2': {}
 
   '@types/web-bluetooth@0.0.21': {}
 
-  '@typescript-eslint/eslint-plugin@8.70.0(@typescript-eslint/parser@8.70.0(eslint@10.11.0)(typescript@6.0.3))(eslint@10.11.0)(typescript@6.0.3)':
+  '@typescript-eslint/eslint-plugin@8.70.0(@typescript-eslint/parser@8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.2
-      '@typescript-eslint/parser': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
+      '@typescript-eslint/parser': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
       '@typescript-eslint/scope-manager': 8.70.0(typescript@6.0.3)
-      '@typescript-eslint/type-utils': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
-      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
+      '@typescript-eslint/type-utils': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
       '@typescript-eslint/visitor-keys': 8.70.0(typescript@6.0.3)
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       ignore: 7.0.9
       natural-compare: 1.4.0
       ts-api-utils: 2.5.0(typescript@6.0.3)
@@ -7788,14 +7995,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@8.70.0(eslint@10.11.0)(typescript@6.0.3)':
+  '@typescript-eslint/parser@8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.70.0(typescript@6.0.3)
       '@typescript-eslint/types': 8.70.0(typescript@6.0.3)
       '@typescript-eslint/typescript-estree': 8.70.0(typescript@6.0.3)
       '@typescript-eslint/visitor-keys': 8.70.0(typescript@6.0.3)
       debug: 4.4.3
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
@@ -7818,13 +8025,13 @@ snapshots:
     dependencies:
       typescript: 6.0.3
 
-  '@typescript-eslint/type-utils@8.70.0(eslint@10.11.0)(typescript@6.0.3)':
+  '@typescript-eslint/type-utils@8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
       '@typescript-eslint/types': 8.70.0(typescript@6.0.3)
       '@typescript-eslint/typescript-estree': 8.70.0(typescript@6.0.3)
-      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
       debug: 4.4.3
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
     transitivePeerDependencies:
@@ -7851,13 +8058,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@8.70.0(eslint@10.11.0)(typescript@6.0.3)':
+  '@typescript-eslint/utils@8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0)
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0(jiti@2.7.0))
       '@typescript-eslint/scope-manager': 8.70.0(typescript@6.0.3)
       '@typescript-eslint/types': 8.70.0(typescript@6.0.3)
       '@typescript-eslint/typescript-estree': 8.70.0(typescript@6.0.3)
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
@@ -7935,15 +8142,15 @@ snapshots:
 
   '@unocss/core@66.10.5': {}
 
-  '@unocss/eslint-config@66.10.5(eslint@10.11.0)(typescript@6.0.3)':
+  '@unocss/eslint-config@66.10.5(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
-      '@unocss/eslint-plugin': 66.10.5(eslint@10.11.0)(typescript@6.0.3)
+      '@unocss/eslint-plugin': 66.10.5(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@unocss/eslint-plugin@66.10.5(eslint@10.11.0)(typescript@6.0.3)':
+  '@unocss/eslint-plugin@66.10.5(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
       '@unocss/config': 66.10.5
       '@unocss/core': 66.10.5
       '@unocss/rule-utils': 66.10.5
@@ -8674,13 +8881,13 @@ snapshots:
       - vite
       - webpack
 
-  '@vueuse/nuxt@15.0.0(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(sass-embedded@1.104.1)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)':
+  '@vueuse/nuxt@15.0.0(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(sass-embedded@1.104.1)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)':
     dependencies:
       '@nuxt/kit': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       '@vueuse/core': 15.0.0(vue@3.5.43)
       '@vueuse/metadata': 15.0.0
       local-pkg: 1.2.1
-      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      nuxt: 4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       vue: 3.5.43
     transitivePeerDependencies:
       - '@babel/core'
@@ -8778,6 +8985,80 @@ snapshots:
   '@xtuc/ieee754@1.2.0': {}
 
   '@xtuc/long@4.2.2': {}
+
+  '@yuku-analyzer/binding-android-arm64@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-darwin-arm64@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-darwin-x64@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-freebsd-x64@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-linux-arm-gnu@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-linux-arm-musl@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-linux-arm64-gnu@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-linux-arm64-musl@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-linux-x64-gnu@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-linux-x64-musl@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-win32-arm64@0.8.7':
+    optional: true
+
+  '@yuku-analyzer/binding-win32-x64@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-android-arm64@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-darwin-arm64@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-darwin-x64@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-freebsd-x64@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm-gnu@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm-musl@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm64-gnu@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm64-musl@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-linux-x64-gnu@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-linux-x64-musl@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-win32-arm64@0.8.7':
+    optional: true
+
+  '@yuku-parser/binding-win32-x64@0.8.7':
+    optional: true
+
+  '@yuku-toolchain/types@0.8.7': {}
 
   abbrev@3.0.1: {}
 
@@ -9042,8 +9323,6 @@ snapshots:
   chownr@3.0.0: {}
 
   chrome-trace-event@1.0.4: {}
-
-  ci-info@1.6.0: {}
 
   ci-info@4.4.0: {}
 
@@ -9384,15 +9663,15 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-config-flat-gitignore@2.4.0(eslint@10.11.0):
+  eslint-config-flat-gitignore@2.4.0(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
-      '@eslint/compat': 2.1.1(eslint@10.11.0)
-      eslint: 10.11.0
+      '@eslint/compat': 2.1.1(eslint@10.11.0(jiti@2.7.0))
+      eslint: 10.11.0(jiti@2.7.0)
 
-  eslint-flat-config-utils@3.2.0(eslint@10.11.0):
+  eslint-flat-config-utils@3.2.0(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
       '@eslint/config-helpers': 0.5.5
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       pathe: 2.0.3
 
   eslint-import-context@0.1.9(unrs-resolver@1.12.2):
@@ -9401,20 +9680,20 @@ snapshots:
       stable-hash-x: 0.2.0
       unrs-resolver: 1.12.2
 
-  eslint-merge-processors@2.0.0(eslint@10.11.0):
+  eslint-merge-processors@2.0.0(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
 
-  eslint-plugin-import-lite@0.6.0(eslint@10.11.0):
+  eslint-plugin-import-lite@0.6.0(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
 
-  eslint-plugin-import-x@4.17.1(eslint@10.11.0):
+  eslint-plugin-import-x@4.17.1(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
       '@typescript-eslint/types': 8.70.0
       comment-parser: 1.4.9
       debug: 4.4.3
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       eslint-import-context: 0.1.9(unrs-resolver@1.12.2)
       is-glob: 4.0.3
       minimatch: 10.2.6
@@ -9427,15 +9706,15 @@ snapshots:
       - type-fest
       - typescript
 
-  eslint-plugin-jsdoc@63.3.3(eslint@10.11.0):
+  eslint-plugin-jsdoc@63.3.3(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
-      '@es-joy/jsdoccomment': 0.91.0(eslint@10.11.0)
+      '@es-joy/jsdoccomment': 0.91.0(eslint@10.11.0(jiti@2.7.0))
       '@es-joy/resolve.exports': 1.2.0
       are-docs-informative: 0.0.2
       comment-parser: 1.4.7
       debug: 4.4.3
       escape-string-regexp: 4.0.0
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       espree: 11.2.0
       esquery: 1.7.0
       html-entities: 2.6.0
@@ -9453,20 +9732,20 @@ snapshots:
       jsonc-parser: 3.3.1
       oxlint: 1.83.0(oxlint-tsgolint@7.0.2002)
 
-  eslint-plugin-regexp@3.3.1(eslint@10.11.0):
+  eslint-plugin-regexp@3.3.1(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0)
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0(jiti@2.7.0))
       '@eslint-community/regexpp': 4.12.2
       comment-parser: 1.4.9
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       jsdoc-type-pratt-parser: 9.2.2
       refa: 0.12.1
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
 
-  eslint-plugin-unicorn@73.0.0(eslint@10.11.0):
+  eslint-plugin-unicorn@73.0.0(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0)
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0(jiti@2.7.0))
       '@eslint/css-tree': 4.1.1
       browserslist: 4.29.0
       change-case: 5.4.4
@@ -9474,7 +9753,7 @@ snapshots:
       core-js-compat: 3.50.0
       detect-indent: 7.0.2
       entities: 4.5.0
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       find-up-simple: 1.0.1
       globals: 17.12.0
       indent-string: 5.0.0
@@ -9488,23 +9767,23 @@ snapshots:
       strip-indent: 4.1.1
       yaml: 2.9.1
 
-  eslint-plugin-vue@10.11.0(@stylistic/eslint-plugin@5.10.0(eslint@10.11.0))(@typescript-eslint/parser@8.70.0(eslint@10.11.0)(typescript@6.0.3))(eslint@10.11.0)(vue-eslint-parser@10.4.1(eslint@10.11.0)):
+  eslint-plugin-vue@10.11.0(@stylistic/eslint-plugin@5.10.0(eslint@10.11.0(jiti@2.7.0)))(@typescript-eslint/parser@8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.11.0(jiti@2.7.0))(vue-eslint-parser@10.4.1(eslint@10.11.0(jiti@2.7.0))):
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0)
-      '@stylistic/eslint-plugin': 5.10.0(eslint@10.11.0)
-      '@typescript-eslint/parser': 8.70.0(eslint@10.11.0)(typescript@6.0.3)
-      eslint: 10.11.0
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0(jiti@2.7.0))
+      '@stylistic/eslint-plugin': 5.10.0(eslint@10.11.0(jiti@2.7.0))
+      '@typescript-eslint/parser': 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@6.0.3)
+      eslint: 10.11.0(jiti@2.7.0)
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 7.1.6
       semver: 7.8.5
-      vue-eslint-parser: 10.4.1(eslint@10.11.0)
+      vue-eslint-parser: 10.4.1(eslint@10.11.0(jiti@2.7.0))
       xml-name-validator: 5.0.0
 
-  eslint-processor-vue-blocks@2.0.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0):
+  eslint-processor-vue-blocks@2.0.0(@vue/compiler-sfc@3.5.43)(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
       '@vue/compiler-sfc': 3.5.43
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
 
   eslint-scope@9.1.2:
     dependencies:
@@ -9519,44 +9798,9 @@ snapshots:
 
   eslint-visitor-keys@5.0.1: {}
 
-  eslint@10.11.0:
-    dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0)
-      '@eslint-community/regexpp': 4.12.2
-      '@eslint/config-array': 0.23.5
-      '@eslint/config-helpers': 0.7.0
-      '@eslint/core': 1.2.1
-      '@eslint/plugin-kit': 0.7.3
-      '@humanfs/node': 0.16.8
-      '@humanwhocodes/module-importer': 1.0.1
-      '@humanwhocodes/retry': 0.4.3
-      '@types/estree': 1.0.9
-      ajv: 6.15.0
-      cross-spawn: 7.0.6
-      debug: 4.4.3
-      escape-string-regexp: 4.0.0
-      eslint-scope: 9.1.2
-      eslint-visitor-keys: 5.0.1
-      espree: 11.2.0
-      esquery: 1.7.0
-      esutils: 2.0.3
-      fast-deep-equal: 3.1.3
-      file-entry-cache: 11.1.5
-      find-up: 5.0.0
-      glob-parent: 6.0.2
-      ignore: 5.3.2
-      imurmurhash: 0.1.4
-      is-glob: 4.0.3
-      json-stable-stringify-without-jsonify: 1.0.1
-      minimatch: 10.2.6
-      natural-compare: 1.4.0
-      optionator: 0.9.4
-    transitivePeerDependencies:
-      - supports-color
-
   eslint@10.11.0(jiti@2.7.0):
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0)
+      '@eslint-community/eslint-utils': 4.10.1(eslint@10.11.0(jiti@2.7.0))
       '@eslint-community/regexpp': 4.12.2
       '@eslint/config-array': 0.23.5
       '@eslint/config-helpers': 0.7.0
@@ -9759,6 +10003,15 @@ snapshots:
 
   giget@3.3.1: {}
 
+  git-up@8.1.1:
+    dependencies:
+      is-ssh: 1.4.1
+      parse-url: 9.2.0
+
+  git-url-parse@16.1.0:
+    dependencies:
+      git-up: 8.1.1
+
   glob-parent@5.1.2:
     dependencies:
       is-glob: 4.0.3
@@ -9890,6 +10143,8 @@ snapshots:
 
   import-meta-resolve@4.2.0: {}
 
+  import-without-cache@0.4.1: {}
+
   impound@1.2.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
@@ -9932,10 +10187,6 @@ snapshots:
     dependencies:
       builtin-modules: 5.4.0
 
-  is-ci@1.2.1:
-    dependencies:
-      ci-info: 1.6.0
-
   is-core-module@2.17.0:
     dependencies:
       hasown: 2.0.4
@@ -9975,6 +10226,10 @@ snapshots:
   is-reference@1.2.1:
     dependencies:
       '@types/estree': 1.0.9
+
+  is-ssh@1.4.1:
+    dependencies:
+      protocols: 2.0.2
 
   is-stream@2.0.1: {}
 
@@ -10172,6 +10427,10 @@ snapshots:
   magic-string-ast@1.0.3:
     dependencies:
       magic-string: 0.30.21
+
+  magic-string-ast@2.1.1:
+    dependencies:
+      magic-string: 1.4.1
 
   magic-string@0.30.21:
     dependencies:
@@ -10456,24 +10715,7 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  nuxt-build-info@1.1.0:
-    dependencies:
-      '@nuxt/kit': 3.21.11
-      simple-git: 3.36.0
-      std-env: 1.3.1
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@nuxt/schema'
-      - '@rsbuild/core'
-      - bun
-      - magicast
-      - nitropack
-      - supports-color
-      - unimport
-      - vite
-      - webpack
-
-  nuxt@4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0)(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)):
+  nuxt@4.5.2(@types/node@26.6.2)(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(nitropack@2.13.4)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)):
     dependencies:
       '@dxup/nuxt': 0.5.10(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(esbuild@0.28.2)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       '@nuxt/cli': 3.37.0(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(@types/node@26.6.2)(esbuild@0.28.2)(magic-string@1.4.1)(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(rollup@4.63.4)(sass-embedded@1.104.1)(undici@8.10.2)(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))
@@ -10482,7 +10724,7 @@ snapshots:
       '@nuxt/nitro-server': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(db0@0.3.4)(esbuild@0.28.2)(ioredis@5.11.1)(jiti@2.7.0)(magic-string@1.4.1)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(sass-embedded@1.104.1)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
       '@nuxt/schema': 4.5.2(44dec5c001bfc0840696269df2845ad7)
       '@nuxt/telemetry': 2.9.1(@nuxt/kit@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(nitropack@2.13.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))
-      '@nuxt/vite-builder': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(eslint@10.11.0)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vue@3.5.43)
+      '@nuxt/vite-builder': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(eslint@10.11.0(jiti@2.7.0))(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.2)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rolldown@1.2.9)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vue@3.5.43)
       '@types/node': 26.6.2
       '@unhead/vue': 3.4.1(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))(vue@3.5.43)
       '@vue/shared': 3.5.43
@@ -10891,7 +11133,16 @@ snapshots:
     dependencies:
       parse-statements: 1.0.11
 
+  parse-path@7.1.0:
+    dependencies:
+      protocols: 2.0.2
+
   parse-statements@1.0.11: {}
+
+  parse-url@9.2.0:
+    dependencies:
+      '@types/parse-path': 7.1.0
+      parse-path: 7.1.0
 
   parseurl@1.3.3: {}
 
@@ -11140,6 +11391,8 @@ snapshots:
       graceful-fs: 4.2.11
       retry: 0.12.0
       signal-exit: 3.0.7
+
+  protocols@2.0.2: {}
 
   punycode@2.3.1: {}
 
@@ -11533,10 +11786,6 @@ snapshots:
 
   statuses@2.0.2: {}
 
-  std-env@1.3.1:
-    dependencies:
-      is-ci: 1.2.1
-
   std-env@4.2.0: {}
 
   streamx@2.28.1:
@@ -11875,6 +12124,37 @@ snapshots:
       - undici
       - webpack
 
+  unplugin-info@1.3.2(@nuxt/kit@4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(nitropack@2.13.4)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(magic-string@1.4.1)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2):
+    dependencies:
+      '@nuxt/kit': 4.5.2(@nuxt/schema@4.5.2(44dec5c001bfc0840696269df2845ad7))(magic-string@1.4.1)(nitropack@2.13.4)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(rollup@4.63.4)(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      ci-info: 4.4.0
+      git-url-parse: 16.1.0
+      simple-git: 3.36.0
+      unplugin: 2.3.11
+    transitivePeerDependencies:
+      - '@rsbuild/core'
+      - bun
+      - supports-color
+      - webpack
+
+  unplugin-macros@0.23.2(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)):
+    dependencies:
+      import-without-cache: 0.4.1
+      magic-string-ast: 2.1.1
+      rolldown-string: 0.3.1(rolldown@1.2.9)
+      unplugin: 3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1))
+      yuku-analyzer: 0.8.7
+      yuku-ast: 0.8.7
+      yuku-parser: 0.8.7
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rsbuild/core'
+      - '@rspack/core'
+      - bun
+      - bun-types-no-globals
+      - unloader
+      - webpack
+
   unplugin-utils@0.3.2:
     dependencies:
       pathe: 2.0.3
@@ -12033,7 +12313,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-checker@0.14.5(eslint@10.11.0)(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)):
+  vite-plugin-checker@0.14.5(eslint@10.11.0(jiti@2.7.0))(oxlint@1.83.0(oxlint-tsgolint@7.0.2002))(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.104.1)):
     dependencies:
       '@babel/code-frame': 7.29.7
       chokidar: 5.0.0
@@ -12098,10 +12378,10 @@ snapshots:
 
   vue-devtools-stub@0.1.0: {}
 
-  vue-eslint-parser@10.4.1(eslint@10.11.0):
+  vue-eslint-parser@10.4.1(eslint@10.11.0(jiti@2.7.0)):
     dependencies:
       debug: 4.4.3
-      eslint: 10.11.0
+      eslint: 10.11.0(jiti@2.7.0)
       eslint-scope: 9.1.2
       eslint-visitor-keys: 5.0.1
       espree: 11.2.0
@@ -12398,6 +12678,46 @@ snapshots:
       '@speed-highlight/core': 1.2.24
       cookie-es: 3.1.1
       youch-core: 0.3.3
+
+  yuku-analyzer@0.8.7:
+    dependencies:
+      '@yuku-toolchain/types': 0.8.7
+      yuku-ast: 0.8.7
+    optionalDependencies:
+      '@yuku-analyzer/binding-android-arm64': 0.8.7
+      '@yuku-analyzer/binding-darwin-arm64': 0.8.7
+      '@yuku-analyzer/binding-darwin-x64': 0.8.7
+      '@yuku-analyzer/binding-freebsd-x64': 0.8.7
+      '@yuku-analyzer/binding-linux-arm-gnu': 0.8.7
+      '@yuku-analyzer/binding-linux-arm-musl': 0.8.7
+      '@yuku-analyzer/binding-linux-arm64-gnu': 0.8.7
+      '@yuku-analyzer/binding-linux-arm64-musl': 0.8.7
+      '@yuku-analyzer/binding-linux-x64-gnu': 0.8.7
+      '@yuku-analyzer/binding-linux-x64-musl': 0.8.7
+      '@yuku-analyzer/binding-win32-arm64': 0.8.7
+      '@yuku-analyzer/binding-win32-x64': 0.8.7
+
+  yuku-ast@0.8.7:
+    dependencies:
+      '@yuku-toolchain/types': 0.8.7
+
+  yuku-parser@0.8.7:
+    dependencies:
+      '@yuku-toolchain/types': 0.8.7
+      yuku-ast: 0.8.7
+    optionalDependencies:
+      '@yuku-parser/binding-android-arm64': 0.8.7
+      '@yuku-parser/binding-darwin-arm64': 0.8.7
+      '@yuku-parser/binding-darwin-x64': 0.8.7
+      '@yuku-parser/binding-freebsd-x64': 0.8.7
+      '@yuku-parser/binding-linux-arm-gnu': 0.8.7
+      '@yuku-parser/binding-linux-arm-musl': 0.8.7
+      '@yuku-parser/binding-linux-arm64-gnu': 0.8.7
+      '@yuku-parser/binding-linux-arm64-musl': 0.8.7
+      '@yuku-parser/binding-linux-x64-gnu': 0.8.7
+      '@yuku-parser/binding-linux-x64-musl': 0.8.7
+      '@yuku-parser/binding-win32-arm64': 0.8.7
+      '@yuku-parser/binding-win32-x64': 0.8.7
 
   zip-stream@6.0.1:
     dependencies:

@@ -13,7 +13,6 @@ export default defineNuxtConfig({
 	},
 	modules: [
 		'@nuxt/scripts',
-		'nuxt-build-info',
 		'@unocss/nuxt',
 		'@pinia/nuxt',
 		'pinia-plugin-persistedstate/nuxt',
