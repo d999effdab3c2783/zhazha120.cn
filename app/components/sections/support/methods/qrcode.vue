@@ -1,9 +1,10 @@
 <script setup lang="ts">
+	import { useElementBounding } from '@vueuse/core'
 	import { clsx } from 'clsx'
 	import { isNotNil } from 'es-toolkit'
 	import { computed, shallowRef, useTemplateRef } from 'vue'
 
-	import { useElementBounding } from '#imports'
+	import { useResponsive } from '~/composables/responsive'
 	import type { QRCodeSupportMethod } from '~/types/support'
 
 	const props = defineProps<{
@@ -14,6 +15,7 @@
 
 	const containerRef = useTemplateRef('containerRef')
 
+	const { isMobile } = useResponsive()
 	const containerBounding = useElementBounding(containerRef)
 
 	const qrCodeClassNames = computed(() => {
@@ -37,7 +39,7 @@
 					<n-qr-code
 						:value="item.content"
 						v-bind="{
-							size: containerBounding.width.value / 4,
+							size: containerBounding.width.value / (isMobile ? 2 : 4),
 							type: 'svg',
 
 							...item.props,
