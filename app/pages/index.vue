@@ -3,8 +3,13 @@
 	import { useLenis } from 'lenis/vue'
 	import { onScopeDispose, useTemplateRef } from 'vue'
 
+	import { definePageMeta } from '#imports'
 	import event from '~/shared/event'
 	import type { Events } from '~/types/event'
+
+	definePageMeta({
+		title: '首页'
+	})
 
 	const heroRef = useTemplateRef('heroRef')
 	const overviewRef = useTemplateRef('overviewRef')
