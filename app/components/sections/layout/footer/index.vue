@@ -8,7 +8,7 @@
 
 	const containerClassNames = computed(() => {
 		return clsx(
-			'py-4 grid grid-(place-items-center)',
+			'px-2 py-4 grid grid-(place-items-center)',
 			{
 				'gap-y-4 grid-cols-1': isMobile.value
 			},

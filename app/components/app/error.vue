@@ -56,7 +56,7 @@
 		<n-element class="utils__center--grid min-h-screen">
 			<n-flex
 				align="center"
-				class="p-2 container"
+				class="px-2 pb-2 container"
 				size="small"
 				vertical
 			>
