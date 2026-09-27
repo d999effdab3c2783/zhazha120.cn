@@ -8,10 +8,12 @@ export type OwnerContact = {
 	readonly comment: string
 }>
 
-export type OwnerPortal = Pick<ButtonProps, 'type'> & {
+export type OwnerPortal = {
 	readonly icon: string
 	readonly name: string
 	readonly href: string
-} & Partial<{
+} & Partial<
+	Pick<ButtonProps, 'type'> & {
 		readonly comment: string
-	}>
+	}
+>
