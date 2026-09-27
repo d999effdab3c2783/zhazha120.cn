@@ -215,6 +215,10 @@
 	</n-flex>
 </template>
 
+<style lang="scss">
+	@use '~/styles/transitions/fade';
+</style>
+
 <style scoped lang="scss">
 	@use '~/styles/utils';
 </style>
