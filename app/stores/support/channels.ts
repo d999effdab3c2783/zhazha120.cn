@@ -69,12 +69,12 @@ export default [
 			},
 			{
 				type: 'image',
-				name: '收款',
+				name: '红包',
 				src: alipayRedPacket
 			},
 			{
 				type: 'qrcode',
-				name: '收款码',
+				name: '红包码',
 				content: await read('~/assets/images/support/alipay/red_packet.webp')
 			}
 		]
