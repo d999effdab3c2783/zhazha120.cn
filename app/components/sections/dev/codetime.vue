@@ -39,15 +39,11 @@
 					type="segment"
 				>
 					<n-tab-pane name="按语言">
-						<custom-naive-ui-position placement="center">
-							<n-image :src="devStore.codetime.widgets.top.languages" />
-						</custom-naive-ui-position>
+						<n-image :src="devStore.codetime.widgets.top.languages" />
 					</n-tab-pane>
 
 					<n-tab-pane name="按项目">
-						<custom-naive-ui-position placement="center">
-							<n-image :src="devStore.codetime.widgets.top.projects" />
-						</custom-naive-ui-position>
+						<n-image :src="devStore.codetime.widgets.top.projects" />
 					</n-tab-pane>
 				</n-tabs>
 			</n-flex>
