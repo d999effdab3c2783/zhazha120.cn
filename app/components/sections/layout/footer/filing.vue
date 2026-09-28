@@ -46,6 +46,7 @@
 							class: 'h-full'
 						}"
 						:src="footerStore.filing.safety.icon"
+						@click.prevent.stop
 					/>
 				</template>
 
