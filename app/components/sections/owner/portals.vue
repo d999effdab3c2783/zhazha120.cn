@@ -12,10 +12,7 @@
 		size="small"
 		title="探索"
 	>
-		<n-flex
-			align="center"
-			size="small"
-		>
+		<n-flex size="small">
 			<template
 				v-for="({ type, icon, name, href, comment }, index) in ownerStore.portals as OwnerPortal[]"
 				:key="index"

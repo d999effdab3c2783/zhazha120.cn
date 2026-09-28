@@ -12,10 +12,7 @@
 		size="small"
 		title="联系方式"
 	>
-		<n-flex
-			align="center"
-			size="small"
-		>
+		<n-flex size="small">
 			<template
 				v-for="({ icon, name, href, comment }, index) in ownerStore.contacts as OwnerContact[]"
 				:key="index"
