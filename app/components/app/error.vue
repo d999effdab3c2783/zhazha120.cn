@@ -2,6 +2,8 @@
 	import { isNotNil } from 'es-toolkit'
 	import { computed, shallowRef } from 'vue'
 
+	import { isNuxtError } from '#app'
+
 	const props = defineProps<{
 		readonly error: unknown
 
@@ -63,6 +65,29 @@
 				<n-h1>
 					<n-text type="error">错误发生</n-text>
 				</n-h1>
+
+				<tempalte v-if="isNuxtError(error)">
+					<n-flex
+						align="center"
+						size="small"
+						vertical
+					>
+						<n-flex
+							align="center"
+							size="small"
+						>
+							<template v-if="error.unhandled">
+								<n-tag type="warning">未捕获</n-tag>
+							</template>
+
+							<template v-if="error.fatal">
+								<n-tag type="error">致命</n-tag>
+							</template>
+						</n-flex>
+
+						<n-text :depth="3">{{ error.status }} {{ error.statusText }}</n-text>
+					</n-flex>
+				</tempalte>
 
 				<n-card size="small">
 					<n-log
