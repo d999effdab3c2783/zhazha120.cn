@@ -14,7 +14,7 @@ export default defineConfig({
 		presetWind4(),
 		presetIcons({
 			collections: {
-				custom: FileSystemIconLoader('src/assets/icons/custom')
+				custom: FileSystemIconLoader('app/assets/icons/custom')
 			}
 		}),
 		presetWebFonts({
