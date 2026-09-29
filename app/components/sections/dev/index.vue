@@ -3,6 +3,10 @@
 		size="small"
 		vertical
 	>
+		<slot name="bio">
+			<sections-dev-bio />
+		</slot>
+
 		<slot name="codetime">
 			<sections-dev-codetime />
 		</slot>

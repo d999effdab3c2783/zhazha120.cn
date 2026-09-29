@@ -13,6 +13,8 @@
 
 	const themeStore = useThemeStore()
 
+	// @unocss-include
+
 	const themes = [
 		{
 			icon: 'i-tabler:sun',

@@ -3,6 +3,7 @@ import type { UnknownRecord } from 'es-toolkit/types'
 import { defineStore } from 'pinia'
 import { computed, shallowRef } from 'vue'
 
+import bio from '~/stores/dev/bio'
 import defaultCodetime from '~/stores/dev/codetime'
 import competitions from '~/stores/dev/competitions'
 import projects from '~/stores/dev/projects'
@@ -72,6 +73,8 @@ export const useDevStore = defineStore('dev', () => {
 	}
 
 	return {
+		bio,
+
 		codetime,
 		stacks,
 		organizations,
