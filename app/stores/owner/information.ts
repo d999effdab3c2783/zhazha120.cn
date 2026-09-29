@@ -1,6 +1,9 @@
+import avatarAsset from '~/stores/owner/assets/avatar.svg?url'
 import type { RenderableText } from '~/types/render'
 
 // @unocss-include
+
+export const avatar = avatarAsset
 
 export const name = '渣渣120'
 export const poke = '戳哭了 哄不好了'

@@ -1,4 +1,4 @@
-import avatar from '~/assets/images/dev/organizations/Endless-Spike-Studio.webp?url'
+import avatar from '~/stores/dev/organizations/Endless-Spike-Studio/assets/avatar.webp?url'
 import type { DevOrganization } from '~/types/dev'
 
 export const remoteAvatar = 'https://avatars.githubusercontent.com/u/102524977'

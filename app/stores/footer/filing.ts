@@ -1,4 +1,4 @@
-import beian from '~/assets/images/footer/beian.webp?url'
+import beian from '~/stores/footer/assets/beian.webp?url'
 import type { FooterFiling } from '~/types/footer'
 
 const filingProvinceAbbr = '赣'

@@ -1,10 +1,9 @@
 import { isNotNil } from 'es-toolkit'
 import { defineStore } from 'pinia'
 
-import avatar from '~/assets/images/owner/avatar.svg?url'
 import { useApiStore } from '~/stores/api'
 import contacts from '~/stores/owner/contacts'
-import { name, poke, bio } from '~/stores/owner/information'
+import { avatar, name, poke, bio } from '~/stores/owner/information'
 import portals from '~/stores/owner/portals'
 
 export const useOwnerStore = defineStore('owner', () => {
