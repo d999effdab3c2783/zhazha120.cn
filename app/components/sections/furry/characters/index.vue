@@ -42,7 +42,7 @@
 		>
 			<sections-furry-characters-item :item="item">
 				<template
-					v-if="isNotNil(item.slug) && isNotNil(item.renderExtra)"
+					v-if="isNotNil(item.slug)"
 					#extra
 				>
 					<n-element class="mt-auto self-end">
