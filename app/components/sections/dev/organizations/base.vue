@@ -27,7 +27,7 @@
 		<template #default="{ aProps, redirect }">
 			<n-button
 				v-bind="{
-					aProps,
+					...aProps,
 					...(isNotNil(peers) ? peers.button : {})
 				}"
 				:block="isMobile"
