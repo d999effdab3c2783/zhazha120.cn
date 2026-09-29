@@ -11,7 +11,9 @@
 	const keys = computed(() => {
 		return uniq(
 			toValue(props.filter.input).flatMap(item => {
-				const flattened = flattenObject(item)
+				const flattened = flattenObject(item, {
+					preserveArrays: true
+				})
 
 				return Object.keys(flattened)
 			})
