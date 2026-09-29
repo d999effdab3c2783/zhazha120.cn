@@ -13,73 +13,80 @@
 
 <template>
 	<n-card size="small">
-		<n-flex size="small">
-			<n-image
-				class="w-1/5"
-				:src="item.illustration"
-			/>
+		<n-split
+			:default-size="0.2"
+			direction="horizontal"
+		>
+			<template #1>
+				<n-image :src="item.illustration" />
+			</template>
 
-			<n-flex
-				size="small"
-				vertical
-			>
+			<template #2>
 				<n-flex
-					:size="0"
+					class="pl-2 flex-1 size-full"
+					size="small"
 					vertical
 				>
 					<n-flex
-						align="center"
 						:size="0"
+						vertical
 					>
-						<n-text
-							class="text-[1.6em] fw-black hover:cursor-help"
-							@click="showSlug = !showSlug"
+						<n-flex
+							align="center"
+							:size="0"
 						>
-							{{ item.name }}
-						</n-text>
+							<n-text
+								class="text-[1.6em] fw-black hover:cursor-help"
+								@click="showSlug = !showSlug"
+							>
+								{{ item.name }}
+							</n-text>
 
-						<template v-if="isNotNil(item.species_alias)">
-							<n-divider vertical />
+							<template v-if="isNotNil(item.species_alias)">
+								<n-divider vertical />
 
-							<n-text type="info">物种: {{ item.species_alias }}</n-text>
+								<n-text type="info">物种: {{ item.species_alias }}</n-text>
+							</template>
+						</n-flex>
+
+						<n-collapse-transition :show="isNotNil(item.slug) && showSlug">
+							<n-text
+								class="text-[.8em]"
+								:depth="3"
+							>
+								{{ item.slug }}
+
+								<template v-if="isNotNil(item.aliases)">: {{ item.aliases.join(', ') }}</template>
+							</n-text>
+						</n-collapse-transition>
+					</n-flex>
+
+					<n-flex size="small">
+						<template
+							v-for="({ name, percent }, index) in item.species"
+							:key="index"
+						>
+							<n-tag>{{ percent }}% {{ name }}</n-tag>
 						</template>
 					</n-flex>
 
-					<n-collapse-transition :show="isNotNil(item.slug) && showSlug">
-						<n-text
-							class="text-[.8em]"
-							:depth="3"
+					<template v-if="isNotNil(item.description)">
+						<n-h4
+							class="!mt-4"
+							prefix="bar"
 						>
-							{{ item.slug }}
-
-							<template v-if="isNotNil(item.aliases)">: {{ item.aliases.join(', ') }}</template>
-						</n-text>
-					</n-collapse-transition>
-				</n-flex>
-
-				<n-flex size="small">
-					<template
-						v-for="({ name, percent }, index) in item.species"
-						:key="index"
-					>
-						<n-tag>{{ percent }}% {{ name }}</n-tag>
+							{{ item.description }}
+						</n-h4>
 					</template>
-				</n-flex>
 
-				<template v-if="isNotNil(item.description)">
-					<n-h4
-						class="!mt-4"
-						prefix="bar"
-					>
-						{{ item.description }}
-					</n-h4>
-				</template>
-			</n-flex>
-		</n-flex>
+					<slot name="extra" />
+				</n-flex>
+			</template>
+		</n-split>
 
 		<template
 			v-if="isNotNil(item.owner)"
-			#footer
+			#action
 		>
 			<n-flex
 				align="center"

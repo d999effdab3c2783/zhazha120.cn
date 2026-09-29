@@ -24,6 +24,8 @@ export type FurryCharacter = {
 	} & Partial<{
 		readonly href: string
 	}>
+
+	readonly renderExtra: () => VNode
 }>
 
 export type FurryCharacterEntry = FurryCharacter &

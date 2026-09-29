@@ -61,6 +61,9 @@ importers:
       '@vueuse/nuxt':
         specifier: ^15.0.0
         version: 15.0.0(@nuxt/schema@4.5.2(32893b2e741f828b7a4a6b03466c7270))(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43))(cssnano@8.0.10(postcss@8.5.28))(db0@0.3.4)(esbuild@0.28.2)(eslint@10.11.0(jiti@2.7.0))(ioredis@5.11.1)(magic-string@1.4.1)(nitropack@2.13.4)(nuxt@4.5.2(@types/node@26.6.3)(rolldown@1.2.9))(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(oxlint@1.85.0(oxlint-tsgolint@7.0.2003))(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(postcss@8.5.28)(rollup@4.63.4)(sass-embedded@1.105.0)(sharp@0.35.4(@types/node@26.6.3))(undici@8.10.2)(unimport@6.5.0(oxc-parser@0.140.0(@oxc-parser/binding-wasm32-wasi@0.140.0))(rolldown@1.2.9))(unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(webpack@5.111.1))(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43)(webpack@5.111.1)
+      '@vueuse/router':
+        specifier: ^15.0.0
+        version: 15.0.0(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43))(cssnano@8.0.10(postcss@8.5.28))(esbuild@0.28.2)(postcss@8.5.28)(rolldown@1.2.9)(rollup@4.63.4)(sharp@0.35.4(@types/node@26.6.3))(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vue@3.5.43))(webpack@5.111.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -2875,6 +2878,13 @@ packages:
     peerDependencies:
       nuxt: ^3.0.0 || ^4.0.0-0 || ^5.0.0-0
       vue: ^3.5.0
+
+  '@vueuse/router@15.0.0':
+    resolution: {integrity: sha512-+JqXjJs9+3Nu6GjaybYup0dFK7JbNJu1kvNlLmgXp1GTm5bYZZAUWOayCN69ld4gfPy/J4EA+/DImyEsW3QepQ==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      vue: ^3.5.0
+      vue-router: ^4.0.0 || ^5.0.0
 
   '@vueuse/shared@13.9.0':
     resolution: {integrity: sha512-e89uuTLMh0U5cZ9iDpEI2senqPGfbPRTHM/0AaQkcxnpqjkZqDYP8rpfm7edOz8s+pOCOROEy1PIveSW8+fL5g==}
@@ -9242,6 +9252,12 @@ snapshots:
       - '@babel/core'
       - magicast
       - webpack
+
+  '@vueuse/router@15.0.0(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43))(cssnano@8.0.10(postcss@8.5.28))(esbuild@0.28.2)(postcss@8.5.28)(rolldown@1.2.9)(rollup@4.63.4)(sharp@0.35.4(@types/node@26.6.3))(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43)(vue-router@5.3.1(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(vue@3.5.43))(webpack@5.111.1)':
+    dependencies:
+      '@vueuse/shared': 15.0.0(vue@3.5.43)
+      vue: 3.5.43
+      vue-router: 5.3.1(@vitejs/plugin-vue@6.0.9(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43))(cssnano@8.0.10(postcss@8.5.28))(esbuild@0.28.2)(pinia@4.0.3(@vue/devtools-api@8.2.1)(vue@3.5.43))(postcss@8.5.28)(rolldown@1.2.9)(rollup@4.63.4)(sharp@0.35.4(@types/node@26.6.3))(vite@8.3.0(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0))(vue@3.5.43)(webpack@5.111.1)
 
   '@vueuse/shared@13.9.0(vue@3.5.43)':
     dependencies:
