@@ -22,8 +22,18 @@ export const useArrayFilter = <T extends UnknownRecord>(input: MaybeRefOrGetter<
 
 		if (parsed.success) {
 			const inputValue = toValue(input)
+			const accessor = nestedAccessor('.')
+
 			const filter = toFilter(parsed.ast, {
-				fieldAccessor: nestedAccessor('.')
+				fieldAccessor: (object, key) => {
+					const value = accessor(object, key)
+
+					if (Array.isArray(value)) {
+						return value.join(' ')
+					}
+
+					return value
+				}
 			})
 
 			console.log(parsed.ast)
