@@ -49,20 +49,14 @@
 						@click="showContent = !showContent"
 					/>
 
-					<transition
-						appear
-						mode="out-in"
-						name="v-fade"
-					>
-						<template v-if="showContent">
-							<n-text
-								class="text-[.8em]"
-								:depth="3"
-							>
-								{{ item.content }}
-							</n-text>
-						</template>
-					</transition>
+					<n-collapse-transition :show="showContent">
+						<n-text
+							class="text-[.8em]"
+							:depth="3"
+						>
+							{{ item.content }}
+						</n-text>
+					</n-collapse-transition>
 				</n-flex>
 			</template>
 
@@ -76,10 +70,6 @@
 		</template>
 	</n-element>
 </template>
-
-<style lang="scss">
-	@use '~/styles/transitions/fade';
-</style>
 
 <style scoped lang="scss">
 	@use '~/styles/utils';

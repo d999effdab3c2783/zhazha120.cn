@@ -46,28 +46,22 @@
 		>
 			<n-input v-model:value="config.value" />
 
-			<transition
-				appear
-				mode="out-in"
-				name="v-fade"
-			>
-				<template v-if="config.value !== location.href">
-					<n-flex
-						class="text-[.8em]"
-						size="small"
-					>
-						<n-text :depth="3">使用当前 URL:</n-text>
+			<n-collapse-transition :show="config.value !== location.href">
+				<n-flex
+					class="text-[.8em]"
+					size="small"
+				>
+					<n-text :depth="3">使用当前 URL:</n-text>
 
-						<n-text
-							class="hover:cursor-pointer"
-							type="info"
-							@click="config.value = location.href"
-						>
-							{{ location.href }}
-						</n-text>
-					</n-flex>
-				</template>
-			</transition>
+					<n-text
+						class="hover:cursor-pointer"
+						type="info"
+						@click="config.value = location.href"
+					>
+						{{ location.href }}
+					</n-text>
+				</n-flex>
+			</n-collapse-transition>
 		</n-flex>
 
 		<n-element class="utils__center--grid size-full">
@@ -214,10 +208,6 @@
 		</n-flex>
 	</n-flex>
 </template>
-
-<style lang="scss">
-	@use '~/styles/transitions/fade';
-</style>
 
 <style scoped lang="scss">
 	@use '~/styles/utils';
