@@ -11,11 +11,11 @@
 	const keys = computed(() => {
 		return uniq(
 			toValue(props.filter.input).flatMap(item => {
-				const flattened = flattenObject(item, {
-					preserveArrays: true
-				})
+				const flattened = flattenObject(item)
 
-				return Object.keys(flattened)
+				return Object.keys(flattened).map(key => {
+					return key.replaceAll(/\.\d+/g, '')
+				})
 			})
 		)
 	})

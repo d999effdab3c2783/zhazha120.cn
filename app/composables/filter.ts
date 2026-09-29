@@ -1,9 +1,43 @@
 import { parse } from '@filtron/core'
-import { nestedAccessor, toFilter } from '@filtron/js'
-import { isNil } from 'es-toolkit'
+import { toFilter } from '@filtron/js'
+import { isNil, isNotNil, isPlainObject } from 'es-toolkit'
+import { get } from 'es-toolkit/compat'
 import type { UnknownRecord } from 'es-toolkit/types'
 import { computed, toValue, watch, type MaybeRefOrGetter } from 'vue'
 import { shallowRef } from 'vue'
+
+const separator = '.'
+
+const resolve = (item: unknown, remainKeys: string[]): unknown[] => {
+	if (isNil(remainKeys[0])) {
+		if (isNotNil(item)) {
+			const itemString = String(item)
+
+			return [itemString]
+		}
+
+		return []
+	}
+
+	if (Array.isArray(item)) {
+		return item.flatMap(subItem => {
+			return resolve(subItem, remainKeys)
+		})
+	}
+
+	if (isNil(item) || !isPlainObject(item)) {
+		return []
+	}
+
+	const next = get(item, remainKeys[0])
+	const nextKeys = remainKeys.slice(1)
+
+	if (isNil(next)) {
+		return []
+	}
+
+	return resolve(next, nextKeys)
+}
 
 export const useArrayFilter = <T extends UnknownRecord>(input: MaybeRefOrGetter<readonly T[]>) => {
 	const query = shallowRef<string>()
@@ -22,21 +56,14 @@ export const useArrayFilter = <T extends UnknownRecord>(input: MaybeRefOrGetter<
 
 		if (parsed.success) {
 			const inputValue = toValue(input)
-			const accessor = nestedAccessor('.')
 
 			const filter = toFilter(parsed.ast, {
 				fieldAccessor: (object, key) => {
-					const value = accessor(object, key)
+					const keys = key.split(separator)
 
-					if (Array.isArray(value)) {
-						return value.join(' ')
-					}
-
-					return value
+					return resolve(object, keys).join(' ')
 				}
 			})
-
-			console.log(parsed.ast)
 
 			return inputValue.filter(item => {
 				return filter(item)
