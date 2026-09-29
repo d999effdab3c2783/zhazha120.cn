@@ -1,12 +1,14 @@
 <script setup lang="ts">
 	import { flattenObject, isNotNil, uniq } from 'es-toolkit'
-	import { computed, toValue } from 'vue'
+	import { computed, toRefs, toValue } from 'vue'
 
 	import type { useArrayFilter } from '~/composables/filter'
 
 	const props = defineProps<{
 		readonly filter: ReturnType<typeof useArrayFilter>
 	}>()
+
+	const { filter } = toRefs(props)
 
 	const keys = computed(() => {
 		return uniq(
@@ -19,6 +21,11 @@
 			})
 		)
 	})
+
+	const handleClick = (key: string) => {
+		filter.value.query.value ??= ''
+		filter.value.query.value += key
+	}
 </script>
 
 <template>
@@ -34,7 +41,7 @@
 				<n-button
 					secondary
 					size="small"
-					@click="$props.filter.query.value += key"
+					@click="handleClick(key)"
 				>
 					{{ key }}
 				</n-button>
@@ -47,7 +54,7 @@
 			:validation-status="isNotNil(filter.error.value) ? 'error' : undefined"
 		>
 			<n-input
-				v-model:value="$props.filter.query.value"
+				v-model:value="filter.query.value"
 				type="textarea"
 			/>
 		</n-form-item>
