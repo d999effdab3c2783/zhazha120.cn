@@ -15,7 +15,7 @@ export const useDevStore = defineStore('dev', () => {
 	const stacks = shallowRef<DevStack[]>([])
 	const organizations = shallowRef<DevOrganization[]>([])
 
-	const replaceCodetime = <T>(input: T): T => {
+	const replaceCodetime = (input: unknown): unknown => {
 		if (isString(input)) {
 			// @ts-ignore
 			return input.replaceAll('{theme}', themeStore.actualMode)

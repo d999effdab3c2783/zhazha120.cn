@@ -1,10 +1,24 @@
 <script setup lang="ts">
 	import { isNotNil } from 'es-toolkit'
+	import { computed, shallowRef, toValue } from 'vue'
 
+	import { useArrayFilter } from '~/composables/filter'
 	import { useDevStore } from '~/stores/dev'
 	import type { DevCompetition } from '~/types/dev'
 
+	const showFilter = shallowRef(false)
+
 	const devStore = useDevStore()
+
+	const filter = useArrayFilter(devStore.competitions)
+
+	const competitions = computed(() => {
+		if (!showFilter.value) {
+			return toValue(filter.input)
+		}
+
+		return filter.output.value
+	})
 </script>
 
 <template>
@@ -12,71 +26,94 @@
 		size="small"
 		title="打过的比赛"
 	>
-		<n-scrollbar
-			data-lenis-prevent
-			x-scrollable
-		>
-			<n-timeline horizontal>
-				<template
-					v-for="({ name, group, award, href, date }, index) in devStore.competitions as DevCompetition[]"
-					:key="index"
+		<template #header-extra>
+			<n-button
+				text
+				type="primary"
+				@click="showFilter = !showFilter"
+			>
+				过滤
+			</n-button>
+		</template>
+
+		<template #default>
+			<n-flex
+				size="small"
+				vertical
+			>
+				<n-collapse-transition :show="showFilter">
+					<custom-shared-filter-input :filter="filter" />
+				</n-collapse-transition>
+
+				<n-scrollbar
+					data-lenis-prevent
+					x-scrollable
 				>
-					<n-timeline-item type="success">
-						<template #header>
-							<n-flex
-								:size="0"
-								vertical
-							>
-								<n-text>{{ name }}</n-text>
-
-								<n-text
-									class="text-[.8em]"
-									:depth="3"
-								>
-									{{ group }}
-								</n-text>
-							</n-flex>
-						</template>
-
-						<template #default>
-							<template v-if="isNotNil(href)">
-								<custom-redirect
-									#="{ aProps, redirect }"
-									:href="href"
-								>
-									<n-button
-										:style="{
-											'--n-icon-margin': '0 .1em 0 0'
-										}"
-										tag="a"
-										text
-										type="primary"
-										v-bind="aProps"
-										@click.prevent="redirect"
-									>
-										<template #icon>
-											<n-icon class="i-ant-design:link-outlined" />
-										</template>
-
-										{{ award }}
-									</n-button>
-								</custom-redirect>
-							</template>
-
-							<template v-else>
-								<n-text type="info">{{ award }}</n-text>
-							</template>
-						</template>
-
+					<n-timeline horizontal>
 						<template
-							v-if="isNotNil(date)"
-							#footer
+							v-for="({ name, group, award, href, date }, index) in competitions as DevCompetition[]"
+							:key="index"
 						>
-							<n-text>{{ date.year ?? '?' }}/{{ date.month ?? '?' }}/{{ date.day ?? '?' }}</n-text>
+							<n-timeline-item type="success">
+								<template #header>
+									<n-flex
+										:size="0"
+										vertical
+									>
+										<n-text>{{ name }}</n-text>
+
+										<n-text
+											class="text-[.8em]"
+											:depth="3"
+										>
+											{{ group }}
+										</n-text>
+									</n-flex>
+								</template>
+
+								<template #default>
+									<template v-if="isNotNil(href)">
+										<custom-redirect
+											#="{ aProps, redirect }"
+											:href="href"
+										>
+											<n-button
+												:style="{
+													'--n-icon-margin': '0 .1em 0 0'
+												}"
+												tag="a"
+												text
+												type="primary"
+												v-bind="aProps"
+												@click.prevent="redirect"
+											>
+												<template #icon>
+													<n-icon class="i-ant-design:link-outlined" />
+												</template>
+
+												{{ award }}
+											</n-button>
+										</custom-redirect>
+									</template>
+
+									<template v-else>
+										<n-text type="info">{{ award }}</n-text>
+									</template>
+								</template>
+
+								<template
+									v-if="isNotNil(date)"
+									#footer
+								>
+									<n-text
+										>{{ date.year ?? '?' }}/{{ date.month ?? '?' }}/{{ date.day ?? '?' }}</n-text
+									>
+								</template>
+							</n-timeline-item>
 						</template>
-					</n-timeline-item>
-				</template>
-			</n-timeline>
-		</n-scrollbar>
+					</n-timeline>
+				</n-scrollbar>
+			</n-flex>
+		</template>
 	</n-card>
 </template>

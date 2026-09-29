@@ -1,9 +1,7 @@
 import { isNil } from 'es-toolkit'
 import { decodeQR } from 'qr/decode.js'
 
-import type { QRCodeReadResult } from '~/types/qrcode'
-
-export const read = async (src: string): QRCodeReadResult => {
+export const read = async (src: string) => {
 	const response = await fetch(src)
 	const blob = await response.blob()
 

@@ -16,6 +16,8 @@
 	"devDependencies": {
 		"@ant-design/colors": "^8.0.1",
 		"@colordx/core": "^7.2.0",
+		"@filtron/core": "^2.0.0",
+		"@filtron/js": "^1.1.2",
 		"@iconify/json": "^2.2.534",
 		"@iconify/utils": "^3.1.7",
 		"@nuxt/eslint-config": "^1.17.0",

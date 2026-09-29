@@ -1,1 +1,0 @@
-export type QRCodeReadResult = Promise<string | null>
