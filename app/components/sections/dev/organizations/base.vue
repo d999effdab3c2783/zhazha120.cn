@@ -2,6 +2,7 @@
 	import { isNotNil } from 'es-toolkit'
 	import type { ButtonProps } from 'naive-ui'
 
+	import { useResponsive } from '~/composables/responsive'
 	import type { BaseDevOrganization } from '~/types/dev'
 
 	defineProps<
@@ -17,18 +18,21 @@
 			}>
 		}>
 	>()
+
+	const { isMobile } = useResponsive()
 </script>
 
 <template>
 	<custom-redirect :href="href">
 		<template #default="{ aProps, redirect }">
 			<n-button
-				secondary
-				tag="a"
 				v-bind="{
 					aProps,
 					...(isNotNil(peers) ? peers.button : {})
 				}"
+				:block="isMobile"
+				secondary
+				tag="a"
 				@click.prevent="redirect"
 			>
 				<template #icon>

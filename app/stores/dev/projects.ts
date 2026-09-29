@@ -30,7 +30,7 @@ export default [
 	},
 	{
 		type: 'github',
-		name: 'abnormalcat.cn (Abnormal Cat 的个人网站)',
+		name: ['abnormalcat.cn', '(Abnormal Cat 的个人网站)'].join('\n'),
 
 		owner: 'Abnormal-Cat',
 		repo: 'abnormalcat.cn',

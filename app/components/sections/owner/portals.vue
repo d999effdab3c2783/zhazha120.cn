@@ -1,10 +1,13 @@
 <script setup lang="ts">
 	import { isNotNil } from 'es-toolkit'
 
+	import { useResponsive } from '~/composables/responsive'
 	import { useOwnerStore } from '~/stores/owner'
 	import type { OwnerPortal } from '~/types/owner'
 
 	const ownerStore = useOwnerStore()
+
+	const { isMobile } = useResponsive()
 </script>
 
 <template>
@@ -20,6 +23,7 @@
 				<custom-redirect :href="href">
 					<template #default="{ aProps, redirect }">
 						<n-button
+							:block="isMobile"
 							tag="a"
 							:type="type"
 							v-bind="aProps"

@@ -3,6 +3,7 @@
 	import { shallowRef } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
+	import { useResponsive } from '~/composables/responsive'
 	import type { DevStack } from '~/types/dev'
 
 	const props = defineProps<{
@@ -10,6 +11,8 @@
 	}>()
 
 	const showItemsFilter = shallowRef(false)
+
+	const { isMobile } = useResponsive()
 
 	const itemsFilter = useArrayFilter(props.item.items)
 
@@ -38,7 +41,10 @@
 		</template>
 
 		<template #default>
-			<n-flex size="small">
+			<n-flex
+				size="small"
+				:vertical="isMobile"
+			>
 				<n-collapse-transition :show="showItemsFilter">
 					<custom-shared-filter-input :filter="itemsFilter" />
 				</n-collapse-transition>
@@ -57,6 +63,7 @@
 								:href="href"
 							>
 								<n-button
+									:block="isMobile"
 									secondary
 									tag="a"
 									v-bind="aProps"

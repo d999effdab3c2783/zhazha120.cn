@@ -4,6 +4,7 @@
 	import type { ButtonProps } from 'naive-ui'
 	import { computed } from 'vue'
 
+	import { useResponsive } from '~/composables/responsive'
 	import { tags as tagMappings } from '~/stores/dev/projects'
 	import type { BaseDevProject } from '~/types/dev'
 
@@ -23,6 +24,8 @@
 		}>
 	>()
 
+	const { isMobile } = useResponsive()
+
 	const buttonClassNames = computed(() => {
 		return clsx({
 			'opacity-50': isNil(props.item.tags) || intersection(props.item.tags, ['active', 'maintained']).length <= 0
@@ -34,13 +37,15 @@
 	<custom-redirect :href="href">
 		<template #default="{ aProps, redirect }">
 			<n-button
-				:class="buttonClassNames"
-				secondary
-				tag="a"
 				v-bind="{
 					aProps,
 					...(isNotNil(peers) ? peers.button : {})
 				}"
+				:block="isMobile"
+				class="text-start whitespace-pre-line"
+				:class="buttonClassNames"
+				secondary
+				tag="a"
 				@click.prevent="redirect"
 			>
 				<template #icon>

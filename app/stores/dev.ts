@@ -7,7 +7,7 @@ import defaultCodetime from '~/stores/dev/codetime'
 import competitions from '~/stores/dev/competitions'
 import projects from '~/stores/dev/projects'
 import { useThemeStore } from '~/stores/theme'
-import type { DevOrganization, DevStack } from '~/types/dev'
+import type { DevCodeTime, DevOrganization, DevStack } from '~/types/dev'
 
 export const useDevStore = defineStore('dev', () => {
 	const themeStore = useThemeStore()
@@ -43,7 +43,8 @@ export const useDevStore = defineStore('dev', () => {
 	}
 
 	const codetime = computed(() => {
-		return replaceCodetime(defaultCodetime)
+		// oxlint-disable-next-line typescript/no-unsafe-type-assertion
+		return replaceCodetime(defaultCodetime) as DevCodeTime
 	})
 
 	const loadStacks = async () => {

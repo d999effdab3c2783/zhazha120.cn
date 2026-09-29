@@ -3,12 +3,15 @@
 	import { computed, shallowRef, toValue } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
+	import { useResponsive } from '~/composables/responsive'
 	import { useDevStore } from '~/stores/dev'
 	import type { DevCompetition } from '~/types/dev'
 
 	const showFilter = shallowRef(false)
 
 	const devStore = useDevStore()
+
+	const { isMobile } = useResponsive()
 
 	const filter = useArrayFilter(devStore.competitions)
 
@@ -41,15 +44,23 @@
 				size="small"
 				vertical
 			>
+				<n-divider class="!mt-0" />
+
 				<n-collapse-transition :show="showFilter">
 					<custom-shared-filter-input :filter="filter" />
 				</n-collapse-transition>
 
 				<n-scrollbar
-					data-lenis-prevent
 					x-scrollable
+					v-bind="
+						!isMobile
+							? {
+									'data-lenis-prevent': true
+								}
+							: {}
+					"
 				>
-					<n-timeline horizontal>
+					<n-timeline :horizontal="!isMobile">
 						<template
 							v-for="({ name, group, award, href, date }, index) in competitions as DevCompetition[]"
 							:key="index"
@@ -105,9 +116,9 @@
 									v-if="isNotNil(date)"
 									#footer
 								>
-									<n-text
-										>{{ date.year ?? '?' }}/{{ date.month ?? '?' }}/{{ date.day ?? '?' }}</n-text
-									>
+									<n-text>
+										{{ date.year ?? '?' }}/{{ date.month ?? '?' }}/{{ date.day ?? '?' }}
+									</n-text>
 								</template>
 							</n-timeline-item>
 						</template>

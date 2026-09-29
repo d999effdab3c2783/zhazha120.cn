@@ -50,6 +50,7 @@
 
 			<n-flex
 				align="center"
+				justify="center"
 				size="small"
 			>
 				<n-image :src="devStore.codetime.widgets.status" />
@@ -58,6 +59,7 @@
 
 			<n-flex
 				align="center"
+				justify="center"
 				size="small"
 			>
 				<n-image :src="devStore.codetime.widgets.badge.codingTime" />

@@ -3,12 +3,15 @@
 	import { computed, shallowRef, toValue } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
+	import { useResponsive } from '~/composables/responsive'
 	import { useDevStore } from '~/stores/dev'
 	import type { ExternalDevOrganization, GithubDevOrganization } from '~/types/dev'
 
 	const showFilter = shallowRef(false)
 
 	const devStore = useDevStore()
+
+	const { isMobile } = useResponsive()
 
 	const filter = useArrayFilter(devStore.organizations)
 
@@ -48,8 +51,9 @@
 				</n-collapse-transition>
 
 				<n-flex
-					align="center"
+					:align="!isMobile ? 'center' : undefined"
 					size="small"
+					:vertical="isMobile"
 				>
 					<transition-group
 						appear
