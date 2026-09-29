@@ -3,7 +3,7 @@
 
 	definePageMeta({
 		layout: 'subpage',
-		title: '设定'
+		title: '设定集'
 	})
 </script>
 

@@ -1,6 +1,8 @@
+import type { MaybeRefOrGetter } from 'vue'
+
 declare module 'nuxt/app' {
 	interface PageMeta {
-		readonly title: string
+		readonly title: MaybeRefOrGetter<string>
 	}
 }
 
