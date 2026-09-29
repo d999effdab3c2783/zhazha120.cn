@@ -37,7 +37,6 @@
 					vertical
 				>
 					<n-qr-code
-						:value="item.content"
 						v-bind="{
 							size: containerBounding.width.value / (isMobile ? 2 : 4),
 							type: 'svg',
@@ -46,6 +45,8 @@
 
 							class: qrCodeClassNames
 						}"
+						class="hover:cursor-help"
+						:value="item.content"
 						@click="showContent = !showContent"
 					/>
 
