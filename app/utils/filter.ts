@@ -38,6 +38,10 @@ const resolve = (item: unknown, remainKeys: string[]): string[] => {
 }
 
 export const filterArray = <T extends UnknownRecord>(input: readonly T[], query: string): T[] | null => {
+	if (query.trim() === '') {
+		return null
+	}
+
 	try {
 		const parsed = parseOrThrow(query)
 		const filter = toFilter(parsed, {
