@@ -4,7 +4,7 @@
 	import { gsap } from 'gsap'
 	import { InertiaPlugin } from 'gsap/InertiaPlugin'
 
-	type Dot = {
+	export type Dot = {
 		cx: number
 		cy: number
 
