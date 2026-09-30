@@ -16,6 +16,7 @@ export default defineConfig({
 				}
 			],
 			'vue/block-order': 'error',
+			'vue/multi-word-component-names': 'off',
 			'vue/no-multiple-template-root': 'off',
 			'vue/valid-template-root': 'off'
 		}
