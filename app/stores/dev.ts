@@ -1,5 +1,4 @@
-import { cloneDeep, isPlainObject, isString } from 'es-toolkit'
-import type { UnknownRecord } from 'es-toolkit/types'
+import { cloneDeepWith, isString } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { computed, shallowRef } from 'vue'
 
@@ -8,7 +7,7 @@ import defaultCodetime from '~/stores/dev/codetime'
 import competitions from '~/stores/dev/competitions'
 import projects from '~/stores/dev/projects'
 import { useThemeStore } from '~/stores/theme'
-import type { DevCodeTime, DevOrganization, DevStack } from '~/types/dev'
+import type { DevOrganization, DevStack } from '~/types/dev'
 
 export const useDevStore = defineStore('dev', () => {
 	const themeStore = useThemeStore()
@@ -16,36 +15,14 @@ export const useDevStore = defineStore('dev', () => {
 	const stacks = shallowRef<DevStack[]>([])
 	const organizations = shallowRef<DevOrganization[]>([])
 
-	const replaceCodetime = (input: unknown): unknown => {
-		if (isString(input)) {
-			// @ts-ignore
-			return input.replaceAll('{theme}', themeStore.actualMode)
-		}
-
-		if (Array.isArray(input)) {
-			// @ts-ignore
-			return input.map(item => {
-				return replaceCodetime(item)
-			})
-		}
-
-		if (isPlainObject(input)) {
-			const cloned: UnknownRecord = cloneDeep(input)
-
-			for (const key in cloned) {
-				cloned[key] = replaceCodetime(cloned[key])
+	const codetime = computed(() => {
+		return cloneDeepWith(defaultCodetime, value => {
+			if (isString(value)) {
+				return value.replaceAll('{theme}', themeStore.actualMode)
 			}
 
-			// @ts-ignore
-			return cloned
-		}
-
-		return input
-	}
-
-	const codetime = computed(() => {
-		// oxlint-disable-next-line typescript/no-unsafe-type-assertion
-		return replaceCodetime(defaultCodetime) as DevCodeTime
+			return undefined
+		})
 	})
 
 	const loadStacks = async () => {

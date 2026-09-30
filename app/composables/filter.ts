@@ -8,7 +8,7 @@ import { shallowRef } from 'vue'
 
 const separator = '.'
 
-const resolve = (item: unknown, remainKeys: string[]): unknown[] => {
+const resolve = (item: unknown, remainKeys: string[]): string[] => {
 	if (isNil(remainKeys[0])) {
 		if (isNotNil(item)) {
 			const itemString = String(item)
