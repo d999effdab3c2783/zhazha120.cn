@@ -44,7 +44,7 @@ export type FurryEvent = {
 	readonly theme: string
 	readonly href: string
 
-	readonly characters: Character[]
+	readonly charactersQuery: string
 
 	readonly renderExtra: () => VNode
 }>

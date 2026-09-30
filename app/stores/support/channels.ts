@@ -1,4 +1,4 @@
-import { read } from '@/macros/qrcode' with { type: 'macro' }
+import { read } from '~/macros/qrcode' with { type: 'macro' }
 import alipayRedPacket from '~/stores/support/assets/alipay/red_packet.webp?url'
 import alipayTransfer from '~/stores/support/assets/alipay/transfer.webp?url'
 import qqTransfer from '~/stores/support/assets/qq/transfer.webp?url'

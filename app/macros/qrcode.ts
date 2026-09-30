@@ -3,8 +3,8 @@ import { isNotNil } from 'es-toolkit'
 import type { MacroContext } from 'unplugin-macros'
 import { defineMacro } from 'unplugin-macros'
 
-import { read as browserRead } from '@/utils/qrcode/browser'
-import { read as nodeRead } from '@/utils/qrcode/node'
+import { read as browserRead } from '~/utils/qrcode/browser'
+import { read as nodeRead } from '~/utils/qrcode/node'
 
 async function autoRead(this: MacroContext, input: string) {
 	if (isNotNil(globalThis.process)) {

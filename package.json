@@ -32,6 +32,7 @@
 		"@vueuse/nuxt": "^15.0.0",
 		"@vueuse/router": "^15.0.0",
 		"clsx": "^2.1.1",
+		"date-fns": "^4.4.0",
 		"es-toolkit": "^1.52.0",
 		"eslint": "^10.11.0",
 		"eslint-plugin-oxlint": "^1.85.0",
