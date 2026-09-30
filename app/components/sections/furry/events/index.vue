@@ -19,7 +19,7 @@
 <script setup lang="ts">
 	import { eachDayOfInterval } from 'date-fns'
 	import { groupBy, isNil, sortKeys } from 'es-toolkit'
-	import { defaultTo, get } from 'es-toolkit/compat'
+	import { get } from 'es-toolkit/compat'
 	import { computed } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
@@ -93,7 +93,7 @@
 	})
 
 	const filterEvents = (date: CalendarDate): FurryEventEntry[] => {
-		return defaultTo(get(indexes.value, [date.year, date.month, date.date]), []) ?? []
+		return get(indexes.value, [date.year, date.month, date.date], [])
 	}
 
 	const handleCalendarUpdate = (_timestamp: number, date: CalendarDate) => {

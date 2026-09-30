@@ -36,6 +36,8 @@
 			<sections-furry-characters-item :item="character" />
 
 			<template v-if="isNotNil(character.renderExtra)">
+				<n-divider />
+
 				<n-element>
 					<component :is="character.renderExtra()" />
 				</n-element>
