@@ -36,37 +36,44 @@
 
 		<n-divider />
 
-		<template
-			v-for="(item, index) in characters"
-			:key="index"
+		<transition-group
+			appear
+			name="v-fade"
 		>
-			<sections-furry-characters-item :item="item">
-				<template
-					v-if="isNotNil(item.slug)"
-					#extra
-				>
-					<n-element class="mt-auto self-end">
-						<custom-redirect
-							#="{ aProps, redirect }"
-							:href="generateDetailLink(item.slug)"
+			<template
+				v-for="item in characters"
+				:key="[item.slug, item.name].join(' - ')"
+			>
+				<n-element :style="{ '--v-fade-leave-duration': 0 }">
+					<sections-furry-characters-item :item="item">
+						<template
+							v-if="isNotNil(item.slug)"
+							#extra
 						>
-							<n-button
-								v-bind="aProps"
-								tag="a"
-								type="primary"
-								@click.prevent="redirect"
-							>
-								<template #icon>
-									<n-icon class="i-ant-design:profile-outlined" />
-								</template>
+							<n-element class="mt-auto self-end">
+								<custom-redirect
+									#="{ aProps, redirect }"
+									:href="generateDetailLink(item.slug)"
+								>
+									<n-button
+										v-bind="aProps"
+										tag="a"
+										type="primary"
+										@click.prevent="redirect"
+									>
+										<template #icon>
+											<n-icon class="i-ant-design:profile-outlined" />
+										</template>
 
-								了解更多
-							</n-button>
-						</custom-redirect>
-					</n-element>
-				</template>
-			</sections-furry-characters-item>
-		</template>
+										了解更多
+									</n-button>
+								</custom-redirect>
+							</n-element>
+						</template>
+					</sections-furry-characters-item>
+				</n-element>
+			</template>
+		</transition-group>
 	</n-flex>
 </template>
 

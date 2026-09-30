@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import { useRouteParams } from '@vueuse/router'
 
-	import { definePageMeta } from '#imports'
+	import { definePageMeta } from '#app/composables/pages'
 	import type { FurryEventEntry } from '~/types/furry'
 
 	definePageMeta({

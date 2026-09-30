@@ -3,7 +3,7 @@
 	import { isNotNil } from 'es-toolkit'
 	import { computed } from 'vue'
 
-	import { definePageMeta } from '#imports'
+	import { definePageMeta } from '#app/composables/pages'
 	import { useFurryStore } from '~/stores/furry'
 
 	definePageMeta({

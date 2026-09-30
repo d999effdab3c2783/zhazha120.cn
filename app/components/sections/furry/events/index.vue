@@ -142,23 +142,41 @@
 			</n-calendar>
 		</n-card>
 
-		<template
-			v-for="(items, year) in groupedEvents"
-			:key="year"
+		<transition-group
+			appear
+			name="v-fade"
 		>
-			<n-divider>{{ year }}</n-divider>
-
 			<template
-				v-for="(item, index) in items"
-				:key="index"
+				v-for="(items, year) in groupedEvents"
+				:key="year"
 			>
-				<sections-furry-events-item :item="item">
-					<template #extra>
-						<sections-furry-events-buttons :item="item" />
-					</template>
-				</sections-furry-events-item>
+				<n-flex
+					size="small"
+					:style="{ '--v-fade-leave-duration': 0 }"
+					vertical
+				>
+					<n-divider>{{ year }}</n-divider>
+
+					<transition-group
+						appear
+						name="v-fade"
+					>
+						<template
+							v-for="item in items"
+							:key="[item.slug, item.year].join(' - ')"
+						>
+							<n-element :style="{ '--v-fade-leave-duration': 0 }">
+								<sections-furry-events-item :item="item">
+									<template #extra>
+										<sections-furry-events-buttons :item="item" />
+									</template>
+								</sections-furry-events-item>
+							</n-element>
+						</template>
+					</transition-group>
+				</n-flex>
 			</template>
-		</template>
+		</transition-group>
 	</n-flex>
 </template>
 
