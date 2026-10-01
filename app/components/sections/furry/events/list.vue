@@ -174,17 +174,6 @@
 </template>
 
 <style lang="scss">
-	.n-calendar__patch {
-		.n-calendar-date {
-			@apply \!flex-(col gap-2) text-center;
-		}
-
-		.n-calendar-date__date {
-			@apply aspect-square \!ml-0 \!size-8;
-		}
-	}
-</style>
-
-<style lang="scss">
+	@use '~/styles/patches';
 	@use '~/styles/transitions/fade';
 </style>

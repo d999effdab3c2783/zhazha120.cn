@@ -1,0 +1,11 @@
+.n-calendar {
+	&__patch {
+		.n-calendar-date {
+			@apply \!flex-(col gap-2) text-center;
+		}
+
+		.n-calendar-date__date {
+			@apply aspect-square \!ml-0 \!size-8;
+		}
+	}
+}
