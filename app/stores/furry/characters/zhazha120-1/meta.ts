@@ -1,4 +1,4 @@
-import illustration from '~/stores/furry/characters/zhazha120-1/assets/illustration.webp?url'
+import illustration from '~/stores/furry/characters/zhazha120-1/assets/illustration.bin?url'
 import type { FurryCharacter } from '~/types/furry'
 
 export default {

@@ -9,9 +9,13 @@ export const useUtilityStore = defineStore('utility', () => {
 	const load = async () => {
 		await Promise.all(
 			Object.values(
-				import.meta.glob<Utility>('~/stores/utilities/*/meta.*', {
-					import: 'default'
-				})
+				import.meta.env.DEV
+					? import.meta.glob<Utility>(['~/stores/utilities/*/meta.*'], {
+							import: 'default'
+						})
+					: import.meta.glob<Utility>(['~/stores/utilities/*/meta.*', '!~/stores/utilities/dev.*/meta*'], {
+							import: 'default'
+						})
 			).map(async importer => {
 				registry.value.push(await importer())
 			})

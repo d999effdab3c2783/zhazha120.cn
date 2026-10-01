@@ -1,7 +1,5 @@
-import avatar from '~/stores/dev/organizations/c794b7b0331e4cf3/assets/avatar.webp?url'
+import avatar from '~/stores/dev/organizations/c794b7b0331e4cf3/assets/avatar.bin?url'
 import type { DevOrganization } from '~/types/dev'
-
-export const remoteAvatar = 'https://avatars.githubusercontent.com/u/108103310'
 
 export default {
 	type: 'github',

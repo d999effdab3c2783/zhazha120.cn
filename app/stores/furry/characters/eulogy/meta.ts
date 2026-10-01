@@ -1,4 +1,4 @@
-import illustration from '~/stores/furry/characters/eulogy/assets/illustration.webp?url'
+import illustration from '~/stores/furry/characters/eulogy/assets/illustration.bin?url'
 import type { FurryCharacter } from '~/types/furry'
 
 export default {

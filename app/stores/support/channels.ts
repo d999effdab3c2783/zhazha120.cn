@@ -1,8 +1,8 @@
 import { read } from '~/macros/qrcode' with { type: 'macro' }
-import alipayRedPacket from '~/stores/support/assets/alipay/red_packet.webp?url'
-import alipayTransfer from '~/stores/support/assets/alipay/transfer.webp?url'
-import qqTransfer from '~/stores/support/assets/qq/transfer.webp?url'
-import wechatTransfer from '~/stores/support/assets/wechat/transfer.webp?url'
+import alipayRedPacket from '~/stores/support/assets/alipay/red_packet.bin?url'
+import alipayTransfer from '~/stores/support/assets/alipay/transfer.bin?url'
+import qqTransfer from '~/stores/support/assets/qq/transfer.bin?url'
+import wechatTransfer from '~/stores/support/assets/wechat/transfer.bin?url'
 import type { SupportChannel } from '~/types/support'
 
 export default [
@@ -31,7 +31,7 @@ export default [
 			{
 				type: 'qrcode',
 				name: '收款码',
-				content: await read('~/stores/support/assets/qq/transfer.webp'),
+				content: await read('~/stores/support/assets/qq/transfer.bin'),
 
 				props: {
 					iconSrc: 'https://thirdqq.qlogo.cn/g?b=qq&nk=2331281251&s=0'
@@ -50,7 +50,7 @@ export default [
 			{
 				type: 'qrcode',
 				name: '收款码',
-				content: await read('~/stores/support/assets/wechat/transfer.webp')
+				content: await read('~/stores/support/assets/wechat/transfer.bin')
 			}
 		]
 	},
@@ -65,7 +65,7 @@ export default [
 			{
 				type: 'qrcode',
 				name: '收款码',
-				content: await read('~/stores/support/assets/alipay/transfer.webp')
+				content: await read('~/stores/support/assets/alipay/transfer.bin')
 			},
 			{
 				type: 'image',
@@ -75,7 +75,7 @@ export default [
 			{
 				type: 'qrcode',
 				name: '红包码',
-				content: await read('~/stores/support/assets/alipay/red_packet.webp')
+				content: await read('~/stores/support/assets/alipay/red_packet.bin')
 			}
 		]
 	}

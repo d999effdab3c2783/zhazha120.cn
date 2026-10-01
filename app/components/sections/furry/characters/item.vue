@@ -18,7 +18,14 @@
 			direction="horizontal"
 		>
 			<template #1>
-				<n-image :src="item.illustration" />
+				<n-flex
+					align="center"
+					size="small"
+					vertical
+				>
+					<n-image :src="item.illustration" />
+					<n-text :depth="3">仅供展示 不保证原图</n-text>
+				</n-flex>
 			</template>
 
 			<template #2>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	const photos = await Promise.all(
 		Object.values(
-			import.meta.glob<string>('../assets/photos/*.webp', {
+			import.meta.glob<string>('../assets/photos/*.bin', {
 				query: '?url',
 				import: 'default'
 			})
@@ -42,14 +42,22 @@
 			size="small"
 			title="精选返图"
 		>
-			<n-image-group>
-				<template
-					v-for="(url, index) in photos"
-					:key="index"
-				>
-					<n-image :src="url" />
-				</template>
-			</n-image-group>
+			<n-flex
+				align="center"
+				size="small"
+				vertical
+			>
+				<n-image-group>
+					<template
+						v-for="(url, index) in photos"
+						:key="index"
+					>
+						<n-image :src="url" />
+					</template>
+				</n-image-group>
+
+				<n-text :depth="3">仅供展示 不保证原图</n-text>
+			</n-flex>
 		</n-card>
 	</n-flex>
 </template>

@@ -1,4 +1,4 @@
-import banner from '~/stores/furry/events/2026/furward/assets/banner.webp?url'
+import banner from '~/stores/furry/events/2026/furward/assets/banner.bin?url'
 import Extra from '~/stores/furry/events/2026/furward/components/extra.vue'
 import type { FurryEvent } from '~/types/furry'
 import { createDate } from '~/utils/date'

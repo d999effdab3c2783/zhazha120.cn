@@ -20,7 +20,7 @@
 		<template #icon>
 			<n-image
 				:src="item.avatar"
-				@click.stop
+				@click.prevent.stop
 			/>
 		</template>
 	</sections-dev-organizations-base>

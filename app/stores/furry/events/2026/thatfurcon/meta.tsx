@@ -1,4 +1,4 @@
-import banner from '~/stores/furry/events/2026/thatfurcon/assets/banner.webp?url'
+import banner from '~/stores/furry/events/2026/thatfurcon/assets/banner.bin?url'
 import Extra from '~/stores/furry/events/2026/thatfurcon/components/extra.vue'
 import type { FurryEvent } from '~/types/furry'
 import { createDate } from '~/utils/date'
