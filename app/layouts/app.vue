@@ -40,7 +40,13 @@
 			</template>
 
 			<n-layout-content>
-				<slot />
+				<suspense>
+					<slot />
+
+					<template #fallback>
+						<app-loading />
+					</template>
+				</suspense>
 			</n-layout-content>
 
 			<n-layout-footer>
