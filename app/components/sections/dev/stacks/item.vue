@@ -40,47 +40,45 @@
 			</n-button>
 		</template>
 
-		<template #default>
-			<n-flex
-				size="small"
-				:vertical="isMobile"
+		<n-flex
+			size="small"
+			:vertical="isMobile"
+		>
+			<n-collapse-transition :show="showItemsFilter">
+				<custom-shared-filter-input :filter="itemsFilter" />
+			</n-collapse-transition>
+
+			<transition-group
+				appear
+				name="v-fade"
 			>
-				<n-collapse-transition :show="showItemsFilter">
-					<custom-shared-filter-input :filter="itemsFilter" />
-				</n-collapse-transition>
-
-				<transition-group
-					appear
-					name="v-fade"
+				<template
+					v-for="{ icon, name, href } in items"
+					:key="name"
 				>
-					<template
-						v-for="{ icon, name, href } in items"
-						:key="name"
-					>
-						<n-element :style="{ '--v-fade-leave-duration': 0 }">
-							<custom-redirect
-								#="{ aProps, redirect }"
-								:href="href"
+					<n-element :style="{ '--v-fade-leave-duration': 0 }">
+						<custom-redirect
+							#="{ aProps, redirect }"
+							:href="href"
+						>
+							<n-button
+								:block="isMobile"
+								secondary
+								tag="a"
+								v-bind="aProps"
+								@click.prevent="redirect"
 							>
-								<n-button
-									:block="isMobile"
-									secondary
-									tag="a"
-									v-bind="aProps"
-									@click.prevent="redirect"
-								>
-									<template #icon>
-										<n-icon :class="icon" />
-									</template>
+								<template #icon>
+									<n-icon :class="icon" />
+								</template>
 
-									{{ name }}
-								</n-button>
-							</custom-redirect>
-						</n-element>
-					</template>
-				</transition-group>
-			</n-flex>
-		</template>
+								{{ name }}
+							</n-button>
+						</custom-redirect>
+					</n-element>
+				</template>
+			</transition-group>
+		</n-flex>
 	</n-card>
 </template>
 

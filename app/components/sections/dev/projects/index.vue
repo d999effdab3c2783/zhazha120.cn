@@ -39,42 +39,40 @@
 			</n-button>
 		</template>
 
-		<template #default>
+		<n-flex
+			size="small"
+			vertical
+		>
+			<n-collapse-transition :show="showFilter">
+				<custom-shared-filter-input :filter="filter" />
+			</n-collapse-transition>
+
 			<n-flex
+				:align="!isMobile ? 'center' : undefined"
 				size="small"
-				vertical
+				:vertical="isMobile"
 			>
-				<n-collapse-transition :show="showFilter">
-					<custom-shared-filter-input :filter="filter" />
-				</n-collapse-transition>
-
-				<n-flex
-					:align="!isMobile ? 'center' : undefined"
-					size="small"
-					:vertical="isMobile"
+				<transition-group
+					appear
+					name="v-fade"
 				>
-					<transition-group
-						appear
-						name="v-fade"
+					<template
+						v-for="item in projects"
+						:key="item.name"
 					>
-						<template
-							v-for="item in projects"
-							:key="item.name"
-						>
-							<n-element :style="{ '--v-fade-leave-duration': 0 }">
-								<template v-if="isEqual(item.type, 'github')">
-									<sections-dev-projects-github :item="item as GithubDevProject" />
-								</template>
+						<n-element :style="{ '--v-fade-leave-duration': 0 }">
+							<template v-if="isEqual(item.type, 'github')">
+								<sections-dev-projects-github :item="item as GithubDevProject" />
+							</template>
 
-								<template v-if="isEqual(item.type, 'external')">
-									<sections-dev-projects-external :item="item as ExternalDevProject" />
-								</template>
-							</n-element>
-						</template>
-					</transition-group>
-				</n-flex>
+							<template v-if="isEqual(item.type, 'external')">
+								<sections-dev-projects-external :item="item as ExternalDevProject" />
+							</template>
+						</n-element>
+					</template>
+				</transition-group>
 			</n-flex>
-		</template>
+		</n-flex>
 	</n-card>
 </template>
 

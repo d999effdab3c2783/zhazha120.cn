@@ -39,92 +39,86 @@
 			</n-button>
 		</template>
 
-		<template #default>
-			<n-flex
-				size="small"
-				vertical
+		<n-flex
+			size="small"
+			vertical
+		>
+			<n-divider class="!mt-0" />
+
+			<n-collapse-transition :show="showFilter">
+				<custom-shared-filter-input :filter="filter" />
+			</n-collapse-transition>
+
+			<n-scrollbar
+				class="overscroll-contain"
+				data-lenis-prevent-horizontal
+				x-scrollable
 			>
-				<n-divider class="!mt-0" />
-
-				<n-collapse-transition :show="showFilter">
-					<custom-shared-filter-input :filter="filter" />
-				</n-collapse-transition>
-
-				<n-scrollbar
-					x-scrollable
-					v-bind="
-						!isMobile
-							? {
-									'data-lenis-prevent': true
-								}
-							: {}
-					"
+				<n-timeline
+					class="w-max"
+					:horizontal="!isMobile"
 				>
-					<n-timeline :horizontal="!isMobile">
-						<template
-							v-for="({ name, group, award, href, date }, index) in competitions as DevCompetition[]"
-							:key="index"
-						>
-							<n-timeline-item type="success">
-								<template #header>
-									<n-flex
-										:size="0"
-										vertical
-									>
-										<n-text>{{ name }}</n-text>
-
-										<n-text
-											class="text-[.8em]"
-											:depth="3"
-										>
-											{{ group }}
-										</n-text>
-									</n-flex>
-								</template>
-
-								<template #default>
-									<template v-if="isNotNil(href)">
-										<custom-redirect
-											#="{ aProps, redirect }"
-											:href="href"
-										>
-											<n-button
-												:style="{
-													'--n-icon-margin': '0 .1em 0 0'
-												}"
-												tag="a"
-												text
-												type="primary"
-												v-bind="aProps"
-												@click.prevent="redirect"
-											>
-												<template #icon>
-													<n-icon class="i-ant-design:link-outlined" />
-												</template>
-
-												{{ award }}
-											</n-button>
-										</custom-redirect>
-									</template>
-
-									<template v-else>
-										<n-text type="info">{{ award }}</n-text>
-									</template>
-								</template>
-
-								<template
-									v-if="isNotNil(date)"
-									#footer
+					<template
+						v-for="({ name, group, award, href, date }, index) in competitions as DevCompetition[]"
+						:key="index"
+					>
+						<n-timeline-item type="success">
+							<template #header>
+								<n-flex
+									:size="0"
+									vertical
 								>
-									<n-text>
-										{{ date.year ?? '?' }}/{{ date.month ?? '?' }}/{{ date.day ?? '?' }}
+									<n-text>{{ name }}</n-text>
+
+									<n-text
+										class="text-[.8em]"
+										:depth="3"
+									>
+										{{ group }}
 									</n-text>
+								</n-flex>
+							</template>
+
+							<template #default>
+								<template v-if="isNotNil(href)">
+									<custom-redirect
+										#="{ aProps, redirect }"
+										:href="href"
+									>
+										<n-button
+											:style="{
+												'--n-icon-margin': '0 .1em 0 0'
+											}"
+											tag="a"
+											text
+											type="primary"
+											v-bind="aProps"
+											@click.prevent="redirect"
+										>
+											<template #icon>
+												<n-icon class="i-ant-design:link-outlined" />
+											</template>
+
+											{{ award }}
+										</n-button>
+									</custom-redirect>
 								</template>
-							</n-timeline-item>
-						</template>
-					</n-timeline>
-				</n-scrollbar>
-			</n-flex>
-		</template>
+
+								<template v-else>
+									<n-text type="info">{{ award }}</n-text>
+								</template>
+							</template>
+
+							<template
+								v-if="isNotNil(date)"
+								#footer
+							>
+								<n-text> {{ date.year ?? '?' }}/{{ date.month ?? '?' }}/{{ date.day ?? '?' }} </n-text>
+							</template>
+						</n-timeline-item>
+					</template>
+				</n-timeline>
+			</n-scrollbar>
+		</n-flex>
 	</n-card>
 </template>

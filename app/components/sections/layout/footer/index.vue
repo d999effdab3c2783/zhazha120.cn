@@ -21,7 +21,8 @@
 
 <template>
 	<n-scrollbar
-		data-lenis-prevent
+		class="overscroll-contain"
+		data-lenis-prevent-horizontal
 		x-scrollable
 	>
 		<n-element :class="containerClassNames">
