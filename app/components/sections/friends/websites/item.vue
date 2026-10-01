@@ -66,11 +66,41 @@
 			</n-button>
 		</template>
 
-		<template
-			v-if="isNotNil(item.tags)"
-			#footer
-		>
-			<sections-friends-websites-tags :item="item" />
+		<template #footer>
+			<n-flex
+				size="large"
+				vertical
+			>
+				<n-flex
+					align="center"
+					justify="center"
+					size="small"
+				>
+					<n-image
+						class="rounded h-16"
+						:src="item.logo"
+					/>
+
+					<n-flex
+						align="start"
+						class="leading-snug"
+						:size="0"
+						vertical
+					>
+						<n-text>{{ item.name }}</n-text>
+
+						<n-text :depth="3">
+							{{ item.description }}
+						</n-text>
+					</n-flex>
+				</n-flex>
+
+				<template v-if="isNotNil(item.tags)">
+					<n-divider class="!my-0" />
+
+					<sections-friends-websites-tags :item="item" />
+				</template>
+			</n-flex>
 		</template>
 	</custom-redirect>
 </template>

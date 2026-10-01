@@ -11,6 +11,10 @@
 		size="small"
 		vertical
 	>
+		<slot name="bio">
+			<sections-friends-bio />
+		</slot>
+
 		<slot name="websites">
 			<n-divider>友情链接</n-divider>
 

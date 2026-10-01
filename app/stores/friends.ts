@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { shallowRef } from 'vue'
 
+import bio from '~/stores/friends/bio'
 import type { FriendWebsite } from '~/types/friend'
 
 export const useFriendsStore = defineStore('friends', () => {
@@ -19,6 +20,8 @@ export const useFriendsStore = defineStore('friends', () => {
 	}
 
 	return {
+		bio,
+
 		websites,
 
 		loadWebsites
