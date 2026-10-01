@@ -17,18 +17,28 @@
 </script>
 
 <script setup lang="ts">
+	import { clsx } from 'clsx'
 	import { eachDayOfInterval } from 'date-fns'
 	import { groupBy, isNil, sortKeys } from 'es-toolkit'
 	import { get, set } from 'es-toolkit/compat'
 	import { computed } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
+	import { useResponsive } from '~/composables/responsive'
 
 	const props = defineProps<{
 		readonly items: FurryEventEntry[]
 	}>()
 
 	const filter = useArrayFilter(props.items)
+
+	const { isMobile } = useResponsive()
+
+	const calendarCardClassNames = computed(() => {
+		return clsx({
+			'n-calendar__patch': isMobile.value
+		})
+	})
 
 	const filteredItems = computed(() => {
 		return filter.output.value
@@ -99,7 +109,10 @@
 			<custom-shared-filter-input :filter="filter" />
 		</n-card>
 
-		<n-card size="small">
+		<n-card
+			:class="calendarCardClassNames"
+			size="small"
+		>
 			<n-calendar @update:value="handleCalendarUpdate">
 				<template #default="{ year, month, date }">
 					<n-flex
@@ -159,6 +172,18 @@
 		</transition-group>
 	</n-flex>
 </template>
+
+<style lang="scss">
+	.n-calendar__patch {
+		.n-calendar-date {
+			@apply \!flex-(col gap-2) text-center;
+		}
+
+		.n-calendar-date__date {
+			@apply aspect-square \!ml-0 \!size-8;
+		}
+	}
+</style>
 
 <style lang="scss">
 	@use '~/styles/transitions/fade';
