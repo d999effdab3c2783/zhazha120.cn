@@ -66,7 +66,7 @@
 				</n-element>
 			</template>
 
-			<template v-if="isNotNil(characters)">
+			<template v-if="isNotNil(characters) && characters.length > 0">
 				<n-divider>出的设定</n-divider>
 
 				<sections-furry-characters-list :items="characters" />

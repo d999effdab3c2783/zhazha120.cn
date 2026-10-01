@@ -11,7 +11,7 @@
 <template>
 	<template v-if="isNotNil(item.description)">
 		<n-h4
-			class="!mt-4"
+			class="box-border !mb-0 !mt-4"
 			prefix="bar"
 		>
 			{{ item.description }}

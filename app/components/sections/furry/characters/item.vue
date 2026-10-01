@@ -13,9 +13,14 @@
 	const { isMobile } = useResponsive()
 
 	const informationClassNames = computed(() => {
-		return clsx({
-			'mt-4': isMobile.value
-		})
+		return clsx(
+			{
+				'mt-4': isMobile.value
+			},
+			{
+				'ml-2': !isMobile.value
+			}
+		)
 	})
 </script>
 

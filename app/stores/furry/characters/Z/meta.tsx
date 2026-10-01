@@ -1,4 +1,5 @@
 import illustration from '~/stores/furry/characters/Z/assets/illustration.bin?url'
+import Extra from '~/stores/furry/characters/Z/components/extra.vue'
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
@@ -18,5 +19,9 @@ export default {
 	owner: {
 		name: '渣渣120',
 		href: '/'
+	},
+
+	renderExtra: () => {
+		return <Extra />
 	}
 } as const satisfies FurryCharacter

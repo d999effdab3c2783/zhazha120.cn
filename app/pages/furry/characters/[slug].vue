@@ -61,7 +61,7 @@
 				</n-element>
 			</template>
 
-			<template v-if="isNotNil(events)">
+			<template v-if="isNotNil(events) && events.length > 0">
 				<n-divider>参与过的行程</n-divider>
 
 				<sections-furry-events-list :items="events" />
