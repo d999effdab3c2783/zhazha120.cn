@@ -1,14 +1,17 @@
 <script setup lang="ts">
 	import { flattenObject, isNotNil, uniq } from 'es-toolkit'
-	import { computed, toRefs, toValue } from 'vue'
+	import { computed, shallowRef, toRefs, toValue } from 'vue'
 
 	import type { useArrayFilter } from '~/composables/filter'
+	import tutorial from '~/utils/filter/assets/tutorial.bin?url'
 
 	const props = defineProps<{
 		readonly filter: ReturnType<typeof useArrayFilter>
 	}>()
 
 	const { filter } = toRefs(props)
+
+	const showTutorial = shallowRef(false)
 
 	const keys = computed(() => {
 		return uniq(
@@ -34,6 +37,22 @@
 		vertical
 	>
 		<n-flex size="small">
+			<n-button
+				size="small"
+				@click="showTutorial = true"
+			>
+				<template #icon>
+					<n-icon class="i-ant-design:question-circle-outlined" />
+				</template>
+
+				使用方法
+			</n-button>
+
+			<n-image-preview
+				v-model:show="showTutorial"
+				:src="tutorial"
+			/>
+
 			<template
 				v-for="key in keys"
 				:key="key"
