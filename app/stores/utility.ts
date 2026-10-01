@@ -9,7 +9,7 @@ export const useUtilityStore = defineStore('utility', () => {
 	const load = async () => {
 		await Promise.all(
 			Object.values(
-				import.meta.glob<Utility>('~/stores/utilities/*', {
+				import.meta.glob<Utility>('~/stores/utilities/*/meta.*', {
 					import: 'default'
 				})
 			).map(async importer => {
