@@ -64,23 +64,7 @@
 			<template v-if="isNotNil(events)">
 				<n-divider>参与过的行程</n-divider>
 
-				<transition-group
-					appear
-					name="v-fade"
-				>
-					<template
-						v-for="item in events"
-						:key="[item.slug, item.name].join(' - ')"
-					>
-						<n-element :style="{ '--v-fade-leave-duration': 0 }">
-							<sections-furry-events-item :item="item">
-								<template #extra>
-									<sections-furry-events-buttons :item="item" />
-								</template>
-							</sections-furry-events-item>
-						</n-element>
-					</template>
-				</transition-group>
+				<sections-furry-events-list :items="events" />
 			</template>
 		</n-flex>
 	</template>
@@ -91,7 +75,3 @@
 		</n-card>
 	</template>
 </template>
-
-<style lang="scss">
-	@use '~/styles/transitions/fade';
-</style>

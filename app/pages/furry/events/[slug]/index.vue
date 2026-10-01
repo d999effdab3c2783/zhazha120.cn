@@ -1,8 +1,10 @@
 <script setup lang="ts">
 	import { useRouteParams } from '@vueuse/router'
+	import { computed } from 'vue'
 
 	import { definePageMeta } from '#app/composables/pages'
-	import type { FurryEventEntry } from '~/types/furry'
+	import { useFurryStore } from '~/stores/furry'
+	import { filterArray } from '~/utils/filter'
 
 	definePageMeta({
 		layout: 'subpage',
@@ -14,11 +16,15 @@
 		transform: String
 	})
 
-	const filter = (item: FurryEventEntry) => {
-		return item.slug === slug.value
-	}
+	const furryStore = useFurryStore()
+
+	const items = computed(() => {
+		return filterArray(furryStore.events, `slug : ["${slug.value}"]`)
+	})
+
+	await furryStore.loadEvents()
 </script>
 
 <template>
-	<sections-furry-events :default-filter="filter" />
+	<sections-furry-events-list :items="items ?? []" />
 </template>

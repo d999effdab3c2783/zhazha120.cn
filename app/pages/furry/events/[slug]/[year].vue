@@ -58,34 +58,18 @@
 				</template>
 			</sections-furry-events-item>
 
-			<template v-if="isNotNil(characters)">
-				<n-divider>出的设定</n-divider>
-
-				<transition-group
-					appear
-					name="v-fade"
-				>
-					<template
-						v-for="item in characters"
-						:key="[item.slug, item.name].join(' - ')"
-					>
-						<n-element :style="{ '--v-fade-leave-duration': 0 }">
-							<sections-furry-characters-item :item="item">
-								<template #extra>
-									<sections-furry-characters-buttons :item="item" />
-								</template>
-							</sections-furry-characters-item>
-						</n-element>
-					</template>
-				</transition-group>
-			</template>
-
 			<template v-if="isNotNil(event.renderExtra)">
 				<n-divider />
 
 				<n-element>
 					<component :is="event.renderExtra()" />
 				</n-element>
+			</template>
+
+			<template v-if="isNotNil(characters)">
+				<n-divider>出的设定</n-divider>
+
+				<sections-furry-characters-list :items="characters" />
 			</template>
 		</n-flex>
 	</template>
@@ -96,7 +80,3 @@
 		</n-card>
 	</template>
 </template>
-
-<style lang="scss">
-	@use '~/styles/transitions/fade';
-</style>
