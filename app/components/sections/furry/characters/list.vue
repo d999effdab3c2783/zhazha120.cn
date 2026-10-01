@@ -1,9 +1,9 @@
 <script setup lang="ts">
-	import { isNil } from 'es-toolkit'
 	import { computed } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
 	import type { FurryCharacterEntry } from '~/types/furry'
+	import { filterArray } from '~/utils/filter'
 
 	const props = defineProps<{
 		readonly items: FurryCharacterEntry[]
@@ -12,9 +12,7 @@
 	const filter = useArrayFilter(props.items)
 
 	const filteredItems = computed(() => {
-		return filter.output.value.filter(item => {
-			return isNil(item.private) || !item.private
-		})
+		return filterArray(filter.output.value, 'NOT private')
 	})
 </script>
 

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 	import { useRouteParams } from '@vueuse/router'
 	import { isNil, isNotNil } from 'es-toolkit'
+	import { get } from 'es-toolkit/compat'
 	import { computed } from 'vue'
 
 	import { definePageMeta } from '#app/composables/pages'
 	import { useFurryStore } from '~/stores/furry'
-	import { filterArray } from '~/utils/filter'
 
 	definePageMeta({
 		layout: 'subpage',
@@ -31,11 +31,11 @@
 	})
 
 	const characters = computed(() => {
-		if (isNil(event.value) || isNil(event.value.charactersQuery)) {
-			return null
+		if (isNil(event.value)) {
+			return []
 		}
 
-		return filterArray(furryStore.characters, event.value.charactersQuery)
+		return get(furryStore.mappings.get(event.value), ['characters'], [])
 	})
 
 	await furryStore.loadCharacters()
