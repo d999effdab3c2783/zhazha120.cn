@@ -159,7 +159,7 @@
 			return
 		}
 
-		gsap.killTweensOf(dots)
+		gsap.killTweensOf(dots.value)
 
 		canvasRef.value.width = canvasRect.width * pixelRatio.value
 		canvasRef.value.height = canvasRect.height * pixelRatio.value
@@ -223,7 +223,7 @@
 
 		const baseColor = colordx(baseRgb.value)
 
-		for (const dot of dots) {
+		for (const dot of dots.value) {
 			const x = dot.cx + dot.xOffset
 			const y = dot.cy + dot.yOffset
 
@@ -305,7 +305,7 @@
 
 		const proximitySq = props.proximity * props.proximity
 
-		for (const dot of dots) {
+		for (const dot of dots.value) {
 			const dtx = dot.cx - pointer.x
 			const dty = dot.cy - pointer.y
 
@@ -351,7 +351,7 @@
 		const cx = event.clientX - canvasRect.left
 		const cy = event.clientY - canvasRect.top
 
-		for (const dot of dots) {
+		for (const dot of dots.value) {
 			const dist = Math.hypot(dot.cx - cx, dot.cy - cy)
 
 			if (dot.inertiaApplied) {
