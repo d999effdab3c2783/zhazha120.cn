@@ -12,7 +12,11 @@
 		size="small"
 		vertical
 	>
-		<n-image :src="item.illustration" />
+		<n-image
+			class="[&>img]:w-full"
+			:src="item.illustration"
+		/>
+
 		<n-text :depth="3">仅供展示 不保证原图</n-text>
 	</n-flex>
 </template>

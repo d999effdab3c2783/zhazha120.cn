@@ -3,12 +3,15 @@
 	import { isNil } from 'es-toolkit'
 	import { useTemplateRef, watch } from 'vue'
 
+	import { useResponsive } from '~/composables/responsive'
 	import { useFooterStore } from '~/stores/footer'
 	import { useUtilityStore } from '~/stores/utility'
 
 	const name = '小工具'
 
 	const modalRef = useTemplateRef('modalRef')
+
+	const { isMobile } = useResponsive()
 
 	const footerStore = useFooterStore()
 
@@ -37,6 +40,7 @@
 <template>
 	<custom-modal
 		ref="modalRef"
+		class="n-button__patch"
 		preset="card"
 		size="small"
 		:title="name"
@@ -55,7 +59,10 @@
 			</n-button>
 		</template>
 
-		<n-flex size="small">
+		<n-flex
+			size="small"
+			:vertical="isMobile"
+		>
 			<template
 				v-for="({ icon, name: utilityName, render }, index) in utilityStore.registry"
 				:key="index"
@@ -66,7 +73,10 @@
 					:title="utilityName"
 				>
 					<template #trigger="{ toggle: utilityToggle }">
-						<n-button @click="utilityToggle">
+						<n-button
+							:block="isMobile"
+							@click="utilityToggle"
+						>
 							<template #icon>
 								<n-icon :class="icon" />
 							</template>
@@ -81,3 +91,7 @@
 		</n-flex>
 	</custom-modal>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>

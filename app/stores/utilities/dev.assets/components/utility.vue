@@ -43,18 +43,19 @@
 	>
 		<n-flex
 			:align="!isMobile ? 'center' : undefined"
+			class="n-button__patch"
 			size="small"
 			:vertical="isMobile"
 		>
 			<n-button
-				class="flex-1"
+				class="py-2 flex-1"
 				@click="updateAllChecks(true)"
 			>
 				全选
 			</n-button>
 
 			<n-button
-				class="flex-1"
+				class="py-2 flex-1"
 				@click="updateAllChecks(false)"
 			>
 				全不选
@@ -73,7 +74,7 @@
 					size="small"
 				>
 					<n-image
-						class="w-10"
+						class="h-10"
 						:src="preview"
 						@click.stop
 					/>
@@ -109,3 +110,7 @@
 		</n-button>
 	</n-flex>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>

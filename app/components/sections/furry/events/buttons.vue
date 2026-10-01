@@ -18,7 +18,7 @@
 <template>
 	<n-flex
 		:align="!isMobile ? 'center' : undefined"
-		class="mt-4"
+		class="n-button__patch mt-4"
 		size="small"
 		:vertical="isMobile"
 	>
@@ -72,3 +72,7 @@
 		</slot>
 	</n-flex>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>

@@ -8,7 +8,10 @@
 
 <template>
 	<n-element class="utils__center--flex">
-		<n-image :src="item.src" />
+		<n-image
+			class="[&>img]:w-full"
+			:src="item.src"
+		/>
 	</n-element>
 </template>
 

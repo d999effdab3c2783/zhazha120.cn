@@ -25,13 +25,19 @@
 			size="small"
 			vertical
 		>
-			<n-image :src="devStore.codetime.widgets.calendar" />
+			<n-image
+				class="[&>img]:w-full"
+				:src="devStore.codetime.widgets.calendar"
+			/>
 
 			<n-flex
 				align="center"
 				size="small"
 			>
-				<n-image :src="devStore.codetime.widgets.trend" />
+				<n-image
+					class="[&>img]:w-full"
+					:src="devStore.codetime.widgets.trend"
+				/>
 
 				<n-tabs
 					animated
@@ -39,11 +45,17 @@
 					type="segment"
 				>
 					<n-tab-pane name="按语言">
-						<n-image :src="devStore.codetime.widgets.top.languages" />
+						<n-image
+							class="[&>img]:w-full"
+							:src="devStore.codetime.widgets.top.languages"
+						/>
 					</n-tab-pane>
 
 					<n-tab-pane name="按项目">
-						<n-image :src="devStore.codetime.widgets.top.projects" />
+						<n-image
+							class="[&>img]:w-full"
+							:src="devStore.codetime.widgets.top.projects"
+						/>
 					</n-tab-pane>
 				</n-tabs>
 			</n-flex>
@@ -53,8 +65,14 @@
 				justify="center"
 				size="small"
 			>
-				<n-image :src="devStore.codetime.widgets.status" />
-				<n-image :src="devStore.codetime.widgets.usage" />
+				<n-image
+					class="[&>img]:w-full"
+					:src="devStore.codetime.widgets.status"
+				/>
+				<n-image
+					class="[&>img]:w-full"
+					:src="devStore.codetime.widgets.usage"
+				/>
 			</n-flex>
 
 			<n-flex
@@ -62,8 +80,14 @@
 				justify="center"
 				size="small"
 			>
-				<n-image :src="devStore.codetime.widgets.badge.codingTime" />
-				<n-image :src="devStore.codetime.widgets.badge.tokens" />
+				<n-image
+					class="[&>img]:w-full"
+					:src="devStore.codetime.widgets.badge.codingTime"
+				/>
+				<n-image
+					class="[&>img]:w-full"
+					:src="devStore.codetime.widgets.badge.tokens"
+				/>
 			</n-flex>
 
 			<n-flex

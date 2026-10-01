@@ -52,7 +52,10 @@
 						v-for="(url, index) in photos"
 						:key="index"
 					>
-						<n-image :src="url" />
+						<n-image
+							class="[&>img]:w-full"
+							:src="url"
+						/>
 					</template>
 				</n-image-group>
 

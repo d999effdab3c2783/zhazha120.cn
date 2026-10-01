@@ -56,7 +56,10 @@
 					v-for="{ icon, name, href } in items"
 					:key="name"
 				>
-					<n-element :style="{ '--v-fade-leave-duration': 0 }">
+					<n-element
+						class="n-button__patch"
+						:style="{ '--v-fade-leave-duration': 0 }"
+					>
 						<custom-redirect
 							#="{ aProps, redirect }"
 							:href="href"
@@ -83,5 +86,6 @@
 </template>
 
 <style lang="scss">
+	@use '~/styles/patches';
 	@use '~/styles/transitions/fade';
 </style>

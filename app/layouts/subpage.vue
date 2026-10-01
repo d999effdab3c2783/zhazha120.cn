@@ -10,12 +10,12 @@
 
 	const containerClassNames = computed(() => {
 		return clsx(
-			'px-2 pb-2 container min-h-screen',
+			'px-2 pb-2 container min-h-screen box-border',
 			{
-				'mt-10': isMobile
+				'mt-5': isMobile.value
 			},
 			{
-				'mt-20': !isMobile
+				'mt-10': !isMobile.value
 			}
 		)
 	})

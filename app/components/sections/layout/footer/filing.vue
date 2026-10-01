@@ -42,9 +42,7 @@
 			>
 				<template #icon>
 					<n-image
-						:img-props="{
-							class: 'h-full'
-						}"
+						class="h-full"
 						:src="footerStore.filing.safety.icon"
 						@click.prevent.stop
 					/>

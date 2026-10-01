@@ -1,6 +1,7 @@
 <script setup lang="ts">
+	import { clsx } from 'clsx'
 	import { isNotNil } from 'es-toolkit'
-	import { computed, shallowRef, toValue } from 'vue'
+	import { computed, shallowRef } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
 	import { useResponsive } from '~/composables/responsive'
@@ -15,9 +16,15 @@
 
 	const filter = useArrayFilter(devStore.competitions)
 
+	const timelineClassNames = computed(() => {
+		return clsx({
+			'w-max': !isMobile
+		})
+	})
+
 	const competitions = computed(() => {
 		if (!showFilter.value) {
-			return toValue(filter.input)
+			return devStore.competitions
 		}
 
 		return filter.output.value
@@ -55,7 +62,7 @@
 				x-scrollable
 			>
 				<n-timeline
-					class="w-max"
+					:class="timelineClassNames"
 					:horizontal="!isMobile"
 				>
 					<template
@@ -86,6 +93,7 @@
 										:href="href"
 									>
 										<n-button
+											class="text-wrap"
 											:style="{
 												'--n-icon-margin': '0 .1em 0 0'
 											}"

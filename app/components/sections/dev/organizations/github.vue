@@ -19,6 +19,7 @@
 	>
 		<template #icon>
 			<n-image
+				class="h-full"
 				:src="item.avatar"
 				@click.prevent.stop
 			/>

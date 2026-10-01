@@ -1,3 +1,11 @@
+.n-button {
+	&__patch {
+		.n-button {
+			@apply box-border;
+		}
+	}
+}
+
 .n-calendar {
 	&__patch {
 		.n-calendar-date {

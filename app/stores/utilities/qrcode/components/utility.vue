@@ -16,10 +16,10 @@
 		color: themeVars.value.primaryColor,
 		errorCorrectionLevel: 'H',
 		iconBackgroundColor: 'transparent',
-		iconSize: 60,
+		iconSize: 40,
 		iconSrc: ownerStore.avatar,
 		value: location.value.href,
-		size: 240,
+		size: 180,
 		type: 'svg'
 	})
 
@@ -64,11 +64,8 @@
 			</n-collapse-transition>
 		</n-flex>
 
-		<n-element class="utils__center--grid size-full">
-			<n-qr-code
-				class="box-content"
-				v-bind="config"
-			/>
+		<n-element class="utils__center--grid">
+			<n-qr-code v-bind="config" />
 		</n-element>
 
 		<n-divider class="!my-0" />
@@ -195,6 +192,7 @@
 
 		<n-flex
 			align="center"
+			class="n-button__patch"
 			justify="center"
 			size="small"
 			:vertical="isMobile"
@@ -208,6 +206,10 @@
 		</n-flex>
 	</n-flex>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>
 
 <style scoped lang="scss">
 	@use '~/styles/utils';

@@ -15,7 +15,11 @@
 		size="small"
 		title="联系方式"
 	>
-		<n-flex size="small">
+		<n-flex
+			class="n-button__patch"
+			size="small"
+			:vertical="isMobile"
+		>
 			<template
 				v-for="({ icon, name, href, comment }, index) in ownerStore.contacts as OwnerContact[]"
 				:key="index"
@@ -49,3 +53,7 @@
 		</n-flex>
 	</n-card>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>

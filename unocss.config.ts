@@ -11,7 +11,11 @@ import {
 
 export default defineConfig({
 	presets: [
-		presetWind4(),
+		presetWind4({
+			preflights: {
+				reset: false
+			}
+		}),
 		presetIcons({
 			collections: {
 				custom: FileSystemIconLoader('app/stores/icons/custom')

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { isEqual } from 'es-toolkit'
-	import { computed, shallowRef, toValue } from 'vue'
+	import { computed, shallowRef } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
 	import { useResponsive } from '~/composables/responsive'
@@ -17,7 +17,7 @@
 
 	const organizations = computed(() => {
 		if (!showFilter.value) {
-			return toValue(filter.input)
+			return devStore.organizations
 		}
 
 		return filter.output.value
@@ -62,7 +62,10 @@
 						v-for="item in organizations"
 						:key="item.name"
 					>
-						<n-element :style="{ '--v-fade-leave-duration': 0 }">
+						<n-element
+							class="n-button__patch"
+							:style="{ '--v-fade-leave-duration': 0 }"
+						>
 							<template v-if="isEqual(item.type, 'github')">
 								<sections-dev-organizations-github :item="item as GithubDevOrganization" />
 							</template>
@@ -79,5 +82,6 @@
 </template>
 
 <style lang="scss">
+	@use '~/styles/patches';
 	@use '~/styles/transitions/fade';
 </style>

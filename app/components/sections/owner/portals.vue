@@ -15,7 +15,11 @@
 		size="small"
 		title="探索"
 	>
-		<n-flex size="small">
+		<n-flex
+			class="n-button__patch"
+			size="small"
+			:vertical="isMobile"
+		>
 			<template
 				v-for="({ type, icon, name, href, comment }, index) in ownerStore.portals as OwnerPortal[]"
 				:key="index"
@@ -50,3 +54,7 @@
 		</n-flex>
 	</n-card>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>

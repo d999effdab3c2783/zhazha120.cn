@@ -12,7 +12,11 @@
 		size="small"
 		title="探索"
 	>
-		<n-flex size="small">
+		<n-flex
+			class="n-button__patch"
+			size="small"
+			:vertical="isMobile"
+		>
 			<template
 				v-for="({ icon, name, href }, index) in furryStore.portals"
 				:key="index"
@@ -38,3 +42,7 @@
 		</n-flex>
 	</n-card>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>
