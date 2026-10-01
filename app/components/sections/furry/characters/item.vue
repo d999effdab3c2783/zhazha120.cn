@@ -21,30 +21,35 @@
 
 <template>
 	<n-card size="small">
-		<n-split
-			:key="Number(isMobile)"
-			:default-size="0.2"
-			:direction="isMobile ? 'vertical' : undefined"
+		<n-flex
+			size="small"
+			vertical
 		>
-			<template #1>
-				<sections-furry-characters-illustration :item="item" />
-			</template>
+			<n-split
+				:key="Number(isMobile)"
+				:default-size="0.2"
+				:direction="isMobile ? 'vertical' : undefined"
+			>
+				<template #1>
+					<sections-furry-characters-illustration :item="item" />
+				</template>
 
-			<template #2>
-				<n-flex
-					class="pl-2 flex-1 size-full"
-					:class="informationClassNames"
-					size="small"
-					vertical
-				>
-					<sections-furry-characters-title :item="item" />
-					<sections-furry-characters-species :item="item" />
-					<sections-furry-characters-description :item="item" />
+				<template #2>
+					<n-flex
+						class="pl-2 flex-1 size-full"
+						:class="informationClassNames"
+						size="small"
+						vertical
+					>
+						<sections-furry-characters-title :item="item" />
+						<sections-furry-characters-species :item="item" />
+						<sections-furry-characters-description :item="item" />
+					</n-flex>
+				</template>
+			</n-split>
 
-					<slot name="extra" />
-				</n-flex>
-			</template>
-		</n-split>
+			<slot name="extra" />
+		</n-flex>
 
 		<template
 			v-if="isNotNil(item.owner)"
