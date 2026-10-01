@@ -66,7 +66,7 @@
 					<n-text type="error">错误发生</n-text>
 				</n-h1>
 
-				<tempalte v-if="isNuxtError(error)">
+				<template v-if="isNuxtError(error)">
 					<n-flex
 						align="center"
 						size="small"
@@ -87,7 +87,7 @@
 
 						<n-text :depth="3">{{ error.status }} {{ error.statusText }}</n-text>
 					</n-flex>
-				</tempalte>
+				</template>
 
 				<n-card size="small">
 					<n-log

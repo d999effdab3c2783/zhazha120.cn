@@ -2,7 +2,7 @@
 	import { isNil, isNotNil } from 'es-toolkit'
 	import { computed, useTemplateRef } from 'vue'
 
-	import { useRouter } from '#app'
+	import { navigateTo } from '#app'
 	import { useApiStore } from '~/stores/api'
 
 	const props = withDefaults(
@@ -25,7 +25,6 @@
 	const modalRef = useTemplateRef('modalRef')
 
 	const apiStore = useApiStore()
-	const router = useRouter()
 
 	const processedRel = computed(() => {
 		return ['noopener', ...props.rel].join(' ')
@@ -37,7 +36,7 @@
 		}
 
 		if (props.href.startsWith('/')) {
-			await router.push({
+			await navigateTo({
 				path: props.href
 			})
 

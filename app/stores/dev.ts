@@ -26,25 +26,25 @@ export const useDevStore = defineStore('dev', () => {
 	})
 
 	const loadStacks = async () => {
-		await Promise.all(
+		stacks.value = await Promise.all(
 			Object.values(
 				import.meta.glob<DevStack>('~/stores/dev/stacks/*', {
 					import: 'default'
 				})
 			).map(async importer => {
-				stacks.value.push(await importer())
+				return await importer()
 			})
 		)
 	}
 
 	const loadOrganizations = async () => {
-		await Promise.all(
+		organizations.value = await Promise.all(
 			Object.values(
 				import.meta.glob<DevOrganization>('~/stores/dev/organizations/*/meta.*', {
 					import: 'default'
 				})
 			).map(async importer => {
-				organizations.value.push(await importer())
+				return await importer()
 			})
 		)
 	}

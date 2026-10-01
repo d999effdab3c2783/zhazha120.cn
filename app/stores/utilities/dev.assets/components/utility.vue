@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 	import { isNotNil } from 'es-toolkit'
+	import { set } from 'es-toolkit/compat'
 	import { shallowReactive } from 'vue'
 
 	import { useResponsive } from '~/composables/responsive'
@@ -17,7 +18,7 @@
 
 	const updateAllChecks = (newState: boolean) => {
 		for (const i in assetsStore.registry) {
-			checks[i] = newState
+			set(checks, [i], newState)
 		}
 	}
 
@@ -62,7 +63,7 @@
 
 		<n-divider />
 
-		<tempalte
+		<template
 			v-for="({ url, path, preview }, index) in assetsStore.registry"
 			:key="index"
 		>
@@ -94,7 +95,7 @@
 			</n-checkbox>
 
 			<n-divider class="!my-0" />
-		</tempalte>
+		</template>
 
 		<n-button
 			type="primary"

@@ -10,7 +10,7 @@ export const useFurryStore = defineStore('furry', () => {
 	const events = shallowRef<FurryEventEntry[]>([])
 
 	const loadCharacters = async () => {
-		await Promise.all(
+		characters.value = await Promise.all(
 			Object.entries(
 				import.meta.glob<FurryCharacter>('~/stores/furry/characters/*/meta.*', {
 					import: 'default'
@@ -18,17 +18,17 @@ export const useFurryStore = defineStore('furry', () => {
 			).map(async ([path, importer]) => {
 				const meta = await importer()
 
-				characters.value.push({
-					...meta,
-
+				Object.assign(meta, {
 					slug: path.split('/').at(-2) ?? '?'
 				})
+
+				return meta
 			})
 		)
 	}
 
 	const loadEvents = async () => {
-		await Promise.all(
+		events.value = await Promise.all(
 			Object.entries(
 				import.meta.glob<FurryEvent>('~/stores/furry/events/*/*/meta.*', {
 					import: 'default'
@@ -36,12 +36,12 @@ export const useFurryStore = defineStore('furry', () => {
 			).map(async ([path, importer]) => {
 				const meta = await importer()
 
-				events.value.push({
-					...meta,
-
+				Object.assign(meta, {
 					year: Number(path.split('/').at(-3) ?? -1),
 					slug: path.split('/').at(-2) ?? '?'
 				})
+
+				return meta satisfies FurryEventEntry
 			})
 		)
 	}

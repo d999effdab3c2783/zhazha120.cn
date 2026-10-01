@@ -38,6 +38,7 @@
 		nextTick,
 		onWatcherCleanup,
 		shallowReactive,
+		shallowRef,
 		useTemplateRef,
 		watch,
 		type ComponentPublicInstance
@@ -138,7 +139,7 @@
 		left: 0
 	})
 
-	const dots: Dot[] = []
+	const dots = shallowRef<Dot[]>([])
 
 	const updateRect = () => {
 		if (isNil(canvasRef.value)) {
@@ -179,14 +180,14 @@
 		const startX = extraX / 2 + props.dotSize / 2
 		const startY = extraY / 2 + props.dotSize / 2
 
-		dots.length = 0
+		dots.value = []
 
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
 				const cx = startX + x * cellSpan
 				const cy = startY + y * cellSpan
 
-				dots.push({
+				dots.value.push({
 					cx,
 					cy,
 

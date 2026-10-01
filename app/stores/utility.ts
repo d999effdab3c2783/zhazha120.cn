@@ -7,7 +7,7 @@ export const useUtilityStore = defineStore('utility', () => {
 	const registry = shallowRef<Utility[]>([])
 
 	const load = async () => {
-		await Promise.all(
+		registry.value = await Promise.all(
 			Object.values(
 				import.meta.env.DEV
 					? import.meta.glob<Utility>(['~/stores/utilities/*/meta.*'], {
@@ -17,7 +17,7 @@ export const useUtilityStore = defineStore('utility', () => {
 							import: 'default'
 						})
 			).map(async importer => {
-				registry.value.push(await importer())
+				return await importer()
 			})
 		)
 	}

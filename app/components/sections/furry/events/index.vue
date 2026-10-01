@@ -19,7 +19,7 @@
 <script setup lang="ts">
 	import { eachDayOfInterval } from 'date-fns'
 	import { groupBy, isNil, sortKeys } from 'es-toolkit'
-	import { get } from 'es-toolkit/compat'
+	import { get, set } from 'es-toolkit/compat'
 	import { computed } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
@@ -60,7 +60,7 @@
 	})
 
 	const indexes = computed(() => {
-		const result: Indexes = {}
+		const temp: Indexes = {}
 
 		for (const event of events.value) {
 			const days = eachDayOfInterval({
@@ -71,25 +71,19 @@
 			for (const day of days) {
 				const currentYear = day.getFullYear()
 				const currentMonth = day.getMonth() + 1
-				const currentDay = day.getDate()
+				const currentDate = day.getDate()
 
-				if (isNil(result[currentYear])) {
-					result[currentYear] = {}
-				}
+				const indexed = filterEvents({
+					year: currentYear,
+					month: currentMonth,
+					date: currentDate
+				})
 
-				if (isNil(result[currentYear][currentMonth])) {
-					result[currentYear][currentMonth] = {}
-				}
-
-				if (isNil(result[currentYear][currentMonth][currentDay])) {
-					result[currentYear][currentMonth][currentDay] = []
-				}
-
-				result[currentYear][currentMonth][currentDay].push(event)
+				set(temp, [currentYear, currentMonth, currentDate], [...indexed, event])
 			}
 		}
 
-		return result
+		return temp
 	})
 
 	const filterEvents = (date: CalendarDate): FurryEventEntry[] => {
