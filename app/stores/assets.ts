@@ -15,7 +15,8 @@ export const useAssetsStore = defineStore('assets', () => {
 						[
 							'~/stores/footer/assets.*',
 							'~/stores/dev/organizations/*/assets.*',
-							'~/stores/furry/events/*/*/assets.*'
+							'~/stores/furry/events/*/*/assets.*',
+							'~/stores/friends/websites/*/assets.*'
 						],
 						{
 							import: 'default'
@@ -29,7 +30,7 @@ export const useAssetsStore = defineStore('assets', () => {
 
 					return await Promise.all(
 						Object.entries(flattenAssets).map(async ([flattenPath, flattenAsset]) => {
-							const fullPath = path.split('.')[0] + '/' + flattenPath + '.bin'
+							const fullPath = path.split('.').slice(0, -1).join('.') + '/' + flattenPath + '.bin'
 
 							return {
 								url: flattenAsset,
