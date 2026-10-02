@@ -51,7 +51,7 @@
 					class="text-[.8em]"
 					size="small"
 				>
-					<n-text :depth="3">使用当前 URL:</n-text>
+					<n-text :depth="3">使用当前 URL: </n-text>
 
 					<n-text
 						class="hover:cursor-pointer"

@@ -4,11 +4,14 @@
 	import { zhCN } from 'date-fns/locale'
 	import { computed } from 'vue'
 
+	import { useResponsive } from '~/composables/responsive'
 	import { createDate } from '~/utils/date'
 
 	const birthday = createDate(2024, 8, 9)
 
 	const now = useNow()
+
+	const { isMobile } = useResponsive()
 
 	const age = computed(() => {
 		return differenceInYears(now.value, birthday)
@@ -31,10 +34,9 @@
 	>
 		<n-card
 			size="small"
-			title="基本资料 & 关联"
+			title="资料"
 		>
 			<n-flex
-				class="text-center"
 				size="small"
 				vertical
 			>
@@ -42,21 +44,32 @@
 
 				<n-text>年龄: {{ age }} 岁</n-text>
 				<n-text>出生日期: {{ birthday.toLocaleDateString() }} ({{ ago }})</n-text>
+			</n-flex>
+		</n-card>
 
-				<n-divider />
-
+		<n-card
+			size="small"
+			title="关联"
+		>
+			<n-flex
+				align="center"
+				justify="space-evenly"
+				size="small"
+				:vertical="isMobile"
+			>
 				<n-flex
-					justify="space-evenly"
-					size="small"
+					align="center"
+					:size="0"
+					vertical
 				>
+					<n-text>初晴沐雨</n-text>
+					<n-text :depth="3">设计 & 画师妈咪</n-text>
+
 					<n-flex
-						align="center"
-						:size="0"
+						class="mt-4"
+						size="small"
 						vertical
 					>
-						<n-text>初晴沐雨</n-text>
-						<n-text :depth="3">设计 & 画师妈咪</n-text>
-
 						<custom-redirect
 							#="{ aProps, redirect }"
 							href="https://space.bilibili.com/1981236068"
@@ -75,15 +88,27 @@
 							</n-button>
 						</custom-redirect>
 					</n-flex>
+				</n-flex>
+
+				<n-divider
+					class="!my-4"
+					dashed
+					:vertical="!isMobile"
+				/>
+
+				<n-flex
+					align="center"
+					:size="0"
+					vertical
+				>
+					<n-text>柒嘢</n-text>
+					<n-text :depth="3">立绘画师</n-text>
 
 					<n-flex
-						align="center"
-						:size="0"
+						class="mt-4"
+						size="small"
 						vertical
 					>
-						<n-text>柒嘢</n-text>
-						<n-text :depth="3">立绘画师</n-text>
-
 						<custom-redirect
 							#="{ aProps, redirect }"
 							href="https://www.mihuashi.com/profiles/663529"

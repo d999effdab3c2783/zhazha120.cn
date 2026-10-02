@@ -44,10 +44,9 @@
 	>
 		<n-card
 			size="small"
-			title="基本资料 & 关联"
+			title="资料"
 		>
 			<n-flex
-				class="text-center"
 				size="small"
 				vertical
 			>
@@ -56,39 +55,62 @@
 				<n-text>年龄: {{ age }} 岁</n-text>
 				<n-text>出生日期: {{ birthday.toLocaleDateString() }} ({{ ago }})</n-text>
 				<n-text>实体化日期: {{ fursuitBirthday.toLocaleDateString() }} ({{ fursuitAgo }})</n-text>
+			</n-flex>
+		</n-card>
 
-				<n-divider />
+		<n-card
+			size="small"
+			title="关联"
+		>
+			<n-flex
+				align="center"
+				justify="space-evenly"
+				size="small"
+				:vertical="isMobile"
+			>
+				<n-flex
+					align="center"
+					:size="0"
+					vertical
+				>
+					<n-text>狄貊</n-text>
+					<n-text :depth="3">设计 & 画师妈咪</n-text>
+				</n-flex>
+
+				<n-divider
+					class="!my-4"
+					dashed
+					:vertical="!isMobile"
+				/>
 
 				<n-flex
-					justify="space-evenly"
-					size="small"
+					align="center"
+					:size="0"
+					vertical
 				>
-					<n-flex
-						align="center"
-						:size="0"
-						vertical
-					>
-						<n-text>狄貊</n-text>
-						<n-text :depth="3">设计 & 画师妈咪</n-text>
-					</n-flex>
+					<n-text>栗糖</n-text>
+					<n-text :depth="3">装师</n-text>
+				</n-flex>
+
+				<n-divider
+					class="!my-4"
+					dashed
+					:vertical="!isMobile"
+				/>
+
+				<n-flex
+					align="center"
+					:size="0"
+					vertical
+				>
+					<n-text>Chars茶茶</n-text>
+					<n-text :depth="3">立绘画师</n-text>
 
 					<n-flex
-						align="center"
-						:size="0"
+						class="mt-4"
+						size="small"
 						vertical
 					>
-						<n-text>栗糖</n-text>
-						<n-text :depth="3">装师</n-text>
-					</n-flex>
-
-					<n-flex
-						align="center"
-						:size="0"
-						vertical
-					>
-						<n-text>Chars茶茶</n-text>
-						<n-text :depth="3">立绘画师</n-text>
-
 						<custom-redirect
 							#="{ aProps, redirect }"
 							href="https://www.mihuashi.com/profiles/2900931"
