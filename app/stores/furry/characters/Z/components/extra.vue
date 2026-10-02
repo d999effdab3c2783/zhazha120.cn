@@ -47,7 +47,7 @@
 			title="资料"
 		>
 			<n-flex
-				size="small"
+				:size="0"
 				vertical
 			>
 				<n-divider class="!mt-0" />
