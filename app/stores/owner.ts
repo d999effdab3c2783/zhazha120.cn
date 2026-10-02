@@ -3,8 +3,9 @@ import { defineStore } from 'pinia'
 
 import { useApiStore } from '~/stores/api'
 import contacts from '~/stores/owner/contacts'
-import { avatar, name, poke, bio } from '~/stores/owner/information'
+import { avatar, name, poke, bio, birthday } from '~/stores/owner/information'
 import portals from '~/stores/owner/portals'
+import timelineBio from '~/stores/owner/timeline/bio'
 
 export const useOwnerStore = defineStore('owner', () => {
 	const apiStore = useApiStore()
@@ -19,6 +20,11 @@ export const useOwnerStore = defineStore('owner', () => {
 		name,
 		avatar,
 		bio,
+
+		birthday,
+		timeline: {
+			bio: timelineBio
+		},
 
 		contacts,
 		portals,

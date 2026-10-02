@@ -1,5 +1,6 @@
 import avatarAsset from '~/stores/owner/assets/avatar.svg?url'
 import type { RenderableText } from '~/types/render'
+import { createDate } from '~/utils/date'
 
 // @unocss-include
 
@@ -81,3 +82,5 @@ export const bio = [
 		text: '爱喝奶茶 并尤其喜欢 蜜雪冰城 和 古茗 (?)'
 	}
 ] as const satisfies RenderableText[]
+
+export const birthday = createDate(2006, 5, 7)

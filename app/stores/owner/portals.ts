@@ -27,5 +27,10 @@ export default [
 		icon: 'i-ant-design:cloud-download-outlined',
 		name: '云盘',
 		href: 'https://pan.zhazha120.cn'
+	},
+	{
+		icon: 'i-ant-design:history-outlined',
+		name: '时间线 (年龄/生日)',
+		href: '/owner/timeline'
 	}
 ] as const satisfies OwnerPortal[]
