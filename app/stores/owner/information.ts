@@ -80,6 +80,13 @@ export const bio = [
 	{
 		type: 'success',
 		text: '爱喝奶茶 并尤其喜欢 蜜雪冰城 和 古茗 (?)'
+	},
+
+	null,
+
+	{
+		text: '凶 只是不想承担后果的一种提前防御 要是真能扛住 其实不会拒绝太多 但并不代表我应该处理所有事情',
+		class: 'opacity-5'
 	}
 ] as const satisfies RenderableText[]
 
