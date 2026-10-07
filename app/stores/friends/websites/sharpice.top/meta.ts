@@ -8,4 +8,4 @@ export default {
 	name: '锐龙的小窝',
 	description: '锐冰的个人博客',
 	href: 'https://blog.sharpice.top'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

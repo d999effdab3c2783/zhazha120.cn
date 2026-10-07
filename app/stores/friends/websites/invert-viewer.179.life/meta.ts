@@ -6,4 +6,4 @@ export default {
 	name: 'a small online lab',
 	description: '致敬想象与创造力！',
 	href: 'https://invert-viewer.179.life'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

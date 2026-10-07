@@ -6,4 +6,4 @@ export default {
 	name: '星鸿的博客',
 	description: '享受获取新知带来的喜悦。',
 	href: 'https://blog.xhsr.org.cn'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

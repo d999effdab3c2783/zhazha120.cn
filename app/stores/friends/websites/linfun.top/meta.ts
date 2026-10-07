@@ -6,4 +6,4 @@ export default {
 	name: '是只林风呐',
 	description: '-来点奇奇怪怪的- < )',
 	href: 'https://linfun.top'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

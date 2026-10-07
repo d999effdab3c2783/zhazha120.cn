@@ -6,4 +6,4 @@ export default {
 	name: "koto's site",
 	description: 'koto 的灌水站',
 	href: 'https://koto.cc'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

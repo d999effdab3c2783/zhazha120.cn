@@ -6,4 +6,4 @@ export default {
 	name: '夏枫的猫窝w',
 	description: '一只会敲代码的笨笨猫咪xmx',
 	href: 'https://blog.mcxiafeng.top'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

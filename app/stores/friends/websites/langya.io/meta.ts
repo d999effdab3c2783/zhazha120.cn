@@ -5,4 +5,4 @@ export default {
 	logo,
 	name: 'LangYa466',
 	href: 'https://langya.io?redirect={domain}'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

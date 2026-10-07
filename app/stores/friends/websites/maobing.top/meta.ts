@@ -6,4 +6,4 @@ export default {
 	name: "maobing's sanctuary",
 	description: '我是小🐱',
 	href: 'https://maobing.top'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

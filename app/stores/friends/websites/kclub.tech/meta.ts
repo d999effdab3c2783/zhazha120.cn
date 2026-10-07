@@ -6,4 +6,4 @@ export default {
 	name: '迷失的小K',
 	description: '感受编程乐趣，畅游代码海洋',
 	href: 'https://blog.kclub.tech'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

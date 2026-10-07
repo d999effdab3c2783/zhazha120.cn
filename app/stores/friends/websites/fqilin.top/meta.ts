@@ -5,4 +5,4 @@ export default {
 	logo,
 	name: 'F_Qilin',
 	href: 'https://blog.fqilin.top'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

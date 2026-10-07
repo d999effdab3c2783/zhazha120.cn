@@ -37,7 +37,7 @@ export const useAssetsStore = defineStore('assets', () => {
 								path: 'app' + fullPath,
 
 								preview: new URL('..' + fullPath, import.meta.url).href
-							} satisfies AssetDownloadRequestItem
+							} as const satisfies AssetDownloadRequestItem
 						})
 					)
 				})

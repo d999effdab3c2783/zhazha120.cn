@@ -6,4 +6,4 @@ export default {
 	name: 'Linked >> Blog',
 	description: '喵🐱me0w, but furry wolf. 尝试变得毛茸茸',
 	href: 'https://me0w.org'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

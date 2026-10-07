@@ -6,4 +6,4 @@ export default {
 	name: "GuaiZai's blog",
 	description: 'Tech inspires~!',
 	href: 'https://blog.guaizai.top'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite

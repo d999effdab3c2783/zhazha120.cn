@@ -6,4 +6,4 @@ export default {
 	name: '西西のBlog',
 	description: '嘻嘻西西CC吸吸',
 	href: 'https://xxand.cc'
-} satisfies FriendWebsite
+} as const satisfies FriendWebsite
