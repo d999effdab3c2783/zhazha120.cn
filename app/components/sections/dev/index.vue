@@ -3,8 +3,8 @@
 		size="small"
 		vertical
 	>
-		<slot name="bio">
-			<sections-dev-bio />
+		<slot name="notes">
+			<sections-dev-notes />
 		</slot>
 
 		<slot name="codetime">

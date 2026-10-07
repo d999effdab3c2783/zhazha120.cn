@@ -3,8 +3,8 @@
 		size="small"
 		vertical
 	>
-		<slot name="bio">
-			<sections-owner-bio />
+		<slot name="notes">
+			<sections-owner-notes />
 		</slot>
 
 		<slot name="contacts">

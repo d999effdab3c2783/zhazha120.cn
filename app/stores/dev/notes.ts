@@ -2,7 +2,9 @@ import type { RenderableText } from '~/types/render'
 
 // @unocss-include
 
-export default [
+export const title = '自述'
+
+export const items = [
 	'也许是一名不合格的全栈开发者',
 	{
 		text: '业余 兴趣爱好 碎片化 遇到什么学什么 (',

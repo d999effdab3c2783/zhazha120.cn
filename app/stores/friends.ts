@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { shallowRef } from 'vue'
 
-import bio from '~/stores/friends/bio'
+import { title as notesTitle, items as notesItems } from '~/stores/friends/notes'
 import type { FriendWebsite } from '~/types/friend'
 
 export const useFriendsStore = defineStore('friends', () => {
@@ -20,7 +20,10 @@ export const useFriendsStore = defineStore('friends', () => {
 	}
 
 	return {
-		bio,
+		notes: {
+			title: notesTitle,
+			items: notesItems
+		},
 
 		websites,
 

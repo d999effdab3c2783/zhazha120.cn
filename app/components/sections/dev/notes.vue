@@ -7,9 +7,9 @@
 <template>
 	<n-card
 		size="small"
-		title="自述"
+		:title="devStore.notes.title"
 	>
 		<n-divider class="!mt-0" />
-		<custom-render-texts :items="devStore.bio" />
+		<custom-render-texts :items="devStore.notes.items" />
 	</n-card>
 </template>

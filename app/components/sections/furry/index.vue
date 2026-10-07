@@ -3,8 +3,8 @@
 		size="small"
 		vertical
 	>
-		<slot name="bio">
-			<sections-furry-bio />
+		<slot name="notes">
+			<sections-furry-notes />
 		</slot>
 
 		<slot name="portals">

@@ -2,7 +2,7 @@ import { isNil } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { computed, shallowRef } from 'vue'
 
-import bio from '~/stores/furry/bio'
+import { title as notesTitle, items as notesItems } from '~/stores/furry/notes'
 import portals from '~/stores/furry/portals'
 import type { FurryCharacter, FurryCharacterEntry, FurryEvent, FurryEventEntry } from '~/types/furry'
 import { filterArray } from '~/utils/filter'
@@ -83,7 +83,11 @@ export const useFurryStore = defineStore('furry', () => {
 	})
 
 	return {
-		bio,
+		notes: {
+			title: notesTitle,
+			items: notesItems
+		},
+
 		portals,
 
 		characters,

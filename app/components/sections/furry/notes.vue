@@ -7,9 +7,9 @@
 <template>
 	<n-card
 		size="small"
-		title="说明"
+		:title="furryStore.notes.title"
 	>
 		<n-divider class="!mt-0" />
-		<custom-render-texts :items="furryStore.bio" />
+		<custom-render-texts :items="furryStore.notes.items" />
 	</n-card>
 </template>

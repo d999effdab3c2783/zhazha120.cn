@@ -11,8 +11,8 @@
 		size="small"
 		vertical
 	>
-		<slot name="bio">
-			<sections-friends-bio />
+		<slot name="notes">
+			<sections-friends-notes />
 		</slot>
 
 		<slot name="websites">

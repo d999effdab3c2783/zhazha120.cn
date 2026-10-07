@@ -1,6 +1,8 @@
 import type { RenderableText } from '~/types/render'
 
-export default [
+export const title = '感叹'
+
+export const items = [
 	{
 		text: '总是感觉时间过得好快 幻想死亡',
 		depth: 3

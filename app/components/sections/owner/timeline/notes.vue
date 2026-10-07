@@ -7,9 +7,9 @@
 <template>
 	<n-card
 		size="small"
-		title="调用方式"
+		:title="ownerStore.timeline.notes.title"
 	>
 		<n-divider class="!mt-0" />
-		<custom-render-texts :items="ownerStore.bio" />
+		<custom-render-texts :items="ownerStore.timeline.notes.items" />
 	</n-card>
 </template>

@@ -2,9 +2,9 @@ import { cloneDeepWith, isString } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { computed, shallowRef } from 'vue'
 
-import bio from '~/stores/dev/bio'
 import defaultCodetime from '~/stores/dev/codetime'
 import competitions from '~/stores/dev/competitions'
+import { title as notesTitle, items as notesItems } from '~/stores/dev/notes'
 import projects from '~/stores/dev/projects'
 import { useThemeStore } from '~/stores/theme'
 import type { DevOrganization, DevStack } from '~/types/dev'
@@ -50,7 +50,10 @@ export const useDevStore = defineStore('dev', () => {
 	}
 
 	return {
-		bio,
+		notes: {
+			title: notesTitle,
+			items: notesItems
+		},
 
 		codetime,
 		stacks,

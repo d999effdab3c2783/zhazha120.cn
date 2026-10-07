@@ -3,8 +3,8 @@
 		size="small"
 		vertical
 	>
-		<slot name="bio">
-			<sections-owner-timeline-bio />
+		<slot name="notes">
+			<sections-owner-timeline-notes />
 		</slot>
 
 		<slot name="current">
