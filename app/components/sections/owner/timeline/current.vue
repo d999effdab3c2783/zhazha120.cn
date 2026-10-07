@@ -10,7 +10,7 @@
 	const now = useNow()
 
 	const diff = computed(() => {
-		return String(differenceInMilliseconds(now.value, ownerStore.birthday) / 1000 / 60 / 60 / 24 / 365)
+		return String(differenceInMilliseconds(now.value, ownerStore.birthday.date) / 1000 / 60 / 60 / 24 / 365)
 	})
 </script>
 

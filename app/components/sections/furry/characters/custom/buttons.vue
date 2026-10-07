@@ -49,3 +49,7 @@
 		</n-flex>
 	</n-card>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>
