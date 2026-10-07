@@ -1,4 +1,4 @@
-import type { FurryButton } from '~/types/furry'
+import type { FurryCharacterButton } from '~/types/furry'
 
 // @unocss-include
 
@@ -8,4 +8,4 @@ export default [
 		name: '版权',
 		href: 'https://jxbqbh.com/jxuser/user/wx/certificate-detail?serialNum=202508Z3100000006'
 	}
-] as const satisfies FurryButton[]
+] as const satisfies FurryCharacterButton[]

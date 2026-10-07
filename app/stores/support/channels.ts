@@ -34,7 +34,8 @@ export default [
 				content: await read('~/stores/support/assets/qq/transfer.bin'),
 
 				props: {
-					iconSrc: 'https://thirdqq.qlogo.cn/g?b=qq&nk=2331281251&s=0'
+					iconSrc:
+						'https://thirdqq.qlogo.cn/ek_qqapp/AQKmeMv70RdTZKzZPjtHnjC5fPz1OSsEnXiacxFu5ibtUvaMXUOY8Lics3FibvE2uzXSdG8qw01LYRWyNibkvhJA8kpH74w0G911ThAMvQ4O6Oic5p5VmLQMTyXzlA8whPRg/0'
 				}
 			}
 		]

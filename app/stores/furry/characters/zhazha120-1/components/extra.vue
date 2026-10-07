@@ -9,8 +9,8 @@
 		size="small"
 		vertical
 	>
-		<sections-furry-custom-informations :items="furryCharactersZhazha120_1DataStore.informations" />
-		<sections-furry-custom-assigns :items="furryCharactersZhazha120_1DataStore.assigns" />
-		<sections-furry-custom-render :items="furryCharactersZhazha120_1DataStore.renderables" />
+		<sections-furry-characters-custom-informations :items="furryCharactersZhazha120_1DataStore.informations" />
+		<sections-furry-characters-custom-assigns :items="furryCharactersZhazha120_1DataStore.assigns" />
+		<sections-furry-characters-custom-render :items="furryCharactersZhazha120_1DataStore.renderables" />
 	</n-flex>
 </template>

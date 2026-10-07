@@ -2,10 +2,10 @@
 	import { isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FurryButton } from '~/types/furry'
+	import type { FurryCharacterButton } from '~/types/furry'
 
 	defineProps<{
-		readonly items: FurryButton[]
+		readonly items: FurryCharacterButton[]
 	}>()
 
 	const { isMobile } = useResponsive()

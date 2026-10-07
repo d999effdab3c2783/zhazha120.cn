@@ -72,28 +72,34 @@ export type FurryAssign = {
 	}>)[]
 }>
 
-export type FurryButton = {
-	readonly icon: string
+export type FurryCharacterButton = {
 	readonly name: string
 	readonly href: string
-}
+} & Partial<{
+	readonly icon: string
+}>
 
-export type FurryRenderableImage = {
+export type FurryCharacterRenderableImage = {
 	readonly type: 'image'
 	readonly src: string
 }
 
-export type FurryRenderableEmbedVideo = {
+export type FurryCharacterRenderableEmbedVideo = {
 	readonly type: 'embed_video'
 	readonly src: string
 }
 
-export type FurryRenderableItem = (FurryRenderableImage | FurryRenderableEmbedVideo) & {
-	readonly buttons: FurryButton[]
-	readonly comment: string
+export type FurryCharacterRenderableItem = (FurryCharacterRenderableImage | FurryCharacterRenderableEmbedVideo) &
+	Partial<{
+		readonly buttons: FurryCharacterButton[]
+		readonly comment: string
+	}>
+
+export type FurryCharacterRenderable = {
+	readonly title: string
+	readonly items: FurryCharacterRenderableItem[]
 }
 
-export type FurryRenderable = {
-	readonly title: string
-	readonly items: FurryMediaItem[]
+export type FurryEventPhoto = {
+	readonly src: string
 }

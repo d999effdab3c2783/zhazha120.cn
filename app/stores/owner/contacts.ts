@@ -1,3 +1,4 @@
+import { qq } from '~/stores/owner/information'
 import type { OwnerContact } from '~/types/owner'
 
 // @unocss-include
@@ -8,7 +9,7 @@ export default [
 		name: 'QQ',
 		href: 'https://qm.qq.com/q/GkUxK7PmmW',
 
-		comment: '2331281251'
+		comment: qq.toString()
 	},
 	{
 		icon: 'i-ant-design:mail-outlined',

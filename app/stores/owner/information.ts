@@ -9,6 +9,8 @@ export const avatar = avatarAsset
 export const name = '渣渣120'
 export const poke = '戳哭了 哄不好了'
 
+export const qq = 2331281251
+
 export const notes = {
 	title: '调用方式',
 	items: [

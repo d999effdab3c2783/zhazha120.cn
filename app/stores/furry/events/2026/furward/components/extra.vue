@@ -1,14 +1,10 @@
 <script setup lang="ts">
-	const photos = await Promise.all(
-		Object.values(
-			import.meta.glob<string>('../assets/photos/*.bin', {
-				query: '?url',
-				import: 'default'
-			})
-		).map(async loader => {
-			return await loader()
-		})
-	)
+	import { useFurryEventsFurward2026DataStore } from '~/stores/furry/events/2026/furward/stores/data'
+	import { qq } from '~/stores/owner/information'
+
+	const furryEventsFurward2026DataStore = useFurryEventsFurward2026DataStore()
+
+	await furryEventsFurward2026DataStore.loadPhotos()
 </script>
 
 <template>
@@ -16,55 +12,11 @@
 		size="small"
 		vertical
 	>
-		<n-card
-			size="small"
-			title="了解更多"
-		>
-			<n-element class="utils__center--grid">
-				<n-flex
-					align="center"
-					size="small"
-					vertical
-				>
-					<n-qr-code
-						class="box-content"
-						:size="120"
-						value="https://h5.qzone.qq.com/ugc/share?res_uin=2331281251&appid=311&cellid=6387f48a71750e6a6d100500"
-					/>
+		<sections-furry-events-custom-qzone
+			:id="furryEventsFurward2026DataStore.qzone.id"
+			:qq="qq"
+		/>
 
-					<n-text>QQ 空间动态</n-text>
-					<n-text :depth="3">[仅好友可见]</n-text>
-				</n-flex>
-			</n-element>
-		</n-card>
-
-		<n-card
-			size="small"
-			title="精选返图"
-		>
-			<n-flex
-				align="center"
-				size="small"
-				vertical
-			>
-				<n-image-group>
-					<template
-						v-for="(url, index) in photos"
-						:key="index"
-					>
-						<n-image
-							class="[&>img]:w-full"
-							:src="url"
-						/>
-					</template>
-				</n-image-group>
-
-				<n-text :depth="3">仅供展示 不保证原图</n-text>
-			</n-flex>
-		</n-card>
+		<sections-furry-events-custom-photos :items="furryEventsFurward2026DataStore.photos" />
 	</n-flex>
 </template>
-
-<style scoped lang="scss">
-	@use '~/styles/utils';
-</style>

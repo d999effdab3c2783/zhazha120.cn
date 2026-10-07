@@ -1,8 +1,8 @@
 <script setup lang="ts">
-	import type { FurryRenderableEmbedVideo } from '~/types/furry'
+	import type { FurryCharacterRenderableEmbedVideo } from '~/types/furry'
 
 	defineProps<{
-		readonly item: FurryRenderableEmbedVideo
+		readonly item: FurryCharacterRenderableEmbedVideo
 	}>()
 </script>
 

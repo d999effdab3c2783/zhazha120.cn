@@ -9,9 +9,9 @@
 		size="small"
 		vertical
 	>
-		<sections-furry-custom-informations :items="furryCharactersZDataStore.informations" />
-		<sections-furry-custom-assigns :items="furryCharactersZDataStore.assigns" />
-		<sections-furry-custom-render :items="furryCharactersZDataStore.renderables" />
-		<sections-furry-custom-buttons :items="furryCharactersZDataStore.buttons" />
+		<sections-furry-characters-custom-informations :items="furryCharactersZDataStore.informations" />
+		<sections-furry-characters-custom-assigns :items="furryCharactersZDataStore.assigns" />
+		<sections-furry-characters-custom-render :items="furryCharactersZDataStore.renderables" />
+		<sections-furry-characters-custom-buttons :items="furryCharactersZDataStore.buttons" />
 	</n-flex>
 </template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 	import { isNotNil } from 'es-toolkit'
 
-	import type { FurryRenderable } from '~/types/furry'
+	import type { FurryCharacterRenderable } from '~/types/furry'
 
 	defineProps<{
-		readonly items: FurryRenderable[]
+		readonly items: FurryCharacterRenderable[]
 	}>()
 </script>
 
@@ -30,11 +30,11 @@
 						size="small"
 						vertical
 					>
-						<sections-furry-custom-render-item :item="item" />
+						<sections-furry-characters-custom-render-item :item="item" />
 
 						<template v-if="isNotNil(item.buttons)">
-							<n-element class="furry-custom-buttons__patch">
-								<sections-furry-custom-buttons :items="item.buttons" />
+							<n-element class="furry-characters-custom-buttons__patch">
+								<sections-furry-characters-custom-buttons :items="item.buttons" />
 							</n-element>
 						</template>
 
@@ -56,7 +56,7 @@
 </template>
 
 <style scoped lang="scss">
-	.furry-custom-buttons {
+	.furry-characters-custom-buttons {
 		&__patch {
 			& .n-card {
 				@apply contents;

@@ -1,4 +1,4 @@
-import type { FurryRenderable } from '~/types/furry'
+import type { FurryCharacterRenderable } from '~/types/furry'
 
 export default [
 	{
@@ -10,4 +10,4 @@ export default [
 			}
 		]
 	}
-] as const satisfies FurryRenderable[]
+] as const satisfies FurryCharacterRenderable[]
