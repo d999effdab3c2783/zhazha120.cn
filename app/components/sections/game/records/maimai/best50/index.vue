@@ -38,8 +38,8 @@
 			<template #header>
 				<n-flex
 					:align="!isMobile ? 'center' : undefined"
-					:vertical="isMobile"
 					size="small"
+					:vertical="isMobile"
 				>
 					<n-text>{{ response.nickname }}</n-text>
 
@@ -70,8 +70,8 @@
 		<n-divider>Best 35 (以往版本)</n-divider>
 
 		<n-grid
-			:cols="isMobile ? 1 : 5"
 			class="!gap-2"
+			:cols="isMobile ? 1 : 5"
 		>
 			<template
 				v-for="(chart, index) in response.charts.sd"
@@ -89,8 +89,8 @@
 		<n-divider>Best 15 (当前版本)</n-divider>
 
 		<n-grid
-			:cols="isMobile ? 1 : 5"
 			class="!gap-2"
+			:cols="isMobile ? 1 : 5"
 		>
 			<template
 				v-for="(chart, index) in response.charts.dx"
@@ -107,8 +107,8 @@
 
 		<n-card size="small">
 			<n-flex
-				:size="0"
 				align="center"
+				:size="0"
 				vertical
 			>
 				<n-text>数据来源</n-text>
