@@ -3,7 +3,7 @@
 	import { get } from 'es-toolkit/compat'
 	import { computed } from 'vue'
 
-	import { useFurryStore } from '~/stores/furry.ts'
+	import { useFurryStore } from '~/stores/furry'
 
 	const props = defineProps<{
 		readonly slug: string

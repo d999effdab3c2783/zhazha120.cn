@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+	<path d="M2 2.5h55v55H2z" opacity=".1"/>
+	<path d="M5 5h50v50H5z" opacity=".1"/>
+	<path fill="#0e0b0e" d="M7.5 7.5h45v45h-45z" opacity=".1"/>
+	<path fill="#df4eaa" d="M0 0v10h10v10h10V10h10V0z"/>
+	<path fill="#c040aa" d="M10 20h10v40H10z"/>
+	<path fill="#7e5fe3" d="M20 20h10v40H20z"/>
+	<path fill="#2f51aa" d="M30 50h20V40H40V20H30Z"/>
+	<path fill="#15919d" d="M60 10H40v10h10v20h10z"/>
+</svg>

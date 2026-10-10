@@ -2,7 +2,7 @@
 	import { isNotNil } from 'es-toolkit'
 	import { computed } from 'vue'
 
-	import { useOwnerStore } from '~/stores/owner.ts'
+	import { useOwnerStore } from '~/stores/owner'
 	import { filterArray } from '~/utils/filter'
 
 	const props = defineProps<{
