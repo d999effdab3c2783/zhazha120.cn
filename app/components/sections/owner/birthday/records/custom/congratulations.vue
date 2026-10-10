@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 	import type { OwnerBirthdayCongratulation } from '~/types/owner'
 
 	defineProps<{
@@ -12,9 +12,9 @@
 		title="祝贺"
 	>
 		<n-flex
-			vertical
-			size="small"
 			align="center"
+			size="small"
+			vertical
 		>
 			<n-image-group>
 				<template
