@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 	import { useResponsive } from '~/composables/responsive'
 	import { useFriendsStore } from '~/stores/friends'
 
@@ -11,8 +11,9 @@
 
 <template>
 	<n-flex
-		size="small"
 		:vertical="isMobile"
+		class="n-button__patch"
+		size="small"
 	>
 		<template
 			v-for="(item, index) in friendsStore.websites"
@@ -22,3 +23,7 @@
 		</template>
 	</n-flex>
 </template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>
