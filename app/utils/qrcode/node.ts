@@ -9,14 +9,10 @@ export const read = async (path: string) => {
 		resolveWithObject: true
 	})
 
-	try {
-		return decodeQR({
-			width: info.width,
-			height: info.height,
+	return decodeQR({
+		width: info.width,
+		height: info.height,
 
-			data
-		})
-	} catch {
-		return null
-	}
+		data
+	})
 }
