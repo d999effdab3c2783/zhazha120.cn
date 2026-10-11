@@ -5,6 +5,7 @@
 	>
 		<sections-game-records-tetrio-overlay />
 		<sections-game-records-tetrio-timelines />
+		<sections-game-records-tetrio-background />
 		<sections-game-records-tetrio-portals />
 	</n-flex>
 </template>

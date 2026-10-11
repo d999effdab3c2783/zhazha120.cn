@@ -15,6 +15,7 @@ import {
 import { mania as osuMania, overlay as osuOverlay, portals as osuPortals } from '~/stores/game/records/osu'
 import recordsPortals from '~/stores/game/records/portals'
 import {
+	backgroundOverlay as tetrioBackgroundOverlay,
 	blitzTimelines as tetrioBlitzTimelines,
 	overlay as tetrioOverlay,
 	portals as tetrioPortals,
@@ -52,6 +53,7 @@ export const useGameStore = defineStore('game', () => {
 				portals: geometryDashPortals
 			},
 			tetrio: {
+				backgroundOverlay: tetrioBackgroundOverlay,
 				overlay: tetrioOverlay,
 				splintTimelines: tetrioSplintTimelines,
 				blitzTimelines: tetrioBlitzTimelines,

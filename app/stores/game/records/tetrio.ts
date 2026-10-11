@@ -1,3 +1,4 @@
+import backgroundOverlaySrc from '~/stores/game/assets/tetrio/background_overlay.bin?url'
 import type {
 	GameTetrioBlitzTimeline,
 	GameTetrioRankColor,
@@ -9,6 +10,8 @@ import { createDate } from '~/utils/date'
 
 export const userId = '5eb3a6530b29196c155074e8'
 export const overlay = `https://tetr.fires.bz/overlay/user?username=${userId}&display-name=true&display-level=true&display-role=true&display-badge=true&display-rank=true&display-league=true&display-sprint=true&display-blitz=true&display-standingsets=true&display-standingsets-sprint=true&display-standingsets-blitz=true&alignment=top&layout=horizontal&league=apm+pps+vs+x_winrate+percentile&sprint=pieces+pps+ff+kpp+kps+quads&blitz=pps+ff+spp+pieces+pieces+quads+tspins+allclears`
+
+export const backgroundOverlay = backgroundOverlaySrc
 
 export const splintTimelines = [
 	{

@@ -1,4 +1,4 @@
-import panorama from '~/stores/game/assets/panorama.bin?url'
+import panorama from '~/stores/game/assets/minecraft/panorama.bin?url'
 import { name as ownerName } from '~/stores/owner/information'
 import type { GameMinecraftRecordPortal } from '~/types/game'
 
