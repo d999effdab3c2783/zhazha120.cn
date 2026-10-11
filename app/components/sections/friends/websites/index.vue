@@ -11,9 +11,9 @@
 
 <template>
 	<n-flex
-		:vertical="isMobile"
 		class="n-button__patch"
 		size="small"
+		:vertical="isMobile"
 	>
 		<template
 			v-for="(item, index) in friendsStore.websites"
