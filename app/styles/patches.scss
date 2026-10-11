@@ -17,3 +17,11 @@
 		}
 	}
 }
+
+.n-dynamic-input {
+	&__patch {
+		.n-dynamic-input-item {
+			@apply flex-col items-center gap-2;
+		}
+	}
+}
