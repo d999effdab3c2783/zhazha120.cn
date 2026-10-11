@@ -24,9 +24,14 @@ export default [
 		].join('\n')
 	},
 	{
-		icon: 'i-ant-design:cloud-download-outlined',
-		name: '云盘',
-		href: 'https://pan.zhazha120.cn'
+		icon: 'i-ant-design:heart-outlined',
+		name: '支持 & 赞助 (给我打钱)',
+		href: '/support'
+	},
+	{
+		icon: 'i-tabler:device-gamepad',
+		name: '游戏',
+		href: '/game'
 	},
 	{
 		icon: 'i-ant-design:history-outlined',
