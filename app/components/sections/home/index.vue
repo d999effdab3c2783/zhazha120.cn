@@ -45,7 +45,7 @@
 		</slot>
 
 		<slot name="overview">
-			<sections-home-overview ref="overviewRef" />
+			<lazy-sections-home-overview ref="overviewRef" />
 		</slot>
 	</n-flex>
 </template>
