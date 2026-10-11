@@ -47,11 +47,6 @@ export default [
 				type: 'image',
 				name: '收款',
 				src: wechatTransfer
-			},
-			{
-				type: 'qrcode',
-				name: '收款码',
-				content: await read('~/stores/support/assets/wechat/transfer.bin')
 			}
 		]
 	},
