@@ -17,5 +17,9 @@ export const read = async (src: string) => {
 
 	const imageData = context.getImageData(0, 0, bitmap.width, bitmap.height)
 
-	return decodeQR(imageData)
+	try {
+		return decodeQR(imageData)
+	} catch {
+		return null
+	}
 }
