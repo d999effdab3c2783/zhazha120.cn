@@ -7,13 +7,13 @@ import type { FriendWebsite } from '~/types/friend'
 export const useFriendsStore = defineStore('friends', () => {
 	const websites = shallowRef<FriendWebsite[]>([])
 
+	const websitesGlob = import.meta.glob<FriendWebsite>('~/stores/friends/websites/*/meta.*', {
+		import: 'default'
+	})
+
 	const loadWebsites = async () => {
 		websites.value = await Promise.all(
-			Object.values(
-				import.meta.glob<FriendWebsite>('~/stores/friends/websites/*/meta.*', {
-					import: 'default'
-				})
-			).map(async importer => {
+			Object.values(websitesGlob).map(async importer => {
 				return await importer()
 			})
 		)
@@ -27,6 +27,7 @@ export const useFriendsStore = defineStore('friends', () => {
 
 		websites,
 
+		websitesGlob,
 		loadWebsites
 	}
 })

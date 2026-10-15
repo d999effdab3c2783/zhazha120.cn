@@ -5,8 +5,6 @@
 	const friendsStore = useFriendsStore()
 
 	const { isMobile } = useResponsive()
-
-	await friendsStore.loadWebsites()
 </script>
 
 <template>
@@ -26,7 +24,7 @@
 				:vertical="isMobile"
 			>
 				<n-statistic label="友情链接">
-					{{ friendsStore.websites.length }}
+					{{ Object.keys(friendsStore.websitesGlob).length }}
 					条
 				</n-statistic>
 			</n-flex>

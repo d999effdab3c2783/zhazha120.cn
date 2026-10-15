@@ -25,25 +25,25 @@ export const useDevStore = defineStore('dev', () => {
 		})
 	})
 
+	const stacksGlob = import.meta.glob<DevStack>('~/stores/dev/stacks/*', {
+		import: 'default'
+	})
+
 	const loadStacks = async () => {
 		stacks.value = await Promise.all(
-			Object.values(
-				import.meta.glob<DevStack>('~/stores/dev/stacks/*', {
-					import: 'default'
-				})
-			).map(async importer => {
+			Object.values(stacksGlob).map(async importer => {
 				return await importer()
 			})
 		)
 	}
 
+	const organizationsGlob = import.meta.glob<DevOrganization>('~/stores/dev/organizations/*/meta.*', {
+		import: 'default'
+	})
+
 	const loadOrganizations = async () => {
 		organizations.value = await Promise.all(
-			Object.values(
-				import.meta.glob<DevOrganization>('~/stores/dev/organizations/*/meta.*', {
-					import: 'default'
-				})
-			).map(async importer => {
+			Object.values(organizationsGlob).map(async importer => {
 				return await importer()
 			})
 		)
@@ -61,7 +61,10 @@ export const useDevStore = defineStore('dev', () => {
 		projects,
 		competitions,
 
+		stacksGlob,
 		loadStacks,
+
+		organizationsGlob,
 		loadOrganizations
 	}
 })

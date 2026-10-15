@@ -1,32 +1,10 @@
 <script lang="ts" setup>
-	import { isNil, isNotNil, uniq } from 'es-toolkit'
-	import { computed } from 'vue'
-
 	import { useResponsive } from '~/composables/responsive'
 	import { useFurryStore } from '~/stores/furry'
 
 	const furryStore = useFurryStore()
 
 	const { isMobile } = useResponsive()
-
-	const uniqueCharactersOwners = computed(() => {
-		return uniq(
-			furryStore.characters
-				.map(item => {
-					if (isNil(item.owner)) {
-						return null
-					}
-
-					return item.owner.name
-				})
-				.filter(item => {
-					return isNotNil(item)
-				})
-		)
-	})
-
-	await furryStore.loadCharacters()
-	await furryStore.loadEvents()
 </script>
 
 <template>
@@ -45,15 +23,13 @@
 				size="large"
 				:vertical="isMobile"
 			>
-				<n-statistic label="设定集"
-					>{{ uniqueCharactersOwners.length }} 人 / {{ furryStore.characters.length }} 只</n-statistic
-				>
+				<n-statistic label="收录的设定">{{ Object.keys(furryStore.charactersGlob).length }} 只</n-statistic>
 
 				<template v-if="!isMobile">
 					<n-divider vertical />
 				</template>
 
-				<n-statistic label="参与活动">{{ furryStore.events.length }} 场</n-statistic>
+				<n-statistic label="参与的活动">{{ Object.keys(furryStore.eventsGlob).length }} 场</n-statistic>
 			</n-flex>
 		</n-flex>
 

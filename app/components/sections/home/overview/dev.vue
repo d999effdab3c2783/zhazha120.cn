@@ -9,7 +9,6 @@
 	const { isMobile } = useResponsive()
 
 	await devStore.loadStacks()
-	await devStore.loadOrganizations()
 </script>
 
 <template>
@@ -41,7 +40,7 @@
 					<n-divider vertical />
 				</template>
 
-				<n-statistic label="加入的组织">{{ devStore.organizations.length }} 个</n-statistic>
+				<n-statistic label="加入的组织">{{ Object.keys(devStore.organizationsGlob).length }} 个</n-statistic>
 
 				<template v-if="!isMobile">
 					<n-divider vertical />
