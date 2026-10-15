@@ -15,7 +15,7 @@ export const notes = {
 	title: '调用方式',
 	items: [
 		{
-			text: `或者 ${name} 或者 渣渣 或者 120 或者 狗`,
+			text: `或者 ${name} 或者 渣 或者 渣渣 或者 120`,
 			depth: 3
 		},
 		{
