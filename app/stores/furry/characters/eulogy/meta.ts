@@ -7,8 +7,16 @@ export default {
 	name: '伊诔/Eulogy',
 	species: [
 		{
+			name: '神性',
+			percent: 60
+		},
+		{
 			name: '兔',
-			percent: 100
+			percent: 30
+		},
+		{
+			name: '精灵',
+			percent: 10
 		}
 	],
 
