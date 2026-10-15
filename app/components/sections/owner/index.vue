@@ -3,6 +3,10 @@
 		size="small"
 		vertical
 	>
+		<slot name="profile">
+			<sections-owner-profile />
+		</slot>
+
 		<slot name="notes">
 			<sections-owner-notes />
 		</slot>

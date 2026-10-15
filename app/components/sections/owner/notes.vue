@@ -9,7 +9,11 @@
 		size="small"
 		:title="ownerStore.notes.title"
 	>
-		<n-divider class="!mt-0" />
+		<n-divider
+			class="!mt-0"
+			dashed
+		/>
+
 		<custom-render-texts :items="ownerStore.notes.items" />
 	</n-card>
 </template>
