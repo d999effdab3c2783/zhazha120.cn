@@ -29,7 +29,7 @@
 					<n-divider vertical />
 				</template>
 
-				<n-statistic label="参与的活动">{{ Object.keys(furryStore.eventsGlob).length }} 场</n-statistic>
+				<n-statistic label="记录/参与过的活动">{{ Object.keys(furryStore.eventsGlob).length }} 场</n-statistic>
 			</n-flex>
 		</n-flex>
 
