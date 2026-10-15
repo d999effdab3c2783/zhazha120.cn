@@ -19,7 +19,7 @@ export default {
 	description: '澜澜是个是个大笨鱼',
 
 	owner: {
-		name: '澜星jacet',
-		href: 'https://space.bilibili.com/1752668024'
+		type: 'friend',
+		slug: 'jacet'
 	}
 } as const satisfies FurryCharacter

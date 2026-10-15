@@ -18,8 +18,7 @@ export default {
 	description: '头顶有着专属于 ' + ownerName + ' 的标识图案',
 
 	owner: {
-		name: ownerName,
-		href: '/'
+		type: 'owner'
 	},
 
 	renderExtra: () => {

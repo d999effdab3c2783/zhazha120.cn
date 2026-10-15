@@ -3,6 +3,17 @@
 	import { useGameStore } from '~/stores/game'
 	import type { GameRecordPortal } from '~/types/game'
 
+	withDefaults(
+		defineProps<
+			Partial<{
+				readonly title: string
+			}>
+		>(),
+		{
+			title: () => '探索'
+		}
+	)
+
 	const gameStore = useGameStore()
 
 	const { isMobile } = useResponsive()
@@ -11,7 +22,7 @@
 <template>
 	<n-card
 		size="small"
-		title="探索"
+		:title="title"
 	>
 		<n-flex
 			class="n-button__patch"

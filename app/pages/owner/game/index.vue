@@ -3,7 +3,7 @@
 
 	definePageMeta({
 		layout: 'subpage',
-		title: '游戏记录'
+		title: '游戏'
 	})
 </script>
 

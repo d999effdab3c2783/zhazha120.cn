@@ -4,6 +4,17 @@ export type FurryPortal = {
 	readonly href: string
 }
 
+export type FurryWebsiteOwner = {
+	readonly type: 'owner'
+}
+
+export type FurryFriendOwner = {
+	readonly type: 'friend'
+	readonly slug: string
+}
+
+export type FurryOwner = FurryWebsiteOwner | FurryFriendOwner
+
 export type FurryCharacter = {
 	readonly illustration: string
 	readonly name: string
@@ -19,11 +30,7 @@ export type FurryCharacter = {
 	readonly species_alias: string
 	readonly description: string
 
-	readonly owner: {
-		readonly name: string
-	} & Partial<{
-		readonly href: string
-	}>
+	readonly owner: FurryOwner
 
 	readonly renderExtra: () => VNode
 }>

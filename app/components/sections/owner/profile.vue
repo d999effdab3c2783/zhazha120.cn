@@ -17,7 +17,7 @@
 				@dblclick="ownerStore.handlePoke"
 			/>
 
-			<n-text class="text-9 font-[v-zhazha120-script] fw-black">
+			<n-text class="text-9 fw-black font-[v-zhazha120-script]">
 				{{ ownerStore.name }}
 			</n-text>
 		</n-flex>

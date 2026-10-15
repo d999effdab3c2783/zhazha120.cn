@@ -5,13 +5,19 @@
 
 	import { $fetch } from '#build/fetch'
 	import { useResponsive } from '~/composables/responsive'
-	import { useGameStore } from '~/stores/game'
 	import { additionalRatingMappings } from '~/stores/owner/game/records/maimai'
 	import type { DivingFishMaimaiBest50 } from '~/types/game'
 
-	const gameStore = useGameStore()
-
 	const { isMobile } = useResponsive()
+
+	const props = defineProps<
+		| Partial<{
+				readonly username: string
+		  }>
+		| Partial<{
+				readonly qq: string
+		  }>
+	>()
 
 	const response = await $fetch<DivingFishMaimaiBest50>(
 		'https://www.diving-fish.com/api/maimaidxprober/query/player',
@@ -19,7 +25,8 @@
 			method: 'POST',
 			body: {
 				b50: true,
-				username: gameStore.records.maimai.divinigFish.username
+
+				...props
 			}
 		}
 	)
@@ -78,7 +85,7 @@
 				:key="index"
 			>
 				<n-grid-item>
-					<sections-owner-game-records-maimai-best50-chart
+					<sections-game-records-maimai-best50-chart
 						:index="index"
 						:item="chart"
 					/>
@@ -97,7 +104,7 @@
 				:key="index"
 			>
 				<n-grid-item>
-					<sections-owner-game-records-maimai-best50-chart
+					<sections-game-records-maimai-best50-chart
 						:index="index"
 						:item="chart"
 					/>

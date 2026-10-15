@@ -1,0 +1,60 @@
+<script setup lang="ts">
+	import { isNotNil } from 'es-toolkit'
+
+	import { useResponsive } from '~/composables/responsive'
+	import type { Friend } from '~/types/friend'
+
+	defineProps<{
+		readonly item: Friend
+	}>()
+
+	const { isMobile } = useResponsive()
+</script>
+
+<template>
+	<n-card
+		size="small"
+		title="找到 ta"
+	>
+		<n-flex
+			class="n-button__patch"
+			size="small"
+			:vertical="isMobile"
+		>
+			<template
+				v-for="({ icon, name, href, comment }, index) in item.contacts ?? []"
+				:key="index"
+			>
+				<custom-redirect :href="href">
+					<template #default="{ aProps, redirect }">
+						<n-button
+							v-bind="aProps"
+							:block="isMobile"
+							tag="a"
+							@click.prevent="redirect"
+						>
+							<template #icon>
+								<n-icon :class="icon" />
+							</template>
+
+							{{ name }}
+						</n-button>
+					</template>
+
+					<template
+						v-if="isNotNil(comment)"
+						#footer
+					>
+						<n-element class="text-center">
+							<n-text class="whitespace-pre-line">{{ comment }}</n-text>
+						</n-element>
+					</template>
+				</custom-redirect>
+			</template>
+		</n-flex>
+	</n-card>
+</template>
+
+<style lang="scss">
+	@use '~/styles/patches';
+</style>

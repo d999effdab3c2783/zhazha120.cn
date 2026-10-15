@@ -19,7 +19,7 @@ export default {
 	description: '神秘的舞萌痴与 4k 痴, 食品科学锐意在读中',
 
 	owner: {
-		name: '豌冰',
-		href: 'https://space.bilibili.com/519541121'
+		type: 'friend',
+		slug: 'wanbing'
 	}
 } as const satisfies FurryCharacter

@@ -29,7 +29,7 @@ export default {
 	description: '我是 awedwd, 欢迎扩列 uwu',
 
 	owner: {
-		name: 'awedwd',
-		href: 'https://space.bilibili.com/432050496'
+		type: 'friend',
+		slug: 'awedwd'
 	}
 } as const satisfies FurryCharacter

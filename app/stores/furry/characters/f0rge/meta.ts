@@ -20,7 +20,7 @@ export default {
 	description: '喜欢 sv 和叠键的臭猫',
 
 	owner: {
-		name: 'F0rge',
-		href: 'https://qm.qq.com/q/1mU1Z7hd8k'
+		type: 'friend',
+		slug: 'f0rge'
 	}
 } as const satisfies FurryCharacter

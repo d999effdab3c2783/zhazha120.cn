@@ -20,7 +20,7 @@ export default {
 	description: '这里是c酱, 不会画画不会音游',
 
 	owner: {
-		name: 'BouvierC',
-		href: 'https://space.bilibili.com/384557759'
+		type: 'friend',
+		slug: 'bouvierc'
 	}
 } as const satisfies FurryCharacter

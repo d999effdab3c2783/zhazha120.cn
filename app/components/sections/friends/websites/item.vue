@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import { useBrowserLocation } from '@vueuse/core'
 	import { clsx } from 'clsx'
-	import { intersection, isNotNil } from 'es-toolkit'
+	import { intersection, isNotNil, merge } from 'es-toolkit'
 	import { computed } from 'vue'
 
 	import { useResponsive } from '~/composables/responsive'
@@ -19,7 +19,7 @@
 	})
 
 	const buttonClassNames = computed(() => {
-		return clsx({
+		return clsx('text-start whitespace-pre-line', {
 			'opacity-50': invalid.value
 		})
 	})
@@ -31,13 +31,13 @@
 
 <template>
 	<n-card
-		size="small"
 		class="h-full"
+		size="small"
 	>
 		<n-flex
-			vertical
-			size="small"
 			class="h-full"
+			size="small"
+			vertical
 		>
 			<n-flex
 				align="center"
@@ -45,24 +45,24 @@
 				:wrap="isMobile"
 			>
 				<n-image
-					class="h-20 rounded"
+					class="rounded h-20"
 					:src="item.logo"
 					@click.prevent.stop
 				/>
 
 				<n-flex
-					justify="space-between"
 					align="center"
-					size="large"
 					class="w-full"
+					justify="space-between"
+					size="large"
 				>
 					<n-flex
-						vertical
 						size="small"
+						vertical
 					>
 						<n-flex
 							align="start"
-							class="!gap-1 leading-none"
+							class="leading-none !gap-1"
 							:size="0"
 							vertical
 						>
@@ -93,14 +93,19 @@
 					>
 						<template #default="{ aProps, redirect }">
 							<n-button
-								v-bind="aProps"
-								block
-								class="text-start whitespace-pre-line"
-								:class="buttonClassNames"
-								secondary
-								tag="a"
-								size="small"
-								type="primary"
+								v-bind="
+									merge(
+										{
+											block: true,
+											class: buttonClassNames,
+											secondary: true,
+											size: 'small',
+											tag: 'a',
+											type: 'primary'
+										},
+										aProps
+									)
+								"
 								@click.prevent="redirect"
 							>
 								<template #icon>

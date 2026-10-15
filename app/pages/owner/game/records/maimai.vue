@@ -8,5 +8,5 @@
 </script>
 
 <template>
-	<sections-owner-game-records-maimai />
+	<sections-game-records-maimai />
 </template>

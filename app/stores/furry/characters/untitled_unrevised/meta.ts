@@ -15,7 +15,7 @@ export default {
 	description: '数学魔法爱好者',
 
 	owner: {
-		name: 'Untitled_unrevised',
-		href: 'https://space.bilibili.com/323748622'
+		type: 'friend',
+		slug: 'untitled_unrevised'
 	}
 } as const satisfies FurryCharacter

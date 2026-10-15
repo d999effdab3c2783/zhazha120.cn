@@ -23,6 +23,15 @@
 				size="large"
 				:vertical="isMobile"
 			>
+				<n-statistic label="入驻">
+					{{ Object.keys(friendsStore.entriesGlob).length }}
+					个
+				</n-statistic>
+
+				<template v-if="!isMobile">
+					<n-divider vertical />
+				</template>
+
 				<n-statistic label="友情链接">
 					{{ Object.keys(friendsStore.websitesGlob).length }}
 					条

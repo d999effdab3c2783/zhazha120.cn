@@ -4,7 +4,7 @@
 		vertical
 	>
 		<slot name="portals">
-			<sections-owner-game-records-portals />
+			<sections-owner-game-records-portals title="记录" />
 		</slot>
 	</n-flex>
 </template>

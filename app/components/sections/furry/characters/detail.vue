@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-	import { isNil, isNotNil } from 'es-toolkit'
+	import { isEqual, isNil, isNotNil } from 'es-toolkit'
 	import { get } from 'es-toolkit/compat'
 	import { computed } from 'vue'
 
 	import { useFurryStore } from '~/stores/furry'
+	import type { FurryFriendOwner } from '~/types/furry'
 
 	const props = defineProps<{
 		readonly slug: string
@@ -36,6 +37,12 @@
 			vertical
 		>
 			<sections-furry-characters-item :item="character" />
+
+			<template v-if="isNotNil(character.owner) && isEqual(character.owner.type, 'friend')">
+				<n-divider>所有者</n-divider>
+
+				<sections-friends-detail :slug="(character.owner as FurryFriendOwner).slug" />
+			</template>
 
 			<template v-if="isNotNil(character.renderExtra)">
 				<n-divider />
