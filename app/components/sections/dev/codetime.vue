@@ -45,17 +45,21 @@
 					type="segment"
 				>
 					<n-tab-pane name="按语言">
-						<n-image
-							class="[&>img]:w-full"
-							:src="devStore.codetime.widgets.top.languages"
-						/>
+						<n-element class="utils__center--flex">
+							<n-image
+								class="[&>img]:w-full"
+								:src="devStore.codetime.widgets.top.languages"
+							/>
+						</n-element>
 					</n-tab-pane>
 
 					<n-tab-pane name="按项目">
-						<n-image
-							class="[&>img]:w-full"
-							:src="devStore.codetime.widgets.top.projects"
-						/>
+						<n-element class="utils__center--flex">
+							<n-image
+								class="[&>img]:w-full"
+								:src="devStore.codetime.widgets.top.projects"
+							/>
+						</n-element>
 					</n-tab-pane>
 				</n-tabs>
 			</n-flex>
@@ -69,6 +73,7 @@
 					class="[&>img]:w-full"
 					:src="devStore.codetime.widgets.status"
 				/>
+
 				<n-image
 					class="[&>img]:w-full"
 					:src="devStore.codetime.widgets.usage"
@@ -84,6 +89,7 @@
 					class="[&>img]:w-full"
 					:src="devStore.codetime.widgets.badge.codingTime"
 				/>
+
 				<n-image
 					class="[&>img]:w-full"
 					:src="devStore.codetime.widgets.badge.tokens"
@@ -121,3 +127,7 @@
 		</n-flex>
 	</n-card>
 </template>
+
+<style scoped lang="scss">
+	@use '~/styles/utils';
+</style>

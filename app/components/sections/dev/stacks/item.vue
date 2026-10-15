@@ -82,6 +82,20 @@
 				</template>
 			</transition-group>
 		</n-flex>
+
+		<template #footer>
+			<n-flex
+				:justify="isMobile ? 'center' : undefined"
+				:size="0"
+			>
+				<n-text
+					class="text-[.8em]"
+					:depth="3"
+				>
+					仅供参考 不代表真实水平
+				</n-text>
+			</n-flex>
+		</template>
 	</n-card>
 </template>
 
