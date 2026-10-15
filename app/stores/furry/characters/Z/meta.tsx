@@ -4,7 +4,7 @@ import { name as ownerName } from '~/stores/owner/information'
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: 'Z',
 	species: [

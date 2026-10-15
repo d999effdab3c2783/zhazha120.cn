@@ -9,14 +9,37 @@
 <template>
 	<n-flex
 		align="center"
-		size="small"
+		size="large"
 		vertical
 	>
-		<n-image
-			class="[&>img]:w-full"
-			:src="item.illustration"
-		/>
+		<n-carousel
+			v-bind="
+				item.illustrations.length > 1
+					? {
+							draggable: true,
+							keyboard: true
+						}
+					: {}
+			"
+			centered-slides
+			dot-type="line"
+		>
+			<template
+				v-for="(illustrationItem, index) in item.illustrations"
+				:key="index"
+			>
+				<n-image
+					class="[&>img]:w-full"
+					:src="illustrationItem"
+				/>
+			</template>
+		</n-carousel>
 
-		<n-text :depth="3">仅供展示 不保证原图</n-text>
+		<n-text
+			class="text-[.8em]"
+			:depth="3"
+		>
+			仅供展示 不保证原图
+		</n-text>
 	</n-flex>
 </template>

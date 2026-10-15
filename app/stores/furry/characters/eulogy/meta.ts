@@ -2,7 +2,7 @@ import illustration from '~/stores/furry/characters/eulogy/assets/illustration.b
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: '伊诔/Eulogy',
 	species: [

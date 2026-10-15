@@ -46,8 +46,14 @@
 						size="small"
 						vertical
 					>
-						<sections-furry-characters-title :item="item" />
-						<sections-furry-characters-species :item="item" />
+						<n-flex
+							size="large"
+							vertical
+						>
+							<sections-furry-characters-title :item="item" />
+							<sections-furry-characters-species :item="item" />
+						</n-flex>
+
 						<sections-furry-characters-description :item="item" />
 					</n-flex>
 				</template>

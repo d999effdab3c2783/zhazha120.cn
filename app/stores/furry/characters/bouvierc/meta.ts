@@ -2,7 +2,7 @@ import illustration from '~/stores/furry/characters/bouvierc/assets/illustration
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: 'BouvierC',
 	species: [

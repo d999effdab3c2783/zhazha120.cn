@@ -3,6 +3,7 @@
 
 	const friendsStore = useFriendsStore()
 
+	await friendsStore.loadEntries()
 	await friendsStore.loadWebsites()
 </script>
 
@@ -13,6 +14,12 @@
 	>
 		<slot name="notes">
 			<sections-friends-notes />
+		</slot>
+
+		<slot name="entries">
+			<n-divider>入驻</n-divider>
+
+			<sections-friends-list :items="friendsStore.entries" />
 		</slot>
 
 		<slot name="websites">

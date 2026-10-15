@@ -16,7 +16,7 @@ export type FurryFriendOwner = {
 export type FurryOwner = FurryWebsiteOwner | FurryFriendOwner
 
 export type FurryCharacter = {
-	readonly illustration: string
+	readonly illustrations: string[]
 	readonly name: string
 
 	readonly species: Array<{

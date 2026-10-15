@@ -2,7 +2,7 @@ import illustration from '~/stores/furry/characters/untitled_unrevised/assets/il
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: 'Untitled_unrevised',
 	species: [
@@ -11,8 +11,6 @@ export default {
 			percent: 100
 		}
 	],
-
-	description: '数学魔法爱好者',
 
 	owner: {
 		type: 'friend',

@@ -26,38 +26,40 @@
 </script>
 
 <template>
-	<n-card
-		size="small"
-		title="探索"
-	>
-		<n-flex
-			class="n-button__patch"
+	<template v-if="portals.length > 0">
+		<n-card
 			size="small"
-			:vertical="isMobile"
+			title="探索"
 		>
-			<template
-				v-for="({ icon, name, href }, index) in portals"
-				:key="index"
+			<n-flex
+				class="n-button__patch"
+				size="small"
+				:vertical="isMobile"
 			>
-				<custom-redirect :href="href">
-					<template #default="{ aProps, redirect }">
-						<n-button
-							:block="isMobile"
-							tag="a"
-							v-bind="aProps"
-							@click.prevent="redirect"
-						>
-							<template #icon>
-								<n-icon :class="icon" />
-							</template>
+				<template
+					v-for="({ icon, name, href }, index) in portals"
+					:key="index"
+				>
+					<custom-redirect :href="href">
+						<template #default="{ aProps, redirect }">
+							<n-button
+								:block="isMobile"
+								tag="a"
+								v-bind="aProps"
+								@click.prevent="redirect"
+							>
+								<template #icon>
+									<n-icon :class="icon" />
+								</template>
 
-							{{ name }}
-						</n-button>
-					</template>
-				</custom-redirect>
-			</template>
-		</n-flex>
-	</n-card>
+								{{ name }}
+							</n-button>
+						</template>
+					</custom-redirect>
+				</template>
+			</n-flex>
+		</n-card>
+	</template>
 </template>
 
 <style lang="scss">

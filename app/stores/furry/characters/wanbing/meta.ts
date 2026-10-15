@@ -2,7 +2,7 @@ import illustration from '~/stores/furry/characters/wanbing/assets/illustration.
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: '豌冰',
 	species: [
@@ -15,8 +15,6 @@ export default {
 			percent: 50
 		}
 	],
-
-	description: '神秘的舞萌痴与 4k 痴, 食品科学锐意在读中',
 
 	owner: {
 		type: 'friend',

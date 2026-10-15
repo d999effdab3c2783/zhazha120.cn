@@ -2,7 +2,7 @@ import illustration from '~/stores/furry/characters/f0rge/assets/illustration.bi
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: 'F0rge (無项)',
 	species: [

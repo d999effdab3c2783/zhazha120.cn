@@ -3,7 +3,7 @@ import Extra from '~/stores/furry/characters/zhazha120-1/components/extra.vue'
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: '暂无名称',
 	species: [

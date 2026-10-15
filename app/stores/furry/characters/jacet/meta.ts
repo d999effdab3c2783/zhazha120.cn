@@ -2,7 +2,7 @@ import illustration from '~/stores/furry/characters/jacet/assets/illustration.bi
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: '澜星jacet',
 	species: [

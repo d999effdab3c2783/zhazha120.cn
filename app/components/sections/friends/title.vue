@@ -13,6 +13,7 @@
 
 <template>
 	<n-flex
+		class="leading-none"
 		:size="0"
 		vertical
 	>

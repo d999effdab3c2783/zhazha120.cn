@@ -2,7 +2,7 @@ import illustration from '~/stores/furry/characters/awedwd/assets/illustration.b
 import type { FurryCharacter } from '~/types/furry'
 
 export default {
-	illustration,
+	illustrations: [illustration],
 
 	name: 'awedwd',
 
@@ -26,7 +26,6 @@ export default {
 	],
 
 	species_alias: '狼犬',
-	description: '我是 awedwd, 欢迎扩列 uwu',
 
 	owner: {
 		type: 'friend',
