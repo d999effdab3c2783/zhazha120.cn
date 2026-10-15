@@ -20,6 +20,10 @@
 	const currentCover = computed(() => {
 		switch (currentCoverIndex.value) {
 			case 0:
+				const lxnsCoverId = props.item.song_id % 1e4
+
+				return `https://assets.lxns.net/maimai/jacket/${lxnsCoverId}.png`
+			case 1:
 				let divingFishCover = 0
 
 				if (props.item.song_id > 10000 && props.item.song_id <= 11000) {
@@ -29,10 +33,6 @@
 				const divingFishCoverId = String(props.item.song_id + divingFishCover).padStart(5, '0')
 
 				return `https://www.diving-fish.com/covers/${divingFishCoverId}.png`
-			case 1:
-				const lxnsCoverId = props.item.song_id % 1e4
-
-				return `https://assets.lxns.net/maimai/jacket/${lxnsCoverId}.png`
 		}
 
 		return undefined
