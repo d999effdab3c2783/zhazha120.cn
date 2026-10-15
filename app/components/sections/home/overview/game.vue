@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 	import { useResponsive } from '~/composables/responsive'
-	import { useGameStore } from '~/stores/game.ts'
+	import { useGameStore } from '~/stores/game'
 
 	const gameStore = useGameStore()
 
@@ -56,7 +56,7 @@
 			>
 				<custom-redirect
 					#="{ aProps, redirect }"
-					href="/game"
+					href="/owner/game"
 				>
 					<n-button
 						block

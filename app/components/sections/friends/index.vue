@@ -18,9 +18,7 @@
 		<slot name="websites">
 			<n-divider>友情链接</n-divider>
 
-			<n-card size="small">
-				<sections-friends-websites :items="friendsStore.websites" />
-			</n-card>
+			<sections-friends-websites :items="friendsStore.websites" />
 		</slot>
 	</n-flex>
 </template>

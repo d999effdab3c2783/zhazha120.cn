@@ -1,19 +1,22 @@
 import { defineStore } from 'pinia'
 
-import { overlay as geometryDashOverlay, portals as geometryDashPortals } from '~/stores/game/records/geometry_dash'
-import { divingFishUsername as maimaiDivingFishUsername } from '~/stores/game/records/maimai'
+import {
+	overlay as geometryDashOverlay,
+	portals as geometryDashPortals
+} from '~/stores/owner/game/records/geometry_dash'
+import { divingFishUsername as maimaiDivingFishUsername } from '~/stores/owner/game/records/maimai'
 import {
 	dan as malodyDan,
 	danTimelines as malodyDanTimelines,
 	portals as malodyPortals
-} from '~/stores/game/records/malody'
+} from '~/stores/owner/game/records/malody'
 import {
 	defaultPreviewConfig as minecraftDefaultPreviewConfig,
 	portals as minecraftPortals,
 	skinSrc as minecraftSkinSrc
-} from '~/stores/game/records/minecraft'
-import { mania as osuMania, overlay as osuOverlay, portals as osuPortals } from '~/stores/game/records/osu'
-import recordsPortals from '~/stores/game/records/portals'
+} from '~/stores/owner/game/records/minecraft'
+import { mania as osuMania, overlay as osuOverlay, portals as osuPortals } from '~/stores/owner/game/records/osu'
+import recordsPortals from '~/stores/owner/game/records/portals'
 import {
 	backgroundOverlay as tetrioBackgroundOverlay,
 	blitzTimelines as tetrioBlitzTimelines,
@@ -23,7 +26,7 @@ import {
 	splintTimelines as tetrioSplintTimelines,
 	tetraLeagueSeason1Timelines as tetrioTetraLeagueSeason1Timelines,
 	tetraLeagueSeason2Timelines as tetrioTetraLeagueSeason2Timelines
-} from '~/stores/game/records/tetrio'
+} from '~/stores/owner/game/records/tetrio'
 
 export const useGameStore = defineStore('game', () => {
 	return {

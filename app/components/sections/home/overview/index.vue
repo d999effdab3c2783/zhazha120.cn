@@ -28,8 +28,8 @@
 				vertical
 			>
 				<lazy-sections-home-overview-owner />
-				<lazy-sections-home-overview-furry />
 				<lazy-sections-home-overview-game />
+				<lazy-sections-home-overview-tools />
 			</n-flex>
 
 			<n-flex
@@ -38,8 +38,8 @@
 				vertical
 			>
 				<lazy-sections-home-overview-dev />
+				<lazy-sections-home-overview-furry />
 				<lazy-sections-home-overview-friends />
-				<lazy-sections-home-overview-tools />
 			</n-flex>
 		</n-flex>
 	</n-element>

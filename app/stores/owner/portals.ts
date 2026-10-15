@@ -31,7 +31,7 @@ export default [
 	{
 		icon: 'i-tabler:device-gamepad',
 		name: '游戏',
-		href: '/game'
+		href: '/owner/game'
 	},
 	{
 		icon: 'i-ant-design:history-outlined',

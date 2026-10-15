@@ -10,18 +10,19 @@
 </script>
 
 <template>
-	<n-flex
-		class="n-button__patch"
-		size="small"
-		:vertical="isMobile"
+	<n-grid
+		class="!gap-2"
+		:cols="isMobile ? 1 : 2"
 	>
 		<template
 			v-for="(item, index) in friendsStore.websites"
 			:key="index"
 		>
-			<sections-friends-websites-item :item="item" />
+			<n-grid-item>
+				<sections-friends-websites-item :item="item" />
+			</n-grid-item>
 		</template>
-	</n-flex>
+	</n-grid>
 </template>
 
 <style lang="scss">
