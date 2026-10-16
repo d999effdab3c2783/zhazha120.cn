@@ -1,8 +1,10 @@
+import avatar from '~/stores/friends/entries/bouvierc/assets/avatar.bin?url'
 import type { Friend } from '~/types/friend'
 
 // @unocss-include
 
 export default {
+	avatar,
 	name: 'BouvierC',
 
 	contacts: [
