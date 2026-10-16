@@ -118,6 +118,10 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 	})
 
 	const loadPresets = async () => {
+		if (presets.length > 0) {
+			return
+		}
+
 		presets.splice(0, presets.length)
 
 		await Promise.all(

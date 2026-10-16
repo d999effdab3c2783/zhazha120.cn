@@ -3,7 +3,6 @@
 	import { computed } from 'vue'
 
 	import { useOwnerStore } from '~/stores/owner'
-	import { filterArray } from '~/utils/filter'
 
 	const props = defineProps<{
 		readonly age: number
@@ -20,10 +19,12 @@
 			return <sections-owner-birthday-records-deceased />
 		}
 
-		const records = filterArray(ownerStore.birthday.records, `age : ["${props.age}"]`)
+		const record = ownerStore.birthday.records.find(item => {
+			return Number(item.age) === props.age
+		})
 
-		if (isNotNil(records) && records.length === 1 && isNotNil(records[0])) {
-			return records[0].renderExtra()
+		if (isNotNil(record)) {
+			return record.renderExtra()
 		}
 
 		return <sections-owner-birthday-records-empty />

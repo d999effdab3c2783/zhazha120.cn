@@ -35,7 +35,7 @@
 				return `https://www.diving-fish.com/covers/${divingFishCoverId}.png`
 		}
 
-		return undefined
+		return null
 	})
 
 	const difficultyColor = computed(() => {
@@ -54,7 +54,10 @@
 		class="h-full"
 		size="small"
 	>
-		<template #cover>
+		<template
+			v-if="isNotNil(currentCover)"
+			#cover
+		>
 			<n-image
 				class="w-full aspect-square"
 				:src="currentCover"

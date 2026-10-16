@@ -13,6 +13,10 @@ export const useFriendsStore = defineStore('friends', () => {
 	})
 
 	const loadEntries = async () => {
+		if (entries.length > 0) {
+			return
+		}
+
 		entries.splice(0, entries.length)
 
 		await Promise.all(
@@ -33,6 +37,10 @@ export const useFriendsStore = defineStore('friends', () => {
 	})
 
 	const loadWebsites = async () => {
+		if (websites.length > 0) {
+			return
+		}
+
 		websites.splice(0, websites.length)
 
 		await Promise.all(

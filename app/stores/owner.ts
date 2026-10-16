@@ -21,6 +21,10 @@ export const useOwnerStore = defineStore('owner', () => {
 	}
 
 	const loadBirthdayRecords = async () => {
+		if (birthdayRecords.length > 0) {
+			return
+		}
+
 		birthdayRecords.splice(0, birthdayRecords.length)
 
 		await Promise.all(

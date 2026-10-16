@@ -8,6 +8,10 @@ export const useAssetsStore = defineStore('assets', () => {
 	const registry = shallowReactive<AssetDownloadRequestItem[]>([])
 
 	const load = async () => {
+		if (registry.length > 0) {
+			return
+		}
+
 		registry.splice(0, registry.length)
 
 		await Promise.all(

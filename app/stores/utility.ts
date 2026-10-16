@@ -7,6 +7,10 @@ export const useUtilityStore = defineStore('utility', () => {
 	const registry = shallowReactive<Utility[]>([])
 
 	const load = async () => {
+		if (registry.length > 0) {
+			return
+		}
+
 		registry.splice(0, registry.length)
 
 		await Promise.all(

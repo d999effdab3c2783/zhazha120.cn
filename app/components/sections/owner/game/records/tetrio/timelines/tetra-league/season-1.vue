@@ -1,23 +1,23 @@
 <script lang="ts" setup>
 	import { isNil } from 'es-toolkit'
-	import { get } from 'es-toolkit/compat'
 
 	import { useResponsive } from '~/composables/responsive'
 	import { useGameStore } from '~/stores/game'
-	import { filterArray } from '~/utils/filter'
 
 	const gameStore = useGameStore()
 
 	const { isMobile } = useResponsive()
 
 	const guessColor = (rank: string) => {
-		const filtered = filterArray(gameStore.records.tetrio.rankColors, `name : ["${rank}"]`)
+		const color = gameStore.records.tetrio.rankColors.find(item => {
+			return item.name === rank
+		})
 
-		if (isNil(filtered) || filtered.length !== 1 || isNil(filtered[0])) {
-			return undefined
+		if (isNil(color)) {
+			return
 		}
 
-		return get(filtered[0], 'value')
+		return color.value
 	}
 </script>
 

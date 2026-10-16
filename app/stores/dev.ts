@@ -21,7 +21,7 @@ export const useDevStore = defineStore('dev', () => {
 				return value.replaceAll('{theme}', themeStore.actualMode)
 			}
 
-			return undefined
+			return null
 		})
 	})
 
@@ -30,6 +30,10 @@ export const useDevStore = defineStore('dev', () => {
 	})
 
 	const loadStacks = async () => {
+		if (stacks.length > 0) {
+			return
+		}
+
 		stacks.splice(0, stacks.length)
 
 		await Promise.all(
@@ -46,6 +50,10 @@ export const useDevStore = defineStore('dev', () => {
 	})
 
 	const loadOrganizations = async () => {
+		if (organizations.length > 0) {
+			return
+		}
+
 		organizations.splice(0, organizations.length)
 
 		await Promise.all(

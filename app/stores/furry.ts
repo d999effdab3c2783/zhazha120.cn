@@ -16,6 +16,10 @@ export const useFurryStore = defineStore('furry', () => {
 	})
 
 	const loadCharacters = async () => {
+		if (characters.length > 0) {
+			return
+		}
+
 		characters.splice(0, characters.length)
 
 		await Promise.all(
@@ -36,6 +40,10 @@ export const useFurryStore = defineStore('furry', () => {
 	})
 
 	const loadEvents = async () => {
+		if (events.length > 0) {
+			return
+		}
+
 		events.splice(0, events.length)
 
 		await Promise.all(

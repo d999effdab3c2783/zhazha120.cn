@@ -6,7 +6,6 @@
 	import { useFriendsStore } from '~/stores/friends'
 	import { name as ownerName } from '~/stores/owner/information'
 	import type { FurryCharacter } from '~/types/furry'
-	import { filterArray } from '~/utils/filter'
 
 	const props = defineProps<{
 		readonly item: FurryCharacter
@@ -24,13 +23,17 @@
 		}
 
 		if (props.item.owner.type === 'friend') {
-			const filtered = filterArray(friendsStore.entries, `slug : ["${props.item.owner.slug}"]`)
+			const slug = props.item.owner.slug
 
-			if (isNil(filtered) || filtered.length !== 1 || isNil(filtered[0])) {
+			const friend = friendsStore.entries.find(item => {
+				return item.slug === slug
+			})
+
+			if (isNil(friend)) {
 				return '?'
 			}
 
-			return filtered[0].name
+			return friend.name
 		}
 
 		return '?'
