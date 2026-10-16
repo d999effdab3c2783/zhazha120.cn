@@ -21,7 +21,6 @@ export default {
 	],
 
 	species_alias: 'c酱 (?)',
-	description: '这里是c酱, 不会画画不会音游',
 
 	owner: {
 		type: 'friend',

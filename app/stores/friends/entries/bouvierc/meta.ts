@@ -7,6 +7,8 @@ export default {
 	avatar,
 	name: 'BouvierC',
 
+	description: '这里是c酱, 不会画画不会音游',
+
 	contacts: [
 		{
 			icon: 'i-simple-icons:bilibili',
