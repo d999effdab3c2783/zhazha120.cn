@@ -3,7 +3,7 @@
 
 	const ownerBirthdayRecords19DataStore = useOwnerBirthdayRecords19DataStore()
 
-	await ownerBirthdayRecords19DataStore.loadCongratulations()
+	ownerBirthdayRecords19DataStore.loadCongratulations()
 </script>
 
 <template>

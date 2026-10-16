@@ -53,7 +53,7 @@
 	})
 
 	if (isNotNil(props.item.owner) && props.item.owner.type === 'friend') {
-		await friendsStore.loadEntries()
+		friendsStore.loadEntries()
 	}
 </script>
 

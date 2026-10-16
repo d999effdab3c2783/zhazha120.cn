@@ -34,7 +34,7 @@
 		}
 	)
 
-	await utilityStore.load()
+	utilityStore.load()
 </script>
 
 <template>

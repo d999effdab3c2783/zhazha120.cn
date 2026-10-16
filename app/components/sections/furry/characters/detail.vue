@@ -26,8 +26,8 @@
 		return get(furryStore.mappings.get(character.value), ['events'], [])
 	})
 
-	await furryStore.loadCharacters()
-	await furryStore.loadEvents()
+	furryStore.loadCharacters()
+	furryStore.loadEvents()
 </script>
 
 <template>

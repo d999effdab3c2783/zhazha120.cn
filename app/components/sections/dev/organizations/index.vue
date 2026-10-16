@@ -23,7 +23,7 @@
 		return filter.output.value
 	})
 
-	await devStore.loadOrganizations()
+	devStore.loadOrganizations()
 </script>
 
 <template>

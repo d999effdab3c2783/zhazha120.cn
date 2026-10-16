@@ -21,7 +21,7 @@
 		}
 	}
 
-	await keyAccuracyCalculatorToolStore.loadPresets()
+	keyAccuracyCalculatorToolStore.loadPresets()
 </script>
 
 <template>

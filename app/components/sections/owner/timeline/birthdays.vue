@@ -12,7 +12,7 @@
 		return `/owner/birthday/records/${age}`
 	}
 
-	await ownerStore.loadBirthdayRecords()
+	ownerStore.loadBirthdayRecords()
 </script>
 
 <template>

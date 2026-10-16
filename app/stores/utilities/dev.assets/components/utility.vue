@@ -33,7 +33,7 @@
 		})
 	}
 
-	await assetsStore.load()
+	assetsStore.load()
 </script>
 
 <template>

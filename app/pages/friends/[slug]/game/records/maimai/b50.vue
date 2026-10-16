@@ -24,7 +24,7 @@
 		})
 	})
 
-	await friendsStore.loadEntries()
+	friendsStore.loadEntries()
 </script>
 
 <template>

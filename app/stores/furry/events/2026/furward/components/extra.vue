@@ -4,7 +4,7 @@
 
 	const furryEventsFurward2026DataStore = useFurryEventsFurward2026DataStore()
 
-	await furryEventsFurward2026DataStore.loadPhotos()
+	furryEventsFurward2026DataStore.loadPhotos()
 </script>
 
 <template>

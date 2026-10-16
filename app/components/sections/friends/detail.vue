@@ -23,8 +23,8 @@
 		return filterArray(furryStore.characters, `owner.type = "friend" AND owner.slug : ["${props.slug}"]`)
 	})
 
-	await friendsStore.loadEntries()
-	await furryStore.loadCharacters()
+	friendsStore.loadEntries()
+	furryStore.loadCharacters()
 </script>
 
 <template>

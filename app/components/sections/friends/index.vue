@@ -3,8 +3,8 @@
 
 	const friendsStore = useFriendsStore()
 
-	await friendsStore.loadEntries()
-	await friendsStore.loadWebsites()
+	friendsStore.loadEntries()
+	friendsStore.loadWebsites()
 </script>
 
 <template>

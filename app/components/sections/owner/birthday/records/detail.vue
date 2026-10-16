@@ -29,7 +29,7 @@
 		return <sections-owner-birthday-records-empty />
 	})
 
-	await ownerStore.loadBirthdayRecords()
+	ownerStore.loadBirthdayRecords()
 </script>
 
 <template>

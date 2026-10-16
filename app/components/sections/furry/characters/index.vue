@@ -3,7 +3,7 @@
 
 	const furryStore = useFurryStore()
 
-	await furryStore.loadCharacters()
+	furryStore.loadCharacters()
 </script>
 
 <template>

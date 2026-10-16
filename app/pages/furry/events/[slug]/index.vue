@@ -22,7 +22,7 @@
 		return filterArray(furryStore.events, `slug : ["${slug.value}"]`)
 	})
 
-	await furryStore.loadEvents()
+	furryStore.loadEvents()
 </script>
 
 <template>

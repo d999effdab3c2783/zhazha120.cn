@@ -3,7 +3,7 @@
 
 	const furryStore = useFurryStore()
 
-	await furryStore.loadEvents()
+	furryStore.loadEvents()
 </script>
 
 <template>

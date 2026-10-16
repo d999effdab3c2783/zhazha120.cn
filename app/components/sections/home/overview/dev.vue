@@ -8,7 +8,7 @@
 
 	const { isMobile } = useResponsive()
 
-	await devStore.loadStacks()
+	devStore.loadStacks()
 </script>
 
 <template>

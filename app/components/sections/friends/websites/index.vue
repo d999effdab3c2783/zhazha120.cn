@@ -6,7 +6,7 @@
 
 	const { isMobile } = useResponsive()
 
-	await friendsStore.loadWebsites()
+	friendsStore.loadWebsites()
 </script>
 
 <template>
