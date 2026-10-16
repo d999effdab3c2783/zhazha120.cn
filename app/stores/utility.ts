@@ -1,13 +1,15 @@
 import { defineStore } from 'pinia'
-import { shallowRef } from 'vue'
+import { shallowReactive } from 'vue'
 
 import type { Utility } from '~/types/utility'
 
 export const useUtilityStore = defineStore('utility', () => {
-	const registry = shallowRef<Utility[]>([])
+	const registry = shallowReactive<Utility[]>([])
 
 	const load = async () => {
-		registry.value = await Promise.all(
+		registry.splice(0, registry.length)
+
+		await Promise.all(
 			Object.values(
 				import.meta.env.DEV
 					? import.meta.glob<Utility>(['~/stores/utilities/*/meta.*'], {
@@ -17,7 +19,9 @@ export const useUtilityStore = defineStore('utility', () => {
 							import: 'default'
 						})
 			).map(async importer => {
-				return await importer()
+				const imported = await importer()
+
+				registry.push(imported)
 			})
 		)
 	}

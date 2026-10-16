@@ -2,7 +2,7 @@ import { isNil, sumBy } from 'es-toolkit'
 import { get } from 'es-toolkit/compat'
 import type { WatermarkProps } from 'naive-ui'
 import { defineStore } from 'pinia'
-import { computed, ref, shallowRef } from 'vue'
+import { computed, ref, shallowReactive, shallowRef } from 'vue'
 
 import { name as ownerName } from '~/stores/owner/information'
 import portals from '~/stores/tools/portals'
@@ -17,7 +17,7 @@ export const useToolsStore = defineStore('tools', () => {
 export const useImageWatermarkToolStore = defineStore('tools.image_watermark', () => {
 	const file = shallowRef<Blob>()
 
-	const config = shallowRef<Partial<WatermarkProps>>({
+	const config = shallowReactive<Partial<WatermarkProps>>({
 		content: ownerName,
 		cross: true,
 		fontColor: 'rgba(128, 128, 128, .3)',
@@ -38,15 +38,13 @@ export const useImageWatermarkToolStore = defineStore('tools.image_watermark', (
 })
 
 export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy_calculator', () => {
-	const presets = shallowRef<KeyAccuracyCalculatorPreset[]>([])
+	const presets = shallowReactive<KeyAccuracyCalculatorPreset[]>([])
 
 	const data = ref<KeyAccuracyCalculatorData>({
 		name: '',
 		maps: [],
 		require_accuracy: 0
 	})
-
-	const inputs = shallowRef<Record<number, number>>({})
 
 	const totalNotes = computed(() => {
 		if (isNil(data)) {
@@ -120,7 +118,9 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 	})
 
 	const loadPresets = async () => {
-		presets.value = await Promise.all(
+		presets.splice(0, presets.length)
+
+		await Promise.all(
 			Object.values(
 				import.meta.glob<KeyAccuracyCalculatorPreset>(
 					[
@@ -132,7 +132,9 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 					}
 				)
 			).map(async importer => {
-				return await importer()
+				const imported = await importer()
+
+				presets.push(imported)
 			})
 		)
 	}
@@ -140,7 +142,6 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 	return {
 		presets,
 		data,
-		inputs,
 
 		totalNotes,
 		result,

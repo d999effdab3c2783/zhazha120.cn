@@ -1,6 +1,6 @@
 import { isNil } from 'es-toolkit'
 import { defineStore } from 'pinia'
-import { computed, shallowRef } from 'vue'
+import { computed, shallowReactive } from 'vue'
 
 import { title as notesTitle, items as notesItems } from '~/stores/furry/notes'
 import portals from '~/stores/furry/portals'
@@ -8,15 +8,17 @@ import type { FurryCharacter, FurryCharacterEntry, FurryEvent, FurryEventEntry }
 import { filterArray } from '~/utils/filter'
 
 export const useFurryStore = defineStore('furry', () => {
-	const characters = shallowRef<FurryCharacterEntry[]>([])
-	const events = shallowRef<FurryEventEntry[]>([])
+	const characters = shallowReactive<FurryCharacterEntry[]>([])
+	const events = shallowReactive<FurryEventEntry[]>([])
 
 	const charactersGlob = import.meta.glob<FurryCharacter>('~/stores/furry/characters/*/meta.*', {
 		import: 'default'
 	})
 
 	const loadCharacters = async () => {
-		characters.value = await Promise.all(
+		characters.splice(0, characters.length)
+
+		await Promise.all(
 			Object.entries(charactersGlob).map(async ([path, importer]) => {
 				const meta = await importer()
 
@@ -24,7 +26,7 @@ export const useFurryStore = defineStore('furry', () => {
 					slug: path.split('/').at(-2) ?? '?'
 				})
 
-				return meta
+				characters.push(meta)
 			})
 		)
 	}
@@ -34,7 +36,9 @@ export const useFurryStore = defineStore('furry', () => {
 	})
 
 	const loadEvents = async () => {
-		events.value = await Promise.all(
+		events.splice(0, events.length)
+
+		await Promise.all(
 			Object.entries(eventsGlob).map(async ([path, importer]) => {
 				const meta = await importer()
 
@@ -43,7 +47,7 @@ export const useFurryStore = defineStore('furry', () => {
 					slug: path.split('/').at(-2) ?? '?'
 				})
 
-				return meta satisfies FurryEventEntry
+				events.push(meta satisfies FurryEventEntry)
 			})
 		)
 	}
@@ -57,25 +61,25 @@ export const useFurryStore = defineStore('furry', () => {
 			}>
 		>()
 
-		characters.value.forEach(item => {
+		characters.forEach(item => {
 			temp.set(item, {
-				events: events.value.filter(eventItem => {
+				events: events.filter(eventItem => {
 					if (isNil(eventItem.charactersQuery)) {
 						return false
 					}
 
-					return (filterArray(characters.value, eventItem.charactersQuery) ?? []).includes(item)
+					return (filterArray(characters, eventItem.charactersQuery) ?? []).includes(item)
 				})
 			})
 		})
 
-		events.value.forEach(item => {
+		events.forEach(item => {
 			if (isNil(item.charactersQuery)) {
 				return
 			}
 
 			temp.set(item, {
-				characters: filterArray(characters.value, item.charactersQuery) ?? []
+				characters: filterArray(characters, item.charactersQuery) ?? []
 			})
 		})
 

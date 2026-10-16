@@ -1,6 +1,6 @@
 import { isNotNil } from 'es-toolkit'
 import { defineStore } from 'pinia'
-import { shallowRef } from 'vue'
+import { shallowReactive } from 'vue'
 
 import { useApiStore } from '~/stores/api'
 import contacts from '~/stores/owner/contacts'
@@ -12,7 +12,7 @@ import type { OwnerBirthdayRecord, OwnerBirthdayRecordEntry } from '~/types/owne
 export const useOwnerStore = defineStore('owner', () => {
 	const apiStore = useApiStore()
 
-	const birthdayRecords = shallowRef<OwnerBirthdayRecordEntry[]>([])
+	const birthdayRecords = shallowReactive<OwnerBirthdayRecordEntry[]>([])
 
 	const handlePoke = () => {
 		if (isNotNil(apiStore.message)) {
@@ -21,7 +21,9 @@ export const useOwnerStore = defineStore('owner', () => {
 	}
 
 	const loadBirthdayRecords = async () => {
-		birthdayRecords.value = await Promise.all(
+		birthdayRecords.splice(0, birthdayRecords.length)
+
+		await Promise.all(
 			Object.entries(
 				import.meta.glob<OwnerBirthdayRecord>('~/stores/owner/birthday/records/*/meta.*', {
 					import: 'default'
@@ -33,7 +35,7 @@ export const useOwnerStore = defineStore('owner', () => {
 					age: path.split('/').at(-2) ?? '?'
 				})
 
-				return meta
+				birthdayRecords.push(meta)
 			})
 		)
 	}

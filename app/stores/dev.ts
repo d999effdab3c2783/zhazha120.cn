@@ -1,6 +1,6 @@
 import { cloneDeepWith, isString } from 'es-toolkit'
 import { defineStore } from 'pinia'
-import { computed, shallowRef } from 'vue'
+import { computed, shallowReactive } from 'vue'
 
 import defaultCodetime from '~/stores/dev/codetime'
 import competitions from '~/stores/dev/competitions'
@@ -12,8 +12,8 @@ import type { DevOrganization, DevStack } from '~/types/dev'
 export const useDevStore = defineStore('dev', () => {
 	const themeStore = useThemeStore()
 
-	const stacks = shallowRef<DevStack[]>([])
-	const organizations = shallowRef<DevOrganization[]>([])
+	const stacks = shallowReactive<DevStack[]>([])
+	const organizations = shallowReactive<DevOrganization[]>([])
 
 	const codetime = computed(() => {
 		return cloneDeepWith(defaultCodetime, value => {
@@ -30,9 +30,13 @@ export const useDevStore = defineStore('dev', () => {
 	})
 
 	const loadStacks = async () => {
-		stacks.value = await Promise.all(
+		stacks.splice(0, stacks.length)
+
+		await Promise.all(
 			Object.values(stacksGlob).map(async importer => {
-				return await importer()
+				const imported = await importer()
+
+				stacks.push(imported)
 			})
 		)
 	}
@@ -42,9 +46,13 @@ export const useDevStore = defineStore('dev', () => {
 	})
 
 	const loadOrganizations = async () => {
-		organizations.value = await Promise.all(
+		organizations.splice(0, organizations.length)
+
+		await Promise.all(
 			Object.values(organizationsGlob).map(async importer => {
-				return await importer()
+				const imported = await importer()
+
+				organizations.push(imported)
 			})
 		)
 	}
