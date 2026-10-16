@@ -17,7 +17,6 @@ export default {
 	],
 
 	species_alias: '鱼尾猫',
-	description: '喜欢 sv 和叠键的臭猫',
 
 	owner: {
 		type: 'friend',
