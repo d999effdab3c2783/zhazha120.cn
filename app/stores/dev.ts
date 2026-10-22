@@ -21,7 +21,7 @@ export const useDevStore = defineStore('dev', () => {
 				return value.replaceAll('{theme}', themeStore.actualMode)
 			}
 
-			return null
+			return undefined
 		})
 	})
 
