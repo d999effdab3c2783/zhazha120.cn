@@ -1,11 +1,12 @@
+import avatar from '~/stores/friends/entries/13roil/assets/avatar.bin?url'
 import type { Friend } from '~/types/friend'
 
 // @unocss-include
 
-const qq = 65348094
+export const qq = 65348094
 
 export default {
-	avatar: `https://thirdqq.qlogo.cn/g?b=qq&nk=${qq}&s=0`,
+	avatar,
 	name: 'ThirteenRoil',
 
 	contacts: [

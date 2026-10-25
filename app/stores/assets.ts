@@ -1,4 +1,4 @@
-import { flattenObject } from 'es-toolkit'
+import { flattenObject, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
 
@@ -7,13 +7,7 @@ import type { AssetDownloadRequestItem, DownloadableAssets } from '~/types/asset
 export const useAssetsStore = defineStore('assets', () => {
 	const registry = shallowReactive<AssetDownloadRequestItem[]>([])
 
-	const load = async () => {
-		if (registry.length > 0) {
-			return
-		}
-
-		registry.splice(0, registry.length)
-
+	const load = once(async () => {
 		await Promise.all(
 			Object.entries(
 				import.meta.glob<DownloadableAssets>(
@@ -21,6 +15,7 @@ export const useAssetsStore = defineStore('assets', () => {
 						'~/stores/footer/assets.*',
 						'~/stores/dev/organizations/*/assets.*',
 						'~/stores/furry/events/*/*/assets.*',
+						'~/stores/friends/entries/*/assets.*',
 						'~/stores/friends/websites/*/assets.*'
 					],
 					{
@@ -47,7 +42,7 @@ export const useAssetsStore = defineStore('assets', () => {
 				)
 			})
 		)
-	}
+	})
 
 	return {
 		registry,

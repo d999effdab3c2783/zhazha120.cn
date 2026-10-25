@@ -1,3 +1,4 @@
+import { once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
 
@@ -6,13 +7,7 @@ import type { Utility } from '~/types/utility'
 export const useUtilityStore = defineStore('utility', () => {
 	const registry = shallowReactive<Utility[]>([])
 
-	const load = async () => {
-		if (registry.length > 0) {
-			return
-		}
-
-		registry.splice(0, registry.length)
-
+	const load = once(async () => {
 		await Promise.all(
 			Object.values(
 				import.meta.env.DEV
@@ -28,7 +23,7 @@ export const useUtilityStore = defineStore('utility', () => {
 				registry.push(imported)
 			})
 		)
-	}
+	})
 
 	return {
 		registry,

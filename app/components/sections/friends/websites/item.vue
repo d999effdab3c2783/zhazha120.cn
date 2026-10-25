@@ -69,7 +69,7 @@
 							<n-text class="text-current">{{ item.name }}</n-text>
 
 							<n-text
-								class="text-[.8em]"
+								class="text-[.8em] whitespace-pre-line"
 								:depth="3"
 							>
 								{{ item.description }}

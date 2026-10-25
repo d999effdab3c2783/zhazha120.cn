@@ -1,4 +1,4 @@
-import { cloneDeepWith, isString } from 'es-toolkit'
+import { cloneDeepWith, isString, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { computed, shallowReactive } from 'vue'
 
@@ -29,13 +29,7 @@ export const useDevStore = defineStore('dev', () => {
 		import: 'default'
 	})
 
-	const loadStacks = async () => {
-		if (stacks.length > 0) {
-			return
-		}
-
-		stacks.splice(0, stacks.length)
-
+	const loadStacks = once(async () => {
 		await Promise.all(
 			Object.values(stacksGlob).map(async importer => {
 				const imported = await importer()
@@ -43,19 +37,13 @@ export const useDevStore = defineStore('dev', () => {
 				stacks.push(imported)
 			})
 		)
-	}
+	})
 
 	const organizationsGlob = import.meta.glob<DevOrganization>('~/stores/dev/organizations/*/meta.*', {
 		import: 'default'
 	})
 
-	const loadOrganizations = async () => {
-		if (organizations.length > 0) {
-			return
-		}
-
-		organizations.splice(0, organizations.length)
-
+	const loadOrganizations = once(async () => {
 		await Promise.all(
 			Object.values(organizationsGlob).map(async importer => {
 				const imported = await importer()
@@ -63,7 +51,7 @@ export const useDevStore = defineStore('dev', () => {
 				organizations.push(imported)
 			})
 		)
-	}
+	})
 
 	return {
 		notes: {

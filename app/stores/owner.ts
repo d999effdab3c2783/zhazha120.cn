@@ -1,4 +1,4 @@
-import { isNotNil } from 'es-toolkit'
+import { isNotNil, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
 
@@ -20,13 +20,7 @@ export const useOwnerStore = defineStore('owner', () => {
 		}
 	}
 
-	const loadBirthdayRecords = async () => {
-		if (birthdayRecords.length > 0) {
-			return
-		}
-
-		birthdayRecords.splice(0, birthdayRecords.length)
-
+	const loadBirthdayRecords = once(async () => {
 		await Promise.all(
 			Object.entries(
 				import.meta.glob<OwnerBirthdayRecord>('~/stores/owner/birthday/records/*/meta.*', {
@@ -42,7 +36,7 @@ export const useOwnerStore = defineStore('owner', () => {
 				birthdayRecords.push(meta)
 			})
 		)
-	}
+	})
 
 	return {
 		name,

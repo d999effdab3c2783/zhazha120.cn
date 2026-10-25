@@ -1,11 +1,12 @@
+import avatar from '~/stores/friends/entries/wanbing/assets/avatar.bin?url'
 import type { Friend } from '~/types/friend'
 
 // @unocss-include
 
-const qq = 2669639312
+export const qq = 2669639312
 
 export default {
-	avatar: `https://thirdqq.qlogo.cn/g?b=qq&nk=${qq}&s=0`,
+	avatar,
 	name: '豌冰',
 
 	description: '神秘的舞萌痴与 4k 痴, 食品科学锐意在读中',

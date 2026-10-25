@@ -1,4 +1,4 @@
-import { isNil, sumBy } from 'es-toolkit'
+import { isNil, once, sumBy } from 'es-toolkit'
 import { get } from 'es-toolkit/compat'
 import type { WatermarkProps } from 'naive-ui'
 import { defineStore } from 'pinia'
@@ -117,13 +117,7 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 		return data.value.require_accuracy - get(data.value.maps.at(-1), 'accuracy', -1)
 	})
 
-	const loadPresets = async () => {
-		if (presets.length > 0) {
-			return
-		}
-
-		presets.splice(0, presets.length)
-
+	const loadPresets = once(async () => {
 		await Promise.all(
 			Object.values(
 				import.meta.glob<KeyAccuracyCalculatorPreset>(
@@ -141,7 +135,7 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 				presets.push(imported)
 			})
 		)
-	}
+	})
 
 	return {
 		presets,

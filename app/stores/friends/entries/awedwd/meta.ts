@@ -1,9 +1,10 @@
+import avatar from '~/stores/friends/entries/awedwd/assets/avatar.bin?url'
 import type { Friend } from '~/types/friend'
 
 // @unocss-include
 
 export default {
-	avatar: 'https://a.ppy.sh/35614359',
+	avatar,
 	name: 'awedwd',
 
 	description: '我是 awedwd, 欢迎扩列 uwu',

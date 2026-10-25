@@ -1,4 +1,4 @@
-import { isNil } from 'es-toolkit'
+import { isNil, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { computed, shallowReactive } from 'vue'
 
@@ -15,13 +15,7 @@ export const useFurryStore = defineStore('furry', () => {
 		import: 'default'
 	})
 
-	const loadCharacters = async () => {
-		if (characters.length > 0) {
-			return
-		}
-
-		characters.splice(0, characters.length)
-
+	const loadCharacters = once(async () => {
 		await Promise.all(
 			Object.entries(charactersGlob).map(async ([path, importer]) => {
 				const meta = await importer()
@@ -33,19 +27,13 @@ export const useFurryStore = defineStore('furry', () => {
 				characters.push(meta)
 			})
 		)
-	}
+	})
 
 	const eventsGlob = import.meta.glob<FurryEvent>('~/stores/furry/events/*/*/meta.*', {
 		import: 'default'
 	})
 
-	const loadEvents = async () => {
-		if (events.length > 0) {
-			return
-		}
-
-		events.splice(0, events.length)
-
+	const loadEvents = once(async () => {
 		await Promise.all(
 			Object.entries(eventsGlob).map(async ([path, importer]) => {
 				const meta = await importer()
@@ -58,7 +46,7 @@ export const useFurryStore = defineStore('furry', () => {
 				events.push(meta satisfies FurryEventEntry)
 			})
 		)
-	}
+	})
 
 	const mappings = computed(() => {
 		const temp = new WeakMap<

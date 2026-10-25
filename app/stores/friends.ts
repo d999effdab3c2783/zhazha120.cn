@@ -1,3 +1,4 @@
+import { once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
 
@@ -12,13 +13,7 @@ export const useFriendsStore = defineStore('friends', () => {
 		import: 'default'
 	})
 
-	const loadEntries = async () => {
-		if (entries.length > 0) {
-			return
-		}
-
-		entries.splice(0, entries.length)
-
+	const loadEntries = once(async () => {
 		await Promise.all(
 			Object.entries(entriesGlob).map(async ([path, importer]) => {
 				const meta = await importer()
@@ -30,19 +25,13 @@ export const useFriendsStore = defineStore('friends', () => {
 				entries.push(meta)
 			})
 		)
-	}
+	})
 
 	const websitesGlob = import.meta.glob<FriendWebsite>('~/stores/friends/websites/*/meta.*', {
 		import: 'default'
 	})
 
-	const loadWebsites = async () => {
-		if (websites.length > 0) {
-			return
-		}
-
-		websites.splice(0, websites.length)
-
+	const loadWebsites = once(async () => {
 		await Promise.all(
 			Object.values(websitesGlob).map(async importer => {
 				const imported = await importer()
@@ -50,7 +39,7 @@ export const useFriendsStore = defineStore('friends', () => {
 				websites.push(imported)
 			})
 		)
-	}
+	})
 
 	return {
 		notes: {
