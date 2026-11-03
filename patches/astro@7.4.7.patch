@@ -1,0 +1,14 @@
+diff --git a/dist/assets/fonts/infra/cached-font-fetcher.js b/dist/assets/fonts/infra/cached-font-fetcher.js
+index 1c1e69f0e52654066e1df078ce6d2306f94674af..d44d34b044e3a39e71965aeca99ec62baf205c9c 100644
+--- a/dist/assets/fonts/infra/cached-font-fetcher.js
++++ b/dist/assets/fonts/infra/cached-font-fetcher.js
+@@ -21,6 +21,9 @@ export class CachedFontFetcher {
+ 	async fetch({ id, url, init }) {
+ 		return await this.#cache(this.#storage, id, async () => {
+ 			try {
++				if (url.startsWith('file://')) {
++					url = url.slice(7);
++				}
+ 				if (isAbsolute(url)) {
+ 					return await this.#readFile(url);
+ 				}

@@ -1,0 +1,38 @@
+diff --git a/es/_styles/common/dark.mjs b/es/_styles/common/dark.mjs
+index 15e75e5374074506642603ce28b3a98007582dbf..cb212ad3613157cbea72a167c208e6ae824005e9 100644
+--- a/es/_styles/common/dark.mjs
++++ b/es/_styles/common/dark.mjs
+@@ -5,10 +5,10 @@ const base = {
+   neutralBase: "#000",
+   neutralInvertBase: "#fff",
+   neutralTextBase: "#fff",
+-  neutralPopover: "rgb(72, 72, 78)",
+-  neutralCard: "rgb(24, 24, 28)",
+-  neutralModal: "rgb(44, 44, 50)",
+-  neutralBody: "rgb(16, 16, 20)",
++  neutralPopover: "rgb(62, 62, 64)",
++  neutralCard: "rgb(14, 14, 14)",
++  neutralModal: "rgb(34, 34, 36)",
++  neutralBody: "rgb(6, 6, 6)", // -10, -10, -14
+   alpha1: "0.9",
+   alpha2: "0.82",
+   alpha3: "0.52",
+diff --git a/lib/_styles/common/dark.js b/lib/_styles/common/dark.js
+index 3069fe48283def75f22d75e2a962516e0faf0afe..48a57812d2ec90801917ce1b0b2206717a540fbe 100644
+--- a/lib/_styles/common/dark.js
++++ b/lib/_styles/common/dark.js
+@@ -5,10 +5,10 @@ const base = {
+ 	neutralBase: "#000",
+ 	neutralInvertBase: "#fff",
+ 	neutralTextBase: "#fff",
+-	neutralPopover: "rgb(72, 72, 78)",
+-	neutralCard: "rgb(24, 24, 28)",
+-	neutralModal: "rgb(44, 44, 50)",
+-	neutralBody: "rgb(16, 16, 20)",
++	neutralPopover: "rgb(62, 62, 64)",
++	neutralCard: "rgb(14, 14, 14)",
++	neutralModal: "rgb(34, 34, 36)",
++	neutralBody: "rgb(6, 6, 6)", // -10, -10, -14
+ 	alpha1: "0.9",
+ 	alpha2: "0.82",
+ 	alpha3: "0.52",

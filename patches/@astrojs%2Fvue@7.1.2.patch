@@ -1,0 +1,25 @@
+diff --git a/dist/server.js b/dist/server.js
+index 939e1b1fcb99c119bba2f0c8381e529353860b55..9b4e3722d60ce6340afb0784d012263e624a1821 100644
+--- a/dist/server.js
++++ b/dist/server.js
+@@ -3,6 +3,7 @@ import { createSSRApp, h } from "vue";
+ import { renderToString } from "vue/server-renderer";
+ import { incrementId } from "./context.js";
+ import StaticHtml from "./static-html.js";
++import { setup as cssRenderVue3SsrSetup } from "@css-render/vue3-ssr";
+ async function check(Component) {
+ 	if (typeof Component !== "object" || Component === null) return false;
+ 	// ssrRender / __ssrInlineRender are present on template-compiled SFCs.
+@@ -29,9 +30,11 @@ async function renderToStaticMarkup(Component, inputProps, slotted, metadata) {
+ 	const app = createSSRApp({ render: () => h(Component, props, slots) });
+ 	app.config.idPrefix = prefix;
+ 	await setup(app);
++	const cssRenderVue3Ssr = cssRenderVue3SsrSetup(app);
+ 	const html = await renderToString(app);
++	const cssRenderVue3SsrCollected = cssRenderVue3Ssr.collect();
+ 	return {
+-		html,
++		html: `${html}${cssRenderVue3SsrCollected}`,
+ 		attrs
+ 	};
+ }

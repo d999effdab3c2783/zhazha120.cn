@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@custom-variant point {
+	&:hover {
+		@slot;
+	}
+}
+
+@import '@chinese-fonts/yozai/dist/Yozai-Medium/result.css';
+@import '@chinese-fonts/xiaolai/dist/Xiaolai/result.css';
+
+@theme inline {
+	--fonts--v-zhazha120: 'Xiaolai SC';
+	--fonts--v-zhazha120-script: 'Yozai Medium';
+}
