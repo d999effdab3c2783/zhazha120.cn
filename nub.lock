@@ -16,6 +16,12 @@ importers:
       '@ant-design/colors':
         specifier: ^8.0.1
         version: 8.0.1
+      '@chinese-fonts/xiaolai':
+        specifier: ^3.0.0
+        version: 3.0.0
+      '@chinese-fonts/yozai':
+        specifier: ^3.0.0
+        version: 3.0.0
       '@colordx/core':
         specifier: ^7.3.0
         version: 7.3.0
@@ -316,6 +322,12 @@ packages:
 
   '@cacheable/utils@2.5.0':
     resolution: {integrity: sha512-buipgOVDkkPXNR5+xBpDw7Zk2n1EvU7qBJCNUcL7rhQ//kfpOXPAvQ511Os0vpLYJ1pZnvudNytkQt2hst3wqA==}
+
+  '@chinese-fonts/xiaolai@3.0.0':
+    resolution: {integrity: sha512-22d5xFPzxPQZuvx8doHn6sHrzvrdG/0QuQWBXQoX9TlKVVAyTvEADWHQv9FBGHIYTINaCZTCnQ6O4rfic/bWdg==}
+
+  '@chinese-fonts/yozai@3.0.0':
+    resolution: {integrity: sha512-2IUcMcQyEtMSfC7loKPdN+OoKu3UcoOqPEz1jSa/oXzZYZpf6YpwGGiTMp2Tu2G2qPKxlzWHK+DJjokZWJdtJw==}
 
   '@clack/core@1.5.1':
     resolution: {integrity: sha512-iHTrHA8MtVuLl2TfZySmcKv1qO2PoyC9Z7pfSDozEuV5vtY3/wcOPKJXlqJ5Oq2Cx5DDGQGAMVx6HZfRRoVEbQ==}
@@ -7491,6 +7503,10 @@ snapshots:
     dependencies:
       hashery: 1.5.1
       keyv: 5.6.0
+
+  '@chinese-fonts/xiaolai@3.0.0': {}
+
+  '@chinese-fonts/yozai@3.0.0': {}
 
   '@clack/core@1.5.1':
     dependencies:

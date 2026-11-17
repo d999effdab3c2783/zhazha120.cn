@@ -18,7 +18,7 @@
 		/>
 
 		<n-text
-			class="text-12 fw-black font-[v-zhazha120-script] select-none transition-(duration-500 ease-in-out property-text-shadow) hover:(text-shadow-[0_0_.6em] cursor-default)"
+			class="text-12 fw-black font-script select-none transition-(duration-500 ease-in-out property-text-shadow) hover:(text-shadow-[0_0_.6em] cursor-default)"
 		>
 			{{ ownerStore.name }}
 		</n-text>

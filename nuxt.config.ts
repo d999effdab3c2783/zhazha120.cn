@@ -1,4 +1,14 @@
 export default defineNuxtConfig({
+	$production: {
+		scripts: {
+			registry: {
+				clarity: {
+					id: 'oegssgxsei',
+					trigger: 'onNuxtReady'
+				}
+			}
+		}
+	},
 	app: {
 		pageTransition: {
 			appear: true,
@@ -7,7 +17,12 @@ export default defineNuxtConfig({
 		}
 	},
 	compatibilityDate: 'latest',
-	css: ['~/styles/global.scss', '~/styles/transitions/page.scss'],
+	css: [
+		'@chinese-fonts/yozai/dist/Yozai-Medium/result.css',
+		'@chinese-fonts/xiaolai/dist/Xiaolai/result.css',
+		'~/styles/global.scss',
+		'~/styles/transitions/page.scss'
+	],
 	imports: {
 		autoImport: false
 	},
@@ -20,20 +35,5 @@ export default defineNuxtConfig({
 		'@vueuse/motion/nuxt',
 		'lenis/nuxt'
 	],
-	$production: {
-		scripts: {
-			registry: {
-				clarity: {
-					id: 'oegssgxsei',
-					trigger: 'onNuxtReady'
-				}
-			}
-		}
-	},
-	ssr: false,
-	vite: {
-		build: {
-			assetsInlineLimit: 0
-		}
-	}
+	ssr: false
 })

@@ -23,7 +23,8 @@ export default defineConfig({
 		}),
 		presetWebFonts({
 			fonts: {
-				sans: ['v-zhazha120-sans']
+				sans: ['Xiaolai SC', 'v-zhazha120'],
+				script: ['Yozai Medium', 'v-zhazha120-script']
 			},
 			provider: 'none'
 		})

@@ -21,7 +21,7 @@
 	>
 		<n-element
 			ref="containerRef"
-			class="font-[v-zhazha120]"
+			class="font-sans"
 		>
 			<template v-if="isNotNil(containerRef)">
 				<n-dialog-provider :to="containerRef.$el">
