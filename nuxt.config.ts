@@ -20,10 +20,13 @@ export default defineNuxtConfig({
 		'@vueuse/motion/nuxt',
 		'lenis/nuxt'
 	],
-	scripts: {
-		registry: {
-			clarity: {
-				id: 'oegssgxsei'
+	$production: {
+		scripts: {
+			registry: {
+				clarity: {
+					id: 'oegssgxsei',
+					trigger: 'onNuxtReady'
+				}
 			}
 		}
 	},
