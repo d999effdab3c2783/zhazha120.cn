@@ -62,8 +62,11 @@ export default defineNuxtModule({
 												withoutEnlargement: true
 											})
 											.webp({
-												lossless: true,
-												effort: 6
+												alphaQuality: 85,
+												effort: 6,
+												nearLossless: false,
+												quality: 75,
+												smartSubsample: true
 											})
 											.toBuffer()
 
