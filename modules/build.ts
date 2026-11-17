@@ -22,6 +22,7 @@ export default defineNuxtModule({
 						codeSplitting: {
 							groups: [
 								{
+									debugName: 'node_modules',
 									name: id => {
 										const subpath = id.split('node_modules')[1]
 
