@@ -14,5 +14,16 @@ export default defineConfig({
 		typeAware: true,
 		typeCheck: true
 	},
-	plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import', 'jsdoc', 'node', 'promise', 'vue']
+	plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import', 'jsdoc', 'node', 'promise', 'vue'],
+	rules: {
+		'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+		'sort-imports': [
+			'warn',
+			{
+				allowSeparatedGroups: true,
+				ignoreDeclarationSort: true
+			}
+		],
+		'sort-keys': ['warn']
+	}
 })

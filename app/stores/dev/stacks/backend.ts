@@ -3,49 +3,48 @@ import type { DevStack } from '~/types/dev'
 // @unocss-include
 
 export default {
-	sort: 3,
-	name: '后端',
-
 	items: [
 		{
-			name: 'Node.js',
+			href: 'https://nodejs.org',
 			icon: 'i-devicon:nodejs',
-			href: 'https://nodejs.org'
+			name: 'Node.js'
 		},
 		{
-			name: 'Python',
+			href: 'https://python.org',
 			icon: 'i-logos:python',
-			href: 'https://python.org'
+			name: 'Python'
 		},
 		{
-			name: 'C#',
+			href: 'https://learn.microsoft.com/zh-cn/dotnet/csharp',
 			icon: 'i-devicon:csharp',
-			href: 'https://learn.microsoft.com/zh-cn/dotnet/csharp'
+			name: 'C#'
 		},
 		{
-			name: 'Java',
+			href: 'https://java.com',
 			icon: 'i-logos:java',
-			href: 'https://java.com'
+			name: 'Java'
 		},
 		{
-			name: 'PHP',
+			href: 'https://php.net',
 			icon: 'i-logos:php',
-			href: 'https://php.net'
+			name: 'PHP'
 		},
 		{
-			name: 'Go',
+			href: 'https://go.dev',
 			icon: 'i-logos:go',
-			href: 'https://go.dev'
+			name: 'Go'
 		},
 		{
-			name: 'Composer',
+			href: 'https://getcomposer.org',
 			icon: 'i-logos:composer',
-			href: 'https://getcomposer.org'
+			name: 'Composer'
 		},
 		{
-			name: 'Laravel',
+			href: 'https://laravel.com',
 			icon: 'i-logos:laravel',
-			href: 'https://laravel.com'
+			name: 'Laravel'
 		}
-	] as const
+	] as const,
+	name: '后端',
+	sort: 3
 } as const satisfies DevStack

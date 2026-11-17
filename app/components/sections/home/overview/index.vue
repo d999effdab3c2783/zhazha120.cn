@@ -8,8 +8,8 @@
 
 	const containerClassNames = computed(() => {
 		return clsx({
-			'text-center w-full': isMobile.value,
-			'min-w-1/2': !isMobile.value
+			'min-w-1/2': !isMobile.value,
+			'text-center w-full': isMobile.value
 		})
 	})
 </script>

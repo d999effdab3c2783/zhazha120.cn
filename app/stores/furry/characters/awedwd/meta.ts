@@ -1,10 +1,16 @@
-import illustration from '~/stores/furry/characters/awedwd/assets/illustration.bin?url'
 import type { FurryCharacter } from '~/types/furry'
+
+import illustration from '~/stores/furry/characters/awedwd/assets/illustration.bin?url'
 
 export default {
 	illustrations: [illustration],
 
 	name: 'awedwd',
+
+	owner: {
+		slug: 'awedwd',
+		type: 'friend'
+	},
 
 	species: [
 		{
@@ -25,10 +31,5 @@ export default {
 		}
 	],
 
-	species_alias: '狼犬',
-
-	owner: {
-		type: 'friend',
-		slug: 'awedwd'
-	}
+	species_alias: '狼犬'
 } as const satisfies FurryCharacter

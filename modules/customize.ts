@@ -1,8 +1,7 @@
+import { defineNuxtModule, extendViteConfig } from '@nuxt/kit'
 import { createHash } from 'node:crypto'
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
-
-import { defineNuxtModule, extendViteConfig } from '@nuxt/kit'
 import sharp from 'sharp'
 
 const logger = (message: string) => {
@@ -17,10 +16,8 @@ export default defineNuxtModule({
 		extendViteConfig(config => {
 			config.plugins ??= []
 			config.plugins.push({
-				name: 'customize',
-				enforce: 'post',
 				apply: 'build',
-
+				enforce: 'post',
 				async generateBundle(outputOptions, bundle) {
 					const CACHE_DIR = resolve(import.meta.dirname, '..', 'node_modules', '.cache', 'customize', 'sharp')
 
@@ -56,9 +53,9 @@ export default defineNuxtModule({
 
 										const processed = await sharp(sourceBuffer)
 											.resize({
-												width: 1920,
-												height: 1920,
 												fit: 'inside',
+												height: 1920,
+												width: 1920,
 												withoutEnlargement: true
 											})
 											.webp({
@@ -88,7 +85,8 @@ export default defineNuxtModule({
 							}
 						})
 					)
-				}
+				},
+				name: 'customize'
 			})
 		})
 	}

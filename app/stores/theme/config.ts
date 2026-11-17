@@ -1,8 +1,8 @@
+import type { GlobalThemeOverrides } from 'naive-ui'
+import type { ActualThemeMode, ThemeMode } from '~/types/theme'
+
 import { generate } from '@ant-design/colors'
 import { isNotNil } from 'es-toolkit'
-import type { GlobalThemeOverrides } from 'naive-ui'
-
-import type { ActualThemeMode, ThemeMode } from '~/types/theme'
 
 export const primaryColor = ['#FFC287', '#B4FFFF'][0]
 

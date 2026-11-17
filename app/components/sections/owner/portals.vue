@@ -1,9 +1,10 @@
 <script setup lang="ts">
+	import type { OwnerPortal } from '~/types/owner'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
 	import { useOwnerStore } from '~/stores/owner'
-	import type { OwnerPortal } from '~/types/owner'
 
 	const ownerStore = useOwnerStore()
 

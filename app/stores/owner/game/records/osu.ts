@@ -8,18 +8,18 @@ export const mania = {
 	'4k': {
 		dan: {
 			jack: 'β',
-			tech: 'γ',
+			long_note: 11,
 			speed: 'γ',
 			stamina: 'β',
-			long_note: 11
+			tech: 'γ'
 		}
 	}
 } as const satisfies GameOsuManiaRecord
 
 export const portals = [
 	{
+		href: 'https://osu.ppy.sh/users/16303789',
 		icon: 'i-ant-design:profile-outlined',
-		name: '资料',
-		href: 'https://osu.ppy.sh/users/16303789'
+		name: '资料'
 	}
 ] as const satisfies GameOsuRecordPortal[]

@@ -1,4 +1,5 @@
 import type { LenisOptions } from 'lenis'
+
 import { defineStore } from 'pinia'
 import { shallowRef } from 'vue'
 

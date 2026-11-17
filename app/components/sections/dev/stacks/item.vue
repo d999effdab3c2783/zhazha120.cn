@@ -1,10 +1,11 @@
 <script setup lang="ts">
+	import type { DevStack } from '~/types/dev'
+
 	import { computed, toValue } from 'vue'
 	import { shallowRef } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
 	import { useResponsive } from '~/composables/responsive'
-	import type { DevStack } from '~/types/dev'
 
 	const props = defineProps<{
 		readonly item: DevStack

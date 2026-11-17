@@ -3,8 +3,8 @@ import { name as ownerName } from '~/stores/owner/information'
 export const divingFishUsername = ownerName
 
 export const difficultyColorMappings = {
-	Basic: '#22bb5b',
 	Advanced: '#fb9c2d',
+	Basic: '#22bb5b',
 	Expert: '#f64861',
 	Master: '#9e45e2',
 	'Re:MASTER': '#e4a6ff'
@@ -13,14 +13,6 @@ export const difficultyColorMappings = {
 export const additionalRatingMappings = {
 	0: '初学者',
 	1: '一段',
-	2: '二段',
-	3: '三段',
-	4: '四段',
-	5: '五段',
-	6: '六段',
-	7: '七段',
-	8: '八段',
-	9: '九段',
 	10: '十段',
 	11: '真初段',
 	12: '真二段',
@@ -31,7 +23,15 @@ export const additionalRatingMappings = {
 	17: '真七段',
 	18: '真八段',
 	19: '真九段',
+	2: '二段',
 	20: '真十段',
 	21: '真皆传',
-	22: '里皆传'
+	22: '里皆传',
+	3: '三段',
+	4: '四段',
+	5: '五段',
+	6: '六段',
+	7: '七段',
+	8: '八段',
+	9: '九段'
 } as const satisfies Record<number, string>

@@ -1,6 +1,8 @@
-import { isNil } from 'es-toolkit'
 import type { UnknownRecord } from 'es-toolkit/types'
-import { computed, toValue, watch, type MaybeRefOrGetter } from 'vue'
+import type { MaybeRefOrGetter } from 'vue'
+
+import { isNil } from 'es-toolkit'
+import { computed, toValue, watch } from 'vue'
 import { shallowRef } from 'vue'
 
 import { filterArray } from '~/utils/filter'
@@ -38,12 +40,10 @@ export const useArrayFilter = <T extends UnknownRecord>(input: MaybeRefOrGetter<
 	})
 
 	return {
-		query,
 		error,
-
-		input,
 		filtered,
-
-		output
+		input,
+		output,
+		query
 	}
 }

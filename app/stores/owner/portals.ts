@@ -4,12 +4,6 @@ import type { OwnerPortal } from '~/types/owner'
 
 export default [
 	{
-		type: 'primary',
-
-		icon: 'i-tdesign:usergroup-add',
-		name: '个人群',
-		href: 'https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3',
-
 		comment: [
 			'一些群 个人相关',
 			'答对问题自助入群 自由进出 没有黑名单',
@@ -21,21 +15,29 @@ export default [
 			'你们知道什么不该发',
 			null,
 			'目前唯一的福利大概是每月有免费网易云音乐黑胶拿（'
-		].join('\n')
+		].join('\n'),
+
+		href: 'https://qm.qq.com/cgi-bin/qm/qr?k=EKq625P5qpas9-m5lVFTDnyCgR1I9yPw&authKey=zqbyY33MW7xTvSEBm+fqVv7lrq3EhV7UuVPrYnQZTal9dQpkD9XM3ViHSu2QnGb3',
+
+		icon: 'i-tdesign:usergroup-add',
+
+		name: '个人群',
+
+		type: 'primary'
 	},
 	{
+		href: '/support',
 		icon: 'i-ant-design:heart-outlined',
-		name: '支持 & 赞助 (给我打钱)',
-		href: '/support'
+		name: '支持 & 赞助 (给我打钱)'
 	},
 	{
+		href: '/owner/game',
 		icon: 'i-tabler:device-gamepad',
-		name: '游戏',
-		href: '/owner/game'
+		name: '游戏'
 	},
 	{
+		href: '/owner/timeline',
 		icon: 'i-ant-design:history-outlined',
-		name: '时间线 (年龄/生日)',
-		href: '/owner/timeline'
+		name: '时间线 (年龄/生日)'
 	}
 ] as const satisfies OwnerPortal[]

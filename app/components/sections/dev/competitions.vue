@@ -1,4 +1,6 @@
 <script setup lang="ts">
+	import type { DevCompetition } from '~/types/dev'
+
 	import { clsx } from 'clsx'
 	import { isNotNil } from 'es-toolkit'
 	import { computed, shallowRef } from 'vue'
@@ -6,7 +8,6 @@
 	import { useArrayFilter } from '~/composables/filter'
 	import { useResponsive } from '~/composables/responsive'
 	import { useDevStore } from '~/stores/dev'
-	import type { DevCompetition } from '~/types/dev'
 
 	const showFilter = shallowRef(false)
 

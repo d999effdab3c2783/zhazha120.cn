@@ -1,9 +1,10 @@
-import logo from '~/stores/friends/websites/guaizai.top/assets/logo.bin?url'
 import type { FriendWebsite } from '~/types/friend'
 
+import logo from '~/stores/friends/websites/guaizai.top/assets/logo.bin?url'
+
 export default {
-	logo,
-	name: "GuaiZai's blog",
 	description: 'Tech inspires~!',
-	href: 'https://blog.guaizai.top'
+	href: 'https://blog.guaizai.top',
+	logo,
+	name: "GuaiZai's blog"
 } as const satisfies FriendWebsite

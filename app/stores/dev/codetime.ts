@@ -18,12 +18,12 @@ export default {
 				`https://${base}/v3/users/shield?uid=${userId}&metric=tokens`
 			)}`
 		},
+		calendar: `https://${base}/api/widgets/calendar.svg?uid=${userId}&theme={theme}`,
+		status: `https://${base}/api/widgets/status.svg?uid=${userId}&theme={theme}`,
 		top: {
 			languages: `https://${base}/api/widgets/donut.svg?uid=${userId}&theme={theme}`,
 			projects: `https://${base}/api/widgets/donut.svg?uid=${userId}&mode=projects&theme={theme}`
 		},
-		status: `https://${base}/api/widgets/status.svg?uid=${userId}&theme={theme}`,
-		calendar: `https://${base}/api/widgets/calendar.svg?uid=${userId}&theme={theme}`,
 		trend: `https://${base}/api/widgets/trend.svg?uid=${userId}&theme={theme}`,
 		usage: `https://${base}/api/widgets/usage.svg?uid=${userId}&theme={theme}`
 	}

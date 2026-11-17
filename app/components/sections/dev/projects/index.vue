@@ -1,11 +1,12 @@
 <script setup lang="ts">
+	import type { ExternalDevProject, GithubDevProject } from '~/types/dev'
+
 	import { isEqual } from 'es-toolkit'
 	import { computed, shallowRef } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
 	import { useResponsive } from '~/composables/responsive'
 	import { useDevStore } from '~/stores/dev'
-	import type { ExternalDevProject, GithubDevProject } from '~/types/dev'
 
 	const showFilter = shallowRef(false)
 

@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { FurryCharacterEntry } from '~/types/furry'
+
 	import { computed } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
-	import type { FurryCharacterEntry } from '~/types/furry'
 	import { filterArray } from '~/utils/filter'
 
 	const props = defineProps<{

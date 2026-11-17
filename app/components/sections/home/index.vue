@@ -1,10 +1,11 @@
 <script setup lang="ts">
+	import type { Events } from '~/types/event'
+
 	import { isNil } from 'es-toolkit'
 	import { useLenis } from 'lenis/vue'
 	import { onScopeDispose, useTemplateRef } from 'vue'
 
 	import event from '~/shared/event'
-	import type { Events } from '~/types/event'
 
 	const heroRef = useTemplateRef('heroRef')
 	const overviewRef = useTemplateRef('overviewRef')

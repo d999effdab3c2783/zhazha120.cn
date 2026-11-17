@@ -1,13 +1,14 @@
+import type { OwnerBirthdayRecord, OwnerBirthdayRecordEntry } from '~/types/owner'
+
 import { isNotNil, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
 
 import { useApiStore } from '~/stores/api'
 import contacts from '~/stores/owner/contacts'
-import { avatar, name, poke, notes, birthday as birthdayDate } from '~/stores/owner/information'
+import { avatar, birthday as birthdayDate, name, notes, poke } from '~/stores/owner/information'
 import portals from '~/stores/owner/portals'
-import { title as timelineNotesTitle, items as timelineNotesItems } from '~/stores/owner/timeline/notes'
-import type { OwnerBirthdayRecord, OwnerBirthdayRecordEntry } from '~/types/owner'
+import { items as timelineNotesItems, title as timelineNotesTitle } from '~/stores/owner/timeline/notes'
 
 export const useOwnerStore = defineStore('owner', () => {
 	const apiStore = useApiStore()
@@ -39,25 +40,22 @@ export const useOwnerStore = defineStore('owner', () => {
 	})
 
 	return {
-		name,
 		avatar,
-		notes,
-
 		birthday: {
 			date: birthdayDate,
 			records: birthdayRecords
 		},
+		contacts,
+		handlePoke,
+		loadBirthdayRecords,
+		name,
+		notes,
+		portals,
 		timeline: {
 			notes: {
-				title: timelineNotesTitle,
-				items: timelineNotesItems
+				items: timelineNotesItems,
+				title: timelineNotesTitle
 			}
-		},
-
-		contacts,
-		portals,
-
-		handlePoke,
-		loadBirthdayRecords
+		}
 	}
 })

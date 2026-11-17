@@ -1,10 +1,10 @@
-import avatar from '~/stores/dev/organizations/A-Minos/assets/avatar.bin?url'
 import type { DevOrganization } from '~/types/dev'
 
-export default {
-	type: 'github',
-	name: 'A Minos',
+import avatar from '~/stores/dev/organizations/A-Minos/assets/avatar.bin?url'
 
+export default {
 	avatar,
-	owner: 'A-Minos'
+	name: 'A Minos',
+	owner: 'A-Minos',
+	type: 'github'
 } as const satisfies DevOrganization

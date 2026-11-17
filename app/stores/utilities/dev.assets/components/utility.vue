@@ -28,8 +28,8 @@
 		})
 
 		await $fetch('/api/assets', {
-			method: 'PATCH',
-			body: selectedAssets
+			body: selectedAssets,
+			method: 'PATCH'
 		})
 	}
 

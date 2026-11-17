@@ -1,22 +1,25 @@
+import type { FurryEvent } from '~/types/furry'
+
 import banner from '~/stores/furry/events/2026/thatfurcon/assets/banner.bin?url'
 import Extra from '~/stores/furry/events/2026/thatfurcon/components/extra.vue'
-import type { FurryEvent } from '~/types/furry'
 import { createDate } from '~/utils/date'
 
 export default {
 	banner,
 
-	name: '那个兽聚',
-	theme: '继承者们',
+	charactersQuery: 'slug : ["Z"]',
 
-	startDate: createDate(2026, 7, 10).toISOString(),
 	endDate: createDate(2026, 7, 12).toISOString(),
 
 	href: 'https://www.thatfurcon.com',
 
-	charactersQuery: 'slug : ["Z"]',
+	name: '那个兽聚',
 
 	renderExtra: () => {
 		return <Extra />
-	}
+	},
+
+	startDate: createDate(2026, 7, 10).toISOString(),
+
+	theme: '继承者们'
 } as const satisfies FurryEvent

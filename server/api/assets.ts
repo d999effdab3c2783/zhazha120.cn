@@ -1,7 +1,6 @@
+import { isNotNil } from 'es-toolkit'
 import { mkdir, writeFile } from 'fs/promises'
 import { dirname } from 'path'
-
-import { isNotNil } from 'es-toolkit'
 
 import { defineEventHandler, readBody, setResponseStatus } from '#nuxt-scripts/h3'
 

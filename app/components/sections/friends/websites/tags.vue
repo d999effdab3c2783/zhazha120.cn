@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { FriendWebsite } from '~/types/friend'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { tags as tagMappings } from '~/stores/friends/websites'
-	import type { FriendWebsite } from '~/types/friend'
 
 	defineProps<{
 		readonly item: FriendWebsite

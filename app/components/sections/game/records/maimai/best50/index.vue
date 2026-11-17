@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+	import type { DivingFishMaimaiBest50 } from '~/types/game'
+
 	import { isNotNil } from 'es-toolkit'
 	import { get } from 'es-toolkit/compat'
 	import { computed } from 'vue'
@@ -6,7 +8,6 @@
 	import { $fetch } from '#build/fetch'
 	import { useResponsive } from '~/composables/responsive'
 	import { additionalRatingMappings } from '~/stores/owner/game/records/maimai'
-	import type { DivingFishMaimaiBest50 } from '~/types/game'
 
 	const { isMobile } = useResponsive()
 
@@ -22,12 +23,12 @@
 	const response = await $fetch<DivingFishMaimaiBest50>(
 		'https://www.diving-fish.com/api/maimaidxprober/query/player',
 		{
-			method: 'POST',
 			body: {
 				b50: true,
 
 				...props
-			}
+			},
+			method: 'POST'
 		}
 	)
 

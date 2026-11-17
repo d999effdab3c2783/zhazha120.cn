@@ -1,7 +1,7 @@
 <script setup lang="ts">
-	import { isNotNil } from 'es-toolkit'
-
 	import type { ExternalSupportMethod } from '~/types/support'
+
+	import { isNotNil } from 'es-toolkit'
 
 	defineProps<{
 		readonly item: ExternalSupportMethod

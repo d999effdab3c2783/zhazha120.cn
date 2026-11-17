@@ -4,13 +4,13 @@ import type { FurryPortal } from '~/types/furry'
 
 export default [
 	{
+		href: '/furry/characters',
 		icon: 'i-ant-design:contacts-outlined',
-		name: '设定集',
-		href: '/furry/characters'
+		name: '设定集'
 	},
 	{
+		href: '/furry/events',
 		icon: 'i-ant-design:calendar-outlined',
-		name: '行程 & 活动',
-		href: '/furry/events'
+		name: '行程 & 活动'
 	}
 ] as const satisfies FurryPortal[]

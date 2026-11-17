@@ -3,19 +3,18 @@ import type { DevStack } from '~/types/dev'
 // @unocss-include
 
 export default {
-	sort: 5,
-	name: '运维',
-
 	items: [
 		{
-			name: 'Docker',
+			href: 'https://docker.com',
 			icon: 'i-devicon:docker',
-			href: 'https://docker.com'
+			name: 'Docker'
 		},
 		{
-			name: 'Podman',
+			href: 'https://podman.io',
 			icon: 'i-devicon:podman',
-			href: 'https://podman.io'
+			name: 'Podman'
 		}
-	] as const
+	] as const,
+	name: '运维',
+	sort: 5
 } as const satisfies DevStack

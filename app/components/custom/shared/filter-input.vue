@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { useArrayFilter } from '~/composables/filter'
+
 	import { flattenObject, isNotNil, uniq } from 'es-toolkit'
 	import { computed, shallowRef, toRefs, toValue } from 'vue'
 
-	import type { useArrayFilter } from '~/composables/filter'
 	import tutorial from '~/utils/filter/assets/tutorial.bin?url'
 
 	const props = defineProps<{

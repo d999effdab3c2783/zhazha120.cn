@@ -1,9 +1,10 @@
+import type { Friend, FriendEntry, FriendWebsite } from '~/types/friend'
+
 import { once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
 
-import { title as notesTitle, items as notesItems } from '~/stores/friends/notes'
-import type { Friend, FriendEntry, FriendWebsite } from '~/types/friend'
+import { items as notesItems, title as notesTitle } from '~/stores/friends/notes'
 
 export const useFriendsStore = defineStore('friends', () => {
 	const websites = shallowReactive<FriendWebsite[]>([])
@@ -42,18 +43,21 @@ export const useFriendsStore = defineStore('friends', () => {
 	})
 
 	return {
-		notes: {
-			title: notesTitle,
-			items: notesItems
-		},
-
 		entries,
-		websites,
 
 		entriesGlob,
+
 		loadEntries,
 
-		websitesGlob,
-		loadWebsites
+		loadWebsites,
+
+		notes: {
+			items: notesItems,
+			title: notesTitle
+		},
+
+		websites,
+
+		websitesGlob
 	}
 })

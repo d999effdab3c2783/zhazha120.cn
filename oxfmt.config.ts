@@ -7,7 +7,14 @@ export default defineConfig({
 	semi: false,
 	singleAttributePerLine: true,
 	singleQuote: true,
-	sortImports: true,
+	sortImports: {
+		groups: [
+			'type-import',
+			['value-builtin', 'value-external'],
+			['value-internal', 'value-parent', 'value-sibling', 'value-index'],
+			'unknown'
+		]
+	},
 	tabWidth: 4,
 	trailingComma: 'none',
 	useTabs: true,

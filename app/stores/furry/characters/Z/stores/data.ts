@@ -1,3 +1,5 @@
+import type { FurryInformation } from '~/types/furry'
+
 import { useNow } from '@vueuse/core'
 import { differenceInYears, formatDistanceStrict } from 'date-fns'
 import { zhCN } from 'date-fns/locale'
@@ -8,7 +10,6 @@ import assigns from '~/stores/furry/characters/Z/stores/data/assigns'
 import buttons from '~/stores/furry/characters/Z/stores/data/buttons'
 import { birthday, fursuitBirthday } from '~/stores/furry/characters/Z/stores/data/informations'
 import renderables from '~/stores/furry/characters/Z/stores/data/renderables'
-import type { FurryInformation } from '~/types/furry'
 
 export const useFurryCharactersZDataStore = defineStore('furry.characters.Z.data', () => {
 	const now = useNow()
@@ -21,8 +22,8 @@ export const useFurryCharactersZDataStore = defineStore('furry.characters.Z.data
 		return formatDistanceStrict(birthday, now.value, {
 			addSuffix: true,
 			locale: zhCN,
-			unit: 'day',
-			roundingMethod: 'floor'
+			roundingMethod: 'floor',
+			unit: 'day'
 		})
 	})
 
@@ -30,8 +31,8 @@ export const useFurryCharactersZDataStore = defineStore('furry.characters.Z.data
 		return formatDistanceStrict(fursuitBirthday, now.value, {
 			addSuffix: true,
 			locale: zhCN,
-			unit: 'day',
-			roundingMethod: 'floor'
+			roundingMethod: 'floor',
+			unit: 'day'
 		})
 	})
 
@@ -56,9 +57,9 @@ export const useFurryCharactersZDataStore = defineStore('furry.characters.Z.data
 	})
 
 	return {
-		informations,
-		renderables,
 		assigns,
-		buttons
+		buttons,
+		informations,
+		renderables
 	}
 })

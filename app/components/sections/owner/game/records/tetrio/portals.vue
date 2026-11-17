@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+	import type { GameTetrioRecordPortal } from '~/types/game'
+
 	import { useResponsive } from '~/composables/responsive'
 	import { useGameStore } from '~/stores/game'
-	import type { GameTetrioRecordPortal } from '~/types/game'
 
 	const gameStore = useGameStore()
 

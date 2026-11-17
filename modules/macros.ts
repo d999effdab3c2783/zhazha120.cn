@@ -1,7 +1,6 @@
-import { dirname } from 'node:path'
-
 import { defineNuxtModule, extendViteConfig } from '@nuxt/kit'
 import { createJiti } from 'jiti'
+import { dirname } from 'node:path'
 import Macros from 'unplugin-macros/vite'
 
 export default defineNuxtModule({
@@ -15,13 +14,13 @@ export default defineNuxtModule({
 
 		const plugin = Macros({
 			runner: {
+				import: async resolved => {
+					return await jiti.import(resolved)
+				},
 				resolve: (source, importer) => {
 					return jiti.esmResolve(source, {
 						parentURL: dirname(importer)
 					})
-				},
-				import: async resolved => {
-					return await jiti.import(resolved)
 				}
 			},
 			virtualModules: true

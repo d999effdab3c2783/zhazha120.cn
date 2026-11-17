@@ -1,7 +1,6 @@
-import { posix } from 'node:path'
-
 import { defineNuxtModule, extendViteConfig } from '@nuxt/kit'
 import { isNil, isNotNil } from 'es-toolkit'
+import { posix } from 'node:path'
 
 export default defineNuxtModule({
 	meta: {

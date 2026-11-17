@@ -1,9 +1,10 @@
 <script setup lang="ts">
+	import type { OwnerContact } from '~/types/owner'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
 	import { useOwnerStore } from '~/stores/owner'
-	import type { OwnerContact } from '~/types/owner'
 
 	const ownerStore = useOwnerStore()
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-	import { isNotNil } from 'es-toolkit'
-
 	import type { OwnerBirthdayRecordRenderable } from '~/types/owner'
+
+	import { isNotNil } from 'es-toolkit'
 
 	defineProps<{
 		readonly items: OwnerBirthdayRecordRenderable[]

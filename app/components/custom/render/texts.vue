@@ -1,7 +1,7 @@
 <script setup lang="ts">
-	import { isNil, isPlainObject, pick } from 'es-toolkit'
-
 	import type { RenderableText } from '~/types/render'
+
+	import { isNil, isPlainObject, pick } from 'es-toolkit'
 
 	defineProps<{
 		readonly items: RenderableText[]

@@ -10,14 +10,13 @@ export default [
 		role: '装师'
 	},
 	{
-		name: 'Chars茶茶',
-		role: '立绘画师',
-
 		links: [
 			{
-				name: '米画师',
-				href: 'https://www.mihuashi.com/profiles/2900931'
+				href: 'https://www.mihuashi.com/profiles/2900931',
+				name: '米画师'
 			}
-		]
+		],
+		name: 'Chars茶茶',
+		role: '立绘画师'
 	}
 ] as const satisfies FurryAssign[]

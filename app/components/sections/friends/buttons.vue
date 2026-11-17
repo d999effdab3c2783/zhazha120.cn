@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { FriendEntry } from '~/types/friend'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FriendEntry } from '~/types/friend'
 
 	defineProps<{
 		readonly item: FriendEntry

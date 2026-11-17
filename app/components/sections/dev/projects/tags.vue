@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { BaseDevProject } from '~/types/dev'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { tags as tagMappings } from '~/stores/dev/projects'
-	import type { BaseDevProject } from '~/types/dev'
 
 	defineProps<{
 		readonly item: BaseDevProject

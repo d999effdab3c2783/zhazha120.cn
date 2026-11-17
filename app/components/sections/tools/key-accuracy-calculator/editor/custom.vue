@@ -8,8 +8,8 @@
 
 	const handleCreateMap = () => {
 		return {
-			title: '',
-			notes: 0
+			notes: 0,
+			title: ''
 		} as const satisfies (typeof keyAccuracyCalculatorToolStore.data.maps)[number]
 	}
 </script>

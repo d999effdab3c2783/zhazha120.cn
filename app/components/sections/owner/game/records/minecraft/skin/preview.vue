@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-	import { useElementSize } from '@vueuse/core'
-	import { isNil, isNotNil, merge } from 'es-toolkit'
 	import type { SelectOption } from 'naive-ui'
 	import type { ModelType } from 'skinview-utils'
+	import type { EarsLoadOptions } from 'skinview3d'
+
+	import { useElementSize } from '@vueuse/core'
+	import { isNil, isNotNil, merge } from 'es-toolkit'
 	import {
 		CrouchAnimation,
-		type EarsLoadOptions,
 		FlyingAnimation,
 		HitAnimation,
 		IdleAnimation,
@@ -45,18 +46,18 @@
 	>(
 		merge(
 			{
-				fov: 96,
-				zoom: 0.8,
-				global_lighting: 3,
-				camera_lighting: 0.6,
+				animation_speed: 1,
+				animation_type: 'idle',
 				auto_rotate: false,
 				auto_rotate_speed: 1,
-				animation_type: 'idle',
-				animation_speed: 1,
-				visible: {},
 				background: '#000000',
 				background_type: 'solid',
-				name_tag: 'Player'
+				camera_lighting: 0.6,
+				fov: 96,
+				global_lighting: 3,
+				name_tag: 'Player',
+				visible: {},
+				zoom: 0.8
 			},
 			gameStore.records.minecraft.defaultPreviewConfig
 		)
@@ -284,8 +285,8 @@
 
 			if (isNotNil(newConfig.skin_url) && newConfig.skin_url.length > 0) {
 				newViewer.loadSkin(newConfig.skin_url, {
-					model: newConfig.skin_model,
-					ears: newConfig.ears_type === 'current_skin'
+					ears: newConfig.ears_type === 'current_skin',
+					model: newConfig.skin_model
 				})
 			}
 
@@ -329,8 +330,8 @@
 			}
 		},
 		{
-			immediate: true,
-			deep: true
+			deep: true,
+			immediate: true
 		}
 	)
 

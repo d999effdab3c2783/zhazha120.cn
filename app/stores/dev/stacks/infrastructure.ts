@@ -3,49 +3,48 @@ import type { DevStack } from '~/types/dev'
 // @unocss-include
 
 export default {
-	sort: 4,
-	name: '基础设施',
-
 	items: [
 		{
-			name: 'Git',
+			href: 'https://git-scm.com',
 			icon: 'i-devicon:git',
-			href: 'https://git-scm.com'
+			name: 'Git'
 		},
 		{
-			name: 'Caddy',
+			href: 'https://caddyserver.com',
 			icon: 'i-catppuccin:caddy',
-			href: 'https://caddyserver.com'
+			name: 'Caddy'
 		},
 		{
-			name: 'MySQL',
+			href: 'https://mysql.com',
 			icon: 'i-devicon:mysql',
-			href: 'https://mysql.com'
+			name: 'MySQL'
 		},
 		{
-			name: 'MariaDB',
+			href: 'https://mariadb.org',
 			icon: 'i-devicon:mariadb',
-			href: 'https://mariadb.org'
+			name: 'MariaDB'
 		},
 		{
-			name: 'PostgreSQL',
+			href: 'https://postgresql.org',
 			icon: 'i-logos:postgresql',
-			href: 'https://postgresql.org'
+			name: 'PostgreSQL'
 		},
 		{
-			name: 'Redis',
+			href: 'https://redis.io',
 			icon: 'i-devicon:redis',
-			href: 'https://redis.io'
+			name: 'Redis'
 		},
 		{
-			name: 'Memcached',
+			href: 'https://memcached.org',
 			icon: 'i-devicon:memcached',
-			href: 'https://memcached.org'
+			name: 'Memcached'
 		},
 		{
-			name: 'OpenList',
+			href: 'https://oplist.org',
 			icon: 'i-custom:openlist',
-			href: 'https://oplist.org'
+			name: 'OpenList'
 		}
-	] as const
+	] as const,
+	name: '基础设施',
+	sort: 4
 } as const satisfies DevStack

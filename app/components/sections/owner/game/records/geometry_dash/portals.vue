@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+	import type { GameGeometryDashRecordPortal } from '~/types/game'
+
 	import { useResponsive } from '~/composables/responsive'
 	import { useGameStore } from '~/stores/game'
-	import type { GameGeometryDashRecordPortal } from '~/types/game'
 
 	const gameStore = useGameStore()
 

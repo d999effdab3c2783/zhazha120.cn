@@ -1,9 +1,10 @@
+import type { OwnerBirthdayCongratulation } from '~/types/owner'
+
 import { defineStore } from 'pinia'
 import { shallowRef } from 'vue'
 
 import { id as musicId } from '~/stores/owner/birthday/records/19/stores/data/music'
 import renderables from '~/stores/owner/birthday/records/19/stores/data/renderables'
-import type { OwnerBirthdayCongratulation } from '~/types/owner'
 
 export const useOwnerBirthdayRecords19DataStore = defineStore('owner.birthday.records.19.data', () => {
 	const congratulations = shallowRef<OwnerBirthdayCongratulation[]>([])
@@ -12,8 +13,8 @@ export const useOwnerBirthdayRecords19DataStore = defineStore('owner.birthday.re
 		congratulations.value = await Promise.all(
 			Object.values(
 				import.meta.glob<string>('~/stores/owner/birthday/records/19/stores/congratulations/*.bin', {
-					query: '?url',
-					import: 'default'
+					import: 'default',
+					query: '?url'
 				})
 			).map(async importer => {
 				return {
@@ -24,13 +25,14 @@ export const useOwnerBirthdayRecords19DataStore = defineStore('owner.birthday.re
 	}
 
 	return {
+		congratulations,
+
+		loadCongratulations,
+
 		music: {
 			id: musicId
 		},
 
-		congratulations,
-		renderables,
-
-		loadCongratulations
+		renderables
 	}
 })

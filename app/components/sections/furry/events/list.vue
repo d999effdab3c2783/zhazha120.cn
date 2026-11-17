@@ -64,8 +64,8 @@
 
 		for (const event of filteredItems.value) {
 			const days = eachDayOfInterval({
-				start: new Date(event.startDate),
-				end: new Date(event.endDate)
+				end: new Date(event.endDate),
+				start: new Date(event.startDate)
 			})
 
 			for (const day of days) {

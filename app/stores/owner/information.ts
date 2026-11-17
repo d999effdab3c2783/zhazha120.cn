@@ -1,5 +1,6 @@
-import avatarAsset from '~/stores/owner/assets/avatar.svg?url'
 import type { RenderableText } from '~/types/render'
+
+import avatarAsset from '~/stores/owner/assets/avatar.svg?url'
 import { createDate } from '~/utils/date'
 
 // @unocss-include
@@ -12,27 +13,26 @@ export const poke = '戳哭了 哄不好了'
 export const qq = 2331281251
 
 export const notes = {
-	title: '调用方式',
 	items: [
 		{
-			text: `或者 ${name} 或者 渣 或者 渣渣 或者 120`,
-			depth: 3
+			depth: 3,
+			text: `或者 ${name} 或者 渣 或者 渣渣 或者 120`
 		},
 		{
-			text: '可能并不在意 是什么都好 知道是我就行',
-			depth: 3
+			depth: 3,
+			text: '可能并不在意 是什么都好 知道是我就行'
 		},
 
 		null,
 
 		{
-			text: '不太活泼 足够无聊 没有太多反应 不太会说话 不太会聊天 不太会表达自己 极少主动社交',
-			class: 'text-purple-300'
+			class: 'text-purple-300',
+			text: '不太活泼 足够无聊 没有太多反应 不太会说话 不太会聊天 不太会表达自己 极少主动社交'
 		},
 
 		{
-			text: '笨笨的 在特定情况下可能会需要更多的思考和时间 不要嫌弃我...',
-			class: 'text-transparent'
+			class: 'text-transparent',
+			text: '笨笨的 在特定情况下可能会需要更多的思考和时间 不要嫌弃我...'
 		},
 
 		'可以扩列 但不建议',
@@ -44,31 +44,31 @@ export const notes = {
 		null,
 
 		{
-			type: 'info',
-			text: '也许没有雷点 或 情绪波动 单删随意 可恢复'
+			text: '也许没有雷点 或 情绪波动 单删随意 可恢复',
+			type: 'info'
 		},
 		{
-			type: 'info',
-			text: '不接受 包括但不限于 闲聊 莫名其妙的 戳一戳 / 发个表情 然后不说话 早晚安问候 等 懒得理'
+			text: '不接受 包括但不限于 闲聊 莫名其妙的 戳一戳 / 发个表情 然后不说话 早晚安问候 等 懒得理',
+			type: 'info'
 		},
 		{
-			type: 'info',
-			text: '在干活时语气可能会变尖锐 如果不是什么要紧的事 建议换个时间'
+			text: '在干活时语气可能会变尖锐 如果不是什么要紧的事 建议换个时间',
+			type: 'info'
 		},
 
 		null,
 
 		{
-			type: 'warning',
-			text: '本体默认隐藏 你可以偷偷查'
+			text: '本体默认隐藏 你可以偷偷查',
+			type: 'warning'
 		},
 		{
-			type: 'warning',
-			text: '如果直接跑来问我和本体有关的任何问题 不会理你 也 不会回答'
+			text: '如果直接跑来问我和本体有关的任何问题 不会理你 也 不会回答',
+			type: 'warning'
 		},
 		{
-			type: 'warning',
-			text: '不接受 拿着本就公开的信息跳我脸上 很无聊'
+			text: '不接受 拿着本就公开的信息跳我脸上 很无聊',
+			type: 'warning'
 		},
 
 		null,
@@ -81,32 +81,33 @@ export const notes = {
 		null,
 
 		{
-			type: 'error',
-			text: '不涩涩 不约 不是同 不谈恋爱 不找对象 不当对象'
+			text: '不涩涩 不约 不是同 不谈恋爱 不找对象 不当对象',
+			type: 'error'
 		},
 		{
-			type: 'error',
-			text: '不抽烟 不酗酒 不打麻将'
-		},
-
-		null,
-
-		{
-			type: 'success',
-			text: '只剩自己'
-		},
-		{
-			type: 'success',
-			text: '爱喝奶茶 并尤其喜欢 蜜雪冰城 和 古茗 (?)'
+			text: '不抽烟 不酗酒 不打麻将',
+			type: 'error'
 		},
 
 		null,
 
 		{
-			text: '凶 只是不想承担后果的一种提前防御 要是真能扛住 其实不会拒绝太多 但并不代表我应该处理所有事情',
-			class: 'opacity-5'
+			text: '只剩自己',
+			type: 'success'
+		},
+		{
+			text: '爱喝奶茶 并尤其喜欢 蜜雪冰城 和 古茗 (?)',
+			type: 'success'
+		},
+
+		null,
+
+		{
+			class: 'opacity-5',
+			text: '凶 只是不想承担后果的一种提前防御 要是真能扛住 其实不会拒绝太多 但并不代表我应该处理所有事情'
 		}
-	] as const satisfies RenderableText[]
+	] as const satisfies RenderableText[],
+	title: '调用方式'
 } as const
 
 export const birthday = createDate(2006, 5, 7)

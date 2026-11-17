@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { FurryAssign } from '~/types/furry'
+
 	import { defaultTo } from 'es-toolkit/compat'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FurryAssign } from '~/types/furry'
 
 	defineProps<{
 		readonly items: FurryAssign[]

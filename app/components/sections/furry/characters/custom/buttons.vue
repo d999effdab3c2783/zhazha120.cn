@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { FurryCharacterButton } from '~/types/furry'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FurryCharacterButton } from '~/types/furry'
 
 	defineProps<{
 		readonly items: FurryCharacterButton[]

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 	import type { SelectOption } from 'naive-ui'
+
 	import { storeToRefs } from 'pinia'
 
 	import { useResponsive } from '~/composables/responsive'

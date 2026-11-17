@@ -1,6 +1,7 @@
 <script setup lang="ts">
-	import { useBrowserLocation } from '@vueuse/core'
 	import type { QrCodeProps } from 'naive-ui'
+
+	import { useBrowserLocation } from '@vueuse/core'
 	import { useThemeVars } from 'naive-ui'
 	import { shallowReactive } from 'vue'
 
@@ -18,9 +19,9 @@
 		iconBackgroundColor: 'transparent',
 		iconSize: 40,
 		iconSrc: ownerStore.avatar,
-		value: location.value.href,
 		size: 180,
-		type: 'svg'
+		type: 'svg',
+		value: location.value.href
 	})
 
 	const applyPreset = (name: string) => {

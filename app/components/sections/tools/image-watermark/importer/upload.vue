@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+	import type { UploadFileInfo } from 'naive-ui'
+
 	import { useObjectUrl } from '@vueuse/core'
 	import { isNil } from 'es-toolkit'
-	import { NIcon, NText, NUpload, NUploadDragger, type UploadFileInfo } from 'naive-ui'
+	import { NIcon, NText, NUpload, NUploadDragger } from 'naive-ui'
 	import { computed } from 'vue'
 
 	import { useImageWatermarkToolStore } from '~/stores/tools'
@@ -17,11 +19,11 @@
 		if (imageWatermarkToolStore.file instanceof File) {
 			return [
 				{
+					file: imageWatermarkToolStore.file,
 					id: 'stored',
+					name: imageWatermarkToolStore.file.name,
 					status: 'finished',
 					type: imageWatermarkToolStore.file.type,
-					name: imageWatermarkToolStore.file.name,
-					file: imageWatermarkToolStore.file,
 					url: fileObjectUrl.value
 				}
 			]
@@ -29,13 +31,13 @@
 
 		return [
 			{
-				id: 'stored',
-				status: 'finished',
-				type: imageWatermarkToolStore.file.type,
-				name: 'blob',
 				file: new File([imageWatermarkToolStore.file], '-', {
 					type: imageWatermarkToolStore.file.type
 				}),
+				id: 'stored',
+				name: 'blob',
+				status: 'finished',
+				type: imageWatermarkToolStore.file.type,
 				url: fileObjectUrl.value
 			}
 		]

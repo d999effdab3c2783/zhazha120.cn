@@ -1,8 +1,8 @@
+import type { Utility } from '~/types/utility'
+
 import { once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
-
-import type { Utility } from '~/types/utility'
 
 export const useUtilityStore = defineStore('utility', () => {
 	const registry = shallowReactive<Utility[]>([])
@@ -26,8 +26,8 @@ export const useUtilityStore = defineStore('utility', () => {
 	})
 
 	return {
-		registry,
+		load,
 
-		load
+		registry
 	}
 })

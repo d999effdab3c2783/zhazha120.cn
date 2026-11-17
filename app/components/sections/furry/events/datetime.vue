@@ -1,11 +1,11 @@
 <script setup lang="ts">
+	import type { FurryEventEntry } from '~/types/furry'
+
 	import { useNow } from '@vueuse/core'
 	import { clsx } from 'clsx'
 	import { formatDistanceStrict, isFuture, isPast } from 'date-fns'
 	import { zhCN } from 'date-fns/locale'
 	import { computed } from 'vue'
-
-	import type { FurryEventEntry } from '~/types/furry'
 
 	const props = defineProps<{
 		readonly item: FurryEventEntry
@@ -34,8 +34,8 @@
 			const ago = formatDistanceStrict(endDate.value, now.value, {
 				addSuffix: true,
 				locale: zhCN,
-				unit: 'day',
-				roundingMethod: 'ceil'
+				roundingMethod: 'ceil',
+				unit: 'day'
 			})
 
 			return `进行中, ${ago}结束`
@@ -45,16 +45,16 @@
 			return formatDistanceStrict(startDate.value, now.value, {
 				addSuffix: true,
 				locale: zhCN,
-				unit: 'day',
-				roundingMethod: 'floor'
+				roundingMethod: 'floor',
+				unit: 'day'
 			})
 		}
 
 		return formatDistanceStrict(startDate.value, now.value, {
 			addSuffix: true,
 			locale: zhCN,
-			unit: 'day',
-			roundingMethod: 'ceil'
+			roundingMethod: 'ceil',
+			unit: 'day'
 		})
 	})
 

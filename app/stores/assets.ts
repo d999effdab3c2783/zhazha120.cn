@@ -1,8 +1,8 @@
+import type { AssetDownloadRequestItem, DownloadableAssets } from '~/types/assets'
+
 import { flattenObject, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { shallowReactive } from 'vue'
-
-import type { AssetDownloadRequestItem, DownloadableAssets } from '~/types/assets'
 
 export const useAssetsStore = defineStore('assets', () => {
 	const registry = shallowReactive<AssetDownloadRequestItem[]>([])
@@ -33,10 +33,9 @@ export const useAssetsStore = defineStore('assets', () => {
 						const fullPath = path.split('.').slice(0, -1).join('.') + '/' + flattenPath + '.bin'
 
 						registry.push({
-							url: flattenAsset,
 							path: 'app' + fullPath,
-
-							preview: new URL('..' + fullPath, import.meta.url).href
+							preview: new URL('..' + fullPath, import.meta.url).href,
+							url: flattenAsset
 						} as const satisfies AssetDownloadRequestItem)
 					})
 				)
@@ -45,8 +44,8 @@ export const useAssetsStore = defineStore('assets', () => {
 	})
 
 	return {
-		registry,
+		load,
 
-		load
+		registry
 	}
 })

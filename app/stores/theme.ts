@@ -1,10 +1,12 @@
+import type { GlobalTheme, GlobalThemeOverrides } from 'naive-ui'
+import type { ActualThemeMode, ThemeMode } from '~/types/theme'
+
 import { isNotNil } from 'es-toolkit'
-import { darkTheme, lightTheme, useOsTheme, type GlobalTheme, type GlobalThemeOverrides } from 'naive-ui'
+import { darkTheme, lightTheme, useOsTheme } from 'naive-ui'
 import { defineStore } from 'pinia'
 import { computed, shallowRef } from 'vue'
 
 import { darkOverrides, defaultActualTheme, defaultTheme, lightOverrides, sharedOverrides } from '~/stores/theme/config'
-import type { ActualThemeMode, ThemeMode } from '~/types/theme'
 
 const osTheme = useOsTheme()
 
@@ -52,10 +54,9 @@ export const useThemeStore = defineStore('theme', () => {
 	})
 
 	return {
-		mode,
 		actualMode,
-
-		preset,
-		overrides
+		mode,
+		overrides,
+		preset
 	}
 })

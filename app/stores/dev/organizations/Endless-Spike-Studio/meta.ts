@@ -1,10 +1,10 @@
-import avatar from '~/stores/dev/organizations/Endless-Spike-Studio/assets/avatar.bin?url'
 import type { DevOrganization } from '~/types/dev'
 
-export default {
-	type: 'github',
-	name: 'Endless Spike Studio',
+import avatar from '~/stores/dev/organizations/Endless-Spike-Studio/assets/avatar.bin?url'
 
+export default {
 	avatar,
-	owner: 'Endless-Spike-Studio'
+	name: 'Endless Spike Studio',
+	owner: 'Endless-Spike-Studio',
+	type: 'github'
 } as const satisfies DevOrganization

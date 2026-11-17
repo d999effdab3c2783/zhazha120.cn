@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { FurryEventEntry } from '~/types/furry'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FurryEventEntry } from '~/types/furry'
 
 	defineProps<{
 		readonly item: FurryEventEntry

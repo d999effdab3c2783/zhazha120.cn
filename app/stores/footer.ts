@@ -9,7 +9,7 @@ export const useFooterStore = defineStore('footer', () => {
 	return {
 		copyright,
 		filing,
-		version,
-		utility
+		utility,
+		version
 	}
 })

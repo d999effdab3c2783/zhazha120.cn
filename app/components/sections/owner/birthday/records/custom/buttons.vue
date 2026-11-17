@@ -1,8 +1,9 @@
 <script setup lang="ts">
+	import type { OwnerBirthdayRecordButton } from '~/types/owner'
+
 	import { isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { OwnerBirthdayRecordButton } from '~/types/owner'
 
 	defineProps<{
 		readonly items: OwnerBirthdayRecordButton[]

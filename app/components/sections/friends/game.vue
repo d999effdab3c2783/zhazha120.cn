@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+	import type { FriendEntry } from '~/types/friend'
+
 	import { computed } from 'vue'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FriendEntry } from '~/types/friend'
 
 	const props = defineProps<{
 		readonly item: FriendEntry
@@ -13,9 +14,9 @@
 
 		if (props.item.diving_fish_maimai_username) {
 			result.push({
+				href: `/friends/${props.item.slug}/game/records/maimai/b50`,
 				icon: 'i-custom:maimai',
-				name: '舞萌 (maimai) | b50',
-				href: `/friends/${props.item.slug}/game/records/maimai/b50`
+				name: '舞萌 (maimai) | b50'
 			})
 		}
 

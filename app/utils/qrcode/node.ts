@@ -10,9 +10,8 @@ export const read = async (path: string) => {
 	})
 
 	return decodeQR({
-		width: info.width,
+		data,
 		height: info.height,
-
-		data
+		width: info.width
 	})
 }

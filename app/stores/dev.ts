@@ -1,13 +1,14 @@
+import type { DevOrganization, DevStack } from '~/types/dev'
+
 import { cloneDeepWith, isString, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { computed, shallowReactive } from 'vue'
 
 import defaultCodetime from '~/stores/dev/codetime'
 import competitions from '~/stores/dev/competitions'
-import { title as notesTitle, items as notesItems } from '~/stores/dev/notes'
+import { items as notesItems, title as notesTitle } from '~/stores/dev/notes'
 import projects from '~/stores/dev/projects'
 import { useThemeStore } from '~/stores/theme'
-import type { DevOrganization, DevStack } from '~/types/dev'
 
 export const useDevStore = defineStore('dev', () => {
 	const themeStore = useThemeStore()
@@ -54,21 +55,27 @@ export const useDevStore = defineStore('dev', () => {
 	})
 
 	return {
-		notes: {
-			title: notesTitle,
-			items: notesItems
-		},
-
 		codetime,
-		stacks,
-		organizations,
-		projects,
+
 		competitions,
 
-		stacksGlob,
+		loadOrganizations,
+
 		loadStacks,
 
+		notes: {
+			items: notesItems,
+			title: notesTitle
+		},
+
+		organizations,
+
 		organizationsGlob,
-		loadOrganizations
+
+		projects,
+
+		stacks,
+
+		stacksGlob
 	}
 })

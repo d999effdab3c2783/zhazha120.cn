@@ -1,7 +1,7 @@
 <script setup lang="ts">
-	import { computed } from 'vue'
-
 	import type { GithubDevOrganization } from '~/types/dev'
+
+	import { computed } from 'vue'
 
 	const props = defineProps<{
 		readonly item: GithubDevOrganization

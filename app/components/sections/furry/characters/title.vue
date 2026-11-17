@@ -1,8 +1,8 @@
 <script setup lang="ts">
+	import type { FurryCharacterEntry } from '~/types/furry'
+
 	import { isNotNil } from 'es-toolkit'
 	import { shallowRef } from 'vue'
-
-	import type { FurryCharacterEntry } from '~/types/furry'
 
 	defineProps<{
 		readonly item: FurryCharacterEntry

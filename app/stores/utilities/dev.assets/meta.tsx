@@ -1,5 +1,6 @@
-import Component from '~/stores/utilities/dev.assets/components/utility.vue'
 import type { Utility } from '~/types/utility'
+
+import Component from '~/stores/utilities/dev.assets/components/utility.vue'
 
 // @unocss-include
 

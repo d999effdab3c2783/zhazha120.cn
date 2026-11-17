@@ -1,10 +1,10 @@
-import avatar from '~/stores/dev/organizations/FurryChatWorld/assets/avatar.bin?url'
 import type { DevOrganization } from '~/types/dev'
 
-export default {
-	type: 'github',
-	name: 'FurryChatWorld',
+import avatar from '~/stores/dev/organizations/FurryChatWorld/assets/avatar.bin?url'
 
+export default {
 	avatar,
-	owner: 'FurryChatWorld'
+	name: 'FurryChatWorld',
+	owner: 'FurryChatWorld',
+	type: 'github'
 } as const satisfies DevOrganization

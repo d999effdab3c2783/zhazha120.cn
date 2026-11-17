@@ -2,12 +2,12 @@ import type { FurryCharacterRenderable } from '~/types/furry'
 
 export default [
 	{
-		title: '毛',
 		items: [
 			{
-				type: 'embed_video',
-				src: 'https://player.bilibili.com/player.html?aid=115178574184785&autoplay=0'
+				src: 'https://player.bilibili.com/player.html?aid=115178574184785&autoplay=0',
+				type: 'embed_video'
 			}
-		]
+		],
+		title: '毛'
 	}
 ] as const satisfies FurryCharacterRenderable[]

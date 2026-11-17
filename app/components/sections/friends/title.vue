@@ -1,8 +1,8 @@
 <script setup lang="ts">
+	import type { FriendEntry } from '~/types/friend'
+
 	import { isNotNil } from 'es-toolkit'
 	import { shallowRef } from 'vue'
-
-	import type { FriendEntry } from '~/types/friend'
 
 	defineProps<{
 		readonly item: FriendEntry

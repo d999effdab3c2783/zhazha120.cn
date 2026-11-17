@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+	import type { ToolPortal } from '~/types/tool'
+
 	import { useResponsive } from '~/composables/responsive'
 	import { useToolsStore } from '~/stores/tools'
-	import type { ToolPortal } from '~/types/tool'
 
 	const toolsStore = useToolsStore()
 

@@ -1,4 +1,4 @@
-import { extendViteConfig, defineNuxtModule, addTypeTemplate } from '@nuxt/kit'
+import { addTypeTemplate, defineNuxtModule, extendViteConfig } from '@nuxt/kit'
 import Info from 'unplugin-info/vite'
 
 export default defineNuxtModule({

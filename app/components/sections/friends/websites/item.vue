@@ -1,11 +1,12 @@
 <script setup lang="ts">
+	import type { FriendWebsite } from '~/types/friend'
+
 	import { useBrowserLocation } from '@vueuse/core'
 	import { clsx } from 'clsx'
 	import { intersection, isNotNil, merge } from 'es-toolkit'
 	import { computed } from 'vue'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FriendWebsite } from '~/types/friend'
 
 	const props = defineProps<{
 		readonly item: FriendWebsite

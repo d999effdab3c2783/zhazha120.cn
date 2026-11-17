@@ -1,5 +1,6 @@
-import Component from '~/stores/utilities/qrcode/components/utility.vue'
 import type { Utility } from '~/types/utility'
+
+import Component from '~/stores/utilities/qrcode/components/utility.vue'
 
 // @unocss-include
 

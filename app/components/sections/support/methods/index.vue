@@ -1,7 +1,7 @@
 <script setup lang="ts">
-	import { isEqual } from 'es-toolkit'
-
 	import type { ExternalSupportMethod, ImageSupportMethod, QRCodeSupportMethod, SupportMethod } from '~/types/support'
+
+	import { isEqual } from 'es-toolkit'
 
 	defineProps<{
 		readonly item: SupportMethod

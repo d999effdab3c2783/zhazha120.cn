@@ -1,8 +1,9 @@
-import { parseOrThrow, FiltronParseError } from '@filtron/core'
+import type { UnknownRecord } from 'es-toolkit/types'
+
+import { FiltronParseError, parseOrThrow } from '@filtron/core'
 import { toFilter } from '@filtron/js'
 import { isNil, isNotNil, isPlainObject } from 'es-toolkit'
 import { get } from 'es-toolkit/compat'
-import type { UnknownRecord } from 'es-toolkit/types'
 
 const separator = '.'
 

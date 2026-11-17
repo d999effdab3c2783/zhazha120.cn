@@ -1,11 +1,12 @@
 <script setup lang="ts">
+	import type { QRCodeSupportMethod } from '~/types/support'
+
 	import { useElementBounding } from '@vueuse/core'
 	import { clsx } from 'clsx'
 	import { isNotNil } from 'es-toolkit'
 	import { computed, shallowRef, useTemplateRef } from 'vue'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { QRCodeSupportMethod } from '~/types/support'
 
 	const props = defineProps<{
 		readonly item: QRCodeSupportMethod

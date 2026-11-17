@@ -1,10 +1,11 @@
+import type { FurryCharacter, FurryCharacterEntry, FurryEvent, FurryEventEntry } from '~/types/furry'
+
 import { isNil, once } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { computed, shallowReactive } from 'vue'
 
-import { title as notesTitle, items as notesItems } from '~/stores/furry/notes'
+import { items as notesItems, title as notesTitle } from '~/stores/furry/notes'
 import portals from '~/stores/furry/portals'
-import type { FurryCharacter, FurryCharacterEntry, FurryEvent, FurryEventEntry } from '~/types/furry'
 import { filterArray } from '~/utils/filter'
 
 export const useFurryStore = defineStore('furry', () => {
@@ -39,8 +40,8 @@ export const useFurryStore = defineStore('furry', () => {
 				const meta = await importer()
 
 				Object.assign(meta, {
-					year: Number(path.split('/').at(-3) ?? -1),
-					slug: path.split('/').at(-2) ?? '?'
+					slug: path.split('/').at(-2) ?? '?',
+					year: Number(path.split('/').at(-3) ?? -1)
 				})
 
 				events.push(meta satisfies FurryEventEntry)
@@ -83,22 +84,25 @@ export const useFurryStore = defineStore('furry', () => {
 	})
 
 	return {
-		notes: {
-			title: notesTitle,
-			items: notesItems
-		},
-
-		portals,
-
 		characters,
+
+		charactersGlob,
+
 		events,
+
+		eventsGlob,
+
+		loadCharacters,
+
+		loadEvents,
 
 		mappings,
 
-		charactersGlob,
-		loadCharacters,
+		notes: {
+			items: notesItems,
+			title: notesTitle
+		},
 
-		eventsGlob,
-		loadEvents
+		portals
 	}
 })

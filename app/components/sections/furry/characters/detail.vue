@@ -1,10 +1,11 @@
 <script lang="ts" setup>
+	import type { FurryFriendOwner } from '~/types/furry'
+
 	import { isEqual, isNil, isNotNil } from 'es-toolkit'
 	import { get } from 'es-toolkit/compat'
 	import { computed } from 'vue'
 
 	import { useFurryStore } from '~/stores/furry'
-	import type { FurryFriendOwner } from '~/types/furry'
 
 	const props = defineProps<{
 		readonly slug: string

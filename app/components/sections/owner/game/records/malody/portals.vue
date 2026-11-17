@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+	import type { GameMalodyRecordPortal } from '~/types/game'
+
 	import { useResponsive } from '~/composables/responsive'
 	import { useGameStore } from '~/stores/game'
-	import type { GameMalodyRecordPortal } from '~/types/game'
 
 	const gameStore = useGameStore()
 

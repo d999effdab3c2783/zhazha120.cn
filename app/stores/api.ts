@@ -1,4 +1,5 @@
 import type { DialogApi, LoadingBarApi, MessageApi, ModalApi, NotificationApi } from 'naive-ui'
+
 import { defineStore } from 'pinia'
 import { shallowRef } from 'vue'
 
@@ -12,8 +13,8 @@ export const useApiStore = defineStore('api', () => {
 	return {
 		dialog,
 		loadingBar,
-		modal,
 		message,
+		modal,
 		notification
 	}
 })

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-	import { clsx } from 'clsx'
 	import type { ModalProps } from 'naive-ui'
+
+	import { clsx } from 'clsx'
 	import { computed, shallowRef } from 'vue'
 
 	import { useResponsive } from '~/composables/responsive'
@@ -45,9 +46,9 @@
 	}
 
 	defineExpose({
-		state: show,
 		hide: handleHide,
 		show: handleShow,
+		state: show,
 		toggle: handleToggle
 	})
 </script>

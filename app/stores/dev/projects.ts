@@ -1,175 +1,139 @@
 import type { DevProject, DevProjectTag } from '~/types/dev'
 
 export const tags = {
-	idle: '闲置',
 	active: '活跃',
 	completed: '已完成',
+	deleted: '已删除',
+	idle: '闲置',
 	maintained: '维护保留',
-	transferred: '已转移',
-	deleted: '已删除'
+	transferred: '已转移'
 } as const satisfies Record<DevProjectTag, string>
 
 export default [
 	{
-		type: 'github',
 		name: 'zhazha120.cn',
-
 		owner: 'd999effdab3c2783',
 		repo: 'zhazha120.cn',
-
-		tags: ['active']
+		tags: ['active'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'BitterSweet',
-
 		owner: 'c794b7b0331e4cf3',
 		repo: 'BitterSweetNext',
-
-		tags: ['completed']
+		tags: ['completed'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: ['abnormalcat.cn', '(Abnormal Cat 的个人网站)'].join('\n'),
-
 		owner: 'Abnormal-Cat',
 		repo: 'abnormalcat.cn',
-
-		tags: ['maintained', 'idle']
+		tags: ['maintained', 'idle'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Paw Team 官网',
-
 		owner: 'PawTeamClub',
 		repo: 'website',
-
-		tags: ['maintained', 'idle']
+		tags: ['maintained', 'idle'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: '与互的个人网站',
-
 		owner: 'WOSHIZHAZHA120',
 		repo: 'pages.yuhu',
-
-		tags: ['transferred', 'deleted']
+		tags: ['transferred', 'deleted'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Techmino 在线词典',
-
 		owner: '26F-Studio',
 		repo: 'techmino-online-dict',
-
-		tags: ['completed', 'idle']
+		tags: ['completed', 'idle'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Teronya Bot 模板 老',
-
 		owner: 'A-Minos',
 		repo: 'tetris-stats-templates',
-
-		tags: ['completed']
+		tags: ['completed'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Teronya Bot 模板 新',
-
 		owner: 'A-Minos',
 		repo: 'tetris-stats-templates-new',
-
-		tags: ['maintained', 'idle']
+		tags: ['maintained', 'idle'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Endless Services 前端',
-
 		owner: 'Endless-Spike-Studio',
 		repo: 'Endless-Services-Frontend',
-
-		tags: ['completed']
+		tags: ['completed'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Endless Services 运行时',
-
 		owner: 'Endless-Spike-Studio',
 		repo: 'Endless-Services-Runtime',
-
-		tags: ['completed']
+		tags: ['completed'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Endless Services 后端',
-
 		owner: 'Endless-Spike-Studio',
 		repo: 'Endless-Services-Backend',
-
-		tags: ['completed']
+		tags: ['completed'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'Endless Services 连接器',
-
 		owner: 'Endless-Spike-Studio',
 		repo: 'Endless-Services-Connector',
-
-		tags: ['completed']
+		tags: ['completed'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'tetr.io plus (定制魔改)',
-
 		owner: 'd999effdab3c2783',
 		repo: 'tetrio-plus',
-
-		tags: ['deleted']
+		tags: ['deleted'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'tetr.io plus plus (定制魔改)',
-
 		owner: 'A-Minos',
 		repo: 'tetrio-plus-plus',
-
-		tags: ['idle']
+		tags: ['idle'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'OpenList 前端 (定制魔改)',
-
 		owner: 'd999effdab3c2783',
 		repo: 'OpenList-Frontend',
-
-		tags: ['deleted']
+		tags: ['deleted'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: '墨趣诗坊',
-
 		owner: 'c794b7b0331e4cf3',
 		repo: 'InkFunPoetryStudio',
-
-		tags: ['completed']
+		tags: ['completed'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'tetr.io 汉化',
-
 		owner: 'A-Minos',
 		repo: 'tetrio-chinese',
-
-		tags: ['idle']
+		tags: ['idle'],
+		type: 'github'
 	},
 	{
-		type: 'github',
 		name: 'GDTools 服务',
-
 		owner: 'GMDtools',
 		repo: 'Services',
-
-		tags: ['maintained', 'idle']
+		tags: ['maintained', 'idle'],
+		type: 'github'
 	}
 ] as const satisfies DevProject[]

@@ -20,6 +20,8 @@
 </script>
 
 <script setup lang="ts">
+	import type { ComponentPublicInstance } from 'vue'
+
 	import { colordx } from '@colordx/core'
 	import {
 		useDevicePixelRatio,
@@ -33,16 +35,7 @@
 	import { clsx } from 'clsx'
 	import { isNil, isNotNil } from 'es-toolkit'
 	import { useLenis } from 'lenis/vue'
-	import {
-		computed,
-		nextTick,
-		onWatcherCleanup,
-		shallowReactive,
-		shallowRef,
-		useTemplateRef,
-		watch,
-		type ComponentPublicInstance
-	} from 'vue'
+	import { computed, nextTick, onWatcherCleanup, shallowReactive, shallowRef, useTemplateRef, watch } from 'vue'
 
 	const props = withDefaults(
 		defineProps<
@@ -62,18 +55,18 @@
 			}>
 		>(),
 		{
+			activeColor: () => 'white',
+			baseColor: () => 'black',
+			class: () => 'size-full',
 			dotSize: () => 16,
 			gap: () => 32,
-			baseColor: () => 'black',
-			activeColor: () => 'white',
-			proximity: () => 150,
-			speedTrigger: () => 100,
-			shockRadius: () => 250,
-			shockStrength: () => 5,
 			maxSpeed: () => 5000,
+			proximity: () => 150,
 			resistance: () => 750,
 			returnDuration: () => 1.5,
-			class: () => 'size-full'
+			shockRadius: () => 250,
+			shockStrength: () => 5,
+			speedTrigger: () => 100
 		}
 	)
 
@@ -122,21 +115,21 @@
 	})
 
 	const pointer = {
-		x: -1,
-		y: -1,
-		vx: 0,
-		vy: 0,
-		speed: 0,
 		lastTime: 0,
 		lastX: 0,
-		lastY: 0
+		lastY: 0,
+		speed: 0,
+		vx: 0,
+		vy: 0,
+		x: -1,
+		y: -1
 	}
 
 	const canvasRect = shallowReactive({
-		width: 0,
 		height: 0,
+		left: 0,
 		top: 0,
-		left: 0
+		width: 0
 	})
 
 	const dots = shallowRef<Dot[]>([])
@@ -190,11 +183,9 @@
 				dots.value.push({
 					cx,
 					cy,
-
+					inertiaApplied: false,
 					xOffset: 0,
-					yOffset: 0,
-
-					inertiaApplied: false
+					yOffset: 0
 				})
 			}
 		}
@@ -325,16 +316,16 @@
 
 			gsap.to(dot, {
 				inertia: {
+					resistance: props.resistance,
 					xOffset: pushX,
-					yOffset: pushY,
-					resistance: props.resistance
+					yOffset: pushY
 				},
 				onComplete: () => {
 					gsap.to(dot, {
-						xOffset: 0,
-						yOffset: 0,
 						duration: props.returnDuration,
-						ease: 'elastic.out(1,0.75)'
+						ease: 'elastic.out(1,0.75)',
+						xOffset: 0,
+						yOffset: 0
 					})
 
 					dot.inertiaApplied = false
@@ -368,16 +359,16 @@
 
 				gsap.to(dot, {
 					inertia: {
+						resistance: props.resistance,
 						xOffset: pushX,
-						yOffset: pushY,
-						resistance: props.resistance
+						yOffset: pushY
 					},
 					onComplete: () => {
 						gsap.to(dot, {
-							xOffset: 0,
-							yOffset: 0,
 							duration: props.returnDuration,
-							ease: 'elastic.out(1,0.75)'
+							ease: 'elastic.out(1,0.75)',
+							xOffset: 0,
+							yOffset: 0
 						})
 
 						dot.inertiaApplied = false

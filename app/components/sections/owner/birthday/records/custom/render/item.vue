@@ -1,11 +1,11 @@
 <script setup lang="ts">
-	import { isEqual } from 'es-toolkit'
-
 	import type {
-		OwnerBirthdayRecordRenderableItem,
+		OwnerBirthdayRecordEmbedVideo,
 		OwnerBirthdayRecordRenderableImage,
-		OwnerBirthdayRecordEmbedVideo
+		OwnerBirthdayRecordRenderableItem
 	} from '~/types/owner'
+
+	import { isEqual } from 'es-toolkit'
 
 	defineProps<{
 		readonly item: OwnerBirthdayRecordRenderableItem

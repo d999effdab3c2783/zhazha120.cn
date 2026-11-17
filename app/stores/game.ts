@@ -31,41 +31,41 @@ import {
 export const useGameStore = defineStore('game', () => {
 	return {
 		records: {
+			geometryDash: {
+				overlay: geometryDashOverlay,
+				portals: geometryDashPortals
+			},
 			maimai: {
 				divinigFish: {
 					username: maimaiDivingFishUsername
 				}
-			},
-			osu: {
-				overlay: osuOverlay,
-				mania: osuMania,
-				portals: osuPortals
-			},
-			minecraft: {
-				skinSrc: minecraftSkinSrc,
-				portals: minecraftPortals,
-				defaultPreviewConfig: minecraftDefaultPreviewConfig
 			},
 			malody: {
 				dan: malodyDan,
 				danTimelines: malodyDanTimelines,
 				portals: malodyPortals
 			},
-			geometryDash: {
-				overlay: geometryDashOverlay,
-				portals: geometryDashPortals
+			minecraft: {
+				defaultPreviewConfig: minecraftDefaultPreviewConfig,
+				portals: minecraftPortals,
+				skinSrc: minecraftSkinSrc
 			},
+			osu: {
+				mania: osuMania,
+				overlay: osuOverlay,
+				portals: osuPortals
+			},
+			portals: recordsPortals,
 			tetrio: {
 				backgroundOverlay: tetrioBackgroundOverlay,
-				overlay: tetrioOverlay,
-				splintTimelines: tetrioSplintTimelines,
 				blitzTimelines: tetrioBlitzTimelines,
+				overlay: tetrioOverlay,
+				portals: tetrioPortals,
 				rankColors: tetrioRankColors,
+				splintTimelines: tetrioSplintTimelines,
 				tetraLeagueSeason1Timelines: tetrioTetraLeagueSeason1Timelines,
-				tetraLeagueSeason2Timelines: tetrioTetraLeagueSeason2Timelines,
-				portals: tetrioPortals
-			},
-			portals: recordsPortals
+				tetraLeagueSeason2Timelines: tetrioTetraLeagueSeason2Timelines
+			}
 		}
 	}
 })

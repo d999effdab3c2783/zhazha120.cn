@@ -1,11 +1,12 @@
 <script setup lang="ts">
+	import type { FurryCharacter } from '~/types/furry'
+
 	import { isNotNil } from 'es-toolkit'
 	import { isNil } from 'es-toolkit'
 	import { computed } from 'vue'
 
 	import { useFriendsStore } from '~/stores/friends'
 	import { name as ownerName } from '~/stores/owner/information'
-	import type { FurryCharacter } from '~/types/furry'
 
 	const props = defineProps<{
 		readonly item: FurryCharacter

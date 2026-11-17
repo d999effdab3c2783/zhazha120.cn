@@ -23,12 +23,12 @@
 		}
 
 		const result = await toBlob(containerRef.value.$el, {
-			width: image.naturalWidth,
-			height: image.naturalHeight,
-			canvasWidth: image.naturalWidth,
 			canvasHeight: image.naturalHeight,
+			canvasWidth: image.naturalWidth,
+			height: image.naturalHeight,
 			pixelRatio: 1,
-			quality: 1
+			quality: 1,
+			width: image.naturalWidth
 		})
 
 		if (isNil(result)) {

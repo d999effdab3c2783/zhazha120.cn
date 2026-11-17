@@ -1,11 +1,11 @@
 <script setup lang="ts">
-	import { isEqual } from 'es-toolkit'
-
 	import type {
-		FurryCharacterRenderableItem,
+		FurryCharacterRenderableEmbedVideo,
 		FurryCharacterRenderableImage,
-		FurryCharacterRenderableEmbedVideo
+		FurryCharacterRenderableItem
 	} from '~/types/furry'
+
+	import { isEqual } from 'es-toolkit'
 
 	defineProps<{
 		readonly item: FurryCharacterRenderableItem

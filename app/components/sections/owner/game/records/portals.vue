@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+	import type { GameRecordPortal } from '~/types/game'
+
 	import { useResponsive } from '~/composables/responsive'
 	import { useGameStore } from '~/stores/game'
-	import type { GameRecordPortal } from '~/types/game'
 
 	withDefaults(
 		defineProps<

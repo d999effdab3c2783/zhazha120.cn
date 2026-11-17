@@ -1,8 +1,8 @@
 <script setup lang="ts">
+	import type { GithubDevProject } from '~/types/dev'
+
 	import { clsx } from 'clsx'
 	import { computed } from 'vue'
-
-	import type { GithubDevProject } from '~/types/dev'
 
 	const props = defineProps<{
 		readonly item: GithubDevProject

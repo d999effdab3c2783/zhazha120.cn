@@ -1,10 +1,11 @@
 <script setup lang="ts">
+	import type { FurryCharacterEntry } from '~/types/furry'
+
 	import { clsx } from 'clsx'
 	import { isNotNil } from 'es-toolkit'
 	import { computed } from 'vue'
 
 	import { useResponsive } from '~/composables/responsive'
-	import type { FurryCharacterEntry } from '~/types/furry'
 
 	defineProps<{
 		readonly item: FurryCharacterEntry

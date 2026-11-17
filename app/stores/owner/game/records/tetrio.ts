@@ -1,4 +1,3 @@
-import backgroundOverlaySrc from '~/stores/owner/game/assets/tetrio/background_overlay.bin?url'
 import type {
 	GameTetrioBlitzTimeline,
 	GameTetrioRankColor,
@@ -6,6 +5,8 @@ import type {
 	GameTetrioSprintTimeline,
 	GameTetrioTetraLeagueTimeline
 } from '~/types/game'
+
+import backgroundOverlaySrc from '~/stores/owner/game/assets/tetrio/background_overlay.bin?url'
 import { createDate } from '~/utils/date'
 
 export const userId = '5eb3a6530b29196c155074e8'
@@ -15,87 +16,87 @@ export const backgroundOverlay = backgroundOverlaySrc
 
 export const splintTimelines = [
 	{
-		time: 58.62,
-		archived_at: createDate(2022, 4, 30)
+		archived_at: createDate(2022, 4, 30),
+		time: 58.62
 	},
 	{
-		time: 48.877,
-		archived_at: createDate(2022, 7, 18)
+		archived_at: createDate(2022, 7, 18),
+		time: 48.877
 	},
 	{
-		time: 42.653,
-		archived_at: createDate(2022, 9, 21)
+		archived_at: createDate(2022, 9, 21),
+		time: 42.653
 	},
 	{
-		time: 39.685,
-		archived_at: createDate(2022, 11, 9)
+		archived_at: createDate(2022, 11, 9),
+		time: 39.685
 	},
 	{
-		time: 34.503,
-		archived_at: createDate(2022, 11, 28)
+		archived_at: createDate(2022, 11, 28),
+		time: 34.503
 	},
 	{
-		time: 28.225,
-		archived_at: createDate(2023, 2, 9)
+		archived_at: createDate(2023, 2, 9),
+		time: 28.225
 	},
 	{
-		time: 24.593,
-		archived_at: createDate(2023, 8, 23)
+		archived_at: createDate(2023, 8, 23),
+		time: 24.593
 	},
 	{
-		time: 23.26,
-		archived_at: createDate(2023, 9, 21)
+		archived_at: createDate(2023, 9, 21),
+		time: 23.26
 	},
 	{
-		time: 22.857,
-		archived_at: createDate(2024, 3, 6)
+		archived_at: createDate(2024, 3, 6),
+		time: 22.857
 	},
 	{
-		time: 21.633,
-		archived_at: createDate(2024, 6, 5)
+		archived_at: createDate(2024, 6, 5),
+		time: 21.633
 	},
 	{
-		time: 21.483,
-		archived_at: createDate(2024, 8, 5)
+		archived_at: createDate(2024, 8, 5),
+		time: 21.483
 	},
 	{
-		time: 21.458,
-		archived_at: createDate(2024, 11, 9)
+		archived_at: createDate(2024, 11, 9),
+		time: 21.458
 	},
 	{
-		time: 21.067,
-		archived_at: createDate(2025, 2, 8)
+		archived_at: createDate(2025, 2, 8),
+		time: 21.067
 	},
 	{
-		time: 20.103,
-		archived_at: createDate(2025, 2, 24)
+		archived_at: createDate(2025, 2, 24),
+		time: 20.103
 	},
 	{
-		time: 19.793,
-		archived_at: createDate(2025, 3, 12)
+		archived_at: createDate(2025, 3, 12),
+		time: 19.793
 	},
 	{
-		time: 19.783,
-		archived_at: createDate(2025, 4, 13)
+		archived_at: createDate(2025, 4, 13),
+		time: 19.783
 	}
 ] as const satisfies GameTetrioSprintTimeline[]
 
 export const blitzTimelines = [
 	{
-		score: 389548,
-		archived_at: createDate(2024, 1, 7)
+		archived_at: createDate(2024, 1, 7),
+		score: 389548
 	},
 	{
-		score: 397487,
-		archived_at: createDate(2026, 1, 21)
+		archived_at: createDate(2026, 1, 21),
+		score: 397487
 	},
 	{
-		score: 452633,
-		archived_at: createDate(2026, 1, 26)
+		archived_at: createDate(2026, 1, 26),
+		score: 452633
 	},
 	{
-		score: 458187,
-		archived_at: createDate(2026, 1, 26)
+		archived_at: createDate(2026, 1, 26),
+		score: 458187
 	}
 ] as const satisfies GameTetrioBlitzTimeline[]
 
@@ -180,66 +181,66 @@ export const rankColors = [
 
 export const tetraLeagueSeason1Timelines = [
 	{
-		rank: 'a+',
-		archived_at: createDate(2022, 4, 30)
+		archived_at: createDate(2022, 4, 30),
+		rank: 'a+'
 	},
 	{
-		rank: 's',
-		archived_at: createDate(2022, 5, 22)
+		archived_at: createDate(2022, 5, 22),
+		rank: 's'
 	},
 	{
-		rank: 's+',
-		archived_at: createDate(2022, 7, 18)
+		archived_at: createDate(2022, 7, 18),
+		rank: 's+'
 	},
 	{
-		rank: 'ss',
-		archived_at: createDate(2022, 8, 17)
+		archived_at: createDate(2022, 8, 17),
+		rank: 'ss'
 	},
 	{
-		rank: 'u',
-		archived_at: createDate(2022, 12, 11)
+		archived_at: createDate(2022, 12, 11),
+		rank: 'u'
 	},
 	{
-		rank: 'x',
-		archived_at: createDate(2023, 11, 2)
+		archived_at: createDate(2023, 11, 2),
+		rank: 'x'
 	}
 ] as const satisfies GameTetrioTetraLeagueTimeline[]
 
 export const tetraLeagueSeason2Timelines = [
 	{
-		rank: 'a+',
-		archived_at: createDate(2024, 8, 17)
+		archived_at: createDate(2024, 8, 17),
+		rank: 'a+'
 	},
 	{
-		rank: 's-',
-		archived_at: createDate(2024, 8, 17)
+		archived_at: createDate(2024, 8, 17),
+		rank: 's-'
 	},
 	{
-		rank: 's',
-		archived_at: createDate(2024, 8, 17)
+		archived_at: createDate(2024, 8, 17),
+		rank: 's'
 	},
 	{
-		rank: 's+',
-		archived_at: createDate(2024, 8, 17)
+		archived_at: createDate(2024, 8, 17),
+		rank: 's+'
 	},
 	{
-		rank: 'ss',
-		archived_at: createDate(2024, 8, 17)
+		archived_at: createDate(2024, 8, 17),
+		rank: 'ss'
 	},
 	{
-		rank: 'u',
-		archived_at: createDate(2024, 8, 18)
+		archived_at: createDate(2024, 8, 18),
+		rank: 'u'
 	},
 	{
-		rank: 'x',
-		archived_at: createDate(2024, 9, 9)
+		archived_at: createDate(2024, 9, 9),
+		rank: 'x'
 	}
 ] as const satisfies GameTetrioTetraLeagueTimeline[]
 
 export const portals = [
 	{
+		href: `https://ch.tetr.io/u/${userId}`,
 		icon: 'i-ant-design:profile-outlined',
-		name: '资料',
-		href: `https://ch.tetr.io/u/${userId}`
+		name: '资料'
 	}
 ] as const satisfies GameTetrioRecordPortal[]

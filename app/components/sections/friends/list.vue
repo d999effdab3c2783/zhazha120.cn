@@ -1,9 +1,10 @@
 <script setup lang="ts">
+	import type { FriendEntry } from '~/types/friend'
+
 	import { computed } from 'vue'
 
 	import { useArrayFilter } from '~/composables/filter'
 	import { useResponsive } from '~/composables/responsive'
-	import type { FriendEntry } from '~/types/friend'
 	import { filterArray } from '~/utils/filter'
 
 	const props = defineProps<{

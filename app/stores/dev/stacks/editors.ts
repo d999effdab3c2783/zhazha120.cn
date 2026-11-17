@@ -3,54 +3,53 @@ import type { DevStack } from '~/types/dev'
 // @unocss-include
 
 export default {
-	sort: 1,
-	name: '开发工具',
-
 	items: [
 		{
-			name: 'IntelliJ IDEA',
+			href: 'https://www.jetbrains.com/idea',
 			icon: 'i-logos:intellij-idea',
-			href: 'https://www.jetbrains.com/idea'
+			name: 'IntelliJ IDEA'
 		},
 		{
-			name: 'WebStorm',
+			href: 'https://www.jetbrains.com/webstorm',
 			icon: 'i-logos:webstorm',
-			href: 'https://www.jetbrains.com/webstorm'
+			name: 'WebStorm'
 		},
 		{
-			name: 'PhpStorm',
+			href: 'https://www.jetbrains.com/phpstorm',
 			icon: 'i-logos:phpstorm',
-			href: 'https://www.jetbrains.com/phpstorm'
+			name: 'PhpStorm'
 		},
 		{
-			name: 'PyCharm',
+			href: 'https://www.jetbrains.com/pycharm',
 			icon: 'i-logos:pycharm',
-			href: 'https://www.jetbrains.com/pycharm'
+			name: 'PyCharm'
 		},
 		{
-			name: 'GoLand',
+			href: 'https://www.jetbrains.com/goland',
 			icon: 'i-logos:goland',
-			href: 'https://www.jetbrains.com/goland'
+			name: 'GoLand'
 		},
 		{
-			name: 'Rider',
+			href: 'https://www.jetbrains.com/rider',
 			icon: 'i-logos:rider',
-			href: 'https://www.jetbrains.com/rider'
+			name: 'Rider'
 		},
 		{
-			name: 'Visual Studio',
+			href: 'https://visualstudio.com',
 			icon: 'i-logos:visual-studio',
-			href: 'https://visualstudio.com'
+			name: 'Visual Studio'
 		},
 		{
-			name: 'Visual Studio Code',
+			href: 'https://code.visualstudio.com',
 			icon: 'i-logos:visual-studio-code',
-			href: 'https://code.visualstudio.com'
+			name: 'Visual Studio Code'
 		},
 		{
-			name: 'Zed',
+			href: 'https://zed.dev',
 			icon: 'i-devicon:zed',
-			href: 'https://zed.dev'
+			name: 'Zed'
 		}
-	] as const
+	] as const,
+	name: '开发工具',
+	sort: 1
 } as const satisfies DevStack

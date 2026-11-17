@@ -1,12 +1,13 @@
+import type { WatermarkProps } from 'naive-ui'
+import type { KeyAccuracyCalculatorData, KeyAccuracyCalculatorPreset } from '~/types/tool'
+
 import { isNil, once, sumBy } from 'es-toolkit'
 import { get } from 'es-toolkit/compat'
-import type { WatermarkProps } from 'naive-ui'
 import { defineStore } from 'pinia'
 import { computed, ref, shallowReactive, shallowRef } from 'vue'
 
 import { name as ownerName } from '~/stores/owner/information'
 import portals from '~/stores/tools/portals'
-import type { KeyAccuracyCalculatorData, KeyAccuracyCalculatorPreset } from '~/types/tool'
 
 export const useToolsStore = defineStore('tools', () => {
 	return {
@@ -32,8 +33,8 @@ export const useImageWatermarkToolStore = defineStore('tools.image_watermark', (
 	})
 
 	return {
-		file,
-		config
+		config,
+		file
 	}
 })
 
@@ -41,8 +42,8 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 	const presets = shallowReactive<KeyAccuracyCalculatorPreset[]>([])
 
 	const data = ref<KeyAccuracyCalculatorData>({
-		name: '',
 		maps: [],
+		name: '',
 		require_accuracy: 0
 	})
 
@@ -138,15 +139,13 @@ export const useKeyAccuracyCalculatorToolStore = defineStore('tools.key_accuracy
 	})
 
 	return {
-		presets,
 		data,
-
-		totalNotes,
-		result,
-		valid,
+		loadPresets,
 		passed,
 		passedDiff,
-
-		loadPresets
+		presets,
+		result,
+		totalNotes,
+		valid
 	}
 })

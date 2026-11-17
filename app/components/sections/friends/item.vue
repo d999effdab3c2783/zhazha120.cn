@@ -1,7 +1,7 @@
 <script setup lang="ts">
-	import { isNotNil } from 'es-toolkit'
-
 	import type { FriendEntry } from '~/types/friend'
+
+	import { isNotNil } from 'es-toolkit'
 
 	defineProps<{
 		readonly item: FriendEntry

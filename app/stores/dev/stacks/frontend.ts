@@ -3,64 +3,63 @@ import type { DevStack } from '~/types/dev'
 // @unocss-include
 
 export default {
-	sort: 2,
-	name: '前端',
-
 	items: [
 		{
-			name: 'Yarn',
+			href: 'https://yarnpkg.com',
 			icon: 'i-logos:yarn',
-			href: 'https://yarnpkg.com'
+			name: 'Yarn'
 		},
 		{
-			name: 'Pnpm',
+			href: 'https://pnpm.io',
 			icon: 'i-logos:pnpm',
-			href: 'https://pnpm.io'
+			name: 'Pnpm'
 		},
 		{
-			name: 'Bun',
+			href: 'https://bun.sh',
 			icon: 'i-devicon:bun',
-			href: 'https://bun.sh'
+			name: 'Bun'
 		},
 		{
-			name: 'TypeScript',
+			href: 'https://typescriptlang.org',
 			icon: 'i-devicon:typescript',
-			href: 'https://typescriptlang.org'
+			name: 'TypeScript'
 		},
 		{
-			name: 'Vite',
+			href: 'https://vitejs.dev',
 			icon: 'i-logos:vitejs',
-			href: 'https://vitejs.dev'
+			name: 'Vite'
 		},
 		{
-			name: 'Sass & Scss',
+			href: 'https://sass-lang.com',
 			icon: 'i-logos:sass',
-			href: 'https://sass-lang.com'
+			name: 'Sass & Scss'
 		},
 		{
-			name: 'TailwindCSS',
+			href: 'https://tailwindcss.com',
 			icon: 'i-devicon:tailwindcss',
-			href: 'https://tailwindcss.com'
+			name: 'TailwindCSS'
 		},
 		{
-			name: 'UnoCSS',
+			href: 'https://unocss.dev',
 			icon: 'i-logos:unocss',
-			href: 'https://unocss.dev'
+			name: 'UnoCSS'
 		},
 		{
-			name: 'Vue',
+			href: 'https://vuejs.org',
 			icon: 'i-logos:vue',
-			href: 'https://vuejs.org'
+			name: 'Vue'
 		},
 		{
-			name: 'Nuxt',
+			href: 'https://nuxt.com',
 			icon: 'i-devicon:nuxtjs',
-			href: 'https://nuxt.com'
+			name: 'Nuxt'
 		},
 		{
-			name: 'Naive UI',
+			href: 'https://naiveui.com',
 			icon: 'i-logos:naiveui',
-			href: 'https://naiveui.com'
+			name: 'Naive UI'
 		}
-	] as const
+	] as const,
+	name: '前端',
+	sort: 2
 } as const satisfies DevStack

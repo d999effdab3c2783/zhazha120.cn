@@ -7,23 +7,23 @@ export const title = '自述'
 export const items = [
 	'也许是一名不合格的全栈开发者',
 	{
-		text: '业余 兴趣爱好 碎片化 遇到什么学什么 (',
-		class: 'text-transparent'
+		class: 'text-transparent',
+		text: '业余 兴趣爱好 碎片化 遇到什么学什么 ('
 	},
 	{
-		type: 'success',
-		text: '自 2018 起开始从零自学开发'
+		text: '自 2018 起开始从零自学开发',
+		type: 'success'
 	},
 	{
-		type: 'success',
-		text: '喜欢开源 有良好的 git 提交消息规范'
+		text: '喜欢开源 有良好的 git 提交消息规范',
+		type: 'success'
 	},
 	{
-		type: 'warning',
-		text: '不太享受氛围编程'
+		text: '不太享受氛围编程',
+		type: 'warning'
 	},
 	{
-		type: 'info',
-		text: '到现在或许啥技术都会点 喜欢探索尝试新东西'
+		text: '到现在或许啥技术都会点 喜欢探索尝试新东西',
+		type: 'info'
 	}
 ] as const satisfies RenderableText[]

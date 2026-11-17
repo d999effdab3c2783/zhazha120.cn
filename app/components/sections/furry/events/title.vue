@@ -1,7 +1,7 @@
 <script setup lang="ts">
-	import { isNotNil } from 'es-toolkit'
-
 	import type { FurryEventEntry } from '~/types/furry'
+
+	import { isNotNil } from 'es-toolkit'
 
 	defineProps<{
 		readonly item: FurryEventEntry

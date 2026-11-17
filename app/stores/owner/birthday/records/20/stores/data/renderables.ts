@@ -1,29 +1,29 @@
-import _1 from '~/stores/owner/birthday/records/20/stores/images/1.bin?url'
 import type { OwnerBirthdayRecordRenderable } from '~/types/owner'
+
+import _1 from '~/stores/owner/birthday/records/20/stores/images/1.bin?url'
 
 export default [
 	{
-		title: '收到的赠图',
 		items: [
 			{
-				type: 'image',
-				src: _1,
-
 				comments: [
 					{
-						type: 'primary',
-						text: '好萌 超级喜欢 !'
+						text: '好萌 超级喜欢 !',
+						type: 'primary'
 					},
 					{
-						text: '@ wonold',
-						class: 'text-[1.2em]'
+						class: 'text-[1.2em]',
+						text: '@ wonold'
 					}
-				]
+				],
+				src: _1,
+				type: 'image'
 			},
 			{
-				type: 'embed_video',
-				src: 'https://player.bilibili.com/player.html?aid=116528619984999&autoplay=0'
+				src: 'https://player.bilibili.com/player.html?aid=116528619984999&autoplay=0',
+				type: 'embed_video'
 			}
-		]
+		],
+		title: '收到的赠图'
 	}
 ] as const satisfies OwnerBirthdayRecordRenderable[]
