@@ -2,7 +2,7 @@
 	import type { SelectOption } from 'naive-ui'
 
 	import { useBrowserLocation, useClipboard } from '@vueuse/core'
-	import { stringifyJSON, stringifyYAML, stringifyINI, stringifyTOML } from 'confbox'
+	import { stringifyINI, stringifyJSON, stringifyTOML, stringifyYAML } from 'confbox'
 	import { isNotNil } from 'es-toolkit'
 	import { computed, reactive } from 'vue'
 
@@ -17,17 +17,18 @@
 	const { isMobile } = useResponsive()
 
 	const options = reactive({
-		language: 'json',
-
-		minify: false,
 		indent: 4,
 
 		labels: {
-			name: 'name',
 			avatar: 'avatar',
 			description: 'description',
-			href: 'href'
-		}
+			href: 'href',
+			name: 'name'
+		},
+
+		language: 'json',
+
+		minify: false
 	})
 
 	const languages: SelectOption[] = [
@@ -105,8 +106,8 @@
 <template>
 	<n-card size="small">
 		<n-flex
-			vertical
 			size="small"
+			vertical
 		>
 			<n-flex
 				size="small"
@@ -114,9 +115,9 @@
 			>
 				<n-form-item label="语言">
 					<n-select
+						v-model:value="options.language"
 						class="min-w-60"
 						:options="languages"
-						v-model:value="options.language"
 					/>
 				</n-form-item>
 
@@ -127,9 +128,9 @@
 
 					<n-form-item label="缩进">
 						<n-input-number
+							v-model:value="options.indent"
 							:min="1"
 							:step="1"
-							v-model:value="options.indent"
 						/>
 					</n-form-item>
 				</n-flex>
@@ -137,8 +138,8 @@
 
 			<n-flex size="small">
 				<n-flex
-					vertical
 					size="small"
+					vertical
 				>
 					<n-input v-model:value="options.labels.avatar" />
 					<n-input v-model:value="options.labels.name" />
@@ -147,11 +148,11 @@
 				</n-flex>
 
 				<n-input
-					readonly
-					class="flex-1"
-					type="textarea"
 					v-model:value="generated"
 					auto-size
+					class="flex-1"
+					readonly
+					type="textarea"
 				/>
 			</n-flex>
 

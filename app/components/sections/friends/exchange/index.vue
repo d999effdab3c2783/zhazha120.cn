@@ -1,7 +1,7 @@
 <template>
 	<n-flex
-		vertical
 		size="small"
+		vertical
 	>
 		<sections-friends-exchange-copier />
 		<sections-owner-contacts />
