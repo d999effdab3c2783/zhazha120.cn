@@ -40,10 +40,24 @@
 				size="small"
 			>
 				<template
-					v-for="({ icon }, index) in gameStore.records.portals"
+					v-for="({ icon, href }, index) in gameStore.records.portals"
 					:key="index"
 				>
-					<n-icon :class="['size-6', icon]" />
+					<custom-redirect
+						#="{ aProps, redirect }"
+						:href="href"
+					>
+						<n-button
+							text
+							tag="a"
+							v-bind="aProps"
+							@click.prevent="redirect"
+						>
+							<template #icon>
+								<n-icon :class="['size-6', icon]" />
+							</template>
+						</n-button>
+					</custom-redirect>
 				</template>
 			</n-flex>
 		</n-flex>

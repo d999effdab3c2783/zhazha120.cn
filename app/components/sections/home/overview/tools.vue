@@ -37,10 +37,22 @@
 				:vertical="isMobile"
 			>
 				<template
-					v-for="({ name }, index) in toolsStore.portals"
+					v-for="({ name, href }, index) in toolsStore.portals"
 					:key="index"
 				>
-					<n-tag>{{ name }}</n-tag>
+					<custom-redirect
+						#="{ aProps, redirect }"
+						:href="href"
+					>
+						<n-button
+							text
+							tag="a"
+							v-bind="aProps"
+							@click.prevent="redirect"
+						>
+							<n-tag class="text-current">{{ name }}</n-tag>
+						</n-button>
+					</custom-redirect>
 				</template>
 			</n-flex>
 		</n-flex>
