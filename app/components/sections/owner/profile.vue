@@ -6,9 +6,9 @@
 
 <template>
 	<n-flex
-		justify="center"
-		class="my-4"
 		align="center"
+		class="my-4"
+		justify="center"
 		size="small"
 	>
 		<n-avatar

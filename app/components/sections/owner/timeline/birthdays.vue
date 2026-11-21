@@ -1,6 +1,5 @@
 <script setup lang="ts">
-	import { addYears, differenceInYears, subYears } from 'date-fns'
-	import { isNil, isNotNil } from 'es-toolkit'
+	import { addYears, differenceInYears } from 'date-fns'
 
 	import { useResponsive } from '~/composables/responsive'
 	import { useOwnerStore } from '~/stores/owner'
@@ -44,9 +43,9 @@
 										:href="generateBirthdayRecordLink(age - 1)"
 									>
 										<n-button
+											tag="a"
 											text
 											v-bind="aProps"
-											tag="a"
 											:type="
 												ownerStore.birthday.records.some(item => {
 													return String(item.age) === String(age - 1)

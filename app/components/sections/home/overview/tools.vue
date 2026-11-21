@@ -45,8 +45,8 @@
 						:href="href"
 					>
 						<n-button
-							text
 							tag="a"
+							text
 							v-bind="aProps"
 							@click.prevent="redirect"
 						>
