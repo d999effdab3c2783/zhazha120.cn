@@ -1,5 +1,6 @@
 <script setup lang="ts">
-	import { isNotNil } from 'es-toolkit'
+	import { addYears, differenceInYears, subYears } from 'date-fns'
+	import { isNil, isNotNil } from 'es-toolkit'
 
 	import { useResponsive } from '~/composables/responsive'
 	import { useOwnerStore } from '~/stores/owner'
@@ -7,6 +8,10 @@
 	const ownerStore = useOwnerStore()
 
 	const { isMobile } = useResponsive()
+
+	const generateBirthdayYear = (age: number) => {
+		return addYears(ownerStore.birthday.date, age).getFullYear()
+	}
 
 	const generateBirthdayRecordLink = (age: number) => {
 		return `/owner/birthday/records/${age}`
@@ -18,37 +23,55 @@
 <template>
 	<n-card size="small">
 		<template v-if="ownerStore.birthday.records.length > 0">
-			<n-flex
-				class="n-button__patch"
-				size="small"
-				:vertical="isMobile"
+			<n-scrollbar
+				class="overscroll-contain"
+				data-lenis-prevent-horizontal
+				x-scrollable
 			>
-				<template
-					v-for="({ age }, index) in ownerStore.birthday.records"
-					:key="index"
-				>
-					<template v-if="isNotNil(age)">
-						<custom-redirect
-							#="{ aProps, redirect }"
-							:href="generateBirthdayRecordLink(age)"
-						>
-							<n-button
-								:block="isMobile"
-								v-bind="aProps"
-								secondary
-								tag="a"
-								@click.prevent="redirect"
-							>
-								<template #icon>
-									<n-icon class="i-tabler:clock-record" />
-								</template>
+				<n-timeline :horizontal="!isMobile">
+					<template
+						v-for="(age, index) in differenceInYears(new Date(), ownerStore.birthday.date) + 1"
+						:key="index"
+					>
+						<n-timeline-item type="success">
+							<template #header>
+								<n-flex
+									:size="0"
+									vertical
+								>
+									<custom-redirect
+										#="{ aProps, redirect }"
+										:href="generateBirthdayRecordLink(age - 1)"
+									>
+										<n-button
+											text
+											v-bind="aProps"
+											tag="a"
+											:type="
+												ownerStore.birthday.records.some(item => {
+													return String(item.age) === String(age - 1)
+												})
+													? 'primary'
+													: undefined
+											"
+											@click.prevent="redirect"
+										>
+											{{ age - 1 }} 岁
+										</n-button>
+									</custom-redirect>
 
-								{{ age }} 岁
-							</n-button>
-						</custom-redirect>
+									<n-text
+										class="text-[.8em]"
+										:depth="3"
+									>
+										{{ generateBirthdayYear(age - 1) }}
+									</n-text>
+								</n-flex>
+							</template>
+						</n-timeline-item>
 					</template>
-				</template>
-			</n-flex>
+				</n-timeline>
+			</n-scrollbar>
 		</template>
 
 		<template v-else>
