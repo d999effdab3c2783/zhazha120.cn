@@ -64,7 +64,7 @@
 
 		if (!clipboard.isSupported.value) {
 			if (isNotNil(apiStore.message)) {
-				apiStore.message.error('复制失败, 不支持当前环境')
+				apiStore.message.error('读取失败, 不支持当前环境')
 			}
 
 			return
