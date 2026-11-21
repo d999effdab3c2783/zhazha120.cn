@@ -73,6 +73,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      confbox:
+        specifier: ^0.3.2
+        version: 0.3.2
       date-fns:
         specifier: ^4.4.0
         version: 4.4.0

@@ -27,5 +27,11 @@
 
 			<sections-friends-websites :items="friendsStore.websites" />
 		</slot>
+
+		<slot name="exchange">
+			<n-divider>交换</n-divider>
+
+			<sections-friends-exchange />
+		</slot>
 	</n-flex>
 </template>
